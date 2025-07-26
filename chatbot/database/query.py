@@ -30,3 +30,6 @@ latestid = """SELECT doc_id FROM document_store ORDER BY id DESC LIMIT 1;"""
 #for inserting pdf into document_store table
 query_insert_pdf = """INSERT INTO document_store (doc_id, category, name, data)
         VALUES (%s, %s, %s, %s) """
+
+query_insert_chunk = """ INSERT INTO document_embedding (doc_id, embedding_vector)
+        VALUES (%s, %s);"""
