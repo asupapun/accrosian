@@ -18,11 +18,14 @@ async def insertdata(
     category : str = Form(...),
     file : UploadFile = File(...)
 ):
+    file_name = file.filename
     pdf_bytes = await file.read()
     print(file.filename)
 
-    doc_id = insert_data_to_document_store(pdf_bytes,category,file.filename)
+    result = insert_data_to_document_store(pdf_bytes,category,file_name)
 
-    return {"message" : "Document uploaded sucessfully" ,"document_id" : doc_id}
+    doc_id = result["doc_id"]
+
+    return {"message" : "Document uploaded sucessfully" ,"document_id" : doc_id ,"file_name" : file_name}
 
 

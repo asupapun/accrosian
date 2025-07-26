@@ -18,4 +18,4 @@ def insert_data_to_document_store(pdf_bytes: bytes, category: str, name: str) ->
     cursor.close()
     conn.close()
 
-    return f"file inserted sucessfully and doc_id = {doc_id}"
+    return {"doc_id" : doc_id}
