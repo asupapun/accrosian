@@ -1,15 +1,12 @@
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from dotenv import load_dotenv
 from langchain_pinecone import PineconeVectorStore
-from pinecone import Pinecone
+from chatbot.database.connection import pinecone_conn
 import os
 
 load_dotenv()
 
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
-PINECONE_INDEX_NAME = os.getenv("PINECONE_INDEX_NAME")
-PINECONE_HOST = os.getenv("PINECONE_HOST")
 
 
 def add_data_to_vector_store(split_data):
@@ -21,9 +18,8 @@ def add_data_to_vector_store(split_data):
         )
 
         # Initialize Pinecone vector store
-        pc = Pinecone(api_key=PINECONE_API_KEY)
-        index = pc.Index(name=PINECONE_INDEX_NAME, host=PINECONE_HOST)
-        vector_store = PineconeVectorStore(embedding=embedding, index=index)
+        
+        vector_store = PineconeVectorStore(embedding=embedding, index=pinecone_conn())
 
         # Add documents
         result = vector_store.add_documents(split_data)

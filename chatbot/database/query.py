@@ -31,5 +31,21 @@ latestid = """SELECT doc_id FROM document_store ORDER BY id DESC LIMIT 1;"""
 query_insert_pdf = """INSERT INTO document_store (doc_id, category, name, data)
         VALUES (%s, %s, %s, %s) """
 
+#for insert the embedding into document_embedding table
 query_insert_chunk = """ INSERT INTO document_embedding (doc_id, embedding_vector)
         VALUES (%s, %s);"""
+
+
+#for view list of document in the document store table
+query_document_list = """SELECT DATE_FORMAT(timestamp, "%d-%m-%Y") AS timestamp,doc_id,category,name
+        FROM document_store"""
+
+
+#for view a particular document with document id
+query_view_document = """SELECT name,data FROM document_store WHERE doc_id = %s """
+
+#for view the chunk embadding from document_embedding table
+query_view_document_embedding  = """SELECT embedding_vector FROM document_embedding WHERE doc_id = %s"""
+
+#delete data from both the table
+query_delete_data = """DELETE FROM document_store WHERE doc_id = %s"""
