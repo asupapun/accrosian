@@ -1,13 +1,12 @@
-from fastapi import FastAPI, UploadFile, File, Form, HTTPException, Response
+from fastapi import FastAPI, UploadFile, File, Form, HTTPException, Response,BackgroundTasks
+from chatbot.database.connection import mysql_conn
 from chatbot.services.document_upload import insert_data_to_document_store
-from chatbot.utils.load_split_pdf import load_split_pdfdata
-from chatbot.utils.embed_vectorestore import add_data_to_vector_store
-from chatbot.services.chunk_insert import insert_chunk_document_embedding
 from chatbot.services.view_document_list import view_document_list
 from chatbot.services.view_document_browser import view_document_browser
-from chatbot.schema.doc_id import DocId
 from chatbot.services.document_delete import delete_pdf
+from chatbot.schema.doc_id import DocId 
 import json
+from chatbot.utils.background_task import data_ingestion_pipeline
 
 
 
@@ -24,32 +23,44 @@ async def home():
 
 @app.post("/upload_pdf")
 async def insertdata(
+    background_tasks : BackgroundTasks,
     category : str = Form(...),
-    file : UploadFile = File(...)
+    file : UploadFile = File(...),
 ):
-    file_name = file.filename
-    pdf_bytes = await file.read()
+    try:
+        file_name = file.filename
+        pdf_bytes = await file.read()
+        conn = mysql_conn()
+        cursor = conn.cursor()
+        
+        result = insert_data_to_document_store(pdf_bytes,category,file_name,conn,cursor)
+        doc_id = result["doc_id"]
+
+        cursor.close()
+        conn.close()
+
+        # file.file.seek(0) 
+        background_tasks.add_task(data_ingestion_pipeline,pdf_bytes,doc_id)
+
+
+        return {
+            "message" : "Document uploaded sucessfully",
+            "document_id" : doc_id ,
+            "file_name" : file_name
+            }
     
-    result = insert_data_to_document_store(pdf_bytes,category,file_name)
-    doc_id = result["doc_id"]
-
-    file.file.seek(0) 
-    split_data = load_split_pdfdata(file)
-
-    chunk_embed = add_data_to_vector_store(split_data)
-    chunk_ids = chunk_embed["chunk_id"]
-    chunk_ids = json.dumps(chunk_ids)
-
-    insert_chunk_document_embedding(doc_id, chunk_ids)
-
-
-    return {"message" : "Document and embedded chunk uploaded sucessfully" ,"document_id" : doc_id ,"file_name" : file_name}
+    except Exception as e:
+        conn.rollback()
+        raise HTTPException (status_code = 500, detail=f"document upload failed: {str(e)}")   
 
 
 @app.get("/document_list")
 async def document_list():
-    documents = view_document_list()
-    return documents
+    try:
+        documents = view_document_list()
+        return documents
+    except Exception as e:
+        raise HTTPException(status_code=500,detail=f"failed to fetch document list: {str(e)}")
 
 
 
@@ -70,34 +81,43 @@ async def document_list():
 
 @app.get("/view_pdf/{doc_id}")
 async def view_pdf(doc_id: str):
-    data = view_document_browser(doc_id) 
-    pdf_name = data["doc_name"]
-    pdf_data = data["doc_data"]
-    if not pdf_data:
-        raise HTTPException(status_code=404, detail="PDF not found")
-    
-    return Response(
-        content=pdf_data,
-        media_type="application/pdf",
-        headers={"Content-Disposition": f"inline; filename={pdf_name}"}
-    )
+    try:
+        data = view_document_browser(doc_id) 
+        pdf_name = data["doc_name"]
+        pdf_data = data["doc_data"]
+        if not pdf_data:
+            raise HTTPException(status_code=404, detail="PDF not found")
+        
+        return Response(
+            content=pdf_data,
+            media_type="application/pdf",
+            headers={"Content-Disposition": f"inline; filename={pdf_name}"}
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500,detail=f"error to view pdf: {str(e)}")
 
 
 @app.post("/download_pdf")
 async def download_pdf(doc_id : DocId):
-    data = view_document_browser(doc_id.doc_id) 
-    pdf_name = data["doc_name"]
-    pdf_data = data["doc_data"]
-    if not pdf_data:
-        raise HTTPException(status_code=404, detail="PDF not found")
-    
-    return Response(
-        content=pdf_data,
-        media_type="application/pdf",
-        headers={"Content-Disposition": f"attachment; filename={pdf_name}"}
-    )
+    try:
+        data = view_document_browser(doc_id.doc_id) 
+        pdf_name = data["doc_name"]
+        pdf_data = data["doc_data"]
+        if not pdf_data:
+            raise HTTPException(status_code=404, detail="PDF not found")
+        
+        return Response(
+            content=pdf_data,
+            media_type="application/pdf",
+            headers={"Content-Disposition": f"attachment; filename={pdf_name}"}
+        )
+    except Exception as e:
+        raise HTTPException(status_code= 500,detail=f"error to download pdf: {str(e)}")
 
 @app.post("/delete_pdf")
 async def delete_data(doc_id : str):
-    result = delete_pdf(doc_id)
-    return result
+    try:
+        result = delete_pdf(doc_id)
+        return result
+    except Exception as e:
+        raise HTTPException(status_code=500,detail=f"error to delete data: {str(e)}")

@@ -1,9 +1,8 @@
 from chatbot.database.connection import mysql_conn
 from chatbot.database.query import latestid
 
-def generate_doc_id():
-    conn = mysql_conn()
-    cursor = conn.cursor()
+def generate_doc_id(conn,cursor):
+    
 
     cursor.execute(latestid)
     result = cursor.fetchone()
@@ -17,8 +16,6 @@ def generate_doc_id():
 
     new_doc_id = f"DOC-{new_id_num:05d}"
 
-    cursor.close()
-    conn.close()
     return new_doc_id
 
 

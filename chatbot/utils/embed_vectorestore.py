@@ -9,7 +9,7 @@ load_dotenv()
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 
-def add_data_to_vector_store(split_data):
+async def add_data_to_vector_store(split_data):
     try:
         # Load embedding model
         embedding = GoogleGenerativeAIEmbeddings(

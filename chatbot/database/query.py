@@ -37,7 +37,7 @@ query_insert_chunk = """ INSERT INTO document_embedding (doc_id, embedding_vecto
 
 
 #for view list of document in the document store table
-query_document_list = """SELECT DATE_FORMAT(timestamp, "%d-%m-%Y") AS timestamp,doc_id,category,name
+query_document_list = """SELECT DATE_FORMAT(timestamp, "%d-%m-%Y") AS timestamp,doc_id,category,name,status
         FROM document_store"""
 
 
@@ -49,3 +49,6 @@ query_view_document_embedding  = """SELECT embedding_vector FROM document_embedd
 
 #delete data from both the table
 query_delete_data = """DELETE FROM document_store WHERE doc_id = %s"""
+
+#update status over completion
+query_update_status = """ UPDATE document_store SET status = %s WHERE doc_id = %s"""
