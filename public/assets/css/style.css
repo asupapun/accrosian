@@ -5487,7 +5487,7 @@ select option {
 
 /* List Container */
 .desc-list {
-    margin-top: 22px;
+    margin-top: 10px;
     list-style: none;
     padding: 0;
     display: flex;
