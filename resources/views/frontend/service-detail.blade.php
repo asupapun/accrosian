@@ -88,11 +88,13 @@
                 <div class="ac-others-card-border"></div>
                 <div class="ac-others-card-inner">
                     <div class="ac-others-icon-wrap">
-                        <span class="ac-others-icon">{{ $other->icon }}</span>
+                        <div class="ac-svg-icon"
+                            data-service="{{ strtolower(str_replace([' ','/','&'], '-', $other->title)) }}">
+                        </div>
                     </div>
                     <h4 class="ac-others-title">{{ $other->title }}</h4>
                     <div class="ac-others-arrow">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5">
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
