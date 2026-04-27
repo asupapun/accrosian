@@ -5469,7 +5469,6 @@ select option {
 
 }
 
-
 .desc-title{
   font-family: var(--font-display);
   font-size: clamp(2rem, 3.3vw, 3rem);
@@ -5477,4 +5476,55 @@ select option {
   line-height: 1.15;
   margin-bottom: 20px;
   color: var(--navy);
+}
+/* Paragraph Styling */
+.desc-text {
+    margin-top: 14px;
+    line-height: 1.8;
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+/* List Container */
+.desc-list {
+    margin-top: 22px;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* List Items */
+.desc-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 0.95rem;
+    transition: transform 0.3s ease;
+}
+
+/* Tick Icon */
+.desc-list .tick {
+    color: var(--orange);
+    font-size: 1.1rem;
+    margin-top: 2px;
+}
+
+/* Hover Effect (subtle premium feel) */
+.desc-list li:hover {
+    transform: translateX(6px);
+}
+
+/* Optional: better spacing on mobile */
+@media (max-width: 768px) {
+    .desc-text {
+        font-size: 0.95rem;
+    }
+
+    .desc-list li {
+        font-size: 0.9rem;
+    }
 }
