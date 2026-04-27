@@ -5569,7 +5569,7 @@ select option {
     text-decoration: none;
     display: block;
     overflow: hidden;
-    background: rgba(26, 32, 96, 0.45);
+    background: var(--navy-light);
     backdrop-filter: blur(16px);
     border: 1px solid rgba(255,255,255,0.06);
     transition: transform .35s cubic-bezier(.4,0,.2,1),
