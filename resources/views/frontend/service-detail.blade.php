@@ -26,7 +26,7 @@
         <p class="page-hero-sub">We deliver innovative, scalable, and secure solutions tailored to your business needs,
             ensuring performance, reliability, seamless user experience, and long-term growth through cutting-edge
             technologies</p>
-        <a style="margin-top:20px" href="{{ route('contact') }}" class="btn btn-primary">Get a Quote</a>
+        <a style="margin-top:30px" href="{{ route('contact') }}" class="btn btn-primary">Get a Quote</a>
     </div>
 
 </section>
