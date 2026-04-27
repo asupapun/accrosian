@@ -5539,7 +5539,7 @@ select option {
 
 .ac-others-section {
     padding: 80px 0;
-    background: var(--navy);
+    background: var(--white);
     position: relative;
     overflow: hidden;
 }
