@@ -5528,3 +5528,218 @@ select option {
         font-size: 0.9rem;
     }
 }
+
+
+
+/* ============ OTHER SERVICES SECTION ============ */
+.ac-others-section {
+    padding: 80px 0;
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+}
+
+.ac-others-bg-orb {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,117,10,0.08) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.ac-others-header {
+    text-align: center;
+    margin-bottom: 52px;
+}
+
+.ac-others-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* ---- Card ---- */
+.ac-others-card {
+    position: relative;
+    border-radius: 18px;
+    text-decoration: none;
+    display: block;
+    overflow: hidden;
+    background: rgba(26, 32, 96, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
+    cursor: pointer;
+}
+
+.ac-others-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(232, 117, 10, 0.45);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(232, 117, 10, 0.15),
+        0 0 0 1px rgba(232, 117, 10, 0.2);
+}
+
+/* Glow effect behind card */
+.ac-others-card-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    background: radial-gradient(circle at 50% 0%, rgba(232,117,10,0.18) 0%, transparent 65%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ac-others-card:hover .ac-others-card-glow {
+    opacity: 1;
+}
+
+/* Animated border gradient */
+.ac-others-card-border {
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(232,117,10,0.6), transparent 50%, rgba(232,117,10,0.2));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ac-others-card:hover .ac-others-card-border {
+    opacity: 1;
+}
+
+/* Shine sweep on hover */
+.ac-others-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.05),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.ac-others-card:hover .ac-others-shine {
+    left: 160%;
+}
+
+/* Card inner content */
+.ac-others-card-inner {
+    position: relative;
+    z-index: 3;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Icon */
+.ac-others-icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(232, 117, 10, 0.1);
+    border: 1px solid rgba(232, 117, 10, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.35s ease, transform 0.35s ease, border-color 0.35s ease;
+}
+
+.ac-others-card:hover .ac-others-icon-wrap {
+    background: var(--gradient-orange);
+    border-color: var(--orange);
+    transform: scale(1.1) rotate(-4deg);
+}
+
+.ac-others-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+    transition: transform 0.35s ease;
+}
+
+.ac-others-card:hover .ac-others-icon {
+    transform: scale(1.1);
+}
+
+/* Title */
+.ac-others-title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.35;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.ac-others-card:hover .ac-others-title {
+    color: var(--orange-light);
+}
+
+/* Arrow */
+.ac-others-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-muted);
+    margin-top: 4px;
+    transition: background 0.3s ease,
+                border-color 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
+    align-self: flex-start;
+}
+
+.ac-others-card:hover .ac-others-arrow {
+    background: var(--gradient-orange);
+    border-color: var(--orange);
+    color: var(--white);
+    transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ac-others-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+    .ac-others-card-inner {
+        padding: 20px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ac-others-grid {
+        grid-template-columns: 1fr;
+    }
+}

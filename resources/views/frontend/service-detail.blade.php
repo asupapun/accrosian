@@ -73,21 +73,32 @@
 </section>
 
 @if($others->isNotEmpty())
-<section style="padding:20px 0;background:var(--surface)">
+<section class="ac-others-section">
+    <div class="ac-others-bg-orb"></div>
     <div class="container">
-        <div style="text-align:center;margin-bottom:48px">
+        <div class="ac-others-header reveal">
             <span class="section-tag">Explore More</span>
             <h2 class="section-title">Other <span class="text-gradient">Services</span></h2>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px">
-            @foreach($others as $other)
-            <a href="{{ route('services.show', $other->slug) }}"
-                style="background:var(--navy-light);border:1px solid var(--border);border-radius:12px;padding:24px;text-decoration:none;transition:all 0.3s;display:block"
-                class="reveal">
-                <div style="font-size:2rem;margin-bottom:12px">{{ $other->icon }}</div>
-                <h4 style="color:var(--orange);font-weight:700;margin-bottom:8px">{{ $other->title }}</h4>
-                <p style="color:var(--white);font-size:0.9rem;line-height:1.6">
-                    {{ Str::limit($other->short_description, 80) }}</p>
+        <div class="ac-others-grid">
+            @foreach($others as $i => $other)
+            <a href="{{ route('services.show', $other->slug) }}" class="ac-others-card reveal"
+                style="animation-delay:{{ $i * 0.08 }}s">
+                <div class="ac-others-card-glow"></div>
+                <div class="ac-others-card-border"></div>
+                <div class="ac-others-card-inner">
+                    <div class="ac-others-icon-wrap">
+                        <span class="ac-others-icon">{{ $other->icon }}</span>
+                    </div>
+                    <h4 class="ac-others-title">{{ $other->title }}</h4>
+                    <div class="ac-others-arrow">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="ac-others-shine"></div>
             </a>
             @endforeach
         </div>
