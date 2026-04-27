@@ -5481,7 +5481,7 @@ select option {
 .desc-text {
     margin-top: 14px;
     line-height: 1.8;
-    color: var(--text-light);
+    color: var(--black);
     font-size: 1rem;
 }
 
