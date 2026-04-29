@@ -104,9 +104,9 @@
             </a>
             @endforeach
         </div>
-    </div>
-    <div style="margin-left:60px;display:flex;gap:16px;flex-wrap:wrap;" class="reveal">
-        <a href="{{ route('services') }}" class="btn btn-outline">All Services</a>
+        <div style="margin-top:25px;display:flex;gap:16px;flex-wrap:wrap;" class="reveal">
+            <a href="{{ route('services') }}" class="btn btn-outline">All Services</a>
+        </div>
     </div>
 </section>
 @endif
