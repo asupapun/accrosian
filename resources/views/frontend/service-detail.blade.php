@@ -64,10 +64,10 @@
         </div>
 
         {{-- Buttons --}}
-        <div style="margin-left:60px;display:flex;gap:16px;flex-wrap:wrap;" class="reveal">
+        <!-- <div style="margin-left:60px;display:flex;gap:16px;flex-wrap:wrap;" class="reveal">
             <a href="{{ route('contact') }}" class="btn btn-primary">Get a Quote</a>
             <a href="{{ route('services') }}" class="btn btn-outline">All Services</a>
-        </div>
+        </div> -->
 
     </div>
 </section>
@@ -104,6 +104,9 @@
             </a>
             @endforeach
         </div>
+    </div>
+    <div style="margin-left:60px;display:flex;gap:16px;flex-wrap:wrap;" class="reveal">
+        <a href="{{ route('services') }}" class="btn btn-outline">All Services</a>
     </div>
 </section>
 @endif
