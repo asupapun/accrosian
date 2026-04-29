@@ -4199,7 +4199,7 @@ select option {
     z-index: 2;
 }
 
-.proc-step-num {
+.proc-step-num2 {
     width: 56px; height: 56px;
     border-radius: 50%;
     background: var(--ac-orange-light);
