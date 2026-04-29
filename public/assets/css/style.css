@@ -3938,7 +3938,7 @@ select option {
  
 /* ── PROBLEM SOLUTION ── */
 .prob-sol-section {
-    padding: 60px 60px;
+    padding: 60px 0px;
     background: var(--white);
     position: relative;
     overflow: hidden;
@@ -4048,7 +4048,7 @@ select option {
  
 /* ── CORE SERVICES GRID ── */
 .core-services {
-    padding: 60px 60px;
+    padding: 60px 0px;
     background: var(--white);
     position: relative;
 }
@@ -4149,7 +4149,7 @@ select option {
  
 /* ── PROCESS TIMELINE ── */
 .process-section-svc {
-    padding: 60px 60px;
+    padding: 60px 0px;
     background: var(--white);
     position: relative;
     overflow: hidden;
@@ -4235,7 +4235,7 @@ select option {
  
 /* ── CASE STUDIES ── */
 .case-studies-section {
-    padding: 60px 60px;
+    padding: 60px 0px;
     background: var(--white);
 }
  
@@ -4344,7 +4344,7 @@ select option {
  
 /* ── TECH STACK ── */
 .tech-section {
-    padding: 80px;
+    padding: 60px 0px;
     background: var(--white);
     border-top: 1px solid var(--glass-border);
     border-bottom: 1px solid var(--glass-border);
@@ -4728,7 +4728,7 @@ select option {
  
 /* ── FINAL CTA ── */
 .svc-final-cta {
-    padding: 80px;
+    padding: 60px 0px;
     background: var(--navy);
     position: relative;
     overflow: hidden;
@@ -4823,7 +4823,7 @@ select option {
  
 /* ── OTHER SERVICES ── */
 .other-services-svc {
-    padding: 80px;
+    padding: 60px 60px;
     background: var(--navy-mid);
     border-top: 1px solid var(--glass-border);
 }
