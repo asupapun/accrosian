@@ -9,6 +9,7 @@
         document.documentElement.classList.add('no-loader');
     }
     </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     {{-- Dynamic SEO --}}
     <title>@yield('meta_title', $setting->site_title ?? config('app.name'))</title>
@@ -195,6 +196,9 @@
             el.innerHTML = getIcon(slug);
         });
     })();
+    </script>
+    <script>
+    lucide.createIcons();
     </script>
 
 </body>
