@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\{DashboardController, ServiceController as AdminS
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Frontend\StudentController;
 use App\Http\Controllers\Admin\StudentRegistrationController;
+use App\Http\Controllers\Frontend\BankingController;
+
 /*
 |--------------------------------------------------------------------------
 | Frontend Routes
@@ -25,9 +27,7 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 Route::get('/student-registration', [StudentController::class, 'index'])->name('student.register');
 Route::post('/student-registration', [StudentController::class, 'store'])->name('student.register.store');
 Route::get('/airs', [App\Http\Controllers\Frontend\AirsController::class, 'index'])->name('airs');
-Route::get('/industries/banking', function () {
-    return view('frontend.banking');
-})->name('industries.banking');
+Route::get('/industries/banking', [BankingController::class, 'index'])->name('industries.banking');
 /*
 |--------------------------------------------------------------------------
 | Auth Routes
