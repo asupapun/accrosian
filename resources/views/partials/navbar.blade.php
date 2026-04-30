@@ -68,7 +68,7 @@
             <li class="nav-dropdown">
                 <a href="#">Industries</a>
                 <div class="simple-dropdown">
-                    <a href="{{ route('banking') }}">Banking</a>
+                    <a href="{{ route('industries.banking') }}">Banking</a>
                     <a href="{{ route('airs') }}">AIRS Program</a>
                 </div>
             </li>
