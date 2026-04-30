@@ -25,7 +25,9 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 Route::get('/student-registration', [StudentController::class, 'index'])->name('student.register');
 Route::post('/student-registration', [StudentController::class, 'store'])->name('student.register.store');
 Route::get('/airs', [App\Http\Controllers\Frontend\AirsController::class, 'index'])->name('airs');
-Route::get('/banking_services', [App\Http\Controllers\Frontend\AirsController::class, 'index'])->name('banking');
+Route::get('/industries/banking', function () {
+    return view('frontend.banking');
+})->name('industries.banking');
 /*
 |--------------------------------------------------------------------------
 | Auth Routes
