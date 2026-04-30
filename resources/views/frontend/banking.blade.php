@@ -240,6 +240,7 @@
     line-height: 1.1;
     letter-spacing: -.03em;
     margin-bottom: 20px;
+    color: #ffffff;
 }
 
 .bk-hero-btns {
