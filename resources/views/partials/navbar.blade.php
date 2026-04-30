@@ -57,17 +57,19 @@
             <li class="nav-dropdown">
                 <a href="#">Our Company</a>
                 <div class="simple-dropdown">
-                    <a href="{{ route('about') }}"><span class="drop-icon">🏢</span> About Us</a>
-                    <a href="{{ route('portfolio') }}"><span class="drop-icon">💼</span> Portfolio</a>
-                    <a href="{{ route('contact') }}"><span class="drop-icon">📞</span> Contact</a>
+                    <a href="{{ route('about') }}">About Us</a>
+                    <a href="{{ route('portfolio') }}">Portfolio</a>
+                    <a href="{{ route('contact') }}">Contact</a>
+                    <a href="{{ route('student.register') }}">Student Registration</a>
+                    <a href="{{ route('airs') }}">AIRS Program</a>
                 </div>
             </li>
 
             <li class="nav-dropdown">
-                <a href="#">Our Initiatives</a>
+                <a href="#">Industries</a>
                 <div class="simple-dropdown">
-                    <a href="{{ route('student.register') }}"><span class="drop-icon">🎓</span> Student Registration</a>
-                    <a href="{{ route('airs') }}"><span class="drop-icon">🌉</span> AIRS Program</a>
+                    <a href="{{ route('student.register') }}">Student Registration</a>
+                    <a href="{{ route('airs') }}">AIRS Program</a>
                 </div>
             </li>
         </ul>
