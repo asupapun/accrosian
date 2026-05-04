@@ -186,7 +186,7 @@ h3 {
     font-weight: 800;
     line-height: 1.08;
     letter-spacing: -0.03em;
-    color: var(--navy-800);
+    color: #ffff;
     margin-bottom: 24px;
 }
 
@@ -1221,7 +1221,6 @@ h3 {
 }
 
 .fade-up-1 {
-    color: #ffff;
     animation-delay: 0.1s;
     opacity: 0;
 }
@@ -1354,29 +1353,6 @@ h3 {
                 </div>
     </section>
 
-    <!-- STATS BAR -->
-    <div class="stats-bar">
-        <div class="container">
-            <div class="stats-inner">
-                <div class="stat-item">
-                    <div class="stat-num">99.9%</div>
-                    <div class="stat-label">Platform Uptime Guaranteed</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-num">50M+</div>
-                    <div class="stat-label">Users Served at Scale</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-num">3×</div>
-                    <div class="stat-label">Faster Content Delivery</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-num">120+</div>
-                    <div class="stat-label">Media Integrations Built</div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- OVERVIEW -->
     <section class="overview">
