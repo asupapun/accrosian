@@ -822,7 +822,7 @@
 
 .bk-feat-body span {
     font-size: .82rem;
-    color: var(--gray-500);
+    color: #000000;
     line-height: 1.6;
 }
 
@@ -1060,7 +1060,7 @@
 
 .bk-feat-cell-txt p {
     font-size: .82rem;
-    color: var(--gray-500);
+    color: #000000;
     line-height: 1.65;
 }
 
