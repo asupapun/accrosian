@@ -1701,11 +1701,10 @@ body {
 
 .footer-links {
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  gap: 10px 20px; /* row gap + column gap */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
-
 .footer-links a {
   color: var(--text-light);
   text-decoration: none;
