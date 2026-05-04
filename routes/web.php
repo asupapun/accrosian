@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Frontend\StudentController;
 use App\Http\Controllers\Admin\StudentRegistrationController;
 use App\Http\Controllers\Frontend\BankingController;
+use App\Http\Controllers\Frontend\MedinfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,7 @@ Route::get('/student-registration', [StudentController::class, 'index'])->name('
 Route::post('/student-registration', [StudentController::class, 'store'])->name('student.register.store');
 Route::get('/airs', [App\Http\Controllers\Frontend\AirsController::class, 'index'])->name('airs');
 Route::get('/industries/banking', [BankingController::class, 'index'])->name('industries.banking');
+Route::get('/industries/medinfo', [MedinfoController::class, 'index'])->name('industries.medinfo');
 /*
 |--------------------------------------------------------------------------
 | Auth Routes
