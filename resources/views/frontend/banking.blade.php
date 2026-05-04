@@ -682,7 +682,7 @@
 
 .bk-card-desc {
     font-size: .875rem;
-    color: var(--gray-500);
+    color: #000000;
     line-height: 1.7;
 }
 
