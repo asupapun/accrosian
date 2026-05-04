@@ -117,7 +117,6 @@ section {
 h1,
 h2,
 h3 {
-    color: #ffff;
     font-family: var(--ff-head);
 }
 
@@ -1222,6 +1221,7 @@ h3 {
 }
 
 .fade-up-1 {
+    color: #ffff;
     animation-delay: 0.1s;
     opacity: 0;
 }
@@ -1350,59 +1350,8 @@ h3 {
                         <a href="#" class="btn-outline">Consult Now →</a>
                     </div>
                 </div>
-
-                <div class="hero-visual fade-up fade-up-4">
-                    <div class="dashboard-card">
-                        <div class="dash-header">
-                            <span class="dash-title">CONTENT ANALYTICS DASHBOARD</span>
-                            <span class="dash-badge">● Live</span>
-                        </div>
-                        <div class="dash-metrics">
-                            <div class="metric-box">
-                                <div class="metric-val">4.2<span>M</span></div>
-                                <div class="metric-label">Active Users</div>
-                            </div>
-                            <div class="metric-box">
-                                <div class="metric-val">98<span>%</span></div>
-                                <div class="metric-label">Uptime SLA</div>
-                            </div>
-                            <div class="metric-box">
-                                <div class="metric-val">12<span>ms</span></div>
-                                <div class="metric-label">Avg Latency</div>
-                            </div>
-                        </div>
-                        <div class="chart-bars">
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="dash-footer">
-                            <span class="dash-tag">Content Velocity</span>
-                            <span class="dash-tag">Audience Segments</span>
-                            <span class="dash-tag">Revenue Attribution</span>
-                        </div>
-                    </div>
-                    <div class="floating-badge">
-                        <div class="badge-dot">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f97316"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-                                <polyline points="16 7 22 7 22 13" />
-                            </svg>
-                        </div>
-                        <div class="badge-info">
-                            <div class="badge-num">+34.7%</div>
-                            <div class="badge-text">Engagement this month</div>
-                        </div>
-                    </div>
+                <div>
                 </div>
-            </div>
-        </div>
     </section>
 
     <!-- STATS BAR -->
