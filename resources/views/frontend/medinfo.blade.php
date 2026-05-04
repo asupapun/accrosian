@@ -1321,19 +1321,6 @@ h3 {
 
 <body>
 
-    <!-- NAV -->
-    <nav>
-        <div class="nav-logo">Accrosian</div>
-        <ul class="nav-links">
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Industries</a></li>
-            <li><a href="#">Case Studies</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Blog</a></li>
-        </ul>
-        <a href="#" class="nav-cta">Get a Quote</a>
-    </nav>
-
     <!-- HERO -->
     <section class="hero">
         <div class="hero-bg"></div>
