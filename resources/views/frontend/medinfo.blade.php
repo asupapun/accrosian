@@ -117,6 +117,7 @@ section {
 h1,
 h2,
 h3 {
+    color: #ffff;
     font-family: var(--ff-head);
 }
 
