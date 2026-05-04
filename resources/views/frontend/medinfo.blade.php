@@ -1326,7 +1326,9 @@ h3 {
 
     <!-- HERO -->
     <section class="hero">
-        <div class="hero-bg"><img src="hero-medinfo.jpeg" alt="Holograms" width="100%" height="100%"></div>
+        <img src="{{ asset('assets/images/hero-banking.jpeg') }}" alt="Hero Background" class="hero-bg-img" />
+        <div class="hero-bg">>
+        </div>
         <div class="container">
             <div class="hero-inner">
                 <div class="hero-content">
