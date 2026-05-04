@@ -75,70 +75,6 @@ body::before {
     opacity: 0.5;
 }
 
-/* ─── NAV ─── */
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 6%;
-    background: rgba(255, 255, 255, 0.88);
-    backdrop-filter: blur(18px);
-    border-bottom: 1px solid rgba(13, 21, 48, 0.08);
-    box-shadow: 0 1px 12px rgba(13, 21, 48, 0.06);
-}
-
-.nav-logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 1.45rem;
-    background: linear-gradient(135deg, var(--navy-700) 30%, var(--orange-500));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -0.02em;
-}
-
-.nav-links {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-}
-
-.nav-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.88rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    transition: color 0.2s;
-}
-
-.nav-links a:hover {
-    color: var(--orange-500);
-}
-
-.nav-cta {
-    background: linear-gradient(135deg, var(--orange-500), var(--orange-400));
-    color: #fff;
-    padding: 10px 24px;
-    border-radius: 8px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    text-decoration: none;
-    letter-spacing: 0.01em;
-    box-shadow: 0 0 20px var(--orange-glow);
-    transition: box-shadow 0.3s, transform 0.2s;
-}
-
-.nav-cta:hover {
-    box-shadow: 0 0 36px var(--orange-glow-strong);
-    transform: translateY(-1px);
-}
-
 /* ─── SECTION UTILITY ─── */
 section {
     position: relative;
@@ -1262,29 +1198,6 @@ h3 {
     background: rgba(249, 115, 22, 0.12);
     border-color: var(--orange-400);
     color: var(--orange-300);
-}
-
-/* ─── FOOTER ─── */
-footer {
-    background: var(--navy-900);
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    padding: 40px 0;
-    text-align: center;
-}
-
-.footer-logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 1.2rem;
-    background: linear-gradient(135deg, #fff 30%, var(--orange-400));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 12px;
-}
-
-footer p {
-    color: rgba(255, 255, 255, 0.35);
-    font-size: 0.82rem;
 }
 
 /* ─── ANIMATIONS ─── */
