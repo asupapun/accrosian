@@ -85,9 +85,10 @@ section {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1440px;
+    padding: 0 clamp(16px, 4vw, 80px);
     margin: 0 auto;
-    padding: 0 6%;
+
 }
 
 .label-pill {
