@@ -198,7 +198,7 @@ h3 {
 }
 
 .hero-sub {
-    color: var(--text-secondary);
+    color: #ffff;
     font-size: 1.05rem;
     font-weight: 300;
     max-width: 520px;
