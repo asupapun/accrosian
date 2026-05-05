@@ -893,7 +893,7 @@ h4 {
 
 .pw-lbl {
     font-size: .76rem;
-    color: var(--text-muted);
+    color: #ffff;
     min-width: 130px
 }
 
@@ -942,7 +942,7 @@ h4 {
     padding: 3px 11px;
     border-radius: 6px;
     font-size: .7rem;
-    color: var(--text-muted)
+    color: #ffff;
 }
 
 /* ─── PROCESS ─── */
