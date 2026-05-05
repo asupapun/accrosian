@@ -616,7 +616,8 @@ h4 {
     font-weight: 800;
     letter-spacing: -.02em;
     margin-bottom: 22px;
-    line-height: 1.2
+    line-height: 1.2;
+    color: var(--navy-800);
 }
 
 .overview-text h2 em {
@@ -627,7 +628,7 @@ h4 {
 }
 
 .overview-text p {
-    color: var(--text-secondary);
+    color: #0000;
     margin-bottom: 14px;
     font-weight: 300;
     line-height: 1.82
