@@ -121,6 +121,7 @@ h4 {
 .sec-head h2 {
     font-size: clamp(1.9rem, 3.5vw, 2.85rem);
     font-weight: 800;
+    font-style: var(--ff-head);
     letter-spacing: -.025em;
     margin-bottom: 14px;
     color: var(--navy-800);
@@ -128,7 +129,7 @@ h4 {
 }
 
 .sec-head h2 em {
-    font-style: normal;
+    font-style: var(--ff-head);
     background: linear-gradient(135deg, var(--orange-400), var(--orange-300));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -798,7 +799,7 @@ h4 {
 
 /* ─── WHY US ─── */
 .why {
-    padding: 96px 0
+    padding: 60px 0
 }
 
 .why-grid {
