@@ -35,6 +35,9 @@
     --text-muted: #4f607e;
     --r: 16px;
     --r-sm: 10px;
+    --ff-head: 'Sora', sans-serif;
+    --ff-body: 'DM Sans', sans-serif;
+    --ff-mono: 'JetBrains Mono', monospace;
 }
 
 *,
@@ -50,7 +53,7 @@ html {
 }
 
 body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: var(--ff-body);
     background: var(--navy-950);
     color: var(--text-primary);
     line-height: 1.65;
@@ -106,7 +109,7 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: 'Syne', sans-serif
+    font-family: var(--ff-head);
 }
 
 .sec-head {
