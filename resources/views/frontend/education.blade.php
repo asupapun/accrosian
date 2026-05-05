@@ -721,8 +721,7 @@ h4 {
 
 /* ─── SERVICES ─── */
 .services {
-    padding: 96px 0;
-    background: linear-gradient(to bottom, transparent, rgba(11, 18, 40, .5), transparent)
+    padding: 60px 0;
 }
 
 .svc-grid {
@@ -732,8 +731,8 @@ h4 {
 }
 
 .svc-card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    background: var(--navy-600);
+    border: 1px solid var(--navy-800);
     border-radius: var(--r);
     padding: 26px 22px;
     backdrop-filter: blur(16px);
@@ -788,12 +787,13 @@ h4 {
     font-family: 'Syne', sans-serif;
     font-size: .92rem;
     font-weight: 700;
-    margin-bottom: 8px
+    margin-bottom: 8px;
+    color: #ffff;
 }
 
 .svc-card p {
     font-size: .8rem;
-    color: var(--text-muted);
+    color: #ffff;
     line-height: 1.65
 }
 
