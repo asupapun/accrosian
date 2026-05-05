@@ -835,7 +835,7 @@ h4 {
 }
 
 .why-num {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--ff-mono);
     font-size: .68rem;
     font-weight: 800;
     color: var(--orange-500);
@@ -959,8 +959,8 @@ h4 {
 }
 
 .proc-card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    background: var(--navy-600);
+    border: 1px solid var(--navy-700);
     border-radius: var(--r);
     padding: 26px;
     backdrop-filter: blur(16px);
@@ -999,7 +999,7 @@ h4 {
 
 .proc-card p {
     font-size: .8rem;
-    color: var(--text-muted);
+    color: var(--navy-900);
     line-height: 1.65
 }
 
