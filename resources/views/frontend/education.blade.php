@@ -629,7 +629,7 @@ h4 {
 }
 
 .overview-text p {
-    color: #0000;
+    color: var(--navy-950);
     margin-bottom: 14px;
     font-weight: 600;
     line-height: 1.82
