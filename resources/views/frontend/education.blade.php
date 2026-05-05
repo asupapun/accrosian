@@ -1015,8 +1015,8 @@ h4 {
 }
 
 .uc-card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    background: var(--navy-600);
+    border: 1px solid var(--gradient-orange);
     border-radius: var(--r);
     padding: 34px;
     backdrop-filter: blur(16px);
@@ -1029,7 +1029,7 @@ h4 {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(249, 115, 22, .05) 0%, transparent 55%);
+    background: var(--navy-600);
     opacity: 0;
     transition: opacity .3s;
 }
