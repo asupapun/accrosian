@@ -1023,6 +1023,7 @@ h4 {
     transition: all .35s;
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
 
 .uc-card::before {
@@ -1032,6 +1033,8 @@ h4 {
     background: var(--navy-600);
     opacity: 0;
     transition: opacity .3s;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .uc-card:hover {
@@ -1041,7 +1044,7 @@ h4 {
 }
 
 .uc-card:hover::before {
-    opacity: 1
+    opacity: 0.15;
 }
 
 .uc-badge {
