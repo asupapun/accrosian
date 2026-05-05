@@ -623,7 +623,7 @@ h4 {
 
 .overview-text h2 em {
     font-style: normal;
-    background: linear-gradient(135deg, var(--orange-400), var(--orange-300));
+    background: var(--gradient-orange);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent
 }
@@ -631,7 +631,7 @@ h4 {
 .overview-text p {
     color: #0000;
     margin-bottom: 14px;
-    font-weight: 300;
+    font-weight: 600;
     line-height: 1.82
 }
 
