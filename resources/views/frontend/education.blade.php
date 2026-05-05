@@ -830,7 +830,7 @@ h4 {
 
 .why-item:hover {
     border-color: var(--navy-900);
-    box-shadow: 0 4px 22px var(--orange-glow);
+    box-shadow: 0 4px 22px var(--navy-800);
     transform: translateX(5px)
 }
 
