@@ -1087,7 +1087,7 @@ h4 {
 }
 
 .uc-tag {
-    background: var(--navy-700);
+    background: var(--navy-800);
     border: 1px solid var(--glass-border);
     padding: 3px 11px;
     border-radius: 6px;
