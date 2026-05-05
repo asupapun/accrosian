@@ -820,8 +820,8 @@ h4 {
     align-items: center;
     gap: 18px;
     padding: 18px 22px;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    background: var(--navy-600);
+    border: 1px solid var(--navy-700);
     border-radius: var(--r-sm);
     backdrop-filter: blur(16px);
     transition: all .3s;
@@ -829,7 +829,7 @@ h4 {
 }
 
 .why-item:hover {
-    border-color: var(--glass-border-hover);
+    border-color: var(--navy-900);
     box-shadow: 0 4px 22px var(--orange-glow);
     transform: translateX(5px)
 }
@@ -852,7 +852,7 @@ h4 {
 
 .why-content p {
     font-size: .8rem;
-    color: var(--text-muted)
+    color: #ffff;
 }
 
 .why-arr {
@@ -867,8 +867,8 @@ h4 {
 
 /* perf widget */
 .perf-widget {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    background: var(--navy-600);
+    border: 1px solid var(--navy-700);
     border-radius: var(--r);
     padding: 30px;
     backdrop-filter: blur(20px);
@@ -878,7 +878,7 @@ h4 {
 .pw-title {
     font-family: 'Syne', sans-serif;
     font-size: .8rem;
-    color: var(--text-secondary);
+    color: #ffff;
     font-weight: 600;
     letter-spacing: .05em;
     margin-bottom: 18px
@@ -929,6 +929,7 @@ h4 {
 .pw-tags {
     display: flex;
     flex-wrap: wrap;
+    color: #ffff;
     gap: 7px;
     margin-top: 22px;
     padding-top: 20px;
