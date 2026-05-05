@@ -1087,12 +1087,12 @@ h4 {
 }
 
 .uc-tag {
-    background: rgba(255, 255, 255, .03);
+    background: var(--navy-900);
     border: 1px solid var(--glass-border);
     padding: 3px 11px;
     border-radius: 6px;
     font-size: .72rem;
-    color: var(--text-muted)
+    color: #ffff;
 }
 
 /* ─── FEATURES ─── */
