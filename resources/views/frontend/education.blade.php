@@ -135,7 +135,7 @@ h4 {
 }
 
 .sec-head p {
-    color: #0000;
+    color: var(--navy-900);
     font-size: 1rem;
     max-width: 560px;
     margin: 0 auto;
@@ -155,8 +155,7 @@ h4 {
     position: absolute;
     inset: 0;
     z-index: 0;
-    background:
-        radial-gradient(ellipse 75% 60% at 68% 38%, rgba(249, 115, 22, .11) 0%, transparent 62%),
+    background: radial-gradient(ellipse 75% 60% at 68% 38%, rgba(249, 115, 22, .11) 0%, transparent 62%),
         radial-gradient(ellipse 50% 50% at 10% 85%, rgba(11, 18, 40, .95) 0%, transparent 60%),
         linear-gradient(160deg, var(--navy-950) 0%, var(--navy-900) 100%);
 }
@@ -165,8 +164,7 @@ h4 {
     content: '';
     position: absolute;
     inset: 0;
-    background-image:
-        linear-gradient(rgba(255, 255, 255, .022) 1px, transparent 1px),
+    background-image: linear-gradient(rgba(255, 255, 255, .022) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, .022) 1px, transparent 1px);
     background-size: 58px 58px;
     mask-image: linear-gradient(to bottom, transparent, black 18%, black 68%, transparent);
@@ -1296,8 +1294,7 @@ h4 {
     content: '';
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(ellipse 58% 78% at 50% 100%, rgba(249, 115, 22, .16) 0%, transparent 68%),
+    background: radial-gradient(ellipse 58% 78% at 50% 100%, rgba(249, 115, 22, .16) 0%, transparent 68%),
         radial-gradient(ellipse 38% 38% at 18% 8%, rgba(249, 115, 22, .07) 0%, transparent 60%);
     pointer-events: none;
 }
