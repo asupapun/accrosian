@@ -683,7 +683,7 @@ h4 {
 }
 
 .ovc {
-    background: var(--glass-bg);
+    background: var(--navy-700);
     border: 1px solid var(--glass-border);
     border-radius: var(--r);
     padding: 22px;
@@ -715,7 +715,7 @@ h4 {
 
 .ovc p {
     font-size: .8rem;
-    color: var(--text-muted);
+    color: #ffff;
     line-height: 1.6
 }
 
