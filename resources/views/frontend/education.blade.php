@@ -999,7 +999,7 @@ h4 {
 
 .proc-card p {
     font-size: .8rem;
-    color: var(--navy-900);
+    color: #ffff;
     line-height: 1.65
 }
 
