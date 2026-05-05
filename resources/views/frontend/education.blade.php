@@ -1680,7 +1680,7 @@ h4 {
                 <div>
                     <div class="pill"><span class="pill-dot"></span>Why Choose Accrosian</div>
                     <h2
-                        style="font-style:var(--ff-head);background:var(--navy-900);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2">
+                        style="font-style:var(--ff-head);color:var(--navy-900);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2">
                         Built for Platforms That <em
                             style="font-style:var(--ff-head);background:linear-gradient(135deg,var(--orange-400),var(--orange-300));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Cannot
                             Fail</em></h2>
