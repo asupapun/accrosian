@@ -647,8 +647,8 @@ h4 {
     align-items: flex-start;
     gap: 13px;
     padding: 13px 17px;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    background: var(--navy-600);
+    border: 1px solid var(--navy-800);
     border-radius: var(--r-sm);
     backdrop-filter: blur(10px);
     transition: border-color .3s;
@@ -673,7 +673,7 @@ h4 {
 
 .ov-text span {
     font-size: .8rem;
-    color: var(--text-secondary)
+    color: #ffff;
 }
 
 .ov-cards {
@@ -683,8 +683,8 @@ h4 {
 }
 
 .ovc {
-    background: var(--navy-700);
-    border: 1px solid var(--navy-600);
+    background: var(--navy-600);
+    border: 1px solid var(--navy-700);
     border-radius: var(--r);
     padding: 22px;
     backdrop-filter: blur(16px);
