@@ -628,9 +628,9 @@ h4 {
 }
 
 .overview-text p {
-    color: var(--navy-950);
+    color: var(--navy-900);
     margin-bottom: 14px;
-    font-weight: 600;
+    font-weight: 300;
     line-height: 1.82
 }
 
