@@ -1023,7 +1023,7 @@ h4 {
     transition: all .35s;
     position: relative;
     overflow: hidden;
-    z-index: 1;
+    z-index: 2;
 }
 
 .uc-card::before {
