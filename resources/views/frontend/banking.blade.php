@@ -40,6 +40,7 @@
     --shadow-card: 0 2px 8px rgba(4, 13, 26, .06), 0 0 0 1px rgba(4, 13, 26, .06);
     --shadow-hover: 0 16px 48px rgba(26, 79, 214, .14), 0 4px 16px rgba(26, 79, 214, .08);
     --shadow-orange: 0 8px 30px rgba(249, 115, 22, .3);
+    --gradient-orange: linear-gradient(135deg, #e8750a, #f59332);
     --r: 12px;
     --r2: 20px;
     --r3: 28px;

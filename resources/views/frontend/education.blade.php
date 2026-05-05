@@ -33,6 +33,7 @@
     --text-primary: #eef2ff;
     --text-secondary: #8fa0c0;
     --text-muted: #4f607e;
+    --gradient-orange: linear-gradient(135deg, #e8750a, #f59332);
     --r: 16px;
     --r-sm: 10px;
     --ff-head: 'Sora', sans-serif;
@@ -211,7 +212,7 @@ h4 {
 
 .hero h1 em {
     font-style: normal;
-    background: linear-gradient(135deg, var(--orange-400), var(--orange-300));
+    background: var(--gradient-orange);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }

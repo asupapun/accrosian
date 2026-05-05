@@ -40,6 +40,7 @@
     --glass-bg: rgba(13, 21, 48, 0.6);
     --glass-border: rgba(255, 255, 255, 0.08);
     --glass-border-hover: rgba(249, 115, 22, 0.40);
+    --gradient-orange: linear-gradient(135deg, #e8750a, #f59332);
     --radius: 16px;
     --radius-sm: 10px;
     --ff-head: 'Sora', sans-serif;
