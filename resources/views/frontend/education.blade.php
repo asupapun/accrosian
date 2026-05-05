@@ -1334,28 +1334,6 @@ h4 {
     text-decoration: none
 }
 
-/* ─── FOOTER ─── */
-footer {
-    background: var(--navy-900);
-    border-top: 1px solid var(--glass-border);
-    padding: 38px 0;
-    text-align: center
-}
-
-.footer-logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 1.2rem;
-    background: linear-gradient(135deg, #fff 30%, var(--orange-400));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 10px
-}
-
-footer p {
-    color: var(--text-muted);
-    font-size: .8rem
-}
 
 /* ─── ANIMATIONS ─── */
 @keyframes fadeUp {
