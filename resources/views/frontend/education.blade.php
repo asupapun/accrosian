@@ -648,14 +648,14 @@ h4 {
     gap: 13px;
     padding: 13px 17px;
     background: var(--navy-600);
-    border: 1px solid var(--navy-800);
+    border: 1px solid var(--navy-700);
     border-radius: var(--r-sm);
     backdrop-filter: blur(10px);
     transition: border-color .3s;
 }
 
 .ov-item:hover {
-    border-color: var(--glass-border-hover)
+    border-color: var(--navy-900);
 }
 
 .ov-icon {
