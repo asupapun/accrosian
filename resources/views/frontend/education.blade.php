@@ -206,6 +206,7 @@ h4 {
     line-height: 1.07;
     letter-spacing: -.03em;
     margin-bottom: 22px;
+    color: #ffff;
 }
 
 .hero h1 em {
