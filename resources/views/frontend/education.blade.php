@@ -684,7 +684,7 @@ h4 {
 
 .ovc {
     background: var(--navy-700);
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--navy-600);
     border-radius: var(--r);
     padding: 22px;
     backdrop-filter: blur(16px);
@@ -692,8 +692,8 @@ h4 {
 }
 
 .ovc:hover {
-    border-color: var(--glass-border-hover);
-    box-shadow: 0 0 28px var(--orange-glow);
+    border-color: var(--navy-900);
+    box-shadow: 0 0 28px var(--navy-600);
     transform: translateY(-3px)
 }
 
