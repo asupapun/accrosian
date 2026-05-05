@@ -55,7 +55,7 @@ html {
 body {
     font-family: var(--ff-body);
     background: #ffff;
-    color: #0000;
+    color: var(--text-primary);
     line-height: 1.65;
     overflow-x: hidden;
 }
