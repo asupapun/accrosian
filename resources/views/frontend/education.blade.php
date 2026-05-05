@@ -123,6 +123,7 @@ h4 {
     font-weight: 800;
     letter-spacing: -.025em;
     margin-bottom: 14px;
+    color: var(--navy-800);
     line-height: 1.1;
 }
 
@@ -134,7 +135,7 @@ h4 {
 }
 
 .sec-head p {
-    color: var(--text-secondary);
+    color: #0000;
     font-size: 1rem;
     max-width: 560px;
     margin: 0 auto;
