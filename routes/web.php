@@ -9,6 +9,7 @@ use App\Http\Controllers\Frontend\StudentController;
 use App\Http\Controllers\Admin\StudentRegistrationController;
 use App\Http\Controllers\Frontend\BankingController;
 use App\Http\Controllers\Frontend\MedinfoController;
+use App\Http\Controllers\Frontend\EducationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,7 @@ Route::post('/student-registration', [StudentController::class, 'store'])->name(
 Route::get('/airs', [App\Http\Controllers\Frontend\AirsController::class, 'index'])->name('airs');
 Route::get('/industries/banking', [BankingController::class, 'index'])->name('industries.banking');
 Route::get('/industries/medinfo', [MedinfoController::class, 'index'])->name('industries.medinfo');
+Route::get('/industries/education', [EducationController::class, 'index'])->name('industries.education');
 /*
 |--------------------------------------------------------------------------
 | Auth Routes
