@@ -33,6 +33,7 @@
     --gray-500: #64748b;
     --gray-700: #334155;
     --gray-900: #0f172a;
+    --glass-border-hover: rgba(249, 115, 22, .38);
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, .08), 0 1px 2px rgba(0, 0, 0, .05);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, .08), 0 2px 6px rgba(0, 0, 0, .05);
     --shadow-lg: 0 12px 40px rgba(0, 0, 0, .1), 0 4px 12px rgba(0, 0, 0, .06);
@@ -617,8 +618,8 @@
 }
 
 .bk-card {
-    background: var(--white);
-    border: 1px solid var(--gray-100);
+    background: var(--navy-3);
+    border: 1px solid var(--navy-2);
     border-radius: var(--r2);
     padding: 34px 28px 28px;
     box-shadow: var(--shadow-card);
@@ -643,9 +644,9 @@
 }
 
 .bk-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-hover);
-    border-color: rgba(46, 106, 255, .15);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-2);
+    transform: translateY(-4px)
 }
 
 .bk-card:hover::before {
