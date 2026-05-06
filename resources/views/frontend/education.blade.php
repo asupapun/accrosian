@@ -602,7 +602,7 @@ h4 {
 
 /* ─── OVERVIEW ─── */
 .overview {
-    padding: 96px 0
+    padding: 60px 0
 }
 
 .overview-grid {
@@ -947,7 +947,7 @@ h4 {
 
 /* ─── PROCESS ─── */
 .process {
-    padding: 96px 0;
+    padding: 60px 0;
     background: linear-gradient(to bottom, transparent, rgba(11, 18, 40, .4), transparent)
 }
 
@@ -1005,7 +1005,7 @@ h4 {
 
 /* ─── USE CASES ─── */
 .usecases {
-    padding: 96px 0
+    padding: 60px 0
 }
 
 .uc-grid {
@@ -1097,7 +1097,7 @@ h4 {
 
 /* ─── FEATURES ─── */
 .features {
-    padding: 96px 0;
+    padding: 60px 0;
     background: #ffff;
 }
 
