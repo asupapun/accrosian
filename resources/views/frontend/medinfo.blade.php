@@ -1004,7 +1004,7 @@ h3 {
 }
 
 .features {
-    padding: 100px 0;
+    padding: 60px 0;
     background: var(--bg-page);
 }
 
@@ -1015,8 +1015,8 @@ h3 {
 }
 
 .feat-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    background: var(--navy-600);
+    border: 1px solid var(--navy-700);
     border-radius: var(--radius);
     padding: 24px 18px;
     text-align: center;
@@ -1025,9 +1025,9 @@ h3 {
 }
 
 .feat-card:hover {
-    border-color: var(--card-border-hover);
-    box-shadow: var(--card-shadow-hover);
-    transform: translateY(-4px);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-2);
+    transform: translateY(-4px)
 }
 
 .feat-icon {
@@ -1048,21 +1048,21 @@ h3 {
 }
 
 .feat-card h3 {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--ff-head);
     font-size: 0.88rem;
     font-weight: 700;
     margin-bottom: 8px;
-    color: var(--navy-800);
+    color: #ffff;
 }
 
 .feat-card p {
     font-size: 0.78rem;
-    color: var(--text-muted);
+    color: #ffff;
     line-height: 1.6;
 }
 
 .results {
-    padding: 100px 0;
+    padding: 60px 0;
     background: var(--bg-section-alt);
 }
 
@@ -1106,7 +1106,7 @@ h3 {
 }
 
 .result-num {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--ff-head);
     font-size: 2.8rem;
     font-weight: 800;
     background: linear-gradient(135deg, var(--orange-500), var(--orange-400));
