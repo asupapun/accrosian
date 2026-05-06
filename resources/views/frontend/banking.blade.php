@@ -782,8 +782,8 @@
     display: flex;
     align-items: flex-start;
     gap: 16px;
-    background: var(--white);
-    border: 1px solid var(--gray-100);
+    background: var(--navy-3);
+    border: 1px solid var(--navy-2);
     border-radius: 14px;
     padding: 18px 20px;
     box-shadow: var(--shadow-sm);
@@ -791,9 +791,9 @@
 }
 
 .bk-feat-item:hover {
-    border-color: rgba(249, 115, 22, .25);
-    box-shadow: 0 6px 24px rgba(249, 115, 22, .1);
-    transform: translateX(4px);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-800);
+    transform: translateY(-4px)
 }
 
 .bk-feat-ico {
