@@ -1275,7 +1275,7 @@ h4 {
 
 .res-desc {
     font-size: .76rem;
-    color: var(--text-muted);
+    color: #ffff;
     line-height: 1.6
 }
 
