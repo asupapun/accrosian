@@ -797,17 +797,17 @@ h3 {
 
 .cap-visual {
     position: relative;
-    background: var(--navy-800);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: var(--navy-600);
+    border: 1px solid var(--navy-700);
     border-radius: var(--radius);
     padding: 32px;
     box-shadow: 0 24px 60px rgba(13, 21, 48, 0.18);
 }
 
 .cap-visual h3 {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--ff-head);
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: #ffff;
     font-weight: 600;
     margin-bottom: 20px;
     letter-spacing: 0.05em;
@@ -822,7 +822,7 @@ h3 {
 
 .perf-label {
     font-size: 0.78rem;
-    color: rgba(255, 255, 255, 0.45);
+    color: #ffff;
     min-width: 120px;
 }
 
@@ -837,7 +837,7 @@ h3 {
 .perf-bar-fill {
     height: 100%;
     border-radius: 3px;
-    background: linear-gradient(to right, var(--orange-500), var(--orange-300));
+    background: var(--gradient-orange);
     animation: fillBar 1.5s ease-out forwards;
 }
 
@@ -1150,8 +1150,7 @@ h3 {
     content: '';
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(ellipse 60% 80% at 50% 100%, rgba(249, 115, 22, 0.18) 0%, transparent 70%),
+    background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(249, 115, 22, 0.18) 0%, transparent 70%),
         radial-gradient(ellipse 40% 40% at 20% 10%, rgba(249, 115, 22, 0.08) 0%, transparent 60%);
     pointer-events: none;
 }
@@ -1612,10 +1611,6 @@ h3 {
                                 <p>Unified content APIs serving web, mobile, OTT, and broadcast from a single source of
                                     truth.</p>
                             </div>
-                            <svg class="cap-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="9 18 15 12 9 6" />
-                            </svg>
                         </div>
                         <div class="cap-item">
                             <span class="cap-num">03</span>
@@ -1624,10 +1619,6 @@ h3 {
                                 <p>Collaborative filtering and deep learning models trained on your audience's
                                     behavioral data.</p>
                             </div>
-                            <svg class="cap-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="9 18 15 12 9 6" />
-                            </svg>
                         </div>
                         <div class="cap-item">
                             <span class="cap-num">04</span>
@@ -1635,10 +1626,6 @@ h3 {
                                 <h4>Scalable Cloud Infrastructure</h4>
                                 <p>Auto-scaling architectures that absorb 10× traffic spikes without degradation.</p>
                             </div>
-                            <svg class="cap-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="9 18 15 12 9 6" />
-                            </svg>
                         </div>
                         <div class="cap-item">
                             <span class="cap-num">05</span>
@@ -1647,10 +1634,6 @@ h3 {
                                 <p>SOC 2 compliant architecture with end-to-end encryption, DDoS mitigation, and
                                     zero-trust access.</p>
                             </div>
-                            <svg class="cap-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="9 18 15 12 9 6" />
-                            </svg>
                         </div>
                     </div>
                 </div>
