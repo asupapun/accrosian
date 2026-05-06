@@ -23,6 +23,7 @@
     --orange-500: #f97316;
     --orange-400: #fb923c;
     --orange-300: #fdba74;
+    --black: #000000;
     --orange-glow: rgba(249, 115, 22, .18);
     --orange-glow-md: rgba(249, 115, 22, .28);
     --orange-glow-lg: rgba(249, 115, 22, .38);
@@ -56,7 +57,7 @@ html {
 body {
     font-family: var(--ff-body);
     background: #ffff;
-    color: var(--text-primary);
+    color: var(--black);
     line-height: 1.65;
     overflow-x: hidden;
 }

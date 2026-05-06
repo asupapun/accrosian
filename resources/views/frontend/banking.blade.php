@@ -143,7 +143,7 @@
 
 .bk-sub {
     font-size: 1.05rem;
-    color: #000000;
+    color: var(--black);
     max-width: 580px;
     margin-top: 16px;
     line-height: 1.7;
