@@ -879,7 +879,7 @@ h3 {
 
 .step-card:hover {
     border-color: var(--glass-border-hover);
-    box-shadow: 0 8px 28px var(--navy-2);
+    box-shadow: 0 8px 28px var(--navy-800);
     transform: translateY(-4px)
 }
 
