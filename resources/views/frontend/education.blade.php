@@ -1204,7 +1204,7 @@ h4 {
 .tech-item {
     background: var(--navy-800);
     border: 1px solid rgba(249, 115, 22, .15);
-    color: var(--orange-400);
+    color: #ffff;
     padding: 3px 9px;
     border-radius: 5px;
     font-size: .67rem;
