@@ -750,8 +750,8 @@ h3 {
     align-items: center;
     gap: 20px;
     padding: 20px 24px;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    background: var(--navy-600);
+    border: 1px solid var(--navy-700);
     border-radius: var(--radius-sm);
     box-shadow: var(--card-shadow);
     transition: all 0.3s;
@@ -759,13 +759,13 @@ h3 {
 }
 
 .cap-item:hover {
-    border-color: var(--card-border-hover);
-    box-shadow: var(--card-shadow-hover);
-    transform: translateX(6px);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-800);
+    transform: translateY(-4px)
 }
 
 .cap-num {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--ff-mono);
     font-size: 0.7rem;
     font-weight: 800;
     color: var(--orange-500);
@@ -774,16 +774,16 @@ h3 {
 }
 
 .cap-content h4 {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--ff-head);
     font-size: 0.95rem;
     font-weight: 700;
     margin-bottom: 4px;
-    color: var(--navy-800);
+    color: #ffff;
 }
 
 .cap-content p {
     font-size: 0.82rem;
-    color: var(--text-muted);
+    color: #ffff;
 }
 
 .cap-icon {
