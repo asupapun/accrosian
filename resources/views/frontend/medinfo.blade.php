@@ -1073,7 +1073,7 @@ h3 {
 }
 
 .result-card {
-    background: var(--card-bg);
+    background: var(--navy-600);
     border: 1px solid var(--card-border);
     border-radius: var(--radius);
     padding: 32px 24px;
@@ -1106,10 +1106,10 @@ h3 {
 }
 
 .result-num {
-    font-family: var(--ff-head);
+    font-family: var(--ff-mono);
     font-size: 2.8rem;
     font-weight: 800;
-    background: linear-gradient(135deg, var(--orange-500), var(--orange-400));
+    background: var(--gradient-orange);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 1;
@@ -1117,16 +1117,16 @@ h3 {
 }
 
 .result-label {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--ff-body);
     font-size: 0.9rem;
     font-weight: 700;
     margin-bottom: 8px;
-    color: var(--navy-800);
+    color: #ffff;
 }
 
 .result-desc {
     font-size: 0.78rem;
-    color: var(--text-muted);
+    color: #ffff;
     line-height: 1.6;
 }
 
@@ -1330,7 +1330,7 @@ h3 {
     <!-- HERO -->
     <section class="hero">
         <img src="{{ asset('assets/images/hero-medinfo.jpeg') }}" alt="Hero Background" class="hero-bg-img" />
-        <div class="hero-bg">>
+        <div class="hero-bg">
         </div>
         <div class="container">
             <div class="hero-inner">
