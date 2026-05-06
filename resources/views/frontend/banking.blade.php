@@ -1056,13 +1056,13 @@
     font-family: var(--ff-head);
     font-size: .93rem;
     font-weight: 700;
-    color: var(--navy);
+    color: #ffff;
     margin-bottom: 5px;
 }
 
 .bk-feat-cell-txt p {
     font-size: .82rem;
-    color: #000000;
+    color: #ffff;
     line-height: 1.65;
 }
 
