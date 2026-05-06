@@ -1593,7 +1593,7 @@ h3 {
                         What We Deliver at <em
                             style="font-style:var(--ff-head);background:var(--gradient-orange);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Enterprise
                             Scale</em></h2>
-                    <p style="color:var(--black);margin-bottom:36px;font-weight:300;line-height:1.8;">Every
+                    <p style="color:var(--black);margin-bottom:36px;font-weight:450;line-height:1.8;">Every
                         capability is built for production environments where performance, reliability, and security are
                         non-negotiable.</p>
                     <div class="cap-list">
