@@ -1098,7 +1098,7 @@ h4 {
 /* ─── FEATURES ─── */
 .features {
     padding: 96px 0;
-    background: linear-gradient(to bottom, transparent, rgba(11, 18, 40, .4), transparent)
+    background: #ffff;
 }
 
 .feat-grid {
@@ -1108,8 +1108,8 @@ h4 {
 }
 
 .feat-card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    background: var(--navy-600);
+    border: 1px solid var(--navy-900);
     border-radius: var(--r);
     padding: 22px 16px;
     text-align: center;
@@ -1119,7 +1119,7 @@ h4 {
 
 .feat-card:hover {
     border-color: var(--glass-border-hover);
-    box-shadow: 0 8px 28px var(--orange-glow);
+    box-shadow: 0 8px 28px var(--navy-800);
     transform: translateY(-4px)
 }
 
@@ -1141,7 +1141,7 @@ h4 {
 }
 
 .feat-card h3 {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--ff-head);
     font-size: .86rem;
     font-weight: 700;
     margin-bottom: 7px
@@ -1149,7 +1149,7 @@ h4 {
 
 .feat-card p {
     font-size: .76rem;
-    color: var(--text-muted);
+    color: #ffff;
     line-height: 1.6
 }
 
