@@ -868,8 +868,8 @@ h3 {
 }
 
 .step-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    background: var(--navy-600);
+    border: 1px solid var(--navy-700);
     border-radius: var(--radius);
     padding: 28px;
     box-shadow: var(--card-shadow);
@@ -878,12 +878,12 @@ h3 {
 }
 
 .step-card:hover {
-    border-color: var(--card-border-hover);
-    box-shadow: var(--card-shadow-hover);
-    transform: translateY(-4px);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-2);
+    transform: translateY(-4px)
 }
 
-.step-num {
+/* .step-num {
     font-family: 'Syne', sans-serif;
     font-size: 2.5rem;
     font-weight: 800;
@@ -892,7 +892,7 @@ h3 {
     top: 16px;
     right: 20px;
     line-height: 1;
-}
+} */
 
 .step-icon {
     color: var(--orange-500);
@@ -900,16 +900,16 @@ h3 {
 }
 
 .step-card h3 {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--ff-head);
     font-size: 1rem;
     font-weight: 700;
     margin-bottom: 8px;
-    color: var(--navy-800);
+    color: #ffff;
 }
 
 .step-card p {
     font-size: 0.82rem;
-    color: var(--text-muted);
+    color: #ffff;
     line-height: 1.65;
 }
 
@@ -1678,7 +1678,7 @@ h3 {
 
                     <div style="margin-top:28px;padding-top:24px;border-top:1px solid var(--glass-border);">
                         <div
-                            style="font-size:0.75rem;color:var(--text-muted);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.06em;">
+                            style="font-size:0.75rem;color:#ffff;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.06em;">
                             Tech Stack</div>
                         <div style="display:flex;flex-wrap:wrap;gap:8px;">
                             <span
@@ -1711,7 +1711,6 @@ h3 {
             </div>
             <div class="process-steps">
                 <div class="step-card">
-                    <div class="step-num">01</div>
                     <div class="step-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -1724,7 +1723,6 @@ h3 {
                         map the full system before a line of code is written.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-num">02</div>
                     <div class="step-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -1738,7 +1736,6 @@ h3 {
                         data pipelines, and cloud infrastructure for your load profile.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-num">03</div>
                     <div class="step-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -1752,7 +1749,6 @@ h3 {
                         speed, and cross-device parity.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-num">04</div>
                     <div class="step-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -1765,7 +1761,6 @@ h3 {
                         CRM, ad platforms, and data warehouses.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-num">05</div>
                     <div class="step-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -1777,7 +1772,6 @@ h3 {
                         before any launch gate.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-num">06</div>
                     <div class="step-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
