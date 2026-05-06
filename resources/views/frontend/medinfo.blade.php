@@ -856,7 +856,7 @@ h3 {
 }
 
 .process {
-    padding: 100px 0;
+    padding: 60px 0;
     background: var(--bg-page);
 }
 
@@ -914,7 +914,7 @@ h3 {
 }
 
 .use-cases {
-    padding: 100px 0;
+    padding: 60px 0;
     background: var(--bg-section-alt);
 }
 
@@ -925,8 +925,8 @@ h3 {
 }
 
 .uc-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    background: var(--navy-600);
+    border: 1px solid var(--navy-700);
     border-radius: var(--radius);
     padding: 36px;
     box-shadow: var(--card-shadow);
@@ -945,9 +945,9 @@ h3 {
 }
 
 .uc-card:hover {
-    border-color: var(--card-border-hover);
-    box-shadow: var(--card-shadow-hover);
-    transform: translateY(-4px);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-800);
+    transform: translateY(-4px)
 }
 
 .uc-card:hover::before {
