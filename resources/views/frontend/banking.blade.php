@@ -1181,9 +1181,9 @@
 }
 
 .bk-testi:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-    border-color: rgba(249, 115, 22, .15);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-2);
+    transform: translateY(-4px)
 }
 
 .bk-stars {
@@ -1195,7 +1195,7 @@
 
 .bk-testi-q {
     font-size: .9rem;
-    color: var(--gray-700);
+    color: #0000;
     line-height: 1.75;
     margin-bottom: 22px;
     font-style: italic;
@@ -1230,7 +1230,7 @@
 
 .bk-testi-info span {
     font-size: .75rem;
-    color: var(--gray-400);
+    color: #0000;
 }
 
 /* ═══════════════════════════════════════════════
