@@ -1214,7 +1214,6 @@ h4 {
 /* ─── RESULTS ─── */
 .results {
     padding: 60px 0;
-    background: linear-gradient(to bottom, transparent, rgba(11, 18, 40, .45), transparent)
 }
 
 .res-grid {
@@ -1224,8 +1223,8 @@ h4 {
 }
 
 .res-card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    background: var(--navy-600);
+    border: 1px solid var(--navy-900);
     border-radius: var(--r);
     padding: 30px 22px;
     text-align: center;
@@ -1249,7 +1248,7 @@ h4 {
 
 .res-card:hover {
     border-color: var(--glass-border-hover);
-    box-shadow: 0 12px 40px var(--orange-glow)
+    box-shadow: 0 12px 40px var(--navy-800)
 }
 
 .res-card:hover::before {
