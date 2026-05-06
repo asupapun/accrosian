@@ -1231,7 +1231,7 @@
 
 .bk-testi-info span {
     font-size: .75rem;
-    color: #0000;
+    color: var(--black);
 }
 
 /* ═══════════════════════════════════════════════
