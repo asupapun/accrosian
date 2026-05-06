@@ -529,7 +529,7 @@ h3 {
 
 /* ─── OVERVIEW ─── */
 .overview {
-    padding: 100px 0;
+    padding: 60px 0;
     background: var(--bg-section-alt);
 }
 
@@ -662,8 +662,8 @@ h3 {
 }
 
 .sol-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    background: var(--navy-600);
+    border: 1px solid var(--navy-700);
     border-radius: var(--radius);
     padding: 28px 24px;
     box-shadow: var(--card-shadow);
@@ -686,9 +686,9 @@ h3 {
 }
 
 .sol-card:hover {
-    border-color: var(--card-border-hover);
-    box-shadow: var(--card-shadow-hover);
-    transform: translateY(-5px);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-800);
+    transform: translateY(-4px)
 }
 
 .sol-card:hover::after {
@@ -718,12 +718,12 @@ h3 {
     font-size: 0.95rem;
     font-weight: 700;
     margin-bottom: 10px;
-    color: var(--navy-800);
+    color: #ffff;
 }
 
 .sol-card p {
     font-size: 0.82rem;
-    color: var(--text-muted);
+    color: #ffff;
     line-height: 1.65;
 }
 
