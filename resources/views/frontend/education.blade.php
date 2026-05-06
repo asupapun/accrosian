@@ -1288,7 +1288,7 @@ h4 {
     position: relative;
     border-radius: 22px;
     overflow: hidden;
-    background: linear-gradient(135deg, var(--navy-700) 0%, var(--navy-800) 100%);
+    background: var(--gradient-orange);
     border: 1px solid var(--glass-border);
     padding: 76px 56px;
     text-align: center;
@@ -1473,10 +1473,7 @@ h4 {
         <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-inner">
-
                 <div class="hero-content">
-                    <div class="hero-eyebrow">Education Industry Solutions</div>
-                    <div class="pill"><span class="pill-dot"></span>EdTech & Digital Learning</div>
                     <h1 class="fu fu1">Smart Digital Solutions for <em>Modern Education</em></h1>
                     <p class="hero-sub fu fu2">Transform learning experiences with scalable, interactive, and
                         data-driven education platforms built for institutions, startups, and enterprises.</p>

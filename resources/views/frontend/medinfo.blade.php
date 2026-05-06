@@ -164,26 +164,6 @@ h3 {
     padding: 80px 0;
 }
 
-.hero-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--text-muted);
-    font-size: 0.82rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    font-weight: 500;
-    margin-bottom: 24px;
-}
-
-.hero-eyebrow::before {
-    content: '';
-    display: block;
-    width: 28px;
-    height: 1px;
-    background: linear-gradient(to right, var(--orange-500), transparent);
-}
-
 .hero h1 {
     font-size: clamp(2.4rem, 4.5vw, 3.8rem);
     font-weight: 800;
@@ -1335,11 +1315,6 @@ h3 {
         <div class="container">
             <div class="hero-inner">
                 <div class="hero-content">
-                    <div class="hero-eyebrow">Media & Information Services</div>
-                    <div class="label-pill">
-                        <span></span>
-                        Enterprise Solutions
-                    </div>
                     <h1 class="fade-up fade-up-1">
                         Scalable Platforms for the <em>Digital Media Era</em>
                     </h1>
