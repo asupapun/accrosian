@@ -692,9 +692,9 @@ h4 {
 }
 
 .ovc:hover {
-    border-color: var(--navy-900);
-    box-shadow: 0 0 28px var(--navy-600);
-    transform: translateY(-3px)
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-800);
+    transform: translateY(-4px)
 }
 
 .ovc.span2 {
@@ -756,8 +756,8 @@ h4 {
 
 .svc-card:hover {
     border-color: var(--glass-border-hover);
-    box-shadow: 0 8px 40px var(--orange-glow), 0 0 0 1px rgba(249, 115, 22, .10);
-    transform: translateY(-5px)
+    box-shadow: 0 8px 28px var(--navy-800);
+    transform: translateY(-4px)
 }
 
 .svc-card:hover::after {
@@ -829,9 +829,9 @@ h4 {
 }
 
 .why-item:hover {
-    border-color: var(--navy-900);
-    box-shadow: 0 4px 22px var(--navy-800);
-    transform: translateX(5px)
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-800);
+    transform: translateY(-4px)
 }
 
 .why-num {
@@ -970,7 +970,7 @@ h4 {
 
 .proc-card:hover {
     border-color: var(--glass-border-hover);
-    box-shadow: 0 8px 30px var(--orange-glow);
+    box-shadow: 0 8px 28px var(--navy-800);
     transform: translateY(-4px)
 }
 
@@ -1039,7 +1039,7 @@ h4 {
 
 .uc-card:hover {
     border-color: var(--glass-border-hover);
-    box-shadow: 0 12px 50px var(--orange-glow);
+    box-shadow: 0 8px 28px var(--navy-800);
     transform: translateY(-4px)
 }
 
