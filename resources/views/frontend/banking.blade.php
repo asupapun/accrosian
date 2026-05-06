@@ -1018,7 +1018,7 @@
     padding: 34px 28px;
     border-right: 1px solid var(--gray-100);
     border-bottom: 1px solid var(--gray-100);
-    background: var(--white);
+    background: var(--navy-3);
     transition: background .25s;
 }
 
