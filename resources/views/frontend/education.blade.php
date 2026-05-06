@@ -1166,7 +1166,7 @@ h4 {
 
 .tech-cat {
     background: var(--navy-600);
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--navy-900);
     border-radius: var(--r);
     padding: 24px 18px;
     text-align: center;
@@ -1175,9 +1175,9 @@ h4 {
 }
 
 .tech-cat:hover {
-    border-color: var(--navy-800);
-    box-shadow: 0 6px 24px var(--orange-glow);
-    transform: translateY(-3px)
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-800);
+    transform: translateY(-4px)
 }
 
 .tech-cat-icon {
