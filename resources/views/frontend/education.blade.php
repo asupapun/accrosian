@@ -948,7 +948,6 @@ h4 {
 /* ─── PROCESS ─── */
 .process {
     padding: 60px 0;
-    background: linear-gradient(to bottom, transparent, rgba(11, 18, 40, .4), transparent)
 }
 
 .proc-grid {
