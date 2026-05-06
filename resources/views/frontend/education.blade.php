@@ -1288,7 +1288,7 @@ h4 {
     position: relative;
     border-radius: 22px;
     overflow: hidden;
-    background: var(--gradient-orange);
+    background: linear-gradient(135deg, var(--navy-700) 0%, var(--navy-800) 100%);
     border: 1px solid var(--glass-border);
     padding: 76px 56px;
     text-align: center;
@@ -1473,6 +1473,7 @@ h4 {
         <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-inner">
+
                 <div class="hero-content">
                     <h1 class="fu fu1">Smart Digital Solutions for <em>Modern Education</em></h1>
                     <p class="hero-sub fu fu2">Transform learning experiences with scalable, interactive, and
