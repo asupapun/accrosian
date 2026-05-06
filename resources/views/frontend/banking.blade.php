@@ -1033,7 +1033,7 @@
 }
 
 .bk-feat-cell:hover {
-    background: var(--off-white);
+    background: var(--navy-2);
 }
 
 .bk-feat-cell-ico {
