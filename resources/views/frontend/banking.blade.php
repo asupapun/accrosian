@@ -1081,7 +1081,7 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: var(--white);
+    background: var(--navy-2);
     border: 1px solid var(--gray-100);
     padding: 13px 22px;
     border-radius: 100px;
@@ -1090,9 +1090,9 @@
 }
 
 .bk-pill:hover {
-    border-color: rgba(46, 106, 255, .25);
-    box-shadow: 0 8px 28px rgba(26, 79, 214, .12);
-    transform: translateY(-3px);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-2);
+    transform: translateY(-4px)
 }
 
 .bk-pill svg {
@@ -1103,7 +1103,7 @@
 .bk-pill span {
     font-size: .875rem;
     font-weight: 600;
-    color: var(--gray-700);
+    color: #ffff;
 }
 
 /* ═══════════════════════════════════════════════
