@@ -24,6 +24,7 @@
     --orange-300: #fdba74;
     --orange-glow: rgba(249, 115, 22, 0.14);
     --orange-glow-strong: rgba(249, 115, 22, 0.28);
+    --black: #000000;
     /* Light theme tokens */
     --bg-page: #ffffff;
     --bg-section-alt: #f7f8fc;
@@ -86,7 +87,7 @@ section {
 }
 
 .container {
-    max-width: 1250px;
+    max-width: 1200px;
     padding: 0 clamp(16px, 4vw, 80px);
     margin: 0 auto;
 
@@ -194,7 +195,7 @@ h3 {
 
 .hero h1 em {
     font-style: normal;
-    background: linear-gradient(135deg, var(--orange-500) 0%, var(--orange-400) 100%);
+    background: var(--gradient-orange);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -556,7 +557,7 @@ h3 {
 }
 
 .overview-text p {
-    color: var(--text-secondary);
+    color: var(--black);
     margin-bottom: 16px;
     font-weight: 300;
     line-height: 1.8;
@@ -574,16 +575,17 @@ h3 {
     align-items: flex-start;
     gap: 14px;
     padding: 14px 18px;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    background: var(--navy-600);
+    border: 1px solid var(--navy-700);
     border-radius: var(--radius-sm);
     box-shadow: var(--card-shadow);
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .overview-point:hover {
-    border-color: var(--card-border-hover);
-    box-shadow: var(--card-shadow-hover);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-800);
+    transform: translateY(-4px)
 }
 
 .point-icon {
@@ -594,11 +596,11 @@ h3 {
 
 .point-text {
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    color: #ffff;
 }
 
 .point-text strong {
-    color: var(--navy-800);
+    color: #ffff;
     display: block;
     font-weight: 600;
     margin-bottom: 2px;
