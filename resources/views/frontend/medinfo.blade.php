@@ -728,7 +728,7 @@ h3 {
 }
 
 .capabilities {
-    padding: 100px 0;
+    padding: 60px 0;
     background: var(--bg-section-alt);
 }
 
@@ -1589,11 +1589,11 @@ h3 {
                 <div>
                     <div class="label-pill"><span></span>Capabilities</div>
                     <h2
-                        style="font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:16px;line-height:1.2;color:var(--navy-800);">
+                        style="font-family:var(--ff-head);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:16px;line-height:1.2;color:var(--navy-800);">
                         What We Deliver at <em
-                            style="font-style:normal;background:linear-gradient(135deg,var(--orange-500),var(--orange-400));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Enterprise
+                            style="font-style:var(--ff-head);background:var(--gradient-orange);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Enterprise
                             Scale</em></h2>
-                    <p style="color:var(--text-secondary);margin-bottom:36px;font-weight:300;line-height:1.8;">Every
+                    <p style="color:var(--black);margin-bottom:36px;font-weight:300;line-height:1.8;">Every
                         capability is built for production environments where performance, reliability, and security are
                         non-negotiable.</p>
                     <div class="cap-list">
