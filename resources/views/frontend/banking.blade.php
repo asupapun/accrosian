@@ -831,7 +831,7 @@
 
 /* compliance card — right side */
 .bk-comp-card {
-    background: var(--navy);
+    background: var(--navy-3);
     border-radius: var(--r2);
     padding: 36px;
     box-shadow: var(--shadow-xl), 0 0 60px rgba(26, 79, 214, .2);
