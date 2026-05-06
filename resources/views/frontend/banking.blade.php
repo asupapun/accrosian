@@ -78,7 +78,7 @@
 }
 
 .bk-sec {
-    padding: 96px 0;
+    padding: 60px 0;
 }
 
 .bk-sec-alt {
@@ -153,7 +153,7 @@
 
 /* Gradient text */
 .grad-orange {
-    background: linear-gradient(120deg, var(--orange) 0%, var(--orange-2) 50%, var(--gold) 100%);
+    background: var(--gradient-orange);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -186,7 +186,7 @@
 }
 
 .bk-btn-orange {
-    background: linear-gradient(135deg, var(--orange), var(--orange-2));
+    background: var(--gradient-orange);
     color: #fff;
     box-shadow: var(--shadow-orange);
 }
@@ -1544,81 +1544,6 @@ textarea.bk-input {
                             </svg>99.9% Uptime SLA</span>
                     </div>
                 </div>
-
-                {{-- RIGHT: Dashboard Mockup --}}
-                <div class="bk-hero-right">
-                    <div class="bk-dash-wrap">
-                        <div class="bk-dashboard">
-                            <div class="bk-dh">
-                                <span class="bk-dh-brand">ACCROSIAN · FINTECH</span>
-                                <div class="bk-dh-dots">
-                                    <div class="bk-dh-dot" style="background:#f87171"></div>
-                                    <div class="bk-dh-dot" style="background:#fbbf24"></div>
-                                    <div class="bk-dh-dot" style="background:#4ade80"></div>
-                                </div>
-                            </div>
-                            <div class="bk-dbal">
-                                <div class="bk-dbal-lbl">Total Portfolio Value</div>
-                                <div class="bk-dbal-amt">$2,847,293</div>
-                                <div class="bk-dbal-chg">▲ +12.4% this quarter</div>
-                            </div>
-                            <div class="bk-chart">
-                                <div class="bk-cb bk-cb-b" style="height:38%"></div>
-                                <div class="bk-cb bk-cb-b" style="height:58%"></div>
-                                <div class="bk-cb bk-cb-b" style="height:44%"></div>
-                                <div class="bk-cb bk-cb-o" style="height:78%"></div>
-                                <div class="bk-cb bk-cb-b" style="height:52%"></div>
-                                <div class="bk-cb bk-cb-b" style="height:68%"></div>
-                                <div class="bk-cb bk-cb-o" style="height:88%"></div>
-                                <div class="bk-cb bk-cb-b" style="height:62%"></div>
-                                <div class="bk-cb bk-cb-b" style="height:74%"></div>
-                                <div class="bk-cb bk-cb-o" style="height:100%"></div>
-                            </div>
-                            <div class="bk-dstats">
-                                <div class="bk-ds">
-                                    <div class="bk-ds-val grad-blue">10M+</div>
-                                    <div class="bk-ds-lbl">TXNs</div>
-                                </div>
-                                <div class="bk-ds">
-                                    <div class="bk-ds-val grad-orange">50+</div>
-                                    <div class="bk-ds-lbl">Integrations</div>
-                                </div>
-                                <div class="bk-ds">
-                                    <div class="bk-ds-val" style="color:#4ade80">99.9%</div>
-                                    <div class="bk-ds-lbl">Uptime</div>
-                                </div>
-                                <div class="bk-ds">
-                                    <div class="bk-ds-val" style="color:#fbbf24">0</div>
-                                    <div class="bk-ds-lbl">Breaches</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bk-badge bk-badge-1">
-                            <div class="bk-badge-ico"
-                                style="background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#4ade80"
-                                    stroke-width="2.5">
-                                    <polyline points="20 6 9 17 4 12" />
-                                </svg>
-                            </div>
-                            <div class="bk-badge-txt"><strong>Payment Processed</strong><span>$48,200 · just now</span>
-                            </div>
-                        </div>
-                        <div class="bk-badge bk-badge-2">
-                            <div class="bk-badge-ico"
-                                style="background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.3);">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#f97316"
-                                    stroke-width="2.5">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                                </svg>
-                            </div>
-                            <div class="bk-badge-txt"><strong>Fraud Blocked</strong><span>AI detection active</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
