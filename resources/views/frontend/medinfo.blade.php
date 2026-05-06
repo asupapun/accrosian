@@ -1682,17 +1682,17 @@ h3 {
                             Tech Stack</div>
                         <div style="display:flex;flex-wrap:wrap;gap:8px;">
                             <span
-                                style="background:rgba(255,255,255,0.04);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:var(--text-muted);">Kafka</span>
+                                style="background:var(--navy-800);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:#ffff;">Kafka</span>
                             <span
-                                style="background:rgba(255,255,255,0.04);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:var(--text-muted);">Kubernetes</span>
+                                style="background:var(--navy-800);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:#ffff;">Kubernetes</span>
                             <span
-                                style="background:rgba(255,255,255,0.04);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:var(--text-muted);">GraphQL</span>
+                                style="background:var(--navy-800);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:#ffff;">GraphQL</span>
                             <span
-                                style="background:rgba(255,255,255,0.04);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:var(--text-muted);">ElasticSearch</span>
+                                style="background:var(--navy-800);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:#ffff;">ElasticSearch</span>
                             <span
-                                style="background:rgba(255,255,255,0.04);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:var(--text-muted);">Redis</span>
+                                style="background:var(--navy-800);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:#ffff;">Redis</span>
                             <span
-                                style="background:rgba(255,255,255,0.04);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:var(--text-muted);">Cloudflare</span>
+                                style="background:var(--navy-800);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:#ffff;">Cloudflare</span>
                         </div>
                     </div>
                 </div>
