@@ -677,14 +677,14 @@
     font-family: var(--ff-head);
     font-size: 1.05rem;
     font-weight: 700;
-    color: var(--navy);
+    color: #ffff;
     margin-bottom: 10px;
     letter-spacing: -.01em;
 }
 
 .bk-card-desc {
     font-size: .875rem;
-    color: #000000;
+    color: #ffff;
     line-height: 1.7;
 }
 
