@@ -829,8 +829,36 @@
     line-height: 1.6;
 }
 
+.bk-right-full-image {
+    height: 100%;
+    min-height: 780px;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.bk-right-full-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .6s ease;
+}
+
+.bk-right-full-image:hover img {
+    transform: scale(1.04);
+}
+
+.bk-why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    align-items: stretch;
+}
+
 /* compliance card — right side */
-.bk-comp-card {
+/* .bk-comp-card {
     background: var(--navy-3);
     border-radius: var(--r2);
     padding: 36px;
@@ -928,7 +956,7 @@
     width: 11px;
     height: 11px;
     color: var(--gold);
-}
+} */
 
 /* ═══════════════════════════════════════════════
    PROCESS — dark
@@ -1727,7 +1755,10 @@ textarea.bk-input {
                 </div>
 
                 {{-- Right: compliance card --}}
-                <div>
+                <div class="bk-right-full-image">
+                    <img src="{{ asset('assets/images/banks.jpg') }}" alt="Banking Solutions">
+                </div>
+                <!-- <div>
                     <div class="bk-comp-card">
                         <div class="bk-comp-head">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -1797,7 +1828,7 @@ textarea.bk-input {
                                 </svg>24/7</span>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
