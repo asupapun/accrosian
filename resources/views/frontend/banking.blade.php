@@ -33,6 +33,7 @@
     --gray-500: #64748b;
     --gray-700: #334155;
     --gray-900: #0f172a;
+    --black: #000000;
     --glass-border-hover: rgba(249, 115, 22, .38);
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, .08), 0 1px 2px rgba(0, 0, 0, .05);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, .08), 0 2px 6px rgba(0, 0, 0, .05);
@@ -1195,7 +1196,7 @@
 
 .bk-testi-q {
     font-size: .9rem;
-    color: #0000;
+    color: var(--black);
     line-height: 1.75;
     margin-bottom: 22px;
     font-style: italic;
