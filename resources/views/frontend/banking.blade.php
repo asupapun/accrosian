@@ -819,13 +819,13 @@
     font-family: var(--ff-head);
     font-size: .93rem;
     font-weight: 700;
-    color: var(--navy);
+    color: #ffff;
     margin-bottom: 3px;
 }
 
 .bk-feat-body span {
     font-size: .82rem;
-    color: #000000;
+    color: #ffff;
     line-height: 1.6;
 }
 
