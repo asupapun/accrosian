@@ -1604,10 +1604,6 @@ h3 {
                                 <p>Stream millions of content events per second using Apache Kafka and Flink pipelines.
                                 </p>
                             </div>
-                            <svg class="cap-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="9 18 15 12 9 6" />
-                            </svg>
                         </div>
                         <div class="cap-item">
                             <span class="cap-num">02</span>
