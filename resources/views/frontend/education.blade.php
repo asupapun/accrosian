@@ -1155,7 +1155,7 @@ h4 {
 
 /* ─── TECH ─── */
 .tech {
-    padding: 96px 0
+    padding: 60px 0
 }
 
 .tech-cats {
@@ -1165,7 +1165,7 @@ h4 {
 }
 
 .tech-cat {
-    background: var(--glass-bg);
+    background: var(--navy-600);
     border: 1px solid var(--glass-border);
     border-radius: var(--r);
     padding: 24px 18px;
@@ -1175,7 +1175,7 @@ h4 {
 }
 
 .tech-cat:hover {
-    border-color: var(--glass-border-hover);
+    border-color: var(--navy-800);
     box-shadow: 0 6px 24px var(--orange-glow);
     transform: translateY(-3px)
 }
@@ -1188,7 +1188,7 @@ h4 {
 }
 
 .tech-cat h4 {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--ff-head);
     font-size: .86rem;
     font-weight: 700;
     margin-bottom: 10px
@@ -1202,7 +1202,7 @@ h4 {
 }
 
 .tech-item {
-    background: rgba(249, 115, 22, .07);
+    background: var(--navy-800);
     border: 1px solid rgba(249, 115, 22, .15);
     color: var(--orange-400);
     padding: 3px 9px;
@@ -1213,7 +1213,7 @@ h4 {
 
 /* ─── RESULTS ─── */
 .results {
-    padding: 96px 0;
+    padding: 60px 0;
     background: linear-gradient(to bottom, transparent, rgba(11, 18, 40, .45), transparent)
 }
 
