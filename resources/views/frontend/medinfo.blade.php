@@ -613,8 +613,8 @@ h3 {
 }
 
 .ov-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    background: var(--navy-600);
+    border: 1px solid var(--navy-900);
     border-radius: var(--radius);
     padding: 24px;
     box-shadow: var(--card-shadow);
@@ -622,9 +622,9 @@ h3 {
 }
 
 .ov-card:hover {
-    border-color: var(--card-border-hover);
-    box-shadow: var(--card-shadow-hover);
-    transform: translateY(-3px);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-800);
+    transform: translateY(-4px)
 }
 
 .ov-card.span-2 {
