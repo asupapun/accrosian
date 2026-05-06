@@ -161,7 +161,7 @@
 }
 
 .grad-blue {
-    background: linear-gradient(120deg, var(--blue-light) 0%, #22d3ee 100%);
+    background: var(--gradient-orange);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
