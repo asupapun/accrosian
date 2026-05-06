@@ -637,16 +637,16 @@ h3 {
 }
 
 .ov-card h4 {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--ff-head);
     font-size: 1rem;
     font-weight: 700;
     margin-bottom: 6px;
-    color: var(--navy-800);
+    color: #ffff;
 }
 
 .ov-card p {
     font-size: 0.82rem;
-    color: var(--text-muted);
+    color: #ffff;
     line-height: 1.6;
 }
 
