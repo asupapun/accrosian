@@ -130,7 +130,7 @@ h4 {
 
 .sec-head h2 em {
     font-style: var(--ff-head);
-    background: linear-gradient(135deg, var(--orange-400), var(--orange-300));
+    background: var(--gradient-orange);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
