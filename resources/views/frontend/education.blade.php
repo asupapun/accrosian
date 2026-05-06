@@ -1256,10 +1256,10 @@ h4 {
 }
 
 .res-n {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--ff-mono);
     font-size: 2.7rem;
     font-weight: 800;
-    background: linear-gradient(135deg, var(--orange-400), var(--orange-300));
+    background: var(--gradient-orange);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 1;
@@ -1313,7 +1313,7 @@ h4 {
 
 .cta-box h2 em {
     font-style: normal;
-    background: linear-gradient(135deg, var(--orange-400), var(--orange-300));
+    background: var(--gradient-orange);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent
 }
