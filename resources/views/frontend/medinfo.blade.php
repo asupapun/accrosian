@@ -524,7 +524,7 @@ h3 {
     font-size: 1rem;
     max-width: 580px;
     margin: 0 auto;
-    font-weight: 300;
+    font-weight: 450;
 }
 
 /* ─── OVERVIEW ─── */
