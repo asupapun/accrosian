@@ -974,16 +974,16 @@ h3 {
 }
 
 .uc-card h3 {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--ff-head);
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 12px;
-    color: var(--navy-800);
+    color: #ffff;
 }
 
 .uc-card p {
     font-size: 0.875rem;
-    color: var(--text-secondary);
+    color: #ffff;
     line-height: 1.75;
     margin-bottom: 20px;
 }
@@ -995,12 +995,12 @@ h3 {
 }
 
 .uc-feat {
-    background: var(--bg-section-alt);
-    border: 1px solid var(--card-border);
+    background: var(--navy-800);
+    border: 1px solid var(--navy-700);
     padding: 4px 12px;
     border-radius: 6px;
     font-size: 0.75rem;
-    color: var(--text-muted);
+    color: #ffff;
 }
 
 .features {
