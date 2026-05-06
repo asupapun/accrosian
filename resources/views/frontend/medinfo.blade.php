@@ -514,13 +514,13 @@ h3 {
 
 .section-header h2 em {
     font-style: normal;
-    background: linear-gradient(135deg, var(--orange-500), var(--orange-400));
+    background: var(--gradient-orange);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .section-header p {
-    color: var(--text-secondary);
+    color: var(--black);
     font-size: 1rem;
     max-width: 580px;
     margin: 0 auto;
