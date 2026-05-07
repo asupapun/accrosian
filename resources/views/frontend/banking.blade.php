@@ -1265,39 +1265,113 @@
 /* ═══════════════════════════════════════════════
    CTA — navy gradient
 ═══════════════════════════════════════════════ */
-.bk-cta {
-    background:
-        radial-gradient(ellipse 70% 55% at 50% 50%, rgba(26, 79, 214, .35) 0%, transparent 65%),
-        var(--navy);
-    text-align: center;
-    padding: 120px 0;
+/* ============ CTA SECTION ============ */
+
+.cta-section {
+    padding: 90px 0;
     position: relative;
     overflow: hidden;
+    text-align: center;
+
+    background:
+        linear-gradient(135deg,
+            rgba(5, 10, 35, 0.88),
+            rgba(10, 14, 46, 0.82),
+            rgba(232, 117, 10, 0.18)),
+        url('/assets/images/cta-img.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    border-top: 1px solid rgba(232, 117, 10, 0.15);
+    border-bottom: 1px solid rgba(232, 117, 10, 0.15);
 }
 
-.bk-cta::before {
-    content: '';
+/* Premium dark overlay */
+.cta-section::before {
+    content: "";
     position: absolute;
     inset: 0;
-    pointer-events: none;
-    opacity: .4;
-    background-image:
-        linear-gradient(rgba(46, 106, 255, .06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(46, 106, 255, .06) 1px, transparent 1px);
-    background-size: 48px 48px;
+
+    background:
+        radial-gradient(circle at center,
+            rgba(232, 117, 10, 0.18),
+            transparent 60%);
+
+    z-index: 1;
 }
 
-.bk-cta-inner {
+/* Glass blur layer */
+.cta-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    backdrop-filter: blur(3px);
+    background: rgba(0, 0, 0, 0.18);
+
+    z-index: 1;
+}
+
+.cta-inner {
     position: relative;
     z-index: 2;
+    max-width: 1000px;
+    margin: auto;
 }
 
-.bk-cta-btns {
+.cta-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 5vw, 5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+
+    color: #fff;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.cta-title .text-gradient {
+    background: linear-gradient(135deg,
+            #ff8c1a,
+            #ffb347);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cta-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.82);
+
+    max-width: 760px;
+    margin: 0 auto 42px;
+}
+
+.cta-actions {
     display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
     justify-content: center;
-    margin-top: 36px;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+/* Optional premium buttons */
+.cta-actions .btn-primary {
+    box-shadow: 0 10px 30px rgba(232, 117, 10, 0.35);
+}
+
+.cta-actions .btn-outline {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    color: #fff;
+}
+
+.cta-actions .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.12);
 }
 
 /* ═══════════════════════════════════════════════
@@ -2145,30 +2219,17 @@ textarea.bk-input {
 
 
     {{-- ══════════════ CTA ══════════════ --}}
-    <section class="bk-cta">
-        <div class="bk-wrap">
-            <div class="bk-cta-inner">
-                <span class="bk-eyebrow" style="margin-bottom:20px;display:inline-flex;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.5">
-                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-                    </svg>
-                    Start Building
-                </span>
-                <h2 class="bk-h2 bk-h2-white">Build <span class="grad-orange">Secure Banking Solutions</span> With Us
-                </h2>
-                <p class="bk-sub bk-sub-white" style="margin:16px auto 0;">Let's architect a future-proof, compliant,
-                    and scalable fintech platform tailored to your institution's exact needs.</p>
-                <div class="bk-cta-btns">
-                    <a href="{{ route('contact') }}" class="bk-btn bk-btn-orange">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5" style="width:15px;height:15px">
-                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-                        </svg>
-                        Start Your Project
-                    </a>
-                    <a href="{{ route('portfolio') }}" class="bk-btn bk-btn-outline-white">View Case Studies →</a>
-                </div>
+    {{-- CTA --}}
+    <section class="cta-section">
+        <div class="container cta-inner">
+            <span class="section-tag" style="margin-bottom:24px">Ready to Start?</span>
+            <h2 class="cta-title">Let's Build Something <span class="text-gradient">Extraordinary</span> Together</h2>
+            <p class="cta-subtitle">Tell us your vision and we'll turn it into reality. Free consultation, no
+                commitment.
+            </p>
+            <div class="cta-actions">
+                <a href="{{ route('contact') }}" class="btn btn-primary btn-arrow">Start Your Project</a>
+                <a href="{{ route('portfolio') }}" class="btn btn-outline">See Our Work</a>
             </div>
         </div>
     </section>

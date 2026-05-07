@@ -1280,67 +1280,118 @@ h4 {
 }
 
 /* ─── CTA ─── */
-.cta-sec {
-    padding: 110px 0
-}
+/* ═══════════════════════════════════════════════
+   CTA — navy gradient
+═══════════════════════════════════════════════ */
+/* ============ CTA SECTION ============ */
 
-.cta-box {
+.cta-section {
+    padding: 90px 0;
     position: relative;
-    border-radius: 22px;
     overflow: hidden;
-    background: linear-gradient(135deg, var(--navy-700) 0%, var(--navy-800) 100%);
-    border: 1px solid var(--glass-border);
-    padding: 76px 56px;
     text-align: center;
+
+    background:
+        linear-gradient(135deg,
+            rgba(5, 10, 35, 0.88),
+            rgba(10, 14, 46, 0.82),
+            rgba(232, 117, 10, 0.18)),
+        url('/assets/images/cta-img.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    border-top: 1px solid rgba(232, 117, 10, 0.15);
+    border-bottom: 1px solid rgba(232, 117, 10, 0.15);
 }
 
-.cta-box::before {
-    content: '';
+/* Premium dark overlay */
+.cta-section::before {
+    content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 58% 78% at 50% 100%, rgba(249, 115, 22, .16) 0%, transparent 68%),
-        radial-gradient(ellipse 38% 38% at 18% 8%, rgba(249, 115, 22, .07) 0%, transparent 60%);
-    pointer-events: none;
+
+    background:
+        radial-gradient(circle at center,
+            rgba(232, 117, 10, 0.18),
+            transparent 60%);
+
+    z-index: 1;
 }
 
-.cta-box h2 {
-    font-size: clamp(1.8rem, 3.5vw, 3rem);
-    font-weight: 800;
-    letter-spacing: -.025em;
-    margin-bottom: 14px;
-    position: relative
+/* Glass blur layer */
+.cta-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    backdrop-filter: blur(3px);
+    background: rgba(0, 0, 0, 0.18);
+
+    z-index: 1;
 }
 
-.cta-box h2 em {
-    font-style: normal;
-    background: var(--gradient-orange);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent
-}
-
-.cta-box p {
-    color: var(--text-secondary);
-    font-size: 1.05rem;
-    margin-bottom: 38px;
+.cta-inner {
     position: relative;
-    font-weight: 300
+    z-index: 2;
+    max-width: 1000px;
+    margin: auto;
 }
 
-.cta-btns {
+.cta-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 5vw, 5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+
+    color: #fff;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.cta-title .text-gradient {
+    background: linear-gradient(135deg,
+            #ff8c1a,
+            #ffb347);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cta-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.82);
+
+    max-width: 760px;
+    margin: 0 auto 42px;
+}
+
+.cta-actions {
     display: flex;
-    gap: 14px;
     justify-content: center;
+    gap: 18px;
     flex-wrap: wrap;
-    position: relative
 }
 
-.btn-lg {
-    padding: 15px 40px;
-    border-radius: var(--r-sm);
-    font-size: .95rem;
-    font-weight: 600;
-    text-decoration: none
+/* Optional premium buttons */
+.cta-actions .btn-primary {
+    box-shadow: 0 10px 30px rgba(232, 117, 10, 0.35);
 }
+
+.cta-actions .btn-outline {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    color: #fff;
+}
+
+.cta-actions .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
 
 
 /* ─── ANIMATIONS ─── */
@@ -2154,16 +2205,17 @@ h4 {
     </section>
 
     <!-- CTA -->
-    <section class="cta-sec">
-        <div class="container">
-            <div class="cta-box">
-                <div class="pill" style="display:inline-flex"><span class="pill-dot"></span>Let's Build Together</div>
-                <h2>Build the Future of Education<br>with <em>Accrosian</em></h2>
-                <p>From architecture to launch — we engineer EdTech that performs at the scale your learners demand.</p>
-                <div class="cta-btns">
-                    <a href="#" class="btn-primary btn-lg">Start Your Project</a>
-                    <a href="#" class="btn-ghost btn-lg">View Case Studies</a>
-                </div>
+    {{-- CTA --}}
+    <section class="cta-section">
+        <div class="container cta-inner">
+            <span class="section-tag" style="margin-bottom:24px">Ready to Start?</span>
+            <h2 class="cta-title">Let's Build Something <span class="text-gradient">Extraordinary</span> Together</h2>
+            <p class="cta-subtitle">Tell us your vision and we'll turn it into reality. Free consultation, no
+                commitment.
+            </p>
+            <div class="cta-actions">
+                <a href="{{ route('contact') }}" class="btn btn-primary btn-arrow">Start Your Project</a>
+                <a href="{{ route('portfolio') }}" class="btn btn-outline">See Our Work</a>
             </div>
         </div>
     </section>

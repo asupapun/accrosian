@@ -1210,81 +1210,118 @@ h3 {
     line-height: 1.6;
 }
 
+/* ═══════════════════════════════════════════════
+   CTA — navy gradient
+═══════════════════════════════════════════════ */
+/* ============ CTA SECTION ============ */
+
 .cta-section {
-    padding: 120px 0;
-    background: var(--bg-page);
+    padding: 90px 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+
+    background:
+        linear-gradient(135deg,
+            rgba(5, 10, 35, 0.88),
+            rgba(10, 14, 46, 0.82),
+            rgba(232, 117, 10, 0.18)),
+        url('/assets/images/cta-img.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    border-top: 1px solid rgba(232, 117, 10, 0.15);
+    border-bottom: 1px solid rgba(232, 117, 10, 0.15);
+}
+
+/* Premium dark overlay */
+.cta-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at center,
+            rgba(232, 117, 10, 0.18),
+            transparent 60%);
+
+    z-index: 1;
+}
+
+/* Glass blur layer */
+.cta-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    backdrop-filter: blur(3px);
+    background: rgba(0, 0, 0, 0.18);
+
+    z-index: 1;
 }
 
 .cta-inner {
     position: relative;
-    border-radius: 24px;
-    overflow: hidden;
-    background: linear-gradient(135deg, var(--navy-800) 0%, var(--navy-700) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    padding: 80px 60px;
-    text-align: center;
-    box-shadow: 0 24px 80px rgba(13, 21, 48, 0.18);
+    z-index: 2;
+    max-width: 1000px;
+    margin: auto;
 }
 
-.cta-inner::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(249, 115, 22, 0.18) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 40% at 20% 10%, rgba(249, 115, 22, 0.08) 0%, transparent 60%);
-    pointer-events: none;
-}
-
-.cta-inner h2 {
-    font-size: clamp(1.8rem, 3.5vw, 3rem);
+.cta-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 5vw, 5rem);
     font-weight: 800;
-    letter-spacing: -0.02em;
-    margin-bottom: 16px;
-    position: relative;
+    line-height: 1.1;
+    margin-bottom: 24px;
+
     color: #fff;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
-.cta-inner h2 em {
-    font-style: normal;
-    background: linear-gradient(135deg, var(--orange-400), var(--orange-300));
+.cta-title .text-gradient {
+    background: linear-gradient(135deg,
+            #ff8c1a,
+            #ffb347);
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.cta-inner p {
-    color: rgba(255, 255, 255, 0.55);
-    font-size: 1.05rem;
-    margin-bottom: 40px;
-    position: relative;
-    font-weight: 300;
+.cta-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.82);
+
+    max-width: 760px;
+    margin: 0 auto 42px;
 }
 
-.cta-btns {
+.cta-actions {
     display: flex;
-    gap: 16px;
     justify-content: center;
+    gap: 18px;
     flex-wrap: wrap;
-    position: relative;
 }
 
-.btn-large {
-    padding: 16px 40px;
-    border-radius: var(--radius-sm);
-    font-size: 0.95rem;
-    font-weight: 600;
-    text-decoration: none;
+/* Optional premium buttons */
+.cta-actions .btn-primary {
+    box-shadow: 0 10px 30px rgba(232, 117, 10, 0.35);
 }
 
-.cta-inner .btn-outline {
-    border-color: rgba(255, 255, 255, 0.22);
+.cta-actions .btn-outline {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
     color: #fff;
 }
 
-.cta-inner .btn-outline:hover {
-    background: rgba(249, 115, 22, 0.12);
-    border-color: var(--orange-400);
-    color: var(--orange-300);
+.cta-actions .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.12);
 }
+
 
 /* ─── ANIMATIONS ─── */
 @keyframes fadeUp {
@@ -2044,17 +2081,17 @@ h3 {
     </section>
 
     <!-- CTA -->
+    {{-- CTA --}}
     <section class="cta-section">
-        <div class="container">
-            <div class="cta-inner">
-                <div class="label-pill" style="display:inline-flex;"><span></span>Let's Build</div>
-                <h2>Build Scalable Media Platforms<br>with <em>Accrosian</em></h2>
-                <p>From architecture to launch — we engineer media technology that performs at the scale your audience
-                    demands.</p>
-                <div class="cta-btns">
-                    <a href="#" class="btn-primary btn-large">Start Your Project</a>
-                    <a href="#" class="btn-outline btn-large">View Case Studies</a>
-                </div>
+        <div class="container cta-inner">
+            <span class="section-tag" style="margin-bottom:24px">Ready to Start?</span>
+            <h2 class="cta-title">Let's Build Something <span class="text-gradient">Extraordinary</span> Together</h2>
+            <p class="cta-subtitle">Tell us your vision and we'll turn it into reality. Free consultation, no
+                commitment.
+            </p>
+            <div class="cta-actions">
+                <a href="{{ route('contact') }}" class="btn btn-primary btn-arrow">Start Your Project</a>
+                <a href="{{ route('portfolio') }}" class="btn btn-outline">See Our Work</a>
             </div>
         </div>
     </section>
