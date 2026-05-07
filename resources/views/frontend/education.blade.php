@@ -785,10 +785,87 @@ h4 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 56px;
-    align-items: center
+    align-items: start
 }
 
-.why-list {
+.cap-inline-image {
+    margin: 32px 0 40px;
+    position: relative;
+
+    width: 100%;
+    height: 340px;
+
+    overflow: hidden;
+
+    clip-path: polygon(0% 12%,
+            12% 0%,
+            88% 0%,
+            100% 12%,
+            100% 88%,
+            88% 100%,
+            12% 100%,
+            0% 88%);
+
+    border: 1px solid rgba(249, 115, 22, 0.18);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.22),
+        0 0 40px rgba(249, 115, 22, 0.08);
+
+    background: var(--navy-600);
+
+    isolation: isolate;
+}
+
+.cap-inline-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(135deg,
+            rgba(249, 115, 22, 0.25),
+            transparent 45%);
+
+    z-index: 2;
+}
+
+.cap-inline-image::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    clip-path: polygon(0% 12%,
+            12% 0%,
+            88% 0%,
+            100% 12%,
+            100% 88%,
+            88% 100%,
+            12% 100%,
+            0% 88%);
+
+    z-index: 3;
+}
+
+.cap-inline-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    transition:
+        transform .8s ease,
+        filter .6s ease;
+}
+
+.cap-inline-image:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.08);
+}
+
+/* .why-list {
     display: flex;
     flex-direction: column;
     gap: 14px
@@ -842,7 +919,7 @@ h4 {
 
 .why-item:hover .why-arr {
     color: var(--orange-400)
-}
+} */
 
 /* perf widget */
 .perf-widget {
@@ -1720,7 +1797,10 @@ h4 {
                     <p style="color:var(--navy-900);margin-bottom:32px;font-weight:300;line-height:1.8">Every
                         system we build is production-tested for high concurrency, security, and reliability — because
                         learners can't afford downtime.</p>
-                    <div class="why-list">
+                    <div class="cap-inline-image">
+                        <img src="{{ asset('assets/images/medinfo-img.jpg') }}" alt="Media Technology">
+                    </div>
+                    <!-- <div class="why-list">
                         <div class="why-item">
                             <span class="why-num">01</span>
                             <div class="why-content">
@@ -1777,7 +1857,7 @@ h4 {
                                 <polyline points="9 18 15 12 9 6" />
                             </svg>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="perf-widget">
