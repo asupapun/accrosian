@@ -927,6 +927,7 @@ h4 {
     border: 1px solid var(--navy-700);
     border-radius: var(--r);
     padding: 30px;
+    margin-top: 150px;
     backdrop-filter: blur(20px);
     box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
 }
