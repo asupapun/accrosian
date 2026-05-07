@@ -609,8 +609,8 @@ h4 {
 .overview-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 72px;
-    align-items: center
+    gap: 80px;
+    align-items: stretch;
 }
 
 .overview-text h2 {
@@ -677,47 +677,25 @@ h4 {
     color: #ffff;
 }
 
-.ov-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 13px
+.overview-image-wrap {
+    height: 100%;
+    min-height: 720px;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18);
 }
 
-.ovc {
-    background: var(--navy-600);
-    border: 1px solid var(--navy-700);
-    border-radius: var(--r);
-    padding: 22px;
-    backdrop-filter: blur(16px);
-    transition: all .3s;
+.overview-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .7s ease;
 }
 
-.ovc:hover {
-    border-color: var(--glass-border-hover);
-    box-shadow: 0 8px 28px var(--navy-800);
-    transform: translateY(-4px)
-}
-
-.ovc.span2 {
-    grid-column: span 2
-}
-
-.ovc-icon {
-    color: var(--orange-400);
-    margin-bottom: 10px
-}
-
-.ovc h4 {
-    font-family: 'Syne', sans-serif;
-    font-size: .95rem;
-    font-weight: 700;
-    margin-bottom: 5px
-}
-
-.ovc p {
-    font-size: .8rem;
-    color: #ffff;
-    line-height: 1.6
+.overview-image-wrap:hover img {
+    transform: scale(1.04);
 }
 
 /* ─── SERVICES ─── */
@@ -1582,7 +1560,10 @@ h4 {
                         </div>
                     </div>
                 </div>
-                <div class="ov-cards">
+                <div class="overview-image-wrap">
+                    <img src="{{ asset('assets/images/education-img2.jpg') }}" alt="Media & Information Services">
+                </div>
+                <!-- <div class="ov-cards">
                     <div class="ovc">
                         <div class="ovc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -1612,7 +1593,7 @@ h4 {
                         <p>Consolidate learner data, course performance, and instructor metrics into one command center
                             — built for decision makers who need clarity at scale.</p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
