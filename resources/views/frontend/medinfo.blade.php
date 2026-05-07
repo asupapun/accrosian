@@ -737,7 +737,7 @@ h3 {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     gap: 80px;
-    align-items: stretch;
+    align-items: start;
 }
 
 .cap-inline-image {
@@ -874,6 +874,7 @@ h3 {
 } */
 
 .cap-visual {
+    height: fit-content;
     position: relative;
     background: var(--navy-600);
     border: 1px solid var(--navy-700);
