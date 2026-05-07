@@ -735,12 +735,89 @@ h3 {
 
 .cap-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+    align-items: stretch;
 }
 
-.cap-list {
+.cap-inline-image {
+    margin: 32px 0 40px;
+    position: relative;
+
+    width: 100%;
+    height: 340px;
+
+    overflow: hidden;
+
+    clip-path: polygon(0% 12%,
+            12% 0%,
+            88% 0%,
+            100% 12%,
+            100% 88%,
+            88% 100%,
+            12% 100%,
+            0% 88%);
+
+    border: 1px solid rgba(249, 115, 22, 0.18);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.22),
+        0 0 40px rgba(249, 115, 22, 0.08);
+
+    background: var(--navy-600);
+
+    isolation: isolate;
+}
+
+.cap-inline-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(135deg,
+            rgba(249, 115, 22, 0.25),
+            transparent 45%);
+
+    z-index: 2;
+}
+
+.cap-inline-image::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    clip-path: polygon(0% 12%,
+            12% 0%,
+            88% 0%,
+            100% 12%,
+            100% 88%,
+            88% 100%,
+            12% 100%,
+            0% 88%);
+
+    z-index: 3;
+}
+
+.cap-inline-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    transition:
+        transform .8s ease,
+        filter .6s ease;
+}
+
+.cap-inline-image:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.08);
+}
+
+/* .cap-list {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -794,7 +871,7 @@ h3 {
 
 .cap-item:hover .cap-icon {
     color: var(--orange-500);
-}
+} */
 
 .cap-visual {
     position: relative;
@@ -1557,7 +1634,10 @@ h3 {
                     <p style="color:var(--black);margin-bottom:36px;font-weight:450;line-height:1.8;">Every
                         capability is built for production environments where performance, reliability, and security are
                         non-negotiable.</p>
-                    <div class="cap-list">
+                    <div class="cap-inline-image">
+                        <img src="{{ asset('assets/images/medinfo-img.jpg') }}" alt="Media Technology">
+                    </div>
+                    <!-- <div class="cap-list">
                         <div class="cap-item">
                             <span class="cap-num">01</span>
                             <div class="cap-content">
@@ -1597,7 +1677,7 @@ h3 {
                                     zero-trust access.</p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="cap-visual">
