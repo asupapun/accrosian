@@ -1561,7 +1561,7 @@ h4 {
                     </div>
                 </div>
                 <div class="overview-image-wrap">
-                    <img src="{{ asset('assets/images/education-img2.jpg') }}" alt="Media & Information Services">
+                    <img src="{{ asset('assets/images/educ-img2.jpg') }}" alt="Media & Information Services">
                 </div>
                 <!-- <div class="ov-cards">
                     <div class="ovc">
