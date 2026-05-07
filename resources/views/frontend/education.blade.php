@@ -1798,7 +1798,7 @@ h4 {
                         system we build is production-tested for high concurrency, security, and reliability — because
                         learners can't afford downtime.</p>
                     <div class="cap-inline-image">
-                        <img src="{{ asset('assets/images/medinfo-img.jpg') }}" alt="Media Technology">
+                        <img src="{{ asset('assets/images/education-img.jpg') }}" alt="Media Technology">
                     </div>
                     <!-- <div class="why-list">
                         <div class="why-item">
