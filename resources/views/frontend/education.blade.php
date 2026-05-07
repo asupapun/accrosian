@@ -765,7 +765,7 @@ h4 {
     transform: scaleX(1)
 }
 
-.svc-icon {
+/* .svc-icon {
     width: 46px;
     height: 46px;
     border-radius: 12px;
@@ -777,7 +777,7 @@ h4 {
     margin-bottom: 16px;
     color: var(--orange-400);
     transition: all .3s;
-}
+} */
 
 .svc-card:hover .svc-icon {
     background: rgba(249, 115, 22, .18);
@@ -1419,6 +1419,9 @@ h4 {
 }
 
 @media(max-width:768px) {
+    .nav-links {
+        display: none
+    }
 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
