@@ -1419,9 +1419,6 @@ h4 {
 }
 
 @media(max-width:768px) {
-    .nav-links {
-        display: none
-    }
 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
