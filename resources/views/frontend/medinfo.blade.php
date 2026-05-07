@@ -880,6 +880,7 @@ h3 {
     border: 1px solid var(--navy-700);
     border-radius: var(--radius);
     padding: 32px;
+    margin-top: 140px;
     box-shadow: 0 24px 60px rgba(13, 21, 48, 0.18);
 }
 
