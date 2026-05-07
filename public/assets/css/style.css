@@ -1575,7 +1575,121 @@ body {
 }
 
 /* ============ CTA SECTION ============ */
+
 .cta-section {
+  padding: 90px 0;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(5, 10, 35, 0.88),
+      rgba(10, 14, 46, 0.82),
+      rgba(232, 117, 10, 0.18)
+    ),
+    url('/assets/images/cta-img.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  border-top: 1px solid rgba(232, 117, 10, 0.15);
+  border-bottom: 1px solid rgba(232, 117, 10, 0.15);
+}
+
+/* Premium dark overlay */
+.cta-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(232, 117, 10, 0.18),
+      transparent 60%
+    );
+
+  z-index: 1;
+}
+
+/* Glass blur layer */
+.cta-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.18);
+
+  z-index: 1;
+}
+
+.cta-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+
+  color: #fff;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.cta-title .text-gradient {
+  background: linear-gradient(
+    135deg,
+    #ff8c1a,
+    #ffb347
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cta-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.82);
+
+  max-width: 760px;
+  margin: 0 auto 42px;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* Optional premium buttons */
+.cta-actions .btn-primary {
+  box-shadow: 0 10px 30px rgba(232,117,10,0.35);
+}
+
+.cta-actions .btn-outline {
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  color: #fff;
+}
+
+.cta-actions .btn-outline:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+/* .cta-section {
   padding: 60px 0;
   background: linear-gradient(
     135deg,
@@ -1621,7 +1735,7 @@ body {
   gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
-}
+} */
 
 /* ============ FOOTER ============ */
 .footer {
