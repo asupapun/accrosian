@@ -517,7 +517,7 @@ h3 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
-    align-items: center;
+    align-items: stretch;
 }
 
 .overview-text h2 {
@@ -586,7 +586,28 @@ h3 {
     margin-bottom: 2px;
 }
 
-.overview-visual {
+.overview-image-wrap {
+    height: 100%;
+    min-height: 720px;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18);
+}
+
+.overview-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .7s ease;
+}
+
+.overview-image-wrap:hover img {
+    transform: scale(1.04);
+}
+
+/* .overview-visual {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 14px;
@@ -628,7 +649,7 @@ h3 {
     font-size: 0.82rem;
     color: #ffff;
     line-height: 1.6;
-}
+} */
 
 .solutions {
     padding: 100px 0;
@@ -1383,42 +1404,8 @@ h3 {
                         </div>
                     </div>
                 </div>
-                <div class="overview-visual">
-                    <div class="ov-card">
-                        <div class="ov-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                            </svg>
-                        </div>
-                        <h4>Live Data Streams</h4>
-                        <p>Process millions of events per second with zero data loss.</p>
-                    </div>
-                    <div class="ov-card">
-                        <div class="ov-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10" />
-                                <line x1="2" y1="12" x2="22" y2="12" />
-                                <path
-                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                            </svg>
-                        </div>
-                        <h4>Global CDN</h4>
-                        <p>Sub-100ms delivery across 190+ regions worldwide.</p>
-                    </div>
-                    <div class="ov-card span-2">
-                        <div class="ov-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="3" width="18" height="18" rx="2" />
-                                <path d="M3 9h18M9 21V9" />
-                            </svg>
-                        </div>
-                        <h4>Unified Content Intelligence</h4>
-                        <p>Aggregate audience signals, content performance, and revenue data into a single command
-                            center — built for media executives who need clarity at scale.</p>
-                    </div>
+                <div class="overview-image-wrap">
+                    <img src="{{ asset('assets/images/medinfo-img2.jpg') }}" alt="Media & Information Services">
                 </div>
             </div>
         </div>
