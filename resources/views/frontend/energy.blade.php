@@ -847,7 +847,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: var(--gradient-orange);
+    background: var(--glass);
 }
 
 .rel-metric-cards {
