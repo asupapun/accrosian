@@ -707,7 +707,7 @@ body {
 
 .sol-card {
     position: relative;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
     padding: 32px 28px;
     background: var(--navy-4);
