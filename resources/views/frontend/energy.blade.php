@@ -884,7 +884,7 @@ body {
 }
 
 .rel-metric-val {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--ff-mono);
     font-size: 20px;
     font-weight: 800;
     color: var(--orange-light);
@@ -892,7 +892,7 @@ body {
 
 .rel-metric-lbl {
     font-size: 11px;
-    color: var(--text-muted);
+    color: var(--white);
     margin-top: 3px;
 }
 
@@ -900,7 +900,7 @@ body {
 
 .reliability-content p {
     font-size: 16px;
-    color: var(--text-muted);
+    color: var(--white);
     line-height: 1.8;
     margin-top: 20px;
     margin-bottom: 32px;
