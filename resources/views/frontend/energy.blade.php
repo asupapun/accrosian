@@ -835,7 +835,7 @@ body {
 .blob-img-inner {
     width: 100%;
     height: 100%;
-    background: var(--gradient-orange);
+    background: linear-gradient(135deg, #0a1c38 0%, #071428 50%, #050d1f 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -847,7 +847,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: var(--gradient-orange);
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.15) 0%, transparent 60%);
 }
 
 .rel-metric-cards {
@@ -884,7 +884,7 @@ body {
 }
 
 .rel-metric-val {
-    font-family: var(--ff-mono);
+    font-family: 'Syne', sans-serif;
     font-size: 20px;
     font-weight: 800;
     color: var(--orange-light);
