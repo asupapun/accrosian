@@ -20,6 +20,8 @@
     --navy-4: #0d2248;
     --orange: #f97316;
     --orange-light: #fb923c;
+    --black: #000000;
+    --glass-border-hover: rgba(249, 115, 22, .38);
     --gradient-orange: linear-gradient(135deg, #e8750a, #f59332);
     --orange-glow: rgba(249, 115, 22, 0.25);
     --orange-dim: rgba(249, 115, 22, 0.12);
@@ -534,7 +536,7 @@ body {
 
 /* ---- CHALLENGES ---- */
 .challenges {
-    background: var(--navy-2);
+    background: var(--white);
     position: relative;
     overflow: hidden;
 }
@@ -553,7 +555,7 @@ body {
 
 .challenges-sub {
     font-size: 16px;
-    color: var(--text-muted);
+    color: var(--black);
     line-height: 1.75;
     margin-top: 20px;
 }
@@ -565,8 +567,8 @@ body {
 }
 
 .challenge-card {
-    background: var(--glass);
-    border: 1px solid var(--glass-border);
+    background: var(--navy-4);
+    border: 1px solid var(--navy-3);
     border-radius: 20px;
     padding: 24px 28px;
     display: flex;
@@ -588,8 +590,9 @@ body {
 }
 
 .challenge-card:hover {
-    background: rgba(249, 115, 22, 0.07);
-    transform: translateX(8px);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-2);
+    transform: translateY(-4px)
 }
 
 .challenge-card:hover::before {
@@ -615,7 +618,7 @@ body {
 }
 
 .ch-title {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--ff-head);
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 6px;
@@ -623,7 +626,7 @@ body {
 
 .ch-desc {
     font-size: 14px;
-    color: var(--text-muted);
+    color: var(--white);
     line-height: 1.6;
 }
 
