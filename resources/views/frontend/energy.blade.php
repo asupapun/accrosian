@@ -226,11 +226,12 @@ body {
 
 .hero-heading {
     font-family: var(--ff-head);
-    font-size: clamp(2.6rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 4.2vw, 4.2rem);
     font-weight: 800;
     line-height: 1.1;
+    margin-top: 40px;
     margin-bottom: 24px;
-    letter-spacing: -1px;
+    animation: fadeInUp 0.8s ease 0.2s both;
     color: var(--white);
 }
 
