@@ -930,6 +930,7 @@ body {
 .rel-feature-text {
     font-size: 15px;
     font-weight: 500;
+    color: var(--white);
 }
 
 /* ---- USE CASES ---- */
@@ -1811,8 +1812,8 @@ footer {
                 <div class="reliability-content reveal">
                     <span class="tag-label">Architecture & Scale</span>
                     <div class="section-divider" style="margin-top:20px;"></div>
-                    <h2 class="section-heading" style="margin-top:8px;">Built for <span
-                            class="gradient-text">Reliability & Scale</span></h2>
+                    <h2 class="gradient-text" style="margin-top:8px;">Built for <span class="gradient-text">Reliability
+                            & Scale</span></h2>
                     <p>Our cloud-native architectures are engineered from the ground up for the uncompromising
                         reliability demands of energy infrastructure—where downtime is measured in millions, not just
                         inconvenience.</p>
