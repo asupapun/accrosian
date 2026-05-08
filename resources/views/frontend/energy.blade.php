@@ -534,6 +534,7 @@ body {
 
 /* ---- CHALLENGES ---- */
 .challenges {
+    background: var(--navy-2);
     position: relative;
     overflow: hidden;
 }
