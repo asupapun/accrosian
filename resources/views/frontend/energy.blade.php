@@ -225,17 +225,18 @@ body {
 }
 
 .hero-heading {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--ff-head);
     font-size: clamp(2.6rem, 5vw, 4rem);
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 24px;
     letter-spacing: -1px;
+    color: var(--white);
 }
 
 .hero-sub {
     font-size: 17px;
-    color: var(--text-muted);
+    color: var(--white);
     line-height: 1.75;
     max-width: 500px;
     margin-bottom: 40px;
