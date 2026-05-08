@@ -711,7 +711,7 @@ body {
     overflow: hidden;
     padding: 32px 28px;
     background: var(--navy-4);
-    border: 1px solid var(--navy-3);
+    border: 2px solid var(--navy-3);
     transition: all .35s ease;
     display: flex;
     flex-direction: column;
