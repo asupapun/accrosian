@@ -1091,7 +1091,7 @@ body {
 }
 
 /* ---- WHY ACCROSIAN ---- */
-.why {
+/* .why {
     position: relative;
     overflow: hidden;
 }
@@ -1179,10 +1179,10 @@ body {
 
 .why-card:nth-child(even) {
     margin-top: 32px;
-}
+} */
 
 /* ---- STATS ---- */
-.stats {
+/* .stats {
     background: linear-gradient(135deg, #060e20 0%, #0a1829 60%, #050d1f 100%);
     position: relative;
     overflow: hidden;
@@ -1280,147 +1280,116 @@ body {
 
 .spark.lit {
     background: var(--orange);
-}
+} */
 
 /* ---- CTA ---- */
 .cta-section {
+    padding: 90px 0;
     position: relative;
     overflow: hidden;
     text-align: center;
-    padding: 140px 0;
-    background: linear-gradient(180deg, var(--navy) 0%, #070f20 100%);
+
+    background:
+        linear-gradient(135deg,
+            rgba(5, 10, 35, 0.88),
+            rgba(10, 14, 46, 0.82),
+            rgba(232, 117, 10, 0.18)),
+        url('/assets/images/cta-img.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    border-top: 1px solid rgba(232, 117, 10, 0.15);
+    border-bottom: 1px solid rgba(232, 117, 10, 0.15);
 }
 
-.cta-bg {
+/* Premium dark overlay */
+.cta-section::before {
+    content: "";
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f97316' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+    background:
+        radial-gradient(circle at center,
+            rgba(232, 117, 10, 0.18),
+            transparent 60%);
+
+    z-index: 1;
 }
 
-.cta-glow {
+/* Glass blur layer */
+.cta-section::after {
+    content: "";
     position: absolute;
-    width: 800px;
-    height: 400px;
-    border-radius: 50%;
-    background: radial-gradient(ellipse, rgba(249, 115, 22, 0.12) 0%, transparent 70%);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    inset: 0;
+
+    backdrop-filter: blur(3px);
+    background: rgba(0, 0, 0, 0.18);
+
+    z-index: 1;
 }
 
-.cta-content {
+.cta-inner {
     position: relative;
     z-index: 2;
+    max-width: 1000px;
+    margin: auto;
 }
 
-.cta-heading {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
+.cta-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 5vw, 5rem);
     font-weight: 800;
-    line-height: 1.15;
-    max-width: 700px;
-    margin: 0 auto 20px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+
+    color: #fff;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
-.cta-sub {
-    font-size: 17px;
-    color: var(--text-muted);
-    max-width: 580px;
-    margin: 0 auto 48px;
-    line-height: 1.7;
+.cta-title .text-gradient {
+    background: linear-gradient(135deg,
+            #ff8c1a,
+            #ffb347);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cta-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.82);
+
+    max-width: 760px;
+    margin: 0 auto 42px;
 }
 
 .cta-actions {
     display: flex;
-    gap: 16px;
     justify-content: center;
+    gap: 18px;
     flex-wrap: wrap;
 }
 
-/* ---- FOOTER ---- */
-footer {
-    background: var(--navy-2);
-    border-top: 1px solid var(--glass-border);
-    padding: 64px 0 32px;
+/* Optional premium buttons */
+.cta-actions .btn-primary {
+    box-shadow: 0 10px 30px rgba(232, 117, 10, 0.35);
 }
 
-.footer-inner {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 48px;
-    margin-bottom: 48px;
+.cta-actions .btn-outline {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    color: #fff;
 }
 
-.footer-brand p {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-top: 12px;
-    line-height: 1.7;
-    max-width: 280px;
+.cta-actions .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.12);
 }
 
-.footer-col h5 {
-    font-family: 'Syne', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    margin-bottom: 18px;
-    color: var(--white);
-    letter-spacing: 0.5px;
-}
-
-.footer-col a {
-    display: block;
-    font-size: 14px;
-    color: var(--text-muted);
-    text-decoration: none;
-    margin-bottom: 10px;
-    transition: color .2s;
-}
-
-.footer-col a:hover {
-    color: var(--orange-light);
-}
-
-.footer-bottom {
-    border-top: 1px solid var(--glass-border);
-    padding-top: 28px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-copy {
-    font-size: 13px;
-    color: var(--text-dim);
-}
-
-.footer-links {
-    display: flex;
-    gap: 24px;
-}
-
-.footer-links a {
-    font-size: 13px;
-    color: var(--text-dim);
-    text-decoration: none;
-    transition: color .2s;
-}
-
-.footer-links a:hover {
-    color: var(--white);
-}
-
-/* ---- SCROLL REVEAL ---- */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity .7s ease, transform .7s ease;
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 /* ---- DIVIDERS ---- */
 .section-divider {
@@ -1934,7 +1903,7 @@ footer {
     </section>
 
     <!-- WHY ACCROSIAN -->
-    <section class="why section" id="why">
+    <!-- <section class="why section" id="why">
         <div class="container">
             <div class="why-header reveal">
                 <span class="tag-label">Why Accrosian</span>
@@ -1972,10 +1941,10 @@ footer {
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- STATS -->
-    <section class="stats section" id="results">
+    <!-- <section class="stats section" id="results">
         <div class="container">
             <div class="stats-header reveal">
                 <span class="tag-label">Proven Results</span>
@@ -2046,24 +2015,19 @@ footer {
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- CTA -->
-    <section class="cta-section" id="contact">
-        <div class="cta-bg"></div>
-        <div class="cta-glow"></div>
-        <div class="container">
-            <div class="cta-content reveal">
-                <span class="tag-label" style="margin-bottom:28px;display:inline-flex;">Start Your Transformation</span>
-                <h2 class="cta-heading">Transform Energy Operations with <span class="gradient-text">Intelligent Digital
-                        Solutions</span></h2>
-                <p class="cta-sub">Accelerate innovation, improve operational efficiency, and future-proof your
-                    infrastructure with Accrosian.</p>
-                <div class="cta-actions">
-                    <a href="#" class="btn-primary" style="font-size:16px;padding:16px 36px;">📅 Schedule
-                        Consultation</a>
-                    <a href="#" class="btn-ghost" style="font-size:16px;padding:16px 36px;">Start Your Project →</a>
-                </div>
+    <section class="cta-section">
+        <div class="container cta-inner">
+            <span class="section-tag" style="margin-bottom:24px">Ready to Start?</span>
+            <h2 class="cta-title">Let's Build Something <span class="text-gradient">Extraordinary</span> Together</h2>
+            <p class="cta-subtitle">Tell us your vision and we'll turn it into reality. Free consultation, no
+                commitment.
+            </p>
+            <div class="cta-actions">
+                <a href="{{ route('contact') }}" class="btn btn-primary btn-arrow">Start Your Project</a>
+                <a href="{{ route('portfolio') }}" class="btn btn-outline">See Our Work</a>
             </div>
         </div>
     </section>
