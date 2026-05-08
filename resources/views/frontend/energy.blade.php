@@ -158,7 +158,9 @@ body {
     inset: 0;
     overflow: hidden;
     pointer-events: none;
-    background-image: var(--white);
+    background-image:
+        linear-gradient(rgba(249, 115, 22, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(249, 115, 22, 0.04) 1px, transparent 1px);
     background-size: 60px 60px;
 }
 
