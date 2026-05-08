@@ -673,6 +673,7 @@ body {
 .solutions {
     position: relative;
     overflow: hidden;
+    background: var(--navy);
 }
 
 .solutions::before {
