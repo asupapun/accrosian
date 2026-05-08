@@ -2058,14 +2058,14 @@ body {
         });
 
     // ---- NAV SCROLL ----
-    // window.addEventListener('scroll', () => {
-    //     const nav = document.getElementById('navbar');
-    //     if (window.scrollY > 60) {
-    //         nav.style.background = 'rgba(5,13,31,0.97)';
-    //     } else {
-    //         nav.style.background = 'rgba(5,13,31,0.85)';
-    //     }
-    // });
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('navbar');
+        if (window.scrollY > 60) {
+            nav.style.background = 'rgba(5,13,31,0.97)';
+        } else {
+            nav.style.background = 'rgba(5,13,31,0.85)';
+        }
+    });
 
     // ---- COUNTER ANIMATION ----
     const counters = document.querySelectorAll('.stat-num[data-target]');
