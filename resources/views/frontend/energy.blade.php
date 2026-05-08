@@ -1632,7 +1632,7 @@ footer {
                         efficiency.</p>
                     <!-- IMAGE -->
                     <div class="challenge-image-wrap">
-                        <img src="{{ asset('images/energy-img.jpg') }}" alt="Energy Infrastructure">
+                        <img src="{{ asset('assets/images/energy-img.jpg') }}" alt="Energy Infrastructure">
                     </div>
                 </div>
                 <div class="challenges-right">
