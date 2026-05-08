@@ -622,6 +622,7 @@ body {
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 6px;
+    color: var(--white);
 }
 
 .ch-desc {
