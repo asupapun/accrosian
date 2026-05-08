@@ -550,7 +550,6 @@ body {
 
 .challenges-left {
     position: sticky;
-    top: 120px;
 }
 
 .challenges-sub {
