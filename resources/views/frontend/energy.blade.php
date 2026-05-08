@@ -782,7 +782,7 @@ body {
 
 /* ---- RELIABILITY ---- */
 .reliability {
-    background: var(--navy-2);
+    background: var(--navy-4);
     position: relative;
     overflow: hidden;
 }
@@ -835,7 +835,7 @@ body {
 .blob-img-inner {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #0a1c38 0%, #071428 50%, #050d1f 100%);
+    background: var(--gradient-orange);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -847,7 +847,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(249, 115, 22, 0.15) 0%, transparent 60%);
+    background: var(--gradient-orange);
 }
 
 .rel-metric-cards {
@@ -884,15 +884,15 @@ body {
 }
 
 .rel-metric-val {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--ff-mono);
     font-size: 20px;
     font-weight: 800;
-    color: var(--orange-light);
+    color: var(--gradient-orange);
 }
 
 .rel-metric-lbl {
     font-size: 11px;
-    color: var(--text-muted);
+    color: var(--white);
     margin-top: 3px;
 }
 
@@ -922,14 +922,15 @@ body {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--orange);
+    background: var(--gradient-orange);
     flex-shrink: 0;
-    box-shadow: 0 0 8px var(--orange);
+    box-shadow: 0 0 8px var(--gradient-orange);
 }
 
 .rel-feature-text {
     font-size: 15px;
     font-weight: 500;
+    color: var(--white);
 }
 
 /* ---- USE CASES ---- */
@@ -1811,12 +1812,13 @@ footer {
                 <div class="reliability-content reveal">
                     <span class="tag-label">Architecture & Scale</span>
                     <div class="section-divider" style="margin-top:20px;"></div>
-                    <h2 class="section-heading" style="margin-top:8px;">Built for <span
-                            class="gradient-text">Reliability & Scale</span></h2>
-                    <p>Our cloud-native architectures are engineered from the ground up for the uncompromising
+                    <h2 class="gradient-text" style="margin-top:8px;">Built for <span class="gradient-text">Reliability
+                            & Scale</span></h2>
+                    <p class="sec-para" style=>Our cloud-native architectures are engineered from the ground up for the
+                        uncompromising
                         reliability demands of energy infrastructure—where downtime is measured in millions, not just
                         inconvenience.</p>
-                    <div class="rel-features">
+                    <div class=" rel-features">
                         <div class="rel-feature">
                             <div class="rel-feature-dot"></div>
                             <div class="rel-feature-text">Cloud-native microservices with active-active redundancy</div>
