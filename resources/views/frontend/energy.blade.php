@@ -1055,8 +1055,8 @@ body {
 }
 
 .tech-pill {
-    background: var(--navy-2);
-    border: 1px solid var(--navy-3);
+    background: var(--navy-3);
+    border: 1px solid var(--navy-2);
     border-radius: 100px;
     padding: 10px 22px;
     font-size: 14px;
@@ -1073,14 +1073,14 @@ body {
     position: absolute;
     inset: 0;
     border-radius: 100px;
-    background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.12), transparent);
+    background: var(--gradient-orange);
     transform: translateX(-100%);
     transition: transform .5s ease;
 }
 
 .tech-pill:hover {
     border-color: rgba(249, 115, 22, 0.4);
-    color: var(--orange-light);
+    color: var(--navy-2);
     background: rgba(249, 115, 22, 0.08);
     box-shadow: 0 0 20px rgba(249, 115, 22, 0.15);
     transform: translateY(-3px);
