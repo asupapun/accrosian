@@ -586,7 +586,7 @@ body {
 /* IMAGE */
 .challenge-image-wrap img {
     width: 100%;
-    height: 420px;
+    height: 620px;
     object-fit: cover;
     display: block;
 
