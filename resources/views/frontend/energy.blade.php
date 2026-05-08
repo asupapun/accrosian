@@ -946,7 +946,7 @@ body {
 
 .usecases-header p {
     font-size: 17px;
-    color: var(--text-muted);
+    color: var(--black);
     max-width: 560px;
     margin: 16px auto 0;
 }
@@ -962,8 +962,8 @@ body {
     border-radius: var(--radius-lg);
     overflow: hidden;
     padding: 36px 28px;
-    background: var(--glass);
-    border: 1px solid var(--glass-border);
+    background: var(--navy-4);
+    border: 1px solid var(--navy-3);
     transition: all .35s ease;
     cursor: default;
 }
@@ -975,15 +975,15 @@ body {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, transparent, var(--orange), transparent);
+    background: var(--gradient-orange);
     opacity: 0;
     transition: opacity .35s;
 }
 
 .uc-card:hover {
-    transform: translateY(-6px);
-    background: rgba(255, 255, 255, 0.06);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-2);
+    transform: translateY(-4px)
 }
 
 .uc-card:hover::before {
@@ -991,7 +991,7 @@ body {
 }
 
 .uc-num {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--ff-mono);
     font-size: 48px;
     font-weight: 800;
     color: rgba(249, 115, 22, 0.12);
@@ -1006,15 +1006,16 @@ body {
 }
 
 .uc-title {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--ff-head);
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 10px;
+    color: var(--white);
 }
 
 .uc-desc {
     font-size: 14px;
-    color: var(--text-muted);
+    color: var(--white);
     line-height: 1.65;
 }
 
