@@ -185,11 +185,15 @@ body {
 
 
 .hero-inner {
+    position: relative;
+    z-index: 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
-    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
 .hero-content {
@@ -1478,8 +1482,6 @@ footer {
     <!-- HERO -->
     <section class="hero" id="hero">
         <div class="grid-bg"></div>
-        <div class="hero-glow"></div>
-        <div class="hero-glow2"></div>
         <div class="container">
             <div class="hero-inner">
                 <div class="hero-content reveal">
