@@ -2034,20 +2034,20 @@ body {
 
     <script>
     // ---- SCROLL REVEAL ----
-    // const reveals = document.querySelectorAll('.reveal');
-    // const observer = new IntersectionObserver((entries) => {
-    //     entries.forEach((entry, i) => {
-    //         if (entry.isIntersecting) {
-    //             setTimeout(() => entry.target.classList.add('visible'), 80 * (entry.target.dataset
-    //                 .delay || 0));
-    //             entry.target.classList.add('visible');
-    //             observer.unobserve(entry.target);
-    //         }
-    //     });
-    // }, {
-    //     threshold: 0.12
-    // });
-    // reveals.forEach(el => observer.observe(el));
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => entry.target.classList.add('visible'), 80 * (entry.target.dataset
+                    .delay || 0));
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12
+    });
+    reveals.forEach(el => observer.observe(el));
 
     // ---- STAGGER CHILDREN ----
     document.querySelectorAll('.challenges-right, .solutions-grid, .usecases-grid, .why-grid, .stats-grid').forEach(
@@ -2058,14 +2058,14 @@ body {
         });
 
     // ---- NAV SCROLL ----
-    window.addEventListener('scroll', () => {
-        const nav = document.getElementById('navbar');
-        if (window.scrollY > 60) {
-            nav.style.background = 'rgba(5,13,31,0.97)';
-        } else {
-            nav.style.background = 'rgba(5,13,31,0.85)';
-        }
-    });
+    // window.addEventListener('scroll', () => {
+    //     const nav = document.getElementById('navbar');
+    //     if (window.scrollY > 60) {
+    //         nav.style.background = 'rgba(5,13,31,0.97)';
+    //     } else {
+    //         nav.style.background = 'rgba(5,13,31,0.85)';
+    //     }
+    // });
 
     // ---- COUNTER ANIMATION ----
     const counters = document.querySelectorAll('.stat-num[data-target]');
