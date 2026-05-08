@@ -550,6 +550,7 @@ body {
 
 .challenges-left {
     position: sticky;
+    align-self: start;
 }
 
 .challenges-sub {
@@ -563,6 +564,44 @@ body {
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+
+/* IMAGE WRAPPER */
+.challenge-image-wrap {
+    margin-top: 32px;
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 32px 80px 32px 80px;
+
+    border: 1px solid rgba(249, 115, 22, 0.2);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.18),
+        0 0 40px rgba(249, 115, 22, 0.12);
+
+    transition: all .4s ease;
+}
+
+/* IMAGE */
+.challenge-image-wrap img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+
+    transition: transform .6s ease;
+}
+
+/* HOVER EFFECT */
+.challenge-image-wrap:hover img {
+    transform: scale(1.05);
+}
+
+.challenge-image-wrap:hover {
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.25),
+        0 0 50px rgba(249, 115, 22, 0.22);
 }
 
 .challenge-card {
@@ -1591,6 +1630,10 @@ footer {
                         navigate smart grid modernization, seamless renewable integration, real-time monitoring, and
                         ever-stricter sustainability compliance—all while maintaining operational continuity and cost
                         efficiency.</p>
+                    <!-- IMAGE -->
+                    <div class="challenge-image-wrap">
+                        <img src="{{ asset('images/energy-img.jpg') }}" alt="Energy Infrastructure">
+                    </div>
                 </div>
                 <div class="challenges-right">
                     <div class="challenge-card reveal">
