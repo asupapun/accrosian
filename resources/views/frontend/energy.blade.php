@@ -66,7 +66,7 @@ body {
 }
 
 .section {
-    padding: 110px 0;
+    padding: 60px 0;
 }
 
 .tag-label {
