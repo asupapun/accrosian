@@ -178,34 +178,11 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding-top: 72px;
+    padding: 100px 0 80px;
     overflow: hidden;
-    background: radial-gradient(ellipse 120% 80% at 10% 50%, rgba(249, 115, 22, 0.08) 0%, transparent 60%),
-        radial-gradient(ellipse 80% 80% at 90% 20%, rgba(7, 20, 40, 0.9) 0%, var(--navy) 70%),
-        var(--navy);
+    background: var(--navy);
 }
 
-.hero-glow {
-    position: absolute;
-    width: 800px;
-    height: 800px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(249, 115, 22, 0.12) 0%, transparent 70%);
-    top: -200px;
-    right: -200px;
-    pointer-events: none;
-}
-
-.hero-glow2 {
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(7, 100, 200, 0.1) 0%, transparent 70%);
-    bottom: 0;
-    left: -100px;
-    pointer-events: none;
-}
 
 .hero-inner {
     display: grid;
