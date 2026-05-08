@@ -220,9 +220,9 @@ body {
     z-index: 2;
 }
 
-.hero-tag {
+/* .hero-tag {
     margin-bottom: 28px;
-}
+} */
 
 .hero-heading {
     font-family: var(--ff-head);
@@ -1505,7 +1505,7 @@ footer {
         <div class="container">
             <div class="hero-inner">
                 <div class="hero-content reveal">
-                    <div class="hero-tag"><span class="tag-label">Energy &bull; Resources &bull; Utilities</span></div>
+                    <!-- <div class="hero-tag"><span class="tag-label">Energy &bull; Resources &bull; Utilities</span></div> -->
                     <h1 class="hero-heading">
                         Powering the Future with <span class="gradient-text">Intelligent Energy Solutions</span>
                     </h1>
