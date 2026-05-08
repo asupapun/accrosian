@@ -847,7 +847,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: var(--glass);
+    background: var(--gradient-orange);
 }
 
 .rel-metric-cards {
@@ -887,12 +887,12 @@ body {
     font-family: var(--ff-mono);
     font-size: 20px;
     font-weight: 800;
-    color: var(--gradient-orange);
+    color: var(--orange-light);
 }
 
 .rel-metric-lbl {
     font-size: 11px;
-    color: var(--white);
+    color: var(--text-muted);
     margin-top: 3px;
 }
 
@@ -922,15 +922,14 @@ body {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--gradient-orange);
+    background: var(--orange);
     flex-shrink: 0;
-    box-shadow: 0 0 8px var(--gradient-orange);
+    box-shadow: 0 0 8px var(--orange);
 }
 
 .rel-feature-text {
     font-size: 15px;
     font-weight: 500;
-    color: var(--white);
 }
 
 /* ---- USE CASES ---- */
@@ -1812,13 +1811,12 @@ footer {
                 <div class="reliability-content reveal">
                     <span class="tag-label">Architecture & Scale</span>
                     <div class="section-divider" style="margin-top:20px;"></div>
-                    <h2 class="gradient-text" style="margin-top:8px;">Built for <span class="gradient-text">Reliability
-                            & Scale</span></h2>
-                    <p class="sec-para" style=>Our cloud-native architectures are engineered from the ground up for the
-                        uncompromising
+                    <h2 class="section-heading" style="margin-top:8px;">Built for <span
+                            class="gradient-text">Reliability & Scale</span></h2>
+                    <p>Our cloud-native architectures are engineered from the ground up for the uncompromising
                         reliability demands of energy infrastructure—where downtime is measured in millions, not just
                         inconvenience.</p>
-                    <div class=" rel-features">
+                    <div class="rel-features">
                         <div class="rel-feature">
                             <div class="rel-feature-dot"></div>
                             <div class="rel-feature-text">Cloud-native microservices with active-active redundancy</div>
