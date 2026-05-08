@@ -248,25 +248,7 @@ body {
     margin-bottom: 56px;
 }
 
-.hero-stats {
-    display: flex;
-    gap: 40px;
-}
-
-.hero-stat-num {
-    font-family: 'Syne', sans-serif;
-    font-size: 26px;
-    font-weight: 800;
-    color: var(--orange-light);
-}
-
-.hero-stat-label {
-    font-size: 12px;
-    color: var(--text-muted);
-    margin-top: 2px;
-}
-
-.hero-visual {
+/* .hero-visual {
     position: relative;
     z-index: 2;
 }
@@ -517,10 +499,10 @@ body {
     font-size: 10px;
     color: var(--text-dim);
     margin-top: 2px;
-}
+} */
 
 /* float cards */
-.float-card {
+/* .float-card {
     position: absolute;
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(20px);
@@ -565,7 +547,7 @@ body {
     font-family: 'Syne', sans-serif;
     font-size: 16px;
     font-weight: 800;
-}
+} */
 
 /* ---- CHALLENGES ---- */
 .challenges {
@@ -1532,22 +1514,8 @@ footer {
                         <a href="#" class="btn-primary">⚡ Consult Now</a>
                         <a href="#" class="btn-ghost">Explore Solutions →</a>
                     </div>
-                    <div class="hero-stats">
-                        <div>
-                            <div class="hero-stat-num">500+</div>
-                            <div class="hero-stat-label">Projects Delivered</div>
-                        </div>
-                        <div>
-                            <div class="hero-stat-num">15+</div>
-                            <div class="hero-stat-label">Years in Industry</div>
-                        </div>
-                        <div>
-                            <div class="hero-stat-num">40%</div>
-                            <div class="hero-stat-label">Avg. Efficiency Gain</div>
-                        </div>
-                    </div>
                 </div>
-                <div class="hero-visual reveal">
+                <!-- <div class="hero-visual reveal">
                     <div style="position:relative;">
                         <div class="float-card float-card-1">
                             <div class="fc-val">98.7%</div>
@@ -1620,7 +1588,7 @@ footer {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
