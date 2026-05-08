@@ -92,14 +92,14 @@ body {
 }
 
 .section-heading {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--ff-head);
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 800;
     line-height: 1.15;
 }
 
 .gradient-text {
-    background: linear-gradient(120deg, #fff 20%, var(--orange-light) 100%);
+    background: var(--gradient-orange);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -158,9 +158,7 @@ body {
     inset: 0;
     overflow: hidden;
     pointer-events: none;
-    background-image:
-        linear-gradient(rgba(249, 115, 22, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(249, 115, 22, 0.04) 1px, transparent 1px);
+    background-image: var(--white);
     background-size: 60px 60px;
 }
 
