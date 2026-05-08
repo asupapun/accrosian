@@ -10,6 +10,8 @@ use App\Http\Controllers\Admin\StudentRegistrationController;
 use App\Http\Controllers\Frontend\BankingController;
 use App\Http\Controllers\Frontend\MedinfoController;
 use App\Http\Controllers\Frontend\EducationController;
+use App\Http\Controllers\Frontend\EnergyController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +34,7 @@ Route::get('/airs', [App\Http\Controllers\Frontend\AirsController::class, 'index
 Route::get('/industries/banking', [BankingController::class, 'index'])->name('industries.banking');
 Route::get('/industries/medinfo', [MedinfoController::class, 'index'])->name('industries.medinfo');
 Route::get('/industries/education', [EducationController::class, 'index'])->name('industries.education');
+Route::get('/industries/energy', [EnergyController::class, 'index'])->name('industries.energy');
 /*
 |--------------------------------------------------------------------------
 | Auth Routes

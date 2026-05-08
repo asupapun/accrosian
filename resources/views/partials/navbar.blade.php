@@ -71,6 +71,7 @@
                     <a href="{{ route('industries.banking') }}">Banking</a>
                     <a href="{{ route('industries.medinfo') }}">Media & Information</a>
                     <a href="{{ route('industries.education') }}">Education</a>
+                    <a href="{{ route('industries.energy') }}">Energy Resources and Utilities</a>
                 </div>
             </li>
         </ul>
