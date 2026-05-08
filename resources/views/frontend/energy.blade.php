@@ -1021,7 +1021,6 @@ body {
 
 /* ---- TECH STACK ---- */
 .techstack {
-    background: var(--navy-2);
     position: relative;
     overflow: hidden;
 }
@@ -1033,7 +1032,7 @@ body {
 
 .techstack-header p {
     font-size: 17px;
-    color: var(--text-muted);
+    color: var(--black);
     max-width: 500px;
     margin: 16px auto 0;
 }
@@ -1056,8 +1055,8 @@ body {
 }
 
 .tech-pill {
-    background: var(--glass);
-    border: 1px solid var(--glass-border);
+    background: var(--navy-2);
+    border: 1px solid var(--navy-3);
     border-radius: 100px;
     padding: 10px 22px;
     font-size: 14px;
