@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Banking & Fintech Solutions | Accrosian')
+@section('title', 'Energy & Sustainability Solutions | Accrosian')
 
 @section('content')
 
@@ -20,6 +20,7 @@
     --navy-4: #0d2248;
     --orange: #f97316;
     --orange-light: #fb923c;
+    --gradient-orange: linear-gradient(135deg, #e8750a, #f59332);
     --orange-glow: rgba(249, 115, 22, 0.25);
     --orange-dim: rgba(249, 115, 22, 0.12);
     --white: #ffffff;
@@ -29,6 +30,9 @@
     --glass-border: rgba(255, 255, 255, 0.08);
     --radius-lg: 24px;
     --radius-xl: 32px;
+    --ff-head: 'Sora', sans-serif;
+    --ff-body: 'DM Sans', sans-serif;
+    --ff-mono: 'JetBrains Mono', monospace;
 }
 
 *,
@@ -44,9 +48,9 @@ html {
 }
 
 body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--navy);
-    color: var(--white);
+    font-family: var(--ff-body);
+    background: var(--white);
+    color: var(--navy);
     overflow-x: hidden;
     font-size: 16px;
     line-height: 1.6;
