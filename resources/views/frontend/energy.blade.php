@@ -180,7 +180,7 @@ body {
     align-items: center;
     padding: 100px 0 80px;
     overflow: hidden;
-    background: var(--navy);
+    background: var(--navy-4);
 }
 
 
