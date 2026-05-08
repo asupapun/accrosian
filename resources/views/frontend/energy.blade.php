@@ -673,7 +673,6 @@ body {
 .solutions {
     position: relative;
     overflow: hidden;
-    background: var(--navy);
 }
 
 .solutions::before {
@@ -695,7 +694,7 @@ body {
 
 .solutions-header p {
     font-size: 17px;
-    color: var(--text-muted);
+    color: var(--black);
     max-width: 600px;
     margin: 16px auto 0;
 }
@@ -708,11 +707,11 @@ body {
 
 .sol-card {
     position: relative;
-    border-radius: var(--radius-lg);
+    border-radius: var(--gradient-orange);
     overflow: hidden;
     padding: 32px 28px;
-    background: var(--glass);
-    border: 1px solid var(--glass-border);
+    background: var(--navy-4);
+    border: 1px solid var(--navy-3);
     transition: all .35s ease;
     display: flex;
     flex-direction: column;
@@ -728,9 +727,9 @@ body {
 }
 
 .sol-card:hover {
-    transform: translateY(-8px);
-    background: rgba(249, 115, 22, 0.06);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-2);
+    transform: translateY(-4px)
 }
 
 .sol-card:hover::after {
@@ -756,15 +755,16 @@ body {
 }
 
 .sol-title {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--ff-head);
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 10px;
+    color: var(--white);
 }
 
 .sol-desc {
     font-size: 14px;
-    color: var(--text-muted);
+    color: var(--white);
     line-height: 1.65;
     flex: 1;
 }
