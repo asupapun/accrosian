@@ -440,7 +440,7 @@ revealOnScroll();
 
 const counters = document.querySelectorAll('.stat-n');
 
-const counterObserver = new IntersectionObserver(entries=>{
+const vrcounterObserver = new IntersectionObserver(entries=>{
 
     entries.forEach(entry=>{
 
