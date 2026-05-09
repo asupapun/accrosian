@@ -415,3 +415,70 @@ console.log(
   setTimeout(()=>acDevGo(0),900);
 })();
 
+const revealEls = document.querySelectorAll('.rv,.rl,.rr');
+
+function revealOnScroll(){
+
+    const trigger = window.innerHeight * .9;
+
+    revealEls.forEach(el=>{
+
+        const top = el.getBoundingClientRect().top;
+
+        if(top < trigger){
+            el.classList.add('vis');
+        }
+
+    });
+
+}
+
+window.addEventListener('scroll', revealOnScroll);
+
+revealOnScroll();
+
+
+const counters = document.querySelectorAll('.stat-n');
+
+const counterObserver = new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            const el = entry.target;
+            const target = +el.dataset.target;
+
+            let count = 0;
+
+            const speed = target / 100;
+
+            const update = ()=>{
+
+                count += speed;
+
+                if(count < target){
+
+                    el.innerText = Math.floor(count).toLocaleString();
+
+                    requestAnimationFrame(update);
+
+                } else {
+
+                    el.innerText = target.toLocaleString();
+
+                }
+
+            };
+
+            update();
+
+            counterObserver.unobserve(el);
+
+        }
+
+    });
+
+});
+
+counters.forEach(counter=>counterObserver.observe(counter));
