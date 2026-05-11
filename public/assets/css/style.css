@@ -6034,7 +6034,7 @@ select option {
 /* ═══════════════════════════════════════
    SECTION 1 — ABOUT / OVERVIEW
 ═══════════════════════════════════════ */
-.vr-about { background: #ffffff; }
+.vr-about { background: #ffffff; padding: 60px 0px;}
 .vr-about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
