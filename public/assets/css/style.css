@@ -19,6 +19,7 @@
   --black: #000000;
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-hover: rgba(249, 115, 22, .38);
   --card-bg: rgba(26, 32, 96, 0.6);
   --shadow-orange: 0 0 40px rgba(232, 117, 10, 0.2);
   --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -6134,7 +6135,7 @@ select option {
    SECTION 2 — STATS BAR
 ═══════════════════════════════════════ */
 .vr-stats {
-  background: #111540;
+  background: var(--navy-light);
   border-top: 1px solid rgba(255,255,255,0.07);
   border-bottom: 1px solid rgba(255,255,255,0.07);
   padding: 60px 0;
@@ -6177,7 +6178,7 @@ select option {
   gap: 22px;
 }
 .vr-feat-card {
-  background: #fff;
+  background: var(--navy-light);
   border-radius: 20px;
   padding: 34px 26px;
   border: 1px solid rgba(232,117,10,0.1);
@@ -6197,9 +6198,9 @@ select option {
   transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
 }
 .vr-feat-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(232,117,10,0.3);
-  box-shadow: 0 20px 50px rgba(232,117,10,0.12);
+  border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy);
+    transform: translateY(-4px)
 }
 .vr-feat-card:hover::before { transform: scaleX(1); }
 .vr-feat-ico {
@@ -6217,10 +6218,10 @@ select option {
 .vr-feat-card h3 {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 1.05rem; font-weight: 800;
-  color: #0a0e2e; margin: 0 0 10px;
+  color:var(--white); margin: 0 0 10px;
 }
 .vr-feat-card p {
-  font-size: 0.88rem; color: #6b7a99; line-height: 1.75; margin: 0;
+  font-size: 0.88rem; color: var(--off-white); line-height: 1.75; margin: 0;
 }
  
 /* ═══════════════════════════════════════
