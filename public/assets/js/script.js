@@ -418,70 +418,52 @@ console.log(
 // VR Solution
 
 (function () {
-  'use strict';
  
-  /* ── 1. Scroll Reveal ───────────────────────────────── */
-  var revEls = document.querySelectorAll('.vr-rv, .vr-rl, .vr-rr');
+  /* ── Scroll Reveal ── */
+  var els = document.querySelectorAll('.vr-rv, .vr-rl, .vr-rr');
   if ('IntersectionObserver' in window) {
-    var revObs = new IntersectionObserver(function (entries) {
+    var obs = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('vr-vis');
-          revObs.unobserve(e.target);
-        }
+        if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
-    revEls.forEach(function (el) { revObs.observe(el); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    els.forEach(function (el) { obs.observe(el); });
   } else {
-    /* Fallback: show all immediately */
-    revEls.forEach(function (el) { el.classList.add('vr-vis'); });
+    els.forEach(function (el) { el.classList.add('on'); });
   }
  
-  /* ── 2. Animated Stat Counters ──────────────────────── */
-  function fmtNum(v, suffix) {
-    return Math.floor(v) + (suffix || '');
-  }
-  var statEls = document.querySelectorAll('.vr-stat-num[data-target]');
+  /* ── Stat Counters ── */
+  var statEls = document.querySelectorAll('.vr-stat-n[data-target]');
   if ('IntersectionObserver' in window && statEls.length) {
-    var statObs = new IntersectionObserver(function (entries) {
+    var sObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
-        var el     = entry.target;
+        var el = entry.target;
         var target = parseFloat(el.dataset.target);
         var suffix = el.dataset.suffix || '';
-        var dur    = 1800;
-        var start  = null;
-        function step(ts) {
+        var dur = 1800, start = null;
+        (function tick(ts) {
           if (!start) start = ts;
-          var p     = Math.min((ts - start) / dur, 1);
-          var eased = 1 - Math.pow(1 - p, 3);
-          el.textContent = fmtNum(eased * target, suffix);
-          if (p < 1) requestAnimationFrame(step);
-          else el.textContent = fmtNum(target, suffix);
-        }
-        requestAnimationFrame(step);
-        statObs.unobserve(el);
+          var p = Math.min((ts - start) / dur, 1);
+          var v = Math.floor((1 - Math.pow(1 - p, 3)) * target);
+          el.textContent = v + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+          else el.textContent = target + suffix;
+        })(performance.now());
+        sObs.unobserve(el);
       });
-    }, { threshold: 0.5 });
-    statEls.forEach(function (el) { statObs.observe(el); });
+    }, { threshold: 0.6 });
+    statEls.forEach(function (el) { sObs.observe(el); });
   }
  
-  /* ── 3. FAQ Accordion ───────────────────────────────── */
-  var faqQs = document.querySelectorAll('.vr-faq-q');
-  faqQs.forEach(function (q) {
+  /* ── FAQ Accordion ── */
+  document.querySelectorAll('.vr-acc-q').forEach(function (q) {
     q.addEventListener('click', function () {
-      var item    = q.closest('.vr-faq-item');
-      var wasOpen = item.classList.contains('vr-open');
-      /* close all */
-      document.querySelectorAll('.vr-faq-item').forEach(function (i) {
-        i.classList.remove('vr-open');
-      });
-      /* toggle clicked */
-      if (!wasOpen) item.classList.add('vr-open');
+      var item = q.closest('.vr-acc-item');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.vr-acc-item').forEach(function (i) { i.classList.remove('open'); });
+      if (!isOpen) item.classList.add('open');
     });
   });
- 
-  /* ── 4. Subject card hover text ────────────────────── */
-  /* already handled by CSS :hover, nothing extra needed */
  
 })();
