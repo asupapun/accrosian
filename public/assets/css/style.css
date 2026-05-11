@@ -5944,12 +5944,13 @@ select option {
   color: #0a0e2e;
   margin: 0 0 14px;
 }
-.vr-title-white { color: #ffffff; }
+.vr-title-white { color: #ffffff; font-weight: 650;}
 .vr-grad {
   background: linear-gradient(135deg, #e8750a, #f59332);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-weight: 650;
 }
 .vr-orange { color: #e8750a; }
 .vr-sec-head {
@@ -5959,7 +5960,7 @@ select option {
 }
 .vr-sub {
   font-size: 1rem;
-  color: #6b7a99;
+  color: #000000;
   line-height: 1.8;
   margin: 0 auto;
   max-width: 580px;
