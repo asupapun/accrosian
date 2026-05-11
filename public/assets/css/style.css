@@ -5899,14 +5899,13 @@ select option {
  
 /* ─── Shared section padding ─── */
 .vr-sec {
-  padding: 80px 0;
+  padding: 60px 0;
   position: relative;
   overflow: hidden;
 }
  
 /* ─── Max-width container ─── */
 .vr-con {
-  max-width: 1160px;
   margin: 0 auto;
   padding: 0 24px;
 }
