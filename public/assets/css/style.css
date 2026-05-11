@@ -5939,18 +5939,19 @@ select option {
 .vr-title {
   font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  font-weight: 800;
+  font-weight: 400;
   line-height: 1.15;
   color: #0a0e2e;
   margin: 0 0 14px;
 }
-.vr-title-white { color: #ffffff; font-weight: 650;}
+.vr-title-white { color: #ffffff; font-weight: 700;}
 .vr-grad {
   background: linear-gradient(135deg, #e8750a, #f59332);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-weight: 650;
+  font-weight: 700;
+  
 }
 .vr-orange { color: #e8750a; }
 .vr-sec-head {
@@ -5960,7 +5961,7 @@ select option {
 }
 .vr-sub {
   font-size: 1rem;
-  color: #000000;
+  color: #6b7a99;
   line-height: 1.8;
   margin: 0 auto;
   max-width: 580px;
