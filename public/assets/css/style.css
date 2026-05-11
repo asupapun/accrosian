@@ -6027,10 +6027,17 @@ select option {
 .vr-d6 { transition-delay: 0.48s; }
  
 /* float animation */
-@keyframes vrFloat {
+/* @keyframes vrFloat {
   from { transform: translateY(0); }
   to   { transform: translateY(-10px); }
 }  */
+
+
+.vr-sec {
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+}
 /* ═══════════════════════════════════════
    SECTION 1 — ABOUT / OVERVIEW
 ═══════════════════════════════════════ */
