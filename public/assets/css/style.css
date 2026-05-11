@@ -41,17 +41,6 @@
   --border-radius: 16px;
   --border-radius-lg: 24px;
 
-  --c-navy:       #0a0e2e;
-  --c-navy-mid:   #111540;
-  --c-navy-light: #1a2060;
-  --c-orange:     #e8750a;
-  --c-orange-lt:  #f59332;
-  --c-white:      #ffffff;
-  --c-off:        #f4f6ff;
-  --c-text:       #6b7a99;
-  --c-text-lt:    #a8b4d0;
-  --c-glass:      rgba(255,255,255,0.08);
-
 }
 
 *,
@@ -5885,28 +5874,22 @@ select option {
   Uses existing Accrosian CSS variables & class conventions
   Paste entire file into "Full Description (HTML)" admin field */
 
-  /* ─── Reset for injected content ─── */
-/* .vr-wrap * { box-sizing: border-box; }
-.vr-wrap img { max-width: 100%; display: block; }
-.vr-wrap a { text-decoration: none; }
-.vr-wrap ul { list-style: none; padding: 0; margin: 0; } */
- 
-/* ─── Root colors (hardcoded — no CSS vars) ─── */
+
 /* ─── Shared section padding ─── */
-.vr-sec {
+/* .vr-sec {
   padding: 60px 0;
   position: relative;
   overflow: hidden;
 }
  
 /* ─── Max-width container ─── */
-.vr-con {
+/* .vr-con {
   margin: 0 auto;
   padding: 0 24px;
 }
  
 /* ─── Section tag pill ─── */
-.vr-tag {
+/* .vr-tag {
   display: inline-flex;
   align-items: center;
   gap: 7px;
@@ -5928,10 +5911,10 @@ select option {
   border-radius: 50%;
   display: block;
   flex-shrink: 0;
-}
+} */
  
 /* ─── Section title ─── */
-.vr-title {
+/* .vr-title {
   font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
   font-weight: 800;
@@ -5968,9 +5951,9 @@ select option {
   border-radius: 2px;
   margin: 14px auto 0;
 }
- 
+  */
 /* ─── Buttons ─── */
-.vr-btn {
+/* .vr-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -5987,7 +5970,6 @@ select option {
 .vr-btn-primary {
   background: linear-gradient(135deg, #e8750a, #f59332);
   color: #ffffff;
-  margin-top: 15px;
   box-shadow: 0 4px 20px rgba(232,117,10,0.35);
 }
 .vr-btn-primary:hover {
@@ -6020,9 +6002,9 @@ select option {
 .vr-btn-sm { padding: 10px 22px; font-size: 0.82rem; }
 .vr-btn::after { content: ' →'; transition: margin 0.3s; }
 .vr-btn:hover::after { margin-left: 4px; }
- 
+  */
 /* ─── Scroll Reveal ─── */
-.vr-rv {
+/* .vr-rv {
   opacity: 1; transform: translateY(30px);
   transition: none ease, transform 0.7s ease;
 }
@@ -6048,8 +6030,7 @@ select option {
 @keyframes vrFloat {
   from { transform: translateY(0); }
   to   { transform: translateY(-10px); }
-}
- 
+}  */
 /* ═══════════════════════════════════════
    SECTION 1 — ABOUT / OVERVIEW
 ═══════════════════════════════════════ */
