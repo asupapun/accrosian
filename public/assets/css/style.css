@@ -5939,7 +5939,7 @@ select option {
 .vr-title {
   font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  font-weight: 400;
+  font-weight: 10;
   line-height: 1.15;
   color: #0a0e2e;
   margin: 0 0 14px;
