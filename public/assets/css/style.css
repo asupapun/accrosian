@@ -5939,9 +5939,9 @@ select option {
 .vr-title {
   font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  font-weight: 10;
+  font-weight: 800;
   line-height: 1.15;
-  color: #000000;
+  color: #0a0e2e;
   margin: 0 0 14px;
 }
 .vr-title-white { color: #ffffff;}
@@ -5992,6 +5992,7 @@ select option {
 .vr-btn-primary {
   background: linear-gradient(135deg, #e8750a, #f59332);
   color: #ffffff;
+  margin-top: 15px;
   box-shadow: 0 4px 20px rgba(232,117,10,0.35);
 }
 .vr-btn-primary:hover {
