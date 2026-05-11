@@ -6027,16 +6027,16 @@ select option {
  
 /* ─── Scroll Reveal ─── */
 .vr-rv {
-  opacity: 0; transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  opacity: 1; transform: translateY(30px);
+  transition: none, transform none;
 }
 .vr-rl {
-  opacity: 0; transform: translateX(-40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  opacity: 1; transform: translateX(-40px);
+  transition: none, transform none;
 }
 .vr-rr {
-  opacity: 0; transform: translateX(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  opacity: 1; transform: translateX(40px);
+  transition: none, transform none;
 }
 .vr-rv.on, .vr-rl.on, .vr-rr.on {
   opacity: 1; transform: none;
