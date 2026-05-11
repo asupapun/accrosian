@@ -41,6 +41,17 @@
   --border-radius: 16px;
   --border-radius-lg: 24px;
 
+  --c-navy:       #0a0e2e;
+  --c-navy-mid:   #111540;
+  --c-navy-light: #1a2060;
+  --c-orange:     #e8750a;
+  --c-orange-lt:  #f59332;
+  --c-white:      #ffffff;
+  --c-off:        #f4f6ff;
+  --c-text:       #6b7a99;
+  --c-text-lt:    #a8b4d0;
+  --c-glass:      rgba(255,255,255,0.08);
+
 }
 
 *,
@@ -5875,28 +5886,12 @@ select option {
   Paste entire file into "Full Description (HTML)" admin field */
 
   /* ─── Reset for injected content ─── */
-.vr-wrap * { box-sizing: border-box; }
+/* .vr-wrap * { box-sizing: border-box; }
 .vr-wrap img { max-width: 100%; display: block; }
 .vr-wrap a { text-decoration: none; }
-.vr-wrap ul { list-style: none; padding: 0; margin: 0; }
+.vr-wrap ul { list-style: none; padding: 0; margin: 0; } */
  
 /* ─── Root colors (hardcoded — no CSS vars) ─── */
-.vr-wrap {
-  --c-navy:       #0a0e2e;
-  --c-navy-mid:   #111540;
-  --c-navy-light: #1a2060;
-  --c-orange:     #e8750a;
-  --c-orange-lt:  #f59332;
-  --c-white:      #ffffff;
-  --c-off:        #f4f6ff;
-  --c-text:       #6b7a99;
-  --c-text-lt:    #a8b4d0;
-  --c-glass:      rgba(255,255,255,0.08);
-  font-family: 'DM Sans', 'Plus Jakarta Sans', sans-serif;
-  overflow-x: hidden;
-  background: #ffffff;
-}
- 
 /* ─── Shared section padding ─── */
 .vr-sec {
   padding: 60px 0;
