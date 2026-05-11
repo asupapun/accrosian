@@ -6064,7 +6064,7 @@ select option {
   position: absolute; inset: 0;
   background: radial-gradient(ellipse at 30% 40%, rgba(232,117,10,0.12) 0%, transparent 60%);
 }
-.vr-about-img-icon { font-size: 5rem; position: relative; z-index: 1; }
+/* .vr-about-img-icon { font-size: 5rem; position: relative; z-index: 1; } */
 .vr-about-img-label {
   font-size: 0.8rem; font-weight: 600;
   color: rgba(255,255,255,0.4);
