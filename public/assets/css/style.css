@@ -6028,15 +6028,15 @@ select option {
 /* ─── Scroll Reveal ─── */
 .vr-rv {
   opacity: 1; transform: translateY(30px);
-  transition: none, transform none;
+  transition: none ease, transform 0.7s ease;
 }
 .vr-rl {
-  opacity: 1; transform: translateX(-40px);
-  transition: none, transform none;
+  opacity: 0; transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 .vr-rr {
-  opacity: 1; transform: translateX(40px);
-  transition: none, transform none;
+  opacity: 0; transform: translateX(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 .vr-rv.on, .vr-rl.on, .vr-rr.on {
   opacity: 1; transform: none;
@@ -6734,4 +6734,9 @@ select option {
   .vr-feat-grid { grid-template-columns: 1fr; }
   .vr-subj-grid { grid-template-columns: 1fr; }
   .vr-cta-btns  { flex-direction: column; align-items: center; }
+}
+
+.service-full-desc.reveal {
+  opacity: 1 !important;
+  transform: none !important;
 }
