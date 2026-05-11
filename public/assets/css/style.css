@@ -5944,13 +5944,12 @@ select option {
   color: #0a0e2e;
   margin: 0 0 14px;
 }
-.vr-title-white { color: #ffffff; font-weight: 700;}
+.vr-title-white { color: #ffffff;}
 .vr-grad {
   background: linear-gradient(135deg, #e8750a, #f59332);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-weight: 700;
   
 }
 .vr-orange { color: #e8750a; }
