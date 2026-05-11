@@ -5903,7 +5903,6 @@ select option {
 
   /* ── Section spacing wrapper ── */
 .vr-content-wrap {
-  background: var(--white, #fff);
   overflow-x: hidden;
 }
  
