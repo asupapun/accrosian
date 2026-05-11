@@ -6048,7 +6048,7 @@ select option {
   width: 100%;
   aspect-ratio: 4/3;
   border-radius: 22px;
-  background: linear-gradient(135deg, #0e1a3a 0%, #1d2f60 50%, #0a1428 100%);
+  background: url('/assets/images/cta-img.jpg');
   border: 1px solid rgba(232,117,10,0.2);
   box-shadow: 0 24px 60px rgba(0,0,0,0.18);
   display: flex;
