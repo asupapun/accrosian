@@ -415,70 +415,73 @@ console.log(
   setTimeout(()=>acDevGo(0),900);
 })();
 
-const revealEls = document.querySelectorAll('.rv,.rl,.rr');
+// VR Solution
 
-function revealOnScroll(){
-
-    const trigger = window.innerHeight * .9;
-
-    revealEls.forEach(el=>{
-
-        const top = el.getBoundingClientRect().top;
-
-        if(top < trigger){
-            el.classList.add('vis');
+(function () {
+  'use strict';
+ 
+  /* ── 1. Scroll Reveal ───────────────────────────────── */
+  var revEls = document.querySelectorAll('.vr-rv, .vr-rl, .vr-rr');
+  if ('IntersectionObserver' in window) {
+    var revObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('vr-vis');
+          revObs.unobserve(e.target);
         }
-
-    });
-
-}
-
-window.addEventListener('scroll', revealOnScroll);
-
-revealOnScroll();
-
-
-const counters = document.querySelectorAll('.stat-n');
-
-const vrcounterObserver = new IntersectionObserver(entries=>{
-
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-            const el = entry.target;
-            const target = +el.dataset.target;
-
-            let count = 0;
-
-            const speed = target / 100;
-
-            const update = ()=>{
-
-                count += speed;
-
-                if(count < target){
-
-                    el.innerText = Math.floor(count).toLocaleString();
-
-                    requestAnimationFrame(update);
-
-                } else {
-
-                    el.innerText = target.toLocaleString();
-
-                }
-
-            };
-
-            update();
-
-            counterObserver.unobserve(el);
-
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+    revEls.forEach(function (el) { revObs.observe(el); });
+  } else {
+    /* Fallback: show all immediately */
+    revEls.forEach(function (el) { el.classList.add('vr-vis'); });
+  }
+ 
+  /* ── 2. Animated Stat Counters ──────────────────────── */
+  function fmtNum(v, suffix) {
+    return Math.floor(v) + (suffix || '');
+  }
+  var statEls = document.querySelectorAll('.vr-stat-num[data-target]');
+  if ('IntersectionObserver' in window && statEls.length) {
+    var statObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el     = entry.target;
+        var target = parseFloat(el.dataset.target);
+        var suffix = el.dataset.suffix || '';
+        var dur    = 1800;
+        var start  = null;
+        function step(ts) {
+          if (!start) start = ts;
+          var p     = Math.min((ts - start) / dur, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = fmtNum(eased * target, suffix);
+          if (p < 1) requestAnimationFrame(step);
+          else el.textContent = fmtNum(target, suffix);
         }
-
+        requestAnimationFrame(step);
+        statObs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    statEls.forEach(function (el) { statObs.observe(el); });
+  }
+ 
+  /* ── 3. FAQ Accordion ───────────────────────────────── */
+  var faqQs = document.querySelectorAll('.vr-faq-q');
+  faqQs.forEach(function (q) {
+    q.addEventListener('click', function () {
+      var item    = q.closest('.vr-faq-item');
+      var wasOpen = item.classList.contains('vr-open');
+      /* close all */
+      document.querySelectorAll('.vr-faq-item').forEach(function (i) {
+        i.classList.remove('vr-open');
+      });
+      /* toggle clicked */
+      if (!wasOpen) item.classList.add('vr-open');
     });
-
-});
-
-counters.forEach(counter=>counterObserver.observe(counter));
+  });
+ 
+  /* ── 4. Subject card hover text ────────────────────── */
+  /* already handled by CSS :hover, nothing extra needed */
+ 
+})();
