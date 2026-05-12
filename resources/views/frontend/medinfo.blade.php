@@ -189,26 +189,45 @@ h3 {
     line-height: 1.75;
 }
 
+.hero-btns {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
 .btn-primary {
-    background: var(--gradient-orange);
-    color: var(--white);
-    box-shadow: 0 4px 24px rgba(232, 117, 10, 0.35);
+    background: linear-gradient(135deg, var(--orange-500), #f05a17);
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 24px rgba(249, 115, 22, 0.35);
+    transition: all 0.3s;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
+    box-shadow: 0 8px 36px rgba(249, 115, 22, 0.50);
 }
 
 .btn-outline {
-    background: var(--gradient-orange);
-    color: var(--white);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: transparent;
+    border: 1px solid rgba(13, 21, 48, 0.22);
+    color: var(--navy-800);
+    padding: 14px 32px;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s;
 }
 
 .btn-outline:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
+    background: rgba(249, 115, 22, 0.06);
+    border-color: var(--orange-500);
+    color: var(--orange-500);
 }
 
 /* ─── DASHBOARD VISUAL ─── */
@@ -861,7 +880,7 @@ h3 {
     border: 1px solid var(--navy-700);
     border-radius: var(--radius);
     padding: 32px;
-    margin-top: 160px;
+    margin-top: 60px;
     box-shadow: 0 24px 60px rgba(13, 21, 48, 0.18);
 }
 
