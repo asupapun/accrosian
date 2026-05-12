@@ -189,15 +189,13 @@
 
 .bk-btn-orange {
     background: var(--gradient-orange);
-    color: #fff;
-    box-shadow: var(--shadow-orange);
+    color: var(--white);
+    box-shadow: 0 4px 24px rgba(232, 117, 10, 0.35);
 }
 
 .bk-btn-orange:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 40px rgba(249, 115, 22, .42);
-    color: #fff;
-    text-decoration: none;
+    box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
 }
 
 .bk-btn-navy {
@@ -214,17 +212,14 @@
 }
 
 .bk-btn-outline-white {
-    background: rgba(255, 255, 255, .08);
-    border: 1.5px solid rgba(255, 255, 255, .22);
-    color: #fff;
+    background: var(--gradient-orange);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .bk-btn-outline-white:hover {
-    background: rgba(255, 255, 255, .15);
-    border-color: rgba(255, 255, 255, .4);
-    transform: translateY(-2px);
-    color: #fff;
-    text-decoration: none;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
 }
 
 .bk-btn-outline-navy {
@@ -240,27 +235,6 @@
     text-decoration: none;
 }
 
-.btn-primary {
-    background: var(--gradient-orange);
-    color: var(--white);
-    box-shadow: 0 4px 24px rgba(232, 117, 10, 0.35);
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
-}
-
-.btn-outline {
-    background: var(--gradient-orange);
-    color: var(--white);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-}
-
-.btn-outline:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
-}
 
 /* ═══════════════════════════════════════════════
    SECTION HEADER
