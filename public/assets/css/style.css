@@ -6663,7 +6663,7 @@ select option {
 /* ═══════════════════════════════════════
    SECTION 9 — TESTIMONIALS
 ═══════════════════════════════════════ */
-.vr-testi { background: #111540; }
+
 .vr-testi-grid {
   display: grid;
   grid-template-columns: repeat(3,1fr);
