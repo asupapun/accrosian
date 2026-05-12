@@ -6687,13 +6687,13 @@ select option {
     box-shadow: 0 8px 28px var(--navy);
     transform: translateY(-4px)
 }
-.vr-stars { color: var(--gradient-orange); font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 14px; }
+.vr-stars { color: var(--white); font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 14px; }
 .vr-testi-card > p {
-  font-size: 0.88rem; color: var(--black); line-height: 1.8;
+  font-size: 0.88rem; color: var(--white); line-height: 1.8;
   margin: 0 0 20px; font-style: italic;
 }
 .vr-testi-author {
-  display: flex; align-items: center; gap: 12px; color: var(--black);
+  display: flex; align-items: center; gap: 12px; color: var(--white);
   padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.07);
 }
 .vr-testi-av {
@@ -6701,13 +6701,13 @@ select option {
   background: linear-gradient(135deg, #e8750a, #f59332);
   display: flex; align-items: center; justify-content: center;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 800; font-size: 0.88rem; color: #fff; flex-shrink: 0;
+  font-weight: 800; font-size: 0.88rem; color: var(--navy); flex-shrink: 0;
 }
 .vr-testi-name {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700; font-size: 0.88rem; color: var(--black);;
+  font-weight: 700; font-size: 0.88rem; color: var(--white);;
 }
-.vr-testi-role { font-size: 0.74rem; color: var(--black);; }
+.vr-testi-role { font-size: 0.74rem; color: var(--white);; }
  
 /* ═══════════════════════════════════════
    SECTION 10 — FAQ
