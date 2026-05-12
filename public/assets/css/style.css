@@ -6267,12 +6267,12 @@ select option {
   content: ''; position: absolute; inset: 0;
   background: linear-gradient(180deg, transparent 40%, rgba(10,14,46,0.6));
 }
-.vr-subj-body { padding: 16px 18px; }
+.vr-subj-body { padding: 16px 18px; background: var(--off-white);}
 .vr-subj-body h3 {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1rem; font-weight: 800; color: #fff; margin: 0 0 4px;
+  font-size: 1rem; font-weight: 800; color: var(--black); margin: 0 0 4px;
 }
-.vr-subj-body p { font-size: 0.78rem; color: #a8b4d0; margin: 0 0 10px; }
+.vr-subj-body p { font-size: 0.78rem; color: var(--black); margin: 0 0 10px; }
 .vr-subj-lnk {
   color: #f59332; font-size: 0.8rem; font-weight: 600;
   transition: letter-spacing 0.3s;
