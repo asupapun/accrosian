@@ -6350,19 +6350,79 @@ select option {
 }
 .vr-prod-card:hover {
     border-color: var(--navy);
-    transform: translateY(-4px);
+    transform:
+        scale(1.08)
+        translateY(-6px);
     box-shadow: 0 16px 40px rgba(8, 33, 102, 0.25);
 }
 .vr-prod-top {
-  background: linear-gradient(135deg, #111540, #0a0e2e);
+  position: relative;
+    height: 240px;
+    overflow: hidden;
+    border-radius: 24px 24px 0 0;
+
+    background:
+        linear-gradient(135deg, #111540, #0a0e2e);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  /* background: linear-gradient(135deg, #111540, #0a0e2e);
   aspect-ratio: 16/10;
   display: flex; align-items: center; justify-content: center;
-  font-size: 3.5rem; position: relative; overflow: hidden;
+  font-size: 3.5rem; position: relative; overflow: hidden; */
 }
+.vr-prod-card:nth-child(1) .vr-prod-top::before{
+    content:"";
+    width:180px;
+    height:180px;
+
+    background:url('/assets/images/prd1-img.jpg') center/contain no-repeat;
+
+    display:block;
+
+    transition:0.5s ease;
+}
+.vr-prod-card:nth-child(2) .vr-prod-top::before{
+    content:"";
+    width:190px;
+    height:190px;
+
+    background:url('/assets/images/prod2-img.jpeg') center/contain no-repeat;
+
+    display:block;
+
+    transition:0.5s ease;
+}
+.vr-prod-card:nth-child(3) .vr-prod-top::before{
+    content:"";
+    width:180px;
+    height:180px;
+
+    background:url('/assets/images/prod3-img.jpg') center/contain no-repeat;
+
+    display:block;
+
+    transition:0.5s ease;
+}
+
 .vr-prod-top::after {
-  content: '';
+   content:"";
+    position:absolute;
+    width:280px;
+    height:280px;
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            rgba(232,117,10,0.18),
+            transparent 70%
+        );
+
+    filter:blur(20px);
+  /* content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(232,117,10,0.08), rgba(26,32,96,0.2));
+  background: linear-gradient(135deg, rgba(232,117,10,0.08), rgba(26,32,96,0.2)); */
 }
 .vr-prod-pill {
   position: absolute; top: 14px; left: 14px;
