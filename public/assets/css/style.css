@@ -6670,7 +6670,7 @@ select option {
   gap: 20px;
 }
 .vr-testi-card {
-  background: rgba(255,255,255,0.03);
+  background: var(--navy-light);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 20px; padding: 28px;
   position: relative; overflow: hidden;
@@ -6683,17 +6683,17 @@ select option {
   color: rgba(232,117,10,0.1); line-height: 1; pointer-events: none;
 }
 .vr-testi-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(232,117,10,0.25);
-  box-shadow: 0 16px 44px rgba(0,0,0,0.25);
+  border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy);
+    transform: translateY(-4px)
 }
-.vr-stars { color: #e8750a; font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 14px; }
+.vr-stars { color: var(--gradient-orange); font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 14px; }
 .vr-testi-card > p {
-  font-size: 0.88rem; color: #a8b4d0; line-height: 1.8;
+  font-size: 0.88rem; color: var(--black); line-height: 1.8;
   margin: 0 0 20px; font-style: italic;
 }
 .vr-testi-author {
-  display: flex; align-items: center; gap: 12px;
+  display: flex; align-items: center; gap: 12px; color: var(--black);
   padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.07);
 }
 .vr-testi-av {
@@ -6705,9 +6705,9 @@ select option {
 }
 .vr-testi-name {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700; font-size: 0.88rem; color: #fff;
+  font-weight: 700; font-size: 0.88rem; color: var(--black);;
 }
-.vr-testi-role { font-size: 0.74rem; color: #6b7a99; }
+.vr-testi-role { font-size: 0.74rem; color: var(--black);; }
  
 /* ═══════════════════════════════════════
    SECTION 10 — FAQ
