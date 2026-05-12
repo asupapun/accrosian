@@ -6329,7 +6329,7 @@ select option {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.92rem; font-weight: 800; color: #0a0e2e; margin: 0 0 8px;
 }
-.vr-step p { font-size: 0.8rem; color: #6b7a99; line-height: 1.7; margin: 0; }
+.vr-step p { font-size: 0.8rem; color: var(--black); line-height: 1.7; margin: 0; }
  
 /* ═══════════════════════════════════════
    SECTION 6 — PRODUCTS
