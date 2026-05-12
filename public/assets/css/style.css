@@ -6349,9 +6349,9 @@ select option {
               border-color 0.4s, box-shadow 0.4s;
 }
 .vr-prod-card:hover {
-  transform: translateY(-10px);
-  border-color: rgba(232,117,10,0.35);
-  box-shadow: 0 24px 60px rgba(232,117,10,0.14);
+    border-color: var(--navy);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(8, 33, 102, 0.25);
 }
 .vr-prod-top {
   background: linear-gradient(135deg, #111540, #0a0e2e);
@@ -6378,7 +6378,7 @@ select option {
   font-size: 1.05rem; font-weight: 800; color: #0a0e2e; margin: 0 0 10px;
 }
 .vr-prod-body > p {
-  font-size: 0.85rem; color: #6b7a99; line-height: 1.75; margin: 0 0 16px;
+  font-size: 0.85rem; color: var(--black); line-height: 1.75; margin: 0 0 16px;
 }
 .vr-specs { display: flex; flex-direction: column; gap: 7px; margin-bottom: 20px; }
 .vr-specs li {
