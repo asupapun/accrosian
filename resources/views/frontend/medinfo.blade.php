@@ -196,38 +196,25 @@ h3 {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--orange-500), #f05a17);
-    color: #fff;
-    padding: 14px 32px;
-    border-radius: var(--radius-sm);
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    box-shadow: 0 4px 24px rgba(249, 115, 22, 0.35);
-    transition: all 0.3s;
+    background: var(--gradient-orange);
+    color: var(--white);
+    box-shadow: 0 4px 24px rgba(232, 117, 10, 0.35);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 36px rgba(249, 115, 22, 0.50);
+    box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
 }
 
 .btn-outline {
-    background: transparent;
-    border: 1px solid rgba(13, 21, 48, 0.22);
-    color: var(--navy-800);
-    padding: 14px 32px;
-    border-radius: var(--radius-sm);
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.3s;
+    background: var(--gradient-orange);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .btn-outline:hover {
-    background: rgba(249, 115, 22, 0.06);
-    border-color: var(--orange-500);
-    color: var(--orange-500);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
 }
 
 /* ─── DASHBOARD VISUAL ─── */
@@ -1460,8 +1447,8 @@ h3 {
                         — from publishing to streaming to real-time analytics.
                     </p>
                     <div class="hero-btns fade-up fade-up-3">
-                        <a href="#" class="btn-primary">Get a Quote</a>
-                        <a href="#" class="btn-outline">Consult Now →</a>
+                        <a href="#" class="btn btn-primary btn-arrow">Get a Quote</a>
+                        <a href="#" class="btn btn-outline">Consult Now →</a>
                     </div>
                 </div>
                 <div>
