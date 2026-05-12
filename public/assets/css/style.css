@@ -6056,7 +6056,7 @@ select option {
   width: 100%;
   aspect-ratio: 4/3;
   border-radius: 22px;
-  background: url('/assets/images/cta-img.jpg') center/cover no-repeat;
+  background: url('/assets/images/about-vr.jpeg') center/cover no-repeat;
   border: 1px solid rgba(232,117,10,0.2);
   box-shadow: 0 24px 60px rgba(0,0,0,0.18);
   display: flex;
@@ -6720,7 +6720,7 @@ select option {
 }
 .vr-faq-img {
   margin-top: 28px; border-radius: 18px; overflow: hidden;
-  background: linear-gradient(135deg, #111540, #0a0e2e);
+  background: url('/assets/images/faq-vr.jpeg') center/cover no-repeat;
   aspect-ratio: 4/3;
   display: flex; align-items: center; justify-content: center;
   font-size: 5rem; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
