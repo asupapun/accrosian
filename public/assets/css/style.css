@@ -6545,7 +6545,7 @@ select option {
 .vr-show-img {
   width: 100%; aspect-ratio: 4/3;
   border-radius: 20px; overflow: hidden;
-  background: linear-gradient(135deg, #111540, #0a0e2e);
+  background: url("assets/images/hisGeo.png") center/cover no-repeat;
   border: 1px solid rgba(232,117,10,0.15);
   box-shadow: 0 20px 56px rgba(0,0,0,0.14);
   display: flex; align-items: center; justify-content: center;
