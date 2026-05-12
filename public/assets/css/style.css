@@ -6338,131 +6338,196 @@ select option {
 .vr-prod-grid {
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  gap: 22px;
+  gap: 24px;
 }
 .vr-prod-card {
-  background: #fff;
-  border-radius: 22px; overflow: hidden;
-  border: 1px solid rgba(232,117,10,0.1);
-  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
-  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1),
-              border-color 0.4s, box-shadow 0.4s;
+  background:#fff;
+    border-radius:24px;
+    overflow:hidden;
+
+    border:1px solid rgba(232,117,10,0.1);
+
+    box-shadow:0 6px 20px rgba(0,0,0,0.06);
+
+    transition:
+        transform .45s cubic-bezier(.4,0,.2,1),
+        box-shadow .45s ease,
+        border-color .45s ease;
+
+    position:relative;
 }
 .vr-prod-card:hover {
-    border-color: var(--navy);
-    transform:
-        scale(1.08)
-        translateY(-6px);
-    box-shadow: 0 16px 40px rgba(8, 33, 102, 0.25);
+    transform:translateY(-10px);
+
+    border-color:rgba(232,117,10,0.35);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.12),
+        0 0 30px rgba(232,117,10,0.12);
 }
 .vr-prod-top {
-  position: relative;
-    height: 240px;
-    overflow: hidden;
-    border-radius: 24px 24px 0 0;
+  position:relative;
+
+    height:260px;
+
+    overflow:hidden;
 
     background:
-        linear-gradient(135deg, #111540, #0a0e2e);
+        linear-gradient(
+            135deg,
+            #111540,
+            #0a0e2e
+        );
 
     display:flex;
     align-items:center;
     justify-content:center;
+}
+
   /* background: linear-gradient(135deg, #111540, #0a0e2e);
   aspect-ratio: 16/10;
   display: flex; align-items: center; justify-content: center;
   font-size: 3.5rem; position: relative; overflow: hidden; */
-}
+
 .vr-prod-card:nth-child(1) .vr-prod-top::before{
-    content:"";
-    width:180px;
-    height:180px;
-
-    background:url('/assets/images/prd1-img.jpg') center/contain no-repeat;
-
-    display:block;
-
-    transition:0.5s ease;
+    background:
+        url('/assets/images/prd1-img.jpg')
+        center center/cover no-repeat;
 }
 .vr-prod-card:nth-child(2) .vr-prod-top::before{
-    content:"";
-    width:190px;
-    height:190px;
+    background:
+        url('/assets/images/prod2-img.jpeg')
+        center center/contain no-repeat;
 
-    background:url('/assets/images/prod2-img.jpeg') center/contain no-repeat;
-
-    display:block;
-
-    transition:0.5s ease;
+    width:80%;
+    height:80%;
 }
 .vr-prod-card:nth-child(3) .vr-prod-top::before{
-    content:"";
-    width:180px;
-    height:180px;
-
-    background:url('/assets/images/prod3-img.jpg') center/contain no-repeat;
-
-    display:block;
-
-    transition:0.5s ease;
+    background:
+        url('/assets/images/prod3-img.jpg')
+        center center/cover no-repeat;
 }
+
+.vr-prod-top::before{content:"";
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+    height:100%;
+
+    transition:
+        transform .6s ease;}
 
 .vr-prod-top::after {
    content:"";
+
     position:absolute;
-    width:280px;
-    height:280px;
+
+    width:320px;
+    height:320px;
+
     border-radius:50%;
 
     background:
         radial-gradient(
-            rgba(232,117,10,0.18),
+            rgba(232,117,10,0.16),
             transparent 70%
         );
 
-    filter:blur(20px);
+    filter:blur(40px);
+
+    z-index:1;
   /* content: '';
   position: absolute; inset: 0;
   background: linear-gradient(135deg, rgba(232,117,10,0.08), rgba(26,32,96,0.2)); */
 }
 .vr-prod-pill {
-  position: absolute; top: 14px; left: 14px;
+   position:absolute;
+
+    top:16px;
+    left:16px;
+
+    z-index:5;
+
+    padding:6px 14px;
+
+    border-radius:100px;
+
+    font-size:11px;
+    font-weight:700;
+
+    text-transform:uppercase;
+    letter-spacing:.5px;
+  /* position: absolute; top: 14px; left: 14px;
   padding: 4px 12px; border-radius: 100px;
   font-size: 10px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.5px; z-index: 2;
+  text-transform: uppercase; letter-spacing: 0.5px; z-index: 2; */
 }
-.vr-prod-pill.orange { background: #e8750a; color: #fff; }
-.vr-prod-pill.blue   { background: #2563eb; color: #fff; }
-.vr-prod-body { padding: 24px; }
+.vr-prod-pill.orange {  background:#e8750a;
+    color:#fff;}
+.vr-prod-pill.blue   {background:#2563eb;
+    color:#fff;}
+.vr-prod-body { padding: 28px; }
 .vr-prod-body h3 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.05rem; font-weight: 800; color: #0a0e2e; margin: 0 0 10px;
-}
-.vrHeadImg{
-  width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    background: url("assets/images/medinfo-img.jpg");
+  font-family:'Plus Jakarta Sans',sans-serif;
 
-    transition:
-        transform .8s ease,
-        filter .6s ease;
+    font-size:1.25rem;
+    font-weight:800;
+
+    color:#0a0e2e;
+
+    margin:0 0 14px;
 }
 .vr-prod-body > p {
-  font-size: 0.85rem; color: var(--black); line-height: 1.75; margin: 0 0 16px;
+  font-size:.92rem;
+
+    color:#222;
+
+    line-height:1.85;
+
+    margin:0 0 20px;
 }
-.vr-specs { display: flex; flex-direction: column; gap: 7px; margin-bottom: 20px; }
+.vr-specs { display:flex;
+    flex-direction:column;
+    gap:10px;
+
+    margin-bottom:24px; }
 .vr-specs li {
-  display: flex; align-items: center; gap: 8px;
-  font-size: 0.82rem; color: #1a2060; font-weight: 500;
+   display:flex;
+    align-items:flex-start;
+    gap:10px;
+
+    font-size:.86rem;
+    line-height:1.6;
+
+    color:#1a2060;
+
+    font-weight:500;
 }
 .vr-specs li::before {
-  content: '✓';
-  width: 18px; height: 18px; border-radius: 50%;
-  background: rgba(232,117,10,0.1);
-  color: #e8750a; font-weight: 800; font-size: 0.7rem;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
+  content:'✓';
+
+    width:20px;
+    height:20px;
+
+    min-width:20px;
+
+    border-radius:50%;
+
+    background:rgba(232,117,10,0.1);
+
+    color:#e8750a;
+
+    font-size:.72rem;
+    font-weight:800;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-top:2px;
 }
  
 /* ═══════════════════════════════════════
