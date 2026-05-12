@@ -6267,7 +6267,7 @@ select option {
   content: ''; position: absolute; inset: 0;
   background: linear-gradient(180deg, transparent 40%, rgba(10,14,46,0.6));
 }
-.vr-subj-body { padding: 16px 18px; background: var(--off-white);}
+.vr-subj-body { padding: 16px 18px; background: var(--text-light);}
 .vr-subj-body h3 {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 1rem; font-weight: 800; color: var(--black); margin: 0 0 4px;
