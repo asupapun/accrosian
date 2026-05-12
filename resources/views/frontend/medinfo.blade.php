@@ -189,7 +189,7 @@ h3 {
     line-height: 1.75;
 }
 
-.hero-btns {
+/* .hero-btns {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
@@ -228,7 +228,7 @@ h3 {
     background: rgba(249, 115, 22, 0.06);
     border-color: var(--orange-500);
     color: var(--orange-500);
-}
+} */
 
 /* ─── DASHBOARD VISUAL ─── */
 .hero-visual {
