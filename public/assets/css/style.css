@@ -6274,7 +6274,7 @@ select option {
 }
 .vr-subj-body p { font-size: 0.78rem; color: var(--black); margin: 0 0 10px; }
 .vr-subj-lnk {
-  color: var(--gradient-orange); font-size: 0.8rem; font-weight: 600;
+  color: #f59332; font-size: 0.8rem; font-weight: 600;
   transition: letter-spacing 0.3s;
 }
 .vr-subj-card:hover .vr-subj-lnk { letter-spacing: 0.5px; }
