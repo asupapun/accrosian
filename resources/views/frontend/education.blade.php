@@ -227,47 +227,6 @@ h4 {
     line-height: 1.78;
 }
 
-.hero-btns {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, var(--orange-500), #e8600a);
-    color: #fff;
-    padding: 14px 32px;
-    border-radius: var(--r-sm);
-    font-size: .9rem;
-    font-weight: 600;
-    text-decoration: none;
-    box-shadow: 0 4px 24px rgba(249, 115, 22, .34);
-    transition: all .3s;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 36px rgba(249, 115, 22, .50)
-}
-
-.btn-ghost {
-    background: transparent;
-    border: 1px solid rgba(249, 115, 22, .34);
-    color: var(--text-primary);
-    padding: 14px 32px;
-    border-radius: var(--r-sm);
-    font-size: .9rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all .3s;
-}
-
-.btn-ghost:hover {
-    background: rgba(249, 115, 22, .08);
-    border-color: var(--orange-500);
-    color: var(--orange-300)
-}
-
 /* ─── HERO DASHBOARD ─── */
 .hero-visual {
     position: relative
