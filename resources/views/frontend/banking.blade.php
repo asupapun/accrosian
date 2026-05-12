@@ -240,6 +240,28 @@
     text-decoration: none;
 }
 
+.btn-primary {
+    background: var(--gradient-orange);
+    color: var(--white);
+    box-shadow: 0 4px 24px rgba(232, 117, 10, 0.35);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
+}
+
+.btn-outline {
+    background: var(--gradient-orange);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.btn-outline:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
+}
+
 /* ═══════════════════════════════════════════════
    SECTION HEADER
 ═══════════════════════════════════════════════ */
