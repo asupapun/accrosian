@@ -6717,6 +6717,7 @@ select option {
   display: grid;
   grid-template-columns: 1fr 1.45fr;
   gap: 72px; align-items: flex-start;
+  margin-top: 160px;
 }
 .vr-faq-img {
   margin-top: 28px; border-radius: 18px; overflow: hidden;
