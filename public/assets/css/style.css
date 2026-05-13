@@ -7017,7 +7017,7 @@ select option {
   display: flex; align-items: center; justify-content: center;
   font-size: 5rem; box-shadow: 0 12px 40px rgba(0,0,0,0.12);
 }
-.vr-acc { display: flex; flex-direction: column; gap: 10px; }
+.vr-acc { display: flex; flex-direction: column; gap: 10px; margin-top: 160px; }
 .vr-acc-item {
   border: 1px solid rgba(232,117,10,0.12);
   border-radius: 14px; overflow: hidden;
