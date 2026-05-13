@@ -6771,7 +6771,7 @@ select option {
 /* ═══════════════════════════════════════
    SECTION 11 — CTA
 ═══════════════════════════════════════ */
-.vr-cta {
+/* .vr-cta {
   background: #0a0e2e;
   padding: 90px 0;
   text-align: center;
@@ -6836,7 +6836,7 @@ select option {
   font-size: 0.78rem; color: #6b7a99;
   display: flex; align-items: center;
   justify-content: center; gap: 6px;
-}
+} */
  
 /* ═══════════════════════════════════════
    RESPONSIVE
