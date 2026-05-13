@@ -6138,7 +6138,6 @@ select option {
   background: var(--navy-light);
   border-top: 1px solid rgba(255,255,255,0.07);
   border-bottom: 1px solid rgba(255,255,255,0.07);
-  padding: 60px 0;
 }
 .vr-stats-grid {
   display: grid;
@@ -7003,7 +7002,7 @@ select option {
 /* ═══════════════════════════════════════
    SECTION 10 — FAQ
 ═══════════════════════════════════════ */
-.vr-faq { background: #fff; padding: 60px 0px; }
+.vr-faq { background: #fff; }
 .vr-faq-grid {
   display: grid;
   grid-template-columns: 1fr 1.45fr;
