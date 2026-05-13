@@ -200,6 +200,75 @@
     <script>
     lucide.createIcons();
     </script>
+    <script>
+    (function() {
+
+        /* ── Scroll Reveal ── */
+        var els = document.querySelectorAll('.vr-rv, .vr-rl, .vr-rr');
+        if ('IntersectionObserver' in window) {
+            var obs = new IntersectionObserver(function(entries) {
+                entries.forEach(function(e) {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('on');
+                        obs.unobserve(e.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -30px 0px'
+            });
+            els.forEach(function(el) {
+                obs.observe(el);
+            });
+        } else {
+            els.forEach(function(el) {
+                el.classList.add('on');
+            });
+        }
+
+        /* ── Stat Counters ── */
+        var statEls = document.querySelectorAll('.vr-stat-n[data-target]');
+        if ('IntersectionObserver' in window && statEls.length) {
+            var sObs = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (!entry.isIntersecting) return;
+                    var el = entry.target;
+                    var target = parseFloat(el.dataset.target);
+                    var suffix = el.dataset.suffix || '';
+                    var dur = 1800,
+                        start = null;
+                    (function tick(ts) {
+                        if (!start) start = ts;
+                        var p = Math.min((ts - start) / dur, 1);
+                        var v = Math.floor((1 - Math.pow(1 - p, 3)) * target);
+                        el.textContent = v + suffix;
+                        if (p < 1) requestAnimationFrame(tick);
+                        else el.textContent = target + suffix;
+                    })(performance.now());
+                    sObs.unobserve(el);
+                });
+            }, {
+                threshold: 0.6
+            });
+            statEls.forEach(function(el) {
+                sObs.observe(el);
+            });
+        }
+
+        /* ── FAQ Accordion ── */
+        document.querySelectorAll('.vr-acc-q').forEach(function(q) {
+            q.addEventListener('click', function() {
+                var item = q.closest('.vr-acc-item');
+                var isOpen = item.classList.contains('open');
+                document.querySelectorAll('.vr-acc-item').forEach(function(i) {
+                    i.classList.remove('open');
+                });
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+    })();
+    </script>
 
 </body>
 
