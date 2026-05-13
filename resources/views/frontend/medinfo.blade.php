@@ -1433,7 +1433,7 @@ h3 {
 
     <!-- HERO -->
     <section class="hero">
-        <img src="{{ asset('assets/images/hero-medinfo.jpeg') }}" alt="Hero Background" class="hero-bg-img" />
+        <img src="{{ asset('assets/images/hero-medin.jpeg') }}" alt="Hero Background" class="hero-bg-img" />
         <div class="hero-bg">
         </div>
         <div class="container">
