@@ -517,6 +517,34 @@ h4 {
     color: var(--text-muted)
 }
 
+.hero-btns {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: var(--gradient-orange);
+    color: var(--white);
+    box-shadow: 0 4px 24px rgba(232, 117, 10, 0.35);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
+}
+
+.btn-outline {
+    background: var(--gradient-orange);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.btn-outline:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
+}
+
 /* ─── STATS STRIP ─── */
 .stats-strip {
     background: var(--navy-900);
@@ -1545,8 +1573,8 @@ h4 {
                     <p class="hero-sub fu fu2">Transform learning experiences with scalable, interactive, and
                         data-driven education platforms built for institutions, startups, and enterprises.</p>
                     <div class="hero-btns fu fu3">
-                        <a href="#" class="btn-primary">Get a Quote</a>
-                        <a href="#" class="btn-ghost">Consult Now →</a>
+                        <a href="#" class="btn btn-primary btn-arrow">Get a Quote</a>
+                        <a href="#" class="btn btn-outline">Consult Now →</a>
                     </div>
                 </div>
             </div>
