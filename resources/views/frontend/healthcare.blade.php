@@ -48,7 +48,7 @@ html {
 }
 
 body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: var(--ff-body);
     background: var(--navy);
     color: var(--white);
     overflow-x: hidden;
@@ -59,7 +59,7 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: 'Sora', sans-serif;
+    font-family: var(--ff-head);
 }
 
 /* ─── HERO ─── */
@@ -99,7 +99,7 @@ h4 {
     z-index: 2;
 }
 
-.hero-badge {
+/* .hero-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -123,7 +123,7 @@ h4 {
     background: var(--orange);
     box-shadow: 0 0 10px var(--orange);
     animation: pulse 2s infinite;
-}
+} */
 
 @keyframes pulse {
 
@@ -148,14 +148,14 @@ h4 {
 }
 
 .hero h1 .grad {
-    background: linear-gradient(135deg, var(--orange-light), #fcd34d);
+    background: var(--gradient-orange);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .hero-sub {
     font-size: 1.05rem;
-    color: var(--white-60);
+    color: var(--white);
     line-height: 1.75;
     max-width: 480px;
     margin-bottom: 40px;
@@ -171,7 +171,7 @@ h4 {
 .btn-primary {
     padding: 14px 32px;
     border-radius: 50px;
-    background: linear-gradient(135deg, var(--orange), #ea580c);
+    background: var(--gradient-orange);
     color: #fff;
     font-weight: 600;
     font-size: 0.95rem;
@@ -206,7 +206,7 @@ h4 {
     background: var(--orange-glow);
 }
 
-/* Hero right */
+/* Hero right
 .hero-visual {
     position: relative;
     z-index: 2;
@@ -392,9 +392,10 @@ h4 {
     font-size: 0.65rem;
     color: var(--white-60);
 }
+*/
 
 /* Floating stat cards */
-.float-card {
+/* .float-card {
     position: absolute;
     background: rgba(13, 20, 37, 0.92);
     border: 1px solid var(--glass-border);
@@ -476,7 +477,9 @@ h4 {
 .fc-text-lbl {
     font-size: 0.68rem;
     color: var(--white-60);
-}
+} */
+
+
 
 /* ─── SECTION COMMON ─── */
 section {
@@ -1460,7 +1463,7 @@ section {
     <div class="hero-grid"></div>
 
     <div class="hero-content">
-        <div class="hero-badge">Healthcare Industry</div>
+        <!-- <div class="hero-badge">Healthcare Industry</div> -->
         <h1>Transforming Healthcare Through <span class="grad">Intelligent Digital</span> Innovation</h1>
         <p class="hero-sub">We engineer next-generation healthcare technology solutions — from AI-powered
             diagnostics to enterprise EHR platforms — built for security, scalability, and seamless patient
@@ -1471,102 +1474,102 @@ section {
         </div>
     </div>
 
-    <div class="hero-visual">
-        <div class="hero-dashboard" style="position:relative">
-            <!-- Floating cards -->
-            <div class="float-card float-card-1">
-                <div class="fc-icon orange">🛡️</div>
-                <div>
-                    <div class="fc-text-val">HIPAA</div>
-                    <div class="fc-text-lbl">Compliant Ready</div>
-                </div>
-            </div>
-            <div class="float-card float-card-2">
-                <div class="fc-icon green">🤖</div>
-                <div>
-                    <div class="fc-text-val">AI Diagnostics</div>
-                    <div class="fc-text-lbl">Powered by ML</div>
-                </div>
-            </div>
-            <div class="float-card float-card-3">
-                <div class="fc-icon blue">📡</div>
-                <div>
-                    <div class="fc-text-val">99.9%</div>
-                    <div class="fc-text-lbl">System Uptime</div>
-                </div>
-            </div>
+    <!-- <div class="hero-visual">
+        <div class="hero-dashboard" style="position:relative"> -->
+    <!-- Floating cards -->
+    <!-- <div class="float-card float-card-1">
+        <div class="fc-icon orange">🛡️</div>
+        <div>
+            <div class="fc-text-val">HIPAA</div>
+            <div class="fc-text-lbl">Compliant Ready</div>
+        </div>
+    </div>
+    <div class="float-card float-card-2">
+        <div class="fc-icon green">🤖</div>
+        <div>
+            <div class="fc-text-val">AI Diagnostics</div>
+            <div class="fc-text-lbl">Powered by ML</div>
+        </div>
+    </div>
+    <div class="float-card float-card-3">
+        <div class="fc-icon blue">📡</div>
+        <div>
+            <div class="fc-text-val">99.9%</div>
+            <div class="fc-text-lbl">System Uptime</div>
+        </div>
+    </div>
 
-            <div class="dash-header">
-                <div class="dash-dot"></div>
-                <div class="dash-dot"></div>
-                <div class="dash-dot"></div>
-                <span class="dash-title">Accrosian Health Dashboard — Live Overview</span>
-            </div>
+    <div class="dash-header">
+        <div class="dash-dot"></div>
+        <div class="dash-dot"></div>
+        <div class="dash-dot"></div>
+        <span class="dash-title">Accrosian Health Dashboard — Live Overview</span>
+    </div>
 
-            <div class="dash-metrics">
-                <div class="dash-metric">
-                    <div class="dash-metric-val orange">1,284</div>
-                    <div class="dash-metric-lbl">Active Patients</div>
-                </div>
-                <div class="dash-metric">
-                    <div class="dash-metric-val blue">98.6%</div>
-                    <div class="dash-metric-lbl">Record Accuracy</div>
-                </div>
-                <div class="dash-metric">
-                    <div class="dash-metric-val green">142ms</div>
-                    <div class="dash-metric-lbl">Avg Response</div>
-                </div>
-            </div>
+    <div class="dash-metrics">
+        <div class="dash-metric">
+            <div class="dash-metric-val orange">1,284</div>
+            <div class="dash-metric-lbl">Active Patients</div>
+        </div>
+        <div class="dash-metric">
+            <div class="dash-metric-val blue">98.6%</div>
+            <div class="dash-metric-lbl">Record Accuracy</div>
+        </div>
+        <div class="dash-metric">
+            <div class="dash-metric-val green">142ms</div>
+            <div class="dash-metric-lbl">Avg Response</div>
+        </div>
+    </div>
 
-            <div class="dash-chart">
-                <div class="dash-chart-title">Patient Admissions — Last 12 Months</div>
-                <div class="chart-bars">
-                    <div class="chart-bar" style="height:42%;animation-delay:.05s"></div>
-                    <div class="chart-bar" style="height:60%;animation-delay:.1s"></div>
-                    <div class="chart-bar" style="height:55%;animation-delay:.15s"></div>
-                    <div class="chart-bar" style="height:75%;animation-delay:.2s"></div>
-                    <div class="chart-bar" style="height:65%;animation-delay:.25s"></div>
-                    <div class="chart-bar" style="height:80%;animation-delay:.3s"></div>
-                    <div class="chart-bar" style="height:70%;animation-delay:.35s"></div>
-                    <div class="chart-bar"
-                        style="height:90%;animation-delay:.4s;background:linear-gradient(180deg,#fcd34d,rgba(249,115,22,0.4))">
-                    </div>
-                    <div class="chart-bar" style="height:85%;animation-delay:.45s"></div>
-                    <div class="chart-bar"
-                        style="height:95%;animation-delay:.5s;background:linear-gradient(180deg,var(--orange),rgba(249,115,22,0.4))">
-                    </div>
-                    <div class="chart-bar" style="height:88%;animation-delay:.55s"></div>
-                    <div class="chart-bar"
-                        style="height:100%;animation-delay:.6s;background:linear-gradient(180deg,var(--orange-light),rgba(249,115,22,0.5))">
-                    </div>
-                </div>
+    <div class="dash-chart">
+        <div class="dash-chart-title">Patient Admissions — Last 12 Months</div>
+        <div class="chart-bars">
+            <div class="chart-bar" style="height:42%;animation-delay:.05s"></div>
+            <div class="chart-bar" style="height:60%;animation-delay:.1s"></div>
+            <div class="chart-bar" style="height:55%;animation-delay:.15s"></div>
+            <div class="chart-bar" style="height:75%;animation-delay:.2s"></div>
+            <div class="chart-bar" style="height:65%;animation-delay:.25s"></div>
+            <div class="chart-bar" style="height:80%;animation-delay:.3s"></div>
+            <div class="chart-bar" style="height:70%;animation-delay:.35s"></div>
+            <div class="chart-bar"
+                style="height:90%;animation-delay:.4s;background:linear-gradient(180deg,#fcd34d,rgba(249,115,22,0.4))">
             </div>
-
-            <div class="dash-vitals">
-                <div class="vital-card">
-                    <div class="vital-icon red">❤️</div>
-                    <div>
-                        <div class="vital-val">72 bpm</div>
-                        <div class="vital-lbl">Heart Rate</div>
-                    </div>
-                </div>
-                <div class="vital-card">
-                    <div class="vital-icon blue">🫁</div>
-                    <div>
-                        <div class="vital-val">98%</div>
-                        <div class="vital-lbl">SpO₂</div>
-                    </div>
-                </div>
-                <div class="vital-card">
-                    <div class="vital-icon green">🌡️</div>
-                    <div>
-                        <div class="vital-val">36.8°C</div>
-                        <div class="vital-lbl">Temp</div>
-                    </div>
-                </div>
+            <div class="chart-bar" style="height:85%;animation-delay:.45s"></div>
+            <div class="chart-bar"
+                style="height:95%;animation-delay:.5s;background:linear-gradient(180deg,var(--orange),rgba(249,115,22,0.4))">
+            </div>
+            <div class="chart-bar" style="height:88%;animation-delay:.55s"></div>
+            <div class="chart-bar"
+                style="height:100%;animation-delay:.6s;background:linear-gradient(180deg,var(--orange-light),rgba(249,115,22,0.5))">
             </div>
         </div>
     </div>
+
+    <div class="dash-vitals">
+        <div class="vital-card">
+            <div class="vital-icon red">❤️</div>
+            <div>
+                <div class="vital-val">72 bpm</div>
+                <div class="vital-lbl">Heart Rate</div>
+            </div>
+        </div>
+        <div class="vital-card">
+            <div class="vital-icon blue">🫁</div>
+            <div>
+                <div class="vital-val">98%</div>
+                <div class="vital-lbl">SpO₂</div>
+            </div>
+        </div>
+        <div class="vital-card">
+            <div class="vital-icon green">🌡️</div>
+            <div>
+                <div class="vital-val">36.8°C</div>
+                <div class="vital-lbl">Temp</div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div> -->
 </section>
 
 <!-- CHALLENGES -->
