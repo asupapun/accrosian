@@ -1,2273 +1,2309 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('title', 'Banking & Fintech Solutions | Accrosian')
-
-@section('content')
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link
-    href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet">
-
-<style>
-/* ─────────────────────────────────────────
-   TOKENS
-───────────────────────────────────────── */
-:root {
-    --navy-950: #040814;
-    --navy-900: #070d1f;
-    --navy-800: #0d1530;
-    --navy-700: #111d40;
-    --navy-600: #172251;
-    --orange-600: #ea6a00;
-    --orange-500: #f97316;
-    --orange-400: #fb923c;
-    --orange-300: #fdba74;
-    --black: #000000;
-    --orange-glow: rgba(249, 115, 22, .18);
-    --orange-glow-md: rgba(249, 115, 22, .28);
-    --orange-glow-lg: rgba(249, 115, 22, .38);
-    --glass-bg: rgba(13, 21, 48, .55);
-    --glass-bg-2: rgba(13, 21, 48, .75);
-    --glass-border: rgba(255, 255, 255, .07);
-    --glass-border-hover: rgba(249, 115, 22, .38);
-    --text-primary: #eef2ff;
-    --text-secondary: #8fa0c0;
-    --text-muted: #4f607e;
-    --gradient-orange: linear-gradient(135deg, #e8750a, #f59332);
-    --r: 16px;
-    --r-sm: 10px;
-    --ff-head: 'Sora', sans-serif;
-    --ff-body: 'DM Sans', sans-serif;
-    --ff-mono: 'JetBrains Mono', monospace;
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0
-}
-
-html {
-    scroll-behavior: smooth
-}
-
-body {
-    font-family: var(--ff-body);
-    background: #ffff;
-    color: var(--text-primary);
-    line-height: 1.65;
-    overflow-x: hidden;
-}
-
-/* noise */
-body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* ─── UTILITY ─── */
-section {
-    position: relative;
-    z-index: 1
-}
-
-.container {
-    max-width: 1350px;
-    margin: 0 auto;
-    padding: 0 6%
-}
-
-.pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(249, 115, 22, .10);
-    border: 1px solid rgba(249, 115, 22, .24);
-    color: var(--orange-400);
-    padding: 6px 16px;
-    border-radius: 100px;
-    font-size: .77rem;
-    font-weight: 600;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
-
-.pill-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--orange-500);
-    border-radius: 50%
-}
-
-h1,
-h2,
-h3,
-h4 {
-    font-family: var(--ff-head);
-}
-
-.sec-head {
-    text-align: center;
-    margin-bottom: 56px
-}
-
-.sec-head h2 {
-    font-size: clamp(1.9rem, 3.5vw, 2.85rem);
-    font-weight: 800;
-    font-style: var(--ff-head);
-    letter-spacing: -.025em;
-    margin-bottom: 14px;
-    color: var(--navy-800);
-    line-height: 1.1;
-}
-
-.sec-head h2 em {
-    font-style: var(--ff-head);
-    background: var(--gradient-orange);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.sec-head p {
-    color: var(--navy-900);
-    font-size: 1rem;
-    max-width: 560px;
-    margin: 0 auto;
-    font-weight: 300
-}
-
-/* ─── HERO ─── */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-top: 88px;
-    overflow: hidden
-}
-
-.hero-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background: radial-gradient(ellipse 75% 60% at 68% 38%, rgba(249, 115, 22, .11) 0%, transparent 62%),
-        radial-gradient(ellipse 50% 50% at 10% 85%, rgba(11, 18, 40, .95) 0%, transparent 60%),
-        linear-gradient(160deg, var(--navy-950) 0%, var(--navy-900) 100%);
-}
-
-.hero-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(rgba(255, 255, 255, .022) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, .022) 1px, transparent 1px);
-    background-size: 58px 58px;
-    mask-image: linear-gradient(to bottom, transparent, black 18%, black 68%, transparent);
-}
-
-.hero-inner {
-    position: relative;
-    z-index: 2;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 56px;
-    align-items: center;
-    padding: 80px 0;
-}
-
-.hero-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--text-muted);
-    font-size: .8rem;
-    letter-spacing: .07em;
-    text-transform: uppercase;
-    font-weight: 500;
-    margin-bottom: 22px;
-}
-
-.hero-eyebrow::before {
-    content: '';
-    display: block;
-    width: 26px;
-    height: 1px;
-    background: linear-gradient(to right, var(--orange-500), transparent);
-}
-
-.hero h1 {
-    font-size: clamp(2.3rem, 4.2vw, 3.75rem);
-    font-weight: 800;
-    line-height: 1.07;
-    letter-spacing: -.03em;
-    margin-bottom: 22px;
-    color: #ffff;
-}
-
-.hero h1 em {
-    font-style: normal;
-    background: var(--gradient-orange);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero-sub {
-    color: var(--text-secondary);
-    font-size: 1.05rem;
-    font-weight: 300;
-    max-width: 500px;
-    margin-bottom: 38px;
-    line-height: 1.78;
-}
-
-/* ─── HERO DASHBOARD ─── */
-.hero-visual {
-    position: relative
-}
-
-.dash {
-    background: var(--glass-bg-2);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--r);
-    backdrop-filter: blur(22px);
-    padding: 22px;
-    box-shadow: 0 28px 90px rgba(0, 0, 0, .55), inset 0 1px 0 rgba(255, 255, 255, .05);
-    animation: floatY 6s ease-in-out infinite;
-}
-
-@keyframes floatY {
-
-    0%,
-    100% {
-        transform: translateY(0)
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare | Accrosian Industries</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap"
+        rel="stylesheet">
+    <style>
+    :root {
+        --navy: #050d1a;
+        --navy-mid: #081425;
+        --navy-light: #0d2044;
+        --orange: #f97316;
+        --orange-light: #fb923c;
+        --orange-glow: rgba(249, 115, 22, 0.18);
+        --orange-border: rgba(249, 115, 22, 0.28);
+        --white: #ffffff;
+        --white-60: rgba(255, 255, 255, 0.6);
+        --white-20: rgba(255, 255, 255, 0.08);
+        --white-10: rgba(255, 255, 255, 0.05);
+        --glass: rgba(255, 255, 255, 0.06);
+        --glass-border: rgba(255, 255, 255, 0.12);
+        --blue-accent: #38bdf8;
+        --green-accent: #34d399;
+        --radius: 20px;
+        --radius-lg: 32px;
     }
 
-    50% {
-        transform: translateY(-9px)
-    }
-}
-
-.dash-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 18px
-}
-
-.dash-title {
-    font-family: 'Syne', sans-serif;
-    font-size: .8rem;
-    color: var(--text-secondary);
-    font-weight: 600;
-    letter-spacing: .06em
-}
-
-.live-dot {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: .72rem;
-    color: #4ade80;
-    font-weight: 600
-}
-
-.live-dot::before {
-    content: '';
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #4ade80;
-    animation: pulse 2s ease-in-out infinite
-}
-
-@keyframes pulse {
-
-    0%,
-    100% {
-        opacity: 1
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
 
-    50% {
-        opacity: .4
-    }
-}
-
-.dash-kpis {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-bottom: 18px
-}
-
-.kpi {
-    background: rgba(255, 255, 255, .033);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--r-sm);
-    padding: 13px
-}
-
-.kpi-val {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.55rem;
-    font-weight: 700
-}
-
-.kpi-val span {
-    color: var(--orange-400)
-}
-
-.kpi-label {
-    font-size: .7rem;
-    color: var(--text-muted);
-    margin-top: 2px
-}
-
-.dash-chart {
-    margin-bottom: 18px
-}
-
-.chart-label {
-    font-size: .7rem;
-    color: var(--text-muted);
-    margin-bottom: 8px;
-    display: flex;
-    justify-content: space-between
-}
-
-.chart-bars {
-    display: flex;
-    align-items: flex-end;
-    gap: 5px;
-    height: 72px
-}
-
-.bar {
-    flex: 1;
-    border-radius: 4px 4px 0 0;
-    background: linear-gradient(to top, var(--orange-500), var(--orange-300));
-    animation: barUp 1s ease-out forwards;
-}
-
-@keyframes barUp {
-    from {
-        transform: scaleY(0);
-        transform-origin: bottom
+    html {
+        scroll-behavior: smooth;
     }
 
-    to {
-        transform: scaleY(1)
-    }
-}
-
-.bar:nth-child(1) {
-    height: 42%;
-    animation-delay: .08s;
-    opacity: .6
-}
-
-.bar:nth-child(2) {
-    height: 66%;
-    animation-delay: .13s;
-    opacity: .7
-}
-
-.bar:nth-child(3) {
-    height: 50%;
-    animation-delay: .18s;
-    opacity: .65
-}
-
-.bar:nth-child(4) {
-    height: 88%;
-    animation-delay: .23s;
-    opacity: 1
-}
-
-.bar:nth-child(5) {
-    height: 62%;
-    animation-delay: .28s;
-    opacity: .75
-}
-
-.bar:nth-child(6) {
-    height: 78%;
-    animation-delay: .33s;
-    opacity: .85
-}
-
-.bar:nth-child(7) {
-    height: 70%;
-    animation-delay: .38s;
-    opacity: .8
-}
-
-.bar:nth-child(8) {
-    height: 95%;
-    animation-delay: .43s;
-    opacity: 1
-}
-
-.dash-students {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px
-}
-
-.stu-row {
-    background: rgba(255, 255, 255, .025);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--r-sm);
-    padding: 11px 14px;
-    display: flex;
-    align-items: center;
-    gap: 10px
-}
-
-.stu-avatar {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Syne', sans-serif;
-    font-size: .7rem;
-    font-weight: 700;
-    color: #fff;
-    flex-shrink: 0
-}
-
-.stu-info {
-    flex: 1;
-    min-width: 0
-}
-
-.stu-name {
-    font-size: .75rem;
-    font-weight: 600;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis
-}
-
-.stu-prog-track {
-    height: 4px;
-    background: rgba(255, 255, 255, .06);
-    border-radius: 2px;
-    margin-top: 4px;
-    overflow: hidden
-}
-
-.stu-prog-fill {
-    height: 100%;
-    border-radius: 2px;
-    background: linear-gradient(to right, var(--orange-500), var(--orange-300))
-}
-
-.stu-pct {
-    font-size: .68rem;
-    color: var(--orange-400);
-    font-weight: 600;
-    flex-shrink: 0
-}
-
-.float-chip {
-    position: absolute;
-    right: -22px;
-    top: 22px;
-    background: var(--glass-bg-2);
-    border: 1px solid var(--glass-border-hover);
-    border-radius: var(--r-sm);
-    padding: 12px 15px;
-    backdrop-filter: blur(16px);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    animation: floatY 6s ease-in-out 1.2s infinite;
-    white-space: nowrap;
-}
-
-.chip-icon {
-    width: 34px;
-    height: 34px;
-    border-radius: 8px;
-    background: rgba(249, 115, 22, .15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--orange-400)
-}
-
-.chip-val {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--orange-400)
-}
-
-.chip-text {
-    font-size: .7rem;
-    color: var(--text-muted)
-}
-
-.hero-btns {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-
-.btn-primary {
-    background: var(--gradient-orange);
-    color: var(--white);
-    box-shadow: 0 4px 24px rgba(232, 117, 10, 0.35);
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
-}
-
-.btn-outline {
-    background: var(--gradient-orange);
-    color: var(--white);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-}
-
-.btn-outline:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
-}
-
-/* ─── STATS STRIP ─── */
-.stats-strip {
-    background: var(--navy-900);
-    border-top: 1px solid var(--glass-border);
-    border-bottom: 1px solid var(--glass-border);
-    padding: 30px 0
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr)
-}
-
-.stat {
-    text-align: center;
-    position: relative
-}
-
-.stat:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 10%;
-    bottom: 10%;
-    width: 1px;
-    background: var(--glass-border)
-}
-
-.stat-n {
-    font-family: 'Syne', sans-serif;
-    font-size: 2.1rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #fff 40%, var(--orange-400));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent
-}
-
-.stat-l {
-    color: var(--text-muted);
-    font-size: .8rem;
-    margin-top: 3px
-}
-
-/* ─── OVERVIEW ─── */
-.overview {
-    padding: 60px 0
-}
-
-.overview-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: stretch;
-}
-
-.overview-text h2 {
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
-    font-weight: 800;
-    letter-spacing: -.02em;
-    margin-bottom: 22px;
-    line-height: 1.2;
-    color: var(--navy-800);
-}
-
-.overview-text h2 em {
-    font-style: normal;
-    background: var(--gradient-orange);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent
-}
-
-.overview-text p {
-    color: var(--navy-900);
-    margin-bottom: 14px;
-    font-weight: 300;
-    line-height: 1.82
-}
-
-.ov-list {
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
-    margin-top: 26px
-}
-
-.ov-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 13px;
-    padding: 13px 17px;
-    background: var(--navy-600);
-    border: 1px solid var(--navy-700);
-    border-radius: var(--r-sm);
-    backdrop-filter: blur(10px);
-    transition: border-color .3s;
-}
-
-.ov-item:hover {
-    border-color: var(--navy-900);
-}
-
-.ov-icon {
-    color: var(--orange-400);
-    flex-shrink: 0;
-    margin-top: 1px
-}
-
-.ov-text strong {
-    display: block;
-    font-size: .88rem;
-    font-weight: 600;
-    margin-bottom: 2px
-}
-
-.ov-text span {
-    font-size: .8rem;
-    color: #ffff;
-}
-
-.overview-image-wrap {
-    height: 100%;
-    min-height: 720px;
-    border-radius: 24px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18);
-}
-
-.overview-image-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform .7s ease;
-}
-
-.overview-image-wrap:hover img {
-    transform: scale(1.04);
-}
-
-/* ─── SERVICES ─── */
-.services {
-    padding: 60px 0;
-}
-
-.svc-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px
-}
-
-.svc-card {
-    background: var(--navy-600);
-    border: 1px solid var(--navy-800);
-    border-radius: var(--r);
-    padding: 26px 22px;
-    backdrop-filter: blur(16px);
-    transition: all .35s cubic-bezier(.4, 0, .2, 1);
-    position: relative;
-    overflow: hidden;
-}
-
-.svc-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(to right, var(--orange-500), var(--orange-300));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform .35s;
-}
-
-.svc-card:hover {
-    border-color: var(--glass-border-hover);
-    box-shadow: 0 8px 28px var(--navy-800);
-    transform: translateY(-4px)
-}
-
-.svc-card:hover::after {
-    transform: scaleX(1)
-}
-
-/* .svc-icon {
-    width: 46px;
-    height: 46px;
-    border-radius: 12px;
-    background: rgba(249, 115, 22, .10);
-    border: 1px solid rgba(249, 115, 22, .18);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 16px;
-    color: var(--orange-400);
-    transition: all .3s;
-} */
-
-.svc-card:hover .svc-icon {
-    background: rgba(249, 115, 22, .18);
-    transform: scale(1.08)
-}
-
-.svc-card h3 {
-    font-family: 'Syne', sans-serif;
-    font-size: .92rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: #ffff;
-}
-
-.svc-card p {
-    font-size: .8rem;
-    color: #ffff;
-    line-height: 1.65
-}
-
-/* ─── WHY US ─── */
-.why {
-    padding: 60px 0
-}
-
-.why-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 56px;
-    align-items: start
-}
-
-.cap-inline-image {
-    margin: 32px 0 40px;
-    position: relative;
-
-    width: 100%;
-    height: 340px;
-
-    overflow: hidden;
-
-    clip-path: polygon(0% 12%,
-            12% 0%,
-            88% 0%,
-            100% 12%,
-            100% 88%,
-            88% 100%,
-            12% 100%,
-            0% 88%);
-
-    border: 1px solid rgba(249, 115, 22, 0.18);
-
-    box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.22),
-        0 0 40px rgba(249, 115, 22, 0.08);
-
-    background: var(--navy-600);
-
-    isolation: isolate;
-}
-
-.cap-inline-image::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-
-    background:
-        linear-gradient(135deg,
-            rgba(249, 115, 22, 0.25),
-            transparent 45%);
-
-    z-index: 2;
-}
-
-.cap-inline-image::after {
-    content: '';
-    position: absolute;
-    inset: 10px;
-
-    border: 1px solid rgba(255, 255, 255, 0.06);
-
-    clip-path: polygon(0% 12%,
-            12% 0%,
-            88% 0%,
-            100% 12%,
-            100% 88%,
-            88% 100%,
-            12% 100%,
-            0% 88%);
-
-    z-index: 3;
-}
-
-.cap-inline-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-
-    transition:
-        transform .8s ease,
-        filter .6s ease;
-}
-
-.cap-inline-image:hover img {
-    transform: scale(1.08);
-    filter: brightness(1.08);
-}
-
-/* .why-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px
-}
-
-.why-item {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    padding: 18px 22px;
-    background: var(--navy-600);
-    border: 1px solid var(--navy-700);
-    border-radius: var(--r-sm);
-    backdrop-filter: blur(16px);
-    transition: all .3s;
-    cursor: default;
-}
-
-.why-item:hover {
-    border-color: var(--glass-border-hover);
-    box-shadow: 0 8px 28px var(--navy-800);
-    transform: translateY(-4px)
-}
-
-.why-num {
-    font-family: var(--ff-mono);
-    font-size: .68rem;
-    font-weight: 800;
-    color: var(--orange-500);
-    min-width: 26px;
-    letter-spacing: .06em
-}
-
-.why-content h4 {
-    font-family: 'Syne', sans-serif;
-    font-size: .92rem;
-    font-weight: 700;
-    margin-bottom: 3px
-}
-
-.why-content p {
-    font-size: .8rem;
-    color: #ffff;
-}
-
-.why-arr {
-    margin-left: auto;
-    color: var(--text-muted);
-    transition: color .3s
-}
-
-.why-item:hover .why-arr {
-    color: var(--orange-400)
-} */
-
-/* perf widget */
-.perf-widget {
-    background: var(--navy-600);
-    border: 1px solid var(--navy-700);
-    border-radius: var(--r);
-    padding: 30px;
-    margin-top: 160px;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
-}
-
-.pw-title {
-    font-family: 'Syne', sans-serif;
-    font-size: .8rem;
-    color: #ffff;
-    font-weight: 600;
-    letter-spacing: .05em;
-    margin-bottom: 18px
-}
-
-.pw-row {
-    display: flex;
-    align-items: center;
-    gap: 11px;
-    margin-bottom: 13px
-}
-
-.pw-lbl {
-    font-size: .76rem;
-    color: #ffff;
-    min-width: 130px
-}
-
-.pw-track {
-    flex: 1;
-    height: 6px;
-    background: rgba(255, 255, 255, .06);
-    border-radius: 3px;
-    overflow: hidden
-}
-
-.pw-fill {
-    height: 100%;
-    border-radius: 3px;
-    background: linear-gradient(to right, var(--orange-500), var(--orange-300));
-    animation: fillW 1.4s ease-out forwards
-}
-
-@keyframes fillW {
-    from {
-        width: 0
-    }
-}
-
-.pw-val {
-    font-size: .76rem;
-    color: var(--orange-400);
-    font-weight: 600;
-    min-width: 34px;
-    text-align: right
-}
-
-.pw-tags {
-    display: flex;
-    flex-wrap: wrap;
-    color: #ffff;
-    gap: 7px;
-    margin-top: 22px;
-    padding-top: 20px;
-    border-top: 1px solid var(--glass-border)
-}
-
-.pw-tag {
-    background: rgba(255, 255, 255, .03);
-    border: 1px solid var(--glass-border);
-    padding: 3px 11px;
-    border-radius: 6px;
-    font-size: .7rem;
-    color: #ffff;
-}
-
-/* ─── PROCESS ─── */
-.process {
-    padding: 60px 0;
-}
-
-.proc-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    margin-top: 56px
-}
-
-.proc-card {
-    background: var(--navy-600);
-    border: 1px solid var(--navy-700);
-    border-radius: var(--r);
-    padding: 26px;
-    backdrop-filter: blur(16px);
-    transition: all .3s;
-    position: relative;
-}
-
-.proc-card:hover {
-    border-color: var(--glass-border-hover);
-    box-shadow: 0 8px 28px var(--navy-800);
-    transform: translateY(-4px)
-}
-
-.proc-n {
-    font-family: 'Syne', sans-serif;
-    font-size: 2.4rem;
-    font-weight: 800;
-    color: rgba(249, 115, 22, .11);
-    position: absolute;
-    top: 14px;
-    right: 18px;
-    line-height: 1
-}
-
-.proc-icon {
-    color: var(--orange-400);
-    margin-bottom: 14px
-}
-
-.proc-card h3 {
-    font-family: 'Syne', sans-serif;
-    font-size: .95rem;
-    font-weight: 700;
-    margin-bottom: 7px
-}
-
-.proc-card p {
-    font-size: .8rem;
-    color: #ffff;
-    line-height: 1.65
-}
-
-/* ─── USE CASES ─── */
-.usecases {
-    padding: 60px 0
-}
-
-.uc-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px
-}
-
-.uc-card {
-    background: var(--navy-600);
-    border: 1px solid var(--gradient-orange);
-    border-radius: var(--r);
-    padding: 34px;
-    backdrop-filter: blur(16px);
-    transition: all .35s;
-    position: relative;
-    overflow: hidden;
-    z-index: 2;
-}
-
-.uc-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--navy-600);
-    opacity: 0;
-    transition: opacity .3s;
-    z-index: 0;
-    pointer-events: none;
-}
-
-.uc-card:hover {
-    border-color: var(--glass-border-hover);
-    box-shadow: 0 8px 28px var(--navy-800);
-    transform: translateY(-4px)
-}
-
-.uc-card:hover::before {
-    opacity: 0.15;
-}
-
-.uc-badge {
-    display: inline-block;
-    background: rgba(249, 115, 22, .12);
-    border: 1px solid rgba(249, 115, 22, .22);
-    color: var(--orange-400);
-    padding: 4px 12px;
-    border-radius: 6px;
-    font-size: .7rem;
-    font-weight: 600;
-    letter-spacing: .05em;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-}
-
-.uc-icon {
-    color: var(--orange-400);
-    margin-bottom: 14px
-}
-
-.uc-card h3 {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin-bottom: 10px
-}
-
-.uc-card p {
-    font-size: .85rem;
-    color: var(--text-secondary);
-    line-height: 1.75;
-    margin-bottom: 18px
-}
-
-.uc-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px
-}
-
-.uc-tag {
-    background: var(--navy-800);
-    border: 1px solid var(--glass-border);
-    padding: 3px 11px;
-    border-radius: 6px;
-    font-size: .72rem;
-    color: #ffff;
-}
-
-/* ─── FEATURES ─── */
-.features {
-    padding: 60px 0;
-    background: #ffff;
-}
-
-.feat-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px
-}
-
-.feat-card {
-    background: var(--navy-600);
-    border: 1px solid var(--navy-900);
-    border-radius: var(--r);
-    padding: 22px 16px;
-    text-align: center;
-    backdrop-filter: blur(16px);
-    transition: all .3s;
-}
-
-.feat-card:hover {
-    border-color: var(--glass-border-hover);
-    box-shadow: 0 8px 28px var(--navy-800);
-    transform: translateY(-4px)
-}
-
-.feat-icon-wrap {
-    width: 50px;
-    height: 50px;
-    border-radius: 12px;
-    background: rgba(249, 115, 22, .10);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 14px;
-    color: var(--orange-400);
-    transition: background .3s;
-}
-
-.feat-card:hover .feat-icon-wrap {
-    background: rgba(249, 115, 22, .20)
-}
-
-.feat-card h3 {
-    font-family: var(--ff-head);
-    font-size: .86rem;
-    font-weight: 700;
-    margin-bottom: 7px
-}
-
-.feat-card p {
-    font-size: .76rem;
-    color: #ffff;
-    line-height: 1.6
-}
-
-/* ─── TECH ─── */
-.tech {
-    padding: 60px 0
-}
-
-.tech-cats {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 16px
-}
-
-.tech-cat {
-    background: var(--navy-600);
-    border: 1px solid var(--navy-900);
-    border-radius: var(--r);
-    padding: 24px 18px;
-    text-align: center;
-    backdrop-filter: blur(16px);
-    transition: all .3s;
-}
-
-.tech-cat:hover {
-    border-color: var(--glass-border-hover);
-    box-shadow: 0 8px 28px var(--navy-800);
-    transform: translateY(-4px)
-}
-
-.tech-cat-icon {
-    color: var(--orange-400);
-    margin-bottom: 12px;
-    display: flex;
-    justify-content: center
-}
-
-.tech-cat h4 {
-    font-family: var(--ff-head);
-    font-size: .86rem;
-    font-weight: 700;
-    margin-bottom: 10px
-}
-
-.tech-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 5px
-}
-
-.tech-item {
-    background: var(--navy-800);
-    border: 1px solid rgba(249, 115, 22, .15);
-    color: #ffff;
-    padding: 3px 9px;
-    border-radius: 5px;
-    font-size: .67rem;
-    font-weight: 600
-}
-
-/* ─── RESULTS ─── */
-.results {
-    padding: 60px 0;
-}
-
-.res-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px
-}
-
-.res-card {
-    background: var(--navy-600);
-    border: 1px solid var(--navy-900);
-    border-radius: var(--r);
-    padding: 30px 22px;
-    text-align: center;
-    backdrop-filter: blur(16px);
-    transition: all .3s;
-    position: relative;
-    overflow: hidden;
-}
-
-.res-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--orange-500), transparent);
-    opacity: 0;
-    transition: opacity .3s;
-}
-
-.res-card:hover {
-    border-color: var(--glass-border-hover);
-    box-shadow: 0 12px 40px var(--navy-800)
-}
-
-.res-card:hover::before {
-    opacity: 1
-}
-
-.res-n {
-    font-family: var(--ff-mono);
-    font-size: 2.7rem;
-    font-weight: 800;
-    background: var(--gradient-orange);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    line-height: 1;
-    margin-bottom: 7px;
-}
-
-.res-label {
-    font-family: 'Syne', sans-serif;
-    font-size: .88rem;
-    font-weight: 700;
-    margin-bottom: 7px
-}
-
-.res-desc {
-    font-size: .76rem;
-    color: #ffff;
-    line-height: 1.6
-}
-
-/* ─── CTA ─── */
-/* ═══════════════════════════════════════════════
-   CTA — navy gradient
-═══════════════════════════════════════════════ */
-/* ============ CTA SECTION ============ */
-
-.cta-section {
-    padding: 90px 0;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-
-    background:
-        linear-gradient(135deg,
-            rgba(5, 10, 35, 0.88),
-            rgba(10, 14, 46, 0.82),
-            rgba(232, 117, 10, 0.18)),
-        url('/assets/images/cta-img.jpg');
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    border-top: 1px solid rgba(232, 117, 10, 0.15);
-    border-bottom: 1px solid rgba(232, 117, 10, 0.15);
-}
-
-/* Premium dark overlay */
-.cta-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background:
-        radial-gradient(circle at center,
-            rgba(232, 117, 10, 0.18),
-            transparent 60%);
-
-    z-index: 1;
-}
-
-/* Glass blur layer */
-.cta-section::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    backdrop-filter: blur(3px);
-    background: rgba(0, 0, 0, 0.18);
-
-    z-index: 1;
-}
-
-.cta-inner {
-    position: relative;
-    z-index: 2;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.cta-title {
-    font-family: var(--font-display);
-    font-size: clamp(2.8rem, 5vw, 5rem);
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 24px;
-
-    color: #fff;
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-}
-
-.cta-title .text-gradient {
-    background: linear-gradient(135deg,
-            #ff8c1a,
-            #ffb347);
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.cta-subtitle {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.82);
-
-    max-width: 760px;
-    margin: 0 auto 42px;
-}
-
-.cta-actions {
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    flex-wrap: wrap;
-}
-
-/* Optional premium buttons */
-.cta-actions .btn-primary {
-    box-shadow: 0 10px 30px rgba(232, 117, 10, 0.35);
-}
-
-.cta-actions .btn-outline {
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-    color: #fff;
-}
-
-.cta-actions .btn-outline:hover {
-    background: rgba(255, 255, 255, 0.12);
-}
-
-
-
-/* ─── ANIMATIONS ─── */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(28px)
+    body {
+        font-family: 'DM Sans', sans-serif;
+        background: var(--navy);
+        color: var(--white);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0)
-    }
-}
-
-.fu {
-    animation: fadeUp .8s ease-out forwards
-}
-
-.fu1 {
-    animation-delay: .1s;
-    opacity: 0
-}
-
-.fu2 {
-    animation-delay: .2s;
-    opacity: 0
-}
-
-.fu3 {
-    animation-delay: .3s;
-    opacity: 0
-}
-
-.fu4 {
-    animation-delay: .4s;
-    opacity: 0
-}
-
-/* ─── RESPONSIVE ─── */
-@media(max-width:1024px) {
-    .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 44px
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: 'Sora', sans-serif;
     }
 
-    .hero-visual {
-        max-width: 540px;
-        margin: 0 auto
+    /* ─── NAVBAR ─── */
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        padding: 18px 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(5, 13, 26, 0.75);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--glass-border);
     }
 
-    .svc-grid {
-        grid-template-columns: repeat(2, 1fr)
+    .nav-logo {
+        font-family: 'Sora', sans-serif;
+        font-weight: 700;
+        font-size: 1.5rem;
+        background: linear-gradient(135deg, #fff 40%, var(--orange));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-decoration: none;
     }
 
-    .feat-grid {
-        grid-template-columns: repeat(3, 1fr)
+    .nav-logo span {
+        color: var(--orange);
+        -webkit-text-fill-color: var(--orange);
     }
 
-    .tech-cats {
-        grid-template-columns: repeat(3, 1fr)
-    }
-
-    .res-grid {
-        grid-template-columns: repeat(2, 1fr)
-    }
-
-    .overview-grid,
-    .why-grid {
-        grid-template-columns: 1fr
-    }
-
-    .proc-grid {
-        grid-template-columns: repeat(2, 1fr)
-    }
-}
-
-@media(max-width:768px) {
     .nav-links {
-        display: none
+        display: flex;
+        gap: 36px;
+        list-style: none;
     }
 
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 22px
+    .nav-links a {
+        color: var(--white-60);
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color .25s;
     }
 
-    .stat::after {
-        display: none
+    .nav-links a:hover {
+        color: #fff;
     }
 
-    .svc-grid,
-    .uc-grid,
-    .feat-grid,
-    .tech-cats {
-        grid-template-columns: 1fr
+    .nav-cta {
+        padding: 10px 24px;
+        border-radius: 50px;
+        background: linear-gradient(135deg, var(--orange), #ea580c);
+        color: #fff;
+        font-weight: 600;
+        font-size: 0.88rem;
+        text-decoration: none;
+        transition: transform .2s, box-shadow .2s;
+        box-shadow: 0 4px 20px rgba(249, 115, 22, 0.35);
     }
 
-    .proc-grid {
-        grid-template-columns: 1fr
+    .nav-cta:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 30px rgba(249, 115, 22, 0.5);
     }
 
-    .res-grid {
-        grid-template-columns: repeat(2, 1fr)
+    /* ─── HERO ─── */
+    .hero {
+        min-height: 100vh;
+        padding: 140px 60px 80px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
     }
 
-    .cta-box {
-        padding: 48px 24px
+    .hero-bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+            radial-gradient(ellipse 80% 60% at 70% 50%, rgba(249, 115, 22, 0.10) 0%, transparent 65%),
+            radial-gradient(ellipse 60% 80% at 20% 20%, rgba(56, 189, 248, 0.06) 0%, transparent 60%),
+            linear-gradient(180deg, var(--navy) 0%, #071530 100%);
     }
 
-    .float-chip {
-        display: none
+    .hero-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+            linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        background-size: 60px 60px;
+        mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
     }
 
-    .ov-cards {
-        grid-template-columns: 1fr
+    .hero-content {
+        position: relative;
+        z-index: 2;
     }
 
-    .ovc.span2 {
-        grid-column: auto
+    .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 16px;
+        border-radius: 50px;
+        background: var(--glass);
+        border: 1px solid var(--orange-border);
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--orange-light);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 28px;
     }
-}
-</style>
+
+    .hero-badge::before {
+        content: '';
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--orange);
+        box-shadow: 0 0 10px var(--orange);
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            opacity: 1;
+            transform: scale(1)
+        }
+
+        50% {
+            opacity: .5;
+            transform: scale(1.4)
+        }
+    }
+
+    .hero h1 {
+        font-size: clamp(2.4rem, 4vw, 3.4rem);
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 .grad {
+        background: linear-gradient(135deg, var(--orange-light), #fcd34d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hero-sub {
+        font-size: 1.05rem;
+        color: var(--white-60);
+        line-height: 1.75;
+        max-width: 480px;
+        margin-bottom: 40px;
+        font-weight: 400;
+    }
+
+    .hero-btns {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .btn-primary {
+        padding: 14px 32px;
+        border-radius: 50px;
+        background: linear-gradient(135deg, var(--orange), #ea580c);
+        color: #fff;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        box-shadow: 0 6px 30px rgba(249, 115, 22, 0.4);
+        transition: all .25s;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 40px rgba(249, 115, 22, 0.55);
+    }
+
+    .btn-outline {
+        padding: 13px 32px;
+        border-radius: 50px;
+        border: 1px solid var(--glass-border);
+        background: var(--glass);
+        color: #fff;
+        font-weight: 500;
+        font-size: 0.95rem;
+        text-decoration: none;
+        backdrop-filter: blur(10px);
+        transition: all .25s;
+        cursor: pointer;
+    }
+
+    .btn-outline:hover {
+        border-color: var(--orange-border);
+        background: var(--orange-glow);
+    }
+
+    /* Hero right */
+    .hero-visual {
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-dashboard {
+        background: rgba(13, 32, 68, 0.8);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius-lg);
+        padding: 28px;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5), 0 0 60px rgba(249, 115, 22, 0.08);
+        position: relative;
+    }
+
+    .hero-dashboard::before {
+        content: '';
+        position: absolute;
+        inset: -1px;
+        border-radius: var(--radius-lg);
+        background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), transparent 50%, rgba(56, 189, 248, 0.1));
+        z-index: -1;
+    }
+
+    .dash-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--glass-border);
+    }
+
+    .dash-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+
+    .dash-dot:nth-child(1) {
+        background: #ef4444;
+    }
+
+    .dash-dot:nth-child(2) {
+        background: #eab308;
+    }
+
+    .dash-dot:nth-child(3) {
+        background: #22c55e;
+    }
+
+    .dash-title {
+        font-size: 0.78rem;
+        color: var(--white-60);
+        margin-left: 8px;
+        font-weight: 500;
+    }
+
+    .dash-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .dash-metric {
+        background: var(--white-10);
+        border-radius: 14px;
+        padding: 16px 14px;
+        border: 1px solid var(--glass-border);
+        text-align: center;
+    }
+
+    .dash-metric-val {
+        font-family: 'Sora', sans-serif;
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-bottom: 4px;
+    }
+
+    .dash-metric-val.orange {
+        color: var(--orange-light);
+    }
+
+    .dash-metric-val.blue {
+        color: var(--blue-accent);
+    }
+
+    .dash-metric-val.green {
+        color: var(--green-accent);
+    }
+
+    .dash-metric-lbl {
+        font-size: 0.7rem;
+        color: var(--white-60);
+    }
+
+    .dash-chart {
+        background: var(--white-10);
+        border-radius: 14px;
+        padding: 18px;
+        margin-bottom: 16px;
+        border: 1px solid var(--glass-border);
+    }
+
+    .dash-chart-title {
+        font-size: 0.75rem;
+        color: var(--white-60);
+        margin-bottom: 14px;
+    }
+
+    .chart-bars {
+        display: flex;
+        align-items: flex-end;
+        gap: 6px;
+        height: 60px;
+    }
+
+    .chart-bar {
+        flex: 1;
+        border-radius: 4px 4px 0 0;
+        background: linear-gradient(180deg, var(--orange), rgba(249, 115, 22, 0.3));
+        animation: barGrow 1.5s ease-out forwards;
+        transform-origin: bottom;
+    }
+
+    @keyframes barGrow {
+        from {
+            transform: scaleY(0)
+        }
+
+        to {
+            transform: scaleY(1)
+        }
+    }
+
+    .dash-vitals {
+        display: flex;
+        gap: 10px;
+    }
+
+    .vital-card {
+        flex: 1;
+        background: var(--white-10);
+        border-radius: 12px;
+        padding: 12px;
+        border: 1px solid var(--glass-border);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .vital-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        flex-shrink: 0;
+    }
+
+    .vital-icon.red {
+        background: rgba(239, 68, 68, 0.2);
+    }
+
+    .vital-icon.blue {
+        background: rgba(56, 189, 248, 0.2);
+    }
+
+    .vital-icon.green {
+        background: rgba(52, 211, 153, 0.2);
+    }
+
+    .vital-val {
+        font-family: 'Sora', sans-serif;
+        font-weight: 700;
+        font-size: 0.9rem;
+    }
+
+    .vital-lbl {
+        font-size: 0.65rem;
+        color: var(--white-60);
+    }
+
+    /* Floating stat cards */
+    .float-card {
+        position: absolute;
+        background: rgba(13, 20, 37, 0.92);
+        border: 1px solid var(--glass-border);
+        border-radius: 16px;
+        padding: 14px 18px;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        white-space: nowrap;
+        animation: floatCard 4s ease-in-out infinite;
+    }
+
+    .float-card:nth-child(2) {
+        animation-delay: -1.5s;
+    }
+
+    .float-card:nth-child(3) {
+        animation-delay: -3s;
+    }
+
+    @keyframes floatCard {
+
+        0%,
+        100% {
+            transform: translateY(0)
+        }
+
+        50% {
+            transform: translateY(-8px)
+        }
+    }
+
+    .float-card-1 {
+        top: -20px;
+        right: -20px;
+    }
+
+    .float-card-2 {
+        bottom: 60px;
+        left: -30px;
+    }
+
+    .float-card-3 {
+        top: 50%;
+        right: -36px;
+        transform: translateY(-50%);
+    }
+
+    .fc-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+    }
+
+    .fc-icon.orange {
+        background: rgba(249, 115, 22, 0.2);
+    }
+
+    .fc-icon.blue {
+        background: rgba(56, 189, 248, 0.2);
+    }
+
+    .fc-icon.green {
+        background: rgba(52, 211, 153, 0.2);
+    }
+
+    .fc-text-val {
+        font-family: 'Sora', sans-serif;
+        font-weight: 700;
+        font-size: 1rem;
+    }
+
+    .fc-text-lbl {
+        font-size: 0.68rem;
+        color: var(--white-60);
+    }
+
+    /* ─── SECTION COMMON ─── */
+    section {
+        padding: 100px 60px;
+    }
+
+    .section-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        border-radius: 50px;
+        background: var(--glass);
+        border: 1px solid var(--orange-border);
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--orange-light);
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    .section-h2 {
+        font-size: clamp(2rem, 3.5vw, 2.8rem);
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        margin-bottom: 20px;
+    }
+
+    .section-h2 .grad {
+        background: linear-gradient(135deg, var(--orange-light), #fcd34d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .section-sub {
+        font-size: 1rem;
+        color: var(--white-60);
+        line-height: 1.75;
+        max-width: 560px;
+    }
+
+    /* ─── CHALLENGES ─── */
+    .challenges-section {
+        background: var(--navy-mid);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .challenges-section::before {
+        content: '';
+        position: absolute;
+        top: -200px;
+        left: -200px;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(249, 115, 22, 0.05), transparent 70%);
+        pointer-events: none;
+    }
+
+    .challenges-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: start;
+    }
+
+    .challenges-sticky {
+        position: sticky;
+        top: 120px;
+    }
+
+    .challenges-img-wrap {
+        margin-top: 40px;
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .challenges-img-wrap img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        border-radius: 40% 20% 40% 20% / 30% 40% 30% 40%;
+        filter: brightness(0.8) saturate(1.2);
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+    }
+
+    .challenges-img-wrap::after {
+        content: '';
+        position: absolute;
+        inset: -3px;
+        border-radius: 40% 20% 40% 20% / 30% 40% 30% 40%;
+        background: linear-gradient(135deg, var(--orange), var(--blue-accent));
+        z-index: -1;
+        opacity: 0.5;
+    }
+
+    .challenge-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .challenge-card {
+        background: var(--glass);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius);
+        padding: 24px 28px;
+        backdrop-filter: blur(10px);
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+        transition: all .3s;
+        cursor: default;
+    }
+
+    .challenge-card:hover {
+        border-color: var(--orange-border);
+        background: rgba(249, 115, 22, 0.08);
+        transform: translateX(6px);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .challenge-num {
+        font-family: 'Sora', sans-serif;
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: rgba(249, 115, 22, 0.2);
+        flex-shrink: 0;
+        line-height: 1;
+        min-width: 36px;
+    }
+
+    .challenge-card:hover .challenge-num {
+        color: rgba(249, 115, 22, 0.6);
+    }
+
+    .challenge-title {
+        font-family: 'Sora', sans-serif;
+        font-weight: 600;
+        font-size: 1rem;
+        margin-bottom: 6px;
+    }
+
+    .challenge-desc {
+        font-size: 0.88rem;
+        color: var(--white-60);
+        line-height: 1.6;
+    }
+
+    /* ─── SOLUTIONS ─── */
+    .solutions-section {
+        background: var(--navy);
+        position: relative;
+    }
+
+    .solutions-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1px;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, rgba(249, 115, 22, 0.15), transparent);
+    }
+
+    .solutions-header {
+        text-align: center;
+        margin-bottom: 64px;
+    }
+
+    .solutions-header .section-sub {
+        margin: 0 auto;
+    }
+
+    .solutions-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    .sol-card {
+        background: var(--glass);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius);
+        padding: 32px 28px;
+        backdrop-filter: blur(10px);
+        transition: all .35s;
+        cursor: default;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .sol-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 50% 0%, rgba(249, 115, 22, 0.12), transparent 60%);
+        opacity: 0;
+        transition: opacity .35s;
+    }
+
+    .sol-card:hover {
+        border-color: var(--orange-border);
+        transform: translateY(-6px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(249, 115, 22, 0.1);
+    }
+
+    .sol-card:hover::before {
+        opacity: 1;
+    }
+
+    .sol-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(249, 115, 22, 0.05));
+        border: 1px solid var(--orange-border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        transition: all .35s;
+    }
+
+    .sol-card:hover .sol-icon {
+        background: linear-gradient(135deg, rgba(249, 115, 22, 0.35), rgba(249, 115, 22, 0.1));
+        box-shadow: 0 6px 24px rgba(249, 115, 22, 0.3);
+    }
+
+    .sol-title {
+        font-family: 'Sora', sans-serif;
+        font-weight: 700;
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .sol-desc {
+        font-size: 0.85rem;
+        color: var(--white-60);
+        line-height: 1.65;
+    }
+
+    /* ─── PATIENT EXPERIENCE ─── */
+    .patient-section {
+        background: var(--navy-mid);
+    }
+
+    .patient-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    .patient-img-wrap {
+        position: relative;
+    }
+
+    .patient-img-blob {
+        width: 100%;
+        aspect-ratio: 1;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .patient-img-blob img {
+        width: 85%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        border-radius: 30% 60% 70% 40% / 50% 30% 60% 40%;
+        filter: brightness(0.85) saturate(1.1);
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+    }
+
+    .patient-img-blob::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 60% 50%, rgba(249, 115, 22, 0.15), transparent 65%);
+        border-radius: 50%;
+    }
+
+    .stat-orbit {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .stat-pill {
+        background: rgba(13, 20, 37, 0.95);
+        border: 1px solid var(--glass-border);
+        border-radius: 50px;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(20px);
+    }
+
+    .stat-pill-val {
+        font-family: 'Sora', sans-serif;
+        font-weight: 800;
+        font-size: 1.1rem;
+        color: var(--orange-light);
+    }
+
+    .stat-pill-lbl {
+        font-size: 0.72rem;
+        color: var(--white-60);
+    }
+
+    .metrics-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .metric-item {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .metric-header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .metric-label {
+        font-size: 0.88rem;
+        font-weight: 500;
+    }
+
+    .metric-pct {
+        font-family: 'Sora', sans-serif;
+        font-weight: 700;
+        font-size: 0.88rem;
+        color: var(--orange-light);
+    }
+
+    .metric-bar-bg {
+        height: 5px;
+        background: var(--white-10);
+        border-radius: 50px;
+        overflow: hidden;
+    }
+
+    .metric-bar-fill {
+        height: 100%;
+        border-radius: 50px;
+        background: linear-gradient(90deg, var(--orange), var(--orange-light));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 1.2s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .metric-bar-fill.animated {
+        transform: scaleX(1);
+    }
+
+    /* ─── TECH STACK ─── */
+    .tech-section {
+        background: var(--navy);
+    }
+
+    .tech-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .tech-header .section-sub {
+        margin: 0 auto;
+    }
+
+    .tech-groups {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .tech-group-title {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--white-60);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+    }
+
+    .tech-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .tech-pill {
+        padding: 10px 22px;
+        border-radius: 50px;
+        background: var(--glass);
+        border: 1px solid var(--glass-border);
+        font-size: 0.88rem;
+        font-weight: 500;
+        color: var(--white-60);
+        backdrop-filter: blur(10px);
+        transition: all .25s;
+        cursor: default;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .tech-pill:hover {
+        border-color: var(--orange-border);
+        color: #fff;
+        background: var(--orange-glow);
+        box-shadow: 0 4px 20px rgba(249, 115, 22, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .tech-pill .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--orange);
+        opacity: 0.5;
+        transition: opacity .25s;
+    }
+
+    .tech-pill:hover .dot {
+        opacity: 1;
+        box-shadow: 0 0 8px var(--orange);
+    }
+
+    /* ─── SECURITY ─── */
+    .security-section {
+        background: linear-gradient(180deg, var(--navy-mid), var(--navy-light));
+        position: relative;
+        overflow: hidden;
+    }
+
+    .security-section::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 800px;
+        height: 800px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(249, 115, 22, 0.04), transparent 70%);
+    }
+
+    .security-header {
+        text-align: center;
+        margin-bottom: 64px;
+    }
+
+    .security-header .section-sub {
+        margin: 0 auto;
+    }
+
+    .shield-visual {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 60px;
+        position: relative;
+    }
+
+    .shield-svg {
+        width: 120px;
+        filter: drop-shadow(0 0 30px rgba(249, 115, 22, 0.5));
+        animation: shieldPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes shieldPulse {
+
+        0%,
+        100% {
+            filter: drop-shadow(0 0 20px rgba(249, 115, 22, 0.4))
+        }
+
+        50% {
+            filter: drop-shadow(0 0 50px rgba(249, 115, 22, 0.8))
+        }
+    }
+
+    .shield-ring {
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid rgba(249, 115, 22, 0.15);
+        animation: ringExpand 3s linear infinite;
+    }
+
+    @keyframes ringExpand {
+        0% {
+            opacity: 0.8;
+            transform: scale(0.5)
+        }
+
+        100% {
+            opacity: 0;
+            transform: scale(2)
+        }
+    }
+
+    .security-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .sec-card {
+        background: var(--glass);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius);
+        padding: 28px 24px;
+        backdrop-filter: blur(10px);
+        transition: all .35s;
+        cursor: default;
+        text-align: center;
+    }
+
+    .sec-card:hover {
+        border-color: var(--orange-border);
+        background: rgba(249, 115, 22, 0.08);
+        transform: translateY(-4px);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(249, 115, 22, 0.12);
+    }
+
+    .sec-icon {
+        font-size: 2rem;
+        margin-bottom: 14px;
+    }
+
+    .sec-title {
+        font-family: 'Sora', sans-serif;
+        font-weight: 700;
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+    }
+
+    .sec-desc {
+        font-size: 0.8rem;
+        color: var(--white-60);
+        line-height: 1.6;
+    }
+
+    /* ─── USE CASES ─── */
+    .usecases-section {
+        background: var(--navy);
+    }
+
+    .usecases-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .usecases-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .uc-card {
+        background: var(--glass);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius);
+        padding: 30px 24px;
+        backdrop-filter: blur(10px);
+        transition: all .3s;
+        cursor: default;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .uc-card::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--orange), transparent);
+        opacity: 0;
+        transition: opacity .3s;
+    }
+
+    .uc-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--orange-border);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .uc-card:hover::after {
+        opacity: 1;
+    }
+
+    .uc-emoji {
+        font-size: 2.2rem;
+        margin-bottom: 16px;
+        display: block;
+    }
+
+    .uc-title {
+        font-family: 'Sora', sans-serif;
+        font-weight: 700;
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+    }
+
+    .uc-desc {
+        font-size: 0.82rem;
+        color: var(--white-60);
+        line-height: 1.6;
+    }
+
+    /* ─── WHY ACCROSIAN ─── */
+    .why-section {
+        background: var(--navy-mid);
+    }
+
+    .why-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    .why-features {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .why-feature {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        padding: 24px;
+        border-radius: var(--radius);
+        border: 1px solid transparent;
+        transition: all .3s;
+        background: transparent;
+    }
+
+    .why-feature:hover {
+        background: var(--glass);
+        border-color: var(--glass-border);
+        transform: translateX(8px);
+    }
+
+    .why-feat-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(249, 115, 22, 0.05));
+        border: 1px solid var(--orange-border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+    }
+
+    .why-feat-title {
+        font-family: 'Sora', sans-serif;
+        font-weight: 700;
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+    }
+
+    .why-feat-desc {
+        font-size: 0.85rem;
+        color: var(--white-60);
+        line-height: 1.6;
+    }
+
+    .why-visual {
+        background: var(--glass);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius-lg);
+        padding: 40px;
+        backdrop-filter: blur(10px);
+        text-align: center;
+    }
+
+    .why-big-num {
+        font-family: 'Sora', sans-serif;
+        font-weight: 800;
+        font-size: 4rem;
+        background: linear-gradient(135deg, var(--orange-light), #fcd34d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1;
+    }
+
+    .why-big-lbl {
+        font-size: 0.85rem;
+        color: var(--white-60);
+        margin-top: 8px;
+        margin-bottom: 32px;
+    }
+
+    .why-stats-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .why-stat {
+        background: var(--white-10);
+        border-radius: 14px;
+        padding: 20px;
+        border: 1px solid var(--glass-border);
+    }
+
+    .why-stat-val {
+        font-family: 'Sora', sans-serif;
+        font-weight: 800;
+        font-size: 1.6rem;
+        color: var(--orange-light);
+        margin-bottom: 4px;
+    }
+
+    .why-stat-lbl {
+        font-size: 0.75rem;
+        color: var(--white-60);
+    }
+
+    /* ─── CTA ─── */
+    .cta-section {
+        padding: 120px 60px;
+        position: relative;
+        overflow: hidden;
+        background: var(--navy-light);
+    }
+
+    .cta-section::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(ellipse 80% 60% at 30% 50%, rgba(249, 115, 22, 0.15), transparent 65%),
+            radial-gradient(ellipse 60% 80% at 80% 30%, rgba(56, 189, 248, 0.06), transparent 60%);
+    }
+
+    .cta-section .hero-grid {
+        position: absolute;
+        inset: 0;
+        opacity: 0.5;
+    }
+
+    .cta-inner {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .cta-inner h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        margin-bottom: 20px;
+    }
+
+    .cta-inner p {
+        font-size: 1.05rem;
+        color: var(--white-60);
+        line-height: 1.75;
+        margin-bottom: 44px;
+    }
+
+    .cta-btns {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cta-glow {
+        position: absolute;
+        bottom: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 500px;
+        height: 200px;
+        background: radial-gradient(ellipse, rgba(249, 115, 22, 0.3), transparent 70%);
+        filter: blur(30px);
+        pointer-events: none;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+        background: var(--navy);
+        padding: 40px 60px;
+        border-top: 1px solid var(--glass-border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    footer p {
+        font-size: 0.82rem;
+        color: var(--white-60);
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 28px;
+    }
+
+    .footer-links a {
+        font-size: 0.82rem;
+        color: var(--white-60);
+        text-decoration: none;
+        transition: color .2s;
+    }
+
+    .footer-links a:hover {
+        color: var(--orange-light);
+    }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity .7s, transform .7s;
+    }
+
+    .reveal.visible {
+        opacity: 1;
+        transform: none;
+    }
+
+    .reveal-left {
+        opacity: 0;
+        transform: translateX(-30px);
+        transition: opacity .7s, transform .7s;
+    }
+
+    .reveal-left.visible {
+        opacity: 1;
+        transform: none;
+    }
+
+    .reveal-right {
+        opacity: 0;
+        transform: translateX(30px);
+        transition: opacity .7s, transform .7s;
+    }
+
+    .reveal-right.visible {
+        opacity: 1;
+        transform: none;
+    }
+
+    /* Stagger children */
+    .stagger>* {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity .6s, transform .6s;
+    }
+
+    .stagger.visible>*:nth-child(1) {
+        opacity: 1;
+        transform: none;
+        transition-delay: .05s
+    }
+
+    .stagger.visible>*:nth-child(2) {
+        opacity: 1;
+        transform: none;
+        transition-delay: .1s
+    }
+
+    .stagger.visible>*:nth-child(3) {
+        opacity: 1;
+        transform: none;
+        transition-delay: .15s
+    }
+
+    .stagger.visible>*:nth-child(4) {
+        opacity: 1;
+        transform: none;
+        transition-delay: .2s
+    }
+
+    .stagger.visible>*:nth-child(5) {
+        opacity: 1;
+        transform: none;
+        transition-delay: .25s
+    }
+
+    .stagger.visible>*:nth-child(6) {
+        opacity: 1;
+        transform: none;
+        transition-delay: .3s
+    }
+
+    .stagger.visible>*:nth-child(7) {
+        opacity: 1;
+        transform: none;
+        transition-delay: .35s
+    }
+
+    .stagger.visible>*:nth-child(8) {
+        opacity: 1;
+        transform: none;
+        transition-delay: .4s
+    }
+
+    .stagger.visible>*:nth-child(9) {
+        opacity: 1;
+        transform: none;
+        transition-delay: .45s
+    }
+
+    .stagger.visible>*:nth-child(10) {
+        opacity: 1;
+        transform: none;
+        transition-delay: .5s
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media(max-width:1100px) {
+        nav {
+            padding: 16px 30px;
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        section {
+            padding: 80px 30px;
+        }
+
+        .hero {
+            padding: 120px 30px 60px;
+            grid-template-columns: 1fr;
+        }
+
+        .hero-visual {
+            display: none;
+        }
+
+        .challenges-grid,
+        .patient-grid,
+        .why-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .challenges-sticky {
+            position: static;
+        }
+
+        .solutions-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .security-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .usecases-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        footer {
+            padding: 30px;
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    @media(max-width:640px) {
+
+        .solutions-grid,
+        .security-grid,
+        .usecases-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .dash-metrics {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    </style>
 </head>
 
 <body>
 
+    <!-- NAVBAR -->
+    <nav>
+        <a href="#" class="nav-logo">Accros<span>ian</span></a>
+        <ul class="nav-links">
+            <li><a href="#">Industries</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Technologies</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Case Studies</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta">Get in Touch</a>
+    </nav>
+
     <!-- HERO -->
     <section class="hero">
-        <img src="{{ asset('assets/images/hero-health.jpg') }}" alt="Hero Background" class="hero-bg-img" />
         <div class="hero-bg"></div>
-        <div class="container">
-            <div class="hero-inner">
+        <div class="hero-grid"></div>
 
-                <div class="hero-content">
-                    <h1 class="fu fu1">Smart Digital Solutions for <em>Modern Education</em></h1>
-                    <p class="hero-sub fu fu2">Transform learning experiences with scalable, interactive, and
-                        data-driven education platforms built for institutions, startups, and enterprises.</p>
-                    <div class="hero-btns fu fu3">
-                        <a href="#" class="btn btn-primary btn-arrow">Get a Quote</a>
-                        <a href="#" class="btn btn-outline">Consult Now →</a>
+        <div class="hero-content">
+            <div class="hero-badge">Healthcare Industry</div>
+            <h1>Transforming Healthcare Through <span class="grad">Intelligent Digital</span> Innovation</h1>
+            <p class="hero-sub">We engineer next-generation healthcare technology solutions — from AI-powered
+                diagnostics to enterprise EHR platforms — built for security, scalability, and seamless patient
+                experiences.</p>
+            <div class="hero-btns">
+                <a href="#solutions" class="btn-primary">Explore Solutions →</a>
+                <a href="#contact" class="btn-outline">Talk to an Expert</a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="hero-dashboard" style="position:relative">
+                <!-- Floating cards -->
+                <div class="float-card float-card-1">
+                    <div class="fc-icon orange">🛡️</div>
+                    <div>
+                        <div class="fc-text-val">HIPAA</div>
+                        <div class="fc-text-lbl">Compliant Ready</div>
+                    </div>
+                </div>
+                <div class="float-card float-card-2">
+                    <div class="fc-icon green">🤖</div>
+                    <div>
+                        <div class="fc-text-val">AI Diagnostics</div>
+                        <div class="fc-text-lbl">Powered by ML</div>
+                    </div>
+                </div>
+                <div class="float-card float-card-3">
+                    <div class="fc-icon blue">📡</div>
+                    <div>
+                        <div class="fc-text-val">99.9%</div>
+                        <div class="fc-text-lbl">System Uptime</div>
+                    </div>
+                </div>
+
+                <div class="dash-header">
+                    <div class="dash-dot"></div>
+                    <div class="dash-dot"></div>
+                    <div class="dash-dot"></div>
+                    <span class="dash-title">Accrosian Health Dashboard — Live Overview</span>
+                </div>
+
+                <div class="dash-metrics">
+                    <div class="dash-metric">
+                        <div class="dash-metric-val orange">1,284</div>
+                        <div class="dash-metric-lbl">Active Patients</div>
+                    </div>
+                    <div class="dash-metric">
+                        <div class="dash-metric-val blue">98.6%</div>
+                        <div class="dash-metric-lbl">Record Accuracy</div>
+                    </div>
+                    <div class="dash-metric">
+                        <div class="dash-metric-val green">142ms</div>
+                        <div class="dash-metric-lbl">Avg Response</div>
+                    </div>
+                </div>
+
+                <div class="dash-chart">
+                    <div class="dash-chart-title">Patient Admissions — Last 12 Months</div>
+                    <div class="chart-bars">
+                        <div class="chart-bar" style="height:42%;animation-delay:.05s"></div>
+                        <div class="chart-bar" style="height:60%;animation-delay:.1s"></div>
+                        <div class="chart-bar" style="height:55%;animation-delay:.15s"></div>
+                        <div class="chart-bar" style="height:75%;animation-delay:.2s"></div>
+                        <div class="chart-bar" style="height:65%;animation-delay:.25s"></div>
+                        <div class="chart-bar" style="height:80%;animation-delay:.3s"></div>
+                        <div class="chart-bar" style="height:70%;animation-delay:.35s"></div>
+                        <div class="chart-bar"
+                            style="height:90%;animation-delay:.4s;background:linear-gradient(180deg,#fcd34d,rgba(249,115,22,0.4))">
+                        </div>
+                        <div class="chart-bar" style="height:85%;animation-delay:.45s"></div>
+                        <div class="chart-bar"
+                            style="height:95%;animation-delay:.5s;background:linear-gradient(180deg,var(--orange),rgba(249,115,22,0.4))">
+                        </div>
+                        <div class="chart-bar" style="height:88%;animation-delay:.55s"></div>
+                        <div class="chart-bar"
+                            style="height:100%;animation-delay:.6s;background:linear-gradient(180deg,var(--orange-light),rgba(249,115,22,0.5))">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dash-vitals">
+                    <div class="vital-card">
+                        <div class="vital-icon red">❤️</div>
+                        <div>
+                            <div class="vital-val">72 bpm</div>
+                            <div class="vital-lbl">Heart Rate</div>
+                        </div>
+                    </div>
+                    <div class="vital-card">
+                        <div class="vital-icon blue">🫁</div>
+                        <div>
+                            <div class="vital-val">98%</div>
+                            <div class="vital-lbl">SpO₂</div>
+                        </div>
+                    </div>
+                    <div class="vital-card">
+                        <div class="vital-icon green">🌡️</div>
+                        <div>
+                            <div class="vital-val">36.8°C</div>
+                            <div class="vital-lbl">Temp</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- CHALLENGES -->
+    <section class="challenges-section" id="challenges">
+        <div class="challenges-grid">
+            <div class="challenges-sticky reveal-left">
+                <div class="section-tag">Industry Challenges</div>
+                <h2 class="section-h2">Navigating a <span class="grad">Complex Healthcare</span> Landscape</h2>
+                <p class="section-sub">The healthcare sector faces unprecedented transformation pressure — legacy
+                    infrastructure, fragmented data, regulatory demands, and rising patient expectations converge into a
+                    perfect storm of operational complexity.</p>
 
-    <!-- OVERVIEW -->
-    <section class="overview">
-        <div class="container">
-            <div class="overview-grid">
-                <div class="overview-text">
-                    <div class="pill"><span class="pill-dot"></span>Industry Overview</div>
-                    <h2>The EdTech Boom Demands <em>Scalable Platforms</em></h2>
-                    <p>Digital learning has permanently reshaped education. Institutions, startups, and enterprises now
-                        compete to deliver the most engaging, personalized, and accessible learning experiences.</p>
-                    <p>Success in this space requires real-time collaboration tools, intelligent analytics, and
-                        platforms that scale from 100 to 100,000 learners without friction.</p>
-                    <div class="ov-list">
-                        <div class="ov-item">
-                            <svg class="ov-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                                <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                            </svg>
-                            <div class="ov-text"><strong>Digital Learning Growth</strong><span>EdTech market projected
-                                    to surpass $400B by 2026, driven by mobile-first learners.</span></div>
-                        </div>
-                        <div class="ov-item">
-                            <svg class="ov-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="18" y1="20" x2="18" y2="10" />
-                                <line x1="12" y1="20" x2="12" y2="4" />
-                                <line x1="6" y1="20" x2="6" y2="14" />
-                            </svg>
-                            <div class="ov-text"><strong>Analytics & Personalization</strong><span>AI-driven learning
-                                    paths improve retention by up to 60% over static curricula.</span></div>
-                        </div>
-                        <div class="ov-item">
-                            <svg class="ov-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="3" width="20" height="14" rx="2" />
-                                <line x1="8" y1="21" x2="16" y2="21" />
-                                <line x1="12" y1="17" x2="12" y2="21" />
-                            </svg>
-                            <div class="ov-text"><strong>Multi-Platform Delivery</strong><span>Consistent learning
-                                    across web, mobile, and offline — keeping students engaged anywhere.</span></div>
-                        </div>
-                    </div>
+                <div class="challenges-img-wrap" style="margin-top:40px">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80"
+                        alt="Healthcare Technology" />
                 </div>
-                <div class="overview-image-wrap">
-                    <img src="{{ asset('assets/images/educ-img2.jpg') }}" alt="Media & Information Services">
-                </div>
-                <!-- <div class="ov-cards">
-                    <div class="ovc">
-                        <div class="ovc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                                <circle cx="9" cy="7" r="4" />
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                            </svg></div>
-                        <h4>Learner Management</h4>
-                        <p>Track every student's journey with cohort dashboards and smart alerts.</p>
-                    </div>
-                    <div class="ovc">
-                        <div class="ovc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                            </svg></div>
-                        <h4>Live Engagement</h4>
-                        <p>Real-time virtual classrooms with interactive whiteboards and Q&A.</p>
-                    </div>
-                    <div class="ovc span2">
-                        <div class="ovc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="3" width="18" height="18" rx="2" />
-                                <path d="M3 9h18M9 21V9" />
-                            </svg></div>
-                        <h4>Unified Learning Intelligence</h4>
-                        <p>Consolidate learner data, course performance, and instructor metrics into one command center
-                            — built for decision makers who need clarity at scale.</p>
-                    </div>
-                </div> -->
             </div>
-        </div>
-    </section>
 
-    <!-- SERVICES -->
-    <section class="services">
-        <div class="container">
-            <div class="sec-head">
-                <div class="pill"><span class="pill-dot"></span>Core Services</div>
-                <h2>Everything You Need to <em>Launch & Scale</em></h2>
-                <p>End-to-end EdTech capabilities — from LMS architecture to AI-driven personalization.</p>
-            </div>
-            <div class="svc-grid">
-
-                <div class="svc-card">
-                    <div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="3" width="20" height="14" rx="2" />
-                            <line x1="8" y1="21" x2="16" y2="21" />
-                            <line x1="12" y1="17" x2="12" y2="21" />
-                        </svg></div>
-                    <h3>E-Learning Platform Development</h3>
-                    <p>Custom-built platforms architected for scale — from solo instructors to millions of concurrent
-                        learners.</p>
-                </div>
-
-                <div class="svc-card">
-                    <div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                            <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                        </svg></div>
-                    <h3>Learning Management Systems</h3>
-                    <p>Feature-rich LMS with course authoring, progress tracking, certifications, and SCORM compliance.
-                    </p>
-                </div>
-
-                <div class="svc-card">
-                    <div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="5" y="2" width="14" height="20" rx="2" />
-                            <line x1="12" y1="18" x2="12.01" y2="18" />
-                        </svg></div>
-                    <h3>Mobile Learning Apps</h3>
-                    <p>Native iOS & Android apps with offline mode, push notifications, and gamified learning flows.</p>
-                </div>
-
-                <div class="svc-card">
-                    <div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="23 7 16 12 23 17 23 7" />
-                            <rect x="1" y="5" width="15" height="14" rx="2" />
-                        </svg></div>
-                    <h3>Virtual Classrooms & Live Streaming</h3>
-                    <p>Low-latency live classes with breakout rooms, polls, whiteboards, and session recordings.</p>
-                </div>
-
-                <div class="svc-card">
-                    <div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="18" y1="20" x2="18" y2="10" />
-                            <line x1="12" y1="20" x2="12" y2="4" />
-                            <line x1="6" y1="20" x2="6" y2="14" />
-                        </svg></div>
-                    <h3>Student Analytics & Performance Tracking</h3>
-                    <p>Real-time dashboards surfacing dropout risks, mastery levels, and engagement patterns.</p>
-                </div>
-
-                <div class="svc-card">
-                    <div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-                            <polyline points="14 2 14 8 20 8" />
-                        </svg></div>
-                    <h3>Content Management Systems</h3>
-                    <p>Headless CMS for multi-format content: video, SCORM, quizzes, PDFs, and interactive modules.</p>
-                </div>
-
-                <div class="svc-card">
-                    <div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="1" />
-                            <circle cx="3" cy="6" r="1" />
-                            <circle cx="21" cy="6" r="1" />
-                            <circle cx="3" cy="18" r="1" />
-                            <circle cx="21" cy="18" r="1" />
-                            <line x1="3" y1="7" x2="12" y2="11" />
-                            <line x1="21" y1="7" x2="12" y2="11" />
-                            <line x1="3" y1="17" x2="12" y2="13" />
-                            <line x1="21" y1="17" x2="12" y2="13" />
-                        </svg></div>
-                    <h3>API & Third-Party Integrations</h3>
-                    <p>Seamless connections with Zoom, Google Classroom, Stripe, Salesforce, and 50+ EdTech tools.</p>
-                </div>
-
-                <div class="svc-card">
-                    <div class="svc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2a10 10 0 1 0 10 10" />
-                            <path d="M12 6v6l4 2" />
-                            <circle cx="18" cy="6" r="3" fill="currentColor" stroke="none" opacity=".3" />
-                            <circle cx="18" cy="6" r="1.5" />
-                        </svg></div>
-                    <h3>AI-Based Learning Solutions</h3>
-                    <p>Adaptive assessments, AI tutors, and recommendation engines that personalize every learner's
-                        path.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- WHY US -->
-    <section class="why">
-        <div class="container">
-            <div class="why-grid">
-                <div>
-                    <div class="pill"><span class="pill-dot"></span>Why Choose Accrosian</div>
-                    <h2
-                        style="font-style:var(--ff-head);color:var(--navy-900);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2">
-                        Built for Platforms That <em
-                            style="font-style:var(--ff-head);background:var(--gradient-orange);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Cannot
-                            Fail</em></h2>
-                    <p style="color:var(--navy-900);margin-bottom:32px;font-weight:300;line-height:1.8">Every
-                        system we build is production-tested for high concurrency, security, and reliability — because
-                        learners can't afford downtime.</p>
-                    <div class="cap-inline-image">
-                        <img src="{{ asset('assets/images/education-img.jpg') }}" alt="Media Technology">
+            <div class="challenge-cards stagger">
+                <div class="challenge-card">
+                    <div class="challenge-num">01</div>
+                    <div>
+                        <div class="challenge-title">Legacy Hospital Systems</div>
+                        <div class="challenge-desc">Outdated, siloed infrastructure that hinders interoperability,
+                            increases operational costs, and blocks digital transformation initiatives.</div>
                     </div>
-                    <!-- <div class="why-list">
-                        <div class="why-item">
-                            <span class="why-num">01</span>
-                            <div class="why-content">
-                                <h4>Scalable & Secure Platforms</h4>
-                                <p>SOC 2-aligned architecture built for 10× growth without re-platforming.</p>
-                            </div>
-                            <svg class="why-arr" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="9 18 15 12 9 6" />
-                            </svg>
-                        </div>
-                        <div class="why-item">
-                            <span class="why-num">02</span>
-                            <div class="why-content">
-                                <h4>Interactive Learning Experiences</h4>
-                                <p>Gamification, live collaboration, and adaptive content that keeps learners hooked.
-                                </p>
-                            </div>
-                            <svg class="why-arr" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="9 18 15 12 9 6" />
-                            </svg>
-                        </div>
-                        <div class="why-item">
-                            <span class="why-num">03</span>
-                            <div class="why-content">
-                                <h4>Real-Time Analytics & Insights</h4>
-                                <p>Predictive dashboards that flag at-risk students before they churn.</p>
-                            </div>
-                            <svg class="why-arr" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="9 18 15 12 9 6" />
-                            </svg>
-                        </div>
-                        <div class="why-item">
-                            <span class="why-num">04</span>
-                            <div class="why-content">
-                                <h4>Seamless Tool Integration</h4>
-                                <p>Works with your existing ERP, HRMS, SIS, payment, and communication stack.</p>
-                            </div>
-                            <svg class="why-arr" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="9 18 15 12 9 6" />
-                            </svg>
-                        </div>
-                        <div class="why-item">
-                            <span class="why-num">05</span>
-                            <div class="why-content">
-                                <h4>Reliable High-Performance Systems</h4>
-                                <p>99.9% uptime SLA with global CDN, auto-scaling, and 24/7 monitoring.</p>
-                            </div>
-                            <svg class="why-arr" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="9 18 15 12 9 6" />
-                            </svg>
-                        </div>
-                    </div> -->
                 </div>
-
-                <div class="perf-widget">
-                    <div class="pw-title">PLATFORM PERFORMANCE BENCHMARK</div>
-                    <div class="pw-row">
-                        <span class="pw-lbl">Learner Engagement</span>
-                        <div class="pw-track">
-                            <div class="pw-fill" style="width:91%"></div>
-                        </div>
-                        <span class="pw-val">91%</span>
+                <div class="challenge-card">
+                    <div class="challenge-num">02</div>
+                    <div>
+                        <div class="challenge-title">Data Interoperability</div>
+                        <div class="challenge-desc">Disconnected EHR systems, incompatible data formats, and lack of
+                            HL7/FHIR standardization creating critical information gaps.</div>
                     </div>
-                    <div class="pw-row">
-                        <span class="pw-lbl">Course Completion Rate</span>
-                        <div class="pw-track">
-                            <div class="pw-fill" style="width:87%"></div>
-                        </div>
-                        <span class="pw-val">87%</span>
+                </div>
+                <div class="challenge-card">
+                    <div class="challenge-num">03</div>
+                    <div>
+                        <div class="challenge-title">Patient Experience Gaps</div>
+                        <div class="challenge-desc">Fragmented patient journeys, long wait times, and lack of digital
+                            touchpoints leading to poor satisfaction and care outcomes.</div>
                     </div>
-                    <div class="pw-row">
-                        <span class="pw-lbl">API Response Speed</span>
-                        <div class="pw-track">
-                            <div class="pw-fill" style="width:97%"></div>
-                        </div>
-                        <span class="pw-val">97%</span>
+                </div>
+                <div class="challenge-card">
+                    <div class="challenge-num">04</div>
+                    <div>
+                        <div class="challenge-title">Telemedicine Scalability</div>
+                        <div class="challenge-desc">Demand for remote care has skyrocketed, but infrastructure,
+                            security, and regulatory frameworks struggle to keep pace.</div>
                     </div>
-                    <div class="pw-row">
-                        <span class="pw-lbl">Uptime Reliability</span>
-                        <div class="pw-track">
-                            <div class="pw-fill" style="width:99%"></div>
-                        </div>
-                        <span class="pw-val">99%</span>
+                </div>
+                <div class="challenge-card">
+                    <div class="challenge-num">05</div>
+                    <div>
+                        <div class="challenge-title">Healthcare Compliance</div>
+                        <div class="challenge-desc">HIPAA, GDPR, and regional regulations require sophisticated data
+                            governance frameworks across every layer of the stack.</div>
                     </div>
-                    <div class="pw-row">
-                        <span class="pw-lbl">Security Compliance</span>
-                        <div class="pw-track">
-                            <div class="pw-fill" style="width:100%"></div>
-                        </div>
-                        <span class="pw-val">100%</span>
+                </div>
+                <div class="challenge-card">
+                    <div class="challenge-num">06</div>
+                    <div>
+                        <div class="challenge-title">AI-Driven Diagnostics</div>
+                        <div class="challenge-desc">Integrating AI/ML tools into clinical workflows demands robust data
+                            pipelines, model governance, and clinician trust.</div>
                     </div>
-                    <div class="pw-tags">
-                        <span class="pw-tag">SCORM 2004</span>
-                        <span class="pw-tag">xAPI / Tin Can</span>
-                        <span class="pw-tag">LTI 1.3</span>
-                        <span class="pw-tag">GDPR Ready</span>
-                        <span class="pw-tag">WCAG 2.1 AA</span>
-                        <span class="pw-tag">SOC 2 Aligned</span>
+                </div>
+                <div class="challenge-card">
+                    <div class="challenge-num">07</div>
+                    <div>
+                        <div class="challenge-title">Medical Data Security</div>
+                        <div class="challenge-desc">Healthcare is the #1 target for cyber attacks. PHI protection
+                            requires zero-trust architectures and continuous threat monitoring.</div>
+                    </div>
+                </div>
+                <div class="challenge-card">
+                    <div class="challenge-num">08</div>
+                    <div>
+                        <div class="challenge-title">Real-Time Monitoring</div>
+                        <div class="challenge-desc">IoT-connected devices and remote patient monitoring require
+                            low-latency, fault-tolerant data streams at massive scale.</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PROCESS -->
-    <section class="process">
-        <div class="container">
-            <div class="sec-head">
-                <div class="pill"><span class="pill-dot"></span>Our Process</div>
-                <h2>From Concept to <em>Classroom</em> — Engineered</h2>
-                <p>A battle-tested delivery model that minimises risk and ships enterprise EdTech platforms on time.</p>
+    <!-- SOLUTIONS -->
+    <section class="solutions-section" id="solutions">
+        <div class="solutions-header reveal">
+            <div class="section-tag">Our Solutions</div>
+            <h2 class="section-h2">End-to-End <span class="grad">Healthcare Technology</span> Solutions</h2>
+            <p class="section-sub">Purpose-built platforms and services designed to address every dimension of modern
+                healthcare operations, care delivery, and patient engagement.</p>
+        </div>
+
+        <div class="solutions-grid stagger">
+            <div class="sol-card">
+                <div class="sol-icon">🏥</div>
+                <div class="sol-title">Hospital Management Systems</div>
+                <div class="sol-desc">Comprehensive HMS platforms integrating OPD, IPD, ICU, pharmacy, labs, and billing
+                    into a single enterprise-grade system.</div>
             </div>
-            <div class="proc-grid">
-                <div class="proc-card">
-                    <div class="proc-n">01</div>
-                    <div class="proc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="11" cy="11" r="8" />
-                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                        </svg></div>
-                    <h3>Requirement Analysis & Research</h3>
-                    <p>Deep discovery into your learner personas, curriculum structure, compliance needs, and technical
-                        constraints — before a single line of code.</p>
+            <div class="sol-card">
+                <div class="sol-icon">📋</div>
+                <div class="sol-title">Electronic Health Records</div>
+                <div class="sol-desc">FHIR-compliant EHR/EMR solutions enabling seamless data exchange, clinical
+                    decision support, and longitudinal patient records.</div>
+            </div>
+            <div class="sol-card">
+                <div class="sol-icon">📡</div>
+                <div class="sol-title">Telemedicine Platforms</div>
+                <div class="sol-desc">Secure, HIPAA-compliant video consultation, e-prescription, and remote care
+                    platforms built for scale.</div>
+            </div>
+            <div class="sol-card">
+                <div class="sol-icon">🤖</div>
+                <div class="sol-title">AI Diagnostic Systems</div>
+                <div class="sol-desc">Machine learning models for medical imaging analysis, predictive diagnostics, and
+                    clinical decision augmentation.</div>
+            </div>
+            <div class="sol-card">
+                <div class="sol-icon">👤</div>
+                <div class="sol-title">Patient Portals</div>
+                <div class="sol-desc">Self-service patient engagement portals with appointment booking, health records
+                    access, and secure messaging.</div>
+            </div>
+            <div class="sol-card">
+                <div class="sol-icon">💼</div>
+                <div class="sol-title">Healthcare CRM</div>
+                <div class="sol-desc">Specialized CRM platforms for patient relationship management, outreach
+                    automation, and care coordination.</div>
+            </div>
+            <div class="sol-card">
+                <div class="sol-icon">💰</div>
+                <div class="sol-title">Medical Billing Automation</div>
+                <div class="sol-desc">Intelligent RCM solutions automating claims processing, denial management, and
+                    revenue cycle optimization.</div>
+            </div>
+            <div class="sol-card">
+                <div class="sol-icon">🔬</div>
+                <div class="sol-title">IoT Patient Monitoring</div>
+                <div class="sol-desc">Real-time remote patient monitoring platforms integrating wearables, biosensors,
+                    and edge computing.</div>
+            </div>
+            <div class="sol-card">
+                <div class="sol-icon">💊</div>
+                <div class="sol-title">Pharmacy Management</div>
+                <div class="sol-desc">End-to-end pharmacy operations platforms with inventory, dispensing, drug
+                    interaction checks, and insurance integration.</div>
+            </div>
+            <div class="sol-card" style="grid-column: span 1;">
+                <div class="sol-icon">📱</div>
+                <div class="sol-title">Healthcare Mobile Apps</div>
+                <div class="sol-desc">Intuitive iOS and Android applications for patients, clinicians, and healthcare
+                    administrators on every device.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PATIENT EXPERIENCE -->
+    <section class="patient-section" id="experience">
+        <div class="patient-grid">
+            <div class="patient-img-wrap reveal-left">
+                <div class="patient-img-blob">
+                    <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80"
+                        alt="Patient Experience" />
+                    <div class="stat-orbit">
+                        <div class="stat-pill">
+                            <div class="stat-pill-val">3×</div>
+                            <div class="stat-pill-lbl">Faster Booking</div>
+                        </div>
+                        <div class="stat-pill">
+                            <div class="stat-pill-val">68%</div>
+                            <div class="stat-pill-lbl">Less Wait Time</div>
+                        </div>
+                        <div class="stat-pill">
+                            <div class="stat-pill-val">24/7</div>
+                            <div class="stat-pill-lbl">Accessibility</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="proc-card">
-                    <div class="proc-n">02</div>
-                    <div class="proc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="12 2 2 7 12 12 22 7 12 2" />
-                            <polyline points="2 17 12 22 22 17" />
-                            <polyline points="2 12 12 17 22 12" />
-                        </svg></div>
-                    <h3>Strategy & Architecture Planning</h3>
-                    <p>System blueprint covering LMS structure, data models, microservices, and cloud infrastructure
-                        sized for your peak load.</p>
+            </div>
+
+            <div class="reveal-right">
+                <div class="section-tag">Patient Experience</div>
+                <h2 class="section-h2">Care That Puts <span class="grad">Patients First</span></h2>
+                <p class="section-sub" style="margin-bottom:36px">Digital transformation should start and end with the
+                    patient. Our platforms are designed to eliminate friction, reduce wait times, and deliver continuity
+                    of care across every channel.</p>
+
+                <div class="metrics-list">
+                    <div class="metric-item">
+                        <div class="metric-header">
+                            <span class="metric-label">Faster Appointment Booking</span>
+                            <span class="metric-pct">92%</span>
+                        </div>
+                        <div class="metric-bar-bg">
+                            <div class="metric-bar-fill" data-width="92"></div>
+                        </div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-header">
+                            <span class="metric-label">Reduced Patient Wait Time</span>
+                            <span class="metric-pct">68%</span>
+                        </div>
+                        <div class="metric-bar-bg">
+                            <div class="metric-bar-fill" data-width="68"></div>
+                        </div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-header">
+                            <span class="metric-label">Improved Patient Engagement</span>
+                            <span class="metric-pct">85%</span>
+                        </div>
+                        <div class="metric-bar-bg">
+                            <div class="metric-bar-fill" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-header">
+                            <span class="metric-label">Multi-Device Access Rate</span>
+                            <span class="metric-pct">97%</span>
+                        </div>
+                        <div class="metric-bar-bg">
+                            <div class="metric-bar-fill" data-width="97"></div>
+                        </div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-header">
+                            <span class="metric-label">Telemedicine Adoption</span>
+                            <span class="metric-pct">79%</span>
+                        </div>
+                        <div class="metric-bar-bg">
+                            <div class="metric-bar-fill" data-width="79"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="proc-card">
-                    <div class="proc-n">03</div>
-                    <div class="proc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="2" />
-                            <circle cx="8.5" cy="8.5" r="1.5" />
-                            <polyline points="21 15 16 10 5 21" />
-                        </svg></div>
-                    <h3>UI/UX Design for Learning Platforms</h3>
-                    <p>Learner-centric interfaces, instructor dashboards, and admin panels — designed for clarity,
-                        accessibility, and cross-device parity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section class="tech-section" id="tech">
+        <div class="tech-header reveal">
+            <div class="section-tag">Technology Stack</div>
+            <h2 class="section-h2">Built on a <span class="grad">Future-Ready</span> Foundation</h2>
+            <p class="section-sub">We leverage battle-tested, enterprise-grade technologies and healthcare-specific
+                standards to deliver scalable, compliant, and high-performance systems.</p>
+        </div>
+
+        <div class="tech-groups">
+            <div class="reveal">
+                <div class="tech-group-title">Frontend & Backend</div>
+                <div class="tech-pills">
+                    <div class="tech-pill"><span class="dot"></span>Laravel</div>
+                    <div class="tech-pill"><span class="dot"></span>React</div>
+                    <div class="tech-pill"><span class="dot"></span>Node.js</div>
+                    <div class="tech-pill"><span class="dot"></span>TypeScript</div>
+                    <div class="tech-pill"><span class="dot"></span>GraphQL</div>
+                    <div class="tech-pill"><span class="dot"></span>REST APIs</div>
                 </div>
-                <div class="proc-card">
-                    <div class="proc-n">04</div>
-                    <div class="proc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="16 18 22 12 16 6" />
-                            <polyline points="8 6 2 12 8 18" />
-                        </svg></div>
-                    <h3>Development & Integration</h3>
-                    <p>Agile sprints with weekly demos. Full-stack EdTech development integrated with Zoom, payment
-                        gateways, SIS, and analytics tools.</p>
+            </div>
+            <div class="reveal">
+                <div class="tech-group-title">Cloud & Infrastructure</div>
+                <div class="tech-pills">
+                    <div class="tech-pill"><span class="dot"></span>AWS</div>
+                    <div class="tech-pill"><span class="dot"></span>Microsoft Azure</div>
+                    <div class="tech-pill"><span class="dot"></span>Cloud Infrastructure</div>
+                    <div class="tech-pill"><span class="dot"></span>Docker</div>
+                    <div class="tech-pill"><span class="dot"></span>Kubernetes</div>
+                    <div class="tech-pill"><span class="dot"></span>Terraform</div>
                 </div>
-                <div class="proc-card">
-                    <div class="proc-n">05</div>
-                    <div class="proc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                        </svg></div>
-                    <h3>Testing & Performance Optimization</h3>
-                    <p>Load testing at 3× expected concurrency, accessibility audits, and security penetration testing
-                        before every launch gate.</p>
+            </div>
+            <div class="reveal">
+                <div class="tech-group-title">AI & Data</div>
+                <div class="tech-pills">
+                    <div class="tech-pill"><span class="dot"></span>AI & Machine Learning</div>
+                    <div class="tech-pill"><span class="dot"></span>TensorFlow</div>
+                    <div class="tech-pill"><span class="dot"></span>PostgreSQL</div>
+                    <div class="tech-pill"><span class="dot"></span>Redis</div>
+                    <div class="tech-pill"><span class="dot"></span>Elasticsearch</div>
                 </div>
-                <div class="proc-card">
-                    <div class="proc-n">06</div>
-                    <div class="proc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                        </svg></div>
-                    <h3>Deployment & Continuous Support</h3>
-                    <p>Zero-downtime CI/CD deployments, 24/7 monitoring, and a dedicated SRE team for ongoing feature
-                        evolution and scaling.</p>
+            </div>
+            <div class="reveal">
+                <div class="tech-group-title">Healthcare Standards & IoT</div>
+                <div class="tech-pills">
+                    <div class="tech-pill"><span class="dot"></span>HL7 FHIR APIs</div>
+                    <div class="tech-pill"><span class="dot"></span>DICOM</div>
+                    <div class="tech-pill"><span class="dot"></span>IoT Integration</div>
+                    <div class="tech-pill"><span class="dot"></span>MQTT</div>
+                    <div class="tech-pill"><span class="dot"></span>Edge Computing</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECURITY -->
+    <section class="security-section" id="security">
+        <div class="security-header reveal">
+            <div class="section-tag">Security & Compliance</div>
+            <h2 class="section-h2">Enterprise-Grade <span class="grad">Security</span> at Every Layer</h2>
+            <p class="section-sub">Healthcare data is among the most sensitive in the world. Our security-first
+                engineering philosophy ensures compliance, protection, and peace of mind at every level of the stack.
+            </p>
+        </div>
+
+        <div class="shield-visual">
+            <div style="position:relative; display:flex; align-items:center; justify-content:center;">
+                <div class="shield-ring" style="width:200px;height:200px;animation-duration:3s;animation-delay:0s">
+                </div>
+                <div class="shield-ring" style="width:200px;height:200px;animation-duration:3s;animation-delay:1s">
+                </div>
+                <div class="shield-ring" style="width:200px;height:200px;animation-duration:3s;animation-delay:2s">
+                </div>
+                <svg class="shield-svg" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 5L10 22V55C10 78 28 99 50 107C72 99 90 78 90 55V22L50 5Z" fill="url(#sg)"
+                        stroke="rgba(249,115,22,0.4)" stroke-width="1.5" />
+                    <path d="M38 60L46 68L64 48" stroke="white" stroke-width="4" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <defs>
+                        <linearGradient id="sg" x1="10" y1="5" x2="90" y2="107" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="rgba(249,115,22,0.35)" />
+                            <stop offset="100%" stop-color="rgba(249,115,22,0.1)" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+
+        <div class="security-grid stagger">
+            <div class="sec-card">
+                <div class="sec-icon">🏥</div>
+                <div class="sec-title">HIPAA Compliance</div>
+                <div class="sec-desc">Full HIPAA Technical Safeguard implementation with BAA-ready architecture and
+                    audit logging.</div>
+            </div>
+            <div class="sec-card">
+                <div class="sec-icon">🇪🇺</div>
+                <div class="sec-title">GDPR Framework</div>
+                <div class="sec-desc">Data minimization, right to erasure, consent management, and cross-border data
+                    transfer controls.</div>
+            </div>
+            <div class="sec-card">
+                <div class="sec-icon">🏅</div>
+                <div class="sec-title">ISO 27001</div>
+                <div class="sec-desc">Information security management systems aligned with ISO 27001 standards across
+                    all engagements.</div>
+            </div>
+            <div class="sec-card">
+                <div class="sec-icon">🔐</div>
+                <div class="sec-title">Secure APIs</div>
+                <div class="sec-desc">OAuth 2.0, JWT, mutual TLS, and rate limiting across all API surfaces and
+                    integration endpoints.</div>
+            </div>
+            <div class="sec-card">
+                <div class="sec-icon">🔒</div>
+                <div class="sec-title">End-to-End Encryption</div>
+                <div class="sec-desc">AES-256 encryption at rest, TLS 1.3 in transit, and zero-knowledge key management
+                    architectures.</div>
+            </div>
+            <div class="sec-card">
+                <div class="sec-icon">👥</div>
+                <div class="sec-title">Role-Based Access</div>
+                <div class="sec-desc">Granular RBAC and ABAC models ensuring least-privilege access across all clinical
+                    and admin roles.</div>
+            </div>
+            <div class="sec-card">
+                <div class="sec-icon">🛡️</div>
+                <div class="sec-title">Zero Trust Architecture</div>
+                <div class="sec-desc">Never trust, always verify — continuous authentication and micro-segmentation
+                    across all network zones.</div>
+            </div>
+            <div class="sec-card">
+                <div class="sec-icon">🔍</div>
+                <div class="sec-title">Threat Monitoring</div>
+                <div class="sec-desc">24/7 SIEM, anomaly detection, and incident response workflows with automated
+                    threat containment.</div>
             </div>
         </div>
     </section>
 
     <!-- USE CASES -->
-    <section class="usecases">
-        <div class="container">
-            <div class="sec-head">
-                <div class="pill"><span class="pill-dot"></span>Use Cases</div>
-                <h2>Solutions for <em>Every Education Vertical</em></h2>
-                <p>Proven platforms across the full spectrum of modern learning and knowledge businesses.</p>
+    <section class="usecases-section" id="usecases">
+        <div class="usecases-header reveal">
+            <div class="section-tag">Who We Serve</div>
+            <h2 class="section-h2">Built for Every <span class="grad">Healthcare Vertical</span></h2>
+            <p class="section-sub" style="margin:0 auto">From large hospital networks to emerging health-tech startups,
+                our solutions are engineered to scale across the entire healthcare ecosystem.</p>
+        </div>
+
+        <div class="usecases-grid stagger">
+            <div class="uc-card">
+                <span class="uc-emoji">🏥</span>
+                <div class="uc-title">Hospitals & Health Systems</div>
+                <div class="uc-desc">Enterprise HMS, EHR integration, and operational efficiency platforms for
+                    multi-specialty hospital networks.</div>
             </div>
-            <div class="uc-grid">
-
-                <div class="uc-card">
-                    <div class="uc-badge">Online Learning</div>
-                    <div class="uc-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                            <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                        </svg></div>
-                    <h3>Online Learning Platforms</h3>
-                    <p>End-to-end platforms for course creation, enrollment, live sessions, assessments, and
-                        certification — designed to compete with the world's top EdTech brands.</p>
-                    <div class="uc-tags">
-                        <span class="uc-tag">Course Marketplace</span>
-                        <span class="uc-tag">Subscription Billing</span>
-                        <span class="uc-tag">Live & On-Demand</span>
-                        <span class="uc-tag">Certificate Engine</span>
-                    </div>
-                </div>
-
-                <div class="uc-card">
-                    <div class="uc-badge">Institutions</div>
-                    <div class="uc-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="7" width="20" height="14" rx="2" />
-                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                        </svg></div>
-                    <h3>School & College Management Systems</h3>
-                    <p>Unified ERP for admissions, attendance, fee management, timetabling, and parent communication —
-                        built for K-12 schools through universities.</p>
-                    <div class="uc-tags">
-                        <span class="uc-tag">Admissions Portal</span>
-                        <span class="uc-tag">Fee Management</span>
-                        <span class="uc-tag">Attendance Tracking</span>
-                        <span class="uc-tag">Parent App</span>
-                    </div>
-                </div>
-
-                <div class="uc-card">
-                    <div class="uc-badge">EdTech Startups</div>
-                    <div class="uc-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-                        </svg></div>
-                    <h3>EdTech Startup Platforms</h3>
-                    <p>MVP to enterprise — rapid product iteration for EdTech founders who need a tech partner that
-                        understands product-market fit, growth loops, and investor metrics.</p>
-                    <div class="uc-tags">
-                        <span class="uc-tag">MVP Development</span>
-                        <span class="uc-tag">Product Analytics</span>
-                        <span class="uc-tag">Growth Tooling</span>
-                        <span class="uc-tag">Rapid Iteration</span>
-                    </div>
-                </div>
-
-                <div class="uc-card">
-                    <div class="uc-badge">Enterprise L&D</div>
-                    <div class="uc-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                            <circle cx="9" cy="7" r="4" />
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                        </svg></div>
-                    <h3>Corporate Training Platforms</h3>
-                    <p>Learning & Development systems for enterprises — onboarding automation, compliance training,
-                        skills gap analysis, and team performance reporting at scale.</p>
-                    <div class="uc-tags">
-                        <span class="uc-tag">Onboarding Flows</span>
-                        <span class="uc-tag">Compliance Training</span>
-                        <span class="uc-tag">Skills Mapping</span>
-                        <span class="uc-tag">L&D Analytics</span>
-                    </div>
-                </div>
-
+            <div class="uc-card">
+                <span class="uc-emoji">🩺</span>
+                <div class="uc-title">Clinics & Practices</div>
+                <div class="uc-desc">Streamlined practice management, patient scheduling, and clinical workflows for
+                    outpatient care settings.</div>
+            </div>
+            <div class="uc-card">
+                <span class="uc-emoji">🔬</span>
+                <div class="uc-title">Diagnostic Laboratories</div>
+                <div class="uc-desc">LIMS integration, result reporting automation, and AI-assisted anomaly detection
+                    for diagnostic labs.</div>
+            </div>
+            <div class="uc-card">
+                <span class="uc-emoji">💻</span>
+                <div class="uc-title">Telemedicine Startups</div>
+                <div class="uc-desc">Scalable, compliant telehealth platforms with video, e-prescriptions, and async
+                    care capabilities.</div>
+            </div>
+            <div class="uc-card">
+                <span class="uc-emoji">💊</span>
+                <div class="uc-title">Pharmaceutical Companies</div>
+                <div class="uc-desc">Clinical trial management, pharmacovigilance, and digital engagement platforms for
+                    pharma enterprises.</div>
+            </div>
+            <div class="uc-card">
+                <span class="uc-emoji">☁️</span>
+                <div class="uc-title">Healthcare SaaS</div>
+                <div class="uc-desc">Multi-tenant SaaS architecture, compliance frameworks, and integration APIs for
+                    health-tech product companies.</div>
+            </div>
+            <div class="uc-card">
+                <span class="uc-emoji">🩻</span>
+                <div class="uc-title">Medical Device Platforms</div>
+                <div class="uc-desc">IoT data pipelines, device connectivity, and FDA-compliant software for connected
+                    medical device ecosystems.</div>
+            </div>
+            <div class="uc-card">
+                <span class="uc-emoji">📄</span>
+                <div class="uc-title">Insurance & Claims</div>
+                <div class="uc-desc">Intelligent claims processing, fraud detection, and payer-provider integration for
+                    health insurance operations.</div>
             </div>
         </div>
     </section>
 
-    <!-- FEATURES -->
-    <section class="features">
-        <div class="container">
-            <div class="sec-head">
-                <div class="pill"><span class="pill-dot"></span>Platform Features</div>
-                <h2>Built for <em>Engagement</em>, by Design</h2>
-                <p>Core features included in every Accrosian EdTech platform engagement.</p>
-            </div>
-            <div class="feat-grid">
-                <div class="feat-card">
-                    <div class="feat-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="23 7 16 12 23 17 23 7" />
-                            <rect x="1" y="5" width="15" height="14" rx="2" />
-                        </svg></div>
-                    <h3>Real-Time Classes & Collaboration</h3>
-                    <p>Low-latency live sessions with screen share, whiteboard, breakout rooms, and polls.</p>
-                </div>
-                <div class="feat-card">
-                    <div class="feat-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="5" y="2" width="14" height="20" rx="2" />
-                            <line x1="12" y1="18" x2="12.01" y2="18" />
-                        </svg></div>
-                    <h3>Multi-Device Accessibility</h3>
-                    <p>Native apps plus PWA — seamless learning on mobile, tablet, and desktop with offline sync.</p>
-                </div>
-                <div class="feat-card">
-                    <div class="feat-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                            <circle cx="9" cy="7" r="4" />
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                        </svg></div>
-                    <h3>Personalized Learning Paths</h3>
-                    <p>AI-driven adaptive curricula that evolve based on each learner's pace, performance, and
-                        preference.</p>
-                </div>
-                <div class="feat-card">
-                    <div class="feat-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                        </svg></div>
-                    <h3>Secure Student Data Management</h3>
-                    <p>FERPA and GDPR compliant data handling with end-to-end encryption and role-based access.</p>
-                </div>
-                <div class="feat-card">
-                    <div class="feat-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-                        </svg></div>
-                    <h3>High-Performance & Scalability</h3>
-                    <p>Auto-scaling Kubernetes clusters that handle traffic spikes during exam seasons and live events.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- WHY ACCROSIAN -->
+    <section class="why-section" id="why">
+        <div class="why-grid">
+            <div class="reveal-left">
+                <div class="section-tag">Why Accrosian</div>
+                <h2 class="section-h2">Your Strategic <span class="grad">Digital Health</span> Partner</h2>
+                <p class="section-sub" style="margin-bottom:40px">We don't just build software. We embed ourselves into
+                    your healthcare operations to deliver solutions that are clinically informed, technically excellent,
+                    and built for the long term.</p>
 
-    <!-- TECH -->
-    <section class="tech">
-        <div class="container">
-            <div class="sec-head">
-                <div class="pill"><span class="pill-dot"></span>Tools & Technologies</div>
-                <h2>Powered by <em>Best-in-Class</em> Technology</h2>
-                <p>We select the right technology for your use case — not the trendy one.</p>
-            </div>
-            <div class="tech-cats">
-                <div class="tech-cat">
-                    <div class="tech-cat-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                            <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                        </svg></div>
-                    <h4>LMS Platforms</h4>
-                    <div class="tech-items">
-                        <span class="tech-item">Moodle</span>
-                        <span class="tech-item">Canvas</span>
-                        <span class="tech-item">Custom LMS</span>
-                        <span class="tech-item">Open edX</span>
+                <div class="why-features">
+                    <div class="why-feature">
+                        <div class="why-feat-icon">🏥</div>
+                        <div>
+                            <div class="why-feat-title">Healthcare Domain Expertise</div>
+                            <div class="why-feat-desc">Deep clinical knowledge across hospital operations, diagnostics,
+                                and patient care workflows.</div>
+                        </div>
                     </div>
-                </div>
-                <div class="tech-cat">
-                    <div class="tech-cat-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="22 12 16 12 14 15 10 9 8 12 2 12" />
-                            <path
-                                d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" />
-                        </svg></div>
-                    <h4>Cloud Infrastructure</h4>
-                    <div class="tech-items">
-                        <span class="tech-item">AWS</span>
-                        <span class="tech-item">GCP</span>
-                        <span class="tech-item">Azure</span>
-                        <span class="tech-item">K8s</span>
+                    <div class="why-feature">
+                        <div class="why-feat-icon">☁️</div>
+                        <div>
+                            <div class="why-feat-title">Scalable Cloud Architecture</div>
+                            <div class="why-feat-desc">Microservices, containerized infrastructure built to handle
+                                millions of patient records reliably.</div>
+                        </div>
                     </div>
-                </div>
-                <div class="tech-cat">
-                    <div class="tech-cat-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="23 7 16 12 23 17 23 7" />
-                            <rect x="1" y="5" width="15" height="14" rx="2" />
-                        </svg></div>
-                    <h4>Video Streaming</h4>
-                    <div class="tech-items">
-                        <span class="tech-item">Agora</span>
-                        <span class="tech-item">Mux</span>
-                        <span class="tech-item">Daily.co</span>
-                        <span class="tech-item">Twilio</span>
+                    <div class="why-feature">
+                        <div class="why-feat-icon">🔒</div>
+                        <div>
+                            <div class="why-feat-title">Security-First Engineering</div>
+                            <div class="why-feat-desc">HIPAA, GDPR, ISO 27001 compliance baked in from day one — not
+                                bolted on at the end.</div>
+                        </div>
                     </div>
-                </div>
-                <div class="tech-cat">
-                    <div class="tech-cat-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="18" y1="20" x2="18" y2="10" />
-                            <line x1="12" y1="20" x2="12" y2="4" />
-                            <line x1="6" y1="20" x2="6" y2="14" />
-                        </svg></div>
-                    <h4>Analytics Tools</h4>
-                    <div class="tech-items">
-                        <span class="tech-item">Mixpanel</span>
-                        <span class="tech-item">Amplitude</span>
-                        <span class="tech-item">BigQuery</span>
-                        <span class="tech-item">Metabase</span>
+                    <div class="why-feature">
+                        <div class="why-feat-icon">🤖</div>
+                        <div>
+                            <div class="why-feat-title">AI Integration Specialists</div>
+                            <div class="why-feat-desc">Practical ML deployment in clinical settings — from model
+                                selection to production monitoring.</div>
+                        </div>
                     </div>
-                </div>
-                <div class="tech-cat">
-                    <div class="tech-cat-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="1" />
-                            <circle cx="3" cy="6" r="1" />
-                            <circle cx="21" cy="6" r="1" />
-                            <circle cx="3" cy="18" r="1" />
-                            <circle cx="21" cy="18" r="1" />
-                            <line x1="3" y1="7" x2="12" y2="11" />
-                            <line x1="21" y1="7" x2="12" y2="11" />
-                            <line x1="3" y1="17" x2="12" y2="13" />
-                            <line x1="21" y1="17" x2="12" y2="13" />
-                        </svg></div>
-                    <h4>API Integrations</h4>
-                    <div class="tech-items">
-                        <span class="tech-item">Stripe</span>
-                        <span class="tech-item">Zoom</span>
-                        <span class="tech-item">Salesforce</span>
-                        <span class="tech-item">Zapier</span>
+                    <div class="why-feature">
+                        <div class="why-feat-icon">🎯</div>
+                        <div>
+                            <div class="why-feat-title">Dedicated Support Teams</div>
+                            <div class="why-feat-desc">24/7 technical support, SLA-backed commitments, and dedicated
+                                customer success managers.</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- RESULTS -->
-    <section class="results">
-        <div class="container">
-            <div class="sec-head">
-                <div class="pill"><span class="pill-dot"></span>Proven Impact</div>
-                <h2>Results That <em>Move the Needle</em></h2>
-                <p>Measurable outcomes from EdTech platforms built and scaled by Accrosian.</p>
-            </div>
-            <div class="res-grid">
-                <div class="res-card">
-                    <div class="res-n">99.9%</div>
-                    <div class="res-label">Platform Uptime</div>
-                    <div class="res-desc">SLA-backed reliability with proactive monitoring and zero single points of
-                        failure.</div>
+            <div class="why-visual reveal-right">
+                <div class="why-big-num">200+</div>
+                <div class="why-big-lbl">Healthcare Projects Delivered</div>
+                <div class="why-stats-grid">
+                    <div class="why-stat">
+                        <div class="why-stat-val">15+</div>
+                        <div class="why-stat-lbl">Years in Healthcare Tech</div>
+                    </div>
+                    <div class="why-stat">
+                        <div class="why-stat-val">99.9%</div>
+                        <div class="why-stat-lbl">Platform Uptime SLA</div>
+                    </div>
+                    <div class="why-stat">
+                        <div class="why-stat-val">50+</div>
+                        <div class="why-stat-lbl">Countries Served</div>
+                    </div>
+                    <div class="why-stat">
+                        <div class="why-stat-val">4.9★</div>
+                        <div class="why-stat-lbl">Client Satisfaction</div>
+                    </div>
                 </div>
-                <div class="res-card">
-                    <div class="res-n">+41%</div>
-                    <div class="res-label">Student Engagement</div>
-                    <div class="res-desc">Median uplift in session length and return visit rate after personalization
-                        deployment.</div>
-                </div>
-                <div class="res-card">
-                    <div class="res-n">500K+</div>
-                    <div class="res-label">Concurrent Learners</div>
-                    <div class="res-desc">Proven capacity to serve peak traffic without performance degradation during
-                        live events.</div>
-                </div>
-                <div class="res-card">
-                    <div class="res-n">3×</div>
-                    <div class="res-label">Faster Delivery</div>
-                    <div class="res-desc">Average reduction in content load time through edge caching and CDN
-                        optimization.</div>
+
+                <div
+                    style="margin-top:28px; padding:20px; background:var(--white-10); border-radius:14px; border:1px solid var(--glass-border); text-align:left">
+                    <div
+                        style="font-size:0.75rem;color:var(--white-60);margin-bottom:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.07em">
+                        Certifications & Recognition</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:8px">
+                        <span
+                            style="padding:5px 14px;border-radius:50px;background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">HIPAA
+                            Certified</span>
+                        <span
+                            style="padding:5px 14px;border-radius:50px;background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">ISO
+                            27001</span>
+                        <span
+                            style="padding:5px 14px;border-radius:50px;background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">AWS
+                            Partner</span>
+                        <span
+                            style="padding:5px 14px;border-radius:50px;background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">Azure
+                            Partner</span>
+                        <span
+                            style="padding:5px 14px;border-radius:50px;background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">GDPR
+                            Ready</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
-    {{-- CTA --}}
-    <section class="cta-section">
-        <div class="container cta-inner">
-            <span class="section-tag" style="margin-bottom:24px">Ready to Start?</span>
-            <h2 class="cta-title">Let's Build Something <span class="text-gradient">Extraordinary</span> Together</h2>
-            <p class="cta-subtitle">Tell us your vision and we'll turn it into reality. Free consultation, no
-                commitment.
-            </p>
-            <div class="cta-actions">
-                <a href="{{ route('contact') }}" class="btn btn-primary btn-arrow">Start Your Project</a>
-                <a href="{{ route('portfolio') }}" class="btn btn-outline">See Our Work</a>
+    <section class="cta-section" id="contact">
+        <div class="hero-grid"></div>
+        <div class="cta-glow"></div>
+        <div class="cta-inner reveal">
+            <div class="section-tag" style="margin:0 auto 24px">Start Your Journey</div>
+            <h2>Let's Build the <span class="grad">Future of Digital</span> Healthcare</h2>
+            <p>Whether you're modernizing a legacy hospital system, launching a telemedicine platform, or building the
+                next generation of health-tech — Accrosian has the expertise, technology, and commitment to make it
+                happen.</p>
+            <div class="cta-btns">
+                <a href="#" class="btn-primary">Schedule a Consultation →</a>
+                <a href="#" class="btn-outline">View Case Studies</a>
             </div>
         </div>
     </section>
-    </div>
-    @endsection
+
+    <!-- FOOTER -->
+    <footer>
+        <a href="#" class="nav-logo" style="font-size:1.2rem">Accros<span>ian</span></a>
+        <p>© 2025 Accrosian. All rights reserved. Healthcare Industry Division.</p>
+        <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">HIPAA Policy</a>
+            <a href="#">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                // Animate metric bars
+                e.target.querySelectorAll('.metric-bar-fill').forEach(bar => {
+                    const w = bar.dataset.width;
+                    bar.style.transform = `scaleX(${w/100})`;
+                    bar.classList.add('animated');
+                });
+            }
+        });
+    }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger').forEach(el => observer.observe(el));
+
+    // Metric bars on parent section visible
+    const metricsSection = document.querySelector('.patient-section');
+    if (metricsSection) {
+        const mObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.querySelectorAll('.metric-bar-fill').forEach(bar => {
+                        const w = bar.dataset.width;
+                        setTimeout(() => {
+                            bar.style.transform = `scaleX(${w/100})`;
+                        }, 400);
+                    });
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+        mObs.observe(metricsSection);
+    }
+
+    // Smooth nav active states
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const target = document.querySelector(a.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>
