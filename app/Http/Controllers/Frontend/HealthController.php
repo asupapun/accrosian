@@ -11,6 +11,6 @@ class BankingController extends Controller
     {
         $setting = Setting::first();
 
-        return view('frontend.banking', compact('setting'));
+        return view('frontend.healthcare', compact('setting'));
     }
 }
