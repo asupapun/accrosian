@@ -185,6 +185,16 @@ body {
     background: var(--navy-4);
 }
 
+/* ADD THIS */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    z-index: 1;
+}
 
 .hero-inner {
     position: relative;
