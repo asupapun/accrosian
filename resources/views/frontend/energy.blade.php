@@ -2060,29 +2060,29 @@ body {
 
 
     // ---- COUNTER ANIMATION ----
-    const counters = document.querySelectorAll('.stat-num[data-target]');
-    const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                const target = parseInt(el.dataset.target);
-                let current = 0;
-                const step = target / 60;
-                const timer = setInterval(() => {
-                    current += step;
-                    if (current >= target) {
-                        current = target;
-                        clearInterval(timer);
-                    }
-                    el.textContent = Math.floor(current) + '%';
-                }, 25);
-                counterObserver.unobserve(el);
-            }
-        });
-    }, {
-        threshold: 0.5
-    });
-    counters.forEach(el => counterObserver.observe(el));
+    // const counters = document.querySelectorAll('.stat-num[data-target]');
+    // const counterObserver = new IntersectionObserver((entries) => {
+    //     entries.forEach(entry => {
+    //         if (entry.isIntersecting) {
+    //             const el = entry.target;
+    //             const target = parseInt(el.dataset.target);
+    //             let current = 0;
+    //             const step = target / 60;
+    //             const timer = setInterval(() => {
+    //                 current += step;
+    //                 if (current >= target) {
+    //                     current = target;
+    //                     clearInterval(timer);
+    //                 }
+    //                 el.textContent = Math.floor(current) + '%';
+    //             }, 25);
+    //             counterObserver.unobserve(el);
+    //         }
+    //     });
+    // }, {
+    //     threshold: 0.5
+    // });
+    // counters.forEach(el => counterObserver.observe(el));
 
     // ---- TECH PILL STAGGER ----
     document.querySelectorAll('.tech-pill').forEach((pill, i) => {
