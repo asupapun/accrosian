@@ -11,6 +11,7 @@ use App\Http\Controllers\Frontend\BankingController;
 use App\Http\Controllers\Frontend\MedinfoController;
 use App\Http\Controllers\Frontend\EducationController;
 use App\Http\Controllers\Frontend\EnergyController;
+use App\Http\Controllers\Frontend\HealthController;
 
 
 /*
@@ -35,6 +36,7 @@ Route::get('/industries/banking', [BankingController::class, 'index'])->name('in
 Route::get('/industries/medinfo', [MedinfoController::class, 'index'])->name('industries.medinfo');
 Route::get('/industries/education', [EducationController::class, 'index'])->name('industries.education');
 Route::get('/industries/energy', [EnergyController::class, 'index'])->name('industries.energy');
+Route::get('/industries/healthcare', [HealthController::class, 'index'])->name('industries.healthcare');
 /*
 |--------------------------------------------------------------------------
 | Auth Routes
