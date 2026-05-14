@@ -2060,52 +2060,52 @@ body {
 
 
     // ---- COUNTER ANIMATION ----
-    // const counters = document.querySelectorAll('.stat-num[data-target]');
-    // const counterObserver = new IntersectionObserver((entries) => {
-    //     entries.forEach(entry => {
-    //         if (entry.isIntersecting) {
-    //             const el = entry.target;
-    //             const target = parseInt(el.dataset.target);
-    //             let current = 0;
-    //             const step = target / 60;
-    //             const timer = setInterval(() => {
-    //                 current += step;
-    //                 if (current >= target) {
-    //                     current = target;
-    //                     clearInterval(timer);
-    //                 }
-    //                 el.textContent = Math.floor(current) + '%';
-    //             }, 25);
-    //             counterObserver.unobserve(el);
-    //         }
-    //     });
-    // }, {
-    //     threshold: 0.5
-    // });
-    // counters.forEach(el => counterObserver.observe(el));
-
-    // ---- TECH PILL STAGGER ----
-    document.querySelectorAll('.tech-pill').forEach((pill, i) => {
-        pill.style.animationDelay = (i * 60) + 'ms';
-        pill.style.opacity = '0';
-        pill.style.transform = 'translateY(20px)';
-        pill.style.transition = `opacity .5s ease ${i * 40}ms, transform .5s ease ${i * 40}ms`;
-    });
-    const techObserver = new IntersectionObserver((entries) => {
+    const counters = document.querySelectorAll('.stat-num[data-target]');
+    const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                document.querySelectorAll('.tech-pill').forEach(pill => {
-                    pill.style.opacity = '1';
-                    pill.style.transform = 'translateY(0)';
-                });
-                techObserver.disconnect();
+                const el = entry.target;
+                const target = parseInt(el.dataset.target);
+                let current = 0;
+                const step = target / 60;
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    el.textContent = Math.floor(current) + '%';
+                }, 25);
+                counterObserver.unobserve(el);
             }
         });
     }, {
-        threshold: 0.2
+        threshold: 0.5
     });
-    const techSection = document.querySelector('.tech-pills');
-    if (techSection) techObserver.observe(techSection);
+    counters.forEach(el => counterObserver.observe(el));
+
+    // ---- TECH PILL STAGGER ----
+    // document.querySelectorAll('.tech-pill').forEach((pill, i) => {
+    //     pill.style.animationDelay = (i * 60) + 'ms';
+    //     pill.style.opacity = '0';
+    //     pill.style.transform = 'translateY(20px)';
+    //     pill.style.transition = `opacity .5s ease ${i * 40}ms, transform .5s ease ${i * 40}ms`;
+    // });
+    // const techObserver = new IntersectionObserver((entries) => {
+    //     entries.forEach(entry => {
+    //         if (entry.isIntersecting) {
+    //             document.querySelectorAll('.tech-pill').forEach(pill => {
+    //                 pill.style.opacity = '1';
+    //                 pill.style.transform = 'translateY(0)';
+    //             });
+    //             techObserver.disconnect();
+    //         }
+    //     });
+    // }, {
+    //     threshold: 0.2
+    // });
+    // const techSection = document.querySelector('.tech-pills');
+    // if (techSection) techObserver.observe(techSection);
     </script>
 
     </div>
