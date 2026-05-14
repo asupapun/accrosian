@@ -1564,7 +1564,7 @@ h4 {
 
     <!-- HERO -->
     <section class="hero">
-        <img src="{{ asset('assets/images/hero-edu.jpg') }}" alt="Hero Background" class="hero-bg-img" />
+        <img src="{{ asset('assets/images/hero-health.jpg') }}" alt="Hero Background" class="hero-bg-img" />
         <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-inner">
