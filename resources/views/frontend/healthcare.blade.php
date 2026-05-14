@@ -57,72 +57,6 @@ h4 {
     font-family: 'Sora', sans-serif;
 }
 
-/* ─── NAVBAR ─── */
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    padding: 18px 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgba(5, 13, 26, 0.75);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--glass-border);
-}
-
-.nav-logo {
-    font-family: 'Sora', sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-    background: linear-gradient(135deg, #fff 40%, var(--orange));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-decoration: none;
-}
-
-.nav-logo span {
-    color: var(--orange);
-    -webkit-text-fill-color: var(--orange);
-}
-
-.nav-links {
-    display: flex;
-    gap: 36px;
-    list-style: none;
-}
-
-.nav-links a {
-    color: var(--white-60);
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: color .25s;
-}
-
-.nav-links a:hover {
-    color: #fff;
-}
-
-.nav-cta {
-    padding: 10px 24px;
-    border-radius: 50px;
-    background: linear-gradient(135deg, var(--orange), #ea580c);
-    color: #fff;
-    font-weight: 600;
-    font-size: 0.88rem;
-    text-decoration: none;
-    transition: transform .2s, box-shadow .2s;
-    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.35);
-}
-
-.nav-cta:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.5);
-}
-
 /* ─── HERO ─── */
 .hero {
     min-height: 100vh;
@@ -1346,39 +1280,6 @@ section {
     pointer-events: none;
 }
 
-/* ─── FOOTER ─── */
-footer {
-    background: var(--navy);
-    padding: 40px 60px;
-    border-top: 1px solid var(--glass-border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-footer p {
-    font-size: 0.82rem;
-    color: var(--white-60);
-}
-
-.footer-links {
-    display: flex;
-    gap: 28px;
-}
-
-.footer-links a {
-    font-size: 0.82rem;
-    color: var(--white-60);
-    text-decoration: none;
-    transition: color .2s;
-}
-
-.footer-links a:hover {
-    color: var(--orange-light);
-}
-
 /* ─── SCROLL REVEAL ─── */
 .reveal {
     opacity: 0;
@@ -1547,763 +1448,734 @@ footer p {
 }
 </style>
 
-<body>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
 
-    <!-- NAVBAR -->
-    <nav>
-        <a href="#" class="nav-logo">Accros<span>ian</span></a>
-        <ul class="nav-links">
-            <li><a href="#">Industries</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Technologies</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Case Studies</a></li>
-        </ul>
-        <a href="#contact" class="nav-cta">Get in Touch</a>
-    </nav>
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-grid"></div>
-
-        <div class="hero-content">
-            <div class="hero-badge">Healthcare Industry</div>
-            <h1>Transforming Healthcare Through <span class="grad">Intelligent Digital</span> Innovation</h1>
-            <p class="hero-sub">We engineer next-generation healthcare technology solutions — from AI-powered
-                diagnostics to enterprise EHR platforms — built for security, scalability, and seamless patient
-                experiences.</p>
-            <div class="hero-btns">
-                <a href="#solutions" class="btn-primary">Explore Solutions →</a>
-                <a href="#contact" class="btn-outline">Talk to an Expert</a>
-            </div>
+    <div class="hero-content">
+        <div class="hero-badge">Healthcare Industry</div>
+        <h1>Transforming Healthcare Through <span class="grad">Intelligent Digital</span> Innovation</h1>
+        <p class="hero-sub">We engineer next-generation healthcare technology solutions — from AI-powered
+            diagnostics to enterprise EHR platforms — built for security, scalability, and seamless patient
+            experiences.</p>
+        <div class="hero-btns">
+            <a href="#solutions" class="btn-primary">Explore Solutions →</a>
+            <a href="#contact" class="btn-outline">Talk to an Expert</a>
         </div>
+    </div>
 
-        <div class="hero-visual">
-            <div class="hero-dashboard" style="position:relative">
-                <!-- Floating cards -->
-                <div class="float-card float-card-1">
-                    <div class="fc-icon orange">🛡️</div>
+    <div class="hero-visual">
+        <div class="hero-dashboard" style="position:relative">
+            <!-- Floating cards -->
+            <div class="float-card float-card-1">
+                <div class="fc-icon orange">🛡️</div>
+                <div>
+                    <div class="fc-text-val">HIPAA</div>
+                    <div class="fc-text-lbl">Compliant Ready</div>
+                </div>
+            </div>
+            <div class="float-card float-card-2">
+                <div class="fc-icon green">🤖</div>
+                <div>
+                    <div class="fc-text-val">AI Diagnostics</div>
+                    <div class="fc-text-lbl">Powered by ML</div>
+                </div>
+            </div>
+            <div class="float-card float-card-3">
+                <div class="fc-icon blue">📡</div>
+                <div>
+                    <div class="fc-text-val">99.9%</div>
+                    <div class="fc-text-lbl">System Uptime</div>
+                </div>
+            </div>
+
+            <div class="dash-header">
+                <div class="dash-dot"></div>
+                <div class="dash-dot"></div>
+                <div class="dash-dot"></div>
+                <span class="dash-title">Accrosian Health Dashboard — Live Overview</span>
+            </div>
+
+            <div class="dash-metrics">
+                <div class="dash-metric">
+                    <div class="dash-metric-val orange">1,284</div>
+                    <div class="dash-metric-lbl">Active Patients</div>
+                </div>
+                <div class="dash-metric">
+                    <div class="dash-metric-val blue">98.6%</div>
+                    <div class="dash-metric-lbl">Record Accuracy</div>
+                </div>
+                <div class="dash-metric">
+                    <div class="dash-metric-val green">142ms</div>
+                    <div class="dash-metric-lbl">Avg Response</div>
+                </div>
+            </div>
+
+            <div class="dash-chart">
+                <div class="dash-chart-title">Patient Admissions — Last 12 Months</div>
+                <div class="chart-bars">
+                    <div class="chart-bar" style="height:42%;animation-delay:.05s"></div>
+                    <div class="chart-bar" style="height:60%;animation-delay:.1s"></div>
+                    <div class="chart-bar" style="height:55%;animation-delay:.15s"></div>
+                    <div class="chart-bar" style="height:75%;animation-delay:.2s"></div>
+                    <div class="chart-bar" style="height:65%;animation-delay:.25s"></div>
+                    <div class="chart-bar" style="height:80%;animation-delay:.3s"></div>
+                    <div class="chart-bar" style="height:70%;animation-delay:.35s"></div>
+                    <div class="chart-bar"
+                        style="height:90%;animation-delay:.4s;background:linear-gradient(180deg,#fcd34d,rgba(249,115,22,0.4))">
+                    </div>
+                    <div class="chart-bar" style="height:85%;animation-delay:.45s"></div>
+                    <div class="chart-bar"
+                        style="height:95%;animation-delay:.5s;background:linear-gradient(180deg,var(--orange),rgba(249,115,22,0.4))">
+                    </div>
+                    <div class="chart-bar" style="height:88%;animation-delay:.55s"></div>
+                    <div class="chart-bar"
+                        style="height:100%;animation-delay:.6s;background:linear-gradient(180deg,var(--orange-light),rgba(249,115,22,0.5))">
+                    </div>
+                </div>
+            </div>
+
+            <div class="dash-vitals">
+                <div class="vital-card">
+                    <div class="vital-icon red">❤️</div>
                     <div>
-                        <div class="fc-text-val">HIPAA</div>
-                        <div class="fc-text-lbl">Compliant Ready</div>
+                        <div class="vital-val">72 bpm</div>
+                        <div class="vital-lbl">Heart Rate</div>
                     </div>
                 </div>
-                <div class="float-card float-card-2">
-                    <div class="fc-icon green">🤖</div>
+                <div class="vital-card">
+                    <div class="vital-icon blue">🫁</div>
                     <div>
-                        <div class="fc-text-val">AI Diagnostics</div>
-                        <div class="fc-text-lbl">Powered by ML</div>
+                        <div class="vital-val">98%</div>
+                        <div class="vital-lbl">SpO₂</div>
                     </div>
                 </div>
-                <div class="float-card float-card-3">
-                    <div class="fc-icon blue">📡</div>
+                <div class="vital-card">
+                    <div class="vital-icon green">🌡️</div>
                     <div>
-                        <div class="fc-text-val">99.9%</div>
-                        <div class="fc-text-lbl">System Uptime</div>
-                    </div>
-                </div>
-
-                <div class="dash-header">
-                    <div class="dash-dot"></div>
-                    <div class="dash-dot"></div>
-                    <div class="dash-dot"></div>
-                    <span class="dash-title">Accrosian Health Dashboard — Live Overview</span>
-                </div>
-
-                <div class="dash-metrics">
-                    <div class="dash-metric">
-                        <div class="dash-metric-val orange">1,284</div>
-                        <div class="dash-metric-lbl">Active Patients</div>
-                    </div>
-                    <div class="dash-metric">
-                        <div class="dash-metric-val blue">98.6%</div>
-                        <div class="dash-metric-lbl">Record Accuracy</div>
-                    </div>
-                    <div class="dash-metric">
-                        <div class="dash-metric-val green">142ms</div>
-                        <div class="dash-metric-lbl">Avg Response</div>
-                    </div>
-                </div>
-
-                <div class="dash-chart">
-                    <div class="dash-chart-title">Patient Admissions — Last 12 Months</div>
-                    <div class="chart-bars">
-                        <div class="chart-bar" style="height:42%;animation-delay:.05s"></div>
-                        <div class="chart-bar" style="height:60%;animation-delay:.1s"></div>
-                        <div class="chart-bar" style="height:55%;animation-delay:.15s"></div>
-                        <div class="chart-bar" style="height:75%;animation-delay:.2s"></div>
-                        <div class="chart-bar" style="height:65%;animation-delay:.25s"></div>
-                        <div class="chart-bar" style="height:80%;animation-delay:.3s"></div>
-                        <div class="chart-bar" style="height:70%;animation-delay:.35s"></div>
-                        <div class="chart-bar"
-                            style="height:90%;animation-delay:.4s;background:linear-gradient(180deg,#fcd34d,rgba(249,115,22,0.4))">
-                        </div>
-                        <div class="chart-bar" style="height:85%;animation-delay:.45s"></div>
-                        <div class="chart-bar"
-                            style="height:95%;animation-delay:.5s;background:linear-gradient(180deg,var(--orange),rgba(249,115,22,0.4))">
-                        </div>
-                        <div class="chart-bar" style="height:88%;animation-delay:.55s"></div>
-                        <div class="chart-bar"
-                            style="height:100%;animation-delay:.6s;background:linear-gradient(180deg,var(--orange-light),rgba(249,115,22,0.5))">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="dash-vitals">
-                    <div class="vital-card">
-                        <div class="vital-icon red">❤️</div>
-                        <div>
-                            <div class="vital-val">72 bpm</div>
-                            <div class="vital-lbl">Heart Rate</div>
-                        </div>
-                    </div>
-                    <div class="vital-card">
-                        <div class="vital-icon blue">🫁</div>
-                        <div>
-                            <div class="vital-val">98%</div>
-                            <div class="vital-lbl">SpO₂</div>
-                        </div>
-                    </div>
-                    <div class="vital-card">
-                        <div class="vital-icon green">🌡️</div>
-                        <div>
-                            <div class="vital-val">36.8°C</div>
-                            <div class="vital-lbl">Temp</div>
-                        </div>
+                        <div class="vital-val">36.8°C</div>
+                        <div class="vital-lbl">Temp</div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- CHALLENGES -->
-    <section class="challenges-section" id="challenges">
-        <div class="challenges-grid">
-            <div class="challenges-sticky reveal-left">
-                <div class="section-tag">Industry Challenges</div>
-                <h2 class="section-h2">Navigating a <span class="grad">Complex Healthcare</span> Landscape</h2>
-                <p class="section-sub">The healthcare sector faces unprecedented transformation pressure — legacy
-                    infrastructure, fragmented data, regulatory demands, and rising patient expectations converge into a
-                    perfect storm of operational complexity.</p>
+<!-- CHALLENGES -->
+<section class="challenges-section" id="challenges">
+    <div class="challenges-grid">
+        <div class="challenges-sticky reveal-left">
+            <div class="section-tag">Industry Challenges</div>
+            <h2 class="section-h2">Navigating a <span class="grad">Complex Healthcare</span> Landscape</h2>
+            <p class="section-sub">The healthcare sector faces unprecedented transformation pressure — legacy
+                infrastructure, fragmented data, regulatory demands, and rising patient expectations converge into a
+                perfect storm of operational complexity.</p>
 
-                <div class="challenges-img-wrap" style="margin-top:40px">
-                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80"
-                        alt="Healthcare Technology" />
+            <div class="challenges-img-wrap" style="margin-top:40px">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80"
+                    alt="Healthcare Technology" />
+            </div>
+        </div>
+
+        <div class="challenge-cards stagger">
+            <div class="challenge-card">
+                <div class="challenge-num">01</div>
+                <div>
+                    <div class="challenge-title">Legacy Hospital Systems</div>
+                    <div class="challenge-desc">Outdated, siloed infrastructure that hinders interoperability,
+                        increases operational costs, and blocks digital transformation initiatives.</div>
                 </div>
             </div>
+            <div class="challenge-card">
+                <div class="challenge-num">02</div>
+                <div>
+                    <div class="challenge-title">Data Interoperability</div>
+                    <div class="challenge-desc">Disconnected EHR systems, incompatible data formats, and lack of
+                        HL7/FHIR standardization creating critical information gaps.</div>
+                </div>
+            </div>
+            <div class="challenge-card">
+                <div class="challenge-num">03</div>
+                <div>
+                    <div class="challenge-title">Patient Experience Gaps</div>
+                    <div class="challenge-desc">Fragmented patient journeys, long wait times, and lack of digital
+                        touchpoints leading to poor satisfaction and care outcomes.</div>
+                </div>
+            </div>
+            <div class="challenge-card">
+                <div class="challenge-num">04</div>
+                <div>
+                    <div class="challenge-title">Telemedicine Scalability</div>
+                    <div class="challenge-desc">Demand for remote care has skyrocketed, but infrastructure,
+                        security, and regulatory frameworks struggle to keep pace.</div>
+                </div>
+            </div>
+            <div class="challenge-card">
+                <div class="challenge-num">05</div>
+                <div>
+                    <div class="challenge-title">Healthcare Compliance</div>
+                    <div class="challenge-desc">HIPAA, GDPR, and regional regulations require sophisticated data
+                        governance frameworks across every layer of the stack.</div>
+                </div>
+            </div>
+            <div class="challenge-card">
+                <div class="challenge-num">06</div>
+                <div>
+                    <div class="challenge-title">AI-Driven Diagnostics</div>
+                    <div class="challenge-desc">Integrating AI/ML tools into clinical workflows demands robust data
+                        pipelines, model governance, and clinician trust.</div>
+                </div>
+            </div>
+            <div class="challenge-card">
+                <div class="challenge-num">07</div>
+                <div>
+                    <div class="challenge-title">Medical Data Security</div>
+                    <div class="challenge-desc">Healthcare is the #1 target for cyber attacks. PHI protection
+                        requires zero-trust architectures and continuous threat monitoring.</div>
+                </div>
+            </div>
+            <div class="challenge-card">
+                <div class="challenge-num">08</div>
+                <div>
+                    <div class="challenge-title">Real-Time Monitoring</div>
+                    <div class="challenge-desc">IoT-connected devices and remote patient monitoring require
+                        low-latency, fault-tolerant data streams at massive scale.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-            <div class="challenge-cards stagger">
-                <div class="challenge-card">
-                    <div class="challenge-num">01</div>
+<!-- SOLUTIONS -->
+<section class="solutions-section" id="solutions">
+    <div class="solutions-header reveal">
+        <div class="section-tag">Our Solutions</div>
+        <h2 class="section-h2">End-to-End <span class="grad">Healthcare Technology</span> Solutions</h2>
+        <p class="section-sub">Purpose-built platforms and services designed to address every dimension of modern
+            healthcare operations, care delivery, and patient engagement.</p>
+    </div>
+
+    <div class="solutions-grid stagger">
+        <div class="sol-card">
+            <div class="sol-icon">🏥</div>
+            <div class="sol-title">Hospital Management Systems</div>
+            <div class="sol-desc">Comprehensive HMS platforms integrating OPD, IPD, ICU, pharmacy, labs, and billing
+                into a single enterprise-grade system.</div>
+        </div>
+        <div class="sol-card">
+            <div class="sol-icon">📋</div>
+            <div class="sol-title">Electronic Health Records</div>
+            <div class="sol-desc">FHIR-compliant EHR/EMR solutions enabling seamless data exchange, clinical
+                decision support, and longitudinal patient records.</div>
+        </div>
+        <div class="sol-card">
+            <div class="sol-icon">📡</div>
+            <div class="sol-title">Telemedicine Platforms</div>
+            <div class="sol-desc">Secure, HIPAA-compliant video consultation, e-prescription, and remote care
+                platforms built for scale.</div>
+        </div>
+        <div class="sol-card">
+            <div class="sol-icon">🤖</div>
+            <div class="sol-title">AI Diagnostic Systems</div>
+            <div class="sol-desc">Machine learning models for medical imaging analysis, predictive diagnostics, and
+                clinical decision augmentation.</div>
+        </div>
+        <div class="sol-card">
+            <div class="sol-icon">👤</div>
+            <div class="sol-title">Patient Portals</div>
+            <div class="sol-desc">Self-service patient engagement portals with appointment booking, health records
+                access, and secure messaging.</div>
+        </div>
+        <div class="sol-card">
+            <div class="sol-icon">💼</div>
+            <div class="sol-title">Healthcare CRM</div>
+            <div class="sol-desc">Specialized CRM platforms for patient relationship management, outreach
+                automation, and care coordination.</div>
+        </div>
+        <div class="sol-card">
+            <div class="sol-icon">💰</div>
+            <div class="sol-title">Medical Billing Automation</div>
+            <div class="sol-desc">Intelligent RCM solutions automating claims processing, denial management, and
+                revenue cycle optimization.</div>
+        </div>
+        <div class="sol-card">
+            <div class="sol-icon">🔬</div>
+            <div class="sol-title">IoT Patient Monitoring</div>
+            <div class="sol-desc">Real-time remote patient monitoring platforms integrating wearables, biosensors,
+                and edge computing.</div>
+        </div>
+        <div class="sol-card">
+            <div class="sol-icon">💊</div>
+            <div class="sol-title">Pharmacy Management</div>
+            <div class="sol-desc">End-to-end pharmacy operations platforms with inventory, dispensing, drug
+                interaction checks, and insurance integration.</div>
+        </div>
+        <div class="sol-card" style="grid-column: span 1;">
+            <div class="sol-icon">📱</div>
+            <div class="sol-title">Healthcare Mobile Apps</div>
+            <div class="sol-desc">Intuitive iOS and Android applications for patients, clinicians, and healthcare
+                administrators on every device.</div>
+        </div>
+    </div>
+</section>
+
+<!-- PATIENT EXPERIENCE -->
+<section class="patient-section" id="experience">
+    <div class="patient-grid">
+        <div class="patient-img-wrap reveal-left">
+            <div class="patient-img-blob">
+                <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80"
+                    alt="Patient Experience" />
+                <div class="stat-orbit">
+                    <div class="stat-pill">
+                        <div class="stat-pill-val">3×</div>
+                        <div class="stat-pill-lbl">Faster Booking</div>
+                    </div>
+                    <div class="stat-pill">
+                        <div class="stat-pill-val">68%</div>
+                        <div class="stat-pill-lbl">Less Wait Time</div>
+                    </div>
+                    <div class="stat-pill">
+                        <div class="stat-pill-val">24/7</div>
+                        <div class="stat-pill-lbl">Accessibility</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal-right">
+            <div class="section-tag">Patient Experience</div>
+            <h2 class="section-h2">Care That Puts <span class="grad">Patients First</span></h2>
+            <p class="section-sub" style="margin-bottom:36px">Digital transformation should start and end with the
+                patient. Our platforms are designed to eliminate friction, reduce wait times, and deliver continuity
+                of care across every channel.</p>
+
+            <div class="metrics-list">
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <span class="metric-label">Faster Appointment Booking</span>
+                        <span class="metric-pct">92%</span>
+                    </div>
+                    <div class="metric-bar-bg">
+                        <div class="metric-bar-fill" data-width="92"></div>
+                    </div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <span class="metric-label">Reduced Patient Wait Time</span>
+                        <span class="metric-pct">68%</span>
+                    </div>
+                    <div class="metric-bar-bg">
+                        <div class="metric-bar-fill" data-width="68"></div>
+                    </div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <span class="metric-label">Improved Patient Engagement</span>
+                        <span class="metric-pct">85%</span>
+                    </div>
+                    <div class="metric-bar-bg">
+                        <div class="metric-bar-fill" data-width="85"></div>
+                    </div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <span class="metric-label">Multi-Device Access Rate</span>
+                        <span class="metric-pct">97%</span>
+                    </div>
+                    <div class="metric-bar-bg">
+                        <div class="metric-bar-fill" data-width="97"></div>
+                    </div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <span class="metric-label">Telemedicine Adoption</span>
+                        <span class="metric-pct">79%</span>
+                    </div>
+                    <div class="metric-bar-bg">
+                        <div class="metric-bar-fill" data-width="79"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="tech-section" id="tech">
+    <div class="tech-header reveal">
+        <div class="section-tag">Technology Stack</div>
+        <h2 class="section-h2">Built on a <span class="grad">Future-Ready</span> Foundation</h2>
+        <p class="section-sub">We leverage battle-tested, enterprise-grade technologies and healthcare-specific
+            standards to deliver scalable, compliant, and high-performance systems.</p>
+    </div>
+
+    <div class="tech-groups">
+        <div class="reveal">
+            <div class="tech-group-title">Frontend & Backend</div>
+            <div class="tech-pills">
+                <div class="tech-pill"><span class="dot"></span>Laravel</div>
+                <div class="tech-pill"><span class="dot"></span>React</div>
+                <div class="tech-pill"><span class="dot"></span>Node.js</div>
+                <div class="tech-pill"><span class="dot"></span>TypeScript</div>
+                <div class="tech-pill"><span class="dot"></span>GraphQL</div>
+                <div class="tech-pill"><span class="dot"></span>REST APIs</div>
+            </div>
+        </div>
+        <div class="reveal">
+            <div class="tech-group-title">Cloud & Infrastructure</div>
+            <div class="tech-pills">
+                <div class="tech-pill"><span class="dot"></span>AWS</div>
+                <div class="tech-pill"><span class="dot"></span>Microsoft Azure</div>
+                <div class="tech-pill"><span class="dot"></span>Cloud Infrastructure</div>
+                <div class="tech-pill"><span class="dot"></span>Docker</div>
+                <div class="tech-pill"><span class="dot"></span>Kubernetes</div>
+                <div class="tech-pill"><span class="dot"></span>Terraform</div>
+            </div>
+        </div>
+        <div class="reveal">
+            <div class="tech-group-title">AI & Data</div>
+            <div class="tech-pills">
+                <div class="tech-pill"><span class="dot"></span>AI & Machine Learning</div>
+                <div class="tech-pill"><span class="dot"></span>TensorFlow</div>
+                <div class="tech-pill"><span class="dot"></span>PostgreSQL</div>
+                <div class="tech-pill"><span class="dot"></span>Redis</div>
+                <div class="tech-pill"><span class="dot"></span>Elasticsearch</div>
+            </div>
+        </div>
+        <div class="reveal">
+            <div class="tech-group-title">Healthcare Standards & IoT</div>
+            <div class="tech-pills">
+                <div class="tech-pill"><span class="dot"></span>HL7 FHIR APIs</div>
+                <div class="tech-pill"><span class="dot"></span>DICOM</div>
+                <div class="tech-pill"><span class="dot"></span>IoT Integration</div>
+                <div class="tech-pill"><span class="dot"></span>MQTT</div>
+                <div class="tech-pill"><span class="dot"></span>Edge Computing</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECURITY -->
+<section class="security-section" id="security">
+    <div class="security-header reveal">
+        <div class="section-tag">Security & Compliance</div>
+        <h2 class="section-h2">Enterprise-Grade <span class="grad">Security</span> at Every Layer</h2>
+        <p class="section-sub">Healthcare data is among the most sensitive in the world. Our security-first
+            engineering philosophy ensures compliance, protection, and peace of mind at every level of the stack.
+        </p>
+    </div>
+
+    <div class="shield-visual">
+        <div style="position:relative; display:flex; align-items:center; justify-content:center;">
+            <div class="shield-ring" style="width:200px;height:200px;animation-duration:3s;animation-delay:0s">
+            </div>
+            <div class="shield-ring" style="width:200px;height:200px;animation-duration:3s;animation-delay:1s">
+            </div>
+            <div class="shield-ring" style="width:200px;height:200px;animation-duration:3s;animation-delay:2s">
+            </div>
+            <svg class="shield-svg" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 5L10 22V55C10 78 28 99 50 107C72 99 90 78 90 55V22L50 5Z" fill="url(#sg)"
+                    stroke="rgba(249,115,22,0.4)" stroke-width="1.5" />
+                <path d="M38 60L46 68L64 48" stroke="white" stroke-width="4" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <defs>
+                    <linearGradient id="sg" x1="10" y1="5" x2="90" y2="107" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="rgba(249,115,22,0.35)" />
+                        <stop offset="100%" stop-color="rgba(249,115,22,0.1)" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+    </div>
+
+    <div class="security-grid stagger">
+        <div class="sec-card">
+            <div class="sec-icon">🏥</div>
+            <div class="sec-title">HIPAA Compliance</div>
+            <div class="sec-desc">Full HIPAA Technical Safeguard implementation with BAA-ready architecture and
+                audit logging.</div>
+        </div>
+        <div class="sec-card">
+            <div class="sec-icon">🇪🇺</div>
+            <div class="sec-title">GDPR Framework</div>
+            <div class="sec-desc">Data minimization, right to erasure, consent management, and cross-border data
+                transfer controls.</div>
+        </div>
+        <div class="sec-card">
+            <div class="sec-icon">🏅</div>
+            <div class="sec-title">ISO 27001</div>
+            <div class="sec-desc">Information security management systems aligned with ISO 27001 standards across
+                all engagements.</div>
+        </div>
+        <div class="sec-card">
+            <div class="sec-icon">🔐</div>
+            <div class="sec-title">Secure APIs</div>
+            <div class="sec-desc">OAuth 2.0, JWT, mutual TLS, and rate limiting across all API surfaces and
+                integration endpoints.</div>
+        </div>
+        <div class="sec-card">
+            <div class="sec-icon">🔒</div>
+            <div class="sec-title">End-to-End Encryption</div>
+            <div class="sec-desc">AES-256 encryption at rest, TLS 1.3 in transit, and zero-knowledge key management
+                architectures.</div>
+        </div>
+        <div class="sec-card">
+            <div class="sec-icon">👥</div>
+            <div class="sec-title">Role-Based Access</div>
+            <div class="sec-desc">Granular RBAC and ABAC models ensuring least-privilege access across all clinical
+                and admin roles.</div>
+        </div>
+        <div class="sec-card">
+            <div class="sec-icon">🛡️</div>
+            <div class="sec-title">Zero Trust Architecture</div>
+            <div class="sec-desc">Never trust, always verify — continuous authentication and micro-segmentation
+                across all network zones.</div>
+        </div>
+        <div class="sec-card">
+            <div class="sec-icon">🔍</div>
+            <div class="sec-title">Threat Monitoring</div>
+            <div class="sec-desc">24/7 SIEM, anomaly detection, and incident response workflows with automated
+                threat containment.</div>
+        </div>
+    </div>
+</section>
+
+<!-- USE CASES -->
+<section class="usecases-section" id="usecases">
+    <div class="usecases-header reveal">
+        <div class="section-tag">Who We Serve</div>
+        <h2 class="section-h2">Built for Every <span class="grad">Healthcare Vertical</span></h2>
+        <p class="section-sub" style="margin:0 auto">From large hospital networks to emerging health-tech startups,
+            our solutions are engineered to scale across the entire healthcare ecosystem.</p>
+    </div>
+
+    <div class="usecases-grid stagger">
+        <div class="uc-card">
+            <span class="uc-emoji">🏥</span>
+            <div class="uc-title">Hospitals & Health Systems</div>
+            <div class="uc-desc">Enterprise HMS, EHR integration, and operational efficiency platforms for
+                multi-specialty hospital networks.</div>
+        </div>
+        <div class="uc-card">
+            <span class="uc-emoji">🩺</span>
+            <div class="uc-title">Clinics & Practices</div>
+            <div class="uc-desc">Streamlined practice management, patient scheduling, and clinical workflows for
+                outpatient care settings.</div>
+        </div>
+        <div class="uc-card">
+            <span class="uc-emoji">🔬</span>
+            <div class="uc-title">Diagnostic Laboratories</div>
+            <div class="uc-desc">LIMS integration, result reporting automation, and AI-assisted anomaly detection
+                for diagnostic labs.</div>
+        </div>
+        <div class="uc-card">
+            <span class="uc-emoji">💻</span>
+            <div class="uc-title">Telemedicine Startups</div>
+            <div class="uc-desc">Scalable, compliant telehealth platforms with video, e-prescriptions, and async
+                care capabilities.</div>
+        </div>
+        <div class="uc-card">
+            <span class="uc-emoji">💊</span>
+            <div class="uc-title">Pharmaceutical Companies</div>
+            <div class="uc-desc">Clinical trial management, pharmacovigilance, and digital engagement platforms for
+                pharma enterprises.</div>
+        </div>
+        <div class="uc-card">
+            <span class="uc-emoji">☁️</span>
+            <div class="uc-title">Healthcare SaaS</div>
+            <div class="uc-desc">Multi-tenant SaaS architecture, compliance frameworks, and integration APIs for
+                health-tech product companies.</div>
+        </div>
+        <div class="uc-card">
+            <span class="uc-emoji">🩻</span>
+            <div class="uc-title">Medical Device Platforms</div>
+            <div class="uc-desc">IoT data pipelines, device connectivity, and FDA-compliant software for connected
+                medical device ecosystems.</div>
+        </div>
+        <div class="uc-card">
+            <span class="uc-emoji">📄</span>
+            <div class="uc-title">Insurance & Claims</div>
+            <div class="uc-desc">Intelligent claims processing, fraud detection, and payer-provider integration for
+                health insurance operations.</div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY ACCROSIAN -->
+<section class="why-section" id="why">
+    <div class="why-grid">
+        <div class="reveal-left">
+            <div class="section-tag">Why Accrosian</div>
+            <h2 class="section-h2">Your Strategic <span class="grad">Digital Health</span> Partner</h2>
+            <p class="section-sub" style="margin-bottom:40px">We don't just build software. We embed ourselves into
+                your healthcare operations to deliver solutions that are clinically informed, technically excellent,
+                and built for the long term.</p>
+
+            <div class="why-features">
+                <div class="why-feature">
+                    <div class="why-feat-icon">🏥</div>
                     <div>
-                        <div class="challenge-title">Legacy Hospital Systems</div>
-                        <div class="challenge-desc">Outdated, siloed infrastructure that hinders interoperability,
-                            increases operational costs, and blocks digital transformation initiatives.</div>
+                        <div class="why-feat-title">Healthcare Domain Expertise</div>
+                        <div class="why-feat-desc">Deep clinical knowledge across hospital operations, diagnostics,
+                            and patient care workflows.</div>
                     </div>
                 </div>
-                <div class="challenge-card">
-                    <div class="challenge-num">02</div>
+                <div class="why-feature">
+                    <div class="why-feat-icon">☁️</div>
                     <div>
-                        <div class="challenge-title">Data Interoperability</div>
-                        <div class="challenge-desc">Disconnected EHR systems, incompatible data formats, and lack of
-                            HL7/FHIR standardization creating critical information gaps.</div>
+                        <div class="why-feat-title">Scalable Cloud Architecture</div>
+                        <div class="why-feat-desc">Microservices, containerized infrastructure built to handle
+                            millions of patient records reliably.</div>
                     </div>
                 </div>
-                <div class="challenge-card">
-                    <div class="challenge-num">03</div>
+                <div class="why-feature">
+                    <div class="why-feat-icon">🔒</div>
                     <div>
-                        <div class="challenge-title">Patient Experience Gaps</div>
-                        <div class="challenge-desc">Fragmented patient journeys, long wait times, and lack of digital
-                            touchpoints leading to poor satisfaction and care outcomes.</div>
+                        <div class="why-feat-title">Security-First Engineering</div>
+                        <div class="why-feat-desc">HIPAA, GDPR, ISO 27001 compliance baked in from day one — not
+                            bolted on at the end.</div>
                     </div>
                 </div>
-                <div class="challenge-card">
-                    <div class="challenge-num">04</div>
+                <div class="why-feature">
+                    <div class="why-feat-icon">🤖</div>
                     <div>
-                        <div class="challenge-title">Telemedicine Scalability</div>
-                        <div class="challenge-desc">Demand for remote care has skyrocketed, but infrastructure,
-                            security, and regulatory frameworks struggle to keep pace.</div>
+                        <div class="why-feat-title">AI Integration Specialists</div>
+                        <div class="why-feat-desc">Practical ML deployment in clinical settings — from model
+                            selection to production monitoring.</div>
                     </div>
                 </div>
-                <div class="challenge-card">
-                    <div class="challenge-num">05</div>
+                <div class="why-feature">
+                    <div class="why-feat-icon">🎯</div>
                     <div>
-                        <div class="challenge-title">Healthcare Compliance</div>
-                        <div class="challenge-desc">HIPAA, GDPR, and regional regulations require sophisticated data
-                            governance frameworks across every layer of the stack.</div>
-                    </div>
-                </div>
-                <div class="challenge-card">
-                    <div class="challenge-num">06</div>
-                    <div>
-                        <div class="challenge-title">AI-Driven Diagnostics</div>
-                        <div class="challenge-desc">Integrating AI/ML tools into clinical workflows demands robust data
-                            pipelines, model governance, and clinician trust.</div>
-                    </div>
-                </div>
-                <div class="challenge-card">
-                    <div class="challenge-num">07</div>
-                    <div>
-                        <div class="challenge-title">Medical Data Security</div>
-                        <div class="challenge-desc">Healthcare is the #1 target for cyber attacks. PHI protection
-                            requires zero-trust architectures and continuous threat monitoring.</div>
-                    </div>
-                </div>
-                <div class="challenge-card">
-                    <div class="challenge-num">08</div>
-                    <div>
-                        <div class="challenge-title">Real-Time Monitoring</div>
-                        <div class="challenge-desc">IoT-connected devices and remote patient monitoring require
-                            low-latency, fault-tolerant data streams at massive scale.</div>
+                        <div class="why-feat-title">Dedicated Support Teams</div>
+                        <div class="why-feat-desc">24/7 technical support, SLA-backed commitments, and dedicated
+                            customer success managers.</div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- SOLUTIONS -->
-    <section class="solutions-section" id="solutions">
-        <div class="solutions-header reveal">
-            <div class="section-tag">Our Solutions</div>
-            <h2 class="section-h2">End-to-End <span class="grad">Healthcare Technology</span> Solutions</h2>
-            <p class="section-sub">Purpose-built platforms and services designed to address every dimension of modern
-                healthcare operations, care delivery, and patient engagement.</p>
-        </div>
-
-        <div class="solutions-grid stagger">
-            <div class="sol-card">
-                <div class="sol-icon">🏥</div>
-                <div class="sol-title">Hospital Management Systems</div>
-                <div class="sol-desc">Comprehensive HMS platforms integrating OPD, IPD, ICU, pharmacy, labs, and billing
-                    into a single enterprise-grade system.</div>
-            </div>
-            <div class="sol-card">
-                <div class="sol-icon">📋</div>
-                <div class="sol-title">Electronic Health Records</div>
-                <div class="sol-desc">FHIR-compliant EHR/EMR solutions enabling seamless data exchange, clinical
-                    decision support, and longitudinal patient records.</div>
-            </div>
-            <div class="sol-card">
-                <div class="sol-icon">📡</div>
-                <div class="sol-title">Telemedicine Platforms</div>
-                <div class="sol-desc">Secure, HIPAA-compliant video consultation, e-prescription, and remote care
-                    platforms built for scale.</div>
-            </div>
-            <div class="sol-card">
-                <div class="sol-icon">🤖</div>
-                <div class="sol-title">AI Diagnostic Systems</div>
-                <div class="sol-desc">Machine learning models for medical imaging analysis, predictive diagnostics, and
-                    clinical decision augmentation.</div>
-            </div>
-            <div class="sol-card">
-                <div class="sol-icon">👤</div>
-                <div class="sol-title">Patient Portals</div>
-                <div class="sol-desc">Self-service patient engagement portals with appointment booking, health records
-                    access, and secure messaging.</div>
-            </div>
-            <div class="sol-card">
-                <div class="sol-icon">💼</div>
-                <div class="sol-title">Healthcare CRM</div>
-                <div class="sol-desc">Specialized CRM platforms for patient relationship management, outreach
-                    automation, and care coordination.</div>
-            </div>
-            <div class="sol-card">
-                <div class="sol-icon">💰</div>
-                <div class="sol-title">Medical Billing Automation</div>
-                <div class="sol-desc">Intelligent RCM solutions automating claims processing, denial management, and
-                    revenue cycle optimization.</div>
-            </div>
-            <div class="sol-card">
-                <div class="sol-icon">🔬</div>
-                <div class="sol-title">IoT Patient Monitoring</div>
-                <div class="sol-desc">Real-time remote patient monitoring platforms integrating wearables, biosensors,
-                    and edge computing.</div>
-            </div>
-            <div class="sol-card">
-                <div class="sol-icon">💊</div>
-                <div class="sol-title">Pharmacy Management</div>
-                <div class="sol-desc">End-to-end pharmacy operations platforms with inventory, dispensing, drug
-                    interaction checks, and insurance integration.</div>
-            </div>
-            <div class="sol-card" style="grid-column: span 1;">
-                <div class="sol-icon">📱</div>
-                <div class="sol-title">Healthcare Mobile Apps</div>
-                <div class="sol-desc">Intuitive iOS and Android applications for patients, clinicians, and healthcare
-                    administrators on every device.</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PATIENT EXPERIENCE -->
-    <section class="patient-section" id="experience">
-        <div class="patient-grid">
-            <div class="patient-img-wrap reveal-left">
-                <div class="patient-img-blob">
-                    <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80"
-                        alt="Patient Experience" />
-                    <div class="stat-orbit">
-                        <div class="stat-pill">
-                            <div class="stat-pill-val">3×</div>
-                            <div class="stat-pill-lbl">Faster Booking</div>
-                        </div>
-                        <div class="stat-pill">
-                            <div class="stat-pill-val">68%</div>
-                            <div class="stat-pill-lbl">Less Wait Time</div>
-                        </div>
-                        <div class="stat-pill">
-                            <div class="stat-pill-val">24/7</div>
-                            <div class="stat-pill-lbl">Accessibility</div>
-                        </div>
-                    </div>
+        <div class="why-visual reveal-right">
+            <div class="why-big-num">200+</div>
+            <div class="why-big-lbl">Healthcare Projects Delivered</div>
+            <div class="why-stats-grid">
+                <div class="why-stat">
+                    <div class="why-stat-val">15+</div>
+                    <div class="why-stat-lbl">Years in Healthcare Tech</div>
+                </div>
+                <div class="why-stat">
+                    <div class="why-stat-val">99.9%</div>
+                    <div class="why-stat-lbl">Platform Uptime SLA</div>
+                </div>
+                <div class="why-stat">
+                    <div class="why-stat-val">50+</div>
+                    <div class="why-stat-lbl">Countries Served</div>
+                </div>
+                <div class="why-stat">
+                    <div class="why-stat-val">4.9★</div>
+                    <div class="why-stat-lbl">Client Satisfaction</div>
                 </div>
             </div>
 
-            <div class="reveal-right">
-                <div class="section-tag">Patient Experience</div>
-                <h2 class="section-h2">Care That Puts <span class="grad">Patients First</span></h2>
-                <p class="section-sub" style="margin-bottom:36px">Digital transformation should start and end with the
-                    patient. Our platforms are designed to eliminate friction, reduce wait times, and deliver continuity
-                    of care across every channel.</p>
-
-                <div class="metrics-list">
-                    <div class="metric-item">
-                        <div class="metric-header">
-                            <span class="metric-label">Faster Appointment Booking</span>
-                            <span class="metric-pct">92%</span>
-                        </div>
-                        <div class="metric-bar-bg">
-                            <div class="metric-bar-fill" data-width="92"></div>
-                        </div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-header">
-                            <span class="metric-label">Reduced Patient Wait Time</span>
-                            <span class="metric-pct">68%</span>
-                        </div>
-                        <div class="metric-bar-bg">
-                            <div class="metric-bar-fill" data-width="68"></div>
-                        </div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-header">
-                            <span class="metric-label">Improved Patient Engagement</span>
-                            <span class="metric-pct">85%</span>
-                        </div>
-                        <div class="metric-bar-bg">
-                            <div class="metric-bar-fill" data-width="85"></div>
-                        </div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-header">
-                            <span class="metric-label">Multi-Device Access Rate</span>
-                            <span class="metric-pct">97%</span>
-                        </div>
-                        <div class="metric-bar-bg">
-                            <div class="metric-bar-fill" data-width="97"></div>
-                        </div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-header">
-                            <span class="metric-label">Telemedicine Adoption</span>
-                            <span class="metric-pct">79%</span>
-                        </div>
-                        <div class="metric-bar-bg">
-                            <div class="metric-bar-fill" data-width="79"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TECH STACK -->
-    <section class="tech-section" id="tech">
-        <div class="tech-header reveal">
-            <div class="section-tag">Technology Stack</div>
-            <h2 class="section-h2">Built on a <span class="grad">Future-Ready</span> Foundation</h2>
-            <p class="section-sub">We leverage battle-tested, enterprise-grade technologies and healthcare-specific
-                standards to deliver scalable, compliant, and high-performance systems.</p>
-        </div>
-
-        <div class="tech-groups">
-            <div class="reveal">
-                <div class="tech-group-title">Frontend & Backend</div>
-                <div class="tech-pills">
-                    <div class="tech-pill"><span class="dot"></span>Laravel</div>
-                    <div class="tech-pill"><span class="dot"></span>React</div>
-                    <div class="tech-pill"><span class="dot"></span>Node.js</div>
-                    <div class="tech-pill"><span class="dot"></span>TypeScript</div>
-                    <div class="tech-pill"><span class="dot"></span>GraphQL</div>
-                    <div class="tech-pill"><span class="dot"></span>REST APIs</div>
-                </div>
-            </div>
-            <div class="reveal">
-                <div class="tech-group-title">Cloud & Infrastructure</div>
-                <div class="tech-pills">
-                    <div class="tech-pill"><span class="dot"></span>AWS</div>
-                    <div class="tech-pill"><span class="dot"></span>Microsoft Azure</div>
-                    <div class="tech-pill"><span class="dot"></span>Cloud Infrastructure</div>
-                    <div class="tech-pill"><span class="dot"></span>Docker</div>
-                    <div class="tech-pill"><span class="dot"></span>Kubernetes</div>
-                    <div class="tech-pill"><span class="dot"></span>Terraform</div>
-                </div>
-            </div>
-            <div class="reveal">
-                <div class="tech-group-title">AI & Data</div>
-                <div class="tech-pills">
-                    <div class="tech-pill"><span class="dot"></span>AI & Machine Learning</div>
-                    <div class="tech-pill"><span class="dot"></span>TensorFlow</div>
-                    <div class="tech-pill"><span class="dot"></span>PostgreSQL</div>
-                    <div class="tech-pill"><span class="dot"></span>Redis</div>
-                    <div class="tech-pill"><span class="dot"></span>Elasticsearch</div>
-                </div>
-            </div>
-            <div class="reveal">
-                <div class="tech-group-title">Healthcare Standards & IoT</div>
-                <div class="tech-pills">
-                    <div class="tech-pill"><span class="dot"></span>HL7 FHIR APIs</div>
-                    <div class="tech-pill"><span class="dot"></span>DICOM</div>
-                    <div class="tech-pill"><span class="dot"></span>IoT Integration</div>
-                    <div class="tech-pill"><span class="dot"></span>MQTT</div>
-                    <div class="tech-pill"><span class="dot"></span>Edge Computing</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECURITY -->
-    <section class="security-section" id="security">
-        <div class="security-header reveal">
-            <div class="section-tag">Security & Compliance</div>
-            <h2 class="section-h2">Enterprise-Grade <span class="grad">Security</span> at Every Layer</h2>
-            <p class="section-sub">Healthcare data is among the most sensitive in the world. Our security-first
-                engineering philosophy ensures compliance, protection, and peace of mind at every level of the stack.
-            </p>
-        </div>
-
-        <div class="shield-visual">
-            <div style="position:relative; display:flex; align-items:center; justify-content:center;">
-                <div class="shield-ring" style="width:200px;height:200px;animation-duration:3s;animation-delay:0s">
-                </div>
-                <div class="shield-ring" style="width:200px;height:200px;animation-duration:3s;animation-delay:1s">
-                </div>
-                <div class="shield-ring" style="width:200px;height:200px;animation-duration:3s;animation-delay:2s">
-                </div>
-                <svg class="shield-svg" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M50 5L10 22V55C10 78 28 99 50 107C72 99 90 78 90 55V22L50 5Z" fill="url(#sg)"
-                        stroke="rgba(249,115,22,0.4)" stroke-width="1.5" />
-                    <path d="M38 60L46 68L64 48" stroke="white" stroke-width="4" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <defs>
-                        <linearGradient id="sg" x1="10" y1="5" x2="90" y2="107" gradientUnits="userSpaceOnUse">
-                            <stop offset="0%" stop-color="rgba(249,115,22,0.35)" />
-                            <stop offset="100%" stop-color="rgba(249,115,22,0.1)" />
-                        </linearGradient>
-                    </defs>
-                </svg>
-            </div>
-        </div>
-
-        <div class="security-grid stagger">
-            <div class="sec-card">
-                <div class="sec-icon">🏥</div>
-                <div class="sec-title">HIPAA Compliance</div>
-                <div class="sec-desc">Full HIPAA Technical Safeguard implementation with BAA-ready architecture and
-                    audit logging.</div>
-            </div>
-            <div class="sec-card">
-                <div class="sec-icon">🇪🇺</div>
-                <div class="sec-title">GDPR Framework</div>
-                <div class="sec-desc">Data minimization, right to erasure, consent management, and cross-border data
-                    transfer controls.</div>
-            </div>
-            <div class="sec-card">
-                <div class="sec-icon">🏅</div>
-                <div class="sec-title">ISO 27001</div>
-                <div class="sec-desc">Information security management systems aligned with ISO 27001 standards across
-                    all engagements.</div>
-            </div>
-            <div class="sec-card">
-                <div class="sec-icon">🔐</div>
-                <div class="sec-title">Secure APIs</div>
-                <div class="sec-desc">OAuth 2.0, JWT, mutual TLS, and rate limiting across all API surfaces and
-                    integration endpoints.</div>
-            </div>
-            <div class="sec-card">
-                <div class="sec-icon">🔒</div>
-                <div class="sec-title">End-to-End Encryption</div>
-                <div class="sec-desc">AES-256 encryption at rest, TLS 1.3 in transit, and zero-knowledge key management
-                    architectures.</div>
-            </div>
-            <div class="sec-card">
-                <div class="sec-icon">👥</div>
-                <div class="sec-title">Role-Based Access</div>
-                <div class="sec-desc">Granular RBAC and ABAC models ensuring least-privilege access across all clinical
-                    and admin roles.</div>
-            </div>
-            <div class="sec-card">
-                <div class="sec-icon">🛡️</div>
-                <div class="sec-title">Zero Trust Architecture</div>
-                <div class="sec-desc">Never trust, always verify — continuous authentication and micro-segmentation
-                    across all network zones.</div>
-            </div>
-            <div class="sec-card">
-                <div class="sec-icon">🔍</div>
-                <div class="sec-title">Threat Monitoring</div>
-                <div class="sec-desc">24/7 SIEM, anomaly detection, and incident response workflows with automated
-                    threat containment.</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- USE CASES -->
-    <section class="usecases-section" id="usecases">
-        <div class="usecases-header reveal">
-            <div class="section-tag">Who We Serve</div>
-            <h2 class="section-h2">Built for Every <span class="grad">Healthcare Vertical</span></h2>
-            <p class="section-sub" style="margin:0 auto">From large hospital networks to emerging health-tech startups,
-                our solutions are engineered to scale across the entire healthcare ecosystem.</p>
-        </div>
-
-        <div class="usecases-grid stagger">
-            <div class="uc-card">
-                <span class="uc-emoji">🏥</span>
-                <div class="uc-title">Hospitals & Health Systems</div>
-                <div class="uc-desc">Enterprise HMS, EHR integration, and operational efficiency platforms for
-                    multi-specialty hospital networks.</div>
-            </div>
-            <div class="uc-card">
-                <span class="uc-emoji">🩺</span>
-                <div class="uc-title">Clinics & Practices</div>
-                <div class="uc-desc">Streamlined practice management, patient scheduling, and clinical workflows for
-                    outpatient care settings.</div>
-            </div>
-            <div class="uc-card">
-                <span class="uc-emoji">🔬</span>
-                <div class="uc-title">Diagnostic Laboratories</div>
-                <div class="uc-desc">LIMS integration, result reporting automation, and AI-assisted anomaly detection
-                    for diagnostic labs.</div>
-            </div>
-            <div class="uc-card">
-                <span class="uc-emoji">💻</span>
-                <div class="uc-title">Telemedicine Startups</div>
-                <div class="uc-desc">Scalable, compliant telehealth platforms with video, e-prescriptions, and async
-                    care capabilities.</div>
-            </div>
-            <div class="uc-card">
-                <span class="uc-emoji">💊</span>
-                <div class="uc-title">Pharmaceutical Companies</div>
-                <div class="uc-desc">Clinical trial management, pharmacovigilance, and digital engagement platforms for
-                    pharma enterprises.</div>
-            </div>
-            <div class="uc-card">
-                <span class="uc-emoji">☁️</span>
-                <div class="uc-title">Healthcare SaaS</div>
-                <div class="uc-desc">Multi-tenant SaaS architecture, compliance frameworks, and integration APIs for
-                    health-tech product companies.</div>
-            </div>
-            <div class="uc-card">
-                <span class="uc-emoji">🩻</span>
-                <div class="uc-title">Medical Device Platforms</div>
-                <div class="uc-desc">IoT data pipelines, device connectivity, and FDA-compliant software for connected
-                    medical device ecosystems.</div>
-            </div>
-            <div class="uc-card">
-                <span class="uc-emoji">📄</span>
-                <div class="uc-title">Insurance & Claims</div>
-                <div class="uc-desc">Intelligent claims processing, fraud detection, and payer-provider integration for
-                    health insurance operations.</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHY ACCROSIAN -->
-    <section class="why-section" id="why">
-        <div class="why-grid">
-            <div class="reveal-left">
-                <div class="section-tag">Why Accrosian</div>
-                <h2 class="section-h2">Your Strategic <span class="grad">Digital Health</span> Partner</h2>
-                <p class="section-sub" style="margin-bottom:40px">We don't just build software. We embed ourselves into
-                    your healthcare operations to deliver solutions that are clinically informed, technically excellent,
-                    and built for the long term.</p>
-
-                <div class="why-features">
-                    <div class="why-feature">
-                        <div class="why-feat-icon">🏥</div>
-                        <div>
-                            <div class="why-feat-title">Healthcare Domain Expertise</div>
-                            <div class="why-feat-desc">Deep clinical knowledge across hospital operations, diagnostics,
-                                and patient care workflows.</div>
-                        </div>
-                    </div>
-                    <div class="why-feature">
-                        <div class="why-feat-icon">☁️</div>
-                        <div>
-                            <div class="why-feat-title">Scalable Cloud Architecture</div>
-                            <div class="why-feat-desc">Microservices, containerized infrastructure built to handle
-                                millions of patient records reliably.</div>
-                        </div>
-                    </div>
-                    <div class="why-feature">
-                        <div class="why-feat-icon">🔒</div>
-                        <div>
-                            <div class="why-feat-title">Security-First Engineering</div>
-                            <div class="why-feat-desc">HIPAA, GDPR, ISO 27001 compliance baked in from day one — not
-                                bolted on at the end.</div>
-                        </div>
-                    </div>
-                    <div class="why-feature">
-                        <div class="why-feat-icon">🤖</div>
-                        <div>
-                            <div class="why-feat-title">AI Integration Specialists</div>
-                            <div class="why-feat-desc">Practical ML deployment in clinical settings — from model
-                                selection to production monitoring.</div>
-                        </div>
-                    </div>
-                    <div class="why-feature">
-                        <div class="why-feat-icon">🎯</div>
-                        <div>
-                            <div class="why-feat-title">Dedicated Support Teams</div>
-                            <div class="why-feat-desc">24/7 technical support, SLA-backed commitments, and dedicated
-                                customer success managers.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="why-visual reveal-right">
-                <div class="why-big-num">200+</div>
-                <div class="why-big-lbl">Healthcare Projects Delivered</div>
-                <div class="why-stats-grid">
-                    <div class="why-stat">
-                        <div class="why-stat-val">15+</div>
-                        <div class="why-stat-lbl">Years in Healthcare Tech</div>
-                    </div>
-                    <div class="why-stat">
-                        <div class="why-stat-val">99.9%</div>
-                        <div class="why-stat-lbl">Platform Uptime SLA</div>
-                    </div>
-                    <div class="why-stat">
-                        <div class="why-stat-val">50+</div>
-                        <div class="why-stat-lbl">Countries Served</div>
-                    </div>
-                    <div class="why-stat">
-                        <div class="why-stat-val">4.9★</div>
-                        <div class="why-stat-lbl">Client Satisfaction</div>
-                    </div>
-                </div>
-
+            <div
+                style="margin-top:28px; padding:20px; background:var(--white-10); border-radius:14px; border:1px solid var(--glass-border); text-align:left">
                 <div
-                    style="margin-top:28px; padding:20px; background:var(--white-10); border-radius:14px; border:1px solid var(--glass-border); text-align:left">
-                    <div
-                        style="font-size:0.75rem;color:var(--white-60);margin-bottom:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.07em">
-                        Certifications & Recognition</div>
-                    <div style="display:flex;flex-wrap:wrap;gap:8px">
-                        <span
-                            style="padding:5px 14px;border-radius:50px;background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">HIPAA
-                            Certified</span>
-                        <span
-                            style="padding:5px 14px;border-radius:50px;background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">ISO
-                            27001</span>
-                        <span
-                            style="padding:5px 14px;border-radius:50px;background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">AWS
-                            Partner</span>
-                        <span
-                            style="padding:5px 14px;border-radius:50px;background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">Azure
-                            Partner</span>
-                        <span
-                            style="padding:5px 14px;border-radius:50px;background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">GDPR
-                            Ready</span>
-                    </div>
+                    style="font-size:0.75rem;color:var(--white-60);margin-bottom:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.07em">
+                    Certifications & Recognition</div>
+                <div style="display:flex;flex-wrap:wrap;gap:8px">
+                    <span
+                        style="padding:5px 14px;border-radius:50px;background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">HIPAA
+                        Certified</span>
+                    <span
+                        style="padding:5px 14px;border-radius:50px;background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">ISO
+                        27001</span>
+                    <span
+                        style="padding:5px 14px;border-radius:50px;background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">AWS
+                        Partner</span>
+                    <span
+                        style="padding:5px 14px;border-radius:50px;background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">Azure
+                        Partner</span>
+                    <span
+                        style="padding:5px 14px;border-radius:50px;background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">GDPR
+                        Ready</span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- CTA -->
-    <section class="cta-section" id="contact">
-        <div class="hero-grid"></div>
-        <div class="cta-glow"></div>
-        <div class="cta-inner reveal">
-            <div class="section-tag" style="margin:0 auto 24px">Start Your Journey</div>
-            <h2>Let's Build the <span class="grad">Future of Digital</span> Healthcare</h2>
-            <p>Whether you're modernizing a legacy hospital system, launching a telemedicine platform, or building the
-                next generation of health-tech — Accrosian has the expertise, technology, and commitment to make it
-                happen.</p>
-            <div class="cta-btns">
-                <a href="#" class="btn-primary">Schedule a Consultation →</a>
-                <a href="#" class="btn-outline">View Case Studies</a>
-            </div>
+<!-- CTA -->
+<section class="cta-section" id="contact">
+    <div class="hero-grid"></div>
+    <div class="cta-glow"></div>
+    <div class="cta-inner reveal">
+        <div class="section-tag" style="margin:0 auto 24px">Start Your Journey</div>
+        <h2>Let's Build the <span class="grad">Future of Digital</span> Healthcare</h2>
+        <p>Whether you're modernizing a legacy hospital system, launching a telemedicine platform, or building the
+            next generation of health-tech — Accrosian has the expertise, technology, and commitment to make it
+            happen.</p>
+        <div class="cta-btns">
+            <a href="#" class="btn-primary">Schedule a Consultation →</a>
+            <a href="#" class="btn-outline">View Case Studies</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer>
-        <a href="#" class="nav-logo" style="font-size:1.2rem">Accros<span>ian</span></a>
-        <p>© 2025 Accrosian. All rights reserved. Healthcare Industry Division.</p>
-        <div class="footer-links">
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="#">HIPAA Policy</a>
-            <a href="#">Contact</a>
-        </div>
-    </footer>
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            // Animate metric bars
+            e.target.querySelectorAll('.metric-bar-fill').forEach(bar => {
+                const w = bar.dataset.width;
+                bar.style.transform = `scaleX(${w/100})`;
+                bar.classList.add('animated');
+            });
+        }
+    });
+}, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+});
 
-    <script>
-    // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger').forEach(el => observer.observe(el));
+
+// Metric bars on parent section visible
+const metricsSection = document.querySelector('.patient-section');
+if (metricsSection) {
+    const mObs = new IntersectionObserver((entries) => {
         entries.forEach(e => {
             if (e.isIntersecting) {
-                e.target.classList.add('visible');
-                // Animate metric bars
                 e.target.querySelectorAll('.metric-bar-fill').forEach(bar => {
                     const w = bar.dataset.width;
-                    bar.style.transform = `scaleX(${w/100})`;
-                    bar.classList.add('animated');
+                    setTimeout(() => {
+                        bar.style.transform = `scaleX(${w/100})`;
+                    }, 400);
                 });
             }
         });
     }, {
-        threshold: 0.12,
-        rootMargin: '0px 0px -40px 0px'
+        threshold: 0.3
     });
+    mObs.observe(metricsSection);
+}
 
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger').forEach(el => observer.observe(el));
-
-    // Metric bars on parent section visible
-    const metricsSection = document.querySelector('.patient-section');
-    if (metricsSection) {
-        const mObs = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.querySelectorAll('.metric-bar-fill').forEach(bar => {
-                        const w = bar.dataset.width;
-                        setTimeout(() => {
-                            bar.style.transform = `scaleX(${w/100})`;
-                        }, 400);
-                    });
-                }
+// Smooth nav active states
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({
+                behavior: 'smooth'
             });
-        }, {
-            threshold: 0.3
-        });
-        mObs.observe(metricsSection);
-    }
-
-    // Smooth nav active states
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', e => {
-            const target = document.querySelector(a.getAttribute('href'));
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
+        }
     });
-    </script>
-</body>
-
-</html>
+});
+</script>
+@endsection
