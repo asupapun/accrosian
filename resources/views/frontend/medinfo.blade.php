@@ -1427,243 +1427,240 @@ h3 {
     }
 }
 </style>
-</head>
 
-<body>
-
-    <!-- HERO -->
-    <section class="hero">
-        <img src="{{ asset('assets/images/medin-img.jpg') }}" alt="Hero Background" class="hero-bg-img" />
-        <div class="hero-bg">
-        </div>
-        <div class="container">
-            <div class="hero-inner">
-                <div class="hero-content">
-                    <h1 class="fade-up fade-up-1">
-                        Scalable Platforms for the <em>Digital Media Era</em>
-                    </h1>
-                    <p class="hero-sub fade-up fade-up-2">
-                        Build data-driven media platforms that deliver seamless content experiences across every channel
-                        — from publishing to streaming to real-time analytics.
-                    </p>
-                    <div class="hero-btns fade-up fade-up-3">
-                        <a href="#" class="btn btn-primary btn-arrow">Get a Quote</a>
-                        <a href="#" class="btn btn-outline">Consult Now →</a>
-                    </div>
-                </div>
-                <div>
-                </div>
-    </section>
-
-
-    <!-- OVERVIEW -->
-    <section class="overview">
-        <div class="container">
-            <div class="overview-grid">
-                <div class="overview-text">
-                    <div class="label-pill"><span></span>Industry Overview</div>
-                    <h2>The Media Landscape Demands <em>Real-Time Intelligence</em></h2>
-                    <p>Digital media consumption has fundamentally shifted. Audiences expect instant, personalized
-                        experiences across every touchpoint — and businesses that fail to deliver lose both attention
-                        and revenue.</p>
-                    <p>Modern media enterprises require real-time data processing, scalable content delivery
-                        infrastructure, and AI-powered personalization — all operating in concert.</p>
-                    <div class="overview-points">
-                        <div class="overview-point">
-                            <svg class="point-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10" />
-                                <polyline points="12 6 12 12 16 14" />
-                            </svg>
-                            <div class="point-text">
-                                <strong>Real-Time Processing</strong>
-                                Handle millions of concurrent content requests with sub-50ms response times.
-                            </div>
-                        </div>
-                        <div class="overview-point">
-                            <svg class="point-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="3" width="20" height="14" rx="2" />
-                                <line x1="8" y1="21" x2="16" y2="21" />
-                                <line x1="12" y1="17" x2="12" y2="21" />
-                            </svg>
-                            <div class="point-text">
-                                <strong>Cross-Platform Delivery</strong>
-                                Consistent experiences across web, mobile, OTT, and connected TV.
-                            </div>
-                        </div>
-                        <div class="overview-point">
-                            <svg class="point-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                                <circle cx="9" cy="7" r="4" />
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                            </svg>
-                            <div class="point-text">
-                                <strong>Audience Personalization</strong>
-                                AI-driven recommendations that increase retention and engagement by design.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="overview-image-wrap">
-                    <img src="{{ asset('assets/images/medinfo-img2.jpg') }}" alt="Media & Information Services">
+<!-- HERO -->
+<section class="hero">
+    <img src="{{ asset('assets/images/medin-img.jpg') }}" alt="Hero Background" class="hero-bg-img" />
+    <div class="hero-bg">
+    </div>
+    <div class="container">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <h1 class="fade-up fade-up-1">
+                    Scalable Platforms for the <em>Digital Media Era</em>
+                </h1>
+                <p class="hero-sub fade-up fade-up-2">
+                    Build data-driven media platforms that deliver seamless content experiences across every channel
+                    — from publishing to streaming to real-time analytics.
+                </p>
+                <div class="hero-btns fade-up fade-up-3">
+                    <a href="#" class="btn btn-primary btn-arrow">Get a Quote</a>
+                    <a href="#" class="btn btn-outline">Consult Now →</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- CORE SOLUTIONS -->
-    <section class="solutions">
-        <div class="container">
-            <div class="section-header">
-                <div class="label-pill"><span></span>Core Solutions</div>
-                <h2>What We <em>Build</em> for Media Leaders</h2>
-                <p>End-to-end capabilities engineered for performance, scale, and measurable audience impact.</p>
+            <div>
             </div>
-            <div class="solutions-grid">
+</section>
 
-                <div class="sol-card">
-                    <div class="sol-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+<!-- OVERVIEW -->
+<section class="overview">
+    <div class="container">
+        <div class="overview-grid">
+            <div class="overview-text">
+                <div class="label-pill"><span></span>Industry Overview</div>
+                <h2>The Media Landscape Demands <em>Real-Time Intelligence</em></h2>
+                <p>Digital media consumption has fundamentally shifted. Audiences expect instant, personalized
+                    experiences across every touchpoint — and businesses that fail to deliver lose both attention
+                    and revenue.</p>
+                <p>Modern media enterprises require real-time data processing, scalable content delivery
+                    infrastructure, and AI-powered personalization — all operating in concert.</p>
+                <div class="overview-points">
+                    <div class="overview-point">
+                        <svg class="point-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                        <div class="point-text">
+                            <strong>Real-Time Processing</strong>
+                            Handle millions of concurrent content requests with sub-50ms response times.
+                        </div>
+                    </div>
+                    <div class="overview-point">
+                        <svg class="point-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="2" y="3" width="20" height="14" rx="2" />
                             <line x1="8" y1="21" x2="16" y2="21" />
                             <line x1="12" y1="17" x2="12" y2="21" />
                         </svg>
+                        <div class="point-text">
+                            <strong>Cross-Platform Delivery</strong>
+                            Consistent experiences across web, mobile, OTT, and connected TV.
+                        </div>
                     </div>
-                    <h3>Media Platform Development</h3>
-                    <p>Custom-built platforms architected for high-traffic media workloads — from editorial to
-                        distribution at enterprise scale.</p>
-                </div>
-
-                <div class="sol-card">
-                    <div class="sol-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-                            <polyline points="14 2 14 8 20 8" />
-                            <line x1="16" y1="13" x2="8" y2="13" />
-                            <line x1="16" y1="17" x2="8" y2="17" />
-                            <line x1="10" y1="9" x2="8" y2="9" />
-                        </svg>
-                    </div>
-                    <h3>Content Management Systems</h3>
-                    <p>Headless CMS solutions enabling multi-channel publishing with structured workflows and real-time
-                        collaboration.</p>
-                </div>
-
-                <div class="sol-card">
-                    <div class="sol-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v2" />
-                            <path d="M4 11.5V22a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V4" />
-                        </svg>
-                    </div>
-                    <h3>Digital Publishing Solutions</h3>
-                    <p>Automated publishing pipelines with SEO-native architecture, subscriber management, and
-                        monetization modules.</p>
-                </div>
-
-                <div class="sol-card">
-                    <div class="sol-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="18" y1="20" x2="18" y2="10" />
-                            <line x1="12" y1="20" x2="12" y2="4" />
-                            <line x1="6" y1="20" x2="6" y2="14" />
-                        </svg>
-                    </div>
-                    <h3>Data & Analytics Integration</h3>
-                    <p>Real-time dashboards and audience intelligence pipelines that transform raw signals into
-                        actionable media strategy.</p>
-                </div>
-
-                <div class="sol-card">
-                    <div class="sol-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="1" />
-                            <circle cx="3" cy="6" r="1" />
-                            <circle cx="21" cy="6" r="1" />
-                            <circle cx="3" cy="18" r="1" />
-                            <circle cx="21" cy="18" r="1" />
-                            <line x1="3" y1="7" x2="12" y2="11" />
-                            <line x1="21" y1="7" x2="12" y2="11" />
-                            <line x1="3" y1="17" x2="12" y2="13" />
-                            <line x1="21" y1="17" x2="12" y2="13" />
-                        </svg>
-                    </div>
-                    <h3>API & Content Distribution</h3>
-                    <p>RESTful and GraphQL APIs enabling seamless syndication across partner networks, aggregators, and
-                        third-party surfaces.</p>
-                </div>
-
-                <div class="sol-card">
-                    <div class="sol-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="overview-point">
+                        <svg class="point-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                             <circle cx="9" cy="7" r="4" />
                             <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
                             <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                         </svg>
+                        <div class="point-text">
+                            <strong>Audience Personalization</strong>
+                            AI-driven recommendations that increase retention and engagement by design.
+                        </div>
                     </div>
-                    <h3>Audience Personalization</h3>
-                    <p>Machine learning recommendation engines that dynamically surface the right content to the right
-                        user at the right moment.</p>
                 </div>
-
-                <div class="sol-card">
-                    <div class="sol-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="22 12 16 12 14 15 10 9 8 12 2 12" />
-                            <path
-                                d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" />
-                        </svg>
-                    </div>
-                    <h3>Cloud-Based Media Solutions</h3>
-                    <p>Elastic cloud infrastructure on AWS, GCP, and Azure — designed for burst traffic, global
-                        redundancy, and cost efficiency.</p>
-                </div>
-
-                <div class="sol-card">
-                    <div class="sol-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-                        </svg>
-                    </div>
-                    <h3>Performance Optimization</h3>
-                    <p>Core Web Vitals tuning, CDN strategy, and edge caching that deliver sub-second load times for
-                        content-heavy properties.</p>
-                </div>
-
+            </div>
+            <div class="overview-image-wrap">
+                <img src="{{ asset('assets/images/medinfo-img2.jpg') }}" alt="Media & Information Services">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- CAPABILITIES -->
-    <section class="capabilities">
-        <div class="container">
-            <div class="cap-grid">
-                <div>
-                    <div class="label-pill"><span></span>Capabilities</div>
-                    <h2
-                        style="font-family:var(--ff-head);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:16px;line-height:1.2;color:var(--navy-800);">
-                        What We Deliver at <em
-                            style="font-style:var(--ff-head);background:var(--gradient-orange);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Enterprise
-                            Scale</em></h2>
-                    <p style="color:var(--black);margin-bottom:36px;font-weight:450;line-height:1.8;">Every
-                        capability is built for production environments where performance, reliability, and security are
-                        non-negotiable.</p>
-                    <div class="cap-inline-image">
-                        <img src="{{ asset('assets/images/medinfo-img.jpg') }}" alt="Media Technology">
-                    </div>
-                    <!-- <div class="cap-list">
+<!-- CORE SOLUTIONS -->
+<section class="solutions">
+    <div class="container">
+        <div class="section-header">
+            <div class="label-pill"><span></span>Core Solutions</div>
+            <h2>What We <em>Build</em> for Media Leaders</h2>
+            <p>End-to-end capabilities engineered for performance, scale, and measurable audience impact.</p>
+        </div>
+        <div class="solutions-grid">
+
+            <div class="sol-card">
+                <div class="sol-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                </div>
+                <h3>Media Platform Development</h3>
+                <p>Custom-built platforms architected for high-traffic media workloads — from editorial to
+                    distribution at enterprise scale.</p>
+            </div>
+
+            <div class="sol-card">
+                <div class="sol-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="16" y1="13" x2="8" y2="13" />
+                        <line x1="16" y1="17" x2="8" y2="17" />
+                        <line x1="10" y1="9" x2="8" y2="9" />
+                    </svg>
+                </div>
+                <h3>Content Management Systems</h3>
+                <p>Headless CMS solutions enabling multi-channel publishing with structured workflows and real-time
+                    collaboration.</p>
+            </div>
+
+            <div class="sol-card">
+                <div class="sol-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v2" />
+                        <path d="M4 11.5V22a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V4" />
+                    </svg>
+                </div>
+                <h3>Digital Publishing Solutions</h3>
+                <p>Automated publishing pipelines with SEO-native architecture, subscriber management, and
+                    monetization modules.</p>
+            </div>
+
+            <div class="sol-card">
+                <div class="sol-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="20" x2="18" y2="10" />
+                        <line x1="12" y1="20" x2="12" y2="4" />
+                        <line x1="6" y1="20" x2="6" y2="14" />
+                    </svg>
+                </div>
+                <h3>Data & Analytics Integration</h3>
+                <p>Real-time dashboards and audience intelligence pipelines that transform raw signals into
+                    actionable media strategy.</p>
+            </div>
+
+            <div class="sol-card">
+                <div class="sol-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="1" />
+                        <circle cx="3" cy="6" r="1" />
+                        <circle cx="21" cy="6" r="1" />
+                        <circle cx="3" cy="18" r="1" />
+                        <circle cx="21" cy="18" r="1" />
+                        <line x1="3" y1="7" x2="12" y2="11" />
+                        <line x1="21" y1="7" x2="12" y2="11" />
+                        <line x1="3" y1="17" x2="12" y2="13" />
+                        <line x1="21" y1="17" x2="12" y2="13" />
+                    </svg>
+                </div>
+                <h3>API & Content Distribution</h3>
+                <p>RESTful and GraphQL APIs enabling seamless syndication across partner networks, aggregators, and
+                    third-party surfaces.</p>
+            </div>
+
+            <div class="sol-card">
+                <div class="sol-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                </div>
+                <h3>Audience Personalization</h3>
+                <p>Machine learning recommendation engines that dynamically surface the right content to the right
+                    user at the right moment.</p>
+            </div>
+
+            <div class="sol-card">
+                <div class="sol-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="22 12 16 12 14 15 10 9 8 12 2 12" />
+                        <path
+                            d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" />
+                    </svg>
+                </div>
+                <h3>Cloud-Based Media Solutions</h3>
+                <p>Elastic cloud infrastructure on AWS, GCP, and Azure — designed for burst traffic, global
+                    redundancy, and cost efficiency.</p>
+            </div>
+
+            <div class="sol-card">
+                <div class="sol-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                    </svg>
+                </div>
+                <h3>Performance Optimization</h3>
+                <p>Core Web Vitals tuning, CDN strategy, and edge caching that deliver sub-second load times for
+                    content-heavy properties.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="capabilities">
+    <div class="container">
+        <div class="cap-grid">
+            <div>
+                <div class="label-pill"><span></span>Capabilities</div>
+                <h2
+                    style="font-family:var(--ff-head);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:16px;line-height:1.2;color:var(--navy-800);">
+                    What We Deliver at <em
+                        style="font-style:var(--ff-head);background:var(--gradient-orange);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Enterprise
+                        Scale</em></h2>
+                <p style="color:var(--black);margin-bottom:36px;font-weight:450;line-height:1.8;">Every
+                    capability is built for production environments where performance, reliability, and security are
+                    non-negotiable.</p>
+                <div class="cap-inline-image">
+                    <img src="{{ asset('assets/images/medinfo-img.jpg') }}" alt="Media Technology">
+                </div>
+                <!-- <div class="cap-list">
                         <div class="cap-item">
                             <span class="cap-num">01</span>
                             <div class="cap-content">
@@ -1704,384 +1701,382 @@ h3 {
                             </div>
                         </div>
                     </div> -->
+            </div>
+
+            <div class="cap-visual">
+                <h3>SYSTEM PERFORMANCE BENCHMARK</h3>
+                <div class="perf-row">
+                    <span class="perf-label">Content Throughput</span>
+                    <div class="perf-bar-track">
+                        <div class="perf-bar-fill" style="width:94%"></div>
+                    </div>
+                    <span class="perf-val">94%</span>
+                </div>
+                <div class="perf-row">
+                    <span class="perf-label">API Response Speed</span>
+                    <div class="perf-bar-track">
+                        <div class="perf-bar-fill" style="width:98%"></div>
+                    </div>
+                    <span class="perf-val">98%</span>
+                </div>
+                <div class="perf-row">
+                    <span class="perf-label">Audience Retention</span>
+                    <div class="perf-bar-track">
+                        <div class="perf-bar-fill" style="width:78%"></div>
+                    </div>
+                    <span class="perf-val">78%</span>
+                </div>
+                <div class="perf-row">
+                    <span class="perf-label">CDN Cache Hit Rate</span>
+                    <div class="perf-bar-track">
+                        <div class="perf-bar-fill" style="width:96%"></div>
+                    </div>
+                    <span class="perf-val">96%</span>
+                </div>
+                <div class="perf-row">
+                    <span class="perf-label">Uptime Reliability</span>
+                    <div class="perf-bar-track">
+                        <div class="perf-bar-fill" style="width:99%"></div>
+                    </div>
+                    <span class="perf-val">99%</span>
                 </div>
 
-                <div class="cap-visual">
-                    <h3>SYSTEM PERFORMANCE BENCHMARK</h3>
-                    <div class="perf-row">
-                        <span class="perf-label">Content Throughput</span>
-                        <div class="perf-bar-track">
-                            <div class="perf-bar-fill" style="width:94%"></div>
-                        </div>
-                        <span class="perf-val">94%</span>
-                    </div>
-                    <div class="perf-row">
-                        <span class="perf-label">API Response Speed</span>
-                        <div class="perf-bar-track">
-                            <div class="perf-bar-fill" style="width:98%"></div>
-                        </div>
-                        <span class="perf-val">98%</span>
-                    </div>
-                    <div class="perf-row">
-                        <span class="perf-label">Audience Retention</span>
-                        <div class="perf-bar-track">
-                            <div class="perf-bar-fill" style="width:78%"></div>
-                        </div>
-                        <span class="perf-val">78%</span>
-                    </div>
-                    <div class="perf-row">
-                        <span class="perf-label">CDN Cache Hit Rate</span>
-                        <div class="perf-bar-track">
-                            <div class="perf-bar-fill" style="width:96%"></div>
-                        </div>
-                        <span class="perf-val">96%</span>
-                    </div>
-                    <div class="perf-row">
-                        <span class="perf-label">Uptime Reliability</span>
-                        <div class="perf-bar-track">
-                            <div class="perf-bar-fill" style="width:99%"></div>
-                        </div>
-                        <span class="perf-val">99%</span>
-                    </div>
-
-                    <div style="margin-top:28px;padding-top:24px;border-top:1px solid var(--glass-border);">
-                        <div
-                            style="font-size:0.75rem;color:#ffff;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.06em;">
-                            Tech Stack</div>
-                        <div style="display:flex;flex-wrap:wrap;gap:8px;">
-                            <span
-                                style="background:var(--navy-800);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:#ffff;">Kafka</span>
-                            <span
-                                style="background:var(--navy-800);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:#ffff;">Kubernetes</span>
-                            <span
-                                style="background:var(--navy-800);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:#ffff;">GraphQL</span>
-                            <span
-                                style="background:var(--navy-800);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:#ffff;">ElasticSearch</span>
-                            <span
-                                style="background:var(--navy-800);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:#ffff;">Redis</span>
-                            <span
-                                style="background:var(--navy-800);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:#ffff;">Cloudflare</span>
-                        </div>
+                <div style="margin-top:28px;padding-top:24px;border-top:1px solid var(--glass-border);">
+                    <div
+                        style="font-size:0.75rem;color:#ffff;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.06em;">
+                        Tech Stack</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                        <span
+                            style="background:var(--navy-800);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:#ffff;">Kafka</span>
+                        <span
+                            style="background:var(--navy-800);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:#ffff;">Kubernetes</span>
+                        <span
+                            style="background:var(--navy-800);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:#ffff;">GraphQL</span>
+                        <span
+                            style="background:var(--navy-800);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:#ffff;">ElasticSearch</span>
+                        <span
+                            style="background:var(--navy-800);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:#ffff;">Redis</span>
+                        <span
+                            style="background:var(--navy-800);border:1px solid var(--glass-border);padding:4px 12px;border-radius:6px;font-size:0.72rem;color:#ffff;">Cloudflare</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section class="process">
-        <div class="container">
-            <div class="section-header">
-                <div class="label-pill"><span></span>Our Process</div>
-                <h2>From Brief to <em>Production</em> — Engineered</h2>
-                <p>A structured engagement model that eliminates risk and accelerates time-to-market for complex media
-                    systems.</p>
-            </div>
-            <div class="process-steps">
-                <div class="step-card">
-                    <div class="step-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="11" cy="11" r="8" />
-                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                        </svg>
-                    </div>
-                    <h3>Requirement Analysis & Research</h3>
-                    <p>Deep-dive discovery into your content workflows, audience segments, and technical constraints. We
-                        map the full system before a line of code is written.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="12 2 2 7 12 12 22 7 12 2" />
-                            <polyline points="2 17 12 22 22 17" />
-                            <polyline points="2 12 12 17 22 12" />
-                        </svg>
-                    </div>
-                    <h3>Architecture & Platform Strategy</h3>
-                    <p>System design for scalability, redundancy, and performance — selecting the right microservices,
-                        data pipelines, and cloud infrastructure for your load profile.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="2" />
-                            <circle cx="8.5" cy="8.5" r="1.5" />
-                            <polyline points="21 15 16 10 5 21" />
-                        </svg>
-                    </div>
-                    <h3>UI/UX Design for Media Systems</h3>
-                    <p>Consumer-facing interfaces, editorial dashboards, and analytics views designed for clarity,
-                        speed, and cross-device parity.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="16 18 22 12 16 6" />
-                            <polyline points="8 6 2 12 8 18" />
-                        </svg>
-                    </div>
-                    <h3>Development & Integration</h3>
-                    <p>Agile sprints with weekly demos. Full-stack development integrated with your existing tech stack,
-                        CRM, ad platforms, and data warehouses.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                        </svg>
-                    </div>
-                    <h3>Testing & Performance Optimization</h3>
-                    <p>Load testing at 2× expected peak, security penetration testing, and Core Web Vitals validation
-                        before any launch gate.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                        </svg>
-                    </div>
-                    <h3>Deployment & Continuous Scaling</h3>
-                    <p>Zero-downtime deployments with CI/CD pipelines, 24/7 monitoring, and a dedicated SRE team for
-                        ongoing platform evolution.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- USE CASES -->
-    <section class="use-cases">
-        <div class="container">
-            <div class="section-header">
-                <div class="label-pill"><span></span>Use Cases</div>
-                <h2>Built for <em>Every Media Vertical</em></h2>
-                <p>Solutions validated across the full spectrum of modern media and information businesses.</p>
-            </div>
-            <div class="uc-grid">
-
-                <div class="uc-card">
-                    <div class="uc-tag">Publishing</div>
-                    <div class="uc-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v2" />
-                            <path d="M4 11.5V22a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V4" />
-                        </svg>
-                    </div>
-                    <h3>News & Publishing Platforms</h3>
-                    <p>Real-time editorial systems with automated publishing workflows, subscriber paywalls, and
-                        SEO-native architecture that scales for breaking news traffic surges.</p>
-                    <div class="uc-features">
-                        <span class="uc-feat">Paywall Management</span>
-                        <span class="uc-feat">Editorial Workflow</span>
-                        <span class="uc-feat">Subscriber Analytics</span>
-                        <span class="uc-feat">SEO Automation</span>
-                    </div>
-                </div>
-
-                <div class="uc-card">
-                    <div class="uc-tag">Streaming</div>
-                    <div class="uc-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="23 7 16 12 23 17 23 7" />
-                            <rect x="1" y="5" width="15" height="14" rx="2" />
-                        </svg>
-                    </div>
-                    <h3>OTT & Video Streaming Solutions</h3>
-                    <p>End-to-end video platforms with adaptive bitrate streaming, DRM content protection, multi-CDN
-                        failover, and viewer analytics dashboards for content teams.</p>
-                    <div class="uc-features">
-                        <span class="uc-feat">Adaptive Bitrate</span>
-                        <span class="uc-feat">DRM Protection</span>
-                        <span class="uc-feat">Multi-CDN</span>
-                        <span class="uc-feat">Live Streaming</span>
-                    </div>
-                </div>
-
-                <div class="uc-card">
-                    <div class="uc-tag">AdTech</div>
-                    <div class="uc-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="18" y1="20" x2="18" y2="10" />
-                            <line x1="12" y1="20" x2="12" y2="4" />
-                            <line x1="6" y1="20" x2="6" y2="14" />
-                        </svg>
-                    </div>
-                    <h3>AdTech & Media Analytics Platforms</h3>
-                    <p>Programmatic advertising infrastructure, first-party data platforms, and revenue attribution
-                        systems that connect audience intelligence to monetization outcomes.</p>
-                    <div class="uc-features">
-                        <span class="uc-feat">Programmatic Ads</span>
-                        <span class="uc-feat">First-Party Data</span>
-                        <span class="uc-feat">Revenue Attribution</span>
-                        <span class="uc-feat">Audience Segments</span>
-                    </div>
-                </div>
-
-                <div class="uc-card">
-                    <div class="uc-tag">Aggregation</div>
-                    <div class="uc-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="1" />
-                            <circle cx="3" cy="6" r="1" />
-                            <circle cx="21" cy="6" r="1" />
-                            <circle cx="3" cy="18" r="1" />
-                            <circle cx="21" cy="18" r="1" />
-                            <line x1="3" y1="7" x2="12" y2="11" />
-                            <line x1="21" y1="7" x2="12" y2="11" />
-                            <line x1="3" y1="17" x2="12" y2="13" />
-                            <line x1="21" y1="17" x2="12" y2="13" />
-                        </svg>
-                    </div>
-                    <h3>Content Aggregation Systems</h3>
-                    <p>Multi-source ingestion pipelines that normalize, tag, and surface content from hundreds of feeds
-                        — powering intelligent content hubs and discovery platforms.</p>
-                    <div class="uc-features">
-                        <span class="uc-feat">Multi-Source Ingestion</span>
-                        <span class="uc-feat">Auto-Tagging</span>
-                        <span class="uc-feat">Content Discovery</span>
-                        <span class="uc-feat">Feed Management</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="features">
-        <div class="container">
-            <div class="section-header">
-                <div class="label-pill"><span></span>Platform Features</div>
-                <h2>Built for <em>Performance</em>, by Design</h2>
-                <p>Core features that come standard in every Accrosian media platform engagement.</p>
-            </div>
-            <div class="feat-grid">
-
-                <div class="feat-card">
-                    <div class="feat-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                        </svg>
-                    </div>
-                    <h3>Real-Time Content Updates</h3>
-                    <p>WebSocket-powered live publishing with instant cache invalidation across all edge nodes.</p>
-                </div>
-
-                <div class="feat-card">
-                    <div class="feat-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="5" y="2" width="14" height="20" rx="2" />
-                            <line x1="12" y1="18" x2="12.01" y2="18" />
-                        </svg>
-                    </div>
-                    <h3>Multi-Device Compatibility</h3>
-                    <p>Responsive interfaces and native SDKs for web, iOS, Android, and Smart TV ecosystems.</p>
-                </div>
-
-                <div class="feat-card">
-                    <div class="feat-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="2" />
-                            <path d="M3 9h18M9 21V9" />
-                        </svg>
-                    </div>
-                    <h3>Audience Analytics Dashboards</h3>
-                    <p>Configurable analytics views with cohort analysis, funnel tracking, and content attribution
-                        reporting.</p>
-                </div>
-
-                <div class="feat-card">
-                    <div class="feat-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z" />
-                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                            <line x1="12" y1="17" x2="12.01" y2="17" />
-                        </svg>
-                    </div>
-                    <h3>Personalization Engines</h3>
-                    <p>On-device and server-side personalization delivering individualized content feeds at scale.</p>
-                </div>
-
-                <div class="feat-card">
-                    <div class="feat-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-                        </svg>
-                    </div>
-                    <h3>High-Speed Performance</h3>
-                    <p>Edge-first architecture with Lighthouse scores above 95 and Time to First Byte under 200ms.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- RESULTS -->
-    <section class="results">
-        <div class="container">
-            <div class="section-header">
-                <div class="label-pill"><span></span>Proven Impact</div>
-                <h2>Results That <em>Speak for Themselves</em></h2>
-                <p>Measurable outcomes from media platforms built and scaled by Accrosian.</p>
-            </div>
-            <div class="results-grid">
-                <div class="result-card">
-                    <div class="result-num">99.9%</div>
-                    <div class="result-label">Platform Uptime</div>
-                    <div class="result-desc">SLA-backed reliability with proactive incident response and zero single
-                        points of failure.</div>
-                </div>
-                <div class="result-card">
-                    <div class="result-num">50M+</div>
-                    <div class="result-label">Concurrent Users</div>
-                    <div class="result-desc">Proven capacity to serve massive simultaneous audiences without performance
-                        degradation.</div>
-                </div>
-                <div class="result-card">
-                    <div class="result-num">3×</div>
-                    <div class="result-label">Faster Delivery</div>
-                    <div class="result-desc">Average content load time reduction through edge caching, CDN optimization,
-                        and code splitting.</div>
-                </div>
-                <div class="result-card">
-                    <div class="result-num">+41%</div>
-                    <div class="result-label">Engagement Uplift</div>
-                    <div class="result-desc">Median increase in session depth and return visit rate following
-                        personalization engine deployment.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    {{-- CTA --}}
-    <section class="cta-section">
-        <div class="container cta-inner">
-            <span class="section-tag" style="margin-bottom:24px">Ready to Start?</span>
-            <h2 class="cta-title">Let's Build Something <span class="text-gradient">Extraordinary</span> Together</h2>
-            <p class="cta-subtitle">Tell us your vision and we'll turn it into reality. Free consultation, no
-                commitment.
-            </p>
-            <div class="cta-actions">
-                <a href="{{ route('contact') }}" class="btn btn-primary btn-arrow">Start Your Project</a>
-                <a href="{{ route('portfolio') }}" class="btn btn-outline">See Our Work</a>
-            </div>
-        </div>
-    </section>
-
     </div>
-    @endsection
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+    <div class="container">
+        <div class="section-header">
+            <div class="label-pill"><span></span>Our Process</div>
+            <h2>From Brief to <em>Production</em> — Engineered</h2>
+            <p>A structured engagement model that eliminates risk and accelerates time-to-market for complex media
+                systems.</p>
+        </div>
+        <div class="process-steps">
+            <div class="step-card">
+                <div class="step-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg>
+                </div>
+                <h3>Requirement Analysis & Research</h3>
+                <p>Deep-dive discovery into your content workflows, audience segments, and technical constraints. We
+                    map the full system before a line of code is written.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                        <polyline points="2 17 12 22 22 17" />
+                        <polyline points="2 12 12 17 22 12" />
+                    </svg>
+                </div>
+                <h3>Architecture & Platform Strategy</h3>
+                <p>System design for scalability, redundancy, and performance — selecting the right microservices,
+                    data pipelines, and cloud infrastructure for your load profile.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                        <circle cx="8.5" cy="8.5" r="1.5" />
+                        <polyline points="21 15 16 10 5 21" />
+                    </svg>
+                </div>
+                <h3>UI/UX Design for Media Systems</h3>
+                <p>Consumer-facing interfaces, editorial dashboards, and analytics views designed for clarity,
+                    speed, and cross-device parity.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6" />
+                        <polyline points="8 6 2 12 8 18" />
+                    </svg>
+                </div>
+                <h3>Development & Integration</h3>
+                <p>Agile sprints with weekly demos. Full-stack development integrated with your existing tech stack,
+                    CRM, ad platforms, and data warehouses.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                </div>
+                <h3>Testing & Performance Optimization</h3>
+                <p>Load testing at 2× expected peak, security penetration testing, and Core Web Vitals validation
+                    before any launch gate.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                    </svg>
+                </div>
+                <h3>Deployment & Continuous Scaling</h3>
+                <p>Zero-downtime deployments with CI/CD pipelines, 24/7 monitoring, and a dedicated SRE team for
+                    ongoing platform evolution.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- USE CASES -->
+<section class="use-cases">
+    <div class="container">
+        <div class="section-header">
+            <div class="label-pill"><span></span>Use Cases</div>
+            <h2>Built for <em>Every Media Vertical</em></h2>
+            <p>Solutions validated across the full spectrum of modern media and information businesses.</p>
+        </div>
+        <div class="uc-grid">
+
+            <div class="uc-card">
+                <div class="uc-tag">Publishing</div>
+                <div class="uc-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v2" />
+                        <path d="M4 11.5V22a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V4" />
+                    </svg>
+                </div>
+                <h3>News & Publishing Platforms</h3>
+                <p>Real-time editorial systems with automated publishing workflows, subscriber paywalls, and
+                    SEO-native architecture that scales for breaking news traffic surges.</p>
+                <div class="uc-features">
+                    <span class="uc-feat">Paywall Management</span>
+                    <span class="uc-feat">Editorial Workflow</span>
+                    <span class="uc-feat">Subscriber Analytics</span>
+                    <span class="uc-feat">SEO Automation</span>
+                </div>
+            </div>
+
+            <div class="uc-card">
+                <div class="uc-tag">Streaming</div>
+                <div class="uc-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="23 7 16 12 23 17 23 7" />
+                        <rect x="1" y="5" width="15" height="14" rx="2" />
+                    </svg>
+                </div>
+                <h3>OTT & Video Streaming Solutions</h3>
+                <p>End-to-end video platforms with adaptive bitrate streaming, DRM content protection, multi-CDN
+                    failover, and viewer analytics dashboards for content teams.</p>
+                <div class="uc-features">
+                    <span class="uc-feat">Adaptive Bitrate</span>
+                    <span class="uc-feat">DRM Protection</span>
+                    <span class="uc-feat">Multi-CDN</span>
+                    <span class="uc-feat">Live Streaming</span>
+                </div>
+            </div>
+
+            <div class="uc-card">
+                <div class="uc-tag">AdTech</div>
+                <div class="uc-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="20" x2="18" y2="10" />
+                        <line x1="12" y1="20" x2="12" y2="4" />
+                        <line x1="6" y1="20" x2="6" y2="14" />
+                    </svg>
+                </div>
+                <h3>AdTech & Media Analytics Platforms</h3>
+                <p>Programmatic advertising infrastructure, first-party data platforms, and revenue attribution
+                    systems that connect audience intelligence to monetization outcomes.</p>
+                <div class="uc-features">
+                    <span class="uc-feat">Programmatic Ads</span>
+                    <span class="uc-feat">First-Party Data</span>
+                    <span class="uc-feat">Revenue Attribution</span>
+                    <span class="uc-feat">Audience Segments</span>
+                </div>
+            </div>
+
+            <div class="uc-card">
+                <div class="uc-tag">Aggregation</div>
+                <div class="uc-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="1" />
+                        <circle cx="3" cy="6" r="1" />
+                        <circle cx="21" cy="6" r="1" />
+                        <circle cx="3" cy="18" r="1" />
+                        <circle cx="21" cy="18" r="1" />
+                        <line x1="3" y1="7" x2="12" y2="11" />
+                        <line x1="21" y1="7" x2="12" y2="11" />
+                        <line x1="3" y1="17" x2="12" y2="13" />
+                        <line x1="21" y1="17" x2="12" y2="13" />
+                    </svg>
+                </div>
+                <h3>Content Aggregation Systems</h3>
+                <p>Multi-source ingestion pipelines that normalize, tag, and surface content from hundreds of feeds
+                    — powering intelligent content hubs and discovery platforms.</p>
+                <div class="uc-features">
+                    <span class="uc-feat">Multi-Source Ingestion</span>
+                    <span class="uc-feat">Auto-Tagging</span>
+                    <span class="uc-feat">Content Discovery</span>
+                    <span class="uc-feat">Feed Management</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+    <div class="container">
+        <div class="section-header">
+            <div class="label-pill"><span></span>Platform Features</div>
+            <h2>Built for <em>Performance</em>, by Design</h2>
+            <p>Core features that come standard in every Accrosian media platform engagement.</p>
+        </div>
+        <div class="feat-grid">
+
+            <div class="feat-card">
+                <div class="feat-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                    </svg>
+                </div>
+                <h3>Real-Time Content Updates</h3>
+                <p>WebSocket-powered live publishing with instant cache invalidation across all edge nodes.</p>
+            </div>
+
+            <div class="feat-card">
+                <div class="feat-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="5" y="2" width="14" height="20" rx="2" />
+                        <line x1="12" y1="18" x2="12.01" y2="18" />
+                    </svg>
+                </div>
+                <h3>Multi-Device Compatibility</h3>
+                <p>Responsive interfaces and native SDKs for web, iOS, Android, and Smart TV ecosystems.</p>
+            </div>
+
+            <div class="feat-card">
+                <div class="feat-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                        <path d="M3 9h18M9 21V9" />
+                    </svg>
+                </div>
+                <h3>Audience Analytics Dashboards</h3>
+                <p>Configurable analytics views with cohort analysis, funnel tracking, and content attribution
+                    reporting.</p>
+            </div>
+
+            <div class="feat-card">
+                <div class="feat-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z" />
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                    </svg>
+                </div>
+                <h3>Personalization Engines</h3>
+                <p>On-device and server-side personalization delivering individualized content feeds at scale.</p>
+            </div>
+
+            <div class="feat-card">
+                <div class="feat-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                    </svg>
+                </div>
+                <h3>High-Speed Performance</h3>
+                <p>Edge-first architecture with Lighthouse scores above 95 and Time to First Byte under 200ms.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results">
+    <div class="container">
+        <div class="section-header">
+            <div class="label-pill"><span></span>Proven Impact</div>
+            <h2>Results That <em>Speak for Themselves</em></h2>
+            <p>Measurable outcomes from media platforms built and scaled by Accrosian.</p>
+        </div>
+        <div class="results-grid">
+            <div class="result-card">
+                <div class="result-num">99.9%</div>
+                <div class="result-label">Platform Uptime</div>
+                <div class="result-desc">SLA-backed reliability with proactive incident response and zero single
+                    points of failure.</div>
+            </div>
+            <div class="result-card">
+                <div class="result-num">50M+</div>
+                <div class="result-label">Concurrent Users</div>
+                <div class="result-desc">Proven capacity to serve massive simultaneous audiences without performance
+                    degradation.</div>
+            </div>
+            <div class="result-card">
+                <div class="result-num">3×</div>
+                <div class="result-label">Faster Delivery</div>
+                <div class="result-desc">Average content load time reduction through edge caching, CDN optimization,
+                    and code splitting.</div>
+            </div>
+            <div class="result-card">
+                <div class="result-num">+41%</div>
+                <div class="result-label">Engagement Uplift</div>
+                <div class="result-desc">Median increase in session depth and return visit rate following
+                    personalization engine deployment.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+{{-- CTA --}}
+<section class="cta-section">
+    <div class="container cta-inner">
+        <span class="section-tag" style="margin-bottom:24px">Ready to Start?</span>
+        <h2 class="cta-title">Let's Build Something <span class="text-gradient">Extraordinary</span> Together</h2>
+        <p class="cta-subtitle">Tell us your vision and we'll turn it into reality. Free consultation, no
+            commitment.
+        </p>
+        <div class="cta-actions">
+            <a href="{{ route('contact') }}" class="btn btn-primary btn-arrow">Start Your Project</a>
+            <a href="{{ route('portfolio') }}" class="btn btn-outline">See Our Work</a>
+        </div>
+    </div>
+</section>
+@endsection
