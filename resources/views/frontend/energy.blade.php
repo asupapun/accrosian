@@ -46,7 +46,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
 }
 
 body {
@@ -2085,27 +2085,27 @@ body {
     counters.forEach(el => counterObserver.observe(el));
 
     // ---- TECH PILL STAGGER ----
-    // document.querySelectorAll('.tech-pill').forEach((pill, i) => {
-    //     pill.style.animationDelay = (i * 60) + 'ms';
-    //     pill.style.opacity = '0';
-    //     pill.style.transform = 'translateY(20px)';
-    //     pill.style.transition = `opacity .5s ease ${i * 40}ms, transform .5s ease ${i * 40}ms`;
-    // });
-    // const techObserver = new IntersectionObserver((entries) => {
-    //     entries.forEach(entry => {
-    //         if (entry.isIntersecting) {
-    //             document.querySelectorAll('.tech-pill').forEach(pill => {
-    //                 pill.style.opacity = '1';
-    //                 pill.style.transform = 'translateY(0)';
-    //             });
-    //             techObserver.disconnect();
-    //         }
-    //     });
-    // }, {
-    //     threshold: 0.2
-    // });
-    // const techSection = document.querySelector('.tech-pills');
-    // if (techSection) techObserver.observe(techSection);
+    document.querySelectorAll('.tech-pill').forEach((pill, i) => {
+        pill.style.animationDelay = (i * 60) + 'ms';
+        pill.style.opacity = '0';
+        pill.style.transform = 'translateY(20px)';
+        pill.style.transition = `opacity .5s ease ${i * 40}ms, transform .5s ease ${i * 40}ms`;
+    });
+    const techObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                document.querySelectorAll('.tech-pill').forEach(pill => {
+                    pill.style.opacity = '1';
+                    pill.style.transform = 'translateY(0)';
+                });
+                techObserver.disconnect();
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+    const techSection = document.querySelector('.tech-pills');
+    if (techSection) techObserver.observe(techSection);
     </script>
 
     </div>
