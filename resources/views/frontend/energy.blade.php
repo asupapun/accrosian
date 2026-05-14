@@ -46,7 +46,7 @@
 }
 
 html {
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -1463,12 +1463,7 @@ body {
         grid-template-columns: 1fr 1fr;
     }
 
-    .footer-inner {
-        grid-template-columns: 1fr 1fr;
-        gap: 32px;
-    }
 
-    .nav-links,
     .nav-cta .btn-ghost {
         display: none;
     }
