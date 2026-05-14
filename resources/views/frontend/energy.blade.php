@@ -185,27 +185,6 @@ body {
     background: var(--navy-4);
 }
 
-.hero-bg-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-
-    animation: zoomBg 20s infinite alternate ease-in-out;
-}
-
-@keyframes zoomBg {
-    0% {
-        transform: scale(1);
-    }
-
-    100% {
-        transform: scale(1.1);
-    }
-}
-
 
 .hero-inner {
     position: relative;
