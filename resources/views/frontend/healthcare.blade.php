@@ -24,10 +24,15 @@
     --white-10: rgba(255, 255, 255, 0.05);
     --glass: rgba(255, 255, 255, 0.06);
     --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-border-hover: rgba(249, 115, 22, .38);
+    --gradient-orange: linear-gradient(135deg, #e8750a, #f59332);
     --blue-accent: #38bdf8;
     --green-accent: #34d399;
     --radius: 20px;
     --radius-lg: 32px;
+    --ff-head: 'Sora', sans-serif;
+    --ff-body: 'DM Sans', sans-serif;
+    --ff-mono: 'JetBrains Mono', monospace;
 }
 
 *,
@@ -1450,6 +1455,7 @@ section {
 
 <!-- HERO -->
 <section class="hero">
+    <img src="{{ asset('assets/images/hero-health.jpg') }}" alt="Hero Background" class="hero-bg-img" />
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
 
