@@ -13,7 +13,10 @@
 :root {
     --navy: #050d1a;
     --navy-mid: #081425;
+    --navy-800: #0d1530;
+    --navy-700: #111d40;
     --navy-light: #0d2044;
+    --black: #000000;
     --orange: #f97316;
     --orange-light: #fb923c;
     --orange-glow: rgba(249, 115, 22, 0.18);
@@ -50,7 +53,7 @@ html {
 body {
     font-family: var(--ff-body);
     background: var(--white);
-    color: var(--navy);
+    color: var(--navy-mid);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
@@ -483,7 +486,7 @@ h4 {
 
 /* ─── SECTION COMMON ─── */
 section {
-    padding: 100px 60px;
+    padding: 60px 0px;
 }
 
 .section-tag {
@@ -492,7 +495,7 @@ section {
     gap: 8px;
     padding: 6px 14px;
     border-radius: 50px;
-    background: var(--glass);
+    background: var(--navy-800);
     border: 1px solid var(--orange-border);
     font-size: 0.75rem;
     font-weight: 600;
@@ -508,24 +511,25 @@ section {
     line-height: 1.2;
     letter-spacing: -0.02em;
     margin-bottom: 20px;
+    color: var(--navy-mid);
 }
 
 .section-h2 .grad {
-    background: linear-gradient(135deg, var(--orange-light), #fcd34d);
+    background: var(--gradient-orange);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .section-sub {
     font-size: 1rem;
-    color: var(--white-60);
+    color: var(--black);
     line-height: 1.75;
     max-width: 560px;
 }
 
 /* ─── CHALLENGES ─── */
 .challenges-section {
-    background: var(--navy-mid);
+    background: var(--white);
     position: relative;
     overflow: hidden;
 }
@@ -587,7 +591,7 @@ section {
 }
 
 .challenge-card {
-    background: var(--glass);
+    background: var(--navy-light);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius);
     padding: 24px 28px;
@@ -600,17 +604,16 @@ section {
 }
 
 .challenge-card:hover {
-    border-color: var(--orange-border);
-    background: rgba(249, 115, 22, 0.08);
-    transform: translateX(6px);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-800);
+    transform: translateY(-4px)
 }
 
 .challenge-num {
-    font-family: 'Sora', sans-serif;
+    font-family: var(--ff-mono);
     font-weight: 800;
     font-size: 1.5rem;
-    color: rgba(249, 115, 22, 0.2);
+    color: var(--gradient-orange);
     flex-shrink: 0;
     line-height: 1;
     min-width: 36px;
@@ -621,15 +624,16 @@ section {
 }
 
 .challenge-title {
-    font-family: 'Sora', sans-serif;
+    font-family: var(--ff-head);
     font-weight: 600;
     font-size: 1rem;
     margin-bottom: 6px;
+    color: var(--white);
 }
 
 .challenge-desc {
     font-size: 0.88rem;
-    color: var(--white-60);
+    color: var(--white);
     line-height: 1.6;
 }
 
