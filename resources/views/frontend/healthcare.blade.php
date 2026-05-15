@@ -1991,7 +1991,7 @@ section {
         <div class="security-header reveal">
             <div class="section-tag">Security & Compliance</div>
             <h2 class="section-hexp">Enterprise-Grade <span class="grad">Security</span> at Every Layer</h2>
-            <p class="section-sub">Healthcare data is among the most sensitive in the world. Our security-first
+            <p class="section-subexp">Healthcare data is among the most sensitive in the world. Our security-first
                 engineering philosophy ensures compliance, protection, and peace of mind at every level of the stack.
             </p>
         </div>
