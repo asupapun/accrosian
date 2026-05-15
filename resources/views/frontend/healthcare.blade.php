@@ -556,6 +556,7 @@ section {
     line-height: 1.75;
     max-width: 560px;
     text-align: center;
+    margin: 0 auto;
 }
 
 /* ─── CHALLENGES ─── */
