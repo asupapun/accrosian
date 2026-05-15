@@ -1535,66 +1535,110 @@ section {
 
 /* ─── CTA ─── */
 .cta-section {
-    padding: 120px 60px;
+    padding: 90px 0;
     position: relative;
     overflow: hidden;
-    background: var(--navy-light);
+    text-align: center;
+
+    background:
+        linear-gradient(135deg,
+            rgba(5, 10, 35, 0.88),
+            rgba(10, 14, 46, 0.82),
+            rgba(232, 117, 10, 0.18)),
+        url('/assets/images/cta-img.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    border-top: 1px solid rgba(232, 117, 10, 0.15);
+    border-bottom: 1px solid rgba(232, 117, 10, 0.15);
 }
 
+/* Premium dark overlay */
 .cta-section::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 30% 50%, rgba(249, 115, 22, 0.15), transparent 65%),
-        radial-gradient(ellipse 60% 80% at 80% 30%, rgba(56, 189, 248, 0.06), transparent 60%);
+
+    background:
+        radial-gradient(circle at center,
+            rgba(232, 117, 10, 0.18),
+            transparent 60%);
+
+    z-index: 1;
 }
 
-.cta-section .hero-grid {
+/* Glass blur layer */
+.cta-section::after {
+    content: "";
     position: absolute;
     inset: 0;
-    opacity: 0.5;
+
+    backdrop-filter: blur(3px);
+    background: rgba(0, 0, 0, 0.18);
+
+    z-index: 1;
 }
 
 .cta-inner {
     position: relative;
     z-index: 2;
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
+    max-width: 1000px;
+    margin: auto;
 }
 
-.cta-inner h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
+.cta-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 5vw, 5rem);
     font-weight: 800;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    margin-bottom: 20px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+
+    color: #fff;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
-.cta-inner p {
-    font-size: 1.05rem;
-    color: var(--white-60);
-    line-height: 1.75;
-    margin-bottom: 44px;
+.cta-title .text-gradient {
+    background: linear-gradient(135deg,
+            #ff8c1a,
+            #ffb347);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.cta-btns {
+.cta-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.82);
+
+    max-width: 760px;
+    margin: 0 auto 42px;
+}
+
+.cta-actions {
     display: flex;
-    gap: 16px;
     justify-content: center;
+    gap: 18px;
     flex-wrap: wrap;
 }
 
-.cta-glow {
-    position: absolute;
-    bottom: -100px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 500px;
-    height: 200px;
-    background: radial-gradient(ellipse, rgba(249, 115, 22, 0.3), transparent 70%);
-    filter: blur(30px);
-    pointer-events: none;
+/* Optional premium buttons */
+.cta-actions .btn-primary {
+    box-shadow: 0 10px 30px rgba(232, 117, 10, 0.35);
+}
+
+.cta-actions .btn-outline {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    color: #fff;
+}
+
+.cta-actions .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.12);
 }
 
 /* ─── SCROLL REVEAL ─── */
@@ -2381,7 +2425,6 @@ section {
                 <div class="vertical-overlay"></div>
 
                 <div class="vertical-content">
-                    <span class="vertical-icon"></span>
                     <h3>Clinics & Practices</h3>
                     <p>
                         Smart appointment systems, practice management,
@@ -2398,7 +2441,6 @@ section {
                 <div class="vertical-overlay"></div>
 
                 <div class="vertical-content">
-                    <span class="vertical-icon"></span>
                     <h3>Diagnostic Labs</h3>
                     <p>
                         LIMS integration, AI-powered diagnostics,
@@ -2415,7 +2457,6 @@ section {
                 <div class="vertical-overlay"></div>
 
                 <div class="vertical-content">
-                    <span class="vertical-icon"></span>
                     <h3>Telemedicine Platforms</h3>
                     <p>
                         Secure telehealth systems with video consultation,
@@ -2432,7 +2473,6 @@ section {
                 <div class="vertical-overlay"></div>
 
                 <div class="vertical-content">
-                    <span class="vertical-icon"></span>
                     <h3>Pharmaceuticals</h3>
                     <p>
                         Clinical trial platforms, pharmacovigilance,
@@ -2448,7 +2488,6 @@ section {
                 <div class="vertical-overlay"></div>
 
                 <div class="vertical-content">
-                    <span class="vertical-icon"></span>
                     <h3>Insurance & Claims</h3>
                     <p>
                         Intelligent claims automation, fraud detection,
@@ -2566,19 +2605,16 @@ section {
     </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section" id="contact">
-    <div class="hero-grid"></div>
-    <div class="cta-glow"></div>
-    <div class="cta-inner reveal">
-        <div class="section-tag" style="margin:0 auto 24px">Start Your Journey</div>
-        <h2>Let's Build the <span class="grad">Future of Digital</span> Healthcare</h2>
-        <p>Whether you're modernizing a legacy hospital system, launching a telemedicine platform, or building the
-            next generation of health-tech — Accrosian has the expertise, technology, and commitment to make it
-            happen.</p>
-        <div class="cta-btns">
-            <a href="#" class="btn-primary">Schedule a Consultation →</a>
-            <a href="#" class="btn-outline">View Case Studies</a>
+{{-- CTA --}}
+<section class="cta-section">
+    <div class="container cta-inner">
+        <span class="section-tag" style="margin-bottom:24px">Ready to Start?</span>
+        <h2 class="cta-title">Let's Build Something <span class="text-gradient">Extraordinary</span> Together</h2>
+        <p class="cta-subtitle">Tell us your vision and we'll turn it into reality. Free consultation, no commitment.
+        </p>
+        <div class="cta-actions">
+            <a href="{{ route('contact') }}" class="btn btn-primary btn-arrow">Start Your Project</a>
+            <a href="{{ route('portfolio') }}" class="btn btn-outline">See Our Work</a>
         </div>
     </div>
 </section>
