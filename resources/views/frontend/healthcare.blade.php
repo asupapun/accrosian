@@ -16,6 +16,7 @@
     --navy-800: #0d1530;
     --navy-700: #111d40;
     --navy-light: #0d2044;
+    --navy-600: #1a2060;
     --black: #000000;
     --orange: #f97316;
     --orange-light: #fb923c;
@@ -53,7 +54,7 @@ html {
 body {
     font-family: var(--ff-body);
     background: var(--white);
-    color: var(--navy-mid);
+    color: var(--navy-600);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
