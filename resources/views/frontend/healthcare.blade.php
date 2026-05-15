@@ -966,9 +966,7 @@ section {
 }
 
 /* ─── TECH STACK ─── */
-.tech-section {
-    background: var(--navy);
-}
+.tech-section {}
 
 .tech-header {
     text-align: center;
@@ -988,7 +986,7 @@ section {
 .tech-group-title {
     font-size: 0.75rem;
     font-weight: 600;
-    color: var(--white-60);
+    color: var(--white);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-bottom: 16px;
@@ -1003,11 +1001,11 @@ section {
 .tech-pill {
     padding: 10px 22px;
     border-radius: 50px;
-    background: var(--glass);
-    border: 1px solid var(--glass-border);
+    background: var(--navy-mid);
+    border: 1px solid var(--gradient-orange);
     font-size: 0.88rem;
     font-weight: 500;
-    color: var(--white-60);
+    color: var(--white);
     backdrop-filter: blur(10px);
     transition: all .25s;
     cursor: default;
@@ -1017,10 +1015,10 @@ section {
 }
 
 .tech-pill:hover {
-    border-color: var(--orange-border);
+    border-color: var(--navy);
     color: #fff;
     background: var(--orange-glow);
-    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.2);
+    box-shadow: 0 4px 20px rgba(33, 21, 78, 0.2);
     transform: translateY(-2px);
 }
 
@@ -1028,7 +1026,7 @@ section {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: var(--orange);
+    background: var(--gradient-orange);
     opacity: 0.5;
     transition: opacity .25s;
 }
