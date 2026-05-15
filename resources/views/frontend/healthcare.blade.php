@@ -12,11 +12,11 @@
 <style>
 :root {
     --navy: #050d1a;
-    --navy-mid: #081425;
+    --navy-mid: #1a2060;
     --navy-800: #0d1530;
     --navy-700: #111d40;
     --navy-light: #0d2044;
-    --navy-600: #1a2060;
+    /* --navy-600: #1a2060; */
     --black: #000000;
     --orange: #f97316;
     --orange-light: #fb923c;
