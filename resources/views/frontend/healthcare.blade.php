@@ -913,6 +913,7 @@ section {
 .metric-label {
     font-size: 0.88rem;
     font-weight: 500;
+    color: var(--white);
 }
 
 .metric-pct {
