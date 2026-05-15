@@ -563,7 +563,6 @@ section {
 
 .challenges-sticky {
     position: sticky;
-    top: 120px;
 }
 
 .challenges-img-wrap {
