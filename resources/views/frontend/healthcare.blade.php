@@ -734,7 +734,7 @@ section {
     transform: translateX(-50%);
     width: 1px;
     height: 100%;
-    background: var(--gradient-orange);
+    background: var(--glass);
 }
 
 .solutions-header {
