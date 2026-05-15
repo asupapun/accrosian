@@ -581,7 +581,7 @@ section {
             rgba(5, 13, 26, 0.05) 0%,
             rgba(5, 13, 26, 0.85) 70%,
             rgba(5, 13, 26, 0.98) 100%),
-        url(url('/assets/images/health-img.jpg')) center center/cover no-repeat;
+        url('/assets/images/health-img.jpg') center center/cover no-repeat;
 
     box-shadow:
         0 30px 80px rgba(0, 0, 0, 0.35),
