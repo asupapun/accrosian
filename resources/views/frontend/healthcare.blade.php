@@ -1015,9 +1015,9 @@ section {
 }
 
 .tech-pill:hover {
-    border-color: var(--navy);
+    border-color: var(--navy-700);
     color: #fff;
-    background: var(--orange-glow);
+    background: var(--navy);
     box-shadow: 0 4px 20px rgba(33, 21, 78, 0.2);
     transform: translateY(-2px);
 }
