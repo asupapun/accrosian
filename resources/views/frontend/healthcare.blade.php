@@ -985,7 +985,7 @@ section {
 
 .tech-group-title {
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 800;
     color: var(--black);
     letter-spacing: 0.1em;
     text-transform: uppercase;
