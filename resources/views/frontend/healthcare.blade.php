@@ -556,16 +556,41 @@ section {
 
 .challenges-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 70px;
+    align-items: stretch;
 }
 
 .challenges-sticky {
     position: sticky;
+    top: 120px;
+
+    height: 100vh;
+
+    border-radius: 32px;
+    overflow: hidden;
+
+    padding: 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background:
+        linear-gradient(180deg,
+            rgba(5, 13, 26, 0.05) 0%,
+            rgba(5, 13, 26, 0.85) 70%,
+            rgba(5, 13, 26, 0.98) 100%),
+        url(url('/assets/images/health-img.jpg')) center center/cover no-repeat;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.06);
+
+    isolation: isolate;
 }
 
-.challenges-img-wrap {
+/* .challenges-img-wrap {
     margin-top: 40px;
     position: relative;
     width: 100%;
@@ -589,6 +614,44 @@ section {
     background: linear-gradient(135deg, var(--orange), var(--blue-accent));
     z-index: -1;
     opacity: 0.5;
+} */
+
+
+/* premium glass overlay */
+
+.challenges-sticky::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at top right,
+            rgba(249, 115, 22, 0.25),
+            transparent 35%);
+
+    z-index: -1;
+}
+
+/* content */
+
+.challenges-sticky .section-tag {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+}
+
+.challenges-sticky .section-h2 {
+    color: #fff;
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    line-height: 1.08;
+    max-width: 520px;
+}
+
+.challenges-sticky .section-sub {
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 520px;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    margin-top: 18px;
 }
 
 .challenge-cards {
@@ -642,6 +705,20 @@ section {
     font-size: 0.88rem;
     color: var(--white);
     line-height: 1.6;
+}
+
+@media(max-width:1100px) {
+
+    .challenges-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .challenges-sticky {
+        height: 650px;
+        position: relative;
+        top: 0;
+    }
+
 }
 
 /* ─── SOLUTIONS ─── */
@@ -1595,10 +1672,10 @@ section {
                     infrastructure, fragmented data, regulatory demands, and rising patient expectations converge into a
                     perfect storm of operational complexity.</p>
 
-                <div class="challenges-img-wrap" style="margin-top:40px">
+                <!-- <div class="challenges-img-wrap" style="margin-top:40px">
                     <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80"
                         alt="Healthcare Technology" />
-                </div>
+                </div> -->
             </div>
 
             <div class="challenge-cards stagger">
