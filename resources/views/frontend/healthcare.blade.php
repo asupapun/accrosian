@@ -157,6 +157,7 @@ h4 {
     line-height: 1.15;
     letter-spacing: -0.02em;
     margin-bottom: 24px;
+    color: var(--white);
 }
 
 .hero h1 .grad {
