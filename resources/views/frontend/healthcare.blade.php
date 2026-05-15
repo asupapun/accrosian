@@ -818,7 +818,7 @@ section {
 
 /* ─── PATIENT EXPERIENCE ─── */
 .patient-section {
-    background: var(--navy-mid);
+    background: var(--navy-light);
 }
 
 .patient-grid {
@@ -869,7 +869,7 @@ section {
 }
 
 .stat-pill {
-    background: rgba(13, 20, 37, 0.95);
+    background: var(--navy);
     border: 1px solid var(--glass-border);
     border-radius: 50px;
     padding: 12px 20px;
@@ -889,7 +889,7 @@ section {
 
 .stat-pill-lbl {
     font-size: 0.72rem;
-    color: var(--white-60);
+    color: var(--white);
 }
 
 .metrics-list {
@@ -1323,8 +1323,7 @@ section {
     content: '';
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(ellipse 80% 60% at 30% 50%, rgba(249, 115, 22, 0.15), transparent 65%),
+    background: radial-gradient(ellipse 80% 60% at 30% 50%, rgba(249, 115, 22, 0.15), transparent 65%),
         radial-gradient(ellipse 60% 80% at 80% 30%, rgba(56, 189, 248, 0.06), transparent 60%);
 }
 
