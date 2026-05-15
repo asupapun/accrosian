@@ -2444,8 +2444,7 @@ section {
 
             <!-- ITEM -->
             <div class="vertical-card reveal">
-                <img src="https://images.unsplash.com/photo-1516549655669-df9d2f6b4a35?q=80&w=1200&auto=format&fit=crop"
-                    alt="Insurance">
+                <img src="{{ asset('assets/images/health-img2.jpg') }}" alt="Insurance">
 
                 <div class="vertical-overlay"></div>
 
