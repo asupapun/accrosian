@@ -522,6 +522,15 @@ section {
     color: var(--navy-mid);
 }
 
+.section-hexp {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
 .section-h2 .grad {
     background: var(--gradient-orange);
     -webkit-background-clip: text;
@@ -531,6 +540,13 @@ section {
 .section-sub {
     font-size: 1rem;
     color: var(--black);
+    line-height: 1.75;
+    max-width: 560px;
+}
+
+.section-subexp {
+    font-size: 1rem;
+    color: var(--white);
     line-height: 1.75;
     max-width: 560px;
 }
@@ -1850,8 +1866,9 @@ section {
 
             <div class="reveal-right">
                 <div class="section-tag">Patient Experience</div>
-                <h2 class="section-h2">Care That Puts <span class="grad">Patients First</span></h2>
-                <p class="section-sub" style="margin-bottom:36px">Digital transformation should start and end with the
+                <h2 class="section-hexp">Care That Puts <span class="grad">Patients First</span></h2>
+                <p class="section-subexp" style="margin-bottom:36px">Digital transformation should start and end with
+                    the
                     patient. Our platforms are designed to eliminate friction, reduce wait times, and deliver continuity
                     of care across every channel.</p>
 
