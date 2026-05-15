@@ -1143,6 +1143,7 @@ section {
     font-weight: 700;
     font-size: 0.95rem;
     margin-bottom: 8px;
+    color: var(--white);
 }
 
 .sec-desc {
