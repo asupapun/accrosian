@@ -1154,7 +1154,7 @@ section {
 
 /* ─── USE CASES ─── */
 .usecases-section {
-    background: var(--navy);
+    background: var(--white);
 }
 
 .usecases-header {
