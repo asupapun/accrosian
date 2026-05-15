@@ -537,6 +537,12 @@ section {
     -webkit-text-fill-color: transparent;
 }
 
+.section-hexp .grad {
+    background: var(--gradient-orange);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .section-sub {
     font-size: 1rem;
     color: var(--black);
