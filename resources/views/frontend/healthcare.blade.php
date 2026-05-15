@@ -1153,7 +1153,7 @@ section {
 }
 
 /* ─── USE CASES ─── */
-.usecases-section {
+/* .usecases-section {
     background: var(--white);
 }
 
@@ -1220,7 +1220,7 @@ section {
     font-size: 0.82rem;
     color: var(--white);
     line-height: 1.6;
-}
+} */
 
 /* ===== PREMIUM HEALTHCARE VERTICALS ===== */
 
@@ -2364,7 +2364,7 @@ section {
                 <div class="vertical-overlay"></div>
 
                 <div class="vertical-content">
-                    <span class="vertical-icon">🏥</span>
+                    <span class="vertical-icon"></span>
                     <h3>Hospitals & Health Systems</h3>
                     <p>
                         Enterprise HMS platforms, EHR integration,
@@ -2382,7 +2382,7 @@ section {
                 <div class="vertical-overlay"></div>
 
                 <div class="vertical-content">
-                    <span class="vertical-icon">🩺</span>
+                    <span class="vertical-icon"></span>
                     <h3>Clinics & Practices</h3>
                     <p>
                         Smart appointment systems, practice management,
@@ -2399,7 +2399,7 @@ section {
                 <div class="vertical-overlay"></div>
 
                 <div class="vertical-content">
-                    <span class="vertical-icon">🔬</span>
+                    <span class="vertical-icon"></span>
                     <h3>Diagnostic Labs</h3>
                     <p>
                         LIMS integration, AI-powered diagnostics,
@@ -2416,7 +2416,7 @@ section {
                 <div class="vertical-overlay"></div>
 
                 <div class="vertical-content">
-                    <span class="vertical-icon">💻</span>
+                    <span class="vertical-icon"></span>
                     <h3>Telemedicine Platforms</h3>
                     <p>
                         Secure telehealth systems with video consultation,
@@ -2433,7 +2433,7 @@ section {
                 <div class="vertical-overlay"></div>
 
                 <div class="vertical-content">
-                    <span class="vertical-icon">💊</span>
+                    <span class="vertical-icon"></span>
                     <h3>Pharmaceuticals</h3>
                     <p>
                         Clinical trial platforms, pharmacovigilance,
@@ -2450,7 +2450,7 @@ section {
                 <div class="vertical-overlay"></div>
 
                 <div class="vertical-content">
-                    <span class="vertical-icon">📄</span>
+                    <span class="vertical-icon"></span>
                     <h3>Insurance & Claims</h3>
                     <p>
                         Intelligent claims automation, fraud detection,
