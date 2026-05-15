@@ -1169,8 +1169,8 @@ section {
 }
 
 .uc-card {
-    background: var(--glass);
-    border: 1px solid var(--glass-border);
+    background: var(--navy-700);
+    border: 1px solid var(--gradient-orange);
     border-radius: var(--radius);
     padding: 30px 24px;
     backdrop-filter: blur(10px);
@@ -1193,9 +1193,9 @@ section {
 }
 
 .uc-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--orange-border);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-2);
+    transform: translateY(-4px)
 }
 
 .uc-card:hover::after {
@@ -1209,15 +1209,16 @@ section {
 }
 
 .uc-title {
-    font-family: 'Sora', sans-serif;
+    font-family: var(--ff-head);
     font-weight: 700;
     font-size: 0.95rem;
     margin-bottom: 8px;
+    color: var(--white);
 }
 
 .uc-desc {
     font-size: 0.82rem;
-    color: var(--white-60);
+    color: var(--white);
     line-height: 1.6;
 }
 
