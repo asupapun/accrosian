@@ -555,6 +555,7 @@ section {
     color: var(--white);
     line-height: 1.75;
     max-width: 560px;
+    text-align: center;
 }
 
 /* ─── CHALLENGES ─── */
