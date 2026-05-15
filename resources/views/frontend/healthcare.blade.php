@@ -723,7 +723,6 @@ section {
 
 /* ─── SOLUTIONS ─── */
 .solutions-section {
-    background: var(--navy);
     position: relative;
 }
 
@@ -735,7 +734,7 @@ section {
     transform: translateX(-50%);
     width: 1px;
     height: 100%;
-    background: linear-gradient(180deg, transparent, rgba(249, 115, 22, 0.15), transparent);
+    background: var(--gradient-orange);
 }
 
 .solutions-header {
@@ -754,8 +753,8 @@ section {
 }
 
 .sol-card {
-    background: var(--glass);
-    border: 1px solid var(--glass-border);
+    background: var(--navy-700);
+    border: 1px solid var(--navy);
     border-radius: var(--radius);
     padding: 32px 28px;
     backdrop-filter: blur(10px);
@@ -769,15 +768,15 @@ section {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 50% 0%, rgba(249, 115, 22, 0.12), transparent 60%);
+    background: var(--orange-glow);
     opacity: 0;
     transition: opacity .35s;
 }
 
 .sol-card:hover {
-    border-color: var(--orange-border);
-    transform: translateY(-6px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(249, 115, 22, 0.1);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-mid);
+    transform: translateY(-4px);
 }
 
 .sol-card:hover::before {
@@ -804,15 +803,16 @@ section {
 }
 
 .sol-title {
-    font-family: 'Sora', sans-serif;
+    font-family: var(--ff-head);
     font-weight: 700;
     font-size: 1rem;
+    color: var(--white);
     margin-bottom: 10px;
 }
 
 .sol-desc {
     font-size: 0.85rem;
-    color: var(--white-60);
+    color: var(--white);
     line-height: 1.65;
 }
 
