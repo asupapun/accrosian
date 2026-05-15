@@ -2364,7 +2364,6 @@ section {
                 <div class="vertical-overlay"></div>
 
                 <div class="vertical-content">
-                    <span class="vertical-icon"></span>
                     <h3>Hospitals & Health Systems</h3>
                     <p>
                         Enterprise HMS platforms, EHR integration,
