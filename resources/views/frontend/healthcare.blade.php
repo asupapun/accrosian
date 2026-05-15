@@ -1222,6 +1222,204 @@ section {
     line-height: 1.6;
 }
 
+/* ===== PREMIUM HEALTHCARE VERTICALS ===== */
+
+.healthcare-verticals {
+    position: relative;
+    padding: 120px 0;
+    background: #f7f8fc;
+    overflow: hidden;
+}
+
+.healthcare-verticals::before {
+    content: '';
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    top: -250px;
+    right: -250px;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+            rgba(249, 115, 22, 0.12),
+            transparent 70%);
+}
+
+.verticals-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.verticals-header .section-sub {
+    margin: auto;
+    max-width: 700px;
+}
+
+.verticals-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+}
+
+/* CARD */
+
+.vertical-card {
+    position: relative;
+    min-height: 320px;
+    border-radius: 28px;
+    overflow: hidden;
+    background: #081425;
+    cursor: pointer;
+    isolation: isolate;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.12);
+    transition: all .45s ease;
+}
+
+.vertical-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .8s ease;
+}
+
+.vertical-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to top,
+            rgba(5, 13, 26, 0.95) 5%,
+            rgba(5, 13, 26, 0.55) 45%,
+            rgba(5, 13, 26, 0.15) 100%);
+}
+
+.vertical-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg,
+            rgba(249, 115, 22, 0.18),
+            transparent 45%);
+    opacity: 0;
+    transition: opacity .4s ease;
+}
+
+.vertical-card:hover::after {
+    opacity: 1;
+}
+
+.vertical-card:hover {
+    transform: translateY(-10px);
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.2);
+}
+
+.vertical-card:hover img {
+    transform: scale(1.08);
+}
+
+.vertical-content {
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+    z-index: 2;
+}
+
+.vertical-icon {
+    width: 62px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    margin-bottom: 18px;
+    font-size: 1.5rem;
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.vertical-content h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.vertical-content p {
+    font-size: .95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* GRID SIZES */
+
+.vertical-card.large {
+    grid-column: span 6;
+    min-height: 420px;
+}
+
+.vertical-card.wide {
+    grid-column: span 6;
+}
+
+.vertical-card:not(.large):not(.wide) {
+    grid-column: span 3;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px) {
+
+    .verticals-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .vertical-card,
+    .vertical-card.large,
+    .vertical-card.wide {
+        grid-column: auto;
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .healthcare-verticals {
+        padding: 80px 0;
+    }
+
+    .verticals-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vertical-card {
+        min-height: 300px;
+    }
+
+    .vertical-card.large {
+        min-height: 360px;
+    }
+
+    .vertical-content {
+        left: 22px;
+        right: 22px;
+        bottom: 22px;
+    }
+
+    .vertical-content h3 {
+        font-size: 1.2rem;
+    }
+
+}
+
 /* ─── WHY ACCROSIAN ─── */
 .why-section {
     background: var(--navy-mid);
@@ -2075,7 +2273,7 @@ section {
     </div>
 </section>
 
-<!-- USE CASES -->
+<!-- USE CASES
 <section class="usecases-section" id="usecases">
     <div class="container">
         <div class="usecases-header reveal">
@@ -2134,6 +2332,133 @@ section {
                 <div class="uc-desc">Intelligent claims processing, fraud detection, and payer-provider integration for
                     health insurance operations.</div>
             </div>
+        </div>
+    </div>
+</section>-->
+
+<!-- PREMIUM HEALTHCARE VERTICALS -->
+<section class="healthcare-verticals" id="usecases">
+    <div class="container">
+
+        <div class="verticals-header reveal">
+            <div class="section-tag">Who We Serve</div>
+
+            <h2 class="section-h2">
+                Built for Every
+                <span class="grad">Healthcare Vertical</span>
+            </h2>
+
+            <p class="section-sub">
+                From enterprise hospitals to next-generation telemedicine startups,
+                we engineer scalable digital healthcare ecosystems.
+            </p>
+        </div>
+
+        <div class="verticals-grid">
+
+            <!-- ITEM -->
+            <div class="vertical-card large reveal">
+                <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1400&auto=format&fit=crop"
+                    alt="Hospitals">
+
+                <div class="vertical-overlay"></div>
+
+                <div class="vertical-content">
+                    <span class="vertical-icon">🏥</span>
+                    <h3>Hospitals & Health Systems</h3>
+                    <p>
+                        Enterprise HMS platforms, EHR integration,
+                        ICU workflows, and digital transformation for
+                        modern healthcare institutions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="vertical-card reveal">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1200&auto=format&fit=crop"
+                    alt="Clinics">
+
+                <div class="vertical-overlay"></div>
+
+                <div class="vertical-content">
+                    <span class="vertical-icon">🩺</span>
+                    <h3>Clinics & Practices</h3>
+                    <p>
+                        Smart appointment systems, practice management,
+                        and patient engagement solutions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="vertical-card reveal">
+                <img src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?q=80&w=1200&auto=format&fit=crop"
+                    alt="Labs">
+
+                <div class="vertical-overlay"></div>
+
+                <div class="vertical-content">
+                    <span class="vertical-icon">🔬</span>
+                    <h3>Diagnostic Labs</h3>
+                    <p>
+                        LIMS integration, AI-powered diagnostics,
+                        and automated reporting systems.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="vertical-card wide reveal">
+                <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1400&auto=format&fit=crop"
+                    alt="Telemedicine">
+
+                <div class="vertical-overlay"></div>
+
+                <div class="vertical-content">
+                    <span class="vertical-icon">💻</span>
+                    <h3>Telemedicine Platforms</h3>
+                    <p>
+                        Secure telehealth systems with video consultation,
+                        e-prescriptions, and remote patient care.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="vertical-card reveal">
+                <img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?q=80&w=1200&auto=format&fit=crop"
+                    alt="Pharma">
+
+                <div class="vertical-overlay"></div>
+
+                <div class="vertical-content">
+                    <span class="vertical-icon">💊</span>
+                    <h3>Pharmaceuticals</h3>
+                    <p>
+                        Clinical trial platforms, pharmacovigilance,
+                        and healthcare data ecosystems.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="vertical-card reveal">
+                <img src="https://images.unsplash.com/photo-1516549655669-df9d2f6b4a35?q=80&w=1200&auto=format&fit=crop"
+                    alt="Insurance">
+
+                <div class="vertical-overlay"></div>
+
+                <div class="vertical-content">
+                    <span class="vertical-icon">📄</span>
+                    <h3>Insurance & Claims</h3>
+                    <p>
+                        Intelligent claims automation, fraud detection,
+                        and payer-provider integration systems.
+                    </p>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
