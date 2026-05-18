@@ -862,6 +862,11 @@ body {
    (replaces the existing .service-card block)
    ============================================= */
 
+
+  .services-section{
+    padding: 50px 0;
+  }
+
 /* ---- Grid (unchanged from original) ---- */
 .services-grid {
   display: grid;
@@ -1091,7 +1096,7 @@ body {
 
 /* ---- Section Wrapper ---- */
 .process-section {
-  padding: 60px 0;
+  padding: 50px 0;
   position: relative;
   overflow: hidden;
 }
@@ -1345,7 +1350,7 @@ body {
   }
 }
 
-/* ============ STATS SECTION ============ */
+/* ============ STATS SECTION ============
 .stats-section {
   padding: 80px 0;
   background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
@@ -1389,10 +1394,10 @@ body {
   color: var(--text-light);
   font-size: 0.95rem;
   margin-top: 8px;
-}
+} */
 
 /* ============ CLIENTS SECTION ============ */
-.clients-section {
+/* .clients-section {
   padding: 80px 0;
 }
 .clients-label {
@@ -1461,11 +1466,11 @@ body {
 .client-logo:hover {
   opacity: 1;
   filter: none;
-}
+} */
 
 /* ============ TESTIMONIALS ============ */
 .testimonials-section {
-  padding: 60px 0;
+  padding: 50px 0;
 }
 
 .testimonials-slider {
@@ -1579,7 +1584,7 @@ body {
 /* ============ CTA SECTION ============ */
 
 .cta-section {
-  padding: 90px 0;
+  padding: 50px 0;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -3202,8 +3207,7 @@ select option {
 
 /* FAQ SECTION */
 .faq-section {
-    padding: 60px 0;
-    background: var(--background);
+    padding: 50px 0;
 }
 
 .faq-header {
