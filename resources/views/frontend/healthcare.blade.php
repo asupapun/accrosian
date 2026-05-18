@@ -1452,16 +1452,16 @@ section {
 }
 
 .why-feature:hover {
-    background: var(--glass);
-    border-color: var(--glass-border);
-    transform: translateX(8px);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-800);
+    transform: translateY(-4px)
 }
 
 .why-feat-icon {
     width: 44px;
     height: 44px;
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(249, 115, 22, 0.05));
+    background: var(--gradient-orange);
     border: 1px solid var(--orange-border);
     display: flex;
     align-items: center;
@@ -1471,20 +1471,21 @@ section {
 }
 
 .why-feat-title {
-    font-family: 'Sora', sans-serif;
+    font-family: var(--ff-head);
     font-weight: 700;
     font-size: 0.95rem;
     margin-bottom: 6px;
+    color: var(--white);
 }
 
 .why-feat-desc {
     font-size: 0.85rem;
-    color: var(--white-60);
+    color: var(--white);
     line-height: 1.6;
 }
 
 .why-visual {
-    background: var(--glass);
+    background: var(--navy-800);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-lg);
     padding: 40px;
@@ -1496,7 +1497,7 @@ section {
     font-family: 'Sora', sans-serif;
     font-weight: 800;
     font-size: 4rem;
-    background: linear-gradient(135deg, var(--orange-light), #fcd34d);
+    background: var(--gradient-orange);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 1;
@@ -1504,7 +1505,7 @@ section {
 
 .why-big-lbl {
     font-size: 0.85rem;
-    color: var(--white-60);
+    color: var(--white);
     margin-top: 8px;
     margin-bottom: 32px;
 }
@@ -1526,13 +1527,13 @@ section {
     font-family: 'Sora', sans-serif;
     font-weight: 800;
     font-size: 1.6rem;
-    color: var(--orange-light);
+    color: var(--gradient-orange);
     margin-bottom: 4px;
 }
 
 .why-stat-lbl {
     font-size: 0.75rem;
-    color: var(--white-60);
+    color: var(--white);
 }
 
 /* ─── CTA ─── */
@@ -2508,8 +2509,9 @@ section {
         <div class="why-grid">
             <div class="reveal-left">
                 <div class="section-tag">Why Accrosian</div>
-                <h2 class="section-h2">Your Strategic <span class="grad">Digital Health</span> Partner</h2>
-                <p class="section-sub" style="margin-bottom:40px">We don't just build software. We embed ourselves into
+                <h2 class="section-hexp">Your Strategic <span class="grad">Digital Health</span> Partner</h2>
+                <p class="section-subexp" style="margin-bottom:40px">We don't just build software. We embed ourselves
+                    into
                     your healthcare operations to deliver solutions that are clinically informed, technically excellent,
                     and built for the long term.</p>
 
