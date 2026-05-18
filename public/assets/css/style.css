@@ -1397,8 +1397,8 @@ body {
 } */
 
 /* ============ CLIENTS SECTION ============ */
-/* .clients-section {
-  padding: 80px 0;
+.clients-section {
+  padding: 50px 0;
 }
 .clients-label {
   text-align: center;
@@ -1466,7 +1466,7 @@ body {
 .client-logo:hover {
   opacity: 1;
   filter: none;
-} */
+}
 
 /* ============ TESTIMONIALS ============ */
 .testimonials-section {
