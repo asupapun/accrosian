@@ -97,7 +97,7 @@ body {
 
 .section-tag {
   display: inline-flex;
-  /* align-items: center; */
+  align-items: center;
   gap: 8px;
   background:var(--navy-light);
   border: 1px solid rgba(232, 117, 10, 0.3);
