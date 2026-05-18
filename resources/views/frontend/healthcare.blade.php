@@ -1527,7 +1527,7 @@ section {
     font-family: 'Sora', sans-serif;
     font-weight: 800;
     font-size: 1.6rem;
-    color: var(--gradient-orange);
+    background: var(--gradient-orange);
     margin-bottom: 4px;
 }
 
