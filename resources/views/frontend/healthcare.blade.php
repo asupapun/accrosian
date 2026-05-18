@@ -1517,7 +1517,7 @@ section {
 }
 
 .why-stat {
-    background: var(--white-10);
+    background: var(--white);
     border-radius: 14px;
     padding: 20px;
     border: 1px solid var(--glass-border);
@@ -2584,23 +2584,23 @@ section {
                 <div
                     style="margin-top:28px; padding:20px; background:var(--white-10); border-radius:14px; border:1px solid var(--glass-border); text-align:left">
                     <div
-                        style="font-size:0.75rem;color:var(--white-60);margin-bottom:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.07em">
+                        style="font-size:0.75rem;color:var(--white);margin-bottom:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.07em">
                         Certifications & Recognition</div>
                     <div style="display:flex;flex-wrap:wrap;gap:8px">
                         <span
-                            style="padding:5px 14px;border-radius:50px;background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">HIPAA
+                            style="padding:5px 14px;border-radius:50px;color:var(--white);background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">HIPAA
                             Certified</span>
                         <span
-                            style="padding:5px 14px;border-radius:50px;background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">ISO
+                            style="padding:5px 14px;border-radius:50px;color:var(--white);background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">ISO
                             27001</span>
                         <span
-                            style="padding:5px 14px;border-radius:50px;background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">AWS
+                            style="padding:5px 14px;border-radius:50px;color:var(--white);background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">AWS
                             Partner</span>
                         <span
-                            style="padding:5px 14px;border-radius:50px;background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">Azure
+                            style="padding:5px 14px;border-radius:50px;color:var(--white);background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">Azure
                             Partner</span>
                         <span
-                            style="padding:5px 14px;border-radius:50px;background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">GDPR
+                            style="padding:5px 14px;border-radius:50px;color:var(--white);background:var(--glass);border:1px solid var(--glass-border);font-size:0.75rem;font-weight:500">GDPR
                             Ready</span>
                     </div>
                 </div>
