@@ -25,7 +25,7 @@ delivering innovative web, mobile, cloud, and AI solutions for modern businesses
                 <span class="text-gradient">Modern Businesses</span>
             </h1>
             <p class="hero-description">
-                We craft cutting-edge digital experiences — from powerful web platforms to intelligent AI solutions —
+                We craft cutting edge digital experiences from powerful web platforms to intelligent AI solutions
                 helping businesses accelerate growth and outpace competition.
             </p>
             <div class="hero-actions">
@@ -217,9 +217,9 @@ delivering innovative web, mobile, cloud, and AI solutions for modern businesses
         <div style="text-align:center;margin-bottom:60px" class="reveal">
             <span class="section-tag">Why Accrosian</span>
             <h2 class="section-title">Built for <span class="text-gradient">Performance & Scale</span></h2>
-            <p class="process-header-sub">“We deliver high-performance, secure, and scalable digital solutions with
-                speed, reliability, and dedicated support to drive your business growth, leveraging cutting-edge
-                technologies, industry best practices, and a results-driven approach to ensure seamless execution,
+            <p class="process-header-sub">We deliver high performance, secure, and scalable digital solutions with
+                speed, reliability, and dedicated support to drive your business growth, leveraging cutting edge
+                technologies, industry best practices, and a results driven approach to ensure seamless execution,
                 enhanced efficiency, and long-term success</p>
         </div>
         <div class="features-grid">
@@ -258,7 +258,7 @@ delivering innovative web, mobile, cloud, and AI solutions for modern businesses
             <h2 class="section-title">How We Build <span class="text-gradient">Extraordinary</span> Software Together
             </h2>
             <p class="process-header-sub">Our streamlined development workflow ensures high-quality, scalable, and
-                reliable digital products — delivered on time, every time.</p>
+                reliable digital products delivered on time, every time.</p>
         </div>
         <div class="process-grid">
             <div class="process-card reveal reveal-delay-1">
@@ -315,7 +315,7 @@ delivering innovative web, mobile, cloud, and AI solutions for modern businesses
         <p class="process-header-sub">Explore our featured projects showcasing innovative solutions, real-world impact,
             and successful results delivered across diverse industries and client needs, highlighting our expertise in
             solving complex challenges, driving digital transformation, enhancing user experiences, and delivering
-            scalable, high-performance solutions tailored to business goals</p>
+            scalable, high-performance solutions tailored to business goals.</p>
     </div>
 
     <div class="showcase-track-wrap">
@@ -379,7 +379,7 @@ delivering innovative web, mobile, cloud, and AI solutions for modern businesses
             <p class="process-header-sub">Hear from our satisfied clients who trust us for delivering reliable,
                 innovative solutions and exceptional results that exceed expectations, building long-term partnerships
                 through consistent performance, transparent communication, industry expertise, and a commitment to
-                delivering measurable business value and growth</p>
+                delivering measurable business value and growth.</p>
         </div>
         <div class="testimonials-slider">
             <div class="testimonials-track">

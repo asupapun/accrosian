@@ -46,8 +46,8 @@
                 <div class="service-card-overlay"></div>
                 <div class="service-card-content">
                     <h3 class="service-title">{{ $service->icon }} {{ $service->title }}</h3>
-                    <p style="color:rgba(255,255,255,0.8);font-size:0.9rem;margin-bottom:16px;line-height:1.6">
-                        {{ Str::limit($service->short_description, 100) }}</p>
+                    <!-- <p style="color:rgba(255,255,255,0.8);font-size:0.9rem;margin-bottom:16px;line-height:1.6">
+                        {{ Str::limit($service->short_description, 100) }}</p> -->
                     <a href="{{ route('services.show', $service->slug) }}" class="service-link">
                         Learn More
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
