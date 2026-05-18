@@ -1517,7 +1517,7 @@ section {
 }
 
 .why-stat {
-    background: var(--white);
+    background: var(--glass);
     border-radius: 14px;
     padding: 20px;
     border: 1px solid var(--glass-border);
@@ -1527,7 +1527,7 @@ section {
     font-family: 'Sora', sans-serif;
     font-weight: 800;
     font-size: 1.6rem;
-    color: var(--gradient-orange);
+    color: var(--white);
     margin-bottom: 4px;
 }
 
