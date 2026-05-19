@@ -29,7 +29,7 @@
             <div>
                 <div style="display:inline-flex;align-items:center;gap:8px;
                             background:rgba(255,107,53,0.1);border:1px solid rgba(255,107,53,0.35);
-                            color:var(--orange);padding:7px 18px;border-radius:30px;
+                            color:var(--white);padding:7px 18px;border-radius:30px;
                             font-size:0.82rem;font-weight:700;margin-bottom:28px;letter-spacing:0.5px">
                     <span style="width:7px;height:7px;border-radius:50%;background:var(--white);
                                  display:inline-block;animation:airsPulse 2s infinite"></span>
