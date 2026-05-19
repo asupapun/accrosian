@@ -6,53 +6,53 @@
 @section('content')
 
 <style>
-/* ═══════════ ULTRA PREMIUM AIRS ═══════════ */
+/* ═══════════ LUXURY AIRS SECTION ═══════════ */
 
-.ultra-airs-section {
+.lux-airs-section {
     position: relative;
     padding: 140px 0;
-    background: #ffffff;
+    background: #f8fafc;
     overflow: hidden;
 }
 
-/* BACKGROUND */
+/* BACKGROUND BLURS */
 
-.ultra-bg {
+.lux-blur {
     position: absolute;
-    inset: 0;
-
-    background:
-        radial-gradient(circle at 10% 20%,
-            rgba(249, 115, 22, 0.08),
-            transparent 30%),
-
-        radial-gradient(circle at 90% 80%,
-            rgba(30, 64, 175, 0.06),
-            transparent 35%);
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: .25;
+    pointer-events: none;
 }
 
-.ultra-noise {
-    position: absolute;
-    inset: 0;
-    opacity: .025;
-    pointer-events: none;
+.lux-blur-1 {
+    width: 400px;
+    height: 400px;
+    background: #f97316;
+    top: -120px;
+    left: -120px;
+}
 
-    background-image:
-        url("https://grainy-gradients.vercel.app/noise.svg");
+.lux-blur-2 {
+    width: 350px;
+    height: 350px;
+    background: #4338ca;
+    bottom: -120px;
+    right: -100px;
 }
 
 /* HEADING */
 
-.ultra-heading {
+.lux-heading {
     text-align: center;
-    max-width: 820px;
-    margin: 0 auto 120px;
+    max-width: 800px;
+    margin: 0 auto 90px;
     position: relative;
     z-index: 2;
 }
 
-.ultra-heading h2 {
-    font-size: clamp(3rem, 6vw, 6rem);
+.lux-heading h2 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
     line-height: 1;
     font-weight: 900;
     color: #081225;
@@ -62,91 +62,40 @@
     font-family: var(--font-display);
 }
 
-.ultra-heading h2 span {
+.lux-heading h2 span {
     background: linear-gradient(135deg, #f97316, #ffb86c);
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.ultra-heading p {
+.lux-heading p {
     font-size: 1.05rem;
     line-height: 2;
     color: #5b6170;
 }
 
-/* WRAP */
+/* GRID */
 
-.ultra-airs-wrap {
+.lux-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 26px;
+}
+
+/* CARD */
+
+.lux-card {
     position: relative;
-    max-width: 1050px;
-    margin: auto;
-}
+    grid-column: span 4;
 
-/* CENTER LINE */
+    min-height: 320px;
 
-.ultra-airs-wrap::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
+    padding: 40px;
 
-    width: 1px;
+    border-radius: 34px;
 
-    background:
-        linear-gradient(to bottom,
-            transparent,
-            rgba(8, 18, 37, 0.15),
-            transparent);
-
-    transform: translateX(-50%);
-}
-
-/* ITEM */
-
-.ultra-item {
-    position: relative;
-    width: 50%;
-    padding: 0 60px;
-    margin-bottom: 120px;
-}
-
-.ultra-item:nth-child(even) {
-    margin-left: auto;
-}
-
-/* CONNECTOR */
-
-.ultra-line {
-    position: absolute;
-    top: 60px;
-    width: 60px;
-    height: 1px;
-
-    background:
-        linear-gradient(to right,
-            rgba(8, 18, 37, 0.15),
-            rgba(249, 115, 22, 0.5));
-}
-
-.ultra-item:nth-child(odd) .ultra-line {
-    right: 0;
-}
-
-.ultra-item:nth-child(even) .ultra-line {
-    left: 0;
-    transform: scaleX(-1);
-}
-
-/* CONTENT */
-
-.ultra-content {
-    position: relative;
-
-    padding: 50px;
-
-    border-radius: 36px;
+    overflow: hidden;
 
     background:
         rgba(255, 255, 255, 0.7);
@@ -157,7 +106,7 @@
         1px solid rgba(8, 18, 37, 0.06);
 
     box-shadow:
-        0 20px 60px rgba(15, 23, 42, 0.05);
+        0 20px 60px rgba(15, 23, 42, 0.06);
 
     transition:
         transform .5s ease,
@@ -165,7 +114,9 @@
         border-color .5s ease;
 }
 
-.ultra-content::before {
+/* PREMIUM GRADIENT BORDER */
+
+.lux-card::before {
     content: '';
 
     position: absolute;
@@ -180,7 +131,7 @@
             rgba(249, 115, 22, 0.35),
             transparent 30%,
             transparent 70%,
-            rgba(249, 115, 22, 0.2));
+            rgba(79, 70, 229, 0.18));
 
     -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
@@ -191,137 +142,169 @@
     pointer-events: none;
 }
 
-.ultra-content:hover {
-    transform: translateY(-14px);
+/* HOVER */
+
+.lux-card:hover {
+    transform:
+        translateY(-16px) rotateX(3deg);
 
     box-shadow:
-        0 40px 90px rgba(15, 23, 42, 0.1);
-
-    border-color:
-        rgba(249, 115, 22, 0.15);
+        0 40px 90px rgba(15, 23, 42, 0.12);
 }
 
-/* BIG NUMBER */
+/* SPECIAL SIZES */
 
-.ultra-count {
+.lux-card.large {
+    grid-column: span 7;
+    min-height: 380px;
+}
+
+.lux-card.wide {
+    grid-column: span 5;
+}
+
+/* NUMBER */
+
+.lux-no {
     position: absolute;
-    top: -30px;
-    right: 35px;
+    top: 22px;
+    right: 28px;
 
-    font-size: 6rem;
+    font-size: 5rem;
     line-height: 1;
-
     font-weight: 900;
 
     color:
-        rgba(8, 18, 37, 0.035);
-
-    letter-spacing: -0.05em;
+        rgba(8, 18, 37, 0.04);
 
     font-family: var(--font-display);
+
+    letter-spacing: -0.05em;
 }
 
-/* TEXT */
+/* CONTENT */
 
-.ultra-content h3 {
-    font-size: 1.7rem;
-    line-height: 1.3;
+.lux-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    height: 100%;
+}
+
+.lux-content small {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    font-size: .72rem;
     font-weight: 800;
 
-    color: #081225;
-
-    margin-bottom: 18px;
-
-    letter-spacing: -0.03em;
-}
-
-.ultra-content p {
-    color: #5b6170;
-
-    font-size: .98rem;
-    line-height: 2;
-
-    margin-bottom: 28px;
-}
-
-/* TAGS */
-
-.ultra-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.ultra-tags span {
-    padding: 12px 18px;
-
-    border-radius: 100px;
-
-    background:
-        rgba(249, 115, 22, 0.08);
-
-    border:
-        1px solid rgba(249, 115, 22, 0.12);
+    letter-spacing: .18em;
 
     color: #f97316;
-
-    font-size: .78rem;
-    font-weight: 700;
-
-    letter-spacing: .04em;
 
     text-transform: uppercase;
 }
 
+.lux-content h3 {
+    font-size: 2rem;
+    line-height: 1.15;
+    font-weight: 800;
+
+    color: #081225;
+
+    margin-bottom: 20px;
+
+    letter-spacing: -0.04em;
+}
+
+.lux-content p {
+    font-size: .96rem;
+    line-height: 2;
+    color: #5b6170;
+
+    max-width: 95%;
+}
+
+/* FLOATING LIGHT */
+
+.lux-card::after {
+    content: '';
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(255, 255, 255, 0.65),
+            transparent 70%);
+
+    top: -100px;
+    right: -100px;
+
+    opacity: 0;
+
+    transition: opacity .5s ease;
+}
+
+.lux-card:hover::after {
+    opacity: 1;
+}
+
 /* RESPONSIVE */
 
-@media(max-width:992px) {
+@media(max-width:1100px) {
 
-    .ultra-airs-wrap::before {
-        left: 20px;
+    .lux-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .ultra-item {
-        width: 100%;
-        margin-left: 0 !important;
-        padding-left: 70px;
-        padding-right: 0;
-    }
-
-    .ultra-line {
-        left: 20px !important;
-        width: 40px;
-        transform: none !important;
+    .lux-card,
+    .lux-card.large,
+    .lux-card.wide {
+        grid-column: auto;
     }
 
 }
 
 @media(max-width:768px) {
 
-    .ultra-airs-section {
+    .lux-airs-section {
         padding: 90px 0;
     }
 
-    .ultra-heading {
-        margin-bottom: 80px;
+    .lux-grid {
+        grid-template-columns: 1fr;
     }
 
-    .ultra-heading h2 {
+    .lux-heading {
+        margin-bottom: 70px;
+    }
+
+    .lux-heading h2 {
         font-size: 3rem;
     }
 
-    .ultra-content {
-        padding: 35px;
-        border-radius: 28px;
+    .lux-card {
+        min-height: 280px;
+        padding: 32px;
+        border-radius: 26px;
     }
 
-    .ultra-content h3 {
-        font-size: 1.3rem;
+    .lux-content h3 {
+        font-size: 1.5rem;
     }
 
-    .ultra-count {
+    .lux-no {
         font-size: 4rem;
-        top: -18px;
     }
 
 }
@@ -644,109 +627,104 @@
 </section>
 
 {{-- ═══════════ WHY AIRS ═══════════ --}}
-<section class="ultra-airs-section">
+<section class="lux-airs-section">
 
-    <div class="ultra-bg"></div>
-    <div class="ultra-noise"></div>
+    <div class="lux-blur lux-blur-1"></div>
+    <div class="lux-blur lux-blur-2"></div>
 
     <div class="container">
 
-        <div class="ultra-heading reveal">
+        <div class="lux-heading reveal">
             <span class="section-tag">Our Solution</span>
 
             <h2>
-                Why <span>AIRS</span>
+                The <span>AIRS</span> Experience
             </h2>
 
             <p>
-                Built to transform learners into industry-ready professionals
-                through structured execution, real ownership, and modern engineering workflows.
+                More than learning — a complete transformation into
+                a modern industry-ready developer.
             </p>
         </div>
 
-        <div class="ultra-airs-wrap">
+        <div class="lux-grid">
 
-            {{-- ITEM --}}
-            <div class="ultra-item reveal-left">
-                <div class="ultra-line"></div>
+            {{-- CARD --}}
+            <div class="lux-card large reveal">
+                <div class="lux-no">01</div>
 
-                <div class="ultra-content">
-                    <div class="ultra-count">01</div>
+                <div class="lux-content">
+                    <small>REALITY DRIVEN</small>
 
-                    <h3>Industry Reality Exposure</h3>
+                    <h3>
+                        Industry Reality
+                        <br>
+                        Exposure
+                    </h3>
 
                     <p>
-                        Understand what software roles actually demand beyond tutorials,
-                        certifications, and surface-level preparation.
+                        Learn how software companies actually work —
+                        workflows, expectations, delivery culture,
+                        communication, and professional execution.
                     </p>
-
-                    <div class="ultra-tags">
-                        <span>Industry Expectations</span>
-                        <span>Hiring Standards</span>
-                    </div>
                 </div>
             </div>
 
-            {{-- ITEM --}}
-            <div class="ultra-item reveal-right">
-                <div class="ultra-line"></div>
+            {{-- CARD --}}
+            <div class="lux-card reveal">
+                <div class="lux-no">02</div>
 
-                <div class="ultra-content">
-                    <div class="ultra-count">02</div>
+                <div class="lux-content">
+                    <small>ROADMAP SYSTEM</small>
 
-                    <h3>Structured Preparation</h3>
+                    <h3>
+                        Structured
+                        Preparation
+                    </h3>
 
                     <p>
-                        Follow a premium roadmap engineered to eliminate confusion
-                        and accelerate technical growth with clarity.
+                        No confusion. No random tutorials.
+                        Just a clear, premium growth path.
                     </p>
-
-                    <div class="ultra-tags">
-                        <span>Roadmap Driven</span>
-                        <span>Interview Ready</span>
-                    </div>
                 </div>
             </div>
 
-            {{-- ITEM --}}
-            <div class="ultra-item reveal-left">
-                <div class="ultra-line"></div>
+            {{-- CARD --}}
+            <div class="lux-card reveal">
+                <div class="lux-no">03</div>
 
-                <div class="ultra-content">
-                    <div class="ultra-count">03</div>
+                <div class="lux-content">
+                    <small>MODERN WORKFLOW</small>
 
-                    <h3>Effective Use of AI</h3>
+                    <h3>
+                        Effective
+                        Use of AI
+                    </h3>
 
                     <p>
-                        Learn how modern developers leverage AI intelligently
-                        to improve productivity without dependency.
+                        Use AI like top developers —
+                        to multiply productivity without dependency.
                     </p>
-
-                    <div class="ultra-tags">
-                        <span>Workflow Automation</span>
-                        <span>AI Integration</span>
-                    </div>
                 </div>
             </div>
 
-            {{-- ITEM --}}
-            <div class="ultra-item reveal-right">
-                <div class="ultra-line"></div>
+            {{-- CARD --}}
+            <div class="lux-card wide reveal">
+                <div class="lux-no">04</div>
 
-                <div class="ultra-content">
-                    <div class="ultra-count">04</div>
+                <div class="lux-content">
+                    <small>PROFESSIONAL THINKING</small>
 
-                    <h3>Real Project Ownership</h3>
+                    <h3>
+                        Real Project
+                        Ownership
+                    </h3>
 
                     <p>
-                        Build confidence by presenting, explaining,
-                        and owning projects like a professional engineer.
+                        Build projects, explain architecture,
+                        present confidently, and own your work
+                        like a real software engineer.
                     </p>
-
-                    <div class="ultra-tags">
-                        <span>Professional Thinking</span>
-                        <span>Real Ownership</span>
-                    </div>
                 </div>
             </div>
 
