@@ -39,7 +39,7 @@
                 <h1 style="font-family:var(--font-display);font-size:clamp(2.2rem,4.5vw,3.4rem);
                            font-weight:900;line-height:1.1;color:var(--white);margin-bottom:22px">
                     India's First Structured Bridge Between
-                    <span style="background:linear-gradient(135deg,var(--orange),#ff9a5c);
+                    <span style="background:var(--gradient-orange);
                                  -webkit-background-clip:text;-webkit-text-fill-color:transparent">
                         Campus and Corporate
                     </span>
