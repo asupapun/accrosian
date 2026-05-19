@@ -197,11 +197,11 @@
                 ['How to use AI effectively','🤖'],
                 ] as [$item,$emoji])
                 <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;
-                            padding:16px 20px;background:rgba(255,255,255,0.03);
+                            padding:16px 20px;background:var(--navy-light);color:var(--white);
                             border:1px solid rgba(255,255,255,0.06);border-radius:12px;
                             transition:all 0.3s"
-                    onmouseover="this.style.borderColor='rgba(255,107,53,0.3)';this.style.background='rgba(255,107,53,0.05)'"
-                    onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.background='rgba(255,255,255,0.03)'">
+                    onmouseover="this.style.borderColor='rgba(255,107,53,0.3)';this.style.background='var(--navy)'"
+                    onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.background='var(--navy-light)'">
                     <div style="width:36px;height:36px;border-radius:10px;
                                 background:var(--navy-light);color:var(--white);
                                 display:flex;align-items:center;justify-content:center;
