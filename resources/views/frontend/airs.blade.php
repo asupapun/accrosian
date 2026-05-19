@@ -197,7 +197,7 @@
                 ['How to use AI effectively','🤖'],
                 ] as [$item,$emoji])
                 <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;
-                            padding:16px 20px;background:var(--navy-light);color:var(--white);
+                            padding:16px 20px;background:var(--navy-light);
                             border:1px solid rgba(255,255,255,0.06);border-radius:12px;
                             transition:all 0.3s"
                     onmouseover="this.style.borderColor='rgba(255,107,53,0.3)';this.style.background='var(--navy)'"
@@ -206,7 +206,7 @@
                                 background:var(--navy-light);color:var(--white);
                                 display:flex;align-items:center;justify-content:center;
                                 font-size:0.75rem;font-weight:800;color:#22c55e;flex-shrink:0">✓</div>
-                    <span style="color:var(--black);font-size:0.95rem">{{ $item }}</span>
+                    <span style="color:var(--white);font-size:0.95rem">{{ $item }}</span>
                     <span style="margin-left:auto;font-size:1.2rem">{{ $emoji }}</span>
                 </div>
                 @endforeach
