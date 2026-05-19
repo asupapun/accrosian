@@ -1989,10 +1989,12 @@ body {
   font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 800;
+  color: var(--white);
 }
 .about-badge-text {
   font-size: 0.8rem;
   opacity: 0.85;
+  color: var(--white);
 }
 
 .values-grid {
