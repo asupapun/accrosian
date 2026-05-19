@@ -3593,7 +3593,7 @@ select option {
     display: inline-block;
     background: rgba(232, 117, 10, 0.2);
     border: 1px solid rgba(232, 117, 10, 0.4);
-    color: var(--orange-light);
+    color: var(--white);
     font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
