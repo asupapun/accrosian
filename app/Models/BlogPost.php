@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class BlogPost extends Model
 {
@@ -33,9 +34,9 @@ class BlogPost extends Model
 
     public function getImageUrlAttribute(): string
     {
-        if ($this->featured_image && file_exists(public_path('uploads/' . $this->featured_image))) {
-            return asset('uploads/' . $this->featured_image);
-        }
+        if ($this->featured_image && Storage::disk('public')->exists($this->featured_image)) {
+        return Storage::url($this->featured_image);
+    }
         return asset('assets/images/about-us.jpg');
     }
 
