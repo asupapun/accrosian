@@ -6,78 +6,98 @@
 @section('content')
 
 <style>
-/* ===== PREMIUM AIRS SECTION ===== */
+/* ═══════════ ULTRA PREMIUM AIRS ═══════════ */
 
-.airs-premium-section {
+.ultra-airs-section {
     position: relative;
-    padding: 120px 0;
+    padding: 140px 0;
     background: #ffffff;
     overflow: hidden;
 }
 
-.airs-bg-glow {
+/* BACKGROUND */
+
+.ultra-bg {
     position: absolute;
-    top: -250px;
-    right: -200px;
-    width: 700px;
-    height: 700px;
-    border-radius: 50%;
+    inset: 0;
 
     background:
-        radial-gradient(circle,
-            rgba(249, 115, 22, 0.14),
-            transparent 70%);
+        radial-gradient(circle at 10% 20%,
+            rgba(249, 115, 22, 0.08),
+            transparent 30%),
 
+        radial-gradient(circle at 90% 80%,
+            rgba(30, 64, 175, 0.06),
+            transparent 35%);
+}
+
+.ultra-noise {
+    position: absolute;
+    inset: 0;
+    opacity: .025;
     pointer-events: none;
+
+    background-image:
+        url("https://grainy-gradients.vercel.app/noise.svg");
 }
 
-.airs-heading {
+/* HEADING */
+
+.ultra-heading {
     text-align: center;
-    max-width: 750px;
-    margin: 0 auto 100px;
+    max-width: 820px;
+    margin: 0 auto 120px;
+    position: relative;
+    z-index: 2;
 }
 
-.airs-heading h2 {
-    font-size: clamp(2.4rem, 5vw, 4.5rem);
+.ultra-heading h2 {
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 1;
     font-weight: 900;
-    color: var(--navy);
-    margin: 18px 0;
-    line-height: 1.1;
+    color: #081225;
+    margin: 22px 0;
+
+    letter-spacing: -0.05em;
     font-family: var(--font-display);
 }
 
-.airs-heading h2 span {
-    background: linear-gradient(135deg, #f97316, #ffb067);
+.ultra-heading h2 span {
+    background: linear-gradient(135deg, #f97316, #ffb86c);
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.airs-heading p {
+.ultra-heading p {
     font-size: 1.05rem;
+    line-height: 2;
     color: #5b6170;
-    line-height: 1.8;
 }
 
-/* TIMELINE */
+/* WRAP */
 
-.airs-timeline {
+.ultra-airs-wrap {
     position: relative;
-    max-width: 1100px;
+    max-width: 1050px;
     margin: auto;
 }
 
-.airs-timeline::before {
+/* CENTER LINE */
+
+.ultra-airs-wrap::before {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
     left: 50%;
-    width: 2px;
+
+    width: 1px;
 
     background:
         linear-gradient(to bottom,
             transparent,
-            rgba(12, 20, 42, 0.18),
+            rgba(8, 18, 37, 0.15),
             transparent);
 
     transform: translateX(-50%);
@@ -85,160 +105,223 @@
 
 /* ITEM */
 
-.airs-item {
+.ultra-item {
     position: relative;
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 90px;
-    width: 100%;
+    width: 50%;
+    padding: 0 60px;
+    margin-bottom: 120px;
 }
 
-.airs-item.reverse {
-    justify-content: flex-end;
+.ultra-item:nth-child(even) {
+    margin-left: auto;
 }
 
-.airs-line-dot {
+/* CONNECTOR */
+
+.ultra-line {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: #f97316;
-    transform: translate(-50%, -50%);
-    box-shadow:
-        0 0 0 8px rgba(249, 115, 22, 0.12),
-        0 0 35px rgba(249, 115, 22, 0.45);
-    z-index: 5;
-}
-
-.airs-content {
-    width: 46%;
-    position: relative;
-}
-
-.airs-text {
-    position: relative;
-    padding: 42px;
+    top: 60px;
+    width: 60px;
+    height: 1px;
 
     background:
-        rgba(255, 255, 255, 0.72);
-
-    backdrop-filter: blur(18px);
-
-    border-radius: 32px;
-
-    border: 1px solid rgba(12, 20, 42, 0.08);
-
-    box-shadow:
-        0 15px 50px rgba(15, 23, 42, 0.06);
-
-    transition: all .45s ease;
+        linear-gradient(to right,
+            rgba(8, 18, 37, 0.15),
+            rgba(249, 115, 22, 0.5));
 }
 
-.airs-text:hover {
-    transform: translateY(-10px);
-    box-shadow:
-        0 30px 70px rgba(15, 23, 42, 0.12);
+.ultra-item:nth-child(odd) .ultra-line {
+    right: 0;
 }
 
-.airs-number {
+.ultra-item:nth-child(even) .ultra-line {
+    left: 0;
+    transform: scaleX(-1);
+}
+
+/* CONTENT */
+
+.ultra-content {
+    position: relative;
+
+    padding: 50px;
+
+    border-radius: 36px;
+
+    background:
+        rgba(255, 255, 255, 0.7);
+
+    backdrop-filter: blur(20px);
+
+    border:
+        1px solid rgba(8, 18, 37, 0.06);
+
+    box-shadow:
+        0 20px 60px rgba(15, 23, 42, 0.05);
+
+    transition:
+        transform .5s ease,
+        box-shadow .5s ease,
+        border-color .5s ease;
+}
+
+.ultra-content::before {
+    content: '';
+
     position: absolute;
-    top: -28px;
-    right: 20px;
+    inset: 0;
 
-    font-size: 4.5rem;
+    border-radius: inherit;
+
+    padding: 1px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(249, 115, 22, 0.35),
+            transparent 30%,
+            transparent 70%,
+            rgba(249, 115, 22, 0.2));
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+
+    pointer-events: none;
+}
+
+.ultra-content:hover {
+    transform: translateY(-14px);
+
+    box-shadow:
+        0 40px 90px rgba(15, 23, 42, 0.1);
+
+    border-color:
+        rgba(249, 115, 22, 0.15);
+}
+
+/* BIG NUMBER */
+
+.ultra-count {
+    position: absolute;
+    top: -30px;
+    right: 35px;
+
+    font-size: 6rem;
+    line-height: 1;
+
     font-weight: 900;
-    color: rgba(15, 23, 42, 0.04);
+
+    color:
+        rgba(8, 18, 37, 0.035);
+
+    letter-spacing: -0.05em;
 
     font-family: var(--font-display);
 }
 
-.airs-icon {
-    font-size: 2rem;
-    display: inline-block;
-    margin-bottom: 20px;
-}
+/* TEXT */
 
-.airs-text h3 {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--navy);
-    margin-bottom: 16px;
+.ultra-content h3 {
+    font-size: 1.7rem;
     line-height: 1.3;
+    font-weight: 800;
+
+    color: #081225;
+
+    margin-bottom: 18px;
+
+    letter-spacing: -0.03em;
 }
 
-.airs-text p {
+.ultra-content p {
     color: #5b6170;
-    line-height: 1.9;
-    font-size: .96rem;
-    margin-bottom: 24px;
+
+    font-size: .98rem;
+    line-height: 2;
+
+    margin-bottom: 28px;
 }
 
-.airs-points {
+/* TAGS */
+
+.ultra-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
 }
 
-.airs-points span {
-    padding: 10px 16px;
-    border-radius: 50px;
+.ultra-tags span {
+    padding: 12px 18px;
+
+    border-radius: 100px;
 
     background:
         rgba(249, 115, 22, 0.08);
 
+    border:
+        1px solid rgba(249, 115, 22, 0.12);
+
     color: #f97316;
 
-    font-size: .82rem;
+    font-size: .78rem;
     font-weight: 700;
+
+    letter-spacing: .04em;
+
+    text-transform: uppercase;
 }
 
 /* RESPONSIVE */
 
-@media(max-width:900px) {
+@media(max-width:992px) {
 
-    .airs-timeline::before {
+    .ultra-airs-wrap::before {
         left: 20px;
     }
 
-    .airs-item,
-    .airs-item.reverse {
-        justify-content: flex-start;
-        padding-left: 60px;
-    }
-
-    .airs-content {
+    .ultra-item {
         width: 100%;
+        margin-left: 0 !important;
+        padding-left: 70px;
+        padding-right: 0;
     }
 
-    .airs-line-dot {
-        left: 20px;
+    .ultra-line {
+        left: 20px !important;
+        width: 40px;
+        transform: none !important;
     }
 
 }
 
-@media(max-width:640px) {
+@media(max-width:768px) {
 
-    .airs-premium-section {
-        padding: 80px 0;
+    .ultra-airs-section {
+        padding: 90px 0;
     }
 
-    .airs-heading {
-        margin-bottom: 70px;
+    .ultra-heading {
+        margin-bottom: 80px;
     }
 
-    .airs-text {
-        padding: 30px;
-        border-radius: 24px;
-    }
-
-    .airs-heading h2 {
-        font-size: 2.5rem;
-    }
-
-    .airs-number {
+    .ultra-heading h2 {
         font-size: 3rem;
+    }
+
+    .ultra-content {
+        padding: 35px;
+        border-radius: 28px;
+    }
+
+    .ultra-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .ultra-count {
+        font-size: 4rem;
+        top: -18px;
     }
 
 }
@@ -561,122 +644,108 @@
 </section>
 
 {{-- ═══════════ WHY AIRS ═══════════ --}}
-<section class="airs-premium-section">
+<section class="ultra-airs-section">
 
-    <div class="airs-bg-glow"></div>
+    <div class="ultra-bg"></div>
+    <div class="ultra-noise"></div>
 
     <div class="container">
 
-        <div class="airs-heading reveal">
+        <div class="ultra-heading reveal">
             <span class="section-tag">Our Solution</span>
 
             <h2>
-                Why <span>AIRS?</span>
+                Why <span>AIRS</span>
             </h2>
 
             <p>
-                AIRS is designed to bridge the gap between learning and real-world software industry expectations.
+                Built to transform learners into industry-ready professionals
+                through structured execution, real ownership, and modern engineering workflows.
             </p>
         </div>
 
-        <div class="airs-timeline">
+        <div class="ultra-airs-wrap">
 
             {{-- ITEM --}}
-            <div class="airs-item reveal-left">
-                <div class="airs-line-dot"></div>
+            <div class="ultra-item reveal-left">
+                <div class="ultra-line"></div>
 
-                <div class="airs-content">
-                    <div class="airs-number">01</div>
+                <div class="ultra-content">
+                    <div class="ultra-count">01</div>
 
-                    <div class="airs-text">
-                        <span class="airs-icon">🏭</span>
+                    <h3>Industry Reality Exposure</h3>
 
-                        <h3>Industry Reality Exposure</h3>
+                    <p>
+                        Understand what software roles actually demand beyond tutorials,
+                        certifications, and surface-level preparation.
+                    </p>
 
-                        <p>
-                            Understand what each role truly demands —
-                            beyond tutorials and job descriptions.
-                        </p>
-
-                        <div class="airs-points">
-                            <span>Learn industry expectations</span>
-                            <span>Know hiring criteria</span>
-                        </div>
+                    <div class="ultra-tags">
+                        <span>Industry Expectations</span>
+                        <span>Hiring Standards</span>
                     </div>
                 </div>
             </div>
 
             {{-- ITEM --}}
-            <div class="airs-item reverse reveal-right">
-                <div class="airs-line-dot"></div>
+            <div class="ultra-item reveal-right">
+                <div class="ultra-line"></div>
 
-                <div class="airs-content">
-                    <div class="airs-number">02</div>
+                <div class="ultra-content">
+                    <div class="ultra-count">02</div>
 
-                    <div class="airs-text">
-                        <span class="airs-icon">📐</span>
+                    <h3>Structured Preparation</h3>
 
-                        <h3>Structured Preparation</h3>
+                    <p>
+                        Follow a premium roadmap engineered to eliminate confusion
+                        and accelerate technical growth with clarity.
+                    </p>
 
-                        <p>
-                            Follow a roadmap designed to remove confusion
-                            and accelerate your professional growth.
-                        </p>
-
-                        <div class="airs-points">
-                            <span>Step-by-step roadmap</span>
-                            <span>Interview focused learning</span>
-                        </div>
+                    <div class="ultra-tags">
+                        <span>Roadmap Driven</span>
+                        <span>Interview Ready</span>
                     </div>
                 </div>
             </div>
 
             {{-- ITEM --}}
-            <div class="airs-item reveal-left">
-                <div class="airs-line-dot"></div>
+            <div class="ultra-item reveal-left">
+                <div class="ultra-line"></div>
 
-                <div class="airs-content">
-                    <div class="airs-number">03</div>
+                <div class="ultra-content">
+                    <div class="ultra-count">03</div>
 
-                    <div class="airs-text">
-                        <span class="airs-icon">🤖</span>
+                    <h3>Effective Use of AI</h3>
 
-                        <h3>Effective Use of AI</h3>
+                    <p>
+                        Learn how modern developers leverage AI intelligently
+                        to improve productivity without dependency.
+                    </p>
 
-                        <p>
-                            Learn how to use AI intelligently as a productivity
-                            multiplier — not as dependency.
-                        </p>
-
-                        <div class="airs-points">
-                            <span>AI as skill multiplier</span>
-                            <span>Real workflow integration</span>
-                        </div>
+                    <div class="ultra-tags">
+                        <span>Workflow Automation</span>
+                        <span>AI Integration</span>
                     </div>
                 </div>
             </div>
 
             {{-- ITEM --}}
-            <div class="airs-item reverse reveal-right">
-                <div class="airs-line-dot"></div>
+            <div class="ultra-item reveal-right">
+                <div class="ultra-line"></div>
 
-                <div class="airs-content">
-                    <div class="airs-number">04</div>
+                <div class="ultra-content">
+                    <div class="ultra-count">04</div>
 
-                    <div class="airs-text">
-                        <span class="airs-icon">💡</span>
+                    <h3>Real Project Ownership</h3>
 
-                        <h3>Real Project Ownership</h3>
+                    <p>
+                        Build confidence by presenting, explaining,
+                        and owning projects like a professional engineer.
+                    </p>
 
-                        <p>
-                            Build, explain, present, and confidently own
-                            projects like a real software engineer.
-                        </p>
-
-                        <div class="airs-points">
-                            <span>Professional presentation</span>
-                            <span>Confidence building</span>
-                        </div>
+                    <div class="ultra-tags">
+                        <span>Professional Thinking</span>
+                        <span>Real Ownership</span>
                     </div>
                 </div>
             </div>
