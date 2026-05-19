@@ -52,7 +52,7 @@
 }
 
 .lux-heading h2 {
-    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
     line-height: 1;
     font-weight: 900;
     color: #081225;
