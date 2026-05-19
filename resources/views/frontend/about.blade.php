@@ -151,7 +151,7 @@ team behind our innovative software solutions.')
 </section>
 
 {{-- STATS --}}
-<section style=" padding:80px 0;background:var(--navy-light)">
+<section style=" padding:60px 30px;background:var(--navy-light)">
     <div class="container">
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:40px;text-align:center">
             @foreach([['250+','Projects Delivered'],['98%','Client Satisfaction'],['8+','Years Experience'],['50+','Team
