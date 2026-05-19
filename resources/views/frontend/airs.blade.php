@@ -98,18 +98,15 @@
     overflow: hidden;
 
     background:
-        rgba(255, 255, 255, 0.7);
+        var(--navy-mid);
 
     backdrop-filter: blur(20px);
 
-    border:
-        1px solid rgba(8, 18, 37, 0.06);
+    border: 1px solid rgba(8, 18, 37, 0.06);
 
-    box-shadow:
-        0 20px 60px rgba(15, 23, 42, 0.06);
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.06);
 
-    transition:
-        transform .5s ease,
+    transition: transform .5s ease,
         box-shadow .5s ease,
         border-color .5s ease;
 }
@@ -126,15 +123,13 @@
 
     padding: 1px;
 
-    background:
-        linear-gradient(135deg,
+    background: linear-gradient(135deg,
             rgba(249, 115, 22, 0.35),
             transparent 30%,
             transparent 70%,
             rgba(79, 70, 229, 0.18));
 
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
 
     -webkit-mask-composite: xor;
@@ -145,11 +140,9 @@
 /* HOVER */
 
 .lux-card:hover {
-    transform:
-        translateY(-16px) rotateX(3deg);
-
-    box-shadow:
-        0 40px 90px rgba(15, 23, 42, 0.12);
+    border-color: rgba(249, 115, 22, .38);
+    box-shadow: 0 8px 28px var(--navy);
+    transform: translateY(-4px)
 }
 
 /* SPECIAL SIZES */
@@ -174,8 +167,7 @@
     line-height: 1;
     font-weight: 900;
 
-    color:
-        rgba(8, 18, 37, 0.04);
+    color: rgba(8, 18, 37, 0.04);
 
     font-family: var(--font-display);
 
@@ -215,7 +207,7 @@
     line-height: 1.15;
     font-weight: 800;
 
-    color: #081225;
+    color: var(--white);
 
     margin-bottom: 20px;
 
@@ -225,7 +217,7 @@
 .lux-content p {
     font-size: .96rem;
     line-height: 2;
-    color: #5b6170;
+    color: var(--white);
 
     max-width: 95%;
 }
@@ -242,8 +234,7 @@
 
     border-radius: 50%;
 
-    background:
-        radial-gradient(circle,
+    background: radial-gradient(circle,
             rgba(255, 255, 255, 0.65),
             transparent 70%);
 
