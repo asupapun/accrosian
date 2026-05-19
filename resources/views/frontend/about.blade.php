@@ -151,15 +151,15 @@ team behind our innovative software solutions.')
 </section>
 
 {{-- STATS --}}
-<section style="padding:80px 0;background:var(--surface)">
+<section style=" padding:80px 0;background:var(--navy-800)">
     <div class="container">
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:40px;text-align:center">
             @foreach([['250+','Projects Delivered'],['98%','Client Satisfaction'],['8+','Years Experience'],['50+','Team
             Members']] as $stat)
             <div class="reveal">
-                <div style="font-family:var(--font-display);font-size:2.5rem;font-weight:800;color:var(--orange)">
+                <div style="font-family:var(--font-display);font-size:2.5rem;font-weight:800;color:var(--white)">
                     {{ $stat[0] }}</div>
-                <div style="color:var(--black);margin-top:8px">{{ $stat[1] }}</div>
+                <div style="color:var(--white);margin-top:8px">{{ $stat[1] }}</div>
             </div>
             @endforeach
         </div>
