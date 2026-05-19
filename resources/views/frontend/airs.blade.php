@@ -5,6 +5,244 @@
 
 @section('content')
 
+<style>
+/* ===== PREMIUM AIRS SECTION ===== */
+
+.airs-premium-section {
+    position: relative;
+    padding: 120px 0;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.airs-bg-glow {
+    position: absolute;
+    top: -250px;
+    right: -200px;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(249, 115, 22, 0.14),
+            transparent 70%);
+
+    pointer-events: none;
+}
+
+.airs-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 100px;
+}
+
+.airs-heading h2 {
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    font-weight: 900;
+    color: var(--navy);
+    margin: 18px 0;
+    line-height: 1.1;
+    font-family: var(--font-display);
+}
+
+.airs-heading h2 span {
+    background: linear-gradient(135deg, #f97316, #ffb067);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.airs-heading p {
+    font-size: 1.05rem;
+    color: #5b6170;
+    line-height: 1.8;
+}
+
+/* TIMELINE */
+
+.airs-timeline {
+    position: relative;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.airs-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+
+    background:
+        linear-gradient(to bottom,
+            transparent,
+            rgba(12, 20, 42, 0.18),
+            transparent);
+
+    transform: translateX(-50%);
+}
+
+/* ITEM */
+
+.airs-item {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 90px;
+    width: 100%;
+}
+
+.airs-item.reverse {
+    justify-content: flex-end;
+}
+
+.airs-line-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #f97316;
+    transform: translate(-50%, -50%);
+    box-shadow:
+        0 0 0 8px rgba(249, 115, 22, 0.12),
+        0 0 35px rgba(249, 115, 22, 0.45);
+    z-index: 5;
+}
+
+.airs-content {
+    width: 46%;
+    position: relative;
+}
+
+.airs-text {
+    position: relative;
+    padding: 42px;
+
+    background:
+        rgba(255, 255, 255, 0.72);
+
+    backdrop-filter: blur(18px);
+
+    border-radius: 32px;
+
+    border: 1px solid rgba(12, 20, 42, 0.08);
+
+    box-shadow:
+        0 15px 50px rgba(15, 23, 42, 0.06);
+
+    transition: all .45s ease;
+}
+
+.airs-text:hover {
+    transform: translateY(-10px);
+    box-shadow:
+        0 30px 70px rgba(15, 23, 42, 0.12);
+}
+
+.airs-number {
+    position: absolute;
+    top: -28px;
+    right: 20px;
+
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: rgba(15, 23, 42, 0.04);
+
+    font-family: var(--font-display);
+}
+
+.airs-icon {
+    font-size: 2rem;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.airs-text h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.airs-text p {
+    color: #5b6170;
+    line-height: 1.9;
+    font-size: .96rem;
+    margin-bottom: 24px;
+}
+
+.airs-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.airs-points span {
+    padding: 10px 16px;
+    border-radius: 50px;
+
+    background:
+        rgba(249, 115, 22, 0.08);
+
+    color: #f97316;
+
+    font-size: .82rem;
+    font-weight: 700;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px) {
+
+    .airs-timeline::before {
+        left: 20px;
+    }
+
+    .airs-item,
+    .airs-item.reverse {
+        justify-content: flex-start;
+        padding-left: 60px;
+    }
+
+    .airs-content {
+        width: 100%;
+    }
+
+    .airs-line-dot {
+        left: 20px;
+    }
+
+}
+
+@media(max-width:640px) {
+
+    .airs-premium-section {
+        padding: 80px 0;
+    }
+
+    .airs-heading {
+        margin-bottom: 70px;
+    }
+
+    .airs-text {
+        padding: 30px;
+        border-radius: 24px;
+    }
+
+    .airs-heading h2 {
+        font-size: 2.5rem;
+    }
+
+    .airs-number {
+        font-size: 3rem;
+    }
+
+}
+</style>
 {{-- ═══════════ HERO ═══════════ --}}
 <section
     style="position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;background:url('{{ asset('assets/images/student-reg-img.png') }}') center/cover no-repeat;">
@@ -323,54 +561,128 @@
 </section>
 
 {{-- ═══════════ WHY AIRS ═══════════ --}}
-<section style=" padding:60px 0;background:var(--white)">
+<section class="airs-premium-section">
+
+    <div class="airs-bg-glow"></div>
+
     <div class="container">
-        <div style="text-align:center;margin-bottom:60px" class="reveal">
+
+        <div class="airs-heading reveal">
             <span class="section-tag">Our Solution</span>
-            <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.4rem);
-                       font-weight:900;color:var(--navy);margin:16px 0">
-                Why <span class="text-gradient">AIRS?</span>
+
+            <h2>
+                Why <span>AIRS?</span>
             </h2>
+
+            <p>
+                AIRS is designed to bridge the gap between learning and real-world software industry expectations.
+            </p>
         </div>
 
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
-            @foreach([
-            ['🏭','Industry Reality Exposure','#ff6b35','Understand what each role really demands — not just job
-            descriptions, but day-to-day reality.','Learn industry expectations','Know hiring criteria'],
-            ['📐','Structured Preparation','#6c63ff','A clear path with zero confusion — know exactly what to study and
-            in what order.','Step-by-step roadmap','Interview & beyond'],
-            ['🤖','Effective Use of AI','#eb5757','Use AI to enhance your abilities, not as a crutch — applied to real
-            industry-level work.','AI as skill multiplier','Before & after projects'],
-            ['💡','Real Project Ownership','#56ccf2','Not just building — explaining, presenting, and owning your work
-            like a professional.','Own projects fully','Explain with confidence'],
-            ] as [$icon,$title,$color,$desc,$p1,$p2])
-            <div class="reveal" style="border-radius:20px;overflow:hidden;
-                        border:1px solid rgba(255,255,255,0.06);
-                        background:rgba(49, 36, 167, 0.42);
-                        transition:transform 0.3s" onmouseover="this.style.transform='translateY(-8px)'"
-                onmouseout="this.style.transform=''">
-                <div style="background:{{ $color }};padding:20px 22px;
-                            display:flex;align-items:center;gap:12px">
-                    <span style="font-size:1.5rem">{{ $icon }}</span>
-                    <span style="font-family:var(--font-display);font-weight:800;
-                                 color:#fff;font-size:0.92rem">{{ $title }}</span>
-                </div>
-                <div style="padding:22px">
-                    <p style="color:var(--black);font-size:0.85rem;
-                              line-height:1.7;margin-bottom:16px">{{ $desc }}</p>
-                    <div style="display:flex;flex-direction:column;gap:8px">
-                        @foreach([$p1,$p2] as $point)
-                        <div style="display:flex;align-items:center;gap:8px;
-                                    font-size:0.8rem;color:var(--black)">
-                            <span style="color:var(--black);font-weight:700">✓</span>
-                            {{ $point }}
+        <div class="airs-timeline">
+
+            {{-- ITEM --}}
+            <div class="airs-item reveal-left">
+                <div class="airs-line-dot"></div>
+
+                <div class="airs-content">
+                    <div class="airs-number">01</div>
+
+                    <div class="airs-text">
+                        <span class="airs-icon">🏭</span>
+
+                        <h3>Industry Reality Exposure</h3>
+
+                        <p>
+                            Understand what each role truly demands —
+                            beyond tutorials and job descriptions.
+                        </p>
+
+                        <div class="airs-points">
+                            <span>Learn industry expectations</span>
+                            <span>Know hiring criteria</span>
                         </div>
-                        @endforeach
                     </div>
                 </div>
             </div>
-            @endforeach
+
+            {{-- ITEM --}}
+            <div class="airs-item reverse reveal-right">
+                <div class="airs-line-dot"></div>
+
+                <div class="airs-content">
+                    <div class="airs-number">02</div>
+
+                    <div class="airs-text">
+                        <span class="airs-icon">📐</span>
+
+                        <h3>Structured Preparation</h3>
+
+                        <p>
+                            Follow a roadmap designed to remove confusion
+                            and accelerate your professional growth.
+                        </p>
+
+                        <div class="airs-points">
+                            <span>Step-by-step roadmap</span>
+                            <span>Interview focused learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- ITEM --}}
+            <div class="airs-item reveal-left">
+                <div class="airs-line-dot"></div>
+
+                <div class="airs-content">
+                    <div class="airs-number">03</div>
+
+                    <div class="airs-text">
+                        <span class="airs-icon">🤖</span>
+
+                        <h3>Effective Use of AI</h3>
+
+                        <p>
+                            Learn how to use AI intelligently as a productivity
+                            multiplier — not as dependency.
+                        </p>
+
+                        <div class="airs-points">
+                            <span>AI as skill multiplier</span>
+                            <span>Real workflow integration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- ITEM --}}
+            <div class="airs-item reverse reveal-right">
+                <div class="airs-line-dot"></div>
+
+                <div class="airs-content">
+                    <div class="airs-number">04</div>
+
+                    <div class="airs-text">
+                        <span class="airs-icon">💡</span>
+
+                        <h3>Real Project Ownership</h3>
+
+                        <p>
+                            Build, explain, present, and confidently own
+                            projects like a real software engineer.
+                        </p>
+
+                        <div class="airs-points">
+                            <span>Professional presentation</span>
+                            <span>Confidence building</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
     </div>
 </section>
 
