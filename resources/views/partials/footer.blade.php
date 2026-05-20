@@ -72,7 +72,7 @@
 
             <div>
                 <h4 class="footer-col-title">Company</h4>
-                <ul class="footer-links">
+                <ul class="footer-services-list">
                     <li><a href="{{ route('about') }}">About Us</a></li>
                     <li><a href="{{ route('portfolio') }}">Portfolio</a></li>
                     <li><a href="{{ route('blog') }}">Blog</a></li>
