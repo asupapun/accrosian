@@ -97,8 +97,7 @@
 
     overflow: hidden;
 
-    background:
-        var(--navy-mid);
+    background: #1a2060;
 
     backdrop-filter: blur(20px);
 
