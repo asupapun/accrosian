@@ -48,30 +48,10 @@
             <div>
                 <h4 class="footer-col-title">Services</h4>
                 <ul class="footer-links">
-                    @php
-                    $footerServices = \App\Models\Service::active()
-                    ->orderBy('sort_order')
-                    ->take(6)
-                    ->get();
-                    @endphp
-
-                    <ul class="footer-services-grid">
-                        @foreach($footerServices as $svc)
-                        <li>
-                            <a href="{{ route('services.show', $svc->slug) }}">
-                                {{ $svc->title }}
-                            </a>
-                        </li>
-                        @endforeach
-                    </ul>
-
-                    <a href="{{ route('services.index') }}" class="footer-view-all">
-                        View All Services →
-                    </a>
-                    <!-- @php $footerServices = \App\Models\Service::active()->orderBy('sort_order')->get(); @endphp
+                    @php $footerServices = \App\Models\Service::active()->orderBy('sort_order')->get(); @endphp
                     @foreach($footerServices as $svc)
                     <li><a href="{{ route('services.show', $svc->slug) }}">{{ $svc->title }}</a></li>
-                    @endforeach -->
+                    @endforeach
                 </ul>
             </div>
 
