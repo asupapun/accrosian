@@ -51,11 +51,11 @@
                 @php
                 $footerServices = \App\Models\Service::active()
                 ->orderBy('sort_order')
-                ->take(8)
+                ->take(6)
                 ->get();
                 @endphp
 
-                <ul class="footer-services-grid">
+                <ul class="footer-services-list">
                     @foreach($footerServices as $svc)
                     <li>
                         <a href="{{ route('services.show', $svc->slug) }}">
@@ -66,7 +66,7 @@
                 </ul>
 
                 <a href="{{ route('services') }}" class="footer-view-all">
-                    View All Services →
+                    All Services →
                 </a>
             </div>
 

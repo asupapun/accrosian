@@ -1889,73 +1889,63 @@ body {
   color: var(--orange);
 }
 
-/* =========================
-   FOOTER SERVICES
-========================= */
-
+/* SERVICES */
 .footer-services{
-    max-width:340px;
+    max-width:260px;
 }
 
-/* GRID LAYOUT */
-.footer-services-grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(130px,1fr));
-    gap:14px 34px;
-    padding:0;
-    margin-top:22px;
+/* SINGLE COLUMN */
+.footer-services-list{
     list-style:none;
-}
-
-/* SERVICE LINKS */
-.footer-services-grid li{
-    margin:0;
     padding:0;
+    margin:22px 0 0;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
 }
 
-.footer-services-grid li a{
+/* LINKS */
+.footer-services-list li a{
     position:relative;
-    display:inline-block;
     color:rgba(255,255,255,0.72);
     text-decoration:none;
-    font-size:14px;
-    font-weight:400;
-    line-height:1.6;
-    transition:all .3s ease;
+    font-size:15px;
+    line-height:1.5;
+    transition:.3s ease;
+    display:inline-block;
+    width:fit-content;
 }
 
-/* UNDERLINE EFFECT */
-.footer-services-grid li a::after{
+/* PREMIUM HOVER */
+.footer-services-list li a::after{
     content:'';
     position:absolute;
     left:0;
-    bottom:-3px;
+    bottom:-4px;
     width:0%;
     height:1px;
     background:var(--orange);
     transition:.3s ease;
 }
 
-/* HOVER */
-.footer-services-grid li a:hover{
+.footer-services-list li a:hover{
     color:#fff;
     transform:translateX(4px);
 }
 
-.footer-services-grid li a:hover::after{
+.footer-services-list li a:hover::after{
     width:100%;
 }
 
-/* VIEW ALL BUTTON */
+/* VIEW ALL */
 .footer-view-all{
     display:inline-flex;
     align-items:center;
-    gap:8px;
-    margin-top:28px;
+    margin-top:26px;
     color:var(--orange);
-    text-decoration:none;
     font-size:14px;
     font-weight:600;
+    text-decoration:none;
     transition:.3s ease;
 }
 
