@@ -288,7 +288,7 @@ body {
 
 /* HOVER */
 .nav-menu a:hover{
-  color:var(--white);
+  color:var(--orange);
   background:rgba(255,255,255,0.05);
 }
 
@@ -474,7 +474,7 @@ body {
   margin-bottom: 2px;
 }
 .mega-col a:hover {
-  color: var(--orange);
+  color: var(--white);
   background: rgba(255, 165, 0, 0.12);
   transform: translateX(4px);
 }
