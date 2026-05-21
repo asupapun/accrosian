@@ -389,7 +389,7 @@ body {
   max-width: 200px;
   border-right: 1px solid var(--glass-border);
   padding-right: 32px;
-  margin-right: 36px;
+  margin-right: 25px;
   flex-shrink: 0;
 }
 .mega-cat-label {
