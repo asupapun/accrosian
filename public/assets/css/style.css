@@ -386,7 +386,7 @@ body {
 /* Left panel: title + description + CTA */
 .mega-category {
   min-width: 230px;
-  max-width: 230px;
+  max-width: 200px;
   border-right: 1px solid var(--glass-border);
   padding-right: 32px;
   margin-right: 36px;
