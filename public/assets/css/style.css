@@ -308,24 +308,9 @@ body {
 .nav-dropdown {
   position: relative;
 }
-.nav-dropdown > a{
-    display:flex;
-    align-items:center;
-    gap:6px;
-    white-space:nowrap;
-}
-
-.nav-dropdown > a::after{
-    content:"▾";
-    font-size:0.7rem;
-    line-height:1;
-    margin-top:2px;
-}
-
-/* ROTATE ON HOVER */
-.nav-dropdown:hover > a::after{
-    transform:rotate(225deg);
-    margin-top:3px;
+.nav-dropdown > a::after {
+  content: " ▾";
+  font-size: 0.75rem;
 }
 
 /* ============================================================
