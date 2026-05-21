@@ -67,7 +67,7 @@
 
             <li class="nav-dropdown">
                 <a href="#">Industries</a>
-                <div class="footer-services-list">
+                <div class="simple-dropdown">
                     <a href="{{ route('industries.banking') }}">Banking</a>
                     <a href="{{ route('industries.medinfo') }}">Media & Information</a>
                     <a href="{{ route('industries.education') }}">Education</a>
