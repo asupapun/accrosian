@@ -288,7 +288,7 @@ body {
 
 /* HOVER */
 .nav-menu a:hover{
-  color:var(--orange);
+  color:var(--white);
   background:rgba(255,255,255,0.05);
 }
 
