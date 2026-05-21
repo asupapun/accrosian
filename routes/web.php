@@ -12,7 +12,7 @@ use App\Http\Controllers\Frontend\MedinfoController;
 use App\Http\Controllers\Frontend\EducationController;
 use App\Http\Controllers\Frontend\EnergyController;
 use App\Http\Controllers\Frontend\HealthController;
-use App\Http\Controllers\Frontend\OverviewController;
+
 
 
 /*
@@ -33,7 +33,6 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 Route::get('/student-registration', [StudentController::class, 'index'])->name('student.register');
 Route::post('/student-registration', [StudentController::class, 'store'])->name('student.register.store');
 Route::get('/airs', [App\Http\Controllers\Frontend\AirsController::class, 'index'])->name('airs');
-Route::get('/overview', [OverviewController::class, 'index'])->name('overview');
 Route::get('/industries/banking', [BankingController::class, 'index'])->name('industries.banking');
 Route::get('/industries/medinfo', [MedinfoController::class, 'index'])->name('industries.medinfo');
 Route::get('/industries/education', [EducationController::class, 'index'])->name('industries.education');
