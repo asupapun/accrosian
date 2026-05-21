@@ -308,7 +308,6 @@ body {
 .nav-dropdown {
   position: relative;
 }
-/* DROPDOWN NAV ITEM */
 .nav-dropdown > a{
     display:flex;
     align-items:center;
@@ -316,17 +315,11 @@ body {
     white-space:nowrap;
 }
 
-/* ARROW */
 .nav-dropdown > a::after{
-    content:'';
-    width:6px;
-    height:6px;
-    border-right:1.5px solid currentColor;
-    border-bottom:1.5px solid currentColor;
-    transform:rotate(45deg);
-    margin-top:-3px;
-    transition:.3s ease;
-    flex-shrink:0;
+    content:"▾";
+    font-size:0.7rem;
+    line-height:1;
+    margin-top:2px;
 }
 
 /* ROTATE ON HOVER */
