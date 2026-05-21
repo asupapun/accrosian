@@ -436,7 +436,7 @@ body {
 /* Right side: columns of links */
 .mega-cols {
   display: flex;
-  gap: 25px;
+  gap: 20px;
   flex: 1;
   flex-wrap: wrap;
   align-items: flex-start;
