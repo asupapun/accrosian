@@ -475,7 +475,7 @@ body {
 }
 .mega-col a:hover {
   color: var(--white);
-  background: rgba(255, 165, 0, 0.12);
+  background: rgba(255,255,255,0.05);
   transform: translateX(4px);
 }
 .mega-col a .svc-icon {
