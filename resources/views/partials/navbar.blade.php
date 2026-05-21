@@ -57,6 +57,7 @@
             <li class="nav-dropdown">
                 <a href="#">Our Company</a>
                 <div class="simple-dropdown">
+                    <a href="{{ route('overview') }}">Company Overview</a>
                     <a href="{{ route('about') }}">About Us</a>
                     <a href="{{ route('portfolio') }}">Portfolio</a>
                     <a href="{{ route('contact') }}">Contact</a>
