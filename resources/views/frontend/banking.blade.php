@@ -89,7 +89,7 @@
 }
 
 .bk-sec-navy {
-    background: var(--navy);
+    background: var(--navy-light);
 }
 
 .bk-sec-navy-2 {
