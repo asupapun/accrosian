@@ -1374,7 +1374,7 @@
 /* ═══════════════════════════════════════════════
    CONTACT FORM — alt bg
 ═══════════════════════════════════════════════ */
-.bk-contact-grid {
+/* .bk-contact-grid {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 64px;
@@ -1459,7 +1459,7 @@
 textarea.bk-input {
     resize: vertical;
     min-height: 105px;
-}
+} */
 
 /* ═══════════════════════════════════════════════
    RESPONSIVE
@@ -2234,7 +2234,7 @@ textarea.bk-input {
 
 
     {{-- ══════════════ CONTACT ══════════════ --}}
-    <section class="bk-sec bk-sec-alt">
+    <!-- <section class="bk-sec bk-sec-alt">
         <div class="bk-wrap">
             <div class="bk-contact-grid">
                 {{-- Left --}}
@@ -2310,7 +2310,7 @@ textarea.bk-input {
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 </div>
 @endsection
