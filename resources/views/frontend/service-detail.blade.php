@@ -47,13 +47,13 @@
             <div class="reveal reveal-delay-2">
                 @if($service->image && !str_starts_with($service->image,'assets/'))
                 <img src="{{ asset('storage/'.$service->image) }}" alt="{{ $service->title }}"
-                    style="width:100%;max-height:500px;border-radius:16px;object-fit:cover;object-position:center;" />
+                    style="width:100%;max-height:100%;border-radius:16px;object-fit:cover;object-position:center;" />
                 @elseif($service->image)
                 <img src="{{ asset($service->image) }}" alt="{{ $service->title }}"
-                    style="width:100%;max-height:500px;border-radius:16px;object-fit:cover;object-position:center;" />
+                    style="width:100%;max-height:100%;border-radius:16px;object-fit:cover;object-position:center;" />
                 @else
                 <img src="{{ asset('assets/images/web-dev-img.png') }}" alt="{{ $service->title }}"
-                    style="width:100%;max-height:500px;border-radius:16px;object-fit:cover;object-position:center;" />
+                    style="width:100%;max-height:100%;border-radius:16px;object-fit:cover;object-position:center;" />
                 @endif
             </div>
         </div>
