@@ -17,6 +17,7 @@
     --navy: #040d1a;
     --navy-2: #071428;
     --navy-3: #0b1e3d;
+    --navy-light: #1a2060;
     --navy-soft: #1e3a5f;
     --blue: #1a4fd6;
     --blue-light: #2e6aff;
@@ -615,7 +616,7 @@
 }
 
 .bk-card {
-    background: var(--navy-3);
+    background: var(--navy-light);
     border: 1px solid var(--navy-2);
     border-radius: var(--r2);
     padding: 34px 28px 28px;
@@ -778,7 +779,7 @@
     display: flex;
     align-items: flex-start;
     gap: 16px;
-    background: var(--navy-3);
+    background: var(--navy-light);
     border: 1px solid var(--navy-2);
     border-radius: 14px;
     padding: 18px 20px;
@@ -1043,7 +1044,7 @@
     padding: 34px 28px;
     border-right: 1px solid var(--gray-100);
     border-bottom: 1px solid var(--gray-100);
-    background: var(--navy-3);
+    background: var(--navy-light);
     transition: background .25s;
 }
 
@@ -1135,7 +1136,7 @@
    STATS BAR — navy
 ═══════════════════════════════════════════════ */
 .bk-stats {
-    background: var(--navy-3);
+    background: var(--navy-light);
     border-top: 1px solid rgba(46, 106, 255, .12);
     border-bottom: 1px solid rgba(46, 106, 255, .12);
 }
