@@ -15,7 +15,7 @@
     --navy-mid: #1a2060;
     --navy-800: #0d1530;
     --navy-700: #111d40;
-    --navy-light: #0d2044;
+    --navy-light: #1a2060;
     /* --navy-600: #1a2060; */
     --black: #000000;
     --orange: #f97316;
@@ -687,7 +687,7 @@ section {
 }
 
 .challenge-card {
-    background: var(--navy-light);
+    background: var(--navy-mid);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius);
     padding: 24px 28px;
@@ -844,7 +844,7 @@ section {
 
 /* ─── PATIENT EXPERIENCE ─── */
 .patient-section {
-    background: var(--navy-light);
+    background: var(--navy-mid);
 }
 
 .patient-grid {
