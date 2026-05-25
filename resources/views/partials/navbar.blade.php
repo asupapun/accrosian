@@ -53,7 +53,7 @@
                 </div>
             </li>
 
-            < {{-- Our Company Dropdown --}} <li class="nav-dropdown">
+            {{-- Our Company Dropdown --}} <li class="nav-dropdown">
                 <a href="#">Our Company</a>
                 <div class="simple-dropdown">
                     <a href="{{ route('about') }}">About Us</a>
@@ -63,18 +63,18 @@
                     <a href="{{ route('student.register') }}">Student Registration</a>
                     <a href="{{ route('airs') }}">AIRS Program</a>
                 </div>
-                </li>
+            </li>
 
-                <li class="nav-dropdown">
-                    <a href="#">Industries</a>
-                    <div class="simple-dropdown">
-                        <a href="{{ route('industries.banking') }}">Banking</a>
-                        <a href="{{ route('industries.medinfo') }}">Media & Information</a>
-                        <a href="{{ route('industries.education') }}">Education</a>
-                        <a href="{{ route('industries.energy') }}">Energy Resources and Utilities</a>
-                        <a href="{{ route('industries.healthcare') }}">Healthcare</a>
-                    </div>
-                </li>
+            <li class="nav-dropdown">
+                <a href="#">Industries</a>
+                <div class="simple-dropdown">
+                    <a href="{{ route('industries.banking') }}">Banking</a>
+                    <a href="{{ route('industries.medinfo') }}">Media & Information</a>
+                    <a href="{{ route('industries.education') }}">Education</a>
+                    <a href="{{ route('industries.energy') }}">Energy Resources and Utilities</a>
+                    <a href="{{ route('industries.healthcare') }}">Healthcare</a>
+                </div>
+            </li>
         </ul>
         @auth
         <div style="display:flex;align-items:center;gap:8px;margin-left:8px;">
