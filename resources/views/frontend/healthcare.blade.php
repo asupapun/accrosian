@@ -779,7 +779,7 @@ section {
 }
 
 .sol-card {
-    background: var(--navy-700);
+    background: var(--navy-mid);
     border: 1px solid var(--navy);
     border-radius: var(--radius);
     padding: 32px 28px;
