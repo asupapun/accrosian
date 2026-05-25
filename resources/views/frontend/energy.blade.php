@@ -17,7 +17,7 @@
     --navy: #050d1f;
     --navy-2: #071428;
     --navy-3: #0a1c38;
-    --navy-4: #0d2248;
+    --navy-4: #1a2060;
     --orange: #f97316;
     --orange-light: #fb923c;
     --black: #000000;
@@ -2063,15 +2063,15 @@ body {
             });
         });
 
-        // ---- NAV SCROLL ----
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('navbar');
-  if (window.scrollY > 60) {
-    nav.style.background = 'rgba(5,13,31,0.97)';
-  } else {
-    nav.style.background = 'rgba(5,13,31,0.85)';
-  }
-});
+    // ---- NAV SCROLL ----
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('navbar');
+        if (window.scrollY > 60) {
+            nav.style.background = 'rgba(5,13,31,0.97)';
+        } else {
+            nav.style.background = 'rgba(5,13,31,0.85)';
+        }
+    });
 
     // ---- COUNTER ANIMATION ----
     const counters = document.querySelectorAll('.stat-num[data-target]');
