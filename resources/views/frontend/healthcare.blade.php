@@ -1813,7 +1813,7 @@ section {
 </style>
 <!-- HERO -->
 <section class="hero">
-    <img src="{{ asset('assets/images/hero-health.jpg') }}" alt="Hero Background" class="hero-bg-img" />
+    <img src="{{ asset('assets/images/hero-health.png') }}" alt="Hero Background" class="hero-bg-img" />
     <div class="container">
         <div class="hero-bg"></div>
         <div class="hero-grid"></div>

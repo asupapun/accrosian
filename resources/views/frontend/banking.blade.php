@@ -1581,7 +1581,7 @@ textarea.bk-input {
 
     {{-- ══════════════ HERO ══════════════ --}}
     <section class="bk-hero">
-        <img src="{{ asset('assets/images/hero-bankimg.jpg') }}" alt="Hero Background" class="hero-bg-img" />
+        <img src="{{ asset('assets/images/hero-banking.png') }}" alt="Hero Background" class="hero-bg-img" />
         <div class="bk-wrap">
             <div class="bk-hero-grid">
 

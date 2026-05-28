@@ -1499,7 +1499,7 @@ body {
 
     <!-- HERO -->
     <section class="hero" id="hero">
-        <img src="{{ asset('assets/images/hero-energy.jpeg') }}" alt="Hero Background" class="hero-bg-img" />
+        <img src="{{ asset('assets/images/hero-energy.png') }}" alt="Hero Background" class="hero-bg-img" />
         <div class="grid-bg"></div>
         <div class="container">
             <div class="hero-inner">
