@@ -415,5 +415,390 @@ console.log(
   setTimeout(()=>acDevGo(0),900);
 })();
 
-// VR Solution
+/* ══════════════════════════════════════════
+   ACCROSIAN — GENERATIVE AI SECTIONS JS
+   Paste before closing </body> tag or
+   link as external script
+══════════════════════════════════════════ */
+
+(function () {
+  'use strict';
+
+  /* ─────────────────────────────────────────
+     SECTION 1 — PARTICLE CANVAS
+  ───────────────────────────────────────── */
+  function initS1Canvas() {
+    var c = document.getElementById('gen-s1-canvas');
+    if (!c) return;
+    var ctx = c.getContext('2d');
+    var W, H, particles = [];
+
+    function resize() {
+      var sec = c.parentElement;
+      W = c.width  = sec ? sec.offsetWidth  : window.innerWidth;
+      H = c.height = sec ? sec.offsetHeight : 600;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    function mkParticle() {
+      var fromLeft = Math.random() > 0.5;
+      return {
+        x:      fromLeft ? W * 0.18 : W * 0.82,
+        y:      H * 0.3 + Math.random() * H * 0.4,
+        tx:     W * 0.5,
+        ty:     H * 0.5,
+        prog:   Math.random(),
+        speed:  0.003 + Math.random() * 0.004,
+        size:   2 + Math.random() * 2,
+        color:  fromLeft ? 'rgba(239,68,68,' : 'rgba(34,197,94,'
+      };
+    }
+
+    for (var i = 0; i < 35; i++) particles.push(mkParticle());
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      for (var j = 0; j < particles.length; j++) {
+        var p = particles[j];
+        p.prog += p.speed;
+        if (p.prog >= 1) { particles[j] = mkParticle(); particles[j].prog = 0; continue; }
+        var t   = p.prog;
+        var ex  = p.x + (p.tx - p.x) * t;
+        var ey  = p.y + (p.ty - p.y) * t;
+        var alpha = t < 0.5 ? t * 2 : (1 - t) * 2;
+
+        /* main dot */
+        ctx.beginPath();
+        ctx.arc(ex, ey, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = p.color + (alpha * 0.85) + ')';
+        ctx.fill();
+
+        /* trail */
+        var pt = Math.max(0, t - 0.05);
+        ctx.beginPath();
+        ctx.arc(
+          p.x + (p.tx - p.x) * pt,
+          p.y + (p.ty - p.y) * pt,
+          p.size * 0.45, 0, Math.PI * 2
+        );
+        ctx.fillStyle = p.color + (alpha * 0.25) + ')';
+        ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 5 — BACKGROUND PARTICLE CANVAS
+  ───────────────────────────────────────── */
+  function initS5Canvas() {
+    var c = document.getElementById('gen-s5-canvas');
+    if (!c) return;
+    var ctx = c.getContext('2d');
+    var W, H, dots = [];
+
+    function resize() {
+      var sec = c.parentElement;
+      W = c.width  = sec ? sec.offsetWidth  : window.innerWidth;
+      H = c.height = sec ? sec.offsetHeight : 700;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    for (var i = 0; i < 90; i++) {
+      dots.push({
+        x:  Math.random() * 1600,
+        y:  Math.random() * 900,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        r:  Math.random() * 1.8,
+        o:  0.08 + Math.random() * 0.25
+      });
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      dots.forEach(function (d) {
+        d.x += d.vx; d.y += d.vy;
+        if (d.x < 0) d.x = W; if (d.x > W) d.x = 0;
+        if (d.y < 0) d.y = H; if (d.y > H) d.y = 0;
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(232,117,10,' + d.o + ')';
+        ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  /* ─────────────────────────────────────────
+     SCROLL REVEAL — fade-up on viewport enter
+  ───────────────────────────────────────── */
+  function initReveal() {
+    var selectors = [
+      '.gen-s2-card',
+      '.gen-s5-card',
+      '.gen-s4-metric',
+      '.gen-s3-agent-card',
+      '.gen-s1-item',
+      '.gen-s5-step',
+      '.gen-s3-info-item',
+      '.gen-s4-row'
+    ];
+
+    var els = document.querySelectorAll(selectors.join(','));
+    if (!els.length) return;
+
+    /* Set initial hidden state */
+    els.forEach(function (el) {
+      el.style.opacity   = '0';
+      el.style.transform = 'translateY(22px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+
+    /* Use IntersectionObserver if available */
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry, i) {
+          if (entry.isIntersecting) {
+            var el = entry.target;
+            /* stagger siblings */
+            var siblings = el.parentElement
+              ? Array.prototype.slice.call(el.parentElement.children)
+              : [];
+            var idx = siblings.indexOf(el);
+            setTimeout(function () {
+              el.style.opacity   = '1';
+              el.style.transform = 'translateY(0)';
+            }, idx * 70);
+            obs.unobserve(el);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      els.forEach(function (el) { obs.observe(el); });
+    } else {
+      /* Fallback: show all immediately */
+      els.forEach(function (el) {
+        el.style.opacity   = '1';
+        el.style.transform = 'translateY(0)';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 2 — CARD TILT (subtle 3-D on hover)
+  ───────────────────────────────────────── */
+  function initCardTilt() {
+    var cards = document.querySelectorAll('.gen-s2-card');
+    cards.forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var rect   = card.getBoundingClientRect();
+        var cx     = rect.left + rect.width  / 2;
+        var cy     = rect.top  + rect.height / 2;
+        var dx     = (e.clientX - cx) / (rect.width  / 2);
+        var dy     = (e.clientY - cy) / (rect.height / 2);
+        var rotX   = -dy * 6;
+        var rotY   =  dx * 6;
+        card.style.transform =
+          'translateY(-10px) scale(1.02) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg)';
+      });
+      card.addEventListener('mouseleave', function () {
+        card.style.transform = '';
+        card.style.transition = 'all 0.45s cubic-bezier(0.4,0,0.2,1)';
+      });
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 4 — ANIMATED COUNTER (metrics strip)
+  ───────────────────────────────────────── */
+  function initCounters() {
+    var nums = document.querySelectorAll('.gen-s4-metric-num');
+    if (!nums.length) return;
+
+    function animateCounter(el) {
+      var raw    = el.textContent.trim();          /* e.g. "90%", "5×", "24/7" */
+      var match  = raw.match(/^(\d+)(.*)/);
+      if (!match) return;                          /* "24/7" won't match — skip */
+      var target = parseInt(match[1], 10);
+      var suffix = match[2];
+      var start  = 0;
+      var duration = 1400;
+      var startTime = null;
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        /* easeOutExpo */
+        var eased = progress === 1
+          ? 1
+          : 1 - Math.pow(2, -10 * progress);
+        el.textContent = Math.floor(eased * target) + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      nums.forEach(function (el) { obs.observe(el); });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 3 — AGENT CARD ACTIVE PULSE
+     Cycles through agents to draw attention
+  ───────────────────────────────────────── */
+  function initAgentCycle() {
+    var agents = document.querySelectorAll('.gen-s3-agent-card');
+    if (!agents.length) return;
+    var current = 0;
+
+    function highlight() {
+      agents.forEach(function (a) {
+        a.style.borderColor  = '';
+        a.style.boxShadow    = '';
+        a.style.transform    = '';
+      });
+      var active = agents[current];
+      active.style.borderColor = 'rgba(232,117,10,0.55)';
+      active.style.boxShadow   = '0 0 28px rgba(232,117,10,0.25)';
+      active.style.transform   = 'scale(1.05)';
+      active.style.transition  = 'all 0.5s ease';
+      current = (current + 1) % agents.length;
+    }
+    highlight();
+    setInterval(highlight, 1800);
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 5 — STEP NODE SEQUENTIAL GLOW
+  ───────────────────────────────────────── */
+  function initStepGlow() {
+    var steps = document.querySelectorAll('.gen-s5-step-node');
+    if (!steps.length) return;
+    var current = 0;
+
+    function pulse() {
+      steps.forEach(function (s) {
+        s.style.borderColor  = 'rgba(255,255,255,0.08)';
+        s.style.background   = 'rgba(26,32,96,0.9)';
+        s.style.boxShadow    = 'none';
+      });
+      var active = steps[current];
+      active.style.borderColor = 'rgba(232,117,10,0.6)';
+      active.style.background  = 'rgba(232,117,10,0.14)';
+      active.style.boxShadow   = '0 0 28px rgba(232,117,10,0.3)';
+      active.style.transition  = 'all 0.5s ease';
+      current = (current + 1) % steps.length;
+    }
+    pulse();
+    setInterval(pulse, 900);
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 1 — PROBLEM / SOLUTION STAGGER
+     Animates items in left-col then right-col
+  ───────────────────────────────────────── */
+  function initS1Stagger() {
+    var sections = [
+      document.querySelectorAll('.gen-s1-col-left  .gen-s1-item'),
+      document.querySelectorAll('.gen-s1-col-right .gen-s1-item')
+    ];
+
+    sections.forEach(function (group) {
+      group.forEach(function (el, i) {
+        el.style.opacity   = '0';
+        el.style.transform = 'translateX(' + (i % 2 === 0 ? '-20px' : '20px') + ')';
+        el.style.transition = 'opacity 0.55s ease ' + (i * 0.12) + 's, transform 0.55s ease ' + (i * 0.12) + 's';
+      });
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var items = entry.target.querySelectorAll('.gen-s1-item');
+            items.forEach(function (el) {
+              el.style.opacity   = '1';
+              el.style.transform = 'translateX(0)';
+            });
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      var cols = document.querySelectorAll('.gen-s1-col');
+      cols.forEach(function (col) { obs.observe(col); });
+    } else {
+      sections.forEach(function (group) {
+        group.forEach(function (el) {
+          el.style.opacity   = '1';
+          el.style.transform = 'translateX(0)';
+        });
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 4 — COMPARISON ROW HIGHLIGHT
+     Highlights matching before/after rows on hover
+  ───────────────────────────────────────── */
+  function initRowSync() {
+    var beforeRows = document.querySelectorAll('.gen-s4-before .gen-s4-row');
+    var afterRows  = document.querySelectorAll('.gen-s4-after  .gen-s4-row');
+
+    function syncHover(idx, on) {
+      [beforeRows[idx], afterRows[idx]].forEach(function (r) {
+        if (!r) return;
+        r.style.background  = on ? 'rgba(232,117,10,0.06)' : '';
+        r.style.paddingLeft = on ? '8px'                   : '';
+        r.style.transition  = 'all 0.25s ease';
+      });
+    }
+
+    beforeRows.forEach(function (row, i) {
+      row.addEventListener('mouseenter', function () { syncHover(i, true);  });
+      row.addEventListener('mouseleave', function () { syncHover(i, false); });
+    });
+    afterRows.forEach(function (row, i) {
+      row.addEventListener('mouseenter', function () { syncHover(i, true);  });
+      row.addEventListener('mouseleave', function () { syncHover(i, false); });
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     BOOT — run all initialisers on DOM ready
+  ───────────────────────────────────────── */
+  function boot() {
+    initS1Canvas();
+    initS5Canvas();
+    initReveal();
+    initCardTilt();
+    initCounters();
+    initAgentCycle();
+    initStepGlow();
+    initS1Stagger();
+    initRipple();
+    initRowSync();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+
+})();
 
