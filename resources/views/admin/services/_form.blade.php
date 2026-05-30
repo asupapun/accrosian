@@ -12,7 +12,7 @@
             <div class="form-row">
                 <div class="form-field">
                     <label>Title *</label>
-                    <input type="text" name="title" value="{{ old('title', $service->title ?? '') }}"
+                    <input type="text" name="title" value="{{ old('title', $service->title ?? '') }}" required
                         placeholder="e.g. Web Development" />
                 </div>
                 <div class="form-field">
