@@ -24,7 +24,7 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'title'             => 'required|string|max:255',
+            'title'             => 'nullable|string|max:255',
             'slug'              => 'nullable|string|max:255|unique:services,slug',
             'category'          => 'nullable|string|max:100',
             'short_description' => 'nullable|string',
@@ -61,7 +61,7 @@ class ServiceController extends Controller
     public function update(Request $request, Service $service)
     {
         $data = $request->validate([
-            'title'             => 'required|string|max:255',
+            'title'             => 'nullable|string|max:255',
             'slug'              => 'nullable|string|max:255|unique:services,slug,' . $service->id,
             'category'          => 'nullable|string|max:100',
             'short_description' => 'nullable|string',
