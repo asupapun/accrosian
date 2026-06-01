@@ -7267,12 +7267,7 @@ select option {
   color: var(--text-muted, #6b7a99);
   max-width: 580px;
 }
-.gen-t-grad {
-  background: linear-gradient(135deg, #e8750a, #f59332);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+
 .gen-t-white { color: #ffffff; }
 .gen-btn-pri {
   display: inline-flex;
@@ -7600,7 +7595,7 @@ select option {
 }
 .gen-s2-card-impact {
   font-size: 0.8rem;
-  color: var(--text-muted, #6b7a99);
+  color: var(--black, #6b7a99);
   line-height: 1.6;
   margin-bottom: 16px;
 }
@@ -7612,7 +7607,7 @@ select option {
   font-size: 0.75rem;
   font-weight: 600;
 }
-.gen-s2-meta-label { color: var(--text-muted, #6b7a99); }
+.gen-s2-meta-label { color: var(--black, #6b7a99); }
 .gen-s2-meta-val {
   color: var(--navy, #0a0e2e);
   font-family: var(--font-display, 'Syne', sans-serif);
