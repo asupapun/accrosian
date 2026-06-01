@@ -1744,3 +1744,525 @@ console.log(
   }
 
 })();
+
+
+/* ══════════════════════════════════════════
+   ACCROSIAN — NLP DEVELOPMENT JS
+   Paste before closing </body> or link externally
+══════════════════════════════════════════ */
+
+(function () {
+  'use strict';
+
+  /* ─────────────────────────────────────────
+     SECTION 1 — HERO CANVAS
+     Flowing word-particle effect — dots that
+     drift like text characters in a language stream
+  ───────────────────────────────────────── */
+  function initS1Canvas() {
+    var c = document.getElementById('nlp-s1-canvas');
+    if (!c) return;
+    var ctx = c.getContext('2d');
+    var W, H;
+
+    /* word fragments that float */
+    var words = ['text', 'NLP', 'AI', 'NER', 'BERT', 'token', 'entity',
+                 'parse', 'embed', 'class', 'model', 'train', 'infer',
+                 'label', 'score', 'intent', 'chunk', 'span', 'seq'];
+    var particles = [];
+
+    function resize() {
+      var sec = c.parentElement;
+      W = c.width  = sec ? sec.offsetWidth  : window.innerWidth;
+      H = c.height = sec ? sec.offsetHeight : 650;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    function mkWord() {
+      return {
+        word:    words[Math.floor(Math.random() * words.length)],
+        x:       Math.random() * W,
+        y:       H + 20,
+        vy:      -(0.4 + Math.random() * 0.8),
+        vx:      (Math.random() - 0.5) * 0.3,
+        alpha:   0,
+        maxAlpha: 0.08 + Math.random() * 0.14,
+        size:    9 + Math.random() * 6,
+        life:    0,
+        maxLife: 120 + Math.random() * 100
+      };
+    }
+
+    for (var i = 0; i < 30; i++) {
+      var p = mkWord();
+      p.y     = Math.random() * H;
+      p.life  = Math.floor(Math.random() * p.maxLife);
+      p.alpha = p.maxAlpha * (p.life / p.maxLife);
+      particles.push(p);
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      for (var j = 0; j < particles.length; j++) {
+        var p = particles[j];
+        p.x    += p.vx;
+        p.y    += p.vy;
+        p.life += 1;
+        if (p.life >= p.maxLife || p.y < -20) {
+          particles[j] = mkWord();
+          continue;
+        }
+        var t     = p.life / p.maxLife;
+        var alpha = t < 0.15
+          ? (t / 0.15) * p.maxAlpha
+          : t > 0.75
+            ? ((1 - t) / 0.25) * p.maxAlpha
+            : p.maxAlpha;
+
+        ctx.font        = 'bold ' + p.size + 'px monospace';
+        ctx.fillStyle   = 'rgba(232,117,10,' + alpha + ')';
+        ctx.fillText(p.word, p.x, p.y);
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 3 — BACKGROUND DOT CANVAS
+  ───────────────────────────────────────── */
+  function initS3Canvas() {
+    var c = document.getElementById('nlp-s3-canvas');
+    if (!c) return;
+    var ctx = c.getContext('2d');
+    var W, H, dots = [];
+
+    function resize() {
+      var sec = c.parentElement;
+      W = c.width  = sec ? sec.offsetWidth  : window.innerWidth;
+      H = c.height = sec ? sec.offsetHeight : 750;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    for (var i = 0; i < 70; i++) {
+      dots.push({
+        x:  Math.random() * 1600,
+        y:  Math.random() * 900,
+        vx: (Math.random() - 0.5) * 0.25,
+        vy: (Math.random() - 0.5) * 0.25,
+        r:  0.8 + Math.random() * 1.6,
+        o:  0.06 + Math.random() * 0.18
+      });
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      dots.forEach(function (d) {
+        d.x += d.vx; d.y += d.vy;
+        if (d.x < 0) d.x = W; if (d.x > W) d.x = 0;
+        if (d.y < 0) d.y = H; if (d.y > H) d.y = 0;
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(232,117,10,' + d.o + ')';
+        ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 1 — PIPELINE CARD TYPEWRITER
+     Cycles through "typing" the content of
+     each pipeline card to simulate live NLP
+  ───────────────────────────────────────── */
+  function initPipelineTyping() {
+    /* Pulse each pipeline card in sequence */
+    var cards = document.querySelectorAll('.nlp-pv-card');
+    if (!cards.length) return;
+    var current = 0;
+
+    function pulse() {
+      cards.forEach(function (c) {
+        c.style.borderLeftColor = 'linear-gradient(180deg,#e8750a,#f59332)';
+        c.style.boxShadow       = 'none';
+        c.style.background      = 'rgba(17,21,64,0.9)';
+      });
+      var active = cards[current];
+      active.style.boxShadow = '0 0 24px rgba(232,117,10,0.15)';
+      active.style.background = 'rgba(26,32,96,0.95)';
+      active.style.transition = 'all 0.5s ease';
+      current = (current + 1) % cards.length;
+    }
+    pulse();
+    setInterval(pulse, 2000);
+  }
+
+  /* ─────────────────────────────────────────
+     SCROLL REVEAL
+  ───────────────────────────────────────── */
+  function initReveal() {
+    var selectors = [
+      '.nlp-s2-card',
+      '.nlp-pipe-card',
+      '.nlp-industry-card',
+      '.nlp-step',
+      '.nlp-s1-feat',
+      '.nlp-pipe-step'
+    ];
+    var els = document.querySelectorAll(selectors.join(','));
+    if (!els.length) return;
+
+    els.forEach(function (el) {
+      el.style.opacity    = '0';
+      el.style.transform  = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el  = entry.target;
+            var par = el.parentElement;
+            var idx = par ? Array.prototype.indexOf.call(par.children, el) : 0;
+            setTimeout(function () {
+              el.style.opacity   = '1';
+              el.style.transform = 'translateY(0)';
+            }, Math.min(idx * 85, 500));
+            obs.unobserve(el);
+          }
+        });
+      }, { threshold: 0.1 });
+      els.forEach(function (el) { obs.observe(el); });
+    } else {
+      els.forEach(function (el) {
+        el.style.opacity   = '1';
+        el.style.transform = 'translateY(0)';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 2 — CARD 3D TILT
+  ───────────────────────────────────────── */
+  function initCardTilt() {
+    var cards = document.querySelectorAll('.nlp-s2-card');
+    cards.forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var rect = card.getBoundingClientRect();
+        var dx   = (e.clientX - rect.left - rect.width  / 2) / (rect.width  / 2);
+        var dy   = (e.clientY - rect.top  - rect.height / 2) / (rect.height / 2);
+        card.style.transform = [
+          'translateY(-10px)',
+          'scale(1.02)',
+          'rotateX(' + (-dy * 5) + 'deg)',
+          'rotateY(' +  (dx * 5) + 'deg)'
+        ].join(' ');
+      });
+      card.addEventListener('mouseleave', function () {
+        card.style.transform  = '';
+        card.style.transition = 'all 0.45s cubic-bezier(0.4,0,0.2,1)';
+      });
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 3 — PIPE NODE SEQUENTIAL GLOW
+  ───────────────────────────────────────── */
+  function initPipeNodeGlow() {
+    var nodes = document.querySelectorAll('.nlp-pipe-node');
+    if (!nodes.length) return;
+    var idx = 0;
+
+    function glow() {
+      nodes.forEach(function (n) {
+        n.style.borderColor = 'rgba(255,255,255,0.08)';
+        n.style.background  = 'rgba(26,32,96,0.9)';
+        n.style.boxShadow   = 'none';
+      });
+      var a = nodes[idx];
+      a.style.borderColor = 'rgba(232,117,10,0.6)';
+      a.style.background  = 'rgba(232,117,10,0.12)';
+      a.style.boxShadow   = '0 0 28px rgba(232,117,10,0.28)';
+      a.style.transition  = 'all 0.5s ease';
+      idx = (idx + 1) % nodes.length;
+    }
+    glow();
+    setInterval(glow, 900);
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 4 — INDUSTRY CARD ENTRANCE
+     Alternating slide-left / slide-right
+  ───────────────────────────────────────── */
+  function initIndustryEntrance() {
+    var cards = document.querySelectorAll('.nlp-industry-card');
+    cards.forEach(function (card, i) {
+      var fromLeft = (i % 2 === 0);
+      card.style.opacity   = '0';
+      card.style.transform = fromLeft ? 'translateX(-30px)' : 'translateX(30px)';
+      card.style.transition = 'opacity 0.65s ease ' + (Math.floor(i / 2) * 0.12) + 's, transform 0.65s ease ' + (Math.floor(i / 2) * 0.12) + 's';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity   = '1';
+            entry.target.style.transform = 'translateX(0)';
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      cards.forEach(function (c) { obs.observe(c); });
+    } else {
+      cards.forEach(function (c) {
+        c.style.opacity   = '1';
+        c.style.transform = 'translateX(0)';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 4 — STAT NUMBER COUNTER
+  ───────────────────────────────────────── */
+  function initStatCounters() {
+    var stats = document.querySelectorAll('.nlp-ic-stat-num');
+    if (!stats.length) return;
+
+    function animate(el) {
+      var raw   = el.textContent.trim();
+      var match = raw.match(/^([\d.]+)(.*)/);
+      if (!match) return;
+      var target   = parseFloat(match[1]);
+      var suffix   = match[2];
+      var isFloat  = (String(target).indexOf('.') !== -1);
+      var duration = 1200;
+      var startTime = null;
+
+      function step(ts) {
+        if (!startTime) startTime = ts;
+        var prog  = Math.min((ts - startTime) / duration, 1);
+        var eased = 1 - Math.pow(2, -10 * prog);
+        var val   = eased * target;
+        el.textContent = (isFloat ? val.toFixed(1) : Math.floor(val)) + suffix;
+        if (prog < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { animate(e.target); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.6 });
+      stats.forEach(function (s) { obs.observe(s); });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 5 — BUILD STEP THREAD ANIMATION
+  ───────────────────────────────────────── */
+  function initThreads() {
+    var threads = document.querySelectorAll('.nlp-step-thread');
+    threads.forEach(function (t) {
+      t.style.height     = '0';
+      t.style.minHeight  = '0';
+      t.style.transition = 'height 0.6s ease, min-height 0.6s ease';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.height    = '28px';
+            entry.target.style.minHeight = '28px';
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      threads.forEach(function (t) { obs.observe(t); });
+    } else {
+      threads.forEach(function (t) {
+        t.style.height    = '28px';
+        t.style.minHeight = '28px';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     CTA TECH CHIPS — stagger pop-in
+  ───────────────────────────────────────── */
+  function initTechChips() {
+    var chips = document.querySelectorAll('.nlp-tech-chip');
+    chips.forEach(function (chip, i) {
+      chip.style.opacity   = '0';
+      chip.style.transform = 'scale(0.75)';
+      chip.style.transition = 'opacity 0.4s ease ' + (i * 0.07) + 's, transform 0.4s ease ' + (i * 0.07) + 's';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.nlp-tech-chip').forEach(function (c) {
+              c.style.opacity   = '1';
+              c.style.transform = 'scale(1)';
+            });
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      var wrap = document.querySelector('.nlp-cta-tech');
+      if (wrap) obs.observe(wrap);
+    } else {
+      chips.forEach(function (c) {
+        c.style.opacity   = '1';
+        c.style.transform = 'scale(1)';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     CTA CARD FLOATING ENTRANCE
+  ───────────────────────────────────────── */
+  function initCtaEntrance() {
+    var card = document.querySelector('.nlp-cta-card');
+    if (!card) return;
+    card.style.opacity   = '0';
+    card.style.transform = 'translateY(36px) scale(0.97)';
+    card.style.transition = 'opacity 0.8s ease, transform 0.8s cubic-bezier(0.4,0,0.2,1)';
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity   = '1';
+            entry.target.style.transform = 'translateY(0) scale(1)';
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      obs.observe(card);
+    } else {
+      card.style.opacity   = '1';
+      card.style.transform = 'none';
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     FEATURE PILLS — wave entrance
+  ───────────────────────────────────────── */
+  function initFeatPills() {
+    var pills = document.querySelectorAll('.nlp-s1-feat');
+    pills.forEach(function (p, i) {
+      p.style.opacity   = '0';
+      p.style.transform = 'translateY(12px)';
+      p.style.transition = 'opacity 0.45s ease ' + (i * 0.07) + 's, transform 0.45s ease ' + (i * 0.07) + 's';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.nlp-s1-feat').forEach(function (p) {
+              p.style.opacity   = '1';
+              p.style.transform = 'translateY(0)';
+            });
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      var wrap = document.querySelector('.nlp-s1-feats');
+      if (wrap) obs.observe(wrap);
+    } else {
+      pills.forEach(function (p) {
+        p.style.opacity   = '1';
+        p.style.transform = 'translateY(0)';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     BUTTON RIPPLE
+  ───────────────────────────────────────── */
+  function initRipple() {
+    if (!document.getElementById('nlp-ripple-kf')) {
+      var s = document.createElement('style');
+      s.id = 'nlp-ripple-kf';
+      s.textContent = '@keyframes nlpRipple{to{transform:scale(3.5);opacity:0}}';
+      document.head.appendChild(s);
+    }
+    var btns = document.querySelectorAll('.nlp-btn-pri, .nlp-btn-ghost');
+    btns.forEach(function (btn) {
+      btn.style.position = 'relative';
+      btn.style.overflow = 'hidden';
+      btn.addEventListener('click', function (e) {
+        var rect   = btn.getBoundingClientRect();
+        var ripple = document.createElement('span');
+        ripple.style.cssText = [
+          'position:absolute',
+          'border-radius:50%',
+          'background:rgba(255,255,255,0.22)',
+          'width:100px', 'height:100px',
+          'left:' + (e.clientX - rect.left - 50) + 'px',
+          'top:'  + (e.clientY - rect.top  - 50) + 'px',
+          'transform:scale(0)',
+          'animation:nlpRipple 0.6s linear',
+          'pointer-events:none'
+        ].join(';');
+        btn.appendChild(ripple);
+        setTimeout(function () { ripple.remove(); }, 650);
+      });
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     FLOATING BADGES — entrance pop
+  ───────────────────────────────────────── */
+  function initFloatBadges() {
+    var badges = document.querySelectorAll('.nlp-float-badge');
+    badges.forEach(function (b, i) {
+      b.style.opacity   = '0';
+      b.style.transform = 'scale(0.8) translateY(10px)';
+      b.style.transition = 'opacity 0.6s ease ' + (0.8 + i * 0.3) + 's, transform 0.6s ease ' + (0.8 + i * 0.3) + 's';
+    });
+    setTimeout(function () {
+      badges.forEach(function (b) {
+        b.style.opacity   = '1';
+        b.style.transform = '';
+      });
+    }, 400);
+  }
+
+  /* ─────────────────────────────────────────
+     BOOT
+  ───────────────────────────────────────── */
+  function boot() {
+    initS1Canvas();
+    initS3Canvas();
+    initPipelineTyping();
+    initReveal();
+    initCardTilt();
+    initPipeNodeGlow();
+    initIndustryEntrance();
+    initStatCounters();
+    initThreads();
+    initTechChips();
+    initCtaEntrance();
+    initFeatPills();
+    initRipple();
+    initFloatBadges();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+
+})();
