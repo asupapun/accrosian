@@ -35,7 +35,8 @@
     <div style="max-width:100%;">
 
         {{-- Top: Image right, intro text left --}}
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:start;" class="reveal">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:start;padding:0 40px"
+            class="reveal">
             <div>
                 <!-- <span class="section-tag">Overview</span> -->
                 <!-- <h2 class="section-title">High-Performance Software <span class="text-gradient">& Digital

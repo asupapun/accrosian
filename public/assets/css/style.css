@@ -8286,12 +8286,7 @@ select option {
   color: var(--text-muted, #6b7a99);
   max-width: 580px;
 }
-.aia-t-grad {
-  background: linear-gradient(135deg, #e8750a, #f59332);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+
 .aia-t-white { color: #ffffff; }
 .aia-btn-pri {
   display: inline-flex;
