@@ -92,7 +92,7 @@ body {
 .container-wide {
   max-width: 1400px;
   margin: 0 auto;
-  /* padding: 0 40px; */
+  padding: 0 40px;
 }
 
 .section-tag {
@@ -4137,7 +4137,7 @@ select option {
 .stats-bar-inner {
     max-width: 1200px;
     margin: 0 auto;
-    /* padding: 0 40px; */
+    padding: 0 40px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 0;

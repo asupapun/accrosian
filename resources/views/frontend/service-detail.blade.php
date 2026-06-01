@@ -32,7 +32,7 @@
 </section>
 
 <section style="padding:60px 0">
-    <div style="max-width:100%;padding:0 40px">
+    <div style="max-width:100%;">
 
         {{-- Top: Image right, intro text left --}}
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:start;" class="reveal">
