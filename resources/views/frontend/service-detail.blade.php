@@ -82,7 +82,7 @@
             <h2 class="section-title">Other <span class="text-gradient">Services</span></h2>
         </div>
         <div class="ac-others-grid">
-            @foreach($others as $i => $other)
+            @foreach($others->take(10) as $i => $other)
             <a href="{{ route('services.show', $other->slug) }}" class="ac-others-card reveal"
                 style="animation-delay:{{ $i * 0.08 }}s">
                 <div class="ac-others-card-glow"></div>
