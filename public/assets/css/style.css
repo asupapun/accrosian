@@ -7326,6 +7326,7 @@ select option {
   padding: 100px 0;
   background: var(--navy, #0a0e2e);
   position: relative;
+  width: 100vw;
   overflow: hidden;
 }
 .gen-s1::before {
