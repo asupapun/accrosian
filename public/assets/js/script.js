@@ -2929,3 +2929,593 @@ console.log(
   }
 
 })();
+
+
+/* ══════════════════════════════════════════
+   ACCROSIAN — AI POC DEVELOPMENT JS
+   Paste before closing </body> or link externally
+══════════════════════════════════════════ */
+
+(function () {
+  'use strict';
+
+  /* ─────────────────────────────────────────
+     SECTION 1 — HERO CANVAS
+     Idea-to-POC particle stream:
+     dots spawn at left (idea) and flow right
+     to form a cluster (validated POC)
+  ───────────────────────────────────────── */
+  function initS1Canvas() {
+    var c = document.getElementById('poc-s1-canvas');
+    if (!c) return;
+    var ctx = c.getContext('2d');
+    var W, H, particles = [];
+
+    function resize() {
+      var sec = c.parentElement;
+      W = c.width  = sec ? sec.offsetWidth  : window.innerWidth;
+      H = c.height = sec ? sec.offsetHeight : 650;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    /* three phases: idea spark → build stream → validate cluster */
+    var phases = ['idea', 'build', 'validate'];
+
+    function mkParticle() {
+      var phase = phases[Math.floor(Math.random() * phases.length)];
+      var p = {
+        phase: phase,
+        life:  0,
+        maxLife: 90 + Math.random() * 80,
+        size: 1.5 + Math.random() * 2.5,
+        o: 0
+      };
+      if (phase === 'idea') {
+        p.x  = W * 0.08 + Math.random() * W * 0.08;
+        p.y  = H * 0.3  + Math.random() * H * 0.4;
+        p.vx = 0.6 + Math.random() * 0.8;
+        p.vy = (Math.random() - 0.5) * 0.4;
+        p.color = 'rgba(232,117,10,';
+      } else if (phase === 'build') {
+        p.x  = W * 0.35 + Math.random() * W * 0.2;
+        p.y  = H * 0.25 + Math.random() * H * 0.5;
+        p.vx = 0.4 + Math.random() * 0.5;
+        p.vy = (Math.random() - 0.5) * 0.3;
+        p.color = 'rgba(245,147,50,';
+      } else {
+        p.x  = W * 0.65 + Math.random() * W * 0.2;
+        p.y  = H * 0.35 + Math.random() * H * 0.3;
+        p.vx = (Math.random() - 0.5) * 0.2;
+        p.vy = (Math.random() - 0.5) * 0.2;
+        p.color = 'rgba(74,222,128,';
+      }
+      return p;
+    }
+
+    for (var i = 0; i < 55; i++) {
+      var p = mkParticle();
+      p.life = Math.floor(Math.random() * p.maxLife);
+      particles.push(p);
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      for (var j = 0; j < particles.length; j++) {
+        var pt = particles[j];
+        pt.x    += pt.vx;
+        pt.y    += pt.vy;
+        pt.life += 1;
+        if (pt.life >= pt.maxLife) { particles[j] = mkParticle(); continue; }
+        var t     = pt.life / pt.maxLife;
+        var alpha = t < 0.2
+          ? (t / 0.2) * 0.6
+          : t > 0.75
+            ? ((1 - t) / 0.25) * 0.6
+            : 0.6;
+        ctx.beginPath();
+        ctx.arc(pt.x, pt.y, pt.size, 0, Math.PI * 2);
+        ctx.fillStyle = pt.color + (alpha * 0.9) + ')';
+        ctx.fill();
+      }
+      /* connecting lines between nearby particles */
+      for (var a = 0; a < particles.length; a++) {
+        for (var b = a + 1; b < particles.length; b++) {
+          var dx   = particles[a].x - particles[b].x;
+          var dy   = particles[a].y - particles[b].y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 80 && particles[a].phase === particles[b].phase) {
+            ctx.beginPath();
+            ctx.moveTo(particles[a].x, particles[a].y);
+            ctx.lineTo(particles[b].x, particles[b].y);
+            ctx.strokeStyle = particles[a].color + ((1 - dist / 80) * 0.08) + ')';
+            ctx.lineWidth   = 1;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 3 — BACKGROUND DOT CANVAS
+  ───────────────────────────────────────── */
+  function initS3Canvas() {
+    var c = document.getElementById('poc-s3-canvas');
+    if (!c) return;
+    var ctx = c.getContext('2d');
+    var W, H, dots = [];
+
+    function resize() {
+      var sec = c.parentElement;
+      W = c.width  = sec ? sec.offsetWidth  : window.innerWidth;
+      H = c.height = sec ? sec.offsetHeight : 750;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    for (var i = 0; i < 75; i++) {
+      dots.push({
+        x:  Math.random() * 1600,
+        y:  Math.random() * 900,
+        vx: (Math.random() - 0.5) * 0.22,
+        vy: (Math.random() - 0.5) * 0.22,
+        r:  0.8 + Math.random() * 1.6,
+        o:  0.05 + Math.random() * 0.18
+      });
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      dots.forEach(function (d) {
+        d.x += d.vx; d.y += d.vy;
+        if (d.x < 0) d.x = W; if (d.x > W) d.x = 0;
+        if (d.y < 0) d.y = H; if (d.y > H) d.y = 0;
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(232,117,10,' + d.o + ')';
+        ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  /* ─────────────────────────────────────────
+     SCROLL REVEAL
+  ───────────────────────────────────────── */
+  function initReveal() {
+    var selectors = [
+      '.poc-s2-card',
+      '.poc-pipe-card',
+      '.poc-t-row',
+      '.poc-sprint',
+      '.poc-val-item',
+      '.poc-pipe-step',
+      '.poc-stage'
+    ];
+    var els = document.querySelectorAll(selectors.join(','));
+    if (!els.length) return;
+
+    els.forEach(function (el) {
+      el.style.opacity    = '0';
+      el.style.transform  = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el  = entry.target;
+            var par = el.parentElement;
+            var idx = par ? Array.prototype.indexOf.call(par.children, el) : 0;
+            setTimeout(function () {
+              el.style.opacity   = '1';
+              el.style.transform = 'translateY(0)';
+            }, Math.min(idx * 85, 500));
+            obs.unobserve(el);
+          }
+        });
+      }, { threshold: 0.1 });
+      els.forEach(function (el) { obs.observe(el); });
+    } else {
+      els.forEach(function (el) {
+        el.style.opacity   = '1';
+        el.style.transform = 'translateY(0)';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 2 — CARD 3D TILT
+  ───────────────────────────────────────── */
+  function initCardTilt() {
+    var cards = document.querySelectorAll('.poc-s2-card');
+    cards.forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var rect = card.getBoundingClientRect();
+        var dx   = (e.clientX - rect.left - rect.width  / 2) / (rect.width  / 2);
+        var dy   = (e.clientY - rect.top  - rect.height / 2) / (rect.height / 2);
+        card.style.transform = [
+          'translateY(-10px)',
+          'scale(1.02)',
+          'rotateX(' + (-dy * 5) + 'deg)',
+          'rotateY(' +  (dx * 5) + 'deg)'
+        ].join(' ');
+      });
+      card.addEventListener('mouseleave', function () {
+        card.style.transform  = '';
+        card.style.transition = 'all 0.45s cubic-bezier(0.4,0,0.2,1)';
+      });
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 3 — PIPE NODE SEQUENTIAL GLOW
+  ───────────────────────────────────────── */
+  function initPipeNodeGlow() {
+    var nodes = document.querySelectorAll('.poc-pipe-node');
+    if (!nodes.length) return;
+    var idx = 0;
+
+    function glow() {
+      nodes.forEach(function (n) {
+        n.style.borderColor = 'rgba(255,255,255,0.08)';
+        n.style.background  = 'rgba(26,32,96,0.9)';
+        n.style.boxShadow   = 'none';
+      });
+      var a = nodes[idx];
+      a.style.borderColor = 'rgba(232,117,10,0.6)';
+      a.style.background  = 'rgba(232,117,10,0.12)';
+      a.style.boxShadow   = '0 0 28px rgba(232,117,10,0.28)';
+      a.style.transition  = 'all 0.5s ease';
+      idx = (idx + 1) % nodes.length;
+    }
+    glow();
+    setInterval(glow, 900);
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 4 — TABLE ROW SYNC HIGHLIGHT
+  ───────────────────────────────────────── */
+  function initTableSync() {
+    var rows = document.querySelectorAll('.poc-t-row');
+    rows.forEach(function (row) {
+      row.addEventListener('mouseenter', function () {
+        row.querySelectorAll('.poc-td').forEach(function (cell) {
+          cell.style.background = cell.classList.contains('col-poc')
+            ? 'rgba(34,197,94,0.08)'
+            : 'rgba(232,117,10,0.025)';
+          cell.style.transition = 'background 0.25s ease';
+        });
+      });
+      row.addEventListener('mouseleave', function () {
+        row.querySelectorAll('.poc-td').forEach(function (cell) {
+          cell.style.background = cell.classList.contains('col-poc')
+            ? 'rgba(34,197,94,0.04)'
+            : (cell === row.firstElementChild ? '#fafbff' : '#fff');
+        });
+      });
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 4 — POC COLUMN GLOW ON ENTER
+  ───────────────────────────────────────── */
+  function initTableColGlow() {
+    var th = document.querySelector('.poc-th.col-poc');
+    if (!th) return;
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.boxShadow  = '0 0 40px rgba(34,197,94,0.15)';
+            entry.target.style.transition = 'box-shadow 0.8s ease';
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      obs.observe(th);
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 5 — SPRINT THREAD ANIMATION
+  ───────────────────────────────────────── */
+  function initThreads() {
+    var threads = document.querySelectorAll('.poc-sprint-thread');
+    threads.forEach(function (t) {
+      t.style.height     = '0';
+      t.style.minHeight  = '0';
+      t.style.transition = 'height 0.6s ease, min-height 0.6s ease';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.height    = '28px';
+            entry.target.style.minHeight = '28px';
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      threads.forEach(function (t) { obs.observe(t); });
+    } else {
+      threads.forEach(function (t) {
+        t.style.height    = '28px';
+        t.style.minHeight = '28px';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 1 — LIFECYCLE STAGE GLOW CYCLE
+  ───────────────────────────────────────── */
+  function initLifecycleGlow() {
+    var stages = document.querySelectorAll('.poc-stage-num');
+    if (!stages.length) return;
+    var idx = 0;
+
+    function glow() {
+      stages.forEach(function (s) {
+        s.style.borderColor = 'rgba(232,117,10,0.3)';
+        s.style.background  = 'rgba(26,32,96,0.95)';
+        s.style.boxShadow   = 'none';
+      });
+      var a = stages[idx];
+      a.style.borderColor = 'rgba(232,117,10,0.65)';
+      a.style.background  = 'rgba(232,117,10,0.14)';
+      a.style.boxShadow   = '0 0 24px rgba(232,117,10,0.3)';
+      a.style.transition  = 'all 0.5s ease';
+      idx = (idx + 1) % stages.length;
+    }
+    glow();
+    setInterval(glow, 1400);
+  }
+
+  /* ─────────────────────────────────────────
+     VALUE PROPS — slide-in from left
+  ───────────────────────────────────────── */
+  function initValueProps() {
+    var items = document.querySelectorAll('.poc-val-item');
+    items.forEach(function (item, i) {
+      item.style.opacity   = '0';
+      item.style.transform = 'translateX(-24px)';
+      item.style.transition = 'opacity 0.55s ease ' + (i * 0.1) + 's, transform 0.55s ease ' + (i * 0.1) + 's';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.poc-val-item').forEach(function (item) {
+              item.style.opacity   = '1';
+              item.style.transform = 'translateX(0)';
+            });
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      var grid = document.querySelector('.poc-s1-values');
+      if (grid) obs.observe(grid);
+    } else {
+      items.forEach(function (item) {
+        item.style.opacity   = '1';
+        item.style.transform = 'translateX(0)';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     CTA TECH CHIPS — stagger pop-in
+  ───────────────────────────────────────── */
+  function initTechChips() {
+    var chips = document.querySelectorAll('.poc-tech-chip');
+    chips.forEach(function (chip, i) {
+      chip.style.opacity   = '0';
+      chip.style.transform = 'scale(0.75)';
+      chip.style.transition = 'opacity 0.4s ease ' + (i * 0.07) + 's, transform 0.4s ease ' + (i * 0.07) + 's';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.poc-tech-chip').forEach(function (c) {
+              c.style.opacity   = '1';
+              c.style.transform = 'scale(1)';
+            });
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      var wrap = document.querySelector('.poc-cta-tech');
+      if (wrap) obs.observe(wrap);
+    } else {
+      chips.forEach(function (c) {
+        c.style.opacity   = '1';
+        c.style.transform = 'scale(1)';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     CTA CARD — floating entrance
+  ───────────────────────────────────────── */
+  function initCtaEntrance() {
+    var card = document.querySelector('.poc-cta-card');
+    if (!card) return;
+    card.style.opacity   = '0';
+    card.style.transform = 'translateY(36px) scale(0.97)';
+    card.style.transition = 'opacity 0.8s ease, transform 0.8s cubic-bezier(0.4,0,0.2,1)';
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity   = '1';
+            entry.target.style.transform = 'translateY(0) scale(1)';
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      obs.observe(card);
+    } else {
+      card.style.opacity   = '1';
+      card.style.transform = 'none';
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     FLOATING BADGES — entrance pop
+  ───────────────────────────────────────── */
+  function initFloatBadges() {
+    var badges = document.querySelectorAll('.poc-float');
+    badges.forEach(function (b, i) {
+      b.style.opacity   = '0';
+      b.style.transform = 'scale(0.8) translateY(10px)';
+      b.style.transition = 'opacity 0.6s ease ' + (0.8 + i * 0.3) + 's, transform 0.6s ease ' + (0.8 + i * 0.3) + 's';
+    });
+    setTimeout(function () {
+      badges.forEach(function (b) {
+        b.style.opacity   = '1';
+        b.style.transform = '';
+      });
+    }, 400);
+  }
+
+  /* ─────────────────────────────────────────
+     SPRINT DELIVERABLE BADGES — pop on scroll
+  ───────────────────────────────────────── */
+  function initDeliverableBadges() {
+    var badges = document.querySelectorAll('.poc-sprint-deliverable');
+    badges.forEach(function (b) {
+      b.style.opacity   = '0';
+      b.style.transform = 'scale(0.85)';
+      b.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            setTimeout(function () {
+              entry.target.style.opacity   = '1';
+              entry.target.style.transform = 'scale(1)';
+            }, 300);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      badges.forEach(function (b) { obs.observe(b); });
+    } else {
+      badges.forEach(function (b) {
+        b.style.opacity   = '1';
+        b.style.transform = 'scale(1)';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     BUTTON RIPPLE EFFECT
+  ───────────────────────────────────────── */
+  function initRipple() {
+    if (!document.getElementById('poc-ripple-kf')) {
+      var s = document.createElement('style');
+      s.id = 'poc-ripple-kf';
+      s.textContent = '@keyframes pocRipple{to{transform:scale(3.5);opacity:0}}';
+      document.head.appendChild(s);
+    }
+    var btns = document.querySelectorAll('.poc-btn-pri, .poc-btn-ghost');
+    btns.forEach(function (btn) {
+      btn.style.position = 'relative';
+      btn.style.overflow = 'hidden';
+      btn.addEventListener('click', function (e) {
+        var rect   = btn.getBoundingClientRect();
+        var ripple = document.createElement('span');
+        ripple.style.cssText = [
+          'position:absolute',
+          'border-radius:50%',
+          'background:rgba(255,255,255,0.22)',
+          'width:100px', 'height:100px',
+          'left:' + (e.clientX - rect.left - 50) + 'px',
+          'top:'  + (e.clientY - rect.top  - 50) + 'px',
+          'transform:scale(0)',
+          'animation:pocRipple 0.6s linear',
+          'pointer-events:none'
+        ].join(';');
+        btn.appendChild(ripple);
+        setTimeout(function () { ripple.remove(); }, 650);
+      });
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 2 CARDS — stagger from alternating sides
+  ───────────────────────────────────────── */
+  function initCardEntrance() {
+    var cards = document.querySelectorAll('.poc-s2-card');
+    cards.forEach(function (card, i) {
+      var even = (i % 2 === 0);
+      card.style.opacity   = '0';
+      card.style.transform = even ? 'translateY(24px) rotate(-1deg)' : 'translateY(24px) rotate(1deg)';
+      card.style.transition = 'opacity 0.6s ease ' + (Math.floor(i / 4) * 0.1) + 's, transform 0.6s ease ' + (Math.floor(i / 4) * 0.1) + 's';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el  = entry.target;
+            var par = el.parentElement;
+            var idx = par ? Array.prototype.indexOf.call(par.children, el) : 0;
+            setTimeout(function () {
+              el.style.opacity   = '1';
+              el.style.transform = 'translateY(0) rotate(0)';
+            }, idx * 60);
+            obs.unobserve(el);
+          }
+        });
+      }, { threshold: 0.1 });
+      cards.forEach(function (card) { obs.observe(card); });
+    } else {
+      cards.forEach(function (card) {
+        card.style.opacity   = '1';
+        card.style.transform = 'none';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     BOOT
+  ───────────────────────────────────────── */
+  function boot() {
+    initS1Canvas();
+    initS3Canvas();
+    initReveal();
+    initCardTilt();
+    initCardEntrance();
+    initPipeNodeGlow();
+    initTableSync();
+    initTableColGlow();
+    initThreads();
+    initLifecycleGlow();
+    initValueProps();
+    initTechChips();
+    initCtaEntrance();
+    initFloatBadges();
+    initDeliverableBadges();
+    initRipple();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+
+})();
