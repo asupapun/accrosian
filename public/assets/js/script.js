@@ -2266,3 +2266,666 @@ console.log(
   }
 
 })();
+
+
+
+/* ══════════════════════════════════════════
+   ACCROSIAN — CHATBOT DEVELOPMENT JS
+   Paste before closing </body> or link externally
+══════════════════════════════════════════ */
+
+(function () {
+  'use strict';
+
+  /* ─────────────────────────────────────────
+     SECTION 1 — HERO CANVAS
+     Floating message bubble particles that
+     drift upward simulating a live chat feed
+  ───────────────────────────────────────── */
+  function initS1Canvas() {
+    var c = document.getElementById('cb-s1-canvas');
+    if (!c) return;
+    var ctx = c.getContext('2d');
+    var W, H, bubbles = [];
+
+    var msgs = ['Hello!', 'How can I help?', 'Order tracked ✓',
+                'Booking confirmed', 'Issue resolved!', 'Thank you 😊',
+                'On its way 🚚', 'Refund processed', 'Hi there!',
+                'Great question', 'Done! ✓', 'Let me check…'];
+
+    function resize() {
+      var sec = c.parentElement;
+      W = c.width  = sec ? sec.offsetWidth  : window.innerWidth;
+      H = c.height = sec ? sec.offsetHeight : 650;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    function mkBubble() {
+      var isBot = Math.random() > 0.45;
+      return {
+        text:    msgs[Math.floor(Math.random() * msgs.length)],
+        x:       W * 0.3 + Math.random() * W * 0.45,
+        y:       H + 30,
+        vy:      -(0.35 + Math.random() * 0.65),
+        vx:      (Math.random() - 0.5) * 0.2,
+        alpha:   0,
+        maxAlpha: 0.06 + Math.random() * 0.1,
+        size:    10 + Math.random() * 4,
+        life:    0,
+        maxLife: 130 + Math.random() * 100,
+        isBot:   isBot
+      };
+    }
+
+    for (var i = 0; i < 20; i++) {
+      var b = mkBubble();
+      b.y    = Math.random() * H;
+      b.life = Math.floor(Math.random() * b.maxLife);
+      bubbles.push(b);
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      for (var j = 0; j < bubbles.length; j++) {
+        var b = bubbles[j];
+        b.x    += b.vx;
+        b.y    += b.vy;
+        b.life += 1;
+        if (b.life >= b.maxLife || b.y < -30) {
+          bubbles[j] = mkBubble();
+          continue;
+        }
+        var t     = b.life / b.maxLife;
+        var alpha = t < 0.15
+          ? (t / 0.15) * b.maxAlpha
+          : t > 0.72
+            ? ((1 - t) / 0.28) * b.maxAlpha
+            : b.maxAlpha;
+
+        /* measure text width for bubble */
+        ctx.font = 'bold ' + b.size + 'px sans-serif';
+        var tw   = ctx.measureText(b.text).width;
+        var bw   = tw + 20;
+        var bh   = b.size + 14;
+        var br   = bh / 2;
+        var bx   = b.x - bw / 2;
+        var by   = b.y - bh / 2;
+
+        /* bubble background */
+        ctx.beginPath();
+        ctx.roundRect
+          ? ctx.roundRect(bx, by, bw, bh, br)
+          : (function(x,y,w,h,r){
+              ctx.moveTo(x+r,y);
+              ctx.lineTo(x+w-r,y);
+              ctx.arcTo(x+w,y,x+w,y+r,r);
+              ctx.lineTo(x+w,y+h-r);
+              ctx.arcTo(x+w,y+h,x+w-r,y+h,r);
+              ctx.lineTo(x+r,y+h);
+              ctx.arcTo(x,y+h,x,y+h-r,r);
+              ctx.lineTo(x,y+r);
+              ctx.arcTo(x,y,x+r,y,r);
+              ctx.closePath();
+            })(bx,by,bw,bh,br);
+
+        ctx.fillStyle = b.isBot
+          ? 'rgba(232,117,10,' + (alpha * 0.35) + ')'
+          : 'rgba(255,255,255,' + (alpha * 0.08) + ')';
+        ctx.fill();
+
+        /* text */
+        ctx.fillStyle = b.isBot
+          ? 'rgba(245,147,50,' + (alpha * 2.5) + ')'
+          : 'rgba(255,255,255,' + (alpha * 2) + ')';
+        ctx.fillText(b.text, b.x - tw / 2, b.y + b.size * 0.36);
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 3 — BACKGROUND DOT CANVAS
+  ───────────────────────────────────────── */
+  function initS3Canvas() {
+    var c = document.getElementById('cb-s3-canvas');
+    if (!c) return;
+    var ctx = c.getContext('2d');
+    var W, H, dots = [];
+
+    function resize() {
+      var sec = c.parentElement;
+      W = c.width  = sec ? sec.offsetWidth  : window.innerWidth;
+      H = c.height = sec ? sec.offsetHeight : 700;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    for (var i = 0; i < 75; i++) {
+      dots.push({
+        x:  Math.random() * 1600,
+        y:  Math.random() * 900,
+        vx: (Math.random() - 0.5) * 0.25,
+        vy: (Math.random() - 0.5) * 0.25,
+        r:  0.8 + Math.random() * 1.6,
+        o:  0.05 + Math.random() * 0.18
+      });
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      dots.forEach(function (d) {
+        d.x += d.vx; d.y += d.vy;
+        if (d.x < 0) d.x = W; if (d.x > W) d.x = 0;
+        if (d.y < 0) d.y = H; if (d.y > H) d.y = 0;
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(232,117,10,' + d.o + ')';
+        ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 1 — LIVE CHAT SIMULATION
+     Auto-types new messages into the chat UI
+     every few seconds to simulate a live bot
+  ───────────────────────────────────────── */
+  function initChatSimulation() {
+    var container = document.getElementById('cb-chat-msgs');
+    if (!container) return;
+
+    var conversation = [
+      { role: 'user', text: 'Can I reschedule my appointment?' },
+      { role: 'bot',  text: 'Of course! When would you like to reschedule to? I can check availability for you right now.' },
+      { role: 'user', text: 'Tomorrow at 2pm if possible' },
+      { role: 'bot',  text: 'Tomorrow at 2:00 PM is available ✅ I\'ve rescheduled your appointment. You\'ll receive a confirmation email shortly!' },
+      { role: 'user', text: 'Perfect, thank you!' },
+      { role: 'bot',  text: 'Happy to help! Is there anything else I can assist you with today? 😊' }
+    ];
+
+    var idx = 0;
+    var typingEl = container.nextElementSibling; /* the typing indicator row */
+
+    function addMessage(msg) {
+      var div = document.createElement('div');
+      div.className = 'cb-msg ' + msg.role;
+      div.style.opacity   = '0';
+      div.style.transform = 'translateY(10px)';
+      div.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+
+      var ava = document.createElement('div');
+      ava.className = 'cb-msg-ava';
+      ava.textContent = msg.role === 'bot' ? '🤖' : '👤';
+
+      var inner = document.createElement('div');
+      var bubble = document.createElement('div');
+      bubble.className = 'cb-msg-bubble';
+      bubble.textContent = msg.text;
+      var time = document.createElement('div');
+      time.className = 'cb-msg-time';
+      time.textContent = 'Just now';
+      inner.appendChild(bubble);
+      inner.appendChild(time);
+
+      div.appendChild(ava);
+      div.appendChild(inner);
+      container.appendChild(div);
+
+      /* animate in */
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          div.style.opacity   = '1';
+          div.style.transform = 'translateY(0)';
+        });
+      });
+
+      /* scroll to bottom */
+      container.parentElement.scrollTop = container.parentElement.scrollHeight;
+
+      /* keep max 6 messages visible */
+      var all = container.querySelectorAll('.cb-msg');
+      if (all.length > 7) {
+        all[0].remove();
+      }
+    }
+
+    function showTyping() {
+      if (typingEl) typingEl.style.display = 'flex';
+    }
+    function hideTyping() {
+      if (typingEl) typingEl.style.display = 'none';
+    }
+
+    function nextMessage() {
+      if (idx >= conversation.length) { idx = 0; return; }
+      var msg = conversation[idx];
+      idx++;
+
+      if (msg.role === 'bot') {
+        showTyping();
+        setTimeout(function () {
+          hideTyping();
+          addMessage(msg);
+          setTimeout(nextMessage, 2800);
+        }, 1400);
+      } else {
+        addMessage(msg);
+        setTimeout(nextMessage, 1200);
+      }
+    }
+
+    /* start simulation after 3s */
+    setTimeout(nextMessage, 3000);
+  }
+
+  /* ─────────────────────────────────────────
+     SCROLL REVEAL
+  ───────────────────────────────────────── */
+  function initReveal() {
+    var selectors = [
+      '.cb-s2-card',
+      '.cb-channel-card',
+      '.cb-s3-feat',
+      '.cb-s4-row',
+      '.cb-step',
+      '.cb-s1-stat'
+    ];
+    var els = document.querySelectorAll(selectors.join(','));
+    if (!els.length) return;
+
+    els.forEach(function (el) {
+      el.style.opacity    = '0';
+      el.style.transform  = 'translateY(20px)';
+      el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el  = entry.target;
+            var par = el.parentElement;
+            var idx = par ? Array.prototype.indexOf.call(par.children, el) : 0;
+            setTimeout(function () {
+              el.style.opacity   = '1';
+              el.style.transform = 'translateY(0)';
+            }, Math.min(idx * 80, 480));
+            obs.unobserve(el);
+          }
+        });
+      }, { threshold: 0.1 });
+      els.forEach(function (el) { obs.observe(el); });
+    } else {
+      els.forEach(function (el) {
+        el.style.opacity   = '1';
+        el.style.transform = 'translateY(0)';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 2 — CARD 3D TILT
+  ───────────────────────────────────────── */
+  function initCardTilt() {
+    var cards = document.querySelectorAll('.cb-s2-card');
+    cards.forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var rect = card.getBoundingClientRect();
+        var dx   = (e.clientX - rect.left - rect.width  / 2) / (rect.width  / 2);
+        var dy   = (e.clientY - rect.top  - rect.height / 2) / (rect.height / 2);
+        card.style.transform = [
+          'translateY(-10px)',
+          'scale(1.02)',
+          'rotateX(' + (-dy * 5) + 'deg)',
+          'rotateY(' +  (dx * 5) + 'deg)'
+        ].join(' ');
+      });
+      card.addEventListener('mouseleave', function () {
+        card.style.transform  = '';
+        card.style.transition = 'all 0.45s cubic-bezier(0.4,0,0.2,1)';
+      });
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 1 — STAT COUNTER ANIMATION
+  ───────────────────────────────────────── */
+  function initCounters() {
+    var nums = document.querySelectorAll(
+      '.cb-s1-stat-num[data-target], .cb-s4-metric-num[data-count]'
+    );
+    if (!nums.length) return;
+
+    function animate(el) {
+      var raw = el.getAttribute('data-target') || el.getAttribute('data-count') || el.textContent;
+      var match = String(raw).match(/^([\d.]+)(.*)/);
+      if (!match) return;
+      var target   = parseFloat(match[1]);
+      var suffix   = match[2] || '';
+      var isFloat  = String(target).indexOf('.') !== -1;
+      var duration = 1300;
+      var startT   = null;
+
+      function step(ts) {
+        if (!startT) startT = ts;
+        var prog  = Math.min((ts - startT) / duration, 1);
+        var eased = 1 - Math.pow(2, -10 * prog);
+        var val   = eased * target;
+        el.textContent = (isFloat ? val.toFixed(1) : Math.floor(val)) + suffix;
+        if (prog < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { animate(e.target); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.55 });
+      nums.forEach(function (el) { obs.observe(el); });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 3 — CHANNEL CARD SEQUENTIAL GLOW
+  ───────────────────────────────────────── */
+  function initChannelGlow() {
+    var cards = document.querySelectorAll('.cb-channel-card');
+    if (!cards.length) return;
+    var idx = 0;
+
+    function glow() {
+      cards.forEach(function (c) {
+        c.style.borderColor = 'rgba(255,255,255,0.07)';
+        c.style.boxShadow   = 'none';
+        c.style.background  = 'rgba(255,255,255,0.03)';
+      });
+      var active = cards[idx];
+      active.style.borderColor = 'rgba(232,117,10,0.45)';
+      active.style.boxShadow   = '0 0 24px rgba(232,117,10,0.15)';
+      active.style.background  = 'rgba(232,117,10,0.07)';
+      active.style.transition  = 'all 0.5s ease';
+      idx = (idx + 1) % cards.length;
+    }
+    glow();
+    setInterval(glow, 900);
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 4 — COMPARISON ROW SYNC HOVER
+  ───────────────────────────────────────── */
+  function initRowSync() {
+    var beforeRows = document.querySelectorAll('.cb-s4-before .cb-s4-row');
+    var afterRows  = document.querySelectorAll('.cb-s4-after  .cb-s4-row');
+
+    function syncHover(i, on) {
+      [beforeRows[i], afterRows[i]].forEach(function (r) {
+        if (!r) return;
+        r.style.background  = on ? 'rgba(232,117,10,0.05)' : '';
+        r.style.paddingLeft = on ? '8px' : '';
+        r.style.transition  = 'all 0.25s ease';
+      });
+    }
+
+    beforeRows.forEach(function (row, i) {
+      row.addEventListener('mouseenter', function () { syncHover(i, true);  });
+      row.addEventListener('mouseleave', function () { syncHover(i, false); });
+    });
+    afterRows.forEach(function (row, i) {
+      row.addEventListener('mouseenter', function () { syncHover(i, true);  });
+      row.addEventListener('mouseleave', function () { syncHover(i, false); });
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 5 — BUILD STEP THREAD ANIMATION
+  ───────────────────────────────────────── */
+  function initThreads() {
+    var threads = document.querySelectorAll('.cb-step-thread');
+    threads.forEach(function (t) {
+      t.style.height     = '0';
+      t.style.minHeight  = '0';
+      t.style.transition = 'height 0.6s ease, min-height 0.6s ease';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.height    = '28px';
+            entry.target.style.minHeight = '28px';
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      threads.forEach(function (t) { obs.observe(t); });
+    } else {
+      threads.forEach(function (t) {
+        t.style.height    = '28px';
+        t.style.minHeight = '28px';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     CTA TECH CHIPS — stagger pop-in
+  ───────────────────────────────────────── */
+  function initTechChips() {
+    var chips = document.querySelectorAll('.cb-tech-chip');
+    chips.forEach(function (chip, i) {
+      chip.style.opacity   = '0';
+      chip.style.transform = 'scale(0.75)';
+      chip.style.transition = 'opacity 0.4s ease ' + (i * 0.07) + 's, transform 0.4s ease ' + (i * 0.07) + 's';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.cb-tech-chip').forEach(function (c) {
+              c.style.opacity   = '1';
+              c.style.transform = 'scale(1)';
+            });
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      var wrap = document.querySelector('.cb-cta-tech');
+      if (wrap) obs.observe(wrap);
+    } else {
+      chips.forEach(function (c) {
+        c.style.opacity   = '1';
+        c.style.transform = 'scale(1)';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     CTA CARD — floating entrance
+  ───────────────────────────────────────── */
+  function initCtaEntrance() {
+    var card = document.querySelector('.cb-cta-card');
+    if (!card) return;
+    card.style.opacity   = '0';
+    card.style.transform = 'translateY(36px) scale(0.97)';
+    card.style.transition = 'opacity 0.8s ease, transform 0.8s cubic-bezier(0.4,0,0.2,1)';
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity   = '1';
+            entry.target.style.transform = 'translateY(0) scale(1)';
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      obs.observe(card);
+    } else {
+      card.style.opacity   = '1';
+      card.style.transform = 'none';
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     FLOATING BADGES — entrance pop
+  ───────────────────────────────────────── */
+  function initFloatBadges() {
+    var badges = document.querySelectorAll('.cb-float');
+    badges.forEach(function (b, i) {
+      b.style.opacity   = '0';
+      b.style.transform = 'scale(0.8) translateY(10px)';
+      b.style.transition = 'opacity 0.6s ease ' + (0.8 + i * 0.3) + 's, transform 0.6s ease ' + (0.8 + i * 0.3) + 's';
+    });
+    setTimeout(function () {
+      badges.forEach(function (b) {
+        b.style.opacity   = '1';
+        b.style.transform = '';
+      });
+    }, 400);
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 3 — FEATURE LIST STAGGER
+  ───────────────────────────────────────── */
+  function initFeatStagger() {
+    var feats = document.querySelectorAll('.cb-s3-feat');
+    feats.forEach(function (f, i) {
+      f.style.opacity   = '0';
+      f.style.transform = 'translateX(30px)';
+      f.style.transition = 'opacity 0.6s ease ' + (i * 0.12) + 's, transform 0.6s ease ' + (i * 0.12) + 's';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.cb-s3-feat').forEach(function (f) {
+              f.style.opacity   = '1';
+              f.style.transform = 'translateX(0)';
+            });
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      var wrap = document.querySelector('.cb-s3-features');
+      if (wrap) obs.observe(wrap);
+    } else {
+      feats.forEach(function (f) {
+        f.style.opacity   = '1';
+        f.style.transform = 'translateX(0)';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     BUTTON RIPPLE EFFECT
+  ───────────────────────────────────────── */
+  function initRipple() {
+    if (!document.getElementById('cb-ripple-kf')) {
+      var s = document.createElement('style');
+      s.id = 'cb-ripple-kf';
+      s.textContent = '@keyframes cbRipple{to{transform:scale(3.5);opacity:0}}';
+      document.head.appendChild(s);
+    }
+    var btns = document.querySelectorAll('.cb-btn-pri, .cb-btn-ghost');
+    btns.forEach(function (btn) {
+      btn.style.position = 'relative';
+      btn.style.overflow = 'hidden';
+      btn.addEventListener('click', function (e) {
+        var rect   = btn.getBoundingClientRect();
+        var ripple = document.createElement('span');
+        ripple.style.cssText = [
+          'position:absolute',
+          'border-radius:50%',
+          'background:rgba(255,255,255,0.22)',
+          'width:100px', 'height:100px',
+          'left:' + (e.clientX - rect.left - 50) + 'px',
+          'top:'  + (e.clientY - rect.top  - 50) + 'px',
+          'transform:scale(0)',
+          'animation:cbRipple 0.6s linear',
+          'pointer-events:none'
+        ].join(';');
+        btn.appendChild(ripple);
+        setTimeout(function () { ripple.remove(); }, 650);
+      });
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     STAT CARDS — wave entrance
+  ───────────────────────────────────────── */
+  function initStatEntrance() {
+    var stats = document.querySelectorAll('.cb-s1-stat');
+    stats.forEach(function (s, i) {
+      s.style.opacity   = '0';
+      s.style.transform = 'translateY(16px)';
+      s.style.transition = 'opacity 0.5s ease ' + (i * 0.08) + 's, transform 0.5s ease ' + (i * 0.08) + 's';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.cb-s1-stat').forEach(function (s) {
+              s.style.opacity   = '1';
+              s.style.transform = 'translateY(0)';
+            });
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      var grid = document.querySelector('.cb-s1-stats');
+      if (grid) obs.observe(grid);
+    } else {
+      stats.forEach(function (s) {
+        s.style.opacity   = '1';
+        s.style.transform = 'translateY(0)';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     CHAT UI — smooth scroll on load
+  ───────────────────────────────────────── */
+  function initChatScroll() {
+    var msgs = document.getElementById('cb-chat-msgs');
+    if (!msgs) return;
+    var parent = msgs.parentElement;
+    if (parent) parent.scrollTop = parent.scrollHeight;
+  }
+
+  /* ─────────────────────────────────────────
+     BOOT
+  ───────────────────────────────────────── */
+  function boot() {
+    initS1Canvas();
+    initS3Canvas();
+    initChatSimulation();
+    initReveal();
+    initCardTilt();
+    initCounters();
+    initChannelGlow();
+    initRowSync();
+    initThreads();
+    initTechChips();
+    initCtaEntrance();
+    initFloatBadges();
+    initFeatStagger();
+    initRipple();
+    initStatEntrance();
+    initChatScroll();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+
+})();
