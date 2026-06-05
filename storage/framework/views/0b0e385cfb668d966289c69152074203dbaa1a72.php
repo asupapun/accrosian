@@ -23,37 +23,39 @@
     <div class="container page-hero-inner">
         <!-- <div style="font-size:4rem;margin-bottom:16px"><?php echo e($service->icon); ?></div> -->
         <h1 class="page-hero-title"><span class="text-gradient"><?php echo e($service->title); ?></span></h1>
-        <p class="page-hero-sub">Right from conceptualization to planning and development to deployment, we prioritize
-            collaboration and transparency at every stage of mobile app development.</p>
-        <a style="margin-top:20px" href="<?php echo e(route('contact')); ?>" class="btn btn-primary">Get a Quote</a>
+        <p class="page-hero-sub">We deliver innovative, scalable, and secure solutions tailored to your business needs,
+            ensuring performance, reliability, seamless user experience, and long term growth through cutting edge
+            technologies</p>
+        <a style="margin-top:30px" href="<?php echo e(route('contact')); ?>" class="btn btn-primary">Get a Quote</a>
     </div>
 
 </section>
 
-<section style="padding:100px 0">
-    <div style="max-width:100%;padding:0 40px">
+<section style="padding:60px 0">
+    <div style="max-width:100%;">
 
         
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:start;" class="reveal">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:start;padding:0 40px"
+            class="reveal">
             <div>
                 <!-- <span class="section-tag">Overview</span> -->
-                <h2 class="section-title">High-Performance Software <span class="text-gradient">& Digital
-                        Solutions</span></h2>
-                <p style="color:var(--black);line-height:1.8;margin-top:16px;font-size:1.05rem;font-weight:500">
-                    <?php echo e($service->short_description); ?>
+                <!-- <h2 class="section-title">High-Performance Software <span class="text-gradient">& Digital
+                        Solutions</span></h2> -->
+                <p style="color:var(--black);line-height:1.8;font-size:1.05rem;font-weight:500">
+                    <?php echo $service->short_description; ?>
 
                 </p>
             </div>
             <div class="reveal reveal-delay-2">
                 <?php if($service->image && !str_starts_with($service->image,'assets/')): ?>
                 <img src="<?php echo e(asset('storage/'.$service->image)); ?>" alt="<?php echo e($service->title); ?>"
-                    style="width:100%;max-height:450px;border-radius:16px;object-fit:cover;object-position:center;" />
+                    style="width:100%;max-height:100%;border-radius:16px;object-fit:cover;object-position:center;" />
                 <?php elseif($service->image): ?>
                 <img src="<?php echo e(asset($service->image)); ?>" alt="<?php echo e($service->title); ?>"
-                    style="width:100%;max-height:450px;border-radius:16px;object-fit:cover;object-position:center;" />
+                    style="width:100%;max-height:100%;border-radius:16px;object-fit:cover;object-position:center;" />
                 <?php else: ?>
                 <img src="<?php echo e(asset('assets/images/web-dev-img.png')); ?>" alt="<?php echo e($service->title); ?>"
-                    style="width:100%;max-height:450px;border-radius:16px;object-fit:cover;object-position:center;" />
+                    style="width:100%;max-height:100%;border-radius:16px;object-fit:cover;object-position:center;" />
                 <?php endif; ?>
             </div>
         </div>
@@ -65,32 +67,48 @@
         </div>
 
         
-        <div style="margin-top:36px;display:flex;gap:16px;flex-wrap:wrap;" class="reveal">
+        <!-- <div style="margin-left:60px;display:flex;gap:16px;flex-wrap:wrap;" class="reveal">
             <a href="<?php echo e(route('contact')); ?>" class="btn btn-primary">Get a Quote</a>
             <a href="<?php echo e(route('services')); ?>" class="btn btn-outline">All Services</a>
-        </div>
+        </div> -->
 
     </div>
 </section>
 
 <?php if($others->isNotEmpty()): ?>
-<section style="padding:10px 0;background:var(--surface)">
+<section class="ac-others-section">
+    <div class="ac-others-bg-orb"></div>
     <div class="container">
-        <div style="text-align:center;margin-bottom:48px">
+        <div class="ac-others-header reveal">
             <span class="section-tag">Explore More</span>
             <h2 class="section-title">Other <span class="text-gradient">Services</span></h2>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px">
-            <?php $__currentLoopData = $others; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $other): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <a href="<?php echo e(route('services.show', $other->slug)); ?>"
-                style="background:var(--navy-light);border:1px solid var(--border);border-radius:12px;padding:24px;text-decoration:none;transition:all 0.3s;display:block"
-                class="reveal">
-                <div style="font-size:2rem;margin-bottom:12px"><?php echo e($other->icon); ?></div>
-                <h4 style="color:var(--orange);font-weight:700;margin-bottom:8px"><?php echo e($other->title); ?></h4>
-                <p style="color:var(--white);font-size:0.9rem;line-height:1.6">
-                    <?php echo e(Str::limit($other->short_description, 80)); ?></p>
+        <div class="ac-others-grid">
+            <?php $__currentLoopData = $others->take(10); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i => $other): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <a href="<?php echo e(route('services.show', $other->slug)); ?>" class="ac-others-card reveal"
+                style="animation-delay:<?php echo e($i * 0.08); ?>s">
+                <div class="ac-others-card-glow"></div>
+                <div class="ac-others-card-border"></div>
+                <div class="ac-others-card-inner">
+                    <div class="ac-others-icon-wrap">
+                        <div class="ac-svg-icon"
+                            data-service="<?php echo e(strtolower(str_replace([' ','/','&'], '-', $other->title))); ?>">
+                        </div>
+                    </div>
+                    <h4 class="ac-others-title"><?php echo e($other->title); ?></h4>
+                    <div class="ac-others-arrow">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="ac-others-shine"></div>
             </a>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </div>
+        <div style="margin-top:30px;display:flex;gap:16px;flex-wrap:wrap;" class="reveal">
+            <a href="<?php echo e(route('services')); ?>" class="btn btn-outline">All Services</a>
         </div>
     </div>
 </section>

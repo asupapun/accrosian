@@ -8,7 +8,7 @@ delivering innovative web, mobile, cloud, and AI solutions for modern businesses
 
 
 <section class="hero">
-    <img src="<?php echo e(asset('assets/images/touch-bg-img.jpeg')); ?>" alt="Hero Background" class="hero-bg-img" />
+    <img src="<?php echo e(asset('assets/images/hero-img3.jpeg')); ?>" alt="Hero Background" class="hero-bg-img" />
     <div class="hero-bg-effects">
         <div class="hero-orb hero-orb-1"></div>
         <div class="hero-orb hero-orb-2"></div>
@@ -25,7 +25,7 @@ delivering innovative web, mobile, cloud, and AI solutions for modern businesses
                 <span class="text-gradient">Modern Businesses</span>
             </h1>
             <p class="hero-description">
-                We craft cutting-edge digital experiences — from powerful web platforms to intelligent AI solutions —
+                We craft cutting edge digital experiences from powerful web platforms to intelligent AI solutions
                 helping businesses accelerate growth and outpace competition.
             </p>
             <div class="hero-actions">
@@ -185,6 +185,69 @@ delivering innovative web, mobile, cloud, and AI solutions for modern businesses
         </div>
 </section>
 
+<section class="ac-dev-section">
+    <div class="ac-dev-header reveal">
+        <span class="section-tag">How We Work</span>
+        <h2 class="section-title">Our <span class="text-gradient">Development Process</span></h2>
+        <p class="section-subtitle" style="margin:0 auto">A streamlined workflow that delivers results on time, every
+            time.</p>
+    </div>
+
+    <div class="ac-dev-steps-row" id="ac-dev-steps-row"></div>
+
+    <div class="ac-dev-progress-bar">
+        <div class="ac-dev-progress-fill" id="ac-dev-prog"></div>
+    </div>
+
+    <div class="ac-dev-detail" id="ac-dev-detail"></div>
+
+    <div class="ac-dev-nav">
+        <button onclick="acDevNav(-1)" class="btn btn-outline btn-sm">← Previous</button>
+        <button onclick="acDevNav(1)" class="btn btn-primary btn-sm">Next →</button>
+    </div>
+</section>
+
+
+
+
+<section class="process-section">
+    <div class="container">
+        <div style="text-align:center;margin-bottom:60px" class="reveal">
+            <span class="section-tag">Why Accrosian</span>
+            <h2 class="section-title">Built for <span class="text-gradient">Performance & Scale</span></h2>
+            <p class="process-header-sub">We deliver high performance, secure, and scalable digital solutions with
+                speed, reliability, and dedicated support to drive your business growth, leveraging cutting edge
+                technologies, industry best practices, and a results driven approach to ensure seamless execution,
+                enhanced efficiency, and long-term success</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card reveal reveal-delay-1">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Fast Delivery</h3>
+                <p class="feature-text">Agile processes ensure rapid delivery without sacrificing quality or attention
+                    to detail.</p>
+            </div>
+            <div class="feature-card reveal reveal-delay-2">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title">Enterprise Security</h3>
+                <p class="feature-text">Bank-grade security practices baked into every layer of our solutions.</p>
+            </div>
+            <div class="feature-card reveal reveal-delay-3">
+                <div class="feature-icon">📈</div>
+                <h3 class="feature-title">Scalable Architecture</h3>
+                <p class="feature-text">Systems designed to grow with your business from startup to enterprise scale.
+                </p>
+            </div>
+            <div class="feature-card reveal reveal-delay-4">
+                <div class="feature-icon">🤝</div>
+                <h3 class="feature-title">Dedicated Support</h3>
+                <p class="feature-text">24/7 dedicated support teams ensuring your systems run flawlessly around the
+                    clock.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <section class="process-section">
     <div class="container">
@@ -193,7 +256,7 @@ delivering innovative web, mobile, cloud, and AI solutions for modern businesses
             <h2 class="section-title">How We Build <span class="text-gradient">Extraordinary</span> Software Together
             </h2>
             <p class="process-header-sub">Our streamlined development workflow ensures high-quality, scalable, and
-                reliable digital products — delivered on time, every time.</p>
+                reliable digital products delivered on time, every time.</p>
         </div>
         <div class="process-grid">
             <div class="process-card reveal reveal-delay-1">
@@ -242,45 +305,6 @@ delivering innovative web, mobile, cloud, and AI solutions for modern businesses
 </section>
 
 
-<section class="process-section">
-    <div class="container">
-        <div style="text-align:center;margin-bottom:60px" class="reveal">
-            <span class="section-tag">Why Accrosian</span>
-            <h2 class="section-title">Built for <span class="text-gradient">Performance & Scale</span></h2>
-            <p class="process-header-sub">“We deliver high-performance, secure, and scalable digital solutions with
-                speed, reliability, and dedicated support to drive your business growth, leveraging cutting-edge
-                technologies, industry best practices, and a results-driven approach to ensure seamless execution,
-                enhanced efficiency, and long-term success</p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-card reveal reveal-delay-1">
-                <div class="feature-icon">⚡</div>
-                <h3 class="feature-title">Fast Delivery</h3>
-                <p class="feature-text">Agile processes ensure rapid delivery without sacrificing quality or attention
-                    to detail.</p>
-            </div>
-            <div class="feature-card reveal reveal-delay-2">
-                <div class="feature-icon">🔒</div>
-                <h3 class="feature-title">Enterprise Security</h3>
-                <p class="feature-text">Bank-grade security practices baked into every layer of our solutions.</p>
-            </div>
-            <div class="feature-card reveal reveal-delay-3">
-                <div class="feature-icon">📈</div>
-                <h3 class="feature-title">Scalable Architecture</h3>
-                <p class="feature-text">Systems designed to grow with your business from startup to enterprise scale.
-                </p>
-            </div>
-            <div class="feature-card reveal reveal-delay-4">
-                <div class="feature-icon">🤝</div>
-                <h3 class="feature-title">Dedicated Support</h3>
-                <p class="feature-text">24/7 dedicated support teams ensuring your systems run flawlessly around the
-                    clock.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
 <?php if($portfolio->isNotEmpty()): ?>
 <section class="showcase-section">
     <div class="showcase-header reveal">
@@ -289,7 +313,7 @@ delivering innovative web, mobile, cloud, and AI solutions for modern businesses
         <p class="process-header-sub">Explore our featured projects showcasing innovative solutions, real-world impact,
             and successful results delivered across diverse industries and client needs, highlighting our expertise in
             solving complex challenges, driving digital transformation, enhancing user experiences, and delivering
-            scalable, high-performance solutions tailored to business goals</p>
+            scalable, high-performance solutions tailored to business goals.</p>
     </div>
 
     <div class="showcase-track-wrap">
@@ -353,7 +377,7 @@ delivering innovative web, mobile, cloud, and AI solutions for modern businesses
             <p class="process-header-sub">Hear from our satisfied clients who trust us for delivering reliable,
                 innovative solutions and exceptional results that exceed expectations, building long-term partnerships
                 through consistent performance, transparent communication, industry expertise, and a commitment to
-                delivering measurable business value and growth</p>
+                delivering measurable business value and growth.</p>
         </div>
         <div class="testimonials-slider">
             <div class="testimonials-track">
