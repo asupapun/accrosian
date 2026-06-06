@@ -4171,3 +4171,719 @@ console.log(
   }
 
 })();
+
+
+
+/* ══════════════════════════════════════════
+   ACCROSIAN — ML DEVELOPMENT JS
+   Paste before closing </body> or link externally
+══════════════════════════════════════════ */
+
+(function () {
+  'use strict';
+
+  /* ─────────────────────────────────────────
+     SECTION 1 — HERO CANVAS
+     Scatter plot of data points that animate
+     into two clusters — simulating ML
+     classification learning in real time
+  ───────────────────────────────────────── */
+  function initS1Canvas() {
+    var c = document.getElementById('ml-s1-canvas');
+    if (!c) return;
+    var ctx = c.getContext('2d');
+    var W, H, points = [];
+
+    function resize() {
+      var sec = c.parentElement;
+      W = c.width  = sec ? sec.offsetWidth  : window.innerWidth;
+      H = c.height = sec ? sec.offsetHeight : 650;
+      buildPoints();
+    }
+
+    function buildPoints() {
+      points = [];
+      var n = 60;
+      for (var i = 0; i < n; i++) {
+        var cls = i < n / 2 ? 0 : 1;
+        var cx  = cls === 0 ? W * 0.38 : W * 0.62;
+        var cy  = cls === 0 ? H * 0.4  : H * 0.6;
+        points.push({
+          x:    cx + (Math.random() - 0.5) * W * 0.28,
+          y:    cy + (Math.random() - 0.5) * H * 0.35,
+          tx:   cx + (Math.random() - 0.5) * W * 0.14,
+          ty:   cy + (Math.random() - 0.5) * H * 0.18,
+          cls:  cls,
+          prog: Math.random(),
+          r:    2.5 + Math.random() * 2,
+          speed: 0.002 + Math.random() * 0.003
+        });
+      }
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+
+    var decisionLineX = 0;
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+
+      /* animate decision boundary line */
+      if (decisionLineX < W * 0.5) decisionLineX += 1.5;
+      var lineX = W * 0.3 + decisionLineX * 0.4;
+      ctx.beginPath();
+      ctx.moveTo(lineX, H * 0.05);
+      ctx.lineTo(lineX - W * 0.04, H * 0.95);
+      ctx.strokeStyle = 'rgba(232,117,10,0.15)';
+      ctx.lineWidth   = 1.5;
+      ctx.setLineDash([6, 4]);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      /* draw points */
+      points.forEach(function (p) {
+        p.prog += p.speed;
+        if (p.prog > 1) p.prog = 1;
+        var ex = p.x + (p.tx - p.x) * p.prog;
+        var ey = p.y + (p.ty - p.y) * p.prog;
+
+        var color = p.cls === 0
+          ? 'rgba(232,117,10,' : 'rgba(96,165,250,';
+
+        /* glow */
+        ctx.beginPath();
+        ctx.arc(ex, ey, p.r + 4, 0, Math.PI * 2);
+        ctx.fillStyle = color + '0.08)';
+        ctx.fill();
+
+        /* point */
+        ctx.beginPath();
+        ctx.arc(ex, ey, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = color + '0.7)';
+        ctx.fill();
+      });
+
+      /* legend */
+      ctx.font = 'bold 11px monospace';
+      ctx.fillStyle = 'rgba(232,117,10,0.6)';
+      ctx.fillText('● Class A', W * 0.28, H * 0.92);
+      ctx.fillStyle = 'rgba(96,165,250,0.6)';
+      ctx.fillText('● Class B', W * 0.44, H * 0.92);
+      ctx.fillStyle = 'rgba(232,117,10,0.35)';
+      ctx.fillText('— Decision Boundary', W * 0.28, H * 0.97);
+
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 1 — TRAINING CHART (Loss Curves)
+     Draws animated loss/accuracy curves on canvas
+  ───────────────────────────────────────── */
+  function initTrainingChart() {
+    var canvas = document.getElementById('ml-chart');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+
+    /* set canvas size */
+    canvas.width  = canvas.offsetWidth  || 380;
+    canvas.height = canvas.offsetHeight || 140;
+    var W = canvas.width;
+    var H = canvas.height;
+
+    /* generate training + val loss curves (decreasing) */
+    var epochs = 50;
+    var trainLoss = [], valLoss = [];
+    for (var i = 0; i < epochs; i++) {
+      var t = i / (epochs - 1);
+      trainLoss.push(0.85 * Math.exp(-4.5 * t) + 0.06 + (Math.random() - 0.5) * 0.015);
+      valLoss.push(0.82 * Math.exp(-3.8 * t) + 0.09 + (Math.random() - 0.5) * 0.02);
+    }
+
+    var drawn = 0;
+
+    function drawChart() {
+      ctx.clearRect(0, 0, W, H);
+
+      /* grid lines */
+      ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+      ctx.lineWidth = 1;
+      for (var g = 0; g <= 4; g++) {
+        var y = (H * 0.05) + g * (H * 0.88 / 4);
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(W, y);
+        ctx.stroke();
+      }
+
+      /* axis labels */
+      ctx.fillStyle = 'rgba(255,255,255,0.25)';
+      ctx.font = '9px monospace';
+      ctx.fillText('1.0', 2, H * 0.1);
+      ctx.fillText('0.5', 2, H * 0.5);
+      ctx.fillText('0.0', 2, H * 0.93);
+
+      var n = Math.min(drawn, epochs);
+
+      function drawLine(data, color, label) {
+        if (n < 2) return;
+        ctx.beginPath();
+        for (var i = 0; i < n; i++) {
+          var x  = (i / (epochs - 1)) * W;
+          var y  = H * 0.05 + (1 - Math.min(data[i], 1)) * H * 0.88;
+          i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        }
+        ctx.strokeStyle = color;
+        ctx.lineWidth   = 2;
+        ctx.lineJoin    = 'round';
+        ctx.stroke();
+
+        /* endpoint dot */
+        var lx = ((n - 1) / (epochs - 1)) * W;
+        var ly = H * 0.05 + (1 - Math.min(data[n - 1], 1)) * H * 0.88;
+        ctx.beginPath();
+        ctx.arc(lx, ly, 4, 0, Math.PI * 2);
+        ctx.fillStyle = color;
+        ctx.fill();
+      }
+
+      drawLine(trainLoss, 'rgba(232,117,10,0.85)', 'Train');
+      drawLine(valLoss,   'rgba(96,165,250,0.75)',  'Val');
+
+      /* legend */
+      ctx.fillStyle = 'rgba(232,117,10,0.7)'; ctx.fillRect(8,  H * 0.88, 14, 3);
+      ctx.fillStyle = 'rgba(255,255,255,0.4)'; ctx.font = '9px monospace';
+      ctx.fillText('Train Loss', 26, H * 0.92);
+      ctx.fillStyle = 'rgba(96,165,250,0.7)';  ctx.fillRect(105, H * 0.88, 14, 3);
+      ctx.fillStyle = 'rgba(255,255,255,0.4)';
+      ctx.fillText('Val Loss', 123, H * 0.92);
+
+      if (drawn < epochs) {
+        drawn += 0.6;
+        requestAnimationFrame(drawChart);
+      }
+    }
+
+    setTimeout(drawChart, 600);
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 1 — LIVE METRIC ANIMATION
+     Animates the training metrics as if live
+  ───────────────────────────────────────── */
+  function initMetricAnimation() {
+    var epochEl   = document.getElementById('ml-epoch-counter');
+    var trainEl   = document.getElementById('ml-train-loss');
+    var trainValEl = document.getElementById('ml-train-loss-val');
+    var valEl     = document.getElementById('ml-val-loss');
+    var valValEl  = document.getElementById('ml-val-loss-val');
+    var accEl     = document.getElementById('ml-accuracy');
+    var accValEl  = document.getElementById('ml-accuracy-val');
+    var f1El      = document.getElementById('ml-f1');
+    var f1ValEl   = document.getElementById('ml-f1-val');
+    if (!epochEl) return;
+
+    var epoch = 47;
+    var maxEpoch = 50;
+
+    /* target final values */
+    var targets = {
+      trainLoss: 0.06, valLoss: 0.09,
+      acc: 97.8, f1: 0.97
+    };
+
+    /* current values */
+    var cur = {
+      trainLoss: 0.08, valLoss: 0.11,
+      acc: 96.2, f1: 0.94
+    };
+
+    function update() {
+      if (epoch >= maxEpoch) return;
+      epoch++;
+
+      /* nudge metrics toward target */
+      cur.trainLoss = Math.max(targets.trainLoss, cur.trainLoss - (Math.random() * 0.006));
+      cur.valLoss   = Math.max(targets.valLoss,   cur.valLoss   - (Math.random() * 0.005));
+      cur.acc       = Math.min(targets.acc,        cur.acc       + (Math.random() * 0.4));
+      cur.f1        = Math.min(targets.f1,         cur.f1        + (Math.random() * 0.008));
+
+      if (epochEl)   epochEl.textContent  = 'Epoch: ' + epoch + ' / ' + maxEpoch;
+      if (trainEl)   trainEl.style.width  = Math.round(cur.trainLoss * 100) + '%';
+      if (trainValEl) trainValEl.textContent = cur.trainLoss.toFixed(2);
+      if (valEl)     valEl.style.width    = Math.round(cur.valLoss * 100) + '%';
+      if (valValEl)  valValEl.textContent = cur.valLoss.toFixed(2);
+      if (accEl)     accEl.style.width    = cur.acc.toFixed(1) + '%';
+      if (accValEl)  accValEl.textContent = cur.acc.toFixed(1) + '%';
+      if (f1El)      f1El.style.width     = (cur.f1 * 100).toFixed(0) + '%';
+      if (f1ValEl)   f1ValEl.textContent  = cur.f1.toFixed(2);
+
+      setTimeout(update, 1200 + Math.random() * 800);
+    }
+
+    setTimeout(update, 2500);
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 3 — BACKGROUND DOT CANVAS
+  ───────────────────────────────────────── */
+  function initS3Canvas() {
+    var c = document.getElementById('ml-s3-canvas');
+    if (!c) return;
+    var ctx = c.getContext('2d');
+    var W, H, dots = [];
+
+    function resize() {
+      var sec = c.parentElement;
+      W = c.width  = sec ? sec.offsetWidth  : window.innerWidth;
+      H = c.height = sec ? sec.offsetHeight : 750;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    for (var i = 0; i < 80; i++) {
+      dots.push({
+        x: Math.random() * 1600, y: Math.random() * 900,
+        vx: (Math.random() - 0.5) * 0.22, vy: (Math.random() - 0.5) * 0.22,
+        r: 0.8 + Math.random() * 1.6, o: 0.05 + Math.random() * 0.18
+      });
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      dots.forEach(function (d) {
+        d.x += d.vx; d.y += d.vy;
+        if (d.x < 0) d.x = W; if (d.x > W) d.x = 0;
+        if (d.y < 0) d.y = H; if (d.y > H) d.y = 0;
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(232,117,10,' + d.o + ')';
+        ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  /* ─────────────────────────────────────────
+     SCROLL REVEAL
+  ───────────────────────────────────────── */
+  function initReveal() {
+    var selectors = [
+      '.ml-s2-card', '.ml-pipe-card', '.ml-industry-card',
+      '.ml-step', '.ml-stat', '.ml-pipe-step'
+    ];
+    var els = document.querySelectorAll(selectors.join(','));
+    if (!els.length) return;
+
+    els.forEach(function (el) {
+      el.style.opacity    = '0';
+      el.style.transform  = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el  = entry.target;
+            var par = el.parentElement;
+            var idx = par ? Array.prototype.indexOf.call(par.children, el) : 0;
+            setTimeout(function () {
+              el.style.opacity   = '1';
+              el.style.transform = 'translateY(0)';
+            }, Math.min(idx * 80, 480));
+            obs.unobserve(el);
+          }
+        });
+      }, { threshold: 0.1 });
+      els.forEach(function (el) { obs.observe(el); });
+    } else {
+      els.forEach(function (el) {
+        el.style.opacity   = '1';
+        el.style.transform = 'translateY(0)';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 2 — CARD 3D TILT
+  ───────────────────────────────────────── */
+  function initCardTilt() {
+    var cards = document.querySelectorAll('.ml-s2-card');
+    cards.forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var rect = card.getBoundingClientRect();
+        var dx   = (e.clientX - rect.left - rect.width  / 2) / (rect.width  / 2);
+        var dy   = (e.clientY - rect.top  - rect.height / 2) / (rect.height / 2);
+        card.style.transform = [
+          'translateY(-10px)', 'scale(1.02)',
+          'rotateX(' + (-dy * 5) + 'deg)',
+          'rotateY(' +  (dx * 5) + 'deg)'
+        ].join(' ');
+      });
+      card.addEventListener('mouseleave', function () {
+        card.style.transform  = '';
+        card.style.transition = 'all 0.45s cubic-bezier(0.4,0,0.2,1)';
+      });
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 3 — PIPE NODE SEQUENTIAL GLOW
+  ───────────────────────────────────────── */
+  function initPipeGlow() {
+    var nodes = document.querySelectorAll('.ml-pipe-node');
+    if (!nodes.length) return;
+    var idx = 0;
+
+    function glow() {
+      nodes.forEach(function (n) {
+        n.style.borderColor = 'rgba(255,255,255,0.08)';
+        n.style.background  = 'rgba(26,32,96,0.9)';
+        n.style.boxShadow   = 'none';
+      });
+      var a = nodes[idx];
+      a.style.borderColor = 'rgba(232,117,10,0.6)';
+      a.style.background  = 'rgba(232,117,10,0.12)';
+      a.style.boxShadow   = '0 0 28px rgba(232,117,10,0.28)';
+      a.style.transition  = 'all 0.5s ease';
+      idx = (idx + 1) % nodes.length;
+    }
+    glow();
+    setInterval(glow, 900);
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 4 — INDUSTRY CARD ENTRANCE
+  ───────────────────────────────────────── */
+  function initIndustryEntrance() {
+    var cards = document.querySelectorAll('.ml-industry-card');
+    cards.forEach(function (card, i) {
+      var even = (i % 2 === 0);
+      card.style.opacity   = '0';
+      card.style.transform = even ? 'translateX(-24px)' : 'translateX(24px)';
+      card.style.transition = 'opacity 0.65s ease ' + (Math.floor(i / 3) * 0.12 + (i % 3) * 0.1) + 's, transform 0.65s ease ' + (Math.floor(i / 3) * 0.12 + (i % 3) * 0.1) + 's';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity   = '1';
+            entry.target.style.transform = 'translateX(0)';
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      cards.forEach(function (c) { obs.observe(c); });
+    } else {
+      cards.forEach(function (c) {
+        c.style.opacity   = '1';
+        c.style.transform = 'translateX(0)';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 4 — STAT COUNTERS
+  ───────────────────────────────────────── */
+  function initStatCounters() {
+    var stats = document.querySelectorAll('.ml-ic-stat-num');
+    if (!stats.length) return;
+
+    function animate(el) {
+      var raw   = el.textContent.trim();
+      var match = raw.match(/^([\d.]+)(.*)/);
+      if (!match) return;
+      var target  = parseFloat(match[1]);
+      var suffix  = match[2] || '';
+      var isFloat = String(target).indexOf('.') !== -1;
+      var dur     = 1200;
+      var start   = null;
+
+      function step(ts) {
+        if (!start) start = ts;
+        var prog  = Math.min((ts - start) / dur, 1);
+        var eased = 1 - Math.pow(2, -10 * prog);
+        var val   = eased * target;
+        el.textContent = (isFloat ? val.toFixed(1) : Math.floor(val)) + suffix;
+        if (prog < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { animate(e.target); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.6 });
+      stats.forEach(function (el) { obs.observe(el); });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     HERO STAT COUNTERS
+  ───────────────────────────────────────── */
+  function initHeroCounters() {
+    var nums = document.querySelectorAll('.ml-stat-num[data-target]');
+    if (!nums.length) return;
+
+    function animate(el) {
+      var raw   = el.getAttribute('data-target') || el.textContent;
+      var match = String(raw).match(/^([\d.]+)(.*)/);
+      if (!match) return;
+      var target  = parseFloat(match[1]);
+      var suffix  = match[2] || '';
+      var isFloat = String(target).indexOf('.') !== -1;
+      var dur     = 1300;
+      var start   = null;
+
+      function step(ts) {
+        if (!start) start = ts;
+        var prog  = Math.min((ts - start) / dur, 1);
+        var eased = 1 - Math.pow(2, -10 * prog);
+        var val   = eased * target;
+        el.textContent = (isFloat ? val.toFixed(1) : Math.floor(val)) + suffix;
+        if (prog < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { animate(e.target); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.55 });
+      nums.forEach(function (el) { obs.observe(el); });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     HERO STAT CARDS WAVE ENTRANCE
+  ───────────────────────────────────────── */
+  function initStatWave() {
+    var stats = document.querySelectorAll('.ml-stat');
+    stats.forEach(function (s, i) {
+      s.style.opacity   = '0';
+      s.style.transform = 'translateY(16px)';
+      s.style.transition = 'opacity 0.5s ease ' + (i * 0.08) + 's, transform 0.5s ease ' + (i * 0.08) + 's';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.ml-stat').forEach(function (s) {
+              s.style.opacity   = '1';
+              s.style.transform = 'translateY(0)';
+            });
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      var grid = document.querySelector('.ml-s1-stats');
+      if (grid) obs.observe(grid);
+    } else {
+      stats.forEach(function (s) {
+        s.style.opacity   = '1';
+        s.style.transform = 'translateY(0)';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 5 — STEP THREAD ANIMATION
+  ───────────────────────────────────────── */
+  function initThreads() {
+    var threads = document.querySelectorAll('.ml-step-thread');
+    threads.forEach(function (t) {
+      t.style.height     = '0';
+      t.style.minHeight  = '0';
+      t.style.transition = 'height 0.6s ease, min-height 0.6s ease';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.height    = '28px';
+            entry.target.style.minHeight = '28px';
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      threads.forEach(function (t) { obs.observe(t); });
+    } else {
+      threads.forEach(function (t) {
+        t.style.height    = '28px';
+        t.style.minHeight = '28px';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     TECH CHIPS — stagger pop-in
+  ───────────────────────────────────────── */
+  function initTechChips() {
+    var chips = document.querySelectorAll('.ml-tech-chip');
+    chips.forEach(function (chip, i) {
+      chip.style.opacity   = '0';
+      chip.style.transform = 'scale(0.75)';
+      chip.style.transition = 'opacity 0.4s ease ' + (i * 0.07) + 's, transform 0.4s ease ' + (i * 0.07) + 's';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.ml-tech-chip').forEach(function (c) {
+              c.style.opacity   = '1';
+              c.style.transform = 'scale(1)';
+            });
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      var wrap = document.querySelector('.ml-cta-tech');
+      if (wrap) obs.observe(wrap);
+    } else {
+      chips.forEach(function (c) {
+        c.style.opacity   = '1';
+        c.style.transform = 'scale(1)';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     CTA CARD — floating entrance
+  ───────────────────────────────────────── */
+  function initCtaEntrance() {
+    var card = document.querySelector('.ml-cta-card');
+    if (!card) return;
+    card.style.opacity   = '0';
+    card.style.transform = 'translateY(36px) scale(0.97)';
+    card.style.transition = 'opacity 0.8s ease, transform 0.8s cubic-bezier(0.4,0,0.2,1)';
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity   = '1';
+            entry.target.style.transform = 'translateY(0) scale(1)';
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      obs.observe(card);
+    } else {
+      card.style.opacity   = '1';
+      card.style.transform = 'none';
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     FLOATING BADGES — entrance pop
+  ───────────────────────────────────────── */
+  function initFloatBadges() {
+    var badges = document.querySelectorAll('.ml-float');
+    badges.forEach(function (b, i) {
+      b.style.opacity   = '0';
+      b.style.transform = 'scale(0.8) translateY(10px)';
+      b.style.transition = 'opacity 0.6s ease ' + (0.8 + i * 0.3) + 's, transform 0.6s ease ' + (0.8 + i * 0.3) + 's';
+    });
+    setTimeout(function () {
+      badges.forEach(function (b) {
+        b.style.opacity   = '1';
+        b.style.transform = '';
+      });
+    }, 400);
+  }
+
+  /* ─────────────────────────────────────────
+     METRIC BARS — animate on load
+  ───────────────────────────────────────── */
+  function initMetricBars() {
+    var bars = [
+      { el: document.getElementById('ml-train-loss'), target: '12%' },
+      { el: document.getElementById('ml-val-loss'),   target: '16%' },
+      { el: document.getElementById('ml-accuracy'),   target: '96%' },
+      { el: document.getElementById('ml-f1'),         target: '94%' }
+    ];
+    bars.forEach(function (b) {
+      if (!b.el) return;
+      b.el.style.width = '0';
+      setTimeout(function () {
+        b.el.style.transition = 'width 1.2s ease';
+        b.el.style.width      = b.target;
+      }, 700);
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     BUTTON RIPPLE
+  ───────────────────────────────────────── */
+  function initRipple() {
+    if (!document.getElementById('ml-ripple-kf')) {
+      var s = document.createElement('style');
+      s.id = 'ml-ripple-kf';
+      s.textContent = '@keyframes mlRipple{to{transform:scale(3.5);opacity:0}}';
+      document.head.appendChild(s);
+    }
+    var btns = document.querySelectorAll('.ml-btn-pri, .ml-btn-ghost');
+    btns.forEach(function (btn) {
+      btn.style.position = 'relative';
+      btn.style.overflow = 'hidden';
+      btn.addEventListener('click', function (e) {
+        var rect   = btn.getBoundingClientRect();
+        var ripple = document.createElement('span');
+        ripple.style.cssText = [
+          'position:absolute', 'border-radius:50%',
+          'background:rgba(255,255,255,0.22)',
+          'width:100px', 'height:100px',
+          'left:' + (e.clientX - rect.left - 50) + 'px',
+          'top:'  + (e.clientY - rect.top  - 50) + 'px',
+          'transform:scale(0)',
+          'animation:mlRipple 0.6s linear',
+          'pointer-events:none'
+        ].join(';');
+        btn.appendChild(ripple);
+        setTimeout(function () { ripple.remove(); }, 650);
+      });
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     BOOT
+  ───────────────────────────────────────── */
+  function boot() {
+    initS1Canvas();
+    initTrainingChart();
+    initMetricAnimation();
+    initS3Canvas();
+    initReveal();
+    initCardTilt();
+    initPipeGlow();
+    initIndustryEntrance();
+    initStatCounters();
+    initHeroCounters();
+    initStatWave();
+    initThreads();
+    initTechChips();
+    initCtaEntrance();
+    initFloatBadges();
+    initMetricBars();
+    initRipple();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+
+})();
