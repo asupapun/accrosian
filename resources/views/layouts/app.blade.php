@@ -56,13 +56,22 @@
         @endif
         <div class="loader-logo">Loading</div>
 
-        <div class="loader-dots">
+        <!-- <div class="loader-dots">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             <span></span>
+        </div> -->
+
+        <div class="wrapper">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
         </div>
     </div>
 
