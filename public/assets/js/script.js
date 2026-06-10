@@ -5564,3 +5564,553 @@ console.log(
   }
 
 })();
+
+
+/* ══════════════════════════════════════════
+   ACCROSIAN — AI INTEGRATION JS
+   Paste before closing </body> or link externally
+══════════════════════════════════════════ */
+
+(function () {
+  'use strict';
+
+  /* ─────────────────────────────────────────
+     SECTION 1 — HERO CANVAS
+     Data packets flowing between integration
+     nodes — simulating live API traffic
+  ───────────────────────────────────────── */
+  function initS1Canvas() {
+    var c = document.getElementById('aint-s1-canvas');
+    if (!c) return;
+    var ctx = c.getContext('2d');
+    var W, H, packets = [];
+
+    function resize() {
+      var sec = c.parentElement;
+      W = c.width  = sec ? sec.offsetWidth  : window.innerWidth;
+      H = c.height = sec ? sec.offsetHeight : 650;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    /* system node positions (relative) */
+    var systemNodes = [
+      { rx: 0.18, ry: 0.25, color: 'rgba(232,117,10,' },
+      { rx: 0.22, ry: 0.65, color: 'rgba(245,147,50,' },
+      { rx: 0.55, ry: 0.15, color: 'rgba(96,165,250,' },
+      { rx: 0.58, ry: 0.55, color: 'rgba(34,197,94,'  },
+      { rx: 0.58, ry: 0.85, color: 'rgba(232,117,10,' },
+      { rx: 0.80, ry: 0.35, color: 'rgba(245,147,50,' },
+      { rx: 0.82, ry: 0.72, color: 'rgba(96,165,250,' }
+    ];
+
+    function mkPacket() {
+      var from = systemNodes[Math.floor(Math.random() * systemNodes.length)];
+      var to   = systemNodes[Math.floor(Math.random() * systemNodes.length)];
+      if (from === to) to = systemNodes[(systemNodes.indexOf(from) + 1) % systemNodes.length];
+      return {
+        sx: from.rx * W, sy: from.ry * H,
+        tx: to.rx   * W, ty: to.ry   * H,
+        color: from.color,
+        prog: 0,
+        speed: 0.008 + Math.random() * 0.012,
+        size: 3 + Math.random() * 2
+      };
+    }
+
+    for (var i = 0; i < 18; i++) {
+      var p = mkPacket();
+      p.prog = Math.random();
+      packets.push(p);
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+
+      /* draw faint connection web */
+      systemNodes.forEach(function (a) {
+        systemNodes.forEach(function (b) {
+          if (a === b) return;
+          var dist = Math.sqrt(
+            Math.pow((a.rx - b.rx) * W, 2) +
+            Math.pow((a.ry - b.ry) * H, 2)
+          );
+          if (dist < W * 0.35) {
+            ctx.beginPath();
+            ctx.moveTo(a.rx * W, a.ry * H);
+            ctx.lineTo(b.rx * W, b.ry * H);
+            ctx.strokeStyle = 'rgba(232,117,10,' + (0.04 * (1 - dist / (W * 0.35))) + ')';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        });
+      });
+
+      /* draw system node dots */
+      systemNodes.forEach(function (n) {
+        ctx.beginPath();
+        ctx.arc(n.rx * W, n.ry * H, 4, 0, Math.PI * 2);
+        ctx.fillStyle = n.color + '0.3)';
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(n.rx * W, n.ry * H, 2, 0, Math.PI * 2);
+        ctx.fillStyle = n.color + '0.7)';
+        ctx.fill();
+      });
+
+      /* draw moving packets */
+      for (var j = 0; j < packets.length; j++) {
+        var pk = packets[j];
+        pk.prog += pk.speed;
+        if (pk.prog >= 1) { packets[j] = mkPacket(); continue; }
+
+        var t     = pk.prog;
+        var ex    = pk.sx + (pk.tx - pk.sx) * t;
+        var ey    = pk.sy + (pk.ty - pk.sy) * t;
+        var alpha = t < 0.15 ? t / 0.15 : t > 0.8 ? (1 - t) / 0.2 : 1;
+
+        /* glow trail */
+        ctx.beginPath();
+        ctx.arc(ex, ey, pk.size + 3, 0, Math.PI * 2);
+        ctx.fillStyle = pk.color + (alpha * 0.12) + ')';
+        ctx.fill();
+
+        /* packet core */
+        ctx.beginPath();
+        ctx.arc(ex, ey, pk.size, 0, Math.PI * 2);
+        ctx.fillStyle = pk.color + (alpha * 0.85) + ')';
+        ctx.fill();
+      }
+
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 3 — BACKGROUND DOT CANVAS
+  ───────────────────────────────────────── */
+  function initS3Canvas() {
+    var c = document.getElementById('aint-s3-canvas');
+    if (!c) return;
+    var ctx = c.getContext('2d');
+    var W, H, dots = [];
+
+    function resize() {
+      var sec = c.parentElement;
+      W = c.width  = sec ? sec.offsetWidth  : window.innerWidth;
+      H = c.height = sec ? sec.offsetHeight : 750;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    for (var i = 0; i < 80; i++) {
+      dots.push({
+        x: Math.random() * 1600, y: Math.random() * 900,
+        vx: (Math.random() - 0.5) * 0.22, vy: (Math.random() - 0.5) * 0.22,
+        r: 0.8 + Math.random() * 1.6, o: 0.05 + Math.random() * 0.18
+      });
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      dots.forEach(function (d) {
+        d.x += d.vx; d.y += d.vy;
+        if (d.x < 0) d.x = W; if (d.x > W) d.x = 0;
+        if (d.y < 0) d.y = H; if (d.y > H) d.y = 0;
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(232,117,10,' + d.o + ')';
+        ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  /* ─────────────────────────────────────────
+     SCROLL REVEAL
+  ───────────────────────────────────────── */
+  function initReveal() {
+    var selectors = [
+      '.aint-s2-card', '.aint-pipe-card', '.aint-tool',
+      '.aint-step',    '.aint-stat',      '.aint-pipe-step',
+      '.aint-spoke-card'
+    ];
+    var els = document.querySelectorAll(selectors.join(','));
+    if (!els.length) return;
+
+    els.forEach(function (el) {
+      el.style.opacity    = '0';
+      el.style.transform  = 'translateY(18px)';
+      el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el  = entry.target;
+            var par = el.parentElement;
+            var idx = par ? Array.prototype.indexOf.call(par.children, el) : 0;
+            setTimeout(function () {
+              el.style.opacity   = '1';
+              el.style.transform = 'translateY(0)';
+            }, Math.min(idx * 60, 480));
+            obs.unobserve(el);
+          }
+        });
+      }, { threshold: 0.1 });
+      els.forEach(function (el) { obs.observe(el); });
+    } else {
+      els.forEach(function (el) {
+        el.style.opacity   = '1';
+        el.style.transform = 'translateY(0)';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 2 — CARD 3D TILT
+  ───────────────────────────────────────── */
+  function initCardTilt() {
+    var cards = document.querySelectorAll('.aint-s2-card');
+    cards.forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var rect = card.getBoundingClientRect();
+        var dx   = (e.clientX - rect.left - rect.width  / 2) / (rect.width  / 2);
+        var dy   = (e.clientY - rect.top  - rect.height / 2) / (rect.height / 2);
+        card.style.transform = [
+          'translateY(-10px)', 'scale(1.02)',
+          'rotateX(' + (-dy * 5) + 'deg)',
+          'rotateY(' +  (dx * 5) + 'deg)'
+        ].join(' ');
+      });
+      card.addEventListener('mouseleave', function () {
+        card.style.transform  = '';
+        card.style.transition = 'all 0.45s cubic-bezier(0.4,0,0.2,1)';
+      });
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 3 — PIPE NODE SEQUENTIAL GLOW
+  ───────────────────────────────────────── */
+  function initPipeGlow() {
+    var nodes = document.querySelectorAll('.aint-pipe-node');
+    if (!nodes.length) return;
+    var idx = 0;
+
+    function glow() {
+      nodes.forEach(function (n) {
+        n.style.borderColor = 'rgba(255,255,255,0.08)';
+        n.style.background  = 'rgba(26,32,96,0.9)';
+        n.style.boxShadow   = 'none';
+      });
+      var a = nodes[idx];
+      a.style.borderColor = 'rgba(232,117,10,0.6)';
+      a.style.background  = 'rgba(232,117,10,0.12)';
+      a.style.boxShadow   = '0 0 28px rgba(232,117,10,0.28)';
+      a.style.transition  = 'all 0.5s ease';
+      idx = (idx + 1) % nodes.length;
+    }
+    glow();
+    setInterval(glow, 900);
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 4 — TOOL CHIPS WAVE ENTRANCE
+     Groups animate category by category
+  ───────────────────────────────────────── */
+  function initToolEntrance() {
+    var cats = document.querySelectorAll('.aint-cat');
+    cats.forEach(function (cat) {
+      var tools = cat.querySelectorAll('.aint-tool');
+      tools.forEach(function (tool, i) {
+        tool.style.opacity   = '0';
+        tool.style.transform = 'translateY(12px) scale(0.95)';
+        tool.style.transition = 'opacity 0.45s ease ' + (i * 0.06) + 's, transform 0.45s ease ' + (i * 0.06) + 's';
+      });
+
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.querySelectorAll('.aint-tool').forEach(function (tool) {
+                tool.style.opacity   = '1';
+                tool.style.transform = 'translateY(0) scale(1)';
+              });
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        obs.observe(cat);
+      } else {
+        tools.forEach(function (tool) {
+          tool.style.opacity   = '1';
+          tool.style.transform = 'translateY(0) scale(1)';
+        });
+      }
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 4 — CATEGORY TITLE SLIDE-IN
+  ───────────────────────────────────────── */
+  function initCatTitles() {
+    var titles = document.querySelectorAll('.aint-cat-title');
+    titles.forEach(function (t, i) {
+      t.style.opacity   = '0';
+      t.style.transform = 'translateX(-20px)';
+      t.style.transition = 'opacity 0.5s ease ' + (i * 0.05) + 's, transform 0.5s ease ' + (i * 0.05) + 's';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity   = '1';
+            entry.target.style.transform = 'translateX(0)';
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      titles.forEach(function (t) { obs.observe(t); });
+    } else {
+      titles.forEach(function (t) {
+        t.style.opacity   = '1';
+        t.style.transform = 'translateX(0)';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 1 — SPOKE CARDS CYCLING GLOW
+  ───────────────────────────────────────── */
+  function initSpokeCycle() {
+    var cards = document.querySelectorAll('.aint-spoke-card');
+    if (!cards.length) return;
+    var idx = 0;
+
+    function cycle() {
+      cards.forEach(function (c) {
+        c.style.borderColor = 'rgba(255,255,255,0.08)';
+        c.style.boxShadow   = 'none';
+      });
+      var a = cards[idx];
+      a.style.borderColor = 'rgba(232,117,10,0.5)';
+      a.style.boxShadow   = '0 0 24px rgba(232,117,10,0.2)';
+      a.style.transition  = 'all 0.5s ease';
+      idx = (idx + 1) % cards.length;
+    }
+    cycle();
+    setInterval(cycle, 1400);
+  }
+
+  /* ─────────────────────────────────────────
+     HERO STAT COUNTERS
+  ───────────────────────────────────────── */
+  function initCounters() {
+    var nums = document.querySelectorAll('.aint-stat-num[data-target]');
+    if (!nums.length) return;
+
+    function animate(el) {
+      var raw   = el.getAttribute('data-target') || el.textContent;
+      /* "Zero" is text — skip numeric animation */
+      if (raw === '0' || raw === 'Zero') {
+        el.textContent = 'Zero';
+        return;
+      }
+      var match = String(raw).match(/^([\d.]+)(.*)/);
+      if (!match) return;
+      var target  = parseFloat(match[1]);
+      var suffix  = match[2] || '';
+      var isFloat = String(target).indexOf('.') !== -1;
+      var dur     = 1300;
+      var start   = null;
+
+      function step(ts) {
+        if (!start) start = ts;
+        var prog  = Math.min((ts - start) / dur, 1);
+        var eased = 1 - Math.pow(2, -10 * prog);
+        var val   = eased * target;
+        el.textContent = (isFloat ? val.toFixed(1) : Math.floor(val)) + suffix;
+        if (prog < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { animate(e.target); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.55 });
+      nums.forEach(function (el) { obs.observe(el); });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     HERO STAT CARDS WAVE ENTRANCE
+  ───────────────────────────────────────── */
+  function initStatWave() {
+    var stats = document.querySelectorAll('.aint-stat');
+    stats.forEach(function (s, i) {
+      s.style.opacity   = '0';
+      s.style.transform = 'translateY(16px)';
+      s.style.transition = 'opacity 0.5s ease ' + (i * 0.08) + 's, transform 0.5s ease ' + (i * 0.08) + 's';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.aint-stat').forEach(function (s) {
+              s.style.opacity   = '1';
+              s.style.transform = 'translateY(0)';
+            });
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      var grid = document.querySelector('.aint-s1-stats');
+      if (grid) obs.observe(grid);
+    } else {
+      stats.forEach(function (s) {
+        s.style.opacity   = '1';
+        s.style.transform = 'translateY(0)';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     FLOATING BADGES — entrance pop
+  ───────────────────────────────────────── */
+  function initFloatBadges() {
+    var badges = document.querySelectorAll('.aint-float');
+    badges.forEach(function (b, i) {
+      b.style.opacity   = '0';
+      b.style.transform = 'scale(0.8) translateY(10px)';
+      b.style.transition = 'opacity 0.6s ease ' + (0.8 + i * 0.3) + 's, transform 0.6s ease ' + (0.8 + i * 0.3) + 's';
+    });
+    setTimeout(function () {
+      badges.forEach(function (b) {
+        b.style.opacity   = '1';
+        b.style.transform = '';
+      });
+    }, 400);
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 4 — CONNECTED TOOL PULSE
+     "Live" tagged tools pulse their badge
+  ───────────────────────────────────────── */
+  function initConnectedPulse() {
+    /* inject keyframe once */
+    if (!document.getElementById('aint-pulse-kf')) {
+      var s = document.createElement('style');
+      s.id = 'aint-pulse-kf';
+      s.textContent = [
+        '@keyframes aintLivePulse{',
+        '0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,0.4)}',
+        '50%{box-shadow:0 0 0 6px rgba(34,197,94,0)}',
+        '}'
+      ].join('');
+      document.head.appendChild(s);
+    }
+    var badges = document.querySelectorAll('.aint-tool-connected');
+    badges.forEach(function (b) {
+      b.style.animation = 'aintLivePulse 2s ease-in-out infinite';
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     BUTTON RIPPLE
+  ───────────────────────────────────────── */
+  function initRipple() {
+    if (!document.getElementById('aint-ripple-kf')) {
+      var s = document.createElement('style');
+      s.id = 'aint-ripple-kf';
+      s.textContent = '@keyframes aintRipple{to{transform:scale(3.5);opacity:0}}';
+      document.head.appendChild(s);
+    }
+    var btns = document.querySelectorAll('.aint-btn-pri, .aint-btn-ghost');
+    btns.forEach(function (btn) {
+      btn.style.position = 'relative';
+      btn.style.overflow = 'hidden';
+      btn.addEventListener('click', function (e) {
+        var rect   = btn.getBoundingClientRect();
+        var ripple = document.createElement('span');
+        ripple.style.cssText = [
+          'position:absolute', 'border-radius:50%',
+          'background:rgba(255,255,255,0.22)',
+          'width:100px', 'height:100px',
+          'left:' + (e.clientX - rect.left - 50) + 'px',
+          'top:'  + (e.clientY - rect.top  - 50) + 'px',
+          'transform:scale(0)',
+          'animation:aintRipple 0.6s linear',
+          'pointer-events:none'
+        ].join(';');
+        btn.appendChild(ripple);
+        setTimeout(function () { ripple.remove(); }, 650);
+      });
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 3 — PIPE CARD STAGGER ENTRANCE
+  ───────────────────────────────────────── */
+  function initPipeCardEntrance() {
+    var cards = document.querySelectorAll('.aint-pipe-card');
+    cards.forEach(function (card, i) {
+      card.style.opacity   = '0';
+      card.style.transform = 'translateY(28px)';
+      card.style.transition = 'opacity 0.65s ease ' + (i * 0.15) + 's, transform 0.65s ease ' + (i * 0.15) + 's';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity   = '1';
+            entry.target.style.transform = 'translateY(0)';
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      cards.forEach(function (card) { obs.observe(card); });
+    } else {
+      cards.forEach(function (card) {
+        card.style.opacity   = '1';
+        card.style.transform = 'translateY(0)';
+      });
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     BOOT
+  ───────────────────────────────────────── */
+  function boot() {
+    initS1Canvas();
+    initS3Canvas();
+    initReveal();
+    initCardTilt();
+    initPipeGlow();
+    initToolEntrance();
+    initCatTitles();
+    initSpokeCycle();
+    initCounters();
+    initStatWave();
+    initFloatBadges();
+    initConnectedPulse();
+    initRipple();
+    initPipeCardEntrance();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+
+})();
