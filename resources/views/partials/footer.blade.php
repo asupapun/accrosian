@@ -119,8 +119,8 @@
                     </div>
 
                     <div class="office-phone">
-                        <a href="tel:+919876543210">
-                            📞 +91 98765 43210
+                        <a href="tel:0674-2533300">
+                            📞 0674-2533300
                         </a>
                     </div>
                 </div>
