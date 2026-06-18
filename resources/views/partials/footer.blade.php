@@ -85,6 +85,18 @@
 
             <div>
                 <h4 class="footer-col-title">Contact Us</h4>
+
+                <!-- Email -->
+                @if(isset($setting) && $setting->contact_email)
+                <div class="footer-contact-item">
+                    <div class="footer-contact-icon">✉️</div>
+                    <div class="footer-contact-text">
+                        <a href="mailto:{{ $setting->contact_email }}">
+                            {{ $setting->contact_email }}
+                        </a>
+                    </div>
+                </div>
+                @endif
                 <!-- Registered Office -->
                 <div class="office-card">
                     <div class="office-header">
@@ -113,8 +125,7 @@
                     </div>
 
                     <div class="office-address">
-                        A/69, Kharvela Nagar,<br>
-                        Bhubaneswar,<br>
+                        A/69, Kharvela Nagar, Bhubaneswar,<br>
                         Odisha, India
                     </div>
 
@@ -124,18 +135,6 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Email -->
-                @if(isset($setting) && $setting->contact_email)
-                <div class="footer-contact-item">
-                    <div class="footer-contact-icon">✉️</div>
-                    <div class="footer-contact-text">
-                        <a href="mailto:{{ $setting->contact_email }}">
-                            {{ $setting->contact_email }}
-                        </a>
-                    </div>
-                </div>
-                @endif
                 <!-- <div class="footer-contact">
                     @if(isset($setting) && $setting->address)
                     <div class="footer-contact-item">
