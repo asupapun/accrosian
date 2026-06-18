@@ -88,11 +88,11 @@
                 <div class="office-card">
                     <div class="office-header">
                         <div class="office-icon">🏢</div>
-                        <h5 class="office-title">Registered Office</h5>
+                        <h5 class="office-title">Regd. Office</h5>
                     </div>
 
                     <div class="office-address">
-                        {{ $setting->address }}
+                        {{ !! $setting->address !! }}
                     </div>
                 </div>
 
@@ -103,10 +103,8 @@
                     </div>
 
                     <div class="office-address">
-                        Plot No. A/69,<br>
-                        Kharvela Nagar,<br>
-                        Bhubaneswar, Odisha,<br>
-                        India
+                        A/69, Kharvela Nagar, Bhubaneswar,<br>
+                        Odisha, India
                     </div>
                 </div>
 
