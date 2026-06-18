@@ -1966,6 +1966,24 @@ body {
     line-height:1.7;
 }
 
+.office-phone {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.office-phone a {
+    color: #ff7a30;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.office-phone a:hover {
+    color: #ffffff;
+}
+
 .footer-bottom {
   border-top: 1px solid var(--glass-border);
   padding: 24px 0;

@@ -85,6 +85,7 @@
 
             <div>
                 <h4 class="footer-col-title">Contact Us</h4>
+                <!-- Registered Office -->
                 <div class="office-card">
                     <div class="office-header">
                         <div class="office-icon">🏢</div>
@@ -92,10 +93,19 @@
                     </div>
 
                     <div class="office-address">
-                        {{ !! $setting->address !! }}
+                        {!! $setting->address !!}
                     </div>
+
+                    @if(isset($setting) && $setting->contact_phone)
+                    <div class="office-phone">
+                        <a href="tel:{{ $setting->contact_phone }}">
+                            📞 {{ $setting->contact_phone }}
+                        </a>
+                    </div>
+                    @endif
                 </div>
 
+                <!-- Branch Office -->
                 <div class="office-card">
                     <div class="office-header">
                         <div class="office-icon">🌍</div>
@@ -103,36 +113,29 @@
                     </div>
 
                     <div class="office-address">
-                        A/69, Kharvela Nagar, Bhubaneswar,<br>
+                        A/69, Kharvela Nagar,<br>
+                        Bhubaneswar,<br>
                         Odisha, India
                     </div>
+
+                    <div class="office-phone">
+                        <a href="tel:+919876543210">
+                            📞 +91 98765 43210
+                        </a>
+                    </div>
                 </div>
 
-                <div class="footer-contact">
-
-                    @if(isset($setting) && $setting->contact_phone)
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">📞</div>
-                        <div class="footer-contact-text">
-                            <a href="tel:{{ $setting->contact_phone }}">
-                                {{ $setting->contact_phone }}
-                            </a>
-                        </div>
+                <!-- Email -->
+                @if(isset($setting) && $setting->contact_email)
+                <div class="footer-contact-item">
+                    <div class="footer-contact-icon">✉️</div>
+                    <div class="footer-contact-text">
+                        <a href="mailto:{{ $setting->contact_email }}">
+                            {{ $setting->contact_email }}
+                        </a>
                     </div>
-                    @endif
-
-                    @if(isset($setting) && $setting->contact_email)
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">✉️</div>
-                        <div class="footer-contact-text">
-                            <a href="mailto:{{ $setting->contact_email }}">
-                                {{ $setting->contact_email }}
-                            </a>
-                        </div>
-                    </div>
-                    @endif
-
                 </div>
+                @endif
                 <!-- <div class="footer-contact">
                     @if(isset($setting) && $setting->address)
                     <div class="footer-contact-item">

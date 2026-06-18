@@ -32,7 +32,7 @@
                 <div class="form-field"><label>Phone Number</label><input type="text" name="contact_phone"
                         value="{{ old('contact_phone', $setting->contact_phone) }}" /></div>
                 <div class="form-field"><label>Address</label><textarea name="address"
-                        rows="3">{{ old('address', !! $setting->address !!) }}</textarea></div>
+                        rows="3">{ old('address', !! $setting->address !!) }</textarea></div>
             </div>
 
             <div class="admin-card">

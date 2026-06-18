@@ -44,7 +44,7 @@ consultations, and quotes.')
                     <div class="contact-info-icon">📍</div>
                     <div>
                         <div class="contact-info-label">Office Address</div>
-                        <div class="contact-info-value">{{ !! $setting->address !! }}</div>
+                        <div class="contact-info-value">{ !! $setting->address !! }</div>
                     </div>
                 </div>
                 @endif
