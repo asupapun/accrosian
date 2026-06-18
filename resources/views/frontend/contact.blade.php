@@ -39,12 +39,12 @@ consultations, and quotes.')
                     </p>
                 </div>
 
-                @if(isset($setting) && !! $setting->address !!)
+                @if(isset($setting) && $setting->address)
                 <div class="contact-info-card reveal reveal-delay-1">
                     <div class="contact-info-icon">📍</div>
                     <div>
                         <div class="contact-info-label">Office Address</div>
-                        <div class="contact-info-value">{ !! $setting->address !! }</div>
+                        <div class="contact-info-value">{{ $setting->address }}</div>
                     </div>
                 </div>
                 @endif
