@@ -85,7 +85,57 @@
 
             <div>
                 <h4 class="footer-col-title">Contact Us</h4>
+                <div class="office-card">
+                    <div class="office-header">
+                        <div class="office-icon">🏢</div>
+                        <h5 class="office-title">Registered Office</h5>
+                    </div>
+
+                    <div class="office-address">
+                        {{ $setting->address }}
+                    </div>
+                </div>
+
+                <div class="office-card">
+                    <div class="office-header">
+                        <div class="office-icon">🌍</div>
+                        <h5 class="office-title">Branch Office</h5>
+                    </div>
+
+                    <div class="office-address">
+                        Plot No. A/69,<br>
+                        Kharvela Nagar,<br>
+                        Bhubaneswar, Odisha,<br>
+                        India
+                    </div>
+                </div>
+
                 <div class="footer-contact">
+
+                    @if(isset($setting) && $setting->contact_phone)
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">📞</div>
+                        <div class="footer-contact-text">
+                            <a href="tel:{{ $setting->contact_phone }}">
+                                {{ $setting->contact_phone }}
+                            </a>
+                        </div>
+                    </div>
+                    @endif
+
+                    @if(isset($setting) && $setting->contact_email)
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">✉️</div>
+                        <div class="footer-contact-text">
+                            <a href="mailto:{{ $setting->contact_email }}">
+                                {{ $setting->contact_email }}
+                            </a>
+                        </div>
+                    </div>
+                    @endif
+
+                </div>
+                <!-- <div class="footer-contact">
                     @if(isset($setting) && $setting->address)
                     <div class="footer-contact-item">
                         <div class="footer-contact-icon">📍</div>
@@ -112,7 +162,7 @@
                         <div class="footer-contact-icon">🕐</div>
                         <div class="footer-contact-text">Mon – Fri: 9:00 AM – 6:00 PM IST</div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -121,7 +171,7 @@
                 {!! isset($setting) && $setting->footer_text ? $setting->footer_text : '© '.date('Y').'
                 <span>Accrosian</span>. All rights reserved.' !!}
             </p>
-            <p class="footer-copy">Made with ❤️ in <span>India</span></p>
+            <!-- <p class="footer-copy">Made with ❤️ in <span>India</span></p> -->
         </div>
     </div>
 </footer>

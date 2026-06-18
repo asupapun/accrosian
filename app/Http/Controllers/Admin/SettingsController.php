@@ -51,6 +51,8 @@ class SettingsController extends Controller
 
         $setting->update($data);
 
+        cache()->forget('site_setting');
+
         return back()->with('success', 'Settings saved successfully.');
     }
 }
