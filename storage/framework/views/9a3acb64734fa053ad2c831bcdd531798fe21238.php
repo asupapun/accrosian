@@ -45,26 +45,42 @@
                 </div>
             </div>
 
-            <div>
+            <div class="footer-services">
                 <h4 class="footer-col-title">Services</h4>
-                <ul class="footer-links">
-                    <?php $footerServices = \App\Models\Service::active()->orderBy('sort_order')->get(); ?>
+
+                <?php
+                $footerServices = \App\Models\Service::active()
+                ->orderBy('sort_order')
+                ->take(6)
+                ->get();
+                ?>
+
+                <ul class="footer-services-list">
                     <?php $__currentLoopData = $footerServices; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $svc): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <li><a href="<?php echo e(route('services.show', $svc->slug)); ?>"><?php echo e($svc->title); ?></a></li>
+                    <li>
+                        <a href="<?php echo e(route('services.show', $svc->slug)); ?>">
+                            <?php echo e($svc->title); ?>
+
+                        </a>
+                    </li>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </ul>
+
+                <a href="<?php echo e(route('services')); ?>" class="footer-view-all">
+                    All Services →
+                </a>
             </div>
 
             <div>
                 <h4 class="footer-col-title">Company</h4>
-                <ul class="footer-links">
+                <ul class="footer-services-list">
                     <li><a href="<?php echo e(route('about')); ?>">About Us</a></li>
                     <li><a href="<?php echo e(route('portfolio')); ?>">Portfolio</a></li>
                     <li><a href="<?php echo e(route('blog')); ?>">Blog</a></li>
                     <li><a href="<?php echo e(route('contact')); ?>">Contact</a></li>
                     <!-- <li><a href="<?php echo e(route('login')); ?>">Client Login</a></li> -->
-                    <li><a href="<?php echo e(route('student.register')); ?>" style="color:var(--orange);font-weight:600">🎓
-                            StudentRegistration</a></li>
+                    <!-- <li><a href="<?php echo e(route('student.register')); ?>" style="color:var(--orange);font-weight:600">🎓
+                            StudentRegistration</a></li> -->
                 </ul>
             </div>
 

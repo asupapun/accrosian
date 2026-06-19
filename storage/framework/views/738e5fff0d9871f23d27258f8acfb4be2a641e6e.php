@@ -70,9 +70,10 @@
             </div>
 
             <div class="form-field">
-                <label>Short Description</label>
+                <label>Short Description (HTML)</label>
                 <textarea name="short_description" rows="3"
                     placeholder="Brief summary shown in cards..."><?php echo e(old('short_description', $service->short_description ?? '')); ?></textarea>
+                <span class="hint">Supports HTML tags: &lt;h2&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;li&gt;, etc.</span>
             </div>
 
             <div class="form-field">

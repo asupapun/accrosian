@@ -47,10 +47,11 @@
             
             <div>
                 <div class="service-card2" style="padding:40px">
-                    <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;margin-bottom:8px">
+                    <h3
+                        style="font-family:var(--font-display);color:var(--white);font-size:1.5rem;font-weight:800;margin-bottom:8px">
                         Apply Now
                     </h3>
-                    <p style="color:var(--text-muted);margin-bottom:32px;font-size:0.95rem">
+                    <p style="color:var(--white);margin-bottom:32px;font-size:0.95rem">
                         Fill in your details below and upload your resume to apply for our programs.
                     </p>
 
@@ -73,7 +74,7 @@
                             
                             <div class="form-group">
                                 <label for="name"
-                                    style="display:block;margin-bottom:8px;font-weight:600;font-size:0.9rem;color:var(--text-light)">
+                                    style="display:block;margin-bottom:8px;font-weight:600;font-size:0.9rem;color:var(--white)">
                                     Full Name *
                                 </label>
                                 <input type="text" id="name" name="name" placeholder="Your full name"
@@ -83,7 +84,7 @@
                             
                             <div class="form-group">
                                 <label for="mobile"
-                                    style="display:block;margin-bottom:8px;font-weight:600;font-size:0.9rem;color:var(--text-light)">
+                                    style="display:block;margin-bottom:8px;font-weight:600;font-size:0.9rem;color:var(--white)">
                                     Mobile Number *
                                 </label>
                                 <input type="tel" id="mobile" name="mobile" placeholder="+91 98XXXXXXXX"
@@ -93,7 +94,7 @@
                             
                             <div class="form-group">
                                 <label for="email"
-                                    style="display:block;margin-bottom:8px;font-weight:600;font-size:0.9rem;color:var(--text-light)">
+                                    style="display:block;margin-bottom:8px;font-weight:600;font-size:0.9rem;color:var(--white)">
                                     Email Address *
                                 </label>
                                 <input type="email" id="email" name="email" placeholder="you@email.com"
@@ -103,7 +104,7 @@
                             
                             <div class="form-group">
                                 <label for="college_name"
-                                    style="display:block;margin-bottom:8px;font-weight:600;font-size:0.9rem;color:var(--text-light)">
+                                    style="display:block;margin-bottom:8px;font-weight:600;font-size:0.9rem;color:var(--white)">
                                     College Name *
                                 </label>
                                 <input type="text" id="college_name" name="college_name"
@@ -114,7 +115,7 @@
                             
                             <div class="form-group">
                                 <label for="course"
-                                    style="display:block;margin-bottom:8px;font-weight:600;font-size:0.9rem;color:var(--text-light)">
+                                    style="display:block;margin-bottom:8px;font-weight:600;font-size:0.9rem;color:var(--white)">
                                     Course *
                                 </label>
                                 <select id="course" name="course" required style="width:100%;box-sizing:border-box">
@@ -132,7 +133,7 @@
                             
                             <div class="form-group">
                                 <label for="year"
-                                    style="display:block;margin-bottom:8px;font-weight:600;font-size:0.9rem;color:var(--text-light)">
+                                    style="display:block;margin-bottom:8px;font-weight:600;font-size:0.9rem;color:var(--white)">
                                     Current Year *
                                 </label>
                                 <select id="year" name="year" required style="width:100%;box-sizing:border-box">
@@ -150,7 +151,7 @@
                             
                             <div class="form-group" style="grid-column:span 2">
                                 <label for="specialization"
-                                    style="display:block;margin-bottom:8px;font-weight:600;font-size:0.9rem;color:var(--text-light)">
+                                    style="display:block;margin-bottom:8px;font-weight:600;font-size:0.9rem;color:var(--white)">
                                     Specialization <span
                                         style="color:var(--text-muted);font-weight:400">(optional)</span>
                                 </label>
@@ -162,7 +163,7 @@
                             
                             <div class="form-group" style="grid-column:span 2">
                                 <label for="resume"
-                                    style="display:block;margin-bottom:8px;font-weight:600;font-size:0.9rem;color:var(--text-light)">
+                                    style="display:block;margin-bottom:8px;font-weight:600;font-size:0.9rem;color:var(--white)">
                                     Upload Resume <span style="color:var(--text-muted);font-weight:400">(PDF only, max
                                         2MB)</span>
                                 </label>
@@ -173,7 +174,7 @@
                                     ondragover="event.preventDefault();this.style.borderColor='var(--orange)'"
                                     ondragleave="this.style.borderColor='var(--border)'" ondrop="handleDrop(event)">
                                     <div style="font-size:2rem;margin-bottom:8px">📄</div>
-                                    <p style="color:var(--text-light);font-size:0.9rem;margin-bottom:4px">
+                                    <p style="color:var(--white);font-size:0.9rem;margin-bottom:4px">
                                         <strong style="color:var(--orange)">Click to upload</strong> or drag & drop
                                     </p>
                                     <p style="color:var(--text-muted);font-size:0.8rem">PDF files only — max 2MB</p>
@@ -203,16 +204,16 @@
 
                 
                 <a href="#pdfPreview" onclick="document.getElementById('pdfPreview').scrollIntoView({behavior:'smooth'});
-                            document.getElementById('pdfFrame').src='<?php echo e(asset($brochurePdf)); ?>';
+                            document.getElementById('pdfFrame').src='<?php echo e(asset('assets/pdf/brochure.pdf')); ?>';
                             document.getElementById('pdfPreview').style.display='block';
                             return false;" class="btn btn-primary" style="width:100%;justify-content:center;padding:14px;margin-bottom:20px;
                           display:flex;align-items:center;gap:10px;text-decoration:none">
                     <span style="font-size:1.2rem">📋</span>
-                    Preview Company Brochure
+                    Preview AIRS Brochure
                 </a>
 
                 
-                <div class="service-card" style="padding:28px;margin-bottom:20px">
+                <div class="service-card2" style="padding:28px;margin-bottom:20px;color:var(--white)">
                     <h4 style="font-family:var(--font-display);font-weight:800;font-size:1.1rem;margin-bottom:16px">
                         Why Join Accrosian?
                     </h4>
@@ -228,14 +229,14 @@
                         <div>
                             <div style="font-weight:700;color:var(--white);font-size:0.92rem;margin-bottom:3px">
                                 <?php echo e($title); ?></div>
-                            <div style="color:var(--text-muted);font-size:0.82rem"><?php echo e($desc); ?></div>
+                            <div style="color:var(--white);font-size:0.82rem"><?php echo e($desc); ?></div>
                         </div>
                     </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
 
                 
-                <div class="service-card" style="padding:20px;text-align:center">
+                <div class="service-card2" style="padding:20px;text-align:center">
                     <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:12px">
                         Questions? Reach us at
                     </p>
@@ -254,7 +255,7 @@
                     📋 Company Brochure
                 </h3>
                 <button onclick="document.getElementById('pdfPreview').style.display='none';
-                                 document.getElementById('pdfFrame').src='';" style="background:rgba(255,255,255,0.08);border:1px solid var(--border);
+                                 document.getElementById('pdfFrame').src='/assets/pdf/brochure.pdf';" style="background:rgba(255,255,255,0.08);border:1px solid var(--border);
                                color:var(--text-light);padding:8px 16px;border-radius:8px;
                                cursor:pointer;font-size:0.88rem">
                     ✕ Close Preview
@@ -267,8 +268,8 @@
                 </iframe>
             </div>
             <div style="text-align:center;margin-top:16px">
-                <a href="<?php echo e(asset($brochurePdf)); ?>" download class="btn btn-outline"
-                    style="display:inline-flex;align-items:center;gap:8px">
+                <a href="<?php echo e(asset('assets/pdf/brochure.pdf')); ?>" download class="btn btn-outline"
+                    style=" display:inline-flex;align-items:center;gap:8px">
                     ⬇ Download Brochure
                 </a>
             </div>

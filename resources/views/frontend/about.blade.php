@@ -48,17 +48,19 @@ team behind our innovative software solutions.')
                 <span class="section-tag">Our Story</span>
                 <h2 class="section-title">Who We <span class="text-gradient">Are</span></h2>
                 <p style="color:var(--black);line-height:1.8;margin-bottom:24px;font-weight:500;">
-                    Accrosian is a fast-growing software company in Bhubaneswar providing innovative and
-                    affordable IT solutions for businesses and startups.As a trusted IT company in Bhubaneswar, we
-                    specialize in custom software development, web development, and digital marketing services to help
-                    businesses grow in the digital world.
+                    Accrosian Soft Solution Pvt. Ltd. is a forward‑moving technology company delivering cutting‑edge,
+                    customised IT solutions for businesses across multiple domains. We blend innovation, engineering
+                    expertise, and AI‑driven capabilities to help organisations strengthen their digital presence and
+                    accelerate growth
 
                 </p>
                 <p style="color:var(--black);line-height:1.8;margin-bottom:36px;font-weight:500;">
-                    With years of experience, we have successfully delivered multiple projects and helped
-                    businesses improve their online presence and performance.We also offer internship programs in
-                    Bhubaneswar for students, where they can work on live projects, gain practical knowledge, and build
-                    industry-ready skills.
+                    We specialise in custom software development, dynamic websites, mobile applications, AI chatbot
+                    integration, digital & performance marketing, and AI integration across platforms. With years of
+                    experience and a strong delivery record, we empower businesses to modernise operations, enhance
+                    customer engagement, and scale with confidence.
+
+                    At Accrosian, we don’t just build solutions — we build digital transformation.
                 </p>
                 <a href="{{ route('contact') }}" class="btn btn-primary">Work With Us</a>
             </div>
