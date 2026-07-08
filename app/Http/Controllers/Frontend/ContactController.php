@@ -32,9 +32,9 @@ class ContactController extends Controller
             ]);
     }
         $validated = $request->validate([
-            'name'    => 'required|string|max:255',
-            'email'   => 'required|email|max:255',
-            'phone'   => 'nullable|string|max:30',
+            'name'    => ['required','regex:/^[A-Za-z\s]+$/','min:3','max:50'],
+            'email'   => 'required|email:rfc,dns,spoof|max:255',
+            'phone'   => 'required|digits:10',
             'subject' => 'nullable|string|max:255',
             'message' => 'required|string|min:20|max:5000',
         ], [

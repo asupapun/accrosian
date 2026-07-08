@@ -125,8 +125,7 @@ consultations, and quotes.')
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" placeholder="Bony Doe" 'regex:/^[A-Za-z ]+$/'
-                                , 'min:3' , 'max:50' value="{{ old('name') }}" required />
+                            <input type="text" id="name" name="name" placeholder="Bony Doe" value="{{ old('name') }}" required />
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address *</label>
