@@ -160,6 +160,7 @@ h3 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
+    max-width: 1300px;
     align-items: center;
     padding: 80px 0;
 }

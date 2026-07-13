@@ -79,7 +79,7 @@ section {
 }
 
 .container {
-    max-width: 1430px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 0 6%
 }
@@ -178,6 +178,7 @@ h4 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 56px;
+    max-width: 1300px;
     align-items: center;
     padding: 80px 0;
 }

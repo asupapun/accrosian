@@ -108,6 +108,7 @@ h4 {
 
 .hero-content {
     position: relative;
+    max-width: 1300px;
     z-index: 2;
 }
 

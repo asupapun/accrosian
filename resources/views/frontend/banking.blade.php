@@ -303,6 +303,7 @@
 .bk-hero-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    max-width: 1300px;
     gap: 64px;
     align-items: center;
     position: relative;

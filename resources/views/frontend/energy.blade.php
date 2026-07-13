@@ -60,7 +60,7 @@ body {
 
 /* ---- UTILITY ---- */
 .container {
-    max-width: 1320px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 0 32px;
 }
@@ -203,7 +203,7 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 0 24px;
 }
