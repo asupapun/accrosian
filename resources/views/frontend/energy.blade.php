@@ -60,7 +60,7 @@ body {
 
 /* ---- UTILITY ---- */
 .container {
-    max-width: 1240px;
+    max-width: 1320px;
     margin: 0 auto;
     padding: 0 32px;
 }

@@ -79,7 +79,7 @@ section {
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1430px;
     margin: 0 auto;
     padding: 0 6%
 }
