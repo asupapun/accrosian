@@ -270,8 +270,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: linear-gradient(rgba(4, 13, 26, .88), rgba(4, 13, 26, .92)),
-    url("{{ asset('assets/images/hero_crm.jpg') }}");
+    background:url("{{ asset('assets/images/hero_crm.jpg') }}");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -311,7 +310,7 @@
 .bk-hero-title {
     color: #fff;
     margin-bottom: 20px;
-    font-size: clamp(3.4rem, 6vw, 5rem);
+    font-size: 28px;
 }
 
 .bk-hero-sub {
@@ -319,7 +318,7 @@
     margin: 25px auto 0;
     text-align: center;
     color: rgba(255, 255, 255, .72);
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.9;
 }
 
