@@ -390,7 +390,7 @@
     width: 56px;
     height: 56px;
     border-radius: 14px;
-    margin-bottom: 22px;
+    margin-bottom: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -416,9 +416,9 @@
 }
 
 .bk-card-desc {
-    font-size: .875rem;
+    font-size: .675rem;
     color: #ffff;
-    line-height: 1.7;
+    line-height: 1;
 }
 
 .bk-card-link {
@@ -1233,8 +1233,8 @@
                             <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                         </svg></div>
                     <div class="bk-card-title">Smart Internal Communication</div>
-                    <div class="bk-card-desc">Keep sales, marketing, and support in sync with shared timelines, notes,
-                        and real-time updates.</div>
+                    <div class="bk-card-desc">Foster real-time communication between departments for faster
+                        decision-making</div>
                     <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5">
@@ -1278,8 +1278,10 @@
                             <line x1="6" y1="20" x2="6" y2="14" />
                         </svg></div>
                     <div class="bk-card-title">Real-Time Reporting &amp; Insights</div>
-                    <div class="bk-card-desc">Live dashboards on team performance, lead conversion, and revenue so
-                        decisions are never a guess.</div>
+                    <div class="bk-card-desc">✓ Live dashboards on team performance, lead conversion, and revenue so
+                        decisions are never a guess.<br>
+                        ✓ Share updates, tasks, and insights seamlessly to keep everyone aligned.
+                    </div>
                     <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5">
