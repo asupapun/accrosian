@@ -266,13 +266,16 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 180px 0;
     background:
-        radial-gradient(ellipse 65% 55% at 65% 45%, rgba(26, 79, 214, .18) 0%, transparent 65%),
-        radial-gradient(ellipse 40% 35% at 15% 80%, rgba(249, 115, 22, .1) 0%, transparent 60%),
-        var(--navy);
-    padding: 140px 0 90px;
-    position: relative;
-    overflow: hidden;
+        radial-gradient(circle at center,
+            rgba(33, 95, 255, .15),
+            transparent 55%),
+        radial-gradient(circle at bottom,
+            rgba(255, 120, 30, .08),
+            transparent 45%),
+        #050d1d;
 }
 
 .bk-hero::before {
@@ -298,13 +301,12 @@
 }
 
 .bk-hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 1300px;
-    gap: 64px;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    position: relative;
-    z-index: 2;
+    text-align: center;
+    max-width: 1000px;
+    margin: auto;
 }
 
 .bk-hero-title {
@@ -324,237 +326,6 @@
     gap: 12px;
     flex-wrap: wrap;
     margin-top: 36px;
-}
-
-.bk-trust-row {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-    margin-top: 44px;
-    flex-wrap: wrap;
-}
-
-.bk-trust-pill {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    font-size: .78rem;
-    color: rgba(255, 255, 255, .5);
-    font-family: var(--ff-mono);
-    letter-spacing: .06em;
-}
-
-.bk-trust-pill svg {
-    width: 14px;
-    height: 14px;
-    color: #22d3ee;
-    flex-shrink: 0;
-}
-
-.bk-trust-sep {
-    width: 1px;
-    height: 14px;
-    background: rgba(255, 255, 255, .12);
-}
-
-/* Hero right — dashboard mock */
-.bk-hero-right {
-    position: relative;
-}
-
-.bk-dash-wrap {
-    padding: 24px 32px 40px;
-    position: relative;
-}
-
-.bk-dashboard {
-    background: linear-gradient(145deg, rgba(15, 38, 85, .96), rgba(7, 20, 40, .98));
-    border: 1px solid rgba(46, 106, 255, .22);
-    border-radius: var(--r3);
-    padding: 26px;
-    box-shadow: 0 0 0 1px rgba(46, 106, 255, .08), 0 32px 80px rgba(0, 0, 0, .55), 0 0 60px rgba(46, 106, 255, .15);
-    backdrop-filter: blur(24px);
-    animation: floatY 6s ease-in-out infinite;
-}
-
-@keyframes floatY {
-
-    0%,
-    100% {
-        transform: translateY(0)
-    }
-
-    50% {
-        transform: translateY(-10px)
-    }
-}
-
-.bk-dh {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 22px;
-}
-
-.bk-dh-brand {
-    font-family: var(--ff-mono);
-    font-size: .68rem;
-    color: #22d3ee;
-    letter-spacing: .12em;
-}
-
-.bk-dh-dots {
-    display: flex;
-    gap: 5px;
-}
-
-.bk-dh-dot {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-}
-
-.bk-dbal {
-    margin-bottom: 22px;
-}
-
-.bk-dbal-lbl {
-    font-family: var(--ff-mono);
-    font-size: .65rem;
-    color: rgba(255, 255, 255, .35);
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-}
-
-.bk-dbal-amt {
-    font-family: var(--ff-head);
-    font-size: 2.4rem;
-    font-weight: 800;
-    color: #fff;
-    letter-spacing: -.03em;
-    line-height: 1;
-}
-
-.bk-dbal-chg {
-    font-size: .73rem;
-    color: #4ade80;
-    margin-top: 4px;
-    font-weight: 600;
-}
-
-.bk-chart {
-    height: 72px;
-    display: flex;
-    align-items: flex-end;
-    gap: 5px;
-    margin-bottom: 22px;
-}
-
-.bk-cb {
-    flex: 1;
-    border-radius: 4px 4px 0 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.bk-cb-b {
-    background: linear-gradient(180deg, rgba(46, 106, 255, .85), rgba(46, 106, 255, .18));
-}
-
-.bk-cb-o {
-    background: linear-gradient(180deg, rgba(249, 115, 22, .9), rgba(249, 115, 22, .18));
-}
-
-.bk-cb::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(255, 255, 255, .12), transparent);
-}
-
-.bk-dstats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-
-.bk-ds {
-    background: rgba(255, 255, 255, .04);
-    border: 1px solid rgba(255, 255, 255, .07);
-    border-radius: 10px;
-    padding: 11px 10px;
-    text-align: center;
-}
-
-.bk-ds-val {
-    font-family: var(--ff-head);
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.bk-ds-lbl {
-    font-family: var(--ff-mono);
-    font-size: .56rem;
-    color: rgba(255, 255, 255, .3);
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    margin-top: 2px;
-}
-
-.bk-badge {
-    position: absolute;
-    background: rgba(7, 20, 40, .95);
-    border: 1px solid rgba(34, 211, 238, .28);
-    border-radius: 14px;
-    padding: 11px 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 12px 36px rgba(0, 0, 0, .4);
-}
-
-.bk-badge-1 {
-    bottom: 10px;
-    left: -10px;
-}
-
-.bk-badge-2 {
-    top: 30px;
-    right: -10px;
-}
-
-.bk-badge-ico {
-    width: 34px;
-    height: 34px;
-    border-radius: 9px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.bk-badge-ico svg {
-    width: 17px;
-    height: 17px;
-}
-
-.bk-badge-txt {
-    font-size: .7rem;
-}
-
-.bk-badge-txt strong {
-    display: block;
-    font-size: .83rem;
-    font-weight: 700;
-    color: #fff;
-    line-height: 1.2;
-}
-
-.bk-badge-txt span {
-    color: rgba(255, 255, 255, .4);
-    font-size: .68rem;
 }
 
 /* ═══════════════════════════════════════════════
@@ -1365,7 +1136,7 @@
 
     {{-- ══════════════ HERO ══════════════ --}}
     <section class="bk-hero">
-        <img src="{{ asset('assets/images/hero-crm.png') }}" alt="Hero Background" class="hero-bg-img" />
+        <img src="{{ asset('assets/images/hero_crm.png') }}" alt="Hero Background" class="hero-bg-img" />
         <div class="bk-wrap">
             <div class="bk-hero-grid">
 
@@ -1406,95 +1177,7 @@
                             Request a Demo
                         </a>
                     </div>
-
-                    <div class="bk-trust-row">
-                        <span class="bk-trust-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                            </svg>256-bit Encryption</span>
-                        <span class="bk-trust-sep"></span>
-                        <span class="bk-trust-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2.5">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>Free Data Migration</span>
-                        <span class="bk-trust-sep"></span>
-                        <span class="bk-trust-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2.5">
-                                <circle cx="12" cy="12" r="10" />
-                                <path d="M12 8v4l3 3" />
-                            </svg>99.9% Uptime SLA</span>
-                    </div>
                 </div>
-
-                {{-- RIGHT: Dashboard mock --}}
-                <div class="bk-hero-right">
-                    <div class="bk-dash-wrap">
-                        <div class="bk-dashboard">
-                            <div class="bk-dh">
-                                <span class="bk-dh-brand">ACCROSIAN CRM</span>
-                                <div class="bk-dh-dots">
-                                    <span class="bk-dh-dot" style="background:#f97316"></span>
-                                    <span class="bk-dh-dot" style="background:#f59e0b"></span>
-                                    <span class="bk-dh-dot" style="background:#22d3ee"></span>
-                                </div>
-                            </div>
-                            <div class="bk-dbal">
-                                <div class="bk-dbal-lbl">Active Pipeline Value</div>
-                                <div class="bk-dbal-amt">₹42.8L</div>
-                                <div class="bk-dbal-chg">▲ 18.4% this month</div>
-                            </div>
-                            <div class="bk-chart">
-                                <div class="bk-cb bk-cb-b" style="height:38%"></div>
-                                <div class="bk-cb bk-cb-o" style="height:55%"></div>
-                                <div class="bk-cb bk-cb-b" style="height:44%"></div>
-                                <div class="bk-cb bk-cb-o" style="height:72%"></div>
-                                <div class="bk-cb bk-cb-b" style="height:60%"></div>
-                                <div class="bk-cb bk-cb-o" style="height:85%"></div>
-                                <div class="bk-cb bk-cb-b" style="height:66%"></div>
-                            </div>
-                            <div class="bk-dstats">
-                                <div class="bk-ds">
-                                    <div class="bk-ds-val" style="color:#2e6aff">312</div>
-                                    <div class="bk-ds-lbl">Leads</div>
-                                </div>
-                                <div class="bk-ds">
-                                    <div class="bk-ds-val" style="color:#22d3ee">86%</div>
-                                    <div class="bk-ds-lbl">Converted</div>
-                                </div>
-                                <div class="bk-ds">
-                                    <div class="bk-ds-val" style="color:#f97316">54</div>
-                                    <div class="bk-ds-lbl">Deals</div>
-                                </div>
-                                <div class="bk-ds">
-                                    <div class="bk-ds-val" style="color:#4ade80">4.9m</div>
-                                    <div class="bk-ds-lbl">Avg. Response</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bk-badge bk-badge-1">
-                            <div class="bk-badge-ico" style="background:rgba(34,211,238,.12)">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#22d3ee"
-                                    stroke-width="2.5">
-                                    <path d="M22 2 11 13" />
-                                    <path d="M22 2 15 22 11 13 2 9 22 2z" />
-                                </svg>
-                            </div>
-                            <div class="bk-badge-txt"><strong>New Lead Assigned</strong><span>Auto-routed in 2s</span>
-                            </div>
-                        </div>
-                        <div class="bk-badge bk-badge-2">
-                            <div class="bk-badge-ico" style="background:rgba(249,115,22,.14)">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#f97316"
-                                    stroke-width="2.5">
-                                    <polyline points="20 6 9 17 4 12" />
-                                </svg>
-                            </div>
-                            <div class="bk-badge-txt"><strong>Deal Closed</strong><span>+₹1.2L revenue</span></div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
