@@ -263,19 +263,18 @@
    HERO
 ═══════════════════════════════════════════════ */
 .bk-hero {
-    min-height: 100vh;
+    position: relative;
+    min-height: 700px;
+    padding: 140px 0 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 180px 0;
-    background:
-        radial-gradient(circle at center,
-            rgba(33, 95, 255, .15),
-            transparent 55%),
-        radial-gradient(circle at bottom,
-            rgba(255, 120, 30, .08),
-            transparent 45%),
-        #050d1d;
+    overflow: hidden;
+    background: linear-gradient(rgba(4, 13, 26, .88), rgba(4, 13, 26, .92)),
+    url("{{ asset('assets/images/hero_crm.jpg') }}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .bk-hero::before {
@@ -312,21 +311,36 @@
 .bk-hero-title {
     color: #fff;
     margin-bottom: 20px;
-    font-size: clamp(2rem, 3.5vw, 2.9rem);
+    font-size: clamp(3.4rem, 6vw, 5rem);
 }
 
 .bk-hero-sub {
-    color: rgba(255, 255, 255, .6);
-    max-width: 500px;
-    font-size: 1rem;
-    line-height: 1.75;
+    max-width: 760px;
+    margin: 25px auto 0;
+    text-align: center;
+    color: rgba(255, 255, 255, .72);
+    font-size: 18px;
+    line-height: 1.9;
 }
 
 .bk-hero-btns {
     display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 36px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 45px;
+    width: 100%;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1000px;
+    marin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 /* ═══════════════════════════════════════════════
@@ -1137,12 +1151,12 @@
 
     {{-- ══════════════ HERO ══════════════ --}}
     <section class="bk-hero">
-        <img src="{{ asset('assets/images/hero_crm.jpg') }}" alt="Hero Background" class="hero-bg-img" />
+        <!-- <img src="{{ asset('assets/images/hero_crm.jpg') }}" alt="Hero Background" class="hero-bg-img" /> -->
         <div class="bk-wrap">
             <div class="bk-hero-grid">
 
                 {{-- LEFT --}}
-                <div>
+                <div class="hero-content">
                     <h1 class="bk-h1 bk-hero-title">
                         Advanced CRM with<br>
                         <span class="grad-orange">Integrated Automation Technology</span>
