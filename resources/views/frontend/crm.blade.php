@@ -416,9 +416,9 @@
 }
 
 .bk-card-desc {
-    font-size: .775rem;
+    font-size: .8rem;
     color: #ffff;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 .bk-card-link {
