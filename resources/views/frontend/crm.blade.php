@@ -270,7 +270,10 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background:url("{{ asset('assets/images/hero_crm.jpg') }}");
+    background:
+        radial-gradient(ellipse 65% 55% at 65% 45%, rgba(26, 79, 214, .18) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 35% at 15% 80%, rgba(249, 115, 22, .1) 0%, transparent 60%),
+        var(--navy);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1150,7 +1153,7 @@
 
     {{-- ══════════════ HERO ══════════════ --}}
     <section class="bk-hero">
-        <!-- <img src="{{ asset('assets/images/hero_crm.jpg') }}" alt="Hero Background" class="hero-bg-img" /> -->
+        <img src="{{ asset('assets/images/hero_crm.jpg') }}" alt="Hero Background" class="hero-bg-img" />
         <div class="bk-wrap">
             <div class="bk-hero-grid">
 
