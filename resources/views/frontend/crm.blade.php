@@ -315,11 +315,11 @@
 
 .bk-hero-sub {
     max-width: 760px;
-    margin: 25px auto 0;
+    margin: 20px auto 0;
     text-align: center;
     color: rgba(255, 255, 255, .72);
     font-size: 14px;
-    line-height: 1.9;
+    line-height: 1.4;
 }
 
 .bk-hero-btns {
@@ -327,7 +327,7 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    margin-top: 45px;
+    margin-top: 30px;
     width: 100%;
 }
 
