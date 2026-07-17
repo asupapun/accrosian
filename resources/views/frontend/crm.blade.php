@@ -312,12 +312,13 @@
 .bk-hero-title {
     color: #fff;
     margin-bottom: 20px;
+    font-size: clamp(2rem, 3.5vw, 2.9rem);
 }
 
 .bk-hero-sub {
     color: rgba(255, 255, 255, .6);
     max-width: 500px;
-    font-size: 1.05rem;
+    font-size: 1rem;
     line-height: 1.75;
 }
 
@@ -1136,28 +1137,21 @@
 
     {{-- ══════════════ HERO ══════════════ --}}
     <section class="bk-hero">
-        <img src="{{ asset('assets/images/hero_crm.png') }}" alt="Hero Background" class="hero-bg-img" />
+        <img src="{{ asset('assets/images/hero_crm.jpg') }}" alt="Hero Background" class="hero-bg-img" />
         <div class="bk-wrap">
             <div class="bk-hero-grid">
 
                 {{-- LEFT --}}
                 <div>
-                    <span class="bk-eyebrow" style="margin-bottom:20px;display:inline-flex;">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                            <circle cx="9" cy="7" r="4" />
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                        </svg>
-                        CRM Software Development
-                    </span>
                     <h1 class="bk-h1 bk-hero-title">
-                        Smarter CRM Software<br>
-                        <span class="grad-orange">Built Around Your Sales Process</span>
+                        Advanced CRM with<br>
+                        <span class="grad-orange">Integrated Automation Technology</span>
                     </h1>
-                    <p class="bk-hero-sub">Custom CRM platforms that unify your leads, contacts, communication, and
-                        sales pipeline into one intelligent system, engineered to help your team close more, faster.</p>
+                    <p class="bk-hero-sub">Revolutionize Your Business with Smart Communication and Operations
+                        Management Streamline your workflows and enhance your efficiency with our Highly Advanced CRM,
+                        powered by Integrated Automation Technology. This cutting-edge solution bridges the gap between
+                        internal departments, optimizes lead management, and handles operations intelligently, ensuring
+                        a seamless business experience.</p>
 
                     <div class="bk-hero-btns">
                         <a href="{{ route('contact') }}" class="bk-btn bk-btn-orange">
