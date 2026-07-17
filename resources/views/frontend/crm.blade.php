@@ -264,16 +264,14 @@
 ═══════════════════════════════════════════════ */
 .bk-hero {
     position: relative;
-    min-height: 700px;
-    padding: 140px 0 100px;
+    min-height: 600px;
+    padding: 120px 0 100px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background:
-        radial-gradient(ellipse 65% 55% at 65% 45%, rgba(26, 79, 214, .18) 0%, transparent 65%),
-        radial-gradient(ellipse 40% 35% at 15% 80%, rgba(249, 115, 22, .1) 0%, transparent 60%),
-        var(--navy);
+    background: linear-gradient(rgba(4, 13, 26, .85), rgba(4, 13, 26, .90)),
+    url("{{ asset('assets/images/hero_crm.jpg') }}");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -337,7 +335,7 @@
 .hero-content {
     width: 100%;
     max-width: 1000px;
-    marin: auto;
+    margin: auto;
     text-align: center;
     display: flex;
     flex-direction: column;
