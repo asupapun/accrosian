@@ -53,7 +53,16 @@
                 </div>
             </li>
 
-            {{-- Our Company Dropdown --}} <li class="nav-dropdown">
+            {{-- Our Products Dropdown --}}
+            <li class="nav-dropdown">
+                <a href="#">Products</a>
+                <div class="simple-dropdown">
+                    <a href="{{ route('Products.crm') }}">CRM</a>
+                </div>
+            </li>
+
+            {{-- Our Company Dropdown --}}
+            <li class="nav-dropdown">
                 <a href="#">Our Company</a>
                 <div class="simple-dropdown">
                     <a href="{{ route('about') }}">About Us</a>

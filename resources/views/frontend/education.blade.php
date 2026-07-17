@@ -178,7 +178,7 @@ h4 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 56px;
-    max-width: 1300px;
+    max-width: 1370px;
     align-items: center;
     padding: 80px 0;
 }
