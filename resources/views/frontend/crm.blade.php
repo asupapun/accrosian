@@ -264,8 +264,8 @@
 ═══════════════════════════════════════════════ */
 .bk-hero {
     position: relative;
-    min-height: 600px;
-    padding: 120px 0 100px;
+    min-height: 450px;
+    padding: 80px 0 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -310,7 +310,6 @@
 
 .bk-hero-title {
     color: #fff;
-    margin-bottom: 20px;
     font-size: 28px;
 }
 
