@@ -1039,6 +1039,194 @@
     background: rgba(255, 255, 255, 0.12);
 }
 
+/* ===========================
+   INTEGRATIONS SECTION
+=========================== */
+
+.integration-section {
+    position: relative;
+    padding: 120px 0;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-title h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.integration-wrapper {
+    position: relative;
+    width: 1000px;
+    height: 650px;
+    margin: auto;
+}
+
+.center-image {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 320px;
+    transform: translate(-50%, -50%);
+}
+
+/* ---------- Common Tool Card ---------- */
+
+.tool {
+    position: absolute;
+
+    width: 170px;
+    height: 60px;
+
+    background: #fff;
+
+    border: 1px solid #e8e8e8;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .08);
+
+    transition: .35s;
+}
+
+.tool img {
+
+    width: 28px;
+
+    height: 28px;
+
+}
+
+.tool span {
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+}
+
+.tool:hover {
+
+    transform: scale(1.08);
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .15);
+
+}
+
+.google {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.whatsapp {
+    left: 120px;
+    top: 120px;
+}
+
+.zoom {
+    left: 40px;
+    top: 300px;
+}
+
+.slack {
+    left: 120px;
+    bottom: 70px;
+}
+
+.teams {
+    right: 120px;
+    top: 120px;
+}
+
+.calendar {
+    right: 40px;
+    top: 300px;
+}
+
+.outlook {
+    right: 120px;
+    bottom: 70px;
+}
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+.tool {
+
+    animation: float 3s ease-in-out infinite;
+
+}
+
+.google {
+    animation-delay: 0s;
+}
+
+.whatsapp {
+    animation-delay: .3s;
+}
+
+.zoom {
+    animation-delay: .6s;
+}
+
+.slack {
+    animation-delay: .9s;
+}
+
+.teams {
+    animation-delay: 1.2s;
+}
+
+.calendar {
+    animation-delay: 1.5s;
+}
+
+.outlook {
+    animation-delay: 1.8s;
+}
+
+.tool {
+
+    opacity: 0;
+
+    transition: 1s;
+
+}
+
+.integration-section.show .tool {
+
+    opacity: 1;
+
+}
+
 /* ═══════════════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════════════ */
@@ -1322,14 +1510,7 @@
             <div class="bk-why-grid">
                 {{-- Left --}}
                 <div>
-                    <span class="bk-eyebrow" style="margin-bottom:18px;display:inline-flex;">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                        </svg>
-                        Why Accrosian
-                    </span>
-                    <h2 class="bk-h2">Built for <span class="grad-orange">Collaboration &amp; Growth</span></h2>
+                    <h2 class="bk-h2">Why Choose Our <span class="grad-orange">Advanced &amp; CRM?</span></h2>
                     <div class="bk-divider" style="margin:14px 0 20px;"></div>
                     <p class="bk-sub" style="margin-top:0;margin-bottom:32px;">We design CRMs that break down silos
                         between departments, so your teams work off one source of truth from first contact to closed
@@ -1342,16 +1523,16 @@
                                     <rect x="3" y="4" width="18" height="18" rx="2" />
                                     <path d="M16 2v4M8 2v4M3 10h18" />
                                 </svg></div>
-                            <div class="bk-feat-body"><strong>Centralized Contact Hub</strong><span>Every lead, client,
-                                    and interaction organized in one searchable database.</span></div>
+                            <div class="bk-feat-body"><strong>Boost Collaboration</strong><span>Break down barriers
+                                    between departments for smoother workflows.</span></div>
                         </div>
                         <div class="bk-feat-item">
                             <div class="bk-feat-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2.5">
                                     <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
                                 </svg></div>
-                            <div class="bk-feat-body"><strong>Automated Follow-Ups</strong><span>Never miss a touchpoint
-                                    with rule-based reminders and sequenced outreach.</span></div>
+                            <div class="bk-feat-body"><strong>Increase Efficiency</strong><span>Automate routine tasks
+                                    and minimize errors.</span></div>
                         </div>
                         <div class="bk-feat-item">
                             <div class="bk-feat-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -1359,8 +1540,8 @@
                                     <circle cx="12" cy="12" r="10" />
                                     <path d="M12 6v6l4 2" />
                                 </svg></div>
-                            <div class="bk-feat-body"><strong>AI-Driven Insights</strong><span>Predictive scoring and
-                                    trend detection to focus effort on deals that convert.</span></div>
+                            <div class="bk-feat-body"><strong>Improve Lead Conversion</strong><span>Drive better results
+                                    with a smarter approach to lead management.</span></div>
                         </div>
                         <div class="bk-feat-item">
                             <div class="bk-feat-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -1393,25 +1574,58 @@
     </section>
 
     {{-- ══════════════ PROCESS ══════════════ --}}
-    <section class="bk-sec bk-sec-navy">
+    <section class="integration-section bk-sec bk-sec-navy">
         <div class="bk-wrap">
             <div class="bk-sec-head">
-                <span class="bk-eyebrow">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.5">
-                        <circle cx="12" cy="12" r="3" />
-                        <path d="M19.07 4.93a10 10 0 0 0-14.14 0M4.93 19.07a10 10 0 0 0 14.14 0" />
-                    </svg>
-                    Our Process
-                </span>
-                <h2 class="bk-h2 bk-h2-white" style="margin-top:16px;">How We <span class="grad-blue">Build &amp;
-                        Deliver Your CRM</span></h2>
+                <h2 class="bk-h2 bk-h2-white" style="margin-top:16px;">Integrate with all <span class="grad-blue">your
+                        &amp;
+                        favourite tools</span></h2>
                 <div class="bk-divider"></div>
                 <p class="bk-sub bk-sub-white">A proven six-stage methodology so your CRM launches on time and fits how
                     your team actually sells.</p>
             </div>
 
-            <div class="bk-steps">
+            <div class="integration-wrapper">
+
+                <img src="{{ asset('assets/images/crm-center.png') }}" class="center-image">
+
+                <div class="tool whatsapp">
+                    <img src="{{ asset('assets/images/whatsapp.png') }}" alt="WhatsApp">
+                    <span>WhatsApp</span>
+                </div>
+
+                <div class="tool google">
+                    <img src="{{ asset('assets/images/google.png') }}" alt="Google">
+                    <span>Google</span>
+                </div>
+
+                <div class="tool zoom">
+                    <img src="{{ asset('assets/images/zoom.png') }}" alt="Zoom">
+                    <span>Zoom</span>
+                </div>
+
+                <div class="tool slack">
+                    <img src="{{ asset('assets/images/slack.png') }}" alt="Slack">
+                    <span>Slack</span>
+                </div>
+
+                <div class="tool calendar">
+                    <img src="{{ asset('assets/images/calender.png') }}" alt="Calendar">
+                    <span>Calendar</span>
+                </div>
+
+                <div class="tool teams">
+                    <img src="{{ asset('assets/images/teams.png') }}" alt="Teams">
+                    <span>Teams</span>
+                </div>
+
+                <div class="tool teams">
+                    <img src="{{ asset('assets/images/outlook.png') }}" alt="Outlook">
+                    <span>Outlook</span>
+                </div>
+
+            </div>
+            <!-- <div class="bk-steps">
                 <div class="bk-step">
                     <div class="bk-step-circle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
@@ -1466,7 +1680,7 @@
                     <div class="bk-step-label">Deploy &amp; Train</div>
                     <div class="bk-step-desc">Go-live support, team onboarding, and ongoing maintenance.</div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -1765,4 +1979,134 @@
     </section>
 
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Center CRM Image
+    gsap.from(".center-image", {
+        opacity: 0,
+        scale: 0.5,
+        duration: 1.2,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+            trigger: ".bk-sec-navy",
+            start: "top 70%"
+        }
+    });
+
+    // WhatsApp
+    gsap.from(".whatsapp", {
+        x: -350,
+        opacity: 0,
+        duration: 1.2,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+            trigger: ".bk-sec-navy",
+            start: "top 70%"
+        }
+    });
+
+    // Google
+    gsap.from(".google", {
+        y: -250,
+        opacity: 0,
+        duration: 1.2,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+            trigger: ".bk-sec-navy",
+            start: "top 70%"
+        }
+    });
+
+    // Zoom
+    gsap.from(".zoom", {
+        x: -250,
+        y: 150,
+        opacity: 0,
+        duration: 1.2,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+            trigger: ".bk-sec-navy",
+            start: "top 70%"
+        }
+    });
+
+    // Slack
+    gsap.from(".slack", {
+        x: -250,
+        y: 250,
+        opacity: 0,
+        duration: 1.2,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+            trigger: ".bk-sec-navy",
+            start: "top 70%"
+        }
+    });
+
+    // Teams
+    gsap.from(".teams", {
+        x: 350,
+        opacity: 0,
+        duration: 1.2,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+            trigger: ".bk-sec-navy",
+            start: "top 70%"
+        }
+    });
+
+    // Calendar
+    gsap.from(".calendar", {
+        x: 250,
+        y: 150,
+        opacity: 0,
+        duration: 1.2,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+            trigger: ".bk-sec-navy",
+            start: "top 70%"
+        }
+    });
+
+    // Outlook
+    gsap.from(".outlook", {
+        x: 250,
+        y: 250,
+        opacity: 0,
+        duration: 1.2,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+            trigger: ".bk-sec-navy",
+            start: "top 70%"
+        }
+    });
+
+});
+</script>
 @endsection
+
+@push('scripts')
+<script>
+const section = document.querySelector(".integration-section");
+
+const observer = new IntersectionObserver((entries) => {
+
+    if (entries[0].isIntersecting) {
+
+        section.classList.add("show");
+
+    }
+
+});
+
+observer.observe(section);
+</script>
+@endpush
