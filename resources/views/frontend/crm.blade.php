@@ -2324,19 +2324,36 @@
     var el = document.getElementById('integScroll');
     if (!el || !('IntersectionObserver' in window)) {
         if (el) el.classList.add('is-visible');
+    } else {
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    el.classList.add('is-visible');
+                    observer.unobserve(el);
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+        observer.observe(el);
+    }
+
+    var flow = document.getElementById('flowScroll');
+    if (!flow || !('IntersectionObserver' in window)) {
+        if (flow) flow.classList.add('is-visible');
         return;
     }
-    var observer = new IntersectionObserver(function(entries) {
+    var flowObserver = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
-                el.classList.add('is-visible');
-                observer.unobserve(el);
+                flow.classList.add('is-visible');
+                flowObserver.unobserve(flow);
             }
         });
     }, {
         threshold: 0.3
     });
-    observer.observe(el);
+    flowObserver.observe(flow);
 })();
 </script>
 @endsection
