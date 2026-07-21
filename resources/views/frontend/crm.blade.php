@@ -1623,18 +1623,10 @@
     <section class="bk-sec bk-sec-navy">
         <div class="bk-wrap">
             <div class="bk-sec-head">
-                <span class="bk-eyebrow">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.5">
-                        <polyline points="16 18 22 12 16 6" />
-                        <polyline points="8 6 2 12 8 18" />
-                    </svg>
-                    Integrations
-                </span>
-                <h2 class="bk-h2" style="margin-top:16px;">Connects With <span class="grad-blue">Your Favorite
+                <h2 class="bk-h2-white" style="margin-top:16px;">Connects With <span class="grad-blue">Your Favorite
                         Tools</span></h2>
                 <div class="bk-divider"></div>
-                <p class="bk-sub">Bring your existing stack in, no rip-and-replace required.</p>
+                <p class="bk-sub-white">Bring your existing stack in, no rip-and-replace required.</p>
             </div>
             <div class="bk-integ-scroll" id="integScroll">
                 <div class="bk-integ-ring bk-integ-ring-1"></div>
