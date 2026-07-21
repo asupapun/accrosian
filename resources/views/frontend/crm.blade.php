@@ -995,7 +995,7 @@
 /* ═══════════════════════════════════════════════
    STATS BAR
 ═══════════════════════════════════════════════ */
-.bk-stats {
+/* .bk-stats {
     background: var(--navy-light);
     border-top: 1px solid rgba(46, 106, 255, .12);
     border-bottom: 1px solid rgba(46, 106, 255, .12);
@@ -1032,6 +1032,163 @@
     font-size: .82rem;
     color: rgba(255, 255, 255, .45);
     margin-top: 6px;
+} */
+
+/* ═══════════════════════════════════════════════
+   AUTOMATION IN ACTION — premium flow visual
+═══════════════════════════════════════════════ */
+.bk-flow-scroll {
+    max-width: 1160px;
+    margin: 56px auto 0;
+}
+
+.bk-flow-track {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    align-items: stretch;
+}
+
+.bk-flow-line {
+    position: absolute;
+    top: 46px;
+    left: 6%;
+    right: 6%;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(46, 106, 255, .5), rgba(249, 115, 22, .5));
+    transform-origin: left center;
+    transform: scaleX(0);
+    transition: transform 1.1s cubic-bezier(.16, 1, .3, 1) .2s;
+}
+
+.bk-flow-scroll.is-visible .bk-flow-line {
+    transform: scaleX(1);
+}
+
+.bk-flow-dot {
+    position: absolute;
+    top: 41px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #22d3ee;
+    box-shadow: 0 0 14px rgba(34, 211, 238, .8);
+    opacity: 0;
+    animation: none;
+}
+
+.bk-flow-scroll.is-visible .bk-flow-dot {
+    opacity: 1;
+    animation: flowMove 3.4s cubic-bezier(.45, 0, .55, 1) 1.3s infinite;
+}
+
+@keyframes flowMove {
+    0% {
+        left: 6%;
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    92% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 94%;
+        opacity: 0;
+    }
+}
+
+.bk-flow-step {
+    position: relative;
+    padding: 0 16px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .7s cubic-bezier(.16, 1, .3, 1) var(--fdelay, 0s), transform .7s cubic-bezier(.16, 1, .3, 1) var(--fdelay, 0s);
+}
+
+.bk-flow-scroll.is-visible .bk-flow-step {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.bk-flow-node {
+    width: 92px;
+    height: 92px;
+    margin: 0 auto 20px;
+    border-radius: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(160deg, rgba(15, 38, 85, .98), rgba(7, 20, 40, .99));
+    border: 1px solid rgba(46, 106, 255, .28);
+    box-shadow: 0 20px 44px rgba(0, 0, 0, .4);
+    transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+
+.bk-flow-step:hover .bk-flow-node {
+    transform: translateY(-6px);
+    border-color: rgba(249, 115, 22, .4);
+    box-shadow: 0 26px 54px rgba(0, 0, 0, .5), 0 0 40px rgba(249, 115, 22, .16);
+}
+
+.bk-flow-node svg {
+    width: 34px;
+    height: 34px;
+}
+
+.bk-flow-tag {
+    display: inline-block;
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--orange);
+    background: rgba(249, 115, 22, .08);
+    border: 1px solid rgba(249, 115, 22, .22);
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+}
+
+.bk-flow-step strong {
+    display: block;
+    font-family: var(--ff-head);
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.bk-flow-step p {
+    font-size: .82rem;
+    color: rgba(255, 255, 255, .5);
+    line-height: 1.6;
+    max-width: 220px;
+    margin: 0 auto;
+}
+
+@media(max-width:900px) {
+    .bk-flow-track {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .bk-flow-line,
+    .bk-flow-dot {
+        display: none;
+    }
+
+    .bk-flow-step {
+        padding: 0;
+    }
 }
 
 /* ═══════════════════════════════════════════════
@@ -1872,7 +2029,90 @@
     </section>
 
     {{-- ══════════════ TECH / INTEGRATIONS ══════════════ --}}
+
+    {{-- ══════════════ AUTOMATION IN ACTION ══════════════ --}}
     <section class="bk-sec bk-sec-alt">
+        <div class="bk-wrap">
+            <div class="bk-sec-head">
+                <span class="bk-eyebrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                    </svg>
+                    Automation Engine
+                </span>
+                <h2 class="bk-h2" style="margin-top:16px;">Watch Your <span class="grad-orange">Workflows Run
+                        Themselves</span></h2>
+                <div class="bk-divider"></div>
+                <p class="bk-sub">One new lead can trigger the entire chain automatically, no manual handoffs, no
+                    dropped follow-ups.</p>
+            </div>
+
+            <div class="bk-flow-scroll" id="flowScroll">
+                <div class="bk-flow-track">
+                    <div class="bk-flow-line"></div>
+                    <div class="bk-flow-dot"></div>
+
+                    <div class="bk-flow-step" style="--fdelay:.05s">
+                        <div class="bk-flow-node" style="border-color:rgba(46,106,255,.35)">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#2e6aff"
+                                stroke-width="2">
+                                <path d="M22 2 11 13" />
+                                <path d="M22 2 15 22 11 13 2 9 22 2z" />
+                            </svg>
+                        </div>
+                        <span class="bk-flow-tag">Trigger</span>
+                        <strong>New Lead Captured</strong>
+                        <p>A lead fills a form, messages on WhatsApp, or lands from an ad campaign.</p>
+                    </div>
+
+                    <div class="bk-flow-step" style="--fdelay:.25s">
+                        <div class="bk-flow-node" style="border-color:rgba(34,211,238,.35)">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#22d3ee"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="3" />
+                                <path
+                                    d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24" />
+                            </svg>
+                        </div>
+                        <span class="bk-flow-tag">Score</span>
+                        <strong>AI Scores &amp; Qualifies</strong>
+                        <p>Intent, source, and past behavior are weighed instantly to rank the lead.</p>
+                    </div>
+
+                    <div class="bk-flow-step" style="--fdelay:.45s">
+                        <div class="bk-flow-node" style="border-color:rgba(249,115,22,.4)">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#f97316"
+                                stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                        </div>
+                        <span class="bk-flow-tag">Route</span>
+                        <strong>Assigned to the Right Rep</strong>
+                        <p>Routing rules match the lead to the rep best suited to close it, in seconds.</p>
+                    </div>
+
+                    <div class="bk-flow-step" style="--fdelay:.65s">
+                        <div class="bk-flow-node" style="border-color:rgba(74,222,128,.4)">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#4ade80"
+                                stroke-width="2">
+                                <path d="M17 8c0-3.31-2.69-6-6-6S5 4.69 5 8c0 5 6 10 6 10s6-5 6-10z" />
+                            </svg>
+                        </div>
+                        <span class="bk-flow-tag">Notify</span>
+                        <strong>Instant Follow-Up Sent</strong>
+                        <p>A WhatsApp or email sequence fires automatically, before the lead goes cold.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <section class="bk-sec bk-sec-alt">
         <div class="bk-wrap">
             <div class="bk-sec-head">
                 <span class="bk-eyebrow">
@@ -1930,10 +2170,10 @@
                     </svg><span>AI / ML Models</span></div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     {{-- ══════════════ STATS ══════════════ --}}
-    <section class="bk-stats">
+    <!-- <section class="bk-stats">
         <div class="bk-wrap">
             <div class="bk-stats-grid">
                 <div class="bk-stat-cell">
@@ -1958,7 +2198,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     {{-- ══════════════ TESTIMONIALS ══════════════ --}}
     <section class="bk-sec">
