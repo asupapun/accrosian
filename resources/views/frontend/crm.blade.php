@@ -1309,7 +1309,7 @@
     font-family: var(--ff-head);
     font-size: .95rem;
     font-weight: 700;
-    color: var(--black);
+    color: var(--white);
 }
 
 .bk-faq-item summary::-webkit-details-marker {
@@ -1336,7 +1336,7 @@
 
 .bk-faq-item p {
     font-size: .85rem;
-    color: var(--black);
+    color: rgba(255, 255, 255, .55);
     line-height: 1.7;
     padding-bottom: 20px;
 }
