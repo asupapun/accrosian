@@ -263,16 +263,18 @@
    HERO
 ═══════════════════════════════════════════════ */
 .bk-hero {
-    min-height: 100vh;
+    position: relative;
+    min-height: 450px;
+    padding: 80px 0 40px;
     display: flex;
     align-items: center;
-    background:
-        radial-gradient(ellipse 65% 55% at 65% 45%, rgba(26, 79, 214, .18) 0%, transparent 65%),
-        radial-gradient(ellipse 40% 35% at 15% 80%, rgba(249, 115, 22, .1) 0%, transparent 60%),
-        var(--navy);
-    padding: 140px 0 90px;
-    position: relative;
+    justify-content: center;
     overflow: hidden;
+    background: linear-gradient(rgba(4, 13, 26, .85), rgba(4, 13, 26, .90)),
+    url("{{ asset('assets/images/hero_crm.jpg') }}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .bk-hero::before {
@@ -298,263 +300,46 @@
 }
 
 .bk-hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 1300px;
-    gap: 64px;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    position: relative;
-    z-index: 2;
+    text-align: center;
+    max-width: 1000px;
+    margin: auto;
 }
 
 .bk-hero-title {
     color: #fff;
-    margin-bottom: 20px;
+    font-size: 28px;
 }
 
 .bk-hero-sub {
-    color: rgba(255, 255, 255, .6);
-    max-width: 500px;
-    font-size: 1.05rem;
-    line-height: 1.75;
+    max-width: 760px;
+    margin: 20px auto 0;
+    text-align: center;
+    color: rgba(255, 255, 255, .72);
+    font-size: 14px;
+    line-height: 1.4;
 }
 
 .bk-hero-btns {
     display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 36px;
-}
-
-.bk-trust-row {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-    margin-top: 44px;
-    flex-wrap: wrap;
-}
-
-.bk-trust-pill {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    font-size: .78rem;
-    color: rgba(255, 255, 255, .5);
-    font-family: var(--ff-mono);
-    letter-spacing: .06em;
-}
-
-.bk-trust-pill svg {
-    width: 14px;
-    height: 14px;
-    color: #22d3ee;
-    flex-shrink: 0;
-}
-
-.bk-trust-sep {
-    width: 1px;
-    height: 14px;
-    background: rgba(255, 255, 255, .12);
-}
-
-/* Hero right — dashboard mock */
-.bk-hero-right {
-    position: relative;
-}
-
-.bk-dash-wrap {
-    padding: 24px 32px 40px;
-    position: relative;
-}
-
-.bk-dashboard {
-    background: linear-gradient(145deg, rgba(15, 38, 85, .96), rgba(7, 20, 40, .98));
-    border: 1px solid rgba(46, 106, 255, .22);
-    border-radius: var(--r3);
-    padding: 26px;
-    box-shadow: 0 0 0 1px rgba(46, 106, 255, .08), 0 32px 80px rgba(0, 0, 0, .55), 0 0 60px rgba(46, 106, 255, .15);
-    backdrop-filter: blur(24px);
-    animation: floatY 6s ease-in-out infinite;
-}
-
-@keyframes floatY {
-
-    0%,
-    100% {
-        transform: translateY(0)
-    }
-
-    50% {
-        transform: translateY(-10px)
-    }
-}
-
-.bk-dh {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 22px;
-}
-
-.bk-dh-brand {
-    font-family: var(--ff-mono);
-    font-size: .68rem;
-    color: #22d3ee;
-    letter-spacing: .12em;
-}
-
-.bk-dh-dots {
-    display: flex;
-    gap: 5px;
-}
-
-.bk-dh-dot {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-}
-
-.bk-dbal {
-    margin-bottom: 22px;
-}
-
-.bk-dbal-lbl {
-    font-family: var(--ff-mono);
-    font-size: .65rem;
-    color: rgba(255, 255, 255, .35);
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-}
-
-.bk-dbal-amt {
-    font-family: var(--ff-head);
-    font-size: 2.4rem;
-    font-weight: 800;
-    color: #fff;
-    letter-spacing: -.03em;
-    line-height: 1;
-}
-
-.bk-dbal-chg {
-    font-size: .73rem;
-    color: #4ade80;
-    margin-top: 4px;
-    font-weight: 600;
-}
-
-.bk-chart {
-    height: 72px;
-    display: flex;
-    align-items: flex-end;
-    gap: 5px;
-    margin-bottom: 22px;
-}
-
-.bk-cb {
-    flex: 1;
-    border-radius: 4px 4px 0 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.bk-cb-b {
-    background: linear-gradient(180deg, rgba(46, 106, 255, .85), rgba(46, 106, 255, .18));
-}
-
-.bk-cb-o {
-    background: linear-gradient(180deg, rgba(249, 115, 22, .9), rgba(249, 115, 22, .18));
-}
-
-.bk-cb::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(255, 255, 255, .12), transparent);
-}
-
-.bk-dstats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-
-.bk-ds {
-    background: rgba(255, 255, 255, .04);
-    border: 1px solid rgba(255, 255, 255, .07);
-    border-radius: 10px;
-    padding: 11px 10px;
-    text-align: center;
-}
-
-.bk-ds-val {
-    font-family: var(--ff-head);
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.bk-ds-lbl {
-    font-family: var(--ff-mono);
-    font-size: .56rem;
-    color: rgba(255, 255, 255, .3);
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    margin-top: 2px;
-}
-
-.bk-badge {
-    position: absolute;
-    background: rgba(7, 20, 40, .95);
-    border: 1px solid rgba(34, 211, 238, .28);
-    border-radius: 14px;
-    padding: 11px 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 12px 36px rgba(0, 0, 0, .4);
-}
-
-.bk-badge-1 {
-    bottom: 10px;
-    left: -10px;
-}
-
-.bk-badge-2 {
-    top: 30px;
-    right: -10px;
-}
-
-.bk-badge-ico {
-    width: 34px;
-    height: 34px;
-    border-radius: 9px;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+    width: 100%;
 }
 
-.bk-badge-ico svg {
-    width: 17px;
-    height: 17px;
-}
+.hero-content {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-.bk-badge-txt {
-    font-size: .7rem;
-}
-
-.bk-badge-txt strong {
-    display: block;
-    font-size: .83rem;
-    font-weight: 700;
-    color: #fff;
-    line-height: 1.2;
-}
-
-.bk-badge-txt span {
-    color: rgba(255, 255, 255, .4);
-    font-size: .68rem;
 }
 
 /* ═══════════════════════════════════════════════
@@ -605,7 +390,7 @@
     width: 56px;
     height: 56px;
     border-radius: 14px;
-    margin-bottom: 22px;
+    margin-bottom: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -631,9 +416,9 @@
 }
 
 .bk-card-desc {
-    font-size: .875rem;
+    font-size: .8rem;
     color: #ffff;
-    line-height: 1.7;
+    line-height: 1.5;
 }
 
 .bk-card-link {
@@ -794,143 +579,6 @@
 
 .bk-right-full-image:hover img {
     transform: scale(1.04);
-}
-
-/* ═══════════════════════════════════════════════
-   PROCESS
-═══════════════════════════════════════════════ */
-.bk-steps {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 0;
-    position: relative;
-    margin-top: 64px;
-}
-
-.bk-steps::before {
-    content: '';
-    position: absolute;
-    top: 27px;
-    left: 8%;
-    right: 8%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(46, 106, 255, .4) 25%, rgba(249, 115, 22, .4) 75%, transparent);
-}
-
-.bk-step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 0 10px;
-}
-
-.bk-step-circle {
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, .05);
-    border: 1px solid rgba(46, 106, 255, .3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-    margin-bottom: 18px;
-    transition: all .3s;
-    color: #7da8ff;
-}
-
-.bk-step-circle svg {
-    width: 22px;
-    height: 22px;
-}
-
-.bk-step:hover .bk-step-circle {
-    background: rgba(46, 106, 255, .15);
-    border-color: rgba(46, 106, 255, .5);
-    box-shadow: 0 0 24px rgba(46, 106, 255, .3);
-}
-
-.bk-step-label {
-    font-family: var(--ff-head);
-    font-size: .78rem;
-    font-weight: 700;
-    color: rgba(255, 255, 255, .9);
-    margin-bottom: 5px;
-}
-
-.bk-step-desc {
-    font-size: .7rem;
-    color: rgba(255, 255, 255, .38);
-    line-height: 1.55;
-}
-
-/* ═══════════════════════════════════════════════
-   FEATURES GRID
-═══════════════════════════════════════════════ */
-.bk-feat-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border: 1px solid var(--gray-100);
-    border-radius: var(--r2);
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-}
-
-.bk-feat-cell {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 34px 28px;
-    border-right: 1px solid var(--gray-100);
-    border-bottom: 1px solid var(--gray-100);
-    background: var(--navy-light);
-    transition: background .25s;
-}
-
-.bk-feat-cell:nth-child(3n) {
-    border-right: none;
-}
-
-.bk-feat-cell:nth-child(4),
-.bk-feat-cell:nth-child(5),
-.bk-feat-cell:nth-child(6) {
-    border-bottom: none;
-}
-
-.bk-feat-cell:hover {
-    background: var(--navy-2);
-}
-
-.bk-feat-cell-ico {
-    width: 46px;
-    height: 46px;
-    border-radius: 12px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.bk-feat-cell-ico svg {
-    width: 22px;
-    height: 22px;
-}
-
-.bk-feat-cell-txt strong {
-    display: block;
-    font-family: var(--ff-head);
-    font-size: .93rem;
-    font-weight: 700;
-    color: #ffff;
-    margin-bottom: 5px;
-}
-
-.bk-feat-cell-txt p {
-    font-size: .82rem;
-    color: #ffff;
-    line-height: 1.65;
 }
 
 /* ═══════════════════════════════════════════════
@@ -1165,6 +813,183 @@
         opacity: 1;
         transform: translateY(0) !important;
     }
+}
+
+/* ═══════════════════════════════════════════════
+   PROCESS
+═══════════════════════════════════════════════ */
+/* .bk-steps {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0;
+    position: relative;
+    margin-top: 64px;
+}
+
+.bk-steps::before {
+    content: '';
+    position: absolute;
+    top: 27px;
+    left: 8%;
+    right: 8%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(46, 106, 255, .4) 25%, rgba(249, 115, 22, .4) 75%, transparent);
+}
+
+.bk-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.bk-step-circle {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid rgba(46, 106, 255, .3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 18px;
+    transition: all .3s;
+    color: #7da8ff;
+}
+
+.bk-step-circle svg {
+    width: 22px;
+    height: 22px;
+}
+
+.bk-step:hover .bk-step-circle {
+    background: rgba(46, 106, 255, .15);
+    border-color: rgba(46, 106, 255, .5);
+    box-shadow: 0 0 24px rgba(46, 106, 255, .3);
+}
+
+.bk-step-label {
+    font-family: var(--ff-head);
+    font-size: .78rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, .9);
+    margin-bottom: 5px;
+}
+
+.bk-step-desc {
+    font-size: .7rem;
+    color: rgba(255, 255, 255, .38);
+    line-height: 1.55;
+} */
+
+/* ═══════════════════════════════════════════════
+   FEATURES GRID
+═══════════════════════════════════════════════ */
+.bk-feat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--gray-100);
+    border-radius: var(--r2);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.bk-feat-cell {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 34px 28px;
+    border-right: 1px solid var(--gray-100);
+    border-bottom: 1px solid var(--gray-100);
+    background: var(--navy-light);
+    transition: background .25s;
+}
+
+.bk-feat-cell:nth-child(3n) {
+    border-right: none;
+}
+
+.bk-feat-cell:nth-child(4),
+.bk-feat-cell:nth-child(5),
+.bk-feat-cell:nth-child(6) {
+    border-bottom: none;
+}
+
+.bk-feat-cell:hover {
+    background: var(--navy-2);
+}
+
+.bk-feat-cell-ico {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bk-feat-cell-ico svg {
+    width: 22px;
+    height: 22px;
+}
+
+.bk-feat-cell-txt strong {
+    display: block;
+    font-family: var(--ff-head);
+    font-size: .93rem;
+    font-weight: 700;
+    color: #ffff;
+    margin-bottom: 5px;
+}
+
+.bk-feat-cell-txt p {
+    font-size: .82rem;
+    color: #ffff;
+    line-height: 1.65;
+}
+
+/* ═══════════════════════════════════════════════
+   TECH PILLS
+═══════════════════════════════════════════════ */
+.bk-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+    margin-top: 48px;
+}
+
+.bk-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--navy-2);
+    border: 1px solid var(--gray-100);
+    padding: 13px 22px;
+    border-radius: 100px;
+    box-shadow: var(--shadow-sm);
+    transition: all .28s;
+}
+
+.bk-pill:hover {
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 8px 28px var(--navy-2);
+    transform: translateY(-4px)
+}
+
+.bk-pill svg {
+    width: 20px;
+    height: 20px;
+}
+
+.bk-pill span {
+    font-size: .875rem;
+    font-weight: 600;
+    color: #ffff;
 }
 
 /* ═══════════════════════════════════════════════
@@ -1559,28 +1384,20 @@
 
     {{-- ══════════════ HERO ══════════════ --}}
     <section class="bk-hero">
-        <img src="{{ asset('assets/images/hero-crm.png') }}" alt="Hero Background" class="hero-bg-img" />
         <div class="bk-wrap">
             <div class="bk-hero-grid">
 
                 {{-- LEFT --}}
-                <div>
-                    <span class="bk-eyebrow" style="margin-bottom:20px;display:inline-flex;">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                            <circle cx="9" cy="7" r="4" />
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                        </svg>
-                        CRM Software Development
-                    </span>
+                <div class="hero-content">
                     <h1 class="bk-h1 bk-hero-title">
-                        Smarter CRM Software<br>
-                        <span class="grad-orange">Built Around Your Sales Process</span>
+                        Advanced CRM with<br>
+                        <span class="grad-orange">Integrated Automation Technology</span>
                     </h1>
-                    <p class="bk-hero-sub">Custom CRM platforms that unify your leads, contacts, communication, and
-                        sales pipeline into one intelligent system, engineered to help your team close more, faster.</p>
+                    <p class="bk-hero-sub">Revolutionize Your Business with Smart Communication and Operations
+                        Management Streamline your workflows and enhance your efficiency with our Highly Advanced CRM,
+                        powered by Integrated Automation Technology. This cutting-edge solution bridges the gap between
+                        internal departments, optimizes lead management, and handles operations intelligently, ensuring
+                        a seamless business experience.</p>
 
                     <div class="bk-hero-btns">
                         <a href="{{ route('contact') }}" class="bk-btn bk-btn-orange">
@@ -1600,95 +1417,7 @@
                             Request a Demo
                         </a>
                     </div>
-
-                    <div class="bk-trust-row">
-                        <span class="bk-trust-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                            </svg>256-bit Encryption</span>
-                        <span class="bk-trust-sep"></span>
-                        <span class="bk-trust-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2.5">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>Free Data Migration</span>
-                        <span class="bk-trust-sep"></span>
-                        <span class="bk-trust-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2.5">
-                                <circle cx="12" cy="12" r="10" />
-                                <path d="M12 8v4l3 3" />
-                            </svg>99.9% Uptime SLA</span>
-                    </div>
                 </div>
-
-                {{-- RIGHT: Dashboard mock --}}
-                <div class="bk-hero-right">
-                    <div class="bk-dash-wrap">
-                        <div class="bk-dashboard">
-                            <div class="bk-dh">
-                                <span class="bk-dh-brand">ACCROSIAN CRM</span>
-                                <div class="bk-dh-dots">
-                                    <span class="bk-dh-dot" style="background:#f97316"></span>
-                                    <span class="bk-dh-dot" style="background:#f59e0b"></span>
-                                    <span class="bk-dh-dot" style="background:#22d3ee"></span>
-                                </div>
-                            </div>
-                            <div class="bk-dbal">
-                                <div class="bk-dbal-lbl">Active Pipeline Value</div>
-                                <div class="bk-dbal-amt">₹42.8L</div>
-                                <div class="bk-dbal-chg">▲ 18.4% this month</div>
-                            </div>
-                            <div class="bk-chart">
-                                <div class="bk-cb bk-cb-b" style="height:38%"></div>
-                                <div class="bk-cb bk-cb-o" style="height:55%"></div>
-                                <div class="bk-cb bk-cb-b" style="height:44%"></div>
-                                <div class="bk-cb bk-cb-o" style="height:72%"></div>
-                                <div class="bk-cb bk-cb-b" style="height:60%"></div>
-                                <div class="bk-cb bk-cb-o" style="height:85%"></div>
-                                <div class="bk-cb bk-cb-b" style="height:66%"></div>
-                            </div>
-                            <div class="bk-dstats">
-                                <div class="bk-ds">
-                                    <div class="bk-ds-val" style="color:#2e6aff">312</div>
-                                    <div class="bk-ds-lbl">Leads</div>
-                                </div>
-                                <div class="bk-ds">
-                                    <div class="bk-ds-val" style="color:#22d3ee">86%</div>
-                                    <div class="bk-ds-lbl">Converted</div>
-                                </div>
-                                <div class="bk-ds">
-                                    <div class="bk-ds-val" style="color:#f97316">54</div>
-                                    <div class="bk-ds-lbl">Deals</div>
-                                </div>
-                                <div class="bk-ds">
-                                    <div class="bk-ds-val" style="color:#4ade80">4.9m</div>
-                                    <div class="bk-ds-lbl">Avg. Response</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bk-badge bk-badge-1">
-                            <div class="bk-badge-ico" style="background:rgba(34,211,238,.12)">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#22d3ee"
-                                    stroke-width="2.5">
-                                    <path d="M22 2 11 13" />
-                                    <path d="M22 2 15 22 11 13 2 9 22 2z" />
-                                </svg>
-                            </div>
-                            <div class="bk-badge-txt"><strong>New Lead Assigned</strong><span>Auto-routed in 2s</span>
-                            </div>
-                        </div>
-                        <div class="bk-badge bk-badge-2">
-                            <div class="bk-badge-ico" style="background:rgba(249,115,22,.14)">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#f97316"
-                                    stroke-width="2.5">
-                                    <polyline points="20 6 9 17 4 12" />
-                                </svg>
-                            </div>
-                            <div class="bk-badge-txt"><strong>Deal Closed</strong><span>+₹1.2L revenue</span></div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
@@ -1721,8 +1450,10 @@
                                 d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24" />
                         </svg></div>
                     <div class="bk-card-title">Intelligent Lead Management</div>
-                    <div class="bk-card-desc">Capture leads from every channel, score them automatically, and route them
-                        to the right rep in seconds.</div>
+                    <div class="bk-card-desc">✓ Capture, track, and nurture leads effortlessly with AI-driven
+                        insights.<br>
+                        ✓ Monitor the lead lifecycle and conversion metrics for better strategy alignment.
+                    </div>
                     <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5">
@@ -1738,8 +1469,11 @@
                             <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                         </svg></div>
                     <div class="bk-card-title">Smart Internal Communication</div>
-                    <div class="bk-card-desc">Keep sales, marketing, and support in sync with shared timelines, notes,
-                        and real-time updates.</div>
+                    <div class="bk-card-desc">✓ Foster real-time communication between departments for faster
+                        decision-making.<br>
+                        ✓ Share updates, tasks, and insights seamlessly to keep everyone
+                        aligned.
+                    </div>
                     <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5">
@@ -1753,8 +1487,10 @@
                             <polyline points="8 6 2 12 8 18" />
                         </svg></div>
                     <div class="bk-card-title">Automated Workflow Engine</div>
-                    <div class="bk-card-desc">Build drag-and-drop workflows for approvals, follow-ups, and reminders so
-                        nothing slips through.</div>
+                    <div class="bk-card-desc">✓ Automate repetitive tasks like approvals, notifications, and
+                        reporting.<br>
+                        ✓ Design workflows tailored to your business needs with intuitive drag-and-drop tools.
+                    </div>
                     <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5">
@@ -1767,8 +1503,9 @@
                             <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
                         </svg></div>
                     <div class="bk-card-title">Smart Operations Handling</div>
-                    <div class="bk-card-desc">Coordinate sales, service, and delivery from a single platform with
-                        predictive bottleneck alerts.</div>
+                    <div class="bk-card-desc">✓ Coordinate multiple business functions from a single platform.<br>
+                        ✓ Use predictive analytics to identify bottlenecks and improve processes.
+                    </div>
                     <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5">
@@ -1783,8 +1520,10 @@
                             <line x1="6" y1="20" x2="6" y2="14" />
                         </svg></div>
                     <div class="bk-card-title">Real-Time Reporting &amp; Insights</div>
-                    <div class="bk-card-desc">Live dashboards on team performance, lead conversion, and revenue so
-                        decisions are never a guess.</div>
+                    <div class="bk-card-desc">✓ Live dashboards on team performance, lead conversion, and revenue so
+                        decisions.<br>
+                        ✓ Make data-driven decisions with actionable insights at your fingertips.
+                    </div>
                     <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5">
@@ -1798,8 +1537,9 @@
                             <line x1="12" y1="18" x2="12.01" y2="18" />
                         </svg></div>
                     <div class="bk-card-title">Mobile CRM Access</div>
-                    <div class="bk-card-desc">Full CRM functionality on iOS and Android, so your field and sales teams
-                        stay productive anywhere.</div>
+                    <div class="bk-card-desc">✓ Full CRM functionality on iOS and Android, so your field and sales.<br>
+                        ✓ Enable quick issue resolution through proactive system alerts and insights.
+                    </div>
                     <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5">
@@ -1816,14 +1556,7 @@
             <div class="bk-why-grid">
                 {{-- Left --}}
                 <div>
-                    <span class="bk-eyebrow" style="margin-bottom:18px;display:inline-flex;">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                        </svg>
-                        Why Accrosian
-                    </span>
-                    <h2 class="bk-h2">Built for <span class="grad-orange">Collaboration &amp; Growth</span></h2>
+                    <h2 class="bk-h2">Why Choose Our <span class="grad-orange">Advanced &amp; CRM?</span></h2>
                     <div class="bk-divider" style="margin:14px 0 20px;"></div>
                     <p class="bk-sub" style="margin-top:0;margin-bottom:32px;">We design CRMs that break down silos
                         between departments, so your teams work off one source of truth from first contact to closed
@@ -1836,16 +1569,16 @@
                                     <rect x="3" y="4" width="18" height="18" rx="2" />
                                     <path d="M16 2v4M8 2v4M3 10h18" />
                                 </svg></div>
-                            <div class="bk-feat-body"><strong>Centralized Contact Hub</strong><span>Every lead, client,
-                                    and interaction organized in one searchable database.</span></div>
+                            <div class="bk-feat-body"><strong>Boost Collaboration</strong><span>Break down barriers
+                                    between departments for smoother workflows.</span></div>
                         </div>
                         <div class="bk-feat-item">
                             <div class="bk-feat-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2.5">
                                     <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
                                 </svg></div>
-                            <div class="bk-feat-body"><strong>Automated Follow-Ups</strong><span>Never miss a touchpoint
-                                    with rule-based reminders and sequenced outreach.</span></div>
+                            <div class="bk-feat-body"><strong>Increase Efficiency</strong><span>Automate routine tasks
+                                    and minimize errors.</span></div>
                         </div>
                         <div class="bk-feat-item">
                             <div class="bk-feat-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -1853,8 +1586,8 @@
                                     <circle cx="12" cy="12" r="10" />
                                     <path d="M12 6v6l4 2" />
                                 </svg></div>
-                            <div class="bk-feat-body"><strong>AI-Driven Insights</strong><span>Predictive scoring and
-                                    trend detection to focus effort on deals that convert.</span></div>
+                            <div class="bk-feat-body"><strong>Improve Lead Conversion</strong><span>Drive better results
+                                    with a smarter approach to lead management.</span></div>
                         </div>
                         <div class="bk-feat-item">
                             <div class="bk-feat-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -1886,20 +1619,114 @@
         </div>
     </section>
 
-    {{-- ══════════════ PROCESS ══════════════ --}}
+    {{-- ══════════════ TECH / INTEGRATIONS ══════════════ --}}
     <section class="bk-sec bk-sec-navy">
         <div class="bk-wrap">
             <div class="bk-sec-head">
                 <span class="bk-eyebrow">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2.5">
-                        <circle cx="12" cy="12" r="3" />
-                        <path d="M19.07 4.93a10 10 0 0 0-14.14 0M4.93 19.07a10 10 0 0 0 14.14 0" />
+                        <polyline points="16 18 22 12 16 6" />
+                        <polyline points="8 6 2 12 8 18" />
                     </svg>
-                    Our Process
+                    Integrations
                 </span>
-                <h2 class="bk-h2 bk-h2-white" style="margin-top:16px;">How We <span class="grad-blue">Build &amp;
-                        Deliver Your CRM</span></h2>
+                <h2 class="bk-h2" style="margin-top:16px;">Connects With <span class="grad-blue">Your Favorite
+                        Tools</span></h2>
+                <div class="bk-divider"></div>
+                <p class="bk-sub">Bring your existing stack in, no rip-and-replace required.</p>
+            </div>
+            <div class="bk-integ-scroll" id="integScroll">
+                <div class="bk-integ-ring bk-integ-ring-1"></div>
+                <div class="bk-integ-ring bk-integ-ring-2"></div>
+
+                {{-- center hub --}}
+                <div class="bk-integ-hub">
+                    <div class="bk-integ-hub-ico">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <span>Accrosian<br>CRM</span>
+                </div>
+
+                {{-- floating integration pills --}}
+                <div class="bk-integ-pill" data-pos="top" data-dir="top" style="--delay:.05s">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#2e6aff"
+                        stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <path
+                            d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                    </svg>
+                    <span>Google Workspace</span>
+                </div>
+
+                <div class="bk-integ-pill" data-pos="tl" data-dir="left" style="--delay:.15s">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#f97316"
+                        stroke-width="2">
+                        <rect x="2" y="5" width="20" height="14" rx="2" />
+                        <line x1="2" y1="10" x2="22" y2="10" />
+                    </svg>
+                    <span>Payment Gateways</span>
+                </div>
+
+                <div class="bk-integ-pill" data-pos="tr" data-dir="right" style="--delay:.15s">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#d97706"
+                        stroke-width="2">
+                        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+                    </svg>
+                    <span>Zapier</span>
+                </div>
+
+                <div class="bk-integ-pill" data-pos="ml" data-dir="left" style="--delay:.25s">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#16a34a"
+                        stroke-width="2">
+                        <path d="M17 8c0-3.31-2.69-6-6-6S5 4.69 5 8c0 5 6 10 6 10s6-5 6-10z" />
+                    </svg>
+                    <span>WhatsApp Business API</span>
+                </div>
+
+                <div class="bk-integ-pill" data-pos="mr" data-dir="right" style="--delay:.25s">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#22c55e"
+                        stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" />
+                        <path d="M8 21h8M12 17v4" />
+                    </svg>
+                    <span>REST &amp; Webhook APIs</span>
+                </div>
+
+                <div class="bk-integ-pill" data-pos="bl" data-dir="left" style="--delay:.35s">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0891b2"
+                        stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22 6 12 13 2 6" />
+                    </svg>
+                    <span>Email Marketing Tools</span>
+                </div>
+
+                <div class="bk-integ-pill" data-pos="br" data-dir="right" style="--delay:.35s">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#7c3aed"
+                        stroke-width="2">
+                        <rect x="4" y="4" width="16" height="16" rx="3" />
+                        <path d="M8 12h8M12 8v8" />
+                    </svg>
+                    <span>Facebook &amp; Instagram</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- ══════════════ PROCESS ══════════════ --}}
+    <!-- <section class="bk-sec bk-sec-navy">
+        <div class="bk-wrap">
+            <div class="bk-sec-head">
+                <h2 class="bk-h2 bk-h2-white" style="margin-top:16px;">Integrate with all <span class="grad-blue">your
+                        &amp;
+                        favourite tools</span></h2>
                 <div class="bk-divider"></div>
                 <p class="bk-sub bk-sub-white">A proven six-stage methodology so your CRM launches on time and fits how
                     your team actually sells.</p>
@@ -1962,7 +1789,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     {{-- ══════════════ FEATURES GRID ══════════════ --}}
     <section class="bk-sec">
@@ -2069,86 +1896,46 @@
                 <div class="bk-divider"></div>
                 <p class="bk-sub">Bring your existing stack in, no rip-and-replace required.</p>
             </div>
-            <div class="bk-integ-scroll" id="integScroll">
-                <div class="bk-integ-ring bk-integ-ring-1"></div>
-                <div class="bk-integ-ring bk-integ-ring-2"></div>
-
-                {{-- center hub --}}
-                <div class="bk-integ-hub">
-                    <div class="bk-integ-hub-ico">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                            <circle cx="9" cy="7" r="4" />
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                        </svg>
-                    </div>
-                    <span>Accrosian<br>CRM</span>
-                </div>
-
-                {{-- floating integration pills --}}
-                <div class="bk-integ-pill" data-pos="top" data-dir="top" style="--delay:.05s">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#2e6aff"
-                        stroke-width="2">
+            <div class="bk-pills">
+                <div class="bk-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="#16a34a" stroke-width="2">
+                        <path d="M17 8c0-3.31-2.69-6-6-6S5 4.69 5 8c0 5 6 10 6 10s6-5 6-10z" />
+                    </svg><span>WhatsApp Business API</span></div>
+                <div class="bk-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="#2e6aff" stroke-width="2">
                         <circle cx="12" cy="12" r="10" />
                         <path
                             d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                    </svg>
-                    <span>Google Workspace</span>
-                </div>
-
-                <div class="bk-integ-pill" data-pos="tl" data-dir="left" style="--delay:.15s">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#f97316"
-                        stroke-width="2">
-                        <rect x="2" y="5" width="20" height="14" rx="2" />
-                        <line x1="2" y1="10" x2="22" y2="10" />
-                    </svg>
-                    <span>Payment Gateways</span>
-                </div>
-
-                <div class="bk-integ-pill" data-pos="tr" data-dir="right" style="--delay:.15s">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#d97706"
-                        stroke-width="2">
-                        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
-                    </svg>
-                    <span>Zapier</span>
-                </div>
-
-                <div class="bk-integ-pill" data-pos="ml" data-dir="left" style="--delay:.25s">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#16a34a"
-                        stroke-width="2">
-                        <path d="M17 8c0-3.31-2.69-6-6-6S5 4.69 5 8c0 5 6 10 6 10s6-5 6-10z" />
-                    </svg>
-                    <span>WhatsApp Business API</span>
-                </div>
-
-                <div class="bk-integ-pill" data-pos="mr" data-dir="right" style="--delay:.25s">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#22c55e"
-                        stroke-width="2">
-                        <rect x="2" y="3" width="20" height="14" rx="2" />
-                        <path d="M8 21h8M12 17v4" />
-                    </svg>
-                    <span>REST &amp; Webhook APIs</span>
-                </div>
-
-                <div class="bk-integ-pill" data-pos="bl" data-dir="left" style="--delay:.35s">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0891b2"
-                        stroke-width="2">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                        <polyline points="22 6 12 13 2 6" />
-                    </svg>
-                    <span>Email Marketing Tools</span>
-                </div>
-
-                <div class="bk-integ-pill" data-pos="br" data-dir="right" style="--delay:.35s">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#7c3aed"
-                        stroke-width="2">
+                    </svg><span>Google Workspace</span></div>
+                <div class="bk-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="#7c3aed" stroke-width="2">
                         <rect x="4" y="4" width="16" height="16" rx="3" />
                         <path d="M8 12h8M12 8v8" />
-                    </svg>
-                    <span>Facebook &amp; Instagram</span>
-                </div>
+                    </svg><span>Facebook &amp; Instagram</span></div>
+                <div class="bk-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="#f97316" stroke-width="2">
+                        <rect x="2" y="5" width="20" height="14" rx="2" />
+                        <line x1="2" y1="10" x2="22" y2="10" />
+                    </svg><span>Payment Gateways</span></div>
+                <div class="bk-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="#0891b2" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22 6 12 13 2 6" />
+                    </svg><span>Email Marketing Tools</span></div>
+                <div class="bk-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="#d97706" stroke-width="2">
+                        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+                    </svg><span>Zapier</span></div>
+                <div class="bk-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="#22c55e" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" />
+                        <path d="M8 21h8M12 17v4" />
+                    </svg><span>REST &amp; Webhook APIs</span></div>
+                <div class="bk-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="#2e6aff" stroke-width="2">
+                        <path
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                    </svg><span>AI / ML Models</span></div>
             </div>
         </div>
     </section>
