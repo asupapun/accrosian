@@ -1309,7 +1309,7 @@
     font-family: var(--ff-head);
     font-size: .95rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--black);
 }
 
 .bk-faq-item summary::-webkit-details-marker {
@@ -1336,7 +1336,7 @@
 
 .bk-faq-item p {
     font-size: .85rem;
-    color: rgba(255, 255, 255, .55);
+    color: var(--black);
     line-height: 1.7;
     padding-bottom: 20px;
 }
@@ -2028,7 +2028,6 @@
         </div>
     </section>
 
-    {{-- ══════════════ TECH / INTEGRATIONS ══════════════ --}}
 
     {{-- ══════════════ AUTOMATION IN ACTION ══════════════ --}}
     <section class="bk-sec bk-sec-alt">
@@ -2250,21 +2249,26 @@
         </div>
     </section>
 
+    {{-- ══════════════ CTA ══════════════ --}}
+    <section class="cta-section">
+        <div class="container cta-inner">
+            <span class="section-tag" style="margin-bottom:24px">Ready to Start?</span>
+            <h2 class="cta-title">Let's Build Your <span class="text-gradient">Smarter CRM</span> Together</h2>
+            <p class="cta-subtitle">Tell us how your team sells and we'll turn it into a CRM that fits. Free
+                consultation, no commitment.</p>
+            <div class="cta-actions">
+                <a href="{{ route('contact') }}" class="btn btn-primary btn-arrow">Get Started</a>
+                <a href="{{ route('portfolio') }}" class="btn btn-outline">See Our Work</a>
+            </div>
+        </div>
+    </section>
+
     {{-- ══════════════ FAQ ══════════════ --}}
-    <section class="bk-sec bk-sec-navy">
+    <section class="bk-sec bk-sec-alt">
         <div class="bk-wrap">
             <div class="bk-sec-head">
-                <span class="bk-eyebrow">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.5">
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 2-3 4" />
-                        <line x1="12" y1="17" x2="12.01" y2="17" />
-                    </svg>
-                    FAQs
-                </span>
-                <h2 class="bk-h2 bk-h2-white" style="margin-top:16px;">Frequently Asked <span
-                        class="grad-blue">Questions</span></h2>
+                <h2 class="bk-h2" style="margin-top:16px;">Frequently Asked <span class="grad-blue">Questions</span>
+                </h2>
                 <div class="bk-divider"></div>
             </div>
 
@@ -2303,19 +2307,7 @@
         </div>
     </section>
 
-    {{-- ══════════════ CTA ══════════════ --}}
-    <section class="cta-section">
-        <div class="container cta-inner">
-            <span class="section-tag" style="margin-bottom:24px">Ready to Start?</span>
-            <h2 class="cta-title">Let's Build Your <span class="text-gradient">Smarter CRM</span> Together</h2>
-            <p class="cta-subtitle">Tell us how your team sells and we'll turn it into a CRM that fits. Free
-                consultation, no commitment.</p>
-            <div class="cta-actions">
-                <a href="{{ route('contact') }}" class="btn btn-primary btn-arrow">Get Started</a>
-                <a href="{{ route('portfolio') }}" class="btn btn-outline">See Our Work</a>
-            </div>
-        </div>
-    </section>
+
 
 </div>
 
