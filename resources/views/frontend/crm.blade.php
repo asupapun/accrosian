@@ -1416,18 +1416,20 @@
 }
 
 .cta-actions .btn-primary {
-    box-shadow: 0 10px 30px rgba(232, 117, 10, 0.35);
+    background: var(--gradient-orange);
+    color: var(--white);
+    box-shadow: 0 4px 24px rgba(232, 117, 10, 0.35);
 }
 
 .cta-actions .btn-outline {
+    background: var(--gradient-orange);
+    color: var(--white);
     border: 1px solid rgba(255, 255, 255, 0.25);
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-    color: #fff;
 }
 
 .cta-actions .btn-outline:hover {
-    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
 }
 
 .section-tag {
@@ -1453,28 +1455,6 @@
     height: 6px;
     background: var(--orange);
     border-radius: 50%;
-}
-
-.btn-primary {
-    background: var(--gradient-orange);
-    color: var(--white);
-    box-shadow: 0 4px 24px rgba(232, 117, 10, 0.35);
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
-}
-
-.btn-outline {
-    background: var(--gradient-orange);
-    color: var(--white);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-}
-
-.btn-outline:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
 }
 
 .btn-sm {
