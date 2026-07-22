@@ -1430,6 +1430,68 @@
     background: rgba(255, 255, 255, 0.12);
 }
 
+.section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--navy-light);
+    border: 1px solid rgba(232, 117, 10, 0.3);
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+}
+
+.section-tag::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: var(--orange);
+    border-radius: 50%;
+}
+
+.btn-primary {
+    background: var(--gradient-orange);
+    color: var(--white);
+    box-shadow: 0 4px 24px rgba(232, 117, 10, 0.35);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
+}
+
+.btn-outline {
+    background: var(--gradient-orange);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.btn-outline:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
+}
+
+.btn-sm {
+    padding: 10px 24px;
+    font-size: 0.88rem;
+    background: var(--navy);
+}
+
+.btn-arrow::after {
+    content: "→";
+    transition: transform 0.3s ease;
+}
+
+.btn-arrow:hover::after {
+    transform: translateX(4px);
+}
+
 /* ═══════════════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════════════ */
@@ -2222,7 +2284,7 @@
                         improved."</p>
                     <div class="bk-testi-author">
                         <div class="bk-testi-av" style="background:linear-gradient(135deg,#1a4fd6,#22d3ee);">AC</div>
-                        <div class="bk-testi-info"><strong>Ashish Chopra</strong><span>Sales Director, NovaRetail</span>
+                        <div class="bk-testi-info"><strong>Abhishek Das</strong><span>Sales Director, NovaRetail</span>
                         </div>
                     </div>
                 </div>
