@@ -1457,21 +1457,6 @@
     border-radius: 50%;
 }
 
-.btn-sm {
-    padding: 10px 24px;
-    font-size: 0.88rem;
-    background: var(--navy);
-}
-
-.btn-arrow::after {
-    content: "→";
-    transition: transform 0.3s ease;
-}
-
-.btn-arrow:hover::after {
-    transform: translateX(4px);
-}
-
 /* ═══════════════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════════════ */
