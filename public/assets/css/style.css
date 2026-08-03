@@ -15047,3 +15047,123 @@ select option {
 @media(max-width:480px){
   .aint-s1-stats { grid-template-columns:1fr; }
 }
+
+
+
+.gm-overview-section {
+    padding: 80px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gm-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 48px;
+}
+
+.gm-card {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 32px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.gm-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 122, 51, 0.4);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 122, 51, 0.08);
+}
+
+.gm-card-content {
+    flex: 1 1 55%;
+    min-width: 0;
+}
+
+.gm-card-media {
+    flex: 1 1 40%;
+    max-width: 420px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.gm-card-media img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gm-card:hover .gm-card-media img {
+    transform: scale(1.05);
+}
+
+.gm-eyebrow {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #FF7A33;
+    margin-bottom: 12px;
+}
+
+.gm-card-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 12px;
+}
+
+.gm-card-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.65);
+    margin: 0 0 20px;
+    max-width: 480px;
+}
+
+.gm-see-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #FF7A33;
+    text-decoration: none;
+}
+
+.gm-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.gm-see-more:hover .gm-arrow {
+    transform: translateX(6px);
+}
+
+@media (max-width: 768px) {
+    .gm-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+    }
+
+    .gm-card-media {
+        max-width: 100%;
+        order: -1;
+    }
+
+    .gm-card-media img {
+        height: 200px;
+    }
+}
