@@ -58,6 +58,7 @@
                 <a href="#">Products</a>
                 <div class="simple-dropdown">
                     <a href="{{ route('Products.crm') }}">CRM (Lead Management)</a>
+                    <a href="{{ route('Products.whatsapp') }}">WhatsApp Automation</a>
                 </div>
             </li>
 
