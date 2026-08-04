@@ -15120,7 +15120,7 @@ select option {
 .gm-card-title {
     font-size: 35px;
     font-weight: 700;
-    color: #fff;
+    color: var(--navy-mid);
     margin: 0 0 12px;
 }
 
