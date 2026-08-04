@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'CRM Software Development | Accrosian')
+@section('title', 'Whatsapp Automation | Accrosian')
 
 @section('content')
 
