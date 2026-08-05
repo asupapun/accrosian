@@ -1158,6 +1158,20 @@
     margin-bottom: 10px;
 }
 
+.bk-flow-tag {
+    display: inline-block;
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--orange);
+    background: rgba(249, 115, 22, .08);
+    border: 1px solid rgba(249, 115, 22, .22);
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+}
+
 .bk-flow-step strong {
     display: block;
     font-family: var(--ff-head);
@@ -2064,7 +2078,7 @@
 
 
     {{-- ══════════════ AUTOMATION IN ACTION ══════════════ --}}
-    <section class="bk-sec bk-sec-alt">
+    <section class="bk-sec bk-sec-navy">
         <div class="bk-wrap">
             <div class="bk-sec-head">
                 <span class="bk-eyebrow">
@@ -2077,8 +2091,8 @@
                 <h2 class="bk-h2" style="margin-top:16px;">Watch Your <span class="grad-orange">Workflows Run
                         Themselves</span></h2>
                 <div class="bk-divider"></div>
-                <p class="bk-sub">One new lead can trigger the entire chain automatically, no manual handoffs, no
-                    dropped follow-ups.</p>
+                <p class="bk-sub">Turn every WhatsApp message into an automated customer journey with AI-powered
+                    replies, follow-ups, and seamless workflow automation.</p>
             </div>
 
             <div class="bk-flow-scroll" id="flowScroll">
