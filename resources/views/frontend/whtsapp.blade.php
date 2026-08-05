@@ -271,7 +271,7 @@
     justify-content: center;
     overflow: hidden;
     background: linear-gradient(rgba(4, 13, 26, .85), rgba(4, 13, 26, .90)),
-    url("{{ asset('assets/images/hero_crm.jpg') }}");
+    url("{{ asset('assets/images/hero-whtsapp.jpg') }}");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1810,7 +1810,7 @@
 
                 {{-- Right: image --}}
                 <div class="bk-right-full-image">
-                    <img src="{{ asset('assets/images/crm-dashboard.jpg') }}" alt="CRM Software Solutions">
+                    <img src="{{ asset('assets/images/whatsapp_auto.jpg') }}" alt="CRM Software Solutions">
                 </div>
             </div>
         </div>
