@@ -255,7 +255,7 @@
     width: 48px;
     height: 3px;
     border-radius: 3px;
-    margin: 16px auto 0;
+    margin: 10px auto 0;
     background: linear-gradient(90deg, var(--orange), var(--gold));
 }
 
@@ -1634,9 +1634,8 @@
                                 d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24" />
                         </svg></div>
                     <div class="bk-card-title">Intelligent Lead Management</div>
-                    <div class="bk-card-desc">✓ Capture, track, and nurture leads effortlessly with AI-driven
-                        insights.<br>
-                        ✓ Monitor the lead lifecycle and conversion metrics for better strategy alignment.
+                    <div class="bk-card-desc">Capture, track, and nurture leads effortlessly with AI-driven
+                        insights.Monitor the lead lifecycle and conversion metrics for better strategy alignment.
                     </div>
                     <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1653,9 +1652,8 @@
                             <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                         </svg></div>
                     <div class="bk-card-title">Smart Internal Communication</div>
-                    <div class="bk-card-desc">✓ Foster real-time communication between departments for faster
-                        decision-making.<br>
-                        ✓ Share updates, tasks, and insights seamlessly to keep everyone
+                    <div class="bk-card-desc">Foster real-time communication between departments for faster
+                        decision-making.Share updates, tasks, and insights seamlessly to keep everyone
                         aligned.
                     </div>
                     <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
@@ -1671,9 +1669,8 @@
                             <polyline points="8 6 2 12 8 18" />
                         </svg></div>
                     <div class="bk-card-title">Automated Workflow Engine</div>
-                    <div class="bk-card-desc">✓ Automate repetitive tasks like approvals, notifications, and
-                        reporting.<br>
-                        ✓ Design workflows tailored to your business needs with intuitive drag-and-drop tools.
+                    <div class="bk-card-desc">Automate repetitive tasks like approvals, notifications, and
+                        reporting.Design workflows tailored to your business needs with intuitive drag-and-drop tools.
                     </div>
                     <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1687,8 +1684,8 @@
                             <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
                         </svg></div>
                     <div class="bk-card-title">Smart Operations Handling</div>
-                    <div class="bk-card-desc">✓ Coordinate multiple business functions from a single platform.<br>
-                        ✓ Use predictive analytics to identify bottlenecks and improve processes.
+                    <div class="bk-card-desc">Coordinate multiple business functions from a single platform.Use
+                        predictive analytics to identify bottlenecks and improve processes.
                     </div>
                     <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1704,9 +1701,8 @@
                             <line x1="6" y1="20" x2="6" y2="14" />
                         </svg></div>
                     <div class="bk-card-title">Real-Time Reporting &amp; Insights</div>
-                    <div class="bk-card-desc">✓ Live dashboards on team performance, lead conversion, and revenue so
-                        decisions.<br>
-                        ✓ Make data-driven decisions with actionable insights at your fingertips.
+                    <div class="bk-card-desc">Live dashboards on team performance, lead conversion, and revenue so
+                        decisions.Make data-driven decisions with actionable insights at your fingertips.
                     </div>
                     <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1721,8 +1717,8 @@
                             <line x1="12" y1="18" x2="12.01" y2="18" />
                         </svg></div>
                     <div class="bk-card-title">Mobile CRM Access</div>
-                    <div class="bk-card-desc">✓ Full CRM functionality on iOS and Android, so your field and sales.<br>
-                        ✓ Enable quick issue resolution through proactive system alerts and insights.
+                    <div class="bk-card-desc">Full CRM functionality on iOS and Android, so your field and sales.Enable
+                        quick issue resolution through proactive system alerts and insights.
                     </div>
                     <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1978,10 +1974,11 @@
                     </svg>
                     Platform Features
                 </span>
-                <h2 class="bk-h2" style="margin-top:16px;">Notable <span class="grad-orange">CRM Capabilities</span>
+                <h2 class="bk-h2-white" style="margin-top:16px;">Notable <span class="grad-orange">CRM
+                        Capabilities</span>
                 </h2>
                 <div class="bk-divider"></div>
-                <p class="bk-sub">Every module built with the precision that a modern sales team demands.</p>
+                <p class="bk-sub-white">Every module built with the precision that a modern sales team demands.</p>
             </div>
 
             <div class="bk-feat-grid">
@@ -2057,7 +2054,7 @@
 
 
     {{-- ══════════════ AUTOMATION IN ACTION ══════════════ --}}
-    <section class="bk-sec bk-sec-alt">
+    <section class="bk-sec bk-sec-navy">
         <div class="bk-wrap">
             <div class="bk-sec-head">
                 <span class="bk-eyebrow">

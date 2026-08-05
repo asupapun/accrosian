@@ -255,7 +255,7 @@
     width: 48px;
     height: 3px;
     border-radius: 3px;
-    margin: 16px auto 0;
+    margin: 12px auto 0;
     background: linear-gradient(90deg, var(--orange), var(--gold));
 }
 
@@ -416,7 +416,7 @@
 }
 
 .bk-card-desc {
-    font-size: .8rem;
+    font-size: 1rem;
     color: #ffff;
     line-height: 1.5;
 }
@@ -1650,8 +1650,8 @@
                                 d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24" />
                         </svg></div>
                     <div class="bk-card-title">Automated Conversations</div>
-                    <div class="bk-card-desc">✓ Respond to customer queries instantly with intelligent chatbots.<br>
-                        ✓ Provide 24/7 support to enhance customer satisfaction and loyalty.
+                    <div class="bk-card-desc">Respond to customer queries instantly with intelligent chatbots.Provide
+                        24/7 support to enhance customer satisfaction and loyalty.
                     </div>
                     <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1668,8 +1668,8 @@
                             <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                         </svg></div>
                     <div class="bk-card-title">Broadcast Messaging Made Simple</div>
-                    <div class="bk-card-desc">✓ Send bulk messages to targeted groups with ease.<br>
-                        ✓ Personalize each message for a more meaningful connection.
+                    <div class="bk-card-desc">Send bulk messages to targeted groups with ease.Personalize each message
+                        for a more meaningful connection.
                     </div>
                     <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1684,9 +1684,8 @@
                             <polyline points="8 6 2 12 8 18" />
                         </svg></div>
                     <div class="bk-card-title">Smart Workflow Integration</div>
-                    <div class="bk-card-desc">✓ Design and automate workflows to streamline processes across
-                        departments.<br>
-                        ✓ Optimize task assignments and approvals for improved team collaboration.
+                    <div class="bk-card-desc">Design and automate workflows to streamline processes across
+                        departments.Optimize task assignments and approvals for improved team collaboration.
                     </div>
                     <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1700,8 +1699,8 @@
                             <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
                         </svg></div>
                     <div class="bk-card-title">Real-Time Analytics and Insights</div>
-                    <div class="bk-card-desc">✓ Track the performance of your campaigns and workflows.<br>
-                        ✓ Gain insights into customer behavior to refine strategies and maximize ROI.
+                    <div class="bk-card-desc">Track the performance of your campaigns and workflows.Gain insights into
+                        customer behavior to refine strategies and maximize ROI.
                     </div>
                     <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1717,8 +1716,8 @@
                             <line x1="6" y1="20" x2="6" y2="14" />
                         </svg></div>
                     <div class="bk-card-title">Multi-Language and Multimedia Support</div>
-                    <div class="bk-card-desc">✓ Communicate in multiple languages to connect with a global audience.<br>
-                        ✓ Make data-driven decisions with actionable insights at your fingertips.
+                    <div class="bk-card-desc">Communicate in multiple languages to connect with a global audience.Make
+                        data-driven decisions with actionable insights at your fingertips.
                     </div>
                     <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1733,8 +1732,8 @@
                             <line x1="12" y1="18" x2="12.01" y2="18" />
                         </svg></div>
                     <div class="bk-card-title">Bulk Broadcast Messaging</div>
-                    <div class="bk-card-desc">✓ Send promotional campaigns to thousands of customers instantly.<br>
-                        ✓ Schedule offers, announcements, and festive greetings.
+                    <div class="bk-card-desc">Send promotional campaigns to thousands of customers instantly.Schedule
+                        offers, announcements, and festive greetings.
                     </div>
                     <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -2088,10 +2087,10 @@
                     </svg>
                     Automation Engine
                 </span>
-                <h2 class="bk-h2" style="margin-top:16px;">Watch Your <span class="grad-orange">Workflows Run
+                <h2 class="bk-h2-white" style="margin-top:16px;">Watch Your <span class="grad-orange">Workflows Run
                         Themselves</span></h2>
                 <div class="bk-divider"></div>
-                <p class="bk-sub">Turn every WhatsApp message into an automated customer journey with AI-powered
+                <p class="bk-sub-white">Turn every WhatsApp message into an automated customer journey with AI-powered
                     replies, follow-ups, and seamless workflow automation.</p>
             </div>
 
@@ -2108,9 +2107,10 @@
                                 <path d="M22 2 15 22 11 13 2 9 22 2z" />
                             </svg>
                         </div>
-                        <span class="bk-flow-tag">Trigger</span>
-                        <strong>New Lead Captured</strong>
-                        <p>A lead fills a form, messages on WhatsApp, or lands from an ad campaign.</p>
+                        <span class="bk-flow-tag">TRIGGER</span>
+                        <strong>Customer Sends a Message</strong>
+                        <p>A customer starts a conversation through WhatsApp by sending a message, scanning a QR code,
+                            or clicking a WhatsApp link.</p>
                     </div>
 
                     <div class="bk-flow-step" style="--fdelay:.25s">
@@ -2122,9 +2122,10 @@
                                     d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24" />
                             </svg>
                         </div>
-                        <span class="bk-flow-tag">Score</span>
-                        <strong>AI Scores &amp; Qualifies</strong>
-                        <p>Intent, source, and past behavior are weighed instantly to rank the lead.</p>
+                        <span class="bk-flow-tag">AUTOMATE</span>
+                        <strong>AI Chatbot Responds</strong>
+                        <p>Instantly greet customers, answer FAQs, collect information, and qualify leads with
+                            intelligent automated replies.</p>
                     </div>
 
                     <div class="bk-flow-step" style="--fdelay:.45s">
@@ -2137,9 +2138,10 @@
                                 <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                             </svg>
                         </div>
-                        <span class="bk-flow-tag">Route</span>
-                        <strong>Assigned to the Right Rep</strong>
-                        <p>Routing rules match the lead to the rep best suited to close it, in seconds.</p>
+                        <span class="bk-flow-tag">WORKFLOW</span>
+                        <strong>Smart Workflow Activated</strong>
+                        <p>Automatically assign conversations, send personalized messages, trigger notifications, or
+                            create CRM records based on customer responses.</p>
                     </div>
 
                     <div class="bk-flow-step" style="--fdelay:.65s">
@@ -2149,9 +2151,10 @@
                                 <path d="M17 8c0-3.31-2.69-6-6-6S5 4.69 5 8c0 5 6 10 6 10s6-5 6-10z" />
                             </svg>
                         </div>
-                        <span class="bk-flow-tag">Notify</span>
-                        <strong>Instant Follow-Up Sent</strong>
-                        <p>A WhatsApp or email sequence fires automatically, before the lead goes cold.</p>
+                        <span class="bk-flow-tag">ENGAGE</span>
+                        <strong>Follow-Up & Notifications</strong>
+                        <p>Send reminders, order updates, appointment confirmations, and promotional messages to keep
+                            customers engaged automatically.</p>
                     </div>
                 </div>
             </div>
