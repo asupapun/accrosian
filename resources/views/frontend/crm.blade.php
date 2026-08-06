@@ -1349,31 +1349,46 @@
     position: relative;
     overflow: hidden;
     text-align: center;
+
     background:
-        linear-gradient(135deg, rgba(5, 10, 35, 0.88), rgba(10, 14, 46, 0.82), rgba(232, 117, 10, 0.18)),
+        linear-gradient(135deg,
+            rgba(5, 10, 35, 0.88),
+            rgba(10, 14, 46, 0.82),
+            rgba(232, 117, 10, 0.18)),
         url('/assets/images/cta-img.jpg');
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
     border-top: 1px solid rgba(232, 117, 10, 0.15);
     border-bottom: 1px solid rgba(232, 117, 10, 0.15);
 }
 
+/* Premium dark overlay */
 .cta-section::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(232, 117, 10, 0.18), transparent 60%);
+
+    background:
+        radial-gradient(circle at center,
+            rgba(232, 117, 10, 0.18),
+            transparent 60%);
+
     z-index: 1;
 }
 
+/* Glass blur layer */
 .cta-section::after {
     content: "";
     position: absolute;
     inset: 0;
+
     backdrop-filter: blur(3px);
     background: rgba(0, 0, 0, 0.18);
+
     z-index: 1;
 }
 
@@ -1385,17 +1400,21 @@
 }
 
 .cta-title {
-    font-family: var(--ff-head);
+    font-family: var(--font-display);
     font-size: clamp(2.8rem, 5vw, 5rem);
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 24px;
+
     color: #fff;
     text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 .cta-title .text-gradient {
-    background: linear-gradient(135deg, #ff8c1a, #ffb347);
+    background: linear-gradient(135deg,
+            #ff8c1a,
+            #ffb347);
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -1404,32 +1423,32 @@
     font-size: 1.15rem;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.82);
+
     max-width: 760px;
     margin: 0 auto 42px;
 }
 
-.cta-btn {
+.cta-actions {
     display: flex;
     justify-content: center;
     gap: 18px;
     flex-wrap: wrap;
 }
 
-.cta-btn .btn-prime {
-    background: var(--gradient-orange);
-    color: var(--white);
-    box-shadow: 0 4px 24px rgba(232, 117, 10, 0.35);
+/* Optional premium buttons */
+.cta-actions .btn-primary {
+    box-shadow: 0 10px 30px rgba(232, 117, 10, 0.35);
 }
 
-.cta-btn .btn-out {
-    background: var(--gradient-orange);
-    color: var(--white);
+.cta-actions .btn-outline {
     border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    color: #fff;
 }
 
-.cta-btn .btn-out:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
+.cta-actions .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.12);
 }
 
 .section-tag {
@@ -2277,26 +2296,13 @@
     <section class="cta-section">
         <div class="container cta-inner">
             <span class="section-tag" style="margin-bottom:24px">Ready to Start?</span>
-            <h2 class="cta-title">Let's Build Your <span class="text-gradient">Smarter CRM</span> Together</h2>
-            <p class="cta-subtitle">Tell us how your team sells and we'll turn it into a CRM that fits. Free
-                consultation, no commitment.</p>
-            <div class="bk-hero-btns">
-                <a href="{{ route('contact') }}" class="bk-btn bk-btn-orange">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.5" style="width:15px;height:15px">
-                        <path
-                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" />
-                    </svg>
-                    Get a Quote
-                </a>
-                <a href="{{ route('contact') }}" class="bk-btn bk-btn-outline-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.5" style="width:15px;height:15px">
-                        <circle cx="12" cy="12" r="10" />
-                        <polyline points="12 8 12 12 14 14" />
-                    </svg>
-                    Request a Demo
-                </a>
+            <h2 class="cta-title">Let's Build Something <span class="text-gradient">Extraordinary</span> Together</h2>
+            <p class="cta-subtitle">Tell us your vision and we'll turn it into reality. Free consultation, no
+                commitment.
+            </p>
+            <div class="cta-actions">
+                <a href="{{ route('contact') }}" class="btn btn-primary btn-arrow">Start Your Project</a>
+                <a href="{{ route('portfolio') }}" class="btn btn-outline">See Our Work</a>
             </div>
         </div>
     </section>

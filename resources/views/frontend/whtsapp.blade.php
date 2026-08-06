@@ -2315,9 +2315,23 @@
             <h2 class="cta-title">Let's Build Your <span class="text-gradient">Smarter CRM</span> Together</h2>
             <p class="cta-subtitle">Tell us how your team sells and we'll turn it into a CRM that fits. Free
                 consultation, no commitment.</p>
-            <div class="cta-actions">
-                <a href="{{ route('contact') }}" class="btn btn-primary2 btn-arrow">Get Started</a>
-                <a href="{{ route('portfolio') }}" class="btn btn-outline2">See Our Work</a>
+            <div class="bk-hero-btns">
+                <a href="{{ route('contact') }}" class="bk-btn bk-btn-orange">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" style="width:15px;height:15px">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" />
+                    </svg>
+                    Get Started
+                </a>
+                <a href="{{ route('portfolio') }}" class="bk-btn bk-btn-outline-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" style="width:15px;height:15px">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 8 12 12 14 14" />
+                    </svg>
+                    See Our Work
+                </a>
             </div>
         </div>
     </section>
