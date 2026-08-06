@@ -1408,26 +1408,26 @@
     margin: 0 auto 42px;
 }
 
-.cta-actions {
+.cta-actions2 {
     display: flex;
     justify-content: center;
     gap: 18px;
     flex-wrap: wrap;
 }
 
-.cta-actions .btn-primary {
+.cta-actions2 .btn-primary2 {
     background: var(--gradient-orange);
     color: var(--white);
     box-shadow: 0 4px 24px rgba(232, 117, 10, 0.35);
 }
 
-.cta-actions .btn-outline {
+.cta-actions2 .btn-outline2 {
     background: var(--gradient-orange);
     color: var(--white);
     border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
-.cta-actions .btn-outline:hover {
+.cta-actions2 .btn-outline2:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
 }
@@ -2280,9 +2280,9 @@
             <h2 class="cta-title">Let's Build Your <span class="text-gradient">Smarter CRM</span> Together</h2>
             <p class="cta-subtitle">Tell us how your team sells and we'll turn it into a CRM that fits. Free
                 consultation, no commitment.</p>
-            <div class="cta-actions">
-                <a href="{{ route('contact') }}" class="btn btn-primary btn-arrow">Get Started</a>
-                <a href="{{ route('portfolio') }}" class="btn btn-outline">See Our Work</a>
+            <div class="cta-actions2">
+                <a href="{{ route('contact') }}" class="btn btn-primary2 btn-arrow">Get Started</a>
+                <a href="{{ route('portfolio') }}" class="btn btn-outline2">See Our Work</a>
             </div>
         </div>
     </section>

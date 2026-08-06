@@ -1422,26 +1422,26 @@
     margin: 0 auto 42px;
 }
 
-.cta-actions {
+.cta-actions2 {
     display: flex;
     justify-content: center;
     gap: 18px;
     flex-wrap: wrap;
 }
 
-.cta-actions .btn-primary {
+.cta-actions2 .btn-primary2 {
     background: var(--gradient-orange);
     color: var(--white);
     box-shadow: 0 4px 24px rgba(232, 117, 10, 0.35);
 }
 
-.cta-actions .btn-outline {
+.cta-actions2 .btn-outline2 {
     background: var(--gradient-orange);
     color: var(--white);
     border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
-.cta-actions .btn-outline:hover {
+.cta-actions2 .btn-outline2:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 32px rgba(232, 117, 10, 0.5);
 }
@@ -2261,38 +2261,44 @@
                     </svg>
                     Client Stories
                 </span>
-                <h2 class="bk-h2" style="margin-top:16px;">Trusted by <span class="grad-orange">Growing Sales
-                        Teams</span></h2>
+                <h2 class="bk-h2" style="margin-top:16px;">Real Businesses, <span class="grad-orange">Real Results with
+                        WhatsApp Automation</span></h2>
                 <div class="bk-divider"></div>
             </div>
             <div class="bk-testi-grid">
                 <div class="bk-testi">
                     <div class="bk-stars">★★★★★</div>
-                    <p class="bk-testi-q">"Accrosian's CRM has transformed how we manage customer relationships. The
-                        data-driven insights let us make smarter decisions, and our team's productivity has visibly
-                        improved."</p>
+                    <p class="bk-testi-q">"Accrosian's WhatsApp Automation has completely transformed how we handle
+                        customer inquiries. Automated replies and follow-ups have helped us capture more leads while
+                        saving hours of manual work every week."</p>
                     <div class="bk-testi-author">
                         <div class="bk-testi-av" style="background:linear-gradient(135deg,#1a4fd6,#22d3ee);">AC</div>
-                        <div class="bk-testi-info"><strong>Abhishek Das</strong><span>Sales Director, NovaRetail</span>
+                        <div class="bk-testi-info"><strong>Vikram Joshi</strong><span>Business Development Manager, Nexa
+                                Technologies</span>
                         </div>
                     </div>
                 </div>
                 <div class="bk-testi">
                     <div class="bk-stars">★★★★★</div>
-                    <p class="bk-testi-q">"The automated lead routing and WhatsApp integration alone cut our response
-                        time in half. Our conversion rate has never been higher."</p>
+                    <p class="bk-testi-q">"The AI chatbot now handles most of our customer queries instantly. Our
+                        response time has improved dramatically, and our team can focus on closing more sales instead of
+                        answering repetitive questions."</p>
                     <div class="bk-testi-author">
                         <div class="bk-testi-av" style="background:linear-gradient(135deg,#f97316,#fbbf24);">PD</div>
-                        <div class="bk-testi-info"><strong>Priya Desai</strong><span>Founder, ShopEase</span></div>
+                        <div class="bk-testi-info"><strong>Satyam Mohanty</strong><span>Operations Head, TechVenture
+                                India,
+                                ShopEase</span></div>
                     </div>
                 </div>
                 <div class="bk-testi">
                     <div class="bk-stars">★★★★★</div>
-                    <p class="bk-testi-q">"From discovery to go-live, the team understood exactly how our sales floor
-                        works. Onboarding took days, not months, and support has been outstanding since."</p>
+                    <p class="bk-testi-q">"Bulk WhatsApp campaigns, smart workflows, and automated reminders have
+                        significantly improved our customer engagement and increased conversions without adding extra
+                        workload."</p>
                     <div class="bk-testi-author">
                         <div class="bk-testi-av" style="background:linear-gradient(135deg,#22d3ee,#4ade80);">RK</div>
-                        <div class="bk-testi-info"><strong>Rajesh Kumar</strong><span>CTO, TechVenture India</span>
+                        <div class="bk-testi-info"><strong>Meera Nair</strong><span>Founder, Elite Travels &
+                                Tours</span>
                         </div>
                     </div>
                 </div>
@@ -2307,9 +2313,9 @@
             <h2 class="cta-title">Let's Build Your <span class="text-gradient">Smarter CRM</span> Together</h2>
             <p class="cta-subtitle">Tell us how your team sells and we'll turn it into a CRM that fits. Free
                 consultation, no commitment.</p>
-            <div class="cta-actions">
-                <a href="{{ route('contact') }}" class="btn btn-primary btn-arrow">Get Started</a>
-                <a href="{{ route('portfolio') }}" class="btn btn-outline">See Our Work</a>
+            <div class="cta-actions2">
+                <a href="{{ route('contact') }}" class="btn btn-primary2 btn-arrow">Get Started</a>
+                <a href="{{ route('portfolio') }}" class="btn btn-outline2">See Our Work</a>
             </div>
         </div>
     </section>
@@ -2325,34 +2331,34 @@
 
             <div class="bk-faq">
                 <details class="bk-faq-item">
-                    <summary>What is Accrosian's CRM? <span class="bk-faq-plus">+</span></summary>
-                    <p>A custom-built CRM platform that centralizes leads, contacts, communication, and your sales
-                        pipeline, designed around your specific sales process rather than a rigid template.</p>
+                    <summary>What is WhatsApp Automation? <span class="bk-faq-plus">+</span></summary>
+                    <p>WhatsApp Automation helps businesses automate customer conversations, lead capture, follow-ups,
+                        and support using AI chatbots and smart workflows—available 24/7 without manual effort.</p>
                 </details>
                 <details class="bk-faq-item">
                     <summary>How do I get started? <span class="bk-faq-plus">+</span></summary>
-                    <p>Request a free consultation and our team will map your workflows, propose an architecture, and
-                        walk you through a demo before any commitment.</p>
+                    <p>Simply connect your WhatsApp Business account, configure your chatbot and workflows, and start
+                        automating customer conversations within minutes.</p>
                 </details>
                 <details class="bk-faq-item">
-                    <summary>Can it integrate with tools we already use? <span class="bk-faq-plus">+</span></summary>
-                    <p>Yes. The CRM connects with WhatsApp, Google Workspace, email marketing tools, payment gateways,
-                        and any system with a REST API or webhook support.</p>
+                    <summary>Can it integrate with our existing tools? <span class="bk-faq-plus">+</span></summary>
+                    <p>Yes. Our platform integrates with CRMs, websites, payment gateways, Google Workspace, APIs,
+                        webhooks, and many third-party business applications.</p>
                 </details>
                 <details class="bk-faq-item">
-                    <summary>Is our data secure? <span class="bk-faq-plus">+</span></summary>
-                    <p>Every deployment uses 256-bit encryption, role-based access control, and regular security
-                        audits to keep customer and business data protected.</p>
+                    <summary>Can I send bulk WhatsApp messages? <span class="bk-faq-plus">+</span></summary>
+                    <p>Yes. Send promotional campaigns, announcements, reminders, and personalized broadcasts to your
+                        customers while complying with WhatsApp Business guidelines.</p>
                 </details>
                 <details class="bk-faq-item">
-                    <summary>Can the CRM scale as our team grows? <span class="bk-faq-plus">+</span></summary>
-                    <p>Absolutely. The platform is built on a modular, cloud-native architecture so you can add users,
-                        modules, and integrations without re-platforming.</p>
+                    <summary>Can the AI chatbot answer customer queries? <span class="bk-faq-plus">+</span></summary>
+                    <p>Absolutely. The AI chatbot can instantly answer FAQs, qualify leads, schedule appointments,
+                        collect customer information, and hand over conversations to human agents when needed.</p>
                 </details>
                 <details class="bk-faq-item">
-                    <summary>Do you provide training and support? <span class="bk-faq-plus">+</span></summary>
-                    <p>Yes, onboarding includes team training, and our support desk is available around the clock
-                        after go-live.</p>
+                    <summary>Is WhatsApp Automation secure? <span class="bk-faq-plus">+</span></summary>
+                    <p>Yes. We use secure APIs and encrypted communication to protect customer data while ensuring
+                        reliable and compliant messaging.</p>
                 </details>
             </div>
         </div>
