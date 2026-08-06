@@ -2315,10 +2315,10 @@
             <h2 class="cta-title">Let's Build Your <span class="text-gradient">Smarter CRM</span> Together</h2>
             <p class="cta-subtitle">Tell us how your team sells and we'll turn it into a CRM that fits. Free
                 consultation, no commitment.</p>
-            <div class="cta-actions">
+            <!-- <div class="cta-actions">
                 <a href="{{ route('contact') }}" class="btn btn-primary btn-arrow">Get Started</a>
                 <a href="{{ route('portfolio') }}" class="btn btn-outline">See Our Work</a>
-            </div>
+            </div> -->
         </div>
     </section>
 
