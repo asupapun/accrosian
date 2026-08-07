@@ -265,7 +265,7 @@
    HERO
 ═══════════════════════════════════════════════ */
 .bk-hero {
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     background:
@@ -1136,7 +1136,7 @@
 /* ═══════════════════════════════════════════════
    STATS BAR — navy
 ═══════════════════════════════════════════════ */
-.bk-stats {
+/* .bk-stats {
     background: var(--navy-light);
     border-top: 1px solid rgba(46, 106, 255, .12);
     border-bottom: 1px solid rgba(46, 106, 255, .12);
@@ -1173,7 +1173,7 @@
     font-size: .82rem;
     color: rgba(255, 255, 255, .45);
     margin-top: 6px;
-}
+} */
 
 /* ═══════════════════════════════════════════════
    TESTIMONIALS — white bg
@@ -1370,6 +1370,31 @@
 
 .cta-actions .btn-outline:hover {
     background: rgba(255, 255, 255, 0.12);
+}
+
+.section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--navy-light);
+    border: 1px solid rgba(232, 117, 10, 0.3);
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+}
+
+.section-tag::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: var(--orange);
+    border-radius: 50%;
 }
 
 /* ═══════════════════════════════════════════════
@@ -1612,24 +1637,6 @@ textarea.bk-input {
                             </svg>
                             Consult Now
                         </a>
-                    </div>
-
-                    <div class="bk-trust-row">
-                        <span class="bk-trust-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                            </svg>256-bit Encryption</span>
-                        <span class="bk-trust-sep"></span>
-                        <span class="bk-trust-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2.5">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>ISO 27001</span>
-                        <span class="bk-trust-sep"></span>
-                        <span class="bk-trust-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2.5">
-                                <circle cx="12" cy="12" r="10" />
-                                <path d="M12 8v4l3 3" />
-                            </svg>99.9% Uptime SLA</span>
                     </div>
                 </div>
             </div>
@@ -2138,7 +2145,7 @@ textarea.bk-input {
 
 
     {{-- ══════════════ STATS ══════════════ --}}
-    <section class="bk-stats">
+    <!-- <section class="bk-stats">
         <div class="bk-wrap">
             <div class="bk-stats-grid">
                 <div class="bk-stat-cell">
@@ -2163,7 +2170,7 @@ textarea.bk-input {
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
     {{-- ══════════════ TESTIMONIALS ══════════════ --}}
