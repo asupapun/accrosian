@@ -375,7 +375,7 @@ body {
 
 /* Constrain content to your site width */
 .mega-inner {
-  max-width: 1200px;
+  max-width: 1250px;
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
@@ -385,11 +385,11 @@ body {
 
 /* Left panel: title + description + CTA */
 .mega-category {
-  min-width: 210px;
-  max-width: 180px;
+  min-width: 230px;
+  max-width: 200px;
   border-right: 1px solid var(--glass-border);
-  padding-right: 22px;
-  margin-right: 20px;
+  padding-right: 32px;
+  margin-right: 25px;
   flex-shrink: 0;
 }
 .mega-cat-label {
