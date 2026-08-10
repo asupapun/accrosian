@@ -436,13 +436,13 @@ body {
 /* Right side: columns of links */
 .mega-cols {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   flex: 1;
   flex-wrap: wrap;
   align-items: flex-start;
 }
 .mega-col {
-  min-width: 180px;
+  min-width: 170px;
   flex: 1;
   display: flex;             /* add this */
   flex-direction: column;    /* add this */
