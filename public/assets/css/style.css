@@ -385,11 +385,11 @@ body {
 
 /* Left panel: title + description + CTA */
 .mega-category {
-  min-width: 230px;
-  max-width: 200px;
+  min-width: 210px;
+  max-width: 180px;
   border-right: 1px solid var(--glass-border);
-  padding-right: 32px;
-  margin-right: 25px;
+  padding-right: 22px;
+  margin-right: 20px;
   flex-shrink: 0;
 }
 .mega-cat-label {
