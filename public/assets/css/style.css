@@ -375,7 +375,7 @@ body {
 
 /* Constrain content to your site width */
 .mega-inner {
-  max-width: 1250px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
