@@ -125,7 +125,7 @@ h3 {
 
 /* ─── HERO ─── */
 .hero {
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     padding-top: 90px;

@@ -442,9 +442,9 @@ body {
   align-items: flex-start;
 }
 .mega-col {
-  min-width: 160px;
+  min-width: 180px;
   flex: 1;
-   display: flex;             /* add this */
+  display: flex;             /* add this */
   flex-direction: column;    /* add this */
   gap: 2px; 
 }
