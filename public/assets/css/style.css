@@ -4797,7 +4797,7 @@ select option {
 .tech-tags-wrap2 {
     display: flex;
     flex-wrap: wrap;
-    margin-right: 50px;
+    margin-right: 200px;
     gap: 10px;
     background: var(--off-white);
 }
