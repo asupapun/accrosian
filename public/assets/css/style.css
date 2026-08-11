@@ -4793,7 +4793,15 @@ select option {
     gap: 10px;
     background: var(--off-white);
 }
- 
+
+.tech-tags-wrap2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 50px;
+    gap: 10px;
+    background: var(--off-white);
+}
+
 .tech-tag-item {
     display: flex;
     align-items: center;
@@ -4806,6 +4814,21 @@ select option {
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--white);
+    transition: var(--transition);
+    cursor: default;
+}
+
+.tech-tag-item2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--black);
     transition: var(--transition);
     cursor: default;
 }
