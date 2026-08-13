@@ -1486,18 +1486,19 @@
 
     {{-- ══════════════ HERO ══════════════ --}}
     <section class="bk-hero">
-        <img src="{{ asset('assets/images/hero-banking.png') }}" alt="Hero Background" class="hero-bg-img" />
+        <img src="{{ asset('assets/images/smm.jpg') }}" alt="Hero Background" class="hero-bg-img" />
         <div class="bk-wrap">
             <div class="bk-hero-grid">
 
                 {{-- LEFT --}}
                 <div>
                     <h1 class="bk-h1 bk-hero-title">
-                        Secure &amp; Scalable<br>
-                        <span class="grad-orange">Banking Solutions</span>
+                        Social Media<br>
+                        <span class="grad-orange">Marketing Bhubaneswar</span>
                     </h1>
-                    <p class="bk-hero-sub">Empowering financial institutions with modern, secure, and high performance
-                        digital solutions built for the future of finance.</p>
+                    <p class="bk-hero-sub">Grow your brand with professional social media management services designed
+                        to increase engagement, generate quality leads, and build lasting customer relationships across
+                        today's most popular social platforms</p>
 
                     <div class="bk-hero-btns">
                         <a href="{{ route('contact') }}" class="bk-btn bk-btn-orange">
@@ -1506,7 +1507,7 @@
                                 <path
                                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" />
                             </svg>
-                            Get a Quote
+                            Get Free Audit →
                         </a>
                         <a href="{{ route('contact') }}" class="bk-btn bk-btn-outline-white">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
