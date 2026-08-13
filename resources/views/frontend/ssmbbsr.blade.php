@@ -1232,54 +1232,136 @@
 .sm-services {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 28px 40px;
+    gap: 30px 45px;
     margin-top: 60px;
 }
 
 .sm-item {
     display: flex;
     align-items: flex-start;
-    gap: 18px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid #e5e7eb;
+    gap: 20px;
+    padding: 24px;
+    position: relative;
+    border: 1px solid #e8edf5;
+    border-radius: 18px;
+    background: #fff;
+    overflow: hidden;
+
+    transition: .45s cubic-bezier(.2, .8, .2, 1);
+}
+
+/* Orange line animation */
+.sm-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(180deg, #ff8c1a, #ffb347);
+    transition: .45s;
+}
+
+/* Gradient glow */
+.sm-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+            rgba(255, 140, 26, .08),
+            rgba(255, 255, 255, 0));
+    opacity: 0;
+    transition: .45s;
+    pointer-events: none;
+}
+
+.sm-item:hover {
+    transform: translateY(-8px);
+    border-color: #ffb15e;
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, .08),
+        0 8px 20px rgba(255, 140, 26, .18);
+}
+
+.sm-item:hover::before {
+    height: 100%;
+}
+
+.sm-item:hover::after {
+    opacity: 1;
 }
 
 .sm-icon {
-    width: 58px;
-    height: 58px;
-    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 28px;
-    border-radius: 14px;
-    background: #fff7ed;
+
+    border-radius: 16px;
+    background: linear-gradient(135deg, #fff6ec, #fff);
+
+    font-size: 30px;
+
+    transition: .45s;
+    box-shadow: 0 8px 20px rgba(255, 140, 26, .08);
+}
+
+.sm-item:hover .sm-icon {
+    transform: rotate(-8deg) scale(1.12);
+    background: linear-gradient(135deg, #ff8c1a, #ffb347);
+    color: #fff;
+    box-shadow: 0 12px 30px rgba(255, 140, 26, .35);
 }
 
 .sm-item h3 {
     font-family: var(--ff-head);
-    font-size: 20px;
+    font-size: 21px;
     color: var(--navy);
-    margin-bottom: 8px;
-    font-weight: 700;
+    margin-bottom: 10px;
+    transition: .35s;
+}
+
+.sm-item:hover h3 {
+    color: #f57c00;
 }
 
 .sm-item p {
     color: #64748b;
-    line-height: 1.8;
     font-size: 15px;
+    line-height: 1.8;
     margin: 0;
+}
+
+/* Arrow animation */
+.sm-item .arrow {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%) translateX(15px);
+
+    opacity: 0;
+    font-size: 20px;
+    color: #ff8c1a;
+    transition: .35s;
+}
+
+.sm-item:hover .arrow {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
 }
 
 @media(max-width:768px) {
 
     .sm-services {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 22px;
     }
 
     .sm-item {
-        padding-bottom: 20px;
+        padding: 22px;
     }
 
 }
@@ -1447,14 +1529,6 @@
 
             <div class="bk-sec-head">
 
-                <span class="bk-eyebrow">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                        stroke-width="2">
-                        <path d="M8 12h8M12 8v8" />
-                    </svg>
-                    Social Media Services
-                </span>
-
                 <h2 class="bk-h2" style="margin-top:16px;">
                     Social Media Management
                     <span class="grad-orange">Service in Bhubaneswar</span>
@@ -1481,6 +1555,9 @@
                         <p>Create engaging posts, reels, stories, profile optimization and audience growth strategies.
                         </p>
                     </div>
+                    <span class="arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
                 </div>
 
                 <div class="sm-item">
@@ -1490,6 +1567,9 @@
                         <p>Professional Facebook page management with consistent content, engagement and lead
                             generation.</p>
                     </div>
+                    <span class="arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
                 </div>
 
                 <div class="sm-item">
@@ -1498,6 +1578,9 @@
                         <h3>LinkedIn Marketing</h3>
                         <p>Build authority through professional content and B2B social media marketing.</p>
                     </div>
+                    <span class="arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
                 </div>
 
                 <div class="sm-item">
@@ -1506,6 +1589,9 @@
                         <h3>Creative Content Design</h3>
                         <p>Premium graphics, carousels, banners and branded social media creatives.</p>
                     </div>
+                    <span class="arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
                 </div>
 
                 <div class="sm-item">
@@ -1514,6 +1600,9 @@
                         <h3>Reels & Short Videos</h3>
                         <p>High-performing short videos designed to increase reach and engagement.</p>
                     </div>
+                    <span class="arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
                 </div>
 
                 <div class="sm-item">
@@ -1522,6 +1611,9 @@
                         <h3>Meta Ads Management</h3>
                         <p>Facebook & Instagram advertising campaigns focused on quality leads and ROI.</p>
                     </div>
+                    <span class="arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
                 </div>
 
                 <div class="sm-item">
@@ -1530,6 +1622,9 @@
                         <h3>Community Management</h3>
                         <p>Reply to comments, messages and reviews to build customer trust.</p>
                     </div>
+                    <span class="arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
                 </div>
 
                 <div class="sm-item">
@@ -1538,6 +1633,9 @@
                         <h3>Content Planning</h3>
                         <p>Monthly content calendars with consistent posting schedules for your business.</p>
                     </div>
+                    <span class="arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
                 </div>
 
                 <div class="sm-item">
@@ -1546,6 +1644,9 @@
                         <h3>Performance Reports</h3>
                         <p>Detailed monthly analytics, audience insights and growth recommendations.</p>
                     </div>
+                    <span class="arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
                 </div>
 
                 <div class="sm-item">
@@ -1554,132 +1655,15 @@
                         <h3>Growth Strategy</h3>
                         <p>Customized social media strategies designed for businesses in Bhubaneswar.</p>
                     </div>
+                    <span class="arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
                 </div>
 
             </div>
 
         </div>
     </section>
-    {{-- ══════════════ SERVICES ══════════════ --}}
-    <!-- <section class="bk-sec">
-        <div class="bk-wrap">
-            <div class="bk-sec-head">
-                <span class="bk-eyebrow">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.5">
-                        <rect x="2" y="3" width="20" height="14" rx="2" />
-                        <line x1="8" y1="21" x2="16" y2="21" />
-                        <line x1="12" y1="17" x2="12" y2="21" />
-                    </svg>
-                    Core Services
-                </span>
-                <h2 class="bk-h2" style="margin-top:16px;">Full-Spectrum <span class="grad-orange">Banking
-                        Technology</span></h2>
-                <div class="bk-divider"></div>
-                <p class="bk-sub">End-to-end digital solutions built specifically for banks, fintechs, and financial
-                    enterprises.</p>
-            </div>
-
-            <div class="bk-cards">
-                <div class="bk-card">
-                    <div class="bk-card-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="5" width="20" height="14" rx="2" />
-                            <line x1="2" y1="10" x2="22" y2="10" />
-                        </svg></div>
-                    <div class="bk-card-title">Digital Banking Solutions</div>
-                    <div class="bk-card-desc">Internet banking portals, dashboards, and customer-facing digital banking
-                        experiences built for scale.</div>
-                    <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg></a>
-                </div>
-                <div class="bk-card">
-                    <div class="bk-card-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <ellipse cx="12" cy="5" rx="9" ry="3" />
-                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
-                            <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" />
-                        </svg></div>
-                    <div class="bk-card-title">Core Banking System Development</div>
-                    <div class="bk-card-desc">Robust, scalable core banking engines with real-time processing and
-                        multi-currency support.</div>
-                    <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg></a>
-                </div>
-                <div class="bk-card">
-                    <div class="bk-card-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <path d="M20 12V22H4V12" />
-                            <path d="M22 7H2v5h20V7z" />
-                            <path d="M12 22V7" />
-                            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" />
-                            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
-                        </svg></div>
-                    <div class="bk-card-title">Payment Gateway Integration</div>
-                    <div class="bk-card-desc">Seamless multi-gateway integration supporting cards, UPI, NEFT, RTGS, and
-                        global payment rails.</div>
-                    <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg></a>
-                </div>
-                <div class="bk-card">
-                    <div class="bk-card-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <rect x="5" y="2" width="14" height="20" rx="2" />
-                            <line x1="12" y1="18" x2="12.01" y2="18" />
-                        </svg></div>
-                    <div class="bk-card-title">Mobile Banking App Development</div>
-                    <div class="bk-card-desc">Cross-platform iOS &amp; Android banking apps with biometric auth and
-                        real-time push notifications.</div>
-                    <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg></a>
-                </div>
-                <div class="bk-card">
-                    <div class="bk-card-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <path
-                                d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
-                            <line x1="12" y1="9" x2="12" y2="13" />
-                            <line x1="12" y1="17" x2="12.01" y2="17" />
-                        </svg></div>
-                    <div class="bk-card-title">Fraud Detection &amp; Security Systems</div>
-                    <div class="bk-card-desc">AI-powered fraud detection with real-time transaction monitoring and smart
-                        anomaly alerts.</div>
-                    <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg></a>
-                </div>
-                <div class="bk-card">
-                    <div class="bk-card-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <polyline points="16 18 22 12 16 6" />
-                            <polyline points="8 6 2 12 8 18" />
-                        </svg></div>
-                    <div class="bk-card-title">API &amp; Fintech Integration</div>
-                    <div class="bk-card-desc">Open banking APIs, third party fintech integrations, and microservices
-                        architecture design.</div>
-                    <a href="{{ route('contact') }}" class="bk-card-link">Learn more <svg
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg></a>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
 
     {{-- ══════════════ WHY US ══════════════ --}}
