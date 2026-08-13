@@ -9,13 +9,9 @@ delivering innovative web, mobile, cloud, and AI solutions for modern businesses
 {{-- HERO --}}
 <section class="hero">
     <!-- <img src="{{ asset('assets/vdo/hero-new.MP4') }}" alt="Hero Background" class="hero-bg-img" /> -->
-     <video class="hero-bg-video"
-       autoplay
-       muted
-       loop
-       playsinline>
-    <source src="{{ asset('assets/vdo/hero-new.mp4') }}" type="video/mp4">
-</video>
+    <video class="hero-bg-video" autoplay muted loop playsinline>
+        <source src="{{ asset('assets/vdo/hero-new.mp4') }}" type="video/mp4">
+    </video>
     <div class="hero-bg-effects">
         <div class="hero-orb hero-orb-1"></div>
         <div class="hero-orb hero-orb-2"></div>
@@ -227,7 +223,7 @@ delivering innovative web, mobile, cloud, and AI solutions for modern businesses
             <p class="process-header-sub">We deliver high performance, secure, and scalable digital solutions with
                 speed, reliability, and dedicated support to drive your business growth, leveraging cutting edge
                 technologies, industry best practices, and a results driven approach to ensure seamless execution,
-                enhanced efficiency, and long-term success</p>
+                enhanced efficiency, and long term success</p>
         </div>
         <div class="features-grid">
             <div class="feature-card reveal reveal-delay-1">
@@ -239,7 +235,7 @@ delivering innovative web, mobile, cloud, and AI solutions for modern businesses
             <div class="feature-card reveal reveal-delay-2">
                 <div class="feature-icon">🔒</div>
                 <h3 class="feature-title">Enterprise Security</h3>
-                <p class="feature-text">Bank-grade security practices baked into every layer of our solutions.</p>
+                <p class="feature-text">Bank grade security practices baked into every layer of our solutions.</p>
             </div>
             <div class="feature-card reveal reveal-delay-3">
                 <div class="feature-icon">📈</div>
@@ -322,7 +318,7 @@ delivering innovative web, mobile, cloud, and AI solutions for modern businesses
         <p class="process-header-sub">Explore our featured projects showcasing innovative solutions, real-world impact,
             and successful results delivered across diverse industries and client needs, highlighting our expertise in
             solving complex challenges, driving digital transformation, enhancing user experiences, and delivering
-            scalable, high-performance solutions tailored to business goals.</p>
+            scalable, high performance solutions tailored to business goals.</p>
     </div>
 
     <div class="showcase-track-wrap">
@@ -384,7 +380,7 @@ delivering innovative web, mobile, cloud, and AI solutions for modern businesses
             <span class="section-tag">Client Love</span>
             <h2 class="section-title">What Our Clients <span class="text-gradient">Say About Us</span></h2>
             <p class="process-header-sub">Hear from our satisfied clients who trust us for delivering reliable,
-                innovative solutions and exceptional results that exceed expectations, building long-term partnerships
+                innovative solutions and exceptional results that exceed expectations, building long term partnerships
                 through consistent performance, transparent communication, industry expertise, and a commitment to
                 delivering measurable business value and growth.</p>
         </div>
@@ -406,7 +402,7 @@ delivering innovative web, mobile, cloud, and AI solutions for modern businesses
                 <div class="testimonial-card">
                     <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">"The mobile app they developed for us exceeded all expectations. Our
-                        user engagement increased by 340% in the first quarter post-launch. Truly world-class
+                        user engagement increased by 340% in the first quarter post launch. Truly world-class
                         development team."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">PD</div>
@@ -490,7 +486,7 @@ delivering innovative web, mobile, cloud, and AI solutions for modern businesses
             [
             'q' => 'What services do you offer?',
             'a' => 'We provide custom software development, web development, mobile apps, digital marketing, and
-            AI-based solutions.'
+            AI based solutions.'
             ],
             [
             'q' => ' Do you provide an internship in Hyderabad?',

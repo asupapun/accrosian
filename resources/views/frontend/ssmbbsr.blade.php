@@ -265,7 +265,7 @@
    HERO
 ═══════════════════════════════════════════════ */
 .bk-hero {
-    min-height: 70vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     background:
@@ -855,107 +855,6 @@
     align-items: stretch;
 }
 
-/* compliance card — right side */
-/* .bk-comp-card {
-    background: var(--navy-3);
-    border-radius: var(--r2);
-    padding: 36px;
-    box-shadow: var(--shadow-xl), 0 0 60px rgba(26, 79, 214, .2);
-    position: relative;
-    overflow: hidden;
-}
-
-.bk-comp-card::before {
-    content: '';
-    position: absolute;
-    top: -60px;
-    right: -60px;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(46, 106, 255, .2), transparent 70%);
-}
-
-.bk-comp-head {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 24px;
-}
-
-.bk-comp-head svg {
-    color: #22d3ee;
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-}
-
-.bk-comp-head span {
-    font-family: var(--ff-head);
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: #fff;
-}
-
-.bk-comp-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, .06);
-    font-size: .875rem;
-    color: rgba(255, 255, 255, .8);
-}
-
-.bk-comp-row:last-child {
-    border-bottom: none;
-}
-
-.bk-comp-tick {
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    background: rgba(34, 211, 238, .12);
-    border: 1px solid rgba(34, 211, 238, .3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.bk-comp-tick svg {
-    width: 11px;
-    height: 11px;
-    color: #22d3ee;
-}
-
-.bk-badges-row {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-top: 24px;
-}
-
-.bk-badge-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    font-family: var(--ff-mono);
-    font-size: .68rem;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, .55);
-    border: 1px solid rgba(255, 255, 255, .1);
-    padding: 5px 11px;
-    border-radius: 100px;
-}
-
-.bk-badge-pill svg {
-    width: 11px;
-    height: 11px;
-    color: var(--gold);
-} */
-
 /* ═══════════════════════════════════════════════
    PROCESS — dark
 ═══════════════════════════════════════════════ */
@@ -1132,48 +1031,6 @@
     font-weight: 600;
     color: #ffff;
 }
-
-/* ═══════════════════════════════════════════════
-   STATS BAR — navy
-═══════════════════════════════════════════════ */
-/* .bk-stats {
-    background: var(--navy-light);
-    border-top: 1px solid rgba(46, 106, 255, .12);
-    border-bottom: 1px solid rgba(46, 106, 255, .12);
-}
-
-.bk-stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.bk-stat-cell {
-    text-align: center;
-    padding: 64px 24px;
-    border-right: 1px solid rgba(255, 255, 255, .06);
-}
-
-.bk-stat-cell:last-child {
-    border-right: none;
-}
-
-.bk-stat-em {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-}
-
-.bk-stat-num {
-    font-family: var(--ff-head);
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 800;
-    letter-spacing: -.03em;
-}
-
-.bk-stat-lbl {
-    font-size: .82rem;
-    color: rgba(255, 255, 255, .45);
-    margin-top: 6px;
-} */
 
 /* ═══════════════════════════════════════════════
    TESTIMONIALS — white bg
@@ -1372,95 +1229,60 @@
     background: rgba(255, 255, 255, 0.12);
 }
 
-/* ═══════════════════════════════════════════════
-   CONTACT FORM — alt bg
-═══════════════════════════════════════════════ */
-/* .bk-contact-grid {
+.sm-services {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 64px;
-    align-items: start;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 40px;
+    margin-top: 60px;
 }
 
-.bk-contact-info h3 {
-    font-family: var(--ff-head);
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--navy);
-    margin-bottom: 12px;
-    line-height: 1.2;
+.sm-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e5e7eb;
 }
 
-.bk-contact-info p {
-    font-size: .9rem;
-    color: var(--gray-500);
-    margin-bottom: 30px;
-    line-height: 1.7;
-}
-
-.bk-contact-detail {
+.sm-icon {
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-size: .9rem;
-    color: var(--gray-700);
-    margin-bottom: 14px;
+    justify-content: center;
+    font-size: 28px;
+    border-radius: 14px;
+    background: #fff7ed;
 }
 
-.bk-contact-detail svg {
-    color: var(--orange);
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
+.sm-item h3 {
+    font-family: var(--ff-head);
+    font-size: 20px;
+    color: var(--navy);
+    margin-bottom: 8px;
+    font-weight: 700;
 }
 
-.bk-form-card {
-    background: var(--white);
-    border: 1px solid var(--gray-100);
-    border-radius: var(--r2);
-    padding: 36px;
-    box-shadow: var(--shadow-lg);
+.sm-item p {
+    color: #64748b;
+    line-height: 1.8;
+    font-size: 15px;
+    margin: 0;
 }
 
-.bk-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
+@media(max-width:768px) {
 
-.bk-row2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-}
+    .sm-services {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
 
-.bk-input {
-    background: var(--gray-50);
-    border: 1.5px solid var(--gray-100);
-    border-radius: 10px;
-    padding: 13px 16px;
-    color: var(--gray-900);
-    font-family: var(--ff-body);
-    font-size: .9rem;
-    outline: none;
-    transition: all .25s;
-    width: 100%;
-}
+    .sm-item {
+        padding-bottom: 20px;
+    }
 
-.bk-input::placeholder {
-    color: var(--gray-400);
 }
-
-.bk-input:focus {
-    border-color: rgba(46, 106, 255, .4);
-    background: var(--white);
-    box-shadow: 0 0 0 3px rgba(46, 106, 255, .08);
-}
-
-textarea.bk-input {
-    resize: vertical;
-    min-height: 105px;
-} */
 
 /* ═══════════════════════════════════════════════
    RESPONSIVE
@@ -1619,8 +1441,127 @@ textarea.bk-input {
     </section>
 
 
-    {{-- ══════════════ SERVICES ══════════════ --}}
+    {{-- ══════════════ SOCIAL MEDIA SERVICES ══════════════ --}}
     <section class="bk-sec">
+        <div class="bk-wrap">
+
+            <div class="bk-sec-head">
+
+                <span class="bk-eyebrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M8 12h8M12 8v8" />
+                    </svg>
+                    Social Media Services
+                </span>
+
+                <h2 class="bk-h2" style="margin-top:16px;">
+                    Social Media Management
+                    <span class="grad-orange">Service in Bhubaneswar</span>
+                </h2>
+
+                <div class="bk-divider"></div>
+
+                <p class="bk-sub">
+                    Build your brand, engage your audience, and generate more
+                    leads with our professional Social Media Management
+                    Services in Bhubaneswar. We manage your social media so
+                    you can focus on growing your business.
+                </p>
+
+            </div>
+
+
+            <div class="sm-services">
+
+                <div class="sm-item">
+                    <div class="sm-icon">📸</div>
+                    <div>
+                        <h3>Instagram Management</h3>
+                        <p>Create engaging posts, reels, stories, profile optimization and audience growth strategies.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="sm-item">
+                    <div class="sm-icon">📘</div>
+                    <div>
+                        <h3>Facebook Management</h3>
+                        <p>Professional Facebook page management with consistent content, engagement and lead
+                            generation.</p>
+                    </div>
+                </div>
+
+                <div class="sm-item">
+                    <div class="sm-icon">💼</div>
+                    <div>
+                        <h3>LinkedIn Marketing</h3>
+                        <p>Build authority through professional content and B2B social media marketing.</p>
+                    </div>
+                </div>
+
+                <div class="sm-item">
+                    <div class="sm-icon">🎨</div>
+                    <div>
+                        <h3>Creative Content Design</h3>
+                        <p>Premium graphics, carousels, banners and branded social media creatives.</p>
+                    </div>
+                </div>
+
+                <div class="sm-item">
+                    <div class="sm-icon">🎥</div>
+                    <div>
+                        <h3>Reels & Short Videos</h3>
+                        <p>High-performing short videos designed to increase reach and engagement.</p>
+                    </div>
+                </div>
+
+                <div class="sm-item">
+                    <div class="sm-icon">📢</div>
+                    <div>
+                        <h3>Meta Ads Management</h3>
+                        <p>Facebook & Instagram advertising campaigns focused on quality leads and ROI.</p>
+                    </div>
+                </div>
+
+                <div class="sm-item">
+                    <div class="sm-icon">💬</div>
+                    <div>
+                        <h3>Community Management</h3>
+                        <p>Reply to comments, messages and reviews to build customer trust.</p>
+                    </div>
+                </div>
+
+                <div class="sm-item">
+                    <div class="sm-icon">📅</div>
+                    <div>
+                        <h3>Content Planning</h3>
+                        <p>Monthly content calendars with consistent posting schedules for your business.</p>
+                    </div>
+                </div>
+
+                <div class="sm-item">
+                    <div class="sm-icon">📊</div>
+                    <div>
+                        <h3>Performance Reports</h3>
+                        <p>Detailed monthly analytics, audience insights and growth recommendations.</p>
+                    </div>
+                </div>
+
+                <div class="sm-item">
+                    <div class="sm-icon">🚀</div>
+                    <div>
+                        <h3>Growth Strategy</h3>
+                        <p>Customized social media strategies designed for businesses in Bhubaneswar.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    {{-- ══════════════ SERVICES ══════════════ --}}
+    <!-- <section class="bk-sec">
         <div class="bk-wrap">
             <div class="bk-sec-head">
                 <span class="bk-eyebrow">
@@ -1738,7 +1679,7 @@ textarea.bk-input {
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
     {{-- ══════════════ WHY US ══════════════ --}}
@@ -2119,35 +2060,6 @@ textarea.bk-input {
     </section>
 
 
-    <!-- {{-- ══════════════ STATS ══════════════ --}}
-    <section class="bk-stats">
-        <div class="bk-wrap">
-            <div class="bk-stats-grid">
-                <div class="bk-stat-cell">
-                    <div class="bk-stat-em">🔒</div>
-                    <div class="bk-stat-num grad-blue">99.9%</div>
-                    <div class="bk-stat-lbl">Platform Uptime SLA</div>
-                </div>
-                <div class="bk-stat-cell">
-                    <div class="bk-stat-em">⚡</div>
-                    <div class="bk-stat-num grad-orange">10M+</div>
-                    <div class="bk-stat-lbl">Transactions Processed</div>
-                </div>
-                <div class="bk-stat-cell">
-                    <div class="bk-stat-em">🔗</div>
-                    <div class="bk-stat-num" style="color:#22d3ee">50+</div>
-                    <div class="bk-stat-lbl">Fintech Integrations</div>
-                </div>
-                <div class="bk-stat-cell">
-                    <div class="bk-stat-em">🛡️</div>
-                    <div class="bk-stat-num" style="color:#fbbf24">0</div>
-                    <div class="bk-stat-lbl">Security Breaches</div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-
     {{-- ══════════════ TESTIMONIALS ══════════════ --}}
     <section class="bk-sec">
         <div class="bk-wrap">
@@ -2215,85 +2127,6 @@ textarea.bk-input {
         </div>
     </section>
 
-
-    {{-- ══════════════ CONTACT ══════════════ --}}
-    <!-- <section class="bk-sec bk-sec-alt">
-        <div class="bk-wrap">
-            <div class="bk-contact-grid">
-                {{-- Left --}}
-                <div>
-                    <span class="bk-eyebrow" style="margin-bottom:18px;display:inline-flex;">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                            <circle cx="12" cy="10" r="3" />
-                        </svg>
-                        Get In Touch
-                    </span>
-                    <h3 class="bk-h2" style="font-size:1.7rem;">Ready to Transform Your<br><span
-                            class="grad-orange">Financial Platform?</span></h3>
-                    <div class="bk-divider" style="margin:14px 0 20px;"></div>
-                    <p>Fill in the form and our banking technology experts will reach out within 24 hours to discuss
-                        your project.</p>
-                    <div style="margin-top:28px;">
-                        <div class="bk-contact-detail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path
-                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" />
-                            </svg>+91 98765 43210</div>
-                        <div class="bk-contact-detail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                <polyline points="22,6 12,13 2,6" />
-                            </svg>banking@accrosian.com</div>
-                        <div class="bk-contact-detail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2.5">
-                                <circle cx="12" cy="12" r="10" />
-                                <polyline points="12 6 12 12 16 14" />
-                            </svg>Response within 24 hours</div>
-                    </div>
-                </div>
-
-                {{-- Right: Form --}}
-                <div>
-                    <div class="bk-form-card">
-                        <form action="{{ route('contact.store') }}" method="POST" class="bk-form">
-                            @csrf
-                            <div class="bk-row2">
-                                <input type="text" name="name" placeholder="Your Full Name" class="bk-input" required>
-                                <input type="email" name="email" placeholder="Business Email" class="bk-input" required>
-                            </div>
-                            <div class="bk-row2">
-                                <input type="tel" name="phone" placeholder="Phone Number" class="bk-input">
-                                <input type="text" name="company" placeholder="Company / Institution" class="bk-input">
-                            </div>
-                            <select name="service" class="bk-input">
-                                <option value="" disabled selected>Select Service</option>
-                                <option>Digital Banking Solutions</option>
-                                <option>Core Banking Development</option>
-                                <option>Payment Gateway Integration</option>
-                                <option>Mobile Banking App</option>
-                                <option>Fraud Detection Systems</option>
-                                <option>API &amp; Fintech Integration</option>
-                            </select>
-                            <textarea name="message" class="bk-input"
-                                placeholder="Tell us about your project requirements..."></textarea>
-                            <input type="hidden" name="subject" value="Banking Solutions Inquiry">
-                            <button type="submit" class="bk-btn bk-btn-orange"
-                                style="width:100%;justify-content:center;border-radius:10px;padding:16px;font-size:1rem;">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px">
-                                    <line x1="22" y1="2" x2="11" y2="13" />
-                                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
-                                </svg>
-                                Send Enquiry
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
 </div>
 @endsection

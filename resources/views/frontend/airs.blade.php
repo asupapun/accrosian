@@ -341,8 +341,8 @@
 
                 <p style="color:var(--text-light);font-size:1.05rem;line-height:1.85;margin-bottom:36px;
                           max-width:520px">
-                    AIRS transforms students into industry-ready problem solvers through structured preparation,
-                    real-world understanding, and effective use of AI.
+                    AIRS transforms students into industry ready problem solvers through structured preparation,
+                    real world understanding, and effective use of AI.
                 </p>
 
                 <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:52px">
@@ -561,7 +561,7 @@
                         </div>
                     </div>
                     <div style="display:flex;flex-direction:column;gap:8px">
-                        @foreach(['Real Project Experience','Industry-Grade Skills','Professional Mindset'] as $i)
+                        @foreach(['Real Project Experience','Industry Grade Skills','Professional Mindset'] as $i)
                         <div style="display:flex;align-items:center;gap:10px;
                                     background:rgba(34,197,94,0.08);border-radius:8px;padding:8px 12px">
                             <span style="color:#22c55e;font-size:0.8rem;font-weight:700">✓</span>
@@ -632,8 +632,8 @@
             </h2>
 
             <p>
-                More than learning — a complete transformation into
-                a modern industry-ready developer.
+                More than learning a complete transformation into
+                a modern industry ready developer.
             </p>
         </div>
 
@@ -653,9 +653,8 @@
                     </h3>
 
                     <p>
-                        Learn how software companies actually work —
-                        workflows, expectations, delivery culture,
-                        communication, and professional execution.
+                        Learn how software companies actually work workflows, expectations, delivery
+                        culture,communication, and professional execution.
                     </p>
                 </div>
             </div>
@@ -692,8 +691,7 @@
                     </h3>
 
                     <p>
-                        Use AI like top developers —
-                        to multiply productivity without dependency.
+                        Use AI like top developers to multiply productivity without dependency.
                     </p>
                 </div>
             </div>
@@ -860,7 +858,7 @@
                 Apply for the <span class="text-gradient">AIRS Fellowship</span>
             </h2>
             <p style="color:var(--black);max-width:580px;margin:0 auto;line-height:1.75">
-                A selective program for high-potential students — with dedicated mentorship,
+                A selective program for high-potential students with dedicated mentorship,
                 real project assignments, and a direct pathway to Accrosian internships.
             </p>
         </div>
@@ -895,7 +893,7 @@
                 🎯 Apply for Fellowship →
             </a>
             <p style="color:var(--black);font-size:0.82rem;margin-top:14px">
-                Limited seats — Applications reviewed on rolling basis
+                Limited seats Applications reviewed on rolling basis
             </p>
         </div>
     </div>
@@ -906,7 +904,7 @@
     <div class="container cta-inner">
         <span class="section-tag" style="margin-bottom:20px">Ready to Transform?</span>
         <h2 class="cta-title">
-            Don't Wait for Opportunity —
+            Don't Wait for Opportunity
             <span class="text-gradient">Build Your Bridge</span>
         </h2>
         <p class="cta-subtitle">

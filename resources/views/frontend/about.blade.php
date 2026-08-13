@@ -82,7 +82,7 @@ team behind our innovative software solutions.')
             <div class="value-item reveal reveal-delay-2">
                 <div class="value-icon">🤝</div>
                 <h4 class="value-title">True Partnership</h4>
-                <p class="value-text">We're not just vendors — we're long-term partners invested in your growth and
+                <p class="value-text">We're not just vendors we're long-term partners invested in your growth and
                     success.</p>
             </div>
             <div class="value-item reveal reveal-delay-3">
@@ -173,7 +173,7 @@ team behind our innovative software solutions.')
     <div class="container cta-inner">
         <span class="section-tag" style="margin-bottom:24px">Join Our Journey</span>
         <h2 class="cta-title">Ready to Build <span class="text-gradient">Something Amazing?</span></h2>
-        <p class="cta-subtitle">Let's discuss your project and turn your vision into a world-class digital product.</p>
+        <p class="cta-subtitle">Let's discuss your project and turn your vision into a world class digital product.</p>
         <div class="cta-actions">
             <a href="{{ route('contact') }}" class="btn btn-primary btn-arrow">Get In Touch</a>
             <a href="{{ route('services') }}" class="btn btn-outline">Our Services</a>
@@ -200,7 +200,7 @@ team behind our innovative software solutions.')
             $faqs = [
             [
             'q' => 'What makes Accrosian a trusted IT company in Hyderabad?',
-            'a' => 'We focus on delivering high-quality software solutions, affordable pricing, and long-term
+            'a' => 'We focus on delivering high quality software solutions, affordable pricing, and long-term
             support, making us a reliable IT company in Hyderabad.'
             ],
             [
@@ -216,7 +216,7 @@ team behind our innovative software solutions.')
             [
             'q' => 'What type of internships do you provide?',
             'a' => 'We offer software internships in Bhubaneswar, web development, and digital marketing
-            internships with real-time project experience.'
+            internships with real time project experience.'
             ],
             [
             'q' => ' Do you provide certificates after an internship?',
