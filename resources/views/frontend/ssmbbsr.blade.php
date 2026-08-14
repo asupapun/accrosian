@@ -356,7 +356,7 @@
 
 .bk-hero-sub {
     color: rgba(255, 255, 255, .6);
-    max-width: 500px;
+    max-width: 600px;
     font-size: 1.05rem;
     line-height: 1.75;
 }
