@@ -122,7 +122,7 @@
 
 .bk-h1 {
     font-family: var(--ff-head);
-    font-size: clamp(2.6rem, 4vw, 3.9rem);
+    font-size: clamp(2.6rem, 4vw, 3rem);
     font-weight: 800;
     line-height: 1.08;
     letter-spacing: -.03em;
