@@ -122,7 +122,7 @@
 
 .bk-h1 {
     font-family: var(--ff-head);
-    font-size: clamp(2.6rem, 5vw, 3.9rem);
+    font-size: clamp(2.6rem, 4vw, 3.9rem);
     font-weight: 800;
     line-height: 1.08;
     letter-spacing: -.03em;
@@ -272,7 +272,7 @@
         radial-gradient(ellipse 65% 55% at 65% 45%, rgba(26, 79, 214, .18) 0%, transparent 65%),
         radial-gradient(ellipse 40% 35% at 15% 80%, rgba(249, 115, 22, .1) 0%, transparent 60%),
         var(--navy);
-    padding: 80px 0;
+    padding: 80px 0 15px 0;
     position: relative;
     overflow: hidden;
 }
@@ -1493,8 +1493,8 @@
                 {{-- LEFT --}}
                 <div>
                     <h1 class="bk-h1 bk-hero-title">
-                        Social Media<br>
-                        <span class="grad-orange">Marketing Bhubaneswar</span>
+                        Social Media Marketing<br>
+                        <span class="grad-orange">Bhubaneswar</span>
                     </h1>
                     <p class="bk-hero-sub">Grow your brand with professional social media management services designed
                         to increase engagement, generate quality leads, and build lasting customer relationships across
