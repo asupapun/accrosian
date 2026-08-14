@@ -265,14 +265,14 @@
    HERO
 ═══════════════════════════════════════════════ */
 .bk-hero {
-    min-height: 70vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     background:
         radial-gradient(ellipse 65% 55% at 65% 45%, rgba(26, 79, 214, .18) 0%, transparent 65%),
         radial-gradient(ellipse 40% 35% at 15% 80%, rgba(249, 115, 22, .1) 0%, transparent 60%),
         var(--navy);
-    padding: 140px 0 90px;
+    padding: 80px 0;
     position: relative;
     overflow: hidden;
 }
