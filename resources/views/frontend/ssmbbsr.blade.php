@@ -266,7 +266,7 @@
 ═══════════════════════════════════════════════ */
 .bk-hero {
     min-height: 60vh;
-    padding: 80px 0 15px 0;
+    padding: 110px 0 30px 0;
     background:
         radial-gradient(ellipse 65% 55% at 65% 45%, rgba(26, 79, 214, .18) 0%, transparent 65%),
         radial-gradient(ellipse 40% 35% at 15% 80%, rgba(249, 115, 22, .1) 0%, transparent 60%),
