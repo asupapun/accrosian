@@ -265,7 +265,7 @@
    HERO
 ═══════════════════════════════════════════════ */
 .bk-hero {
-    min-height: 60vh;
+    height: 60vh;
     display: flex;
     align-items: center;
     background:
