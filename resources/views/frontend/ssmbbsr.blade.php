@@ -122,7 +122,7 @@
 
 .bk-h1 {
     font-family: var(--ff-head);
-    font-size: clamp(2.6rem, 3.6vw, 3.9rem);
+    font-size: clamp(2.6rem, 3.2vw, 3.9rem);
     font-weight: 800;
     line-height: 1.08;
     letter-spacing: -.03em;
@@ -265,7 +265,7 @@
    HERO
 ═══════════════════════════════════════════════ */
 .bk-hero {
-    min-height: 60vh;
+    min-height: 65vh;
     padding: 110px 0 30px 0;
     background:
         radial-gradient(ellipse 65% 55% at 65% 45%, rgba(26, 79, 214, .18) 0%, transparent 65%),
@@ -356,7 +356,7 @@
 
 .bk-hero-sub {
     color: rgba(255, 255, 255, .6);
-    max-width: 600px;
+    max-width: 700px;
     font-size: 1.05rem;
     line-height: 1.75;
 }
