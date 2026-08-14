@@ -266,15 +266,7 @@
 ═══════════════════════════════════════════════ */
 .bk-hero {
     min-height: 60vh;
-    display: flex;
-    align-items: center;
-    background:
-        radial-gradient(ellipse 65% 55% at 65% 45%, rgba(26, 79, 214, .18) 0%, transparent 65%),
-        radial-gradient(ellipse 40% 35% at 15% 80%, rgba(249, 115, 22, .1) 0%, transparent 60%),
-        var(--navy);
     padding: 80px 0 15px 0;
-    position: relative;
-    overflow: hidden;
 }
 
 /* subtle grid pattern */
@@ -301,11 +293,8 @@
 }
 
 .bk-hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 1300px;
-    gap: 64px;
-    align-items: center;
+    max-width: 700px;
+    /* adjust as needed */
     position: relative;
     z-index: 2;
 }
