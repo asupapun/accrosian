@@ -122,7 +122,7 @@
 
 .bk-h1 {
     font-family: var(--ff-head);
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2rem, 4vw, 2rem);
     font-weight: 800;
     line-height: 1.08;
     letter-spacing: -.03em;
@@ -297,7 +297,7 @@
 }
 
 .bk-hero-grid {
-    max-width: 700px;
+    max-width: 800px;
     /* adjust as needed */
     position: relative;
     z-index: 2;
