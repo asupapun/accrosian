@@ -122,7 +122,7 @@
 
 .bk-h1 {
     font-family: var(--ff-head);
-    font-size: clamp(2.6rem, 4vw, 3rem);
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 800;
     line-height: 1.08;
     letter-spacing: -.03em;
@@ -1486,8 +1486,7 @@
                 {{-- LEFT --}}
                 <div>
                     <h1 class="bk-h1 bk-hero-title">
-                        Social Media Marketing<br>
-                        <span class="grad-orange">Bhubaneswar</span>
+                        Social Media Marketing<span class="grad-orange"> Bhubaneswar</span>
                     </h1>
                     <p class="bk-hero-sub">Grow your brand with professional social media management services designed
                         to increase engagement, generate quality leads, and build lasting customer relationships across
