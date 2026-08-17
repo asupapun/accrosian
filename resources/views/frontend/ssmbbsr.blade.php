@@ -2045,98 +2045,10 @@
     color: #ffff;
 }
 
-/* ═══════════════════════════════════════════════
-   TESTIMONIALS — white bg
-═══════════════════════════════════════════════ */
-.bk-testi-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-}
-
-.bk-testi {
-    background: var(--white);
-    border: 1px solid var(--gray-100);
-    border-radius: var(--r2);
-    padding: 30px;
-    box-shadow: var(--shadow-card);
-    transition: all .3s;
-    position: relative;
-    overflow: hidden;
-}
-
-.bk-testi::after {
-    content: '"';
-    position: absolute;
-    top: -10px;
-    right: 20px;
-    font-size: 6rem;
-    line-height: 1;
-    color: rgba(249, 115, 22, .07);
-    font-family: Georgia, serif;
-    pointer-events: none;
-}
-
-.bk-testi:hover {
-    border-color: var(--glass-border-hover);
-    box-shadow: 0 8px 28px var(--navy-2);
-    transform: translateY(-4px)
-}
-
-.bk-stars {
-    color: var(--gold);
-    font-size: 1rem;
-    letter-spacing: 2px;
-    margin-bottom: 14px;
-}
-
-.bk-testi-q {
-    font-size: .9rem;
-    color: var(--black);
-    line-height: 1.75;
-    margin-bottom: 22px;
-    font-style: italic;
-}
-
-.bk-testi-author {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.bk-testi-av {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--ff-head);
-    font-size: .88rem;
-    font-weight: 700;
-    color: #fff;
-    flex-shrink: 0;
-}
-
-.bk-testi-info strong {
-    display: block;
-    font-size: .875rem;
-    font-weight: 700;
-    color: var(--navy);
-}
-
-.bk-testi-info span {
-    font-size: .75rem;
-    color: var(--black);
-}
-
-/* ═══════════════════════════════════════════════
-   CTA — navy gradient
-═══════════════════════════════════════════════ */
 /* ============ CTA SECTION ============ */
 
 .cta-section {
-    padding: 90px 0;
+    padding: 50px 0;
     position: relative;
     overflow: hidden;
     text-align: center;
@@ -3500,58 +3412,6 @@
             </div>
         </div>
     </section>
-
-
-    {{-- ══════════════ TESTIMONIALS ══════════════ --}}
-    <section class="bk-sec">
-        <div class="bk-wrap">
-            <div class="bk-sec-head">
-                <span class="bk-eyebrow">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.5">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                    </svg>
-                    Client Stories
-                </span>
-                <h2 class="bk-h2" style="margin-top:16px;">Trusted by <span class="grad-orange">Financial Leaders</span>
-                </h2>
-                <div class="bk-divider"></div>
-            </div>
-            <div class="bk-testi-grid">
-                <div class="bk-testi">
-                    <div class="bk-stars">★★★★★</div>
-                    <p class="bk-testi-q">"Accrosian delivered a core banking system that handles our entire transaction
-                        load flawlessly. Their security implementation gave us confidence to go live in record time."
-                    </p>
-                    <div class="bk-testi-author">
-                        <div class="bk-testi-av" style="background:linear-gradient(135deg,#1a4fd6,#22d3ee);">RK</div>
-                        <div class="bk-testi-info"><strong>Rajesh Kumar</strong><span>CTO, NovaPay Fintech</span></div>
-                    </div>
-                </div>
-                <div class="bk-testi">
-                    <div class="bk-stars">★★★★★</div>
-                    <p class="bk-testi-q">"The fraud detection module they built has saved us millions. Their AI-driven
-                        approach and deep understanding of financial compliance standards is unmatched."</p>
-                    <div class="bk-testi-author">
-                        <div class="bk-testi-av" style="background:linear-gradient(135deg,#f97316,#fbbf24);">SP</div>
-                        <div class="bk-testi-info"><strong>Sarah Patel</strong><span>VP Technology, SecureBank
-                                Ltd</span></div>
-                    </div>
-                </div>
-                <div class="bk-testi">
-                    <div class="bk-stars">★★★★★</div>
-                    <p class="bk-testi-q">"From architecture to deployment the team was professional and transparent.
-                        Our mobile banking app now has a 4.9-star rating with 200K+ daily active users."</p>
-                    <div class="bk-testi-author">
-                        <div class="bk-testi-av" style="background:linear-gradient(135deg,#22d3ee,#4ade80);">AM</div>
-                        <div class="bk-testi-info"><strong>Arjun Mehta</strong><span>Head of Digital, ClearLend
-                                Capital</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
 
     {{-- ══════════════ CTA ══════════════ --}}
     {{-- CTA --}}

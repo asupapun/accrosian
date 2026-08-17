@@ -4646,6 +4646,451 @@ select option {
     font-weight: 800;
     line-height: 1.5;
 }
+
+/* =====================================================
+   SOCIAL MEDIA MARKETING — OUR PROCESS
+   Premium Creative Journey
+===================================================== */
+
+.smm-process {
+    position: relative;
+    padding: 115px 0 125px;
+    background: #10164a;
+    overflow: hidden;
+}
+
+/* Large background typography */
+.smm-process::before {
+    content: "SOCIAL";
+    position: absolute;
+    right: -40px;
+    top: 35px;
+
+    font-family: var(--ff-head);
+    font-size: clamp(7rem, 17vw, 16rem);
+    font-weight: 800;
+    line-height: 1;
+
+    color: rgba(255, 255, 255, .025);
+    letter-spacing: -.08em;
+
+    pointer-events: none;
+}
+
+/* Orange glow */
+.smm-process::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: -250px;
+    bottom: -300px;
+
+    background: radial-gradient(
+        circle,
+        rgba(249, 115, 22, .15),
+        transparent 70%
+    );
+
+    pointer-events: none;
+}
+
+.smm-process-wrap {
+    max-width: 1250px;
+    margin: auto;
+    padding: 0 30px;
+    position: relative;
+    z-index: 2;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.smm-process-head {
+    max-width: 800px;
+    margin-bottom: 90px;
+}
+
+.smm-process-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+
+    color: #ff9b45;
+    margin-bottom: 22px;
+}
+
+.smm-process-label::before {
+    content: "";
+    width: 34px;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        #f97316,
+        #f59e0b
+    );
+}
+
+.smm-process-title {
+    font-family: var(--ff-head);
+    font-size: clamp(2.5rem, 5vw, 4.8rem);
+    font-weight: 800;
+    line-height: 1.04;
+
+    color: #fff;
+    letter-spacing: -.045em;
+
+    margin: 0;
+}
+
+.smm-process-title span {
+    background: linear-gradient(
+        135deg,
+        #f97316,
+        #ffb347
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.smm-process-intro {
+    max-width: 700px;
+
+    margin-top: 24px;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: rgba(255,255,255,.62);
+}
+
+/* =====================================================
+   PROCESS JOURNEY
+===================================================== */
+
+.smm-process-track {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0;
+}
+
+/* Main horizontal line */
+
+.smm-process-track::before {
+    content: "";
+
+    position: absolute;
+    top: 31px;
+    left: 0;
+    right: 0;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        rgba(249,115,22,.05),
+        rgba(249,115,22,.8),
+        rgba(255,179,71,.8),
+        rgba(249,115,22,.05)
+    );
+}
+
+/* =====================================================
+   INDIVIDUAL STEP
+===================================================== */
+
+.smm-process-step {
+    position: relative;
+    padding-right: 28px;
+}
+
+.smm-process-step:last-child {
+    padding-right: 0;
+}
+
+/* Number */
+
+.smm-process-number {
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    z-index: 2;
+
+    border-radius: 50%;
+
+    background: #10164a;
+
+    border: 1px solid rgba(249,115,22,.45);
+
+    font-family: var(--ff-mono);
+    font-size: 12px;
+    font-weight: 500;
+
+    color: #ff9b45;
+
+    transition: .4s ease;
+}
+
+/* Inner dot */
+
+.smm-process-number::after {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #f97316;
+
+    box-shadow:
+        0 0 0 6px rgba(249,115,22,.08),
+        0 0 25px rgba(249,115,22,.5);
+
+    opacity: 0;
+
+    transition: .4s ease;
+}
+
+/* Hover */
+
+.smm-process-step:hover .smm-process-number {
+    border-color: #f97316;
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 30px rgba(249,115,22,.18);
+}
+
+.smm-process-step:hover .smm-process-number::after {
+    opacity: 1;
+}
+
+/* =====================================================
+   STEP CONTENT
+===================================================== */
+
+.smm-process-content {
+    margin-top: 30px;
+}
+
+.smm-process-content h3 {
+    font-family: var(--ff-head);
+
+    font-size: 17px;
+    font-weight: 700;
+
+    line-height: 1.35;
+
+    color: #fff;
+
+    margin: 0 0 10px;
+
+    letter-spacing: -.015em;
+}
+
+.smm-process-content p {
+    font-size: 13px;
+    line-height: 1.7;
+
+    color: rgba(255,255,255,.48);
+
+    margin: 0;
+
+    max-width: 175px;
+}
+
+/* =====================================================
+   STEP KEYWORD
+===================================================== */
+
+.smm-process-tag {
+    display: block;
+
+    margin-top: 18px;
+
+    font-family: var(--ff-mono);
+
+    font-size: 9px;
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+
+    color: #f97316;
+}
+
+/* =====================================================
+   BOTTOM STATEMENT
+===================================================== */
+
+.smm-process-bottom {
+    margin-top: 95px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.smm-process-bottom p {
+    margin: 0;
+
+    font-family: var(--ff-head);
+
+    font-size: clamp(1.2rem, 2vw, 1.7rem);
+
+    line-height: 1.45;
+
+    color: rgba(255,255,255,.75);
+
+    max-width: 650px;
+}
+
+.smm-process-bottom strong {
+    color: #fff;
+}
+
+.smm-process-arrow {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(249,115,22,.4);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #f97316;
+
+    font-size: 22px;
+
+    transition: .35s ease;
+}
+
+.smm-process-bottom:hover .smm-process-arrow {
+    transform: translateX(8px);
+
+    background: #f97316;
+
+    color: #fff;
+
+    box-shadow:
+        0 10px 30px rgba(249,115,22,.3);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:1024px) {
+
+    .smm-process-track {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 65px;
+    }
+
+    .smm-process-track::before {
+        display: none;
+    }
+
+    .smm-process-step {
+        padding-right: 35px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:768px) {
+
+    .smm-process {
+        padding: 80px 0 90px;
+    }
+
+    .smm-process-head {
+        margin-bottom: 60px;
+    }
+
+    .smm-process-title {
+        font-size: 2.7rem;
+    }
+
+    .smm-process-track {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .smm-process-step {
+        display: grid;
+        grid-template-columns: 62px 1fr;
+        column-gap: 25px;
+
+        padding: 0 0 45px;
+    }
+
+    .smm-process-step:not(:last-child)::after {
+        content: "";
+
+        position: absolute;
+
+        left: 30px;
+        top: 62px;
+        bottom: 0;
+
+        width: 1px;
+
+        background: linear-gradient(
+            180deg,
+            rgba(249,115,22,.5),
+            rgba(249,115,22,.05)
+        );
+    }
+
+    .smm-process-content {
+        margin-top: 4px;
+    }
+
+    .smm-process-content p {
+        max-width: 100%;
+    }
+
+    .smm-process-bottom {
+        margin-top: 45px;
+        align-items: flex-start;
+    }
+
+    .smm-process-arrow {
+        flex-shrink: 0;
+    }
+}
  
 /* ── CASE STUDIES ── */
 .case-studies-section {
