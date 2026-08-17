@@ -1508,68 +1508,501 @@
 /* ═══════════════════════════════════════════════
    FEATURES GRID — white bg
 ═══════════════════════════════════════════════ */
-.bk-feat-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border: 1px solid var(--gray-100);
-    border-radius: var(--r2);
+/* =====================================================
+   SOCIAL MEDIA MARKETING
+   WHAT WE BUILD FOR YOUR BRAND
+===================================================== */
+
+.smm-services {
+    position: relative;
+    padding: 120px 0 125px;
+    background: #ffffff;
     overflow: hidden;
-    box-shadow: var(--shadow-md);
 }
 
-.bk-feat-cell {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 34px 28px;
-    border-right: 1px solid var(--gray-100);
-    border-bottom: 1px solid var(--gray-100);
-    background: var(--navy-light);
-    transition: background .25s;
+.smm-services-wrap {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 30px;
+    position: relative;
+    z-index: 2;
 }
 
-.bk-feat-cell:nth-child(3n) {
-    border-right: none;
-}
 
-.bk-feat-cell:nth-child(4),
-.bk-feat-cell:nth-child(5),
-.bk-feat-cell:nth-child(6) {
-    border-bottom: none;
-}
+/* =====================================================
+   BACKGROUND TYPOGRAPHY
+===================================================== */
 
-.bk-feat-cell:hover {
-    background: var(--navy-2);
-}
+.smm-services::before {
+    content: "CONTENT";
 
-.bk-feat-cell-ico {
-    width: 46px;
-    height: 46px;
-    border-radius: 12px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    position: absolute;
+    top: 20px;
+    right: -30px;
 
-.bk-feat-cell-ico svg {
-    width: 22px;
-    height: 22px;
-}
-
-.bk-feat-cell-txt strong {
-    display: block;
     font-family: var(--ff-head);
-    font-size: .93rem;
-    font-weight: 700;
-    color: #ffff;
-    margin-bottom: 5px;
+    font-size: clamp(7rem, 17vw, 15rem);
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: -.08em;
+
+    color: rgba(15, 23, 42, .025);
+
+    pointer-events: none;
 }
 
-.bk-feat-cell-txt p {
-    font-size: .82rem;
-    color: #ffff;
-    line-height: 1.65;
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.smm-services-head {
+    max-width: 850px;
+    margin-bottom: 85px;
+}
+
+.smm-services-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    font-family: var(--ff-mono);
+
+    font-size: 11px;
+    letter-spacing: .16em;
+
+    text-transform: uppercase;
+
+    color: var(--orange);
+
+    margin-bottom: 22px;
+}
+
+.smm-services-label::before {
+    content: "";
+
+    width: 34px;
+    height: 2px;
+
+    background: linear-gradient(90deg,
+            var(--orange),
+            #f59e0b);
+}
+
+.smm-services-title {
+    margin: 0;
+
+    font-family: var(--ff-head);
+
+    font-size: clamp(2.5rem, 5vw, 4.8rem);
+
+    line-height: 1.04;
+
+    font-weight: 800;
+
+    letter-spacing: -.045em;
+
+    color: var(--navy);
+}
+
+.smm-services-title span {
+    background: linear-gradient(135deg,
+            #f97316,
+            #f59e0b);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.smm-services-intro {
+    max-width: 700px;
+
+    margin-top: 24px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #64748b;
+}
+
+
+/* =====================================================
+   SERVICE LIST
+===================================================== */
+
+.smm-service-list {
+    position: relative;
+}
+
+
+/* horizontal separator */
+
+.smm-service-item {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 90px 1fr 310px;
+
+    align-items: center;
+
+    gap: 35px;
+
+    padding: 34px 0;
+
+    border-top: 1px solid #e5e7eb;
+
+    transition: .35s ease;
+}
+
+.smm-service-item:last-child {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+/* =====================================================
+   NUMBER
+===================================================== */
+
+.smm-service-number {
+    font-family: var(--ff-mono);
+
+    font-size: 12px;
+
+    letter-spacing: .12em;
+
+    color: var(--orange);
+
+    transition: .3s ease;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.smm-service-name {
+    position: relative;
+
+    font-family: var(--ff-head);
+
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
+
+    font-weight: 700;
+
+    letter-spacing: -.025em;
+
+    color: var(--navy);
+
+    margin: 0;
+
+    transition: .35s ease;
+}
+
+
+/* Orange line appearing underneath */
+
+.smm-service-name::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--orange);
+
+    transition: width .4s ease;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.smm-service-description {
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: #64748b;
+
+    margin: 0;
+
+    max-width: 300px;
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.smm-service-item:hover {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.smm-service-item:hover .smm-service-number {
+    transform: translateX(5px);
+}
+
+.smm-service-item:hover .smm-service-name {
+    color: var(--orange);
+}
+
+.smm-service-item:hover .smm-service-name::after {
+    width: 70px;
+}
+
+
+/* =====================================================
+   MINI VISUAL BAR
+===================================================== */
+
+.smm-service-progress {
+    position: absolute;
+
+    left: 90px;
+    bottom: -1px;
+
+    height: 2px;
+
+    width: 0;
+
+    background: linear-gradient(90deg,
+            var(--orange),
+            #f59e0b);
+
+    transition: width .7s cubic-bezier(.22, 1, .36, 1);
+}
+
+.smm-service-item:hover .smm-service-progress {
+    width: calc(100% - 400px);
+}
+
+
+/* =====================================================
+   RIGHT LABEL
+===================================================== */
+
+.smm-service-type {
+    display: flex;
+
+    justify-content: flex-end;
+
+    font-family: var(--ff-mono);
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .12em;
+
+    color: #94a3b8;
+}
+
+
+/* =====================================================
+   BOTTOM STATEMENT
+===================================================== */
+
+.smm-services-bottom {
+    margin-top: 80px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 40px;
+}
+
+.smm-services-bottom-text {
+    max-width: 720px;
+}
+
+.smm-services-bottom-text p {
+    margin: 0;
+
+    font-family: var(--ff-head);
+
+    font-size: clamp(1.4rem, 2.8vw, 2.25rem);
+
+    line-height: 1.4;
+
+    letter-spacing: -.025em;
+
+    color: var(--navy);
+}
+
+.smm-services-bottom-text strong {
+    color: var(--orange);
+}
+
+.smm-services-bottom-small {
+    margin-top: 18px;
+
+    font-family: var(--ff-mono);
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .13em;
+
+    color: #94a3b8;
+}
+
+
+/* =====================================================
+   RIGHT MARK
+===================================================== */
+
+.smm-services-mark {
+    width: 85px;
+    height: 85px;
+
+    flex-shrink: 0;
+
+    border: 1px solid rgba(249, 115, 22, .35);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: var(--orange);
+
+    font-family: var(--ff-mono);
+
+    font-size: 24px;
+
+    position: relative;
+}
+
+.smm-services-mark::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border: 1px dashed rgba(249, 115, 22, .25);
+
+    border-radius: 50%;
+
+    animation: smmRotate 12s linear infinite;
+}
+
+@keyframes smmRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:1024px) {
+
+    .smm-service-item {
+        grid-template-columns: 70px 1fr 230px;
+        gap: 25px;
+    }
+
+    .smm-service-progress {
+        left: 70px;
+    }
+
+    .smm-service-item:hover .smm-service-progress {
+        width: calc(100% - 300px);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:768px) {
+
+    .smm-services {
+        padding: 80px 0 90px;
+    }
+
+    .smm-services-head {
+        margin-bottom: 55px;
+    }
+
+    .smm-services-title {
+        font-size: 2.7rem;
+    }
+
+    .smm-service-item {
+        grid-template-columns: 45px 1fr;
+
+        gap: 15px;
+
+        padding: 25px 0;
+    }
+
+    .smm-service-number {
+        padding-top: 3px;
+    }
+
+    .smm-service-name {
+        font-size: 1.25rem;
+    }
+
+    .smm-service-description {
+        grid-column: 2;
+
+        max-width: 100%;
+
+        margin-top: -5px;
+    }
+
+    .smm-service-type {
+        display: none;
+    }
+
+    .smm-service-progress {
+        left: 45px;
+    }
+
+    .smm-service-item:hover {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .smm-service-item:hover .smm-service-progress {
+        width: calc(100% - 50px);
+    }
+
+    .smm-services-bottom {
+        margin-top: 55px;
+    }
+
+    .smm-services-mark {
+        display: none;
+    }
 }
 
 /* ═══════════════════════════════════════════════
@@ -2764,90 +3197,245 @@
 
 
     {{-- ══════════════ FEATURES ══════════════ --}}
-    <section class="bk-sec">
-        <div class="bk-wrap">
-            <div class="bk-sec-head">
-                <span class="bk-eyebrow">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.5">
-                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-                    </svg>
-                    Platform Features
-                </span>
-                <h2 class="bk-h2" style="margin-top:16px;">Built for <span class="grad-orange">Modern Finance</span>
+    {{-- =====================================================
+     WHAT WE BUILD — SOCIAL MEDIA MARKETING BHUBANESWAR
+===================================================== --}}
+
+    <section class="smm-services">
+
+        <div class="smm-services-wrap">
+
+            {{-- HEADER --}}
+            <div class="smm-services-head">
+
+                <div class="smm-services-label">
+                    What We Build
+                </div>
+
+                <h2 class="smm-services-title">
+                    Everything your brand needs
+                    to <span>win attention.</span>
                 </h2>
-                <div class="bk-divider"></div>
-                <p class="bk-sub">Every feature engineered with the precision that financial services demand.</p>
+
+                <p class="smm-services-intro">
+                    Social media is more than posting every day.
+                    We bring strategy, creativity and performance together
+                    to build a digital presence that actually moves your
+                    business forward in Bhubaneswar.
+                </p>
+
             </div>
 
-            <div class="bk-feat-grid">
-                <div class="bk-feat-cell">
-                    <div class="bk-feat-cell-ico" style="background:#eff4ff;border:1px solid rgba(46,106,255,.15)"><svg
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#2e6aff"
-                            stroke-width="2.5">
-                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                        </svg></div>
-                    <div class="bk-feat-cell-txt"><strong>Real-Time Transactions</strong>
-                        <p>Sub-millisecond processing with live balance updates and reconciliation.</p>
+
+            {{-- SERVICE LIST --}}
+            <div class="smm-service-list">
+
+
+                {{-- 01 --}}
+                <div class="smm-service-item">
+
+                    <div class="smm-service-number">
+                        01
                     </div>
-                </div>
-                <div class="bk-feat-cell">
-                    <div class="bk-feat-cell-ico" style="background:#fff7ed;border:1px solid rgba(249,115,22,.15)"><svg
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#f97316"
-                            stroke-width="2.5">
-                            <rect x="3" y="11" width="18" height="11" rx="2" />
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                        </svg></div>
-                    <div class="bk-feat-cell-txt"><strong>Multi-Layer Security</strong>
-                        <p>MFA, biometrics, hardware tokens, and behavioral analytics in concert.</p>
+
+                    <h3 class="smm-service-name">
+                        Social Media Strategy
+                    </h3>
+
+                    <p class="smm-service-description">
+                        Audience research, competitor analysis,
+                        content pillars and a clear monthly growth direction.
+                    </p>
+
+                    <div class="smm-service-type">
+                        Strategy
                     </div>
-                </div>
-                <div class="bk-feat-cell">
-                    <div class="bk-feat-cell-ico" style="background:#ecfeff;border:1px solid rgba(34,211,238,.2)"><svg
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0891b2"
-                            stroke-width="2.5">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                            <circle cx="12" cy="7" r="4" />
-                        </svg></div>
-                    <div class="bk-feat-cell-txt"><strong>KYC &amp; Verification Systems</strong>
-                        <p>Automated identity verification with document scanning and liveness detection.</p>
+
+                    <div class="smm-service-progress" style="--progress: 88%;">
                     </div>
+
                 </div>
-                <div class="bk-feat-cell">
-                    <div class="bk-feat-cell-ico" style="background:#fefce8;border:1px solid rgba(245,158,11,.2)"><svg
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#d97706"
-                            stroke-width="2.5">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                        </svg></div>
-                    <div class="bk-feat-cell-txt"><strong>Data Encryption &amp; Privacy</strong>
-                        <p>End-to-end AES-256 encryption with zero-knowledge architecture.</p>
+
+
+                {{-- 02 --}}
+                <div class="smm-service-item">
+
+                    <div class="smm-service-number">
+                        02
                     </div>
-                </div>
-                <div class="bk-feat-cell">
-                    <div class="bk-feat-cell-ico" style="background:#faf5ff;border:1px solid rgba(124,58,237,.15)"><svg
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#7c3aed"
-                            stroke-width="2.5">
-                            <rect x="5" y="2" width="14" height="20" rx="2" />
-                            <line x1="12" y1="18" x2="12.01" y2="18" />
-                        </svg></div>
-                    <div class="bk-feat-cell-txt"><strong>Cross-Platform Accessibility</strong>
-                        <p>Unified experience across web, iOS, Android, and wearable devices.</p>
+
+                    <h3 class="smm-service-name">
+                        Reels & Short-Form Content
+                    </h3>
+
+                    <p class="smm-service-description">
+                        Scroll-stopping short videos designed around
+                        trends, storytelling and audience behaviour.
+                    </p>
+
+                    <div class="smm-service-type">
+                        Video
                     </div>
+
+                    <div class="smm-service-progress"></div>
+
                 </div>
-                <div class="bk-feat-cell">
-                    <div class="bk-feat-cell-ico" style="background:#f0fdf4;border:1px solid rgba(34,197,94,.2)"><svg
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#16a34a"
-                            stroke-width="2.5">
-                            <line x1="18" y1="20" x2="18" y2="10" />
-                            <line x1="12" y1="20" x2="12" y2="4" />
-                            <line x1="6" y1="20" x2="6" y2="14" />
-                        </svg></div>
-                    <div class="bk-feat-cell-txt"><strong>Advanced Analytics</strong>
-                        <p>Real-time dashboards, customer insights, and predictive fraud scoring.</p>
+
+
+                {{-- 03 --}}
+                <div class="smm-service-item">
+
+                    <div class="smm-service-number">
+                        03
                     </div>
+
+                    <h3 class="smm-service-name">
+                        Creative Content
+                    </h3>
+
+                    <p class="smm-service-description">
+                        Premium social creatives, carousels and visual
+                        content that keep your brand recognisable.
+                    </p>
+
+                    <div class="smm-service-type">
+                        Creative
+                    </div>
+
+                    <div class="smm-service-progress"></div>
+
                 </div>
+
+
+                {{-- 04 --}}
+                <div class="smm-service-item">
+
+                    <div class="smm-service-number">
+                        04
+                    </div>
+
+                    <h3 class="smm-service-name">
+                        Brand Storytelling
+                    </h3>
+
+                    <p class="smm-service-description">
+                        Turning your products, services and ideas into
+                        stories people can understand and remember.
+                    </p>
+
+                    <div class="smm-service-type">
+                        Branding
+                    </div>
+
+                    <div class="smm-service-progress"></div>
+
+                </div>
+
+
+                {{-- 05 --}}
+                <div class="smm-service-item">
+
+                    <div class="smm-service-number">
+                        05
+                    </div>
+
+                    <h3 class="smm-service-name">
+                        Community & Engagement
+                    </h3>
+
+                    <p class="smm-service-description">
+                        Building meaningful conversations, responding
+                        to your audience and strengthening brand trust.
+                    </p>
+
+                    <div class="smm-service-type">
+                        Engagement
+                    </div>
+
+                    <div class="smm-service-progress"></div>
+
+                </div>
+
+
+                {{-- 06 --}}
+                <div class="smm-service-item">
+
+                    <div class="smm-service-number">
+                        06
+                    </div>
+
+                    <h3 class="smm-service-name">
+                        Performance Marketing
+                    </h3>
+
+                    <p class="smm-service-description">
+                        Paid campaigns focused on reach, enquiries,
+                        leads and measurable business outcomes.
+                    </p>
+
+                    <div class="smm-service-type">
+                        Growth
+                    </div>
+
+                    <div class="smm-service-progress"></div>
+
+                </div>
+
+
+                {{-- 07 --}}
+                <div class="smm-service-item">
+
+                    <div class="smm-service-number">
+                        07
+                    </div>
+
+                    <h3 class="smm-service-name">
+                        Analytics & Optimization
+                    </h3>
+
+                    <p class="smm-service-description">
+                        We track what people respond to and continuously
+                        improve your content and campaign performance.
+                    </p>
+
+                    <div class="smm-service-type">
+                        Analytics
+                    </div>
+
+                    <div class="smm-service-progress"></div>
+
+                </div>
+
+
             </div>
+
+
+            {{-- BOTTOM STATEMENT --}}
+            <div class="smm-services-bottom">
+
+                <div class="smm-services-bottom-text">
+
+                    <p>
+                        We don't create content just to
+                        <strong>fill your feed.</strong>
+                        We create content with a reason to exist.
+                    </p>
+
+                    <div class="smm-services-bottom-small">
+                        Strategy · Creativity · Performance · Growth
+                    </div>
+
+                </div>
+
+
+                <div class="smm-services-mark">
+                    ↗
+                </div>
+
+            </div>
+
         </div>
+
     </section>
 
 
