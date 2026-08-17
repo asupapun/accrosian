@@ -131,7 +131,7 @@
 
 .bk-h2 {
     font-family: var(--ff-head);
-    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    font-size: clamp(1.9rem, 3vw, 2.8rem);
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -.025em;
@@ -143,7 +143,7 @@
 }
 
 .bk-sub {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--black);
     max-width: 580px;
     margin-top: 16px;
@@ -751,6 +751,323 @@
 
 .bk-card:nth-child(6) .bk-card-ico svg {
     color: #7c3aed;
+}
+
+/* =====================================================
+   SOCIAL MEDIA — WHY ACCROSIAN
+   Premium Editorial Growth Section
+===================================================== */
+
+.smm-why {
+    position: relative;
+    padding: 110px 0;
+    background: #f8fafc;
+    overflow: hidden;
+}
+
+.smm-why::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: -250px;
+    right: -180px;
+    background: radial-gradient(circle,
+            rgba(249, 115, 22, .10),
+            transparent 68%);
+    pointer-events: none;
+}
+
+.smm-why::after {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    bottom: -250px;
+    left: -200px;
+    background: radial-gradient(circle,
+            rgba(26, 79, 214, .08),
+            transparent 70%);
+    pointer-events: none;
+}
+
+.smm-why-wrap {
+    max-width: 1250px;
+    margin: auto;
+    padding: 0 30px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ---------- HEADER ---------- */
+
+.smm-why-header {
+    max-width: 850px;
+    margin-bottom: 80px;
+}
+
+.smm-why-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    color: var(--orange);
+    margin-bottom: 22px;
+}
+
+.smm-why-label::before {
+    content: "";
+    width: 34px;
+    height: 2px;
+    background: linear-gradient(90deg,
+            var(--orange),
+            var(--gold));
+}
+
+.smm-why-title {
+    font-family: var(--ff-head);
+    font-size: clamp(2.5rem, 5vw, 4.7rem);
+    line-height: 1.04;
+    font-weight: 800;
+    letter-spacing: -.045em;
+    color: var(--navy);
+    margin: 0;
+}
+
+.smm-why-title span {
+    background: linear-gradient(135deg,
+            #f97316,
+            #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.smm-why-intro {
+    max-width: 690px;
+    margin-top: 24px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #64748b;
+}
+
+/* ---------- MAIN CONTENT ---------- */
+
+.smm-growth {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 55px;
+    position: relative;
+}
+
+/* ---------- BIG NUMBER ---------- */
+
+.smm-growth-number {
+    position: relative;
+    font-family: var(--ff-head);
+    font-size: clamp(4rem, 8vw, 7rem);
+    font-weight: 800;
+    line-height: .85;
+    letter-spacing: -.08em;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(4, 13, 26, .14);
+}
+
+.smm-growth-number span {
+    display: block;
+    margin-top: 15px;
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    -webkit-text-stroke: 0;
+}
+
+/* ---------- VERTICAL GROWTH LINE ---------- */
+
+.smm-growth-content {
+    position: relative;
+    padding-left: 55px;
+}
+
+.smm-growth-content::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg,
+            var(--orange),
+            rgba(249, 115, 22, .15),
+            transparent);
+}
+
+.smm-point {
+    position: relative;
+    padding-bottom: 55px;
+}
+
+.smm-point:last-child {
+    padding-bottom: 0;
+}
+
+/* timeline dot */
+
+.smm-point::before {
+    content: "";
+    position: absolute;
+    left: -59px;
+    top: 4px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--orange);
+    box-shadow:
+        0 0 0 6px rgba(249, 115, 22, .08),
+        0 0 22px rgba(249, 115, 22, .35);
+}
+
+/* ---------- POINT CONTENT ---------- */
+
+.smm-point-top {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 9px;
+}
+
+.smm-point-no {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    color: var(--orange);
+    letter-spacing: .1em;
+}
+
+.smm-point h3 {
+    font-family: var(--ff-head);
+    font-size: 23px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0;
+    letter-spacing: -.02em;
+}
+
+.smm-point p {
+    max-width: 700px;
+    margin: 0;
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* ---------- KEYWORD STRIP ---------- */
+
+.smm-keywords {
+    margin-top: 80px;
+    padding-top: 28px;
+    border-top: 1px solid #e2e8f0;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 30px;
+}
+
+.smm-keywords span {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    position: relative;
+}
+
+.smm-keywords span:not(:last-child)::after {
+    content: "•";
+    position: absolute;
+    right: -18px;
+    color: var(--orange);
+}
+
+/* ---------- SMALL STATEMENT ---------- */
+
+.smm-why-statement {
+    margin-top: 75px;
+    padding-left: 205px;
+    max-width: 1050px;
+}
+
+.smm-why-statement p {
+    font-family: var(--ff-head);
+    font-size: clamp(1.35rem, 2.5vw, 2.15rem);
+    line-height: 1.45;
+    font-weight: 600;
+    letter-spacing: -.025em;
+    color: var(--navy);
+}
+
+.smm-why-statement strong {
+    color: var(--orange);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width: 768px) {
+
+    .smm-why {
+        padding: 75px 0;
+    }
+
+    .smm-why-header {
+        margin-bottom: 55px;
+    }
+
+    .smm-why-title {
+        font-size: 2.7rem;
+    }
+
+    .smm-growth {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .smm-growth-number {
+        font-size: 4.5rem;
+    }
+
+    .smm-growth-content {
+        padding-left: 35px;
+    }
+
+    .smm-point::before {
+        left: -39px;
+    }
+
+    .smm-point h3 {
+        font-size: 19px;
+    }
+
+    .smm-point p {
+        font-size: 14px;
+    }
+
+    .smm-keywords {
+        margin-top: 55px;
+        gap: 12px 25px;
+    }
+
+    .smm-why-statement {
+        padding-left: 0;
+        margin-top: 55px;
+    }
+
+    .smm-why-statement p {
+        font-size: 1.45rem;
+    }
 }
 
 /* ═══════════════════════════════════════════════
@@ -1660,7 +1977,158 @@
 
 
     {{-- ══════════════ WHY US ══════════════ --}}
-    <section class="bk-sec bk-sec-alt">
+
+    {{-- =====================================================
+     WHY ACCROSIAN — SOCIAL MEDIA MARKETING BHUBANESWAR
+===================================================== --}}
+
+    <section class="smm-why">
+
+        <div class="smm-why-wrap">
+
+            {{-- HEADER --}}
+            <div class="smm-why-header">
+
+                <div class="smm-why-label">
+                    Why Accrosian
+                </div>
+
+                <h2 class="smm-why-title">
+                    Your brand deserves more
+                    than just <span>social media posts.</span>
+                </h2>
+
+                <p class="smm-why-intro">
+                    We combine creative content, audience psychology,
+                    local market understanding and performance marketing
+                    to turn your social presence into a real growth channel
+                    for your business in Bhubaneswar.
+                </p>
+
+            </div>
+
+
+            {{-- GROWTH JOURNEY --}}
+            <div class="smm-growth">
+
+                {{-- BIG NUMBER --}}
+                <div class="smm-growth-number">
+                    04
+                    <span>Growth Pillars</span>
+                </div>
+
+
+                {{-- TIMELINE --}}
+                <div class="smm-growth-content">
+
+                    {{-- POINT 01 --}}
+                    <div class="smm-point">
+
+                        <div class="smm-point-top">
+                            <span class="smm-point-no">01</span>
+
+                            <h3>Local Strategy. Global Quality.</h3>
+                        </div>
+
+                        <p>
+                            Your audience is not the same as everyone else's.
+                            We create social media strategies around Bhubaneswar's
+                            audience, culture, trends and business landscape while
+                            maintaining a premium brand identity.
+                        </p>
+
+                    </div>
+
+
+                    {{-- POINT 02 --}}
+                    <div class="smm-point">
+
+                        <div class="smm-point-top">
+                            <span class="smm-point-no">02</span>
+
+                            <h3>Content That Gives People a Reason to Stop</h3>
+                        </div>
+
+                        <p>
+                            From scroll-stopping creatives and reels to educational
+                            and storytelling content, every piece is designed with
+                            one purpose — capture attention and make your brand
+                            memorable.
+                        </p>
+
+                    </div>
+
+
+                    {{-- POINT 03 --}}
+                    <div class="smm-point">
+
+                        <div class="smm-point-top">
+                            <span class="smm-point-no">03</span>
+
+                            <h3>Creativity Backed by Data</h3>
+                        </div>
+
+                        <p>
+                            We don't rely only on likes and followers. We study
+                            reach, engagement, audience behaviour, content
+                            performance and conversions to continuously improve
+                            your social media strategy.
+                        </p>
+
+                    </div>
+
+
+                    {{-- POINT 04 --}}
+                    <div class="smm-point">
+
+                        <div class="smm-point-top">
+                            <span class="smm-point-no">04</span>
+
+                            <h3>Built for Real Business Growth</h3>
+                        </div>
+
+                        <p>
+                            Your social media should support your business goals.
+                            Whether you want stronger brand awareness, more enquiries,
+                            qualified leads or a powerful online presence, we build
+                            campaigns around measurable outcomes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            {{-- KEYWORDS --}}
+            <div class="smm-keywords">
+                <span>Strategy</span>
+                <span>Content</span>
+                <span>Reels</span>
+                <span>Branding</span>
+                <span>Engagement</span>
+                <span>Performance</span>
+                <span>Leads</span>
+                <span>Bhubaneswar</span>
+            </div>
+
+
+            {{-- FINAL STATEMENT --}}
+            <div class="smm-why-statement">
+
+                <p>
+                    We don't just manage your social media.
+                    We build a digital presence that makes people
+                    <strong>notice, remember and choose your brand.</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- <section class="bk-sec bk-sec-alt">
         <div class="bk-wrap">
             <div class="bk-why-grid">
                 {{-- Left --}}
@@ -1730,8 +2198,8 @@
                 {{-- Right: compliance card --}}
                 <div class="bk-right-full-image">
                     <img src="{{ asset('assets/images/banks.jpg') }}" alt="Banking Solutions">
-                </div>
-                <!-- <div>
+                </div> -->
+    <!-- <div>
                     <div class="bk-comp-card">
                         <div class="bk-comp-head">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -1802,9 +2270,9 @@
                         </div>
                     </div>
                 </div> -->
-            </div>
-        </div>
-    </section>
+    <!-- </div>
+</div>
+</section> -->
 
 
     {{-- ══════════════ PROCESS ══════════════ --}}
