@@ -1070,169 +1070,439 @@
     }
 }
 
-/* ═══════════════════════════════════════════════
-   WHY US — alt bg
-═══════════════════════════════════════════════ */
-.bk-why-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 72px;
-    align-items: center;
-}
+/* =====================================================
+   SOCIAL MEDIA MARKETING — OUR PROCESS
+   Premium Creative Journey
+===================================================== */
 
-.bk-feature-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.bk-feat-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    background: var(--navy-light);
-    border: 1px solid var(--navy-2);
-    border-radius: 14px;
-    padding: 18px 20px;
-    box-shadow: var(--shadow-sm);
-    transition: all .28s;
-}
-
-.bk-feat-item:hover {
-    border-color: var(--glass-border-hover);
-    box-shadow: 0 8px 28px var(--navy-800);
-    transform: translateY(-4px)
-}
-
-.bk-feat-ico {
-    width: 42px;
-    height: 42px;
-    border-radius: 11px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(249, 115, 22, .08);
-    border: 1px solid rgba(249, 115, 22, .15);
-}
-
-.bk-feat-ico svg {
-    width: 20px;
-    height: 20px;
-    color: var(--orange);
-}
-
-.bk-feat-body strong {
-    display: block;
-    font-family: var(--ff-head);
-    font-size: .93rem;
-    font-weight: 700;
-    color: #ffff;
-    margin-bottom: 3px;
-}
-
-.bk-feat-body span {
-    font-size: .82rem;
-    color: #ffff;
-    line-height: 1.6;
-}
-
-.bk-right-full-image {
-    height: 100%;
-    min-height: 780px;
-    border-radius: 24px;
-    overflow: hidden;
+.smm-process {
     position: relative;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    padding: 115px 0 125px;
+    background: #10164a;
+    overflow: hidden;
 }
 
-.bk-right-full-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform .6s ease;
+/* Large background typography */
+.smm-process::before {
+    content: "SOCIAL";
+    position: absolute;
+    right: -40px;
+    top: 35px;
+
+    font-family: var(--ff-head);
+    font-size: clamp(7rem, 17vw, 16rem);
+    font-weight: 800;
+    line-height: 1;
+
+    color: rgba(255, 255, 255, .025);
+    letter-spacing: -.08em;
+
+    pointer-events: none;
 }
 
-.bk-right-full-image:hover img {
-    transform: scale(1.04);
+/* Orange glow */
+.smm-process::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: -250px;
+    bottom: -300px;
+
+    background: radial-gradient(circle,
+            rgba(249, 115, 22, .15),
+            transparent 70%);
+
+    pointer-events: none;
 }
 
-.bk-why-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 72px;
-    align-items: stretch;
+.smm-process-wrap {
+    max-width: 1250px;
+    margin: auto;
+    padding: 0 30px;
+    position: relative;
+    z-index: 2;
 }
 
-/* ═══════════════════════════════════════════════
-   PROCESS — dark
-═══════════════════════════════════════════════ */
-.bk-steps {
+/* =====================================================
+   HEADER
+===================================================== */
+
+.smm-process-head {
+    max-width: 800px;
+    margin-bottom: 90px;
+}
+
+.smm-process-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+
+    color: #ff9b45;
+    margin-bottom: 22px;
+}
+
+.smm-process-label::before {
+    content: "";
+    width: 34px;
+    height: 2px;
+
+    background: linear-gradient(90deg,
+            #f97316,
+            #f59e0b);
+}
+
+.smm-process-title {
+    font-family: var(--ff-head);
+    font-size: clamp(2.5rem, 5vw, 4.8rem);
+    font-weight: 800;
+    line-height: 1.04;
+
+    color: #fff;
+    letter-spacing: -.045em;
+
+    margin: 0;
+}
+
+.smm-process-title span {
+    background: linear-gradient(135deg,
+            #f97316,
+            #ffb347);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.smm-process-intro {
+    max-width: 700px;
+
+    margin-top: 24px;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, .62);
+}
+
+/* =====================================================
+   PROCESS JOURNEY
+===================================================== */
+
+.smm-process-track {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 0;
-    position: relative;
-    margin-top: 64px;
 }
 
-.bk-steps::before {
-    content: '';
+/* Main horizontal line */
+
+.smm-process-track::before {
+    content: "";
+
     position: absolute;
-    top: 27px;
-    left: 8%;
-    right: 8%;
+    top: 31px;
+    left: 0;
+    right: 0;
+
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(46, 106, 255, .4) 25%, rgba(249, 115, 22, .4) 75%, transparent);
+
+    background: linear-gradient(90deg,
+            rgba(249, 115, 22, .05),
+            rgba(249, 115, 22, .8),
+            rgba(255, 179, 71, .8),
+            rgba(249, 115, 22, .05));
 }
 
-.bk-step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 0 10px;
+/* =====================================================
+   INDIVIDUAL STEP
+===================================================== */
+
+.smm-process-step {
+    position: relative;
+    padding-right: 28px;
 }
 
-.bk-step-circle {
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, .05);
-    border: 1px solid rgba(46, 106, 255, .3);
+.smm-process-step:last-child {
+    padding-right: 0;
+}
+
+/* Number */
+
+.smm-process-number {
+    width: 62px;
+    height: 62px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     position: relative;
-    z-index: 1;
-    margin-bottom: 18px;
-    transition: all .3s;
-    color: #7da8ff;
+    z-index: 2;
+
+    border-radius: 50%;
+
+    background: #10164a;
+
+    border: 1px solid rgba(249, 115, 22, .45);
+
+    font-family: var(--ff-mono);
+    font-size: 12px;
+    font-weight: 500;
+
+    color: #ff9b45;
+
+    transition: .4s ease;
 }
 
-.bk-step-circle svg {
-    width: 22px;
-    height: 22px;
+/* Inner dot */
+
+.smm-process-number::after {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #f97316;
+
+    box-shadow:
+        0 0 0 6px rgba(249, 115, 22, .08),
+        0 0 25px rgba(249, 115, 22, .5);
+
+    opacity: 0;
+
+    transition: .4s ease;
 }
 
-.bk-step:hover .bk-step-circle {
-    background: rgba(46, 106, 255, .15);
-    border-color: rgba(46, 106, 255, .5);
-    box-shadow: 0 0 24px rgba(46, 106, 255, .3);
+/* Hover */
+
+.smm-process-step:hover .smm-process-number {
+    border-color: #f97316;
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 30px rgba(249, 115, 22, .18);
 }
 
-.bk-step-label {
+.smm-process-step:hover .smm-process-number::after {
+    opacity: 1;
+}
+
+/* =====================================================
+   STEP CONTENT
+===================================================== */
+
+.smm-process-content {
+    margin-top: 30px;
+}
+
+.smm-process-content h3 {
     font-family: var(--ff-head);
-    font-size: .78rem;
+
+    font-size: 17px;
     font-weight: 700;
-    color: rgba(255, 255, 255, .9);
-    margin-bottom: 5px;
+
+    line-height: 1.35;
+
+    color: #fff;
+
+    margin: 0 0 10px;
+
+    letter-spacing: -.015em;
 }
 
-.bk-step-desc {
-    font-size: .7rem;
-    color: rgba(255, 255, 255, .38);
-    line-height: 1.55;
+.smm-process-content p {
+    font-size: 13px;
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, .48);
+
+    margin: 0;
+
+    max-width: 175px;
+}
+
+/* =====================================================
+   STEP KEYWORD
+===================================================== */
+
+.smm-process-tag {
+    display: block;
+
+    margin-top: 18px;
+
+    font-family: var(--ff-mono);
+
+    font-size: 9px;
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+
+    color: #f97316;
+}
+
+/* =====================================================
+   BOTTOM STATEMENT
+===================================================== */
+
+.smm-process-bottom {
+    margin-top: 95px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid rgba(255, 255, 255, .08);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.smm-process-bottom p {
+    margin: 0;
+
+    font-family: var(--ff-head);
+
+    font-size: clamp(1.2rem, 2vw, 1.7rem);
+
+    line-height: 1.45;
+
+    color: rgba(255, 255, 255, .75);
+
+    max-width: 650px;
+}
+
+.smm-process-bottom strong {
+    color: #fff;
+}
+
+.smm-process-arrow {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(249, 115, 22, .4);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #f97316;
+
+    font-size: 22px;
+
+    transition: .35s ease;
+}
+
+.smm-process-bottom:hover .smm-process-arrow {
+    transform: translateX(8px);
+
+    background: #f97316;
+
+    color: #fff;
+
+    box-shadow:
+        0 10px 30px rgba(249, 115, 22, .3);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:1024px) {
+
+    .smm-process-track {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 65px;
+    }
+
+    .smm-process-track::before {
+        display: none;
+    }
+
+    .smm-process-step {
+        padding-right: 35px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:768px) {
+
+    .smm-process {
+        padding: 80px 0 90px;
+    }
+
+    .smm-process-head {
+        margin-bottom: 60px;
+    }
+
+    .smm-process-title {
+        font-size: 2.7rem;
+    }
+
+    .smm-process-track {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .smm-process-step {
+        display: grid;
+        grid-template-columns: 62px 1fr;
+        column-gap: 25px;
+
+        padding: 0 0 45px;
+    }
+
+    .smm-process-step:not(:last-child)::after {
+        content: "";
+
+        position: absolute;
+
+        left: 30px;
+        top: 62px;
+        bottom: 0;
+
+        width: 1px;
+
+        background: linear-gradient(180deg,
+                rgba(249, 115, 22, .5),
+                rgba(249, 115, 22, .05));
+    }
+
+    .smm-process-content {
+        margin-top: 4px;
+    }
+
+    .smm-process-content p {
+        max-width: 100%;
+    }
+
+    .smm-process-bottom {
+        margin-top: 45px;
+        align-items: flex-start;
+    }
+
+    .smm-process-arrow {
+        flex-shrink: 0;
+    }
 }
 
 /* ═══════════════════════════════════════════════
@@ -2276,81 +2546,220 @@
 
 
     {{-- ══════════════ PROCESS ══════════════ --}}
-    <section class="bk-sec bk-sec-navy">
-        <div class="bk-wrap">
-            <div class="bk-sec-head">
-                <span class="bk-eyebrow">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.5">
-                        <circle cx="12" cy="12" r="3" />
-                        <path d="M19.07 4.93a10 10 0 0 0-14.14 0M4.93 19.07a10 10 0 0 0 14.14 0" />
-                    </svg>
+    {{-- =====================================================
+     OUR PROCESS — SOCIAL MEDIA MARKETING BHUBANESWAR
+===================================================== --}}
+
+    <section class="smm-process">
+
+        <div class="smm-process-wrap">
+
+            {{-- HEADER --}}
+            <div class="smm-process-head">
+
+                <div class="smm-process-label">
                     Our Process
-                </span>
-                <h2 class="bk-h2 bk-h2-white" style="margin-top:16px;">How We <span class="grad-blue">Build &amp;
-                        Deliver</span></h2>
-                <div class="bk-divider"></div>
-                <p class="bk-sub bk-sub-white">A proven six-stage methodology ensuring security, compliance, and
-                    performance at every milestone.</p>
+                </div>
+
+                <h2 class="smm-process-title">
+                    From an idea to
+                    <span>real growth.</span>
+                </h2>
+
+                <p class="smm-process-intro">
+                    We don't randomly post content and hope it works.
+                    Every campaign follows a strategic creative process —
+                    from understanding your brand and audience to creating,
+                    publishing and continuously improving what performs.
+                </p>
+
             </div>
 
-            <div class="bk-steps">
-                <div class="bk-step">
-                    <div class="bk-step-circle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8" />
-                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                        </svg></div>
-                    <div class="bk-step-label">Research &amp; Analysis</div>
-                    <div class="bk-step-desc">Deep-dive into requirements, workflows &amp; compliance needs.</div>
+
+            {{-- PROCESS JOURNEY --}}
+            <div class="smm-process-track">
+
+                {{-- 01 --}}
+                <div class="smm-process-step">
+
+                    <div class="smm-process-number">
+                        01
+                    </div>
+
+                    <div class="smm-process-content">
+
+                        <h3>
+                            Discover
+                        </h3>
+
+                        <p>
+                            We understand your business, audience,
+                            competitors and current social presence.
+                        </p>
+
+                        <span class="smm-process-tag">
+                            Understand
+                        </span>
+
+                    </div>
+
                 </div>
-                <div class="bk-step">
-                    <div class="bk-step-circle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2" />
-                            <path d="M3 9h18M9 21V9" />
-                        </svg></div>
-                    <div class="bk-step-label">Architecture &amp; Planning</div>
-                    <div class="bk-step-desc">Compliance-first system design &amp; security architecture.</div>
+
+
+                {{-- 02 --}}
+                <div class="smm-process-step">
+
+                    <div class="smm-process-number">
+                        02
+                    </div>
+
+                    <div class="smm-process-content">
+
+                        <h3>
+                            Strategize
+                        </h3>
+
+                        <p>
+                            We build a content and growth strategy
+                            designed around your business goals.
+                        </p>
+
+                        <span class="smm-process-tag">
+                            Plan
+                        </span>
+
+                    </div>
+
                 </div>
-                <div class="bk-step">
-                    <div class="bk-step-circle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2" />
-                            <circle cx="8.5" cy="8.5" r="1.5" />
-                            <polyline points="21 15 16 10 5 21" />
-                        </svg></div>
-                    <div class="bk-step-label">Secure UI/UX Design</div>
-                    <div class="bk-step-desc">Intuitive interfaces crafted for trust &amp; clarity.</div>
+
+
+                {{-- 03 --}}
+                <div class="smm-process-step">
+
+                    <div class="smm-process-number">
+                        03
+                    </div>
+
+                    <div class="smm-process-content">
+
+                        <h3>
+                            Create
+                        </h3>
+
+                        <p>
+                            Reels, creatives, captions and campaigns
+                            are crafted to capture attention.
+                        </p>
+
+                        <span class="smm-process-tag">
+                            Create
+                        </span>
+
+                    </div>
+
                 </div>
-                <div class="bk-step">
-                    <div class="bk-step-circle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <polyline points="16 18 22 12 16 6" />
-                            <polyline points="8 6 2 12 8 18" />
-                        </svg></div>
-                    <div class="bk-step-label">Development &amp; Integration</div>
-                    <div class="bk-step-desc">Agile dev with full API &amp; third-party integration.</div>
+
+
+                {{-- 04 --}}
+                <div class="smm-process-step">
+
+                    <div class="smm-process-number">
+                        04
+                    </div>
+
+                    <div class="smm-process-content">
+
+                        <h3>
+                            Publish
+                        </h3>
+
+                        <p>
+                            Content goes live with the right platform,
+                            format, timing and audience in mind.
+                        </p>
+
+                        <span class="smm-process-tag">
+                            Launch
+                        </span>
+
+                    </div>
+
                 </div>
-                <div class="bk-step">
-                    <div class="bk-step-circle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                        </svg></div>
-                    <div class="bk-step-label">Security Audit</div>
-                    <div class="bk-step-desc">Pen-testing, vulnerability scans &amp; compliance sign-off.</div>
+
+
+                {{-- 05 --}}
+                <div class="smm-process-step">
+
+                    <div class="smm-process-number">
+                        05
+                    </div>
+
+                    <div class="smm-process-content">
+
+                        <h3>
+                            Optimize
+                        </h3>
+
+                        <p>
+                            We study reach, engagement and audience
+                            behaviour to understand what performs.
+                        </p>
+
+                        <span class="smm-process-tag">
+                            Improve
+                        </span>
+
+                    </div>
+
                 </div>
-                <div class="bk-step">
-                    <div class="bk-step-circle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                            <polyline points="22 4 12 14.01 9 11.01" />
-                        </svg></div>
-                    <div class="bk-step-label">Deploy &amp; Maintain</div>
-                    <div class="bk-step-desc">Live deployment with 24/7 monitoring &amp; ongoing support.</div>
+
+
+                {{-- 06 --}}
+                <div class="smm-process-step">
+
+                    <div class="smm-process-number">
+                        06
+                    </div>
+
+                    <div class="smm-process-content">
+
+                        <h3>
+                            Grow
+                        </h3>
+
+                        <p>
+                            Winning ideas become stronger campaigns,
+                            better reach and sustainable brand growth.
+                        </p>
+
+                        <span class="smm-process-tag">
+                            Scale
+                        </span>
+
+                    </div>
+
                 </div>
+
             </div>
+
+
+            {{-- BOTTOM STATEMENT --}}
+            <div class="smm-process-bottom">
+
+                <p>
+                    <strong>Every post has a purpose.</strong>
+                    Every campaign has a direction.
+                    Every result teaches us what to do next.
+                </p>
+
+                <div class="smm-process-arrow">
+                    →
+                </div>
+
+            </div>
+
         </div>
+
     </section>
 
 
