@@ -265,12 +265,8 @@
    HERO
 ═══════════════════════════════════════════════ */
 .bk-hero {
-    min-height: 65vh;
-    padding: 125px 0 50px 0;
-    background:
-        radial-gradient(ellipse 65% 55% at 65% 45%, rgba(26, 79, 214, .18) 0%, transparent 65%),
-        radial-gradient(ellipse 40% 35% at 15% 80%, rgba(249, 115, 22, .1) 0%, transparent 60%),
-        var(--navy);
+    min-height: 75vh;
+    padding: 140px 0 60px 0;
 }
 
 /* subtle grid pattern */
