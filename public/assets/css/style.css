@@ -4696,7 +4696,7 @@ select option {
 }
 
 .smm-process-wrap {
-    max-width: 1250px;
+    max-width: 1300px;
     margin: auto;
     padding: 0 30px;
     position: relative;
@@ -4740,9 +4740,9 @@ select option {
 
 .smm-process-title {
     font-family: var(--ff-head);
-    font-size: clamp(2.5rem, 5vw, 4.8rem);
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 800;
-    line-height: 1.04;
+    line-height: 1.15;
 
     color: #fff;
     letter-spacing: -.045em;
@@ -4751,11 +4751,7 @@ select option {
 }
 
 .smm-process-title span {
-    background: linear-gradient(
-        135deg,
-        #f97316,
-        #ffb347
-    );
+    background: var(--gradient-orange);
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
