@@ -5087,6 +5087,503 @@ select option {
         flex-shrink: 0;
     }
 }
+
+/* =====================================================
+   SOCIAL MEDIA MARKETING
+   WHAT WE BUILD FOR YOUR BRAND
+===================================================== */
+
+.smm-services {
+    position: relative;
+    padding: 120px 0 125px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.smm-services-wrap {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 30px;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =====================================================
+   BACKGROUND TYPOGRAPHY
+===================================================== */
+
+.smm-services::before {
+    content: "CONTENT";
+
+    position: absolute;
+    top: 20px;
+    right: -30px;
+
+    font-family: var(--ff-head);
+    font-size: clamp(7rem, 17vw, 15rem);
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: -.08em;
+
+    color: rgba(15, 23, 42, .025);
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.smm-services-head {
+    max-width: 850px;
+    margin-bottom: 85px;
+}
+
+.smm-services-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    font-family: var(--ff-mono);
+
+    font-size: 11px;
+    letter-spacing: .16em;
+
+    text-transform: uppercase;
+
+    color: var(--orange);
+
+    margin-bottom: 22px;
+}
+
+.smm-services-label::before {
+    content: "";
+
+    width: 34px;
+    height: 2px;
+
+    background: linear-gradient(90deg,
+            var(--orange),
+            #f59e0b);
+}
+
+.smm-services-title {
+    margin: 0;
+
+    font-family: var(--ff-head);
+
+    font-size: clamp(2.5rem, 5vw, 4.8rem);
+
+    line-height: 1.04;
+
+    font-weight: 800;
+
+    letter-spacing: -.045em;
+
+    color: var(--navy);
+}
+
+.smm-services-title span {
+    background: linear-gradient(135deg,
+            #f97316,
+            #f59e0b);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.smm-services-intro {
+    max-width: 700px;
+
+    margin-top: 24px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #64748b;
+}
+
+
+/* =====================================================
+   SERVICE LIST
+===================================================== */
+
+.smm-service-list {
+    position: relative;
+}
+
+
+/* horizontal separator */
+
+.smm-service-item {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 90px 1fr 310px;
+
+    align-items: center;
+
+    gap: 35px;
+
+    padding: 34px 0;
+
+    border-top: 1px solid #e5e7eb;
+
+    transition: .35s ease;
+}
+
+.smm-service-item:last-child {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+/* =====================================================
+   NUMBER
+===================================================== */
+
+.smm-service-number {
+    font-family: var(--ff-mono);
+
+    font-size: 12px;
+
+    letter-spacing: .12em;
+
+    color: var(--orange);
+
+    transition: .3s ease;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.smm-service-name {
+    position: relative;
+
+    font-family: var(--ff-head);
+
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
+
+    font-weight: 700;
+
+    letter-spacing: -.025em;
+
+    color: var(--navy);
+
+    margin: 0;
+
+    transition: .35s ease;
+}
+
+
+/* Orange line appearing underneath */
+
+.smm-service-name::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--orange);
+
+    transition: width .4s ease;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.smm-service-description {
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: #64748b;
+
+    margin: 0;
+
+    max-width: 300px;
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.smm-service-item:hover {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.smm-service-item:hover .smm-service-number {
+    transform: translateX(5px);
+}
+
+.smm-service-item:hover .smm-service-name {
+    color: var(--orange);
+}
+
+.smm-service-item:hover .smm-service-name::after {
+    width: 70px;
+}
+
+
+/* =====================================================
+   MINI VISUAL BAR
+===================================================== */
+
+.smm-service-progress {
+    position: absolute;
+
+    left: 90px;
+    bottom: -1px;
+
+    height: 2px;
+
+    width: 0;
+
+    background: linear-gradient(90deg,
+            var(--orange),
+            #f59e0b);
+
+    transition: width .7s cubic-bezier(.22, 1, .36, 1);
+}
+
+.smm-service-item:hover .smm-service-progress {
+    width: calc(100% - 400px);
+}
+
+
+/* =====================================================
+   RIGHT LABEL
+===================================================== */
+
+.smm-service-type {
+    display: flex;
+
+    justify-content: flex-end;
+
+    font-family: var(--ff-mono);
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .12em;
+
+    color: #94a3b8;
+}
+
+
+/* =====================================================
+   BOTTOM STATEMENT
+===================================================== */
+
+.smm-services-bottom {
+    margin-top: 80px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 40px;
+}
+
+.smm-services-bottom-text {
+    max-width: 720px;
+}
+
+.smm-services-bottom-text p {
+    margin: 0;
+
+    font-family: var(--ff-head);
+
+    font-size: clamp(1.4rem, 2.8vw, 2.25rem);
+
+    line-height: 1.4;
+
+    letter-spacing: -.025em;
+
+    color: var(--navy);
+}
+
+.smm-services-bottom-text strong {
+    color: var(--orange);
+}
+
+.smm-services-bottom-small {
+    margin-top: 18px;
+
+    font-family: var(--ff-mono);
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .13em;
+
+    color: #94a3b8;
+}
+
+
+/* =====================================================
+   RIGHT MARK
+===================================================== */
+
+.smm-services-mark {
+    width: 85px;
+    height: 85px;
+
+    flex-shrink: 0;
+
+    border: 1px solid rgba(249, 115, 22, .35);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: var(--orange);
+
+    font-family: var(--ff-mono);
+
+    font-size: 24px;
+
+    position: relative;
+}
+
+.smm-services-mark::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border: 1px dashed rgba(249, 115, 22, .25);
+
+    border-radius: 50%;
+
+    animation: smmRotate 12s linear infinite;
+}
+
+@keyframes smmRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:1024px) {
+
+    .smm-service-item {
+        grid-template-columns: 70px 1fr 230px;
+        gap: 25px;
+    }
+
+    .smm-service-progress {
+        left: 70px;
+    }
+
+    .smm-service-item:hover .smm-service-progress {
+        width: calc(100% - 300px);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:768px) {
+
+    .smm-services {
+        padding: 80px 0 90px;
+    }
+
+    .smm-services-head {
+        margin-bottom: 55px;
+    }
+
+    .smm-services-title {
+        font-size: 2.7rem;
+    }
+
+    .smm-service-item {
+        grid-template-columns: 45px 1fr;
+
+        gap: 15px;
+
+        padding: 25px 0;
+    }
+
+    .smm-service-number {
+        padding-top: 3px;
+    }
+
+    .smm-service-name {
+        font-size: 1.25rem;
+    }
+
+    .smm-service-description {
+        grid-column: 2;
+
+        max-width: 100%;
+
+        margin-top: -5px;
+    }
+
+    .smm-service-type {
+        display: none;
+    }
+
+    .smm-service-progress {
+        left: 45px;
+    }
+
+    .smm-service-item:hover {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .smm-service-item:hover .smm-service-progress {
+        width: calc(100% - 50px);
+    }
+
+    .smm-services-bottom {
+        margin-top: 55px;
+    }
+
+    .smm-services-mark {
+        display: none;
+    }
+}
  
 /* ── CASE STUDIES ── */
 .case-studies-section {
