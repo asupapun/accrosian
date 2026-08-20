@@ -116,11 +116,16 @@ consultations, and quotes.')
 
                 <form action="{{ route('contact.store') }}" method="POST" id="contact-form">
                     @csrf
+
+                    <div style="display:none;">
+                        <input type="text" name="website" autocomplete="off" tabindex="-1">
+                    </div>
+                    <!-- Form Start Time -->
+                    <input type="hidden" name="form_started" value="{{ time() }}">
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" placeholder="John Doe" value="{{ old('name') }}"
-                                required />
+                            <input type="text" id="name" name="name" placeholder="Bony Doe" value="{{ old('name') }}" required />
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address *</label>
@@ -129,8 +134,8 @@ consultations, and quotes.')
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+91 98XXXXXXXX"
-                                value="{{ old('phone') }}" />
+                            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" maxlength="10" required
+                                placeholder="+91 98XXXXXXXX" value="{{ old('phone') }}" />
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
@@ -157,6 +162,7 @@ consultations, and quotes.')
                     </button>
                     <p style="color:var(--text-muted);font-size:0.82rem;text-align:center;margin-top:16px">🔒 Your
                         information is 100% confidential and secure.</p>
+                    <input type="hidden" name="g-recaptcha-response" id="recaptcha">
                 </form>
             </div>
         </div>
@@ -164,3 +170,20 @@ consultations, and quotes.')
 </section>
 
 @endsection
+
+
+
+
+@push('scripts')
+<script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
+
+<script>
+grecaptcha.ready(function() {
+    grecaptcha.execute('{{ env("RECAPTCHA_SITE_KEY") }}', {
+        action: 'contact'
+    }).then(function(token) {
+        document.getElementById('recaptcha').value = token;
+    });
+});
+</script>
+@endpush

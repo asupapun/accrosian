@@ -61,7 +61,7 @@ the Accrosian team.')
         <div style="text-align:center;padding:80px;color:var(--text-light)">
             <div style="font-size:3rem;margin-bottom:16px">✍️</div>
             <h3>No Posts Yet</h3>
-            <p style="margin-top:8px">Stay tuned — great content is on the way!</p>
+            <p style="margin-top:8px">Stay tuned great content is on the way!</p>
         </div>
         @endforelse
 

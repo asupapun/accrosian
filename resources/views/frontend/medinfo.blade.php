@@ -87,7 +87,7 @@ section {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1300px;
     padding: 0 clamp(16px, 4vw, 80px);
     margin: 0 auto;
 
@@ -125,7 +125,7 @@ h3 {
 
 /* ─── HERO ─── */
 .hero {
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     padding-top: 90px;
@@ -160,6 +160,7 @@ h3 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
+    max-width: 1300px;
     align-items: center;
     padding: 80px 0;
 }

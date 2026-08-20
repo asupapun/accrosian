@@ -63,7 +63,7 @@
 </section>
 
 {{-- WHY CHOOSE US --}}
-<section class="features-section">
+<!-- <section class="features-section">
     <div class="container">
         <div style="text-align:center;margin-bottom:60px" class="reveal">
             <span class="section-tag">Why Accrosian</span>
@@ -82,7 +82,7 @@
             @endforeach
         </div>
     </div>
-</section>
+</section> -->
 
 <section class="cta-section">
     <div class="container cta-inner">

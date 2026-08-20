@@ -12,6 +12,9 @@ use App\Http\Controllers\Frontend\MedinfoController;
 use App\Http\Controllers\Frontend\EducationController;
 use App\Http\Controllers\Frontend\EnergyController;
 use App\Http\Controllers\Frontend\HealthController;
+use App\Http\Controllers\Frontend\CrmController;
+use App\Http\Controllers\Frontend\WhtsappController;
+use App\Http\Controllers\Frontend\SsmbbsrController;
 
 
 
@@ -38,6 +41,9 @@ Route::get('/industries/medinfo', [MedinfoController::class, 'index'])->name('in
 Route::get('/industries/education', [EducationController::class, 'index'])->name('industries.education');
 Route::get('/industries/energy', [EnergyController::class, 'index'])->name('industries.energy');
 Route::get('/industries/healthcare', [HealthController::class, 'index'])->name('industries.healthcare');
+Route::get('/Products/crm', [CrmController::class, 'index'])->name('Products.crm');
+Route::get('/Products/whtsapp', [WhtsappController::class, 'index'])->name('Products.whtsapp');
+Route::get('/ssmbbsr', [SsmbbsrController::class, 'index'])->name('ssmbbsr');
 /*
 |--------------------------------------------------------------------------
 | Auth Routes

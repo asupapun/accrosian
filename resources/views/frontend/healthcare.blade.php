@@ -76,7 +76,7 @@ h4 {
 
 /* ─── HERO ─── */
 .hero {
-    min-height: 100vh;
+    min-height: 70vh;
     padding: 140px 60px 80px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -108,6 +108,7 @@ h4 {
 
 .hero-content {
     position: relative;
+    max-width: 1300px;
     z-index: 2;
 }
 

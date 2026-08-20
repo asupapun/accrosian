@@ -60,7 +60,7 @@ body {
 
 /* ---- UTILITY ---- */
 .container {
-    max-width: 1240px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 0 32px;
 }
@@ -177,7 +177,7 @@ body {
 /* ---- HERO ---- */
 .hero {
     position: relative;
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     padding: 100px 0 80px;
@@ -203,7 +203,7 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 0 24px;
 }

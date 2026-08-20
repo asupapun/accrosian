@@ -77,6 +77,7 @@
                     <li><a href="{{ route('portfolio') }}">Portfolio</a></li>
                     <li><a href="{{ route('blog') }}">Blog</a></li>
                     <li><a href="{{ route('contact') }}">Contact</a></li>
+                    <li><a href="{{ route('ssmbbsr') }}">SSM BBSR</a></li>
                     <!-- <li><a href="{{ route('login') }}">Client Login</a></li> -->
                     <!-- <li><a href="{{ route('student.register') }}" style="color:var(--orange);font-weight:600">🎓
                             StudentRegistration</a></li> -->

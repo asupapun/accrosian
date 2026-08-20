@@ -79,7 +79,7 @@ section {
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 0 6%
 }
@@ -146,7 +146,7 @@ h4 {
 
 /* ─── HERO ─── */
 .hero {
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     padding-top: 88px;
@@ -178,6 +178,7 @@ h4 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 56px;
+    max-width: 1370px;
     align-items: center;
     padding: 80px 0;
 }
