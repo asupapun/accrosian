@@ -24,7 +24,10 @@ delivering innovative web, mobile, cloud, and AI solutions for modern businesses
                 Award-Winning Software Company
             </div> -->
             <h1 class="hero-title">
-                Innovative Software Solutions for
+                Innovative Software
+                <br>
+                Solutions for
+                <br>
                 <span class="text-gradient">Modern Businesses</span>
             </h1>
             <p class="hero-description">
