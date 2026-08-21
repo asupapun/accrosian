@@ -146,7 +146,7 @@ h4 {
 
 /* ─── HERO ─── */
 .hero {
-    min-height: 70vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     padding-top: 88px;
