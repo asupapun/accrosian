@@ -15,6 +15,14 @@ use App\Http\Controllers\Frontend\HealthController;
 use App\Http\Controllers\Frontend\CrmController;
 use App\Http\Controllers\Frontend\WhtsappController;
 use App\Http\Controllers\Frontend\SsmbbsrController;
+use App\Http\Controllers\Frontend\SsmhydController;
+use App\Http\Controllers\Frontend\SsmbangController;
+use App\Http\Controllers\Frontend\SsmmumController;
+use App\Http\Controllers\Frontend\SsmgujController;
+use App\Http\Controllers\Frontend\SsmkolController;
+use App\Http\Controllers\Frontend\SsmdelController;
+use App\Http\Controllers\Frontend\SsmpunController;
+use App\Http\Controllers\Frontend\SsmchandController;
 
 
 
@@ -44,6 +52,14 @@ Route::get('/industries/healthcare', [HealthController::class, 'index'])->name('
 Route::get('/Products/crm', [CrmController::class, 'index'])->name('Products.crm');
 Route::get('/Products/whtsapp', [WhtsappController::class, 'index'])->name('Products.whtsapp');
 Route::get('/ssmbbsr', [SsmbbsrController::class, 'index'])->name('ssmbbsr');
+Route::get('/ssmhyd', [SsmhydController::class, 'index'])->name('ssmhyd');
+Route::get('/ssmbang', [SsmbangController::class, 'index'])->name('ssmbang');
+Route::get('/ssmumm', [SsmmumController::class, 'index'])->name('ssmmum');
+Route::get('/ssmguj', [SsmgujController::class, 'index'])->name('ssmguj');
+Route::get('/ssmkol', [SsmkolController::class, 'index'])->name('ssmkol');
+Route::get('/ssmdel', [SsmdelController::class, 'index'])->name('ssmdel');
+Route::get('/ssmpun', [SsmpunController::class, 'index'])->name('ssmpun');
+Route::get('/ssmchand', [SsmchandController::class, 'index'])->name('ssmchand');
 /*
 |--------------------------------------------------------------------------
 | Auth Routes
