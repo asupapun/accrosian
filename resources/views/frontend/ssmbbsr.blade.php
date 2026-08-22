@@ -2004,12 +2004,15 @@
 /* ═══════════════════════════════════════════════
    TECH PILLS — alt bg
 ═══════════════════════════════════════════════ */
-.bk-pills {
+.bk-pills2 {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 14px;
-    justify-content: center;
     margin-top: 48px;
+    width: 100%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .bk-pill {
@@ -3350,51 +3353,48 @@
     {{-- ══════════════ TECH STACK ══════════════ --}}
     <section class="bk-sec bk-sec-alt">
         <div class="bk-wrap">
-            <div class="bk-pills">
+            <div class="bk-pills2">
                 <a href="{{ route('ssmhyd') }}" class="bk-pill">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#2e6aff"
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0891b2"
                         stroke-width="2">
-                        <polyline points="16 18 22 12 16 6" />
-                        <polyline points="8 6 2 12 8 18" />
-                    </svg>
-
-                    <span>Social media management service in Hyderabad →</span>
+                        <path
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                    </svg><span>Social media management service in Hyderabad →</span>
                 </a>
                 <a href="{{ route('ssmbang') }}" class="bk-pill"><svg xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2">
-                        <rect x="2" y="5" width="20" height="14" rx="2" />
-                        <line x1="2" y1="10" x2="22" y2="10" />
+                        viewBox="0 0 24 24" fill="none" stroke="#0891b2" stroke-width="2">
+                        <path
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
                     </svg><span>Social media management service in Bangalore →</span>
                 </a>
                 <a href="{{ route('ssmmum') }}" class="bk-pill"><svg xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24" fill="none" stroke="#0891b2" stroke-width="2">
-                        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+                        <path
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
                     </svg><span>Social media management service in Mumbai →</span>
                 </a>
                 <a href="{{ route('ssmguj') }}" class="bk-pill"><svg xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        viewBox="0 0 24 24" fill="none" stroke="#0891b2" stroke-width="2">
+                        <path
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
                     </svg><span>Social media management service in Gujrat →</span>
                 </a>
                 <a href="{{ route('ssmkol') }}" class="bk-pill"><svg xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2">
-                        <ellipse cx="12" cy="5" rx="9" ry="3" />
-                        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
-                        <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" />
+                        viewBox="0 0 24 24" fill="none" stroke="#0891b2" stroke-width="2">
+                        <path
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
                     </svg><span>Social media management service in Kolkata →</span>
                 </a>
                 <a href="{{ route('ssmdel') }}" class="bk-pill"><svg xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2">
-                        <rect x="2" y="3" width="20" height="14" rx="2" />
-                        <path d="M8 21h8M12 17v4" />
+                        viewBox="0 0 24 24" fill="none" stroke="#0891b2" stroke-width="2">
+                        <path
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
                     </svg><span>Social media management service in delhi →</span>
                 </a>
                 <a href="{{ route('ssmpun') }}" class="bk-pill"><svg xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24" fill="none" stroke="#2e6aff" stroke-width="2">
-                        <circle cx="12" cy="12" r="10" />
-                        <line x1="2" y1="12" x2="22" y2="12" />
+                        viewBox="0 0 24 24" fill="none" stroke="#0891b2" stroke-width="2">
                         <path
-                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
                     </svg><span>Social media management service in punjab →</span>
                 </a>
                 <a href="{{ route('ssmchand') }}" class="bk-pill"><svg xmlns="http://www.w3.org/2000/svg"
