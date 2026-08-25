@@ -2008,9 +2008,8 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
-    margin-top: 48px;
     width: 100%;
-    max-width: 700px;
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
 }
