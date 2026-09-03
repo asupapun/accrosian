@@ -2414,7 +2414,7 @@
                 {{-- LEFT --}}
                 <div>
                     <h1 class="bk-h1 bk-hero-title">
-                        Social Media Marketing<span class="grad-orange"> Bhubaneswar</span>
+                        Social Media Marketing<span class="grad-orange"> Punjab</span>
                     </h1>
                     <p class="bk-hero-sub">Grow your brand with professional social media management services designed
                         to increase engagement, generate quality leads, and build lasting customer relationships across
@@ -2452,7 +2452,7 @@
 
                 <h2 class="bk-h2" style="margin-top:16px;">
                     Social Media Management
-                    <span class="grad-orange">Service in Bhubaneswar</span>
+                    <span class="grad-orange">Service in Punjab</span>
                 </h2>
 
                 <div class="bk-divider"></div>
@@ -2460,7 +2460,7 @@
                 <p class="bk-sub">
                     Build your brand, engage your audience, and generate more
                     leads with our professional Social Media Management
-                    Services in Bhubaneswar. We manage your social media so
+                    Services in Punjab. We manage your social media so
                     you can focus on growing your business.
                 </p>
 
@@ -2574,7 +2574,7 @@
                     <div class="sm-icon">🚀</div>
                     <div>
                         <h3>Growth Strategy</h3>
-                        <p>Customized social media strategies designed for businesses in Bhubaneswar.</p>
+                        <p>Customized social media strategies designed for businesses in Punjab.</p>
                     </div>
                     <span class="arrow">
                         <i class="fas fa-arrow-right"></i>
@@ -2613,7 +2613,7 @@
                     We combine creative content, audience psychology,
                     local market understanding and performance marketing
                     to turn your social presence into a real growth channel
-                    for your business in Bhubaneswar.
+                    for your business in Punjab.
                 </p>
 
             </div>
@@ -2643,7 +2643,7 @@
 
                         <p>
                             Your audience is not the same as everyone else's.
-                            We create social media strategies around Bhubaneswar's
+                            We create social media strategies around Punjab's
                             audience, culture, trends and business landscape while
                             maintaining a premium brand identity.
                         </p>
@@ -2721,7 +2721,7 @@
                 <span>Engagement</span>
                 <span>Performance</span>
                 <span>Leads</span>
-                <span>Bhubaneswar</span>
+                <span>Punjab</span>
             </div>
 
 
@@ -3129,7 +3129,7 @@
                     Social media is more than posting every day.
                     We bring strategy, creativity and performance together
                     to build a digital presence that actually moves your
-                    business forward in Bhubaneswar.
+                    business forward in Punjab.
                 </p>
 
             </div>
