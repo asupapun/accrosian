@@ -382,10 +382,8 @@ delivering innovative web, mobile, cloud, and AI solutions for modern businesses
         <div style="text-align:center;margin-bottom:60px" class="reveal">
             <span class="section-tag">Client Love</span>
             <h2 class="section-title">What Our Clients <span class="text-gradient">Say About Us</span></h2>
-            <p class="process-header-sub">Hear from our satisfied clients who trust us for delivering reliable,
-                innovative solutions and exceptional results that exceed expectations, building long term partnerships
-                through consistent performance, transparent communication, industry expertise, and a commitment to
-                delivering measurable business value and growth.</p>
+            <p class="process-header-sub">Trusted by clients for innovative solutions, measurable results, and long-term
+                partnerships.</p>
         </div>
         <div class="testimonials-slider">
             <div class="testimonials-track">
