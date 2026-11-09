@@ -6114,3 +6114,61 @@ console.log(
   }
 
 })();
+
+
+
+/* =====================================================================
+   EXPORTERS SERVICE PAGE — FAQ accordion
+   Add to your main JS (or load after it). Scroll-reveal is NOT needed
+   here: your existing ".reveal" observer already animates these sections.
+   Safe to include on every page: it does nothing if .ex-faq is absent.
+   ===================================================================== */
+(function () {
+  "use strict";
+
+  function setOpen(item, open) {
+    var btn = item.querySelector(".ex-faq-q");
+    var panel = item.querySelector(".ex-faq-a");
+    if (!btn || !panel) return;
+    item.classList.toggle("is-open", open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    panel.style.maxHeight = open ? panel.scrollHeight + "px" : null;
+  }
+
+  function init() {
+    var faqs = document.querySelectorAll(".ex-faq");
+    if (!faqs.length) return;
+
+    faqs.forEach(function (faq) {
+      var items = faq.querySelectorAll(".ex-faq-item");
+
+      // Size the item that is open on load
+      items.forEach(function (item) {
+        if (item.classList.contains("is-open")) setOpen(item, true);
+      });
+
+      // One open at a time; click an open one to close it
+      faq.addEventListener("click", function (e) {
+        var btn = e.target.closest(".ex-faq-q");
+        if (!btn || !faq.contains(btn)) return;
+        var item = btn.closest(".ex-faq-item");
+        var wasOpen = item.classList.contains("is-open");
+        items.forEach(function (it) { setOpen(it, false); });
+        if (!wasOpen) setOpen(item, true);
+      });
+
+      // Keep the open panel's height correct when the layout reflows
+      window.addEventListener("resize", function () {
+        items.forEach(function (item) {
+          if (item.classList.contains("is-open")) setOpen(item, true);
+        });
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();

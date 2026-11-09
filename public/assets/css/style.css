@@ -16107,3 +16107,398 @@ select option {
         height: 200px;
     }
 }
+
+
+
+/* =====================================================================
+   EXPORTERS SERVICE PAGE — CONTENT SECTIONS
+   Append to your main stylesheet (after the .reveal rules).
+   All classes are prefixed ex- so they cannot clash with the site CSS.
+   Colors / fonts come from your :root tokens; the fallbacks after the
+   comma only apply if a token is missing.
+   Uses the site's existing .reveal / .reveal.visible scroll animation.
+   ===================================================================== */
+
+.ex-page {
+  --ex-navy: var(--navy, #0a0e2e);
+  --ex-navy-mid: var(--navy-mid, #111540);
+  --ex-navy-light: var(--navy-light, #1a2060);
+  --ex-orange: var(--orange, #e8750a);
+  --ex-orange-hover: #ff7a33;
+  --ex-soft: var(--off-white, #f4f6ff);
+  --ex-ink: var(--black, #000);
+  --ex-muted: var(--text-light, #a8b4d0);
+  --ex-line: rgba(10, 14, 46, 0.09);
+  --ex-grad: var(--gradient-orange, linear-gradient(135deg, #e8750a, #f59332));
+  --ex-display: var(--font-display, "Plus Jakarta Sans", sans-serif);
+  --ex-body: var(--font-body, "DM Sans", sans-serif);
+
+  width: 100%;
+  font-family: var(--ex-body);
+  color: var(--ex-ink);
+  line-height: 1.6;
+  text-align: left;
+}
+.ex-page *,
+.ex-page *::before,
+.ex-page *::after { box-sizing: border-box; }
+.ex-page ul,
+.ex-page ol { list-style: none; margin: 0; padding: 0; }
+
+/* ---------- Sections ---------- */
+.ex-sec { padding: 80px 0; }
+.ex-sec--soft { background: var(--ex-soft); }
+.ex-sec--dark {
+  position: relative;
+  overflow: hidden;
+  background: var(--gradient-hero, linear-gradient(135deg, #0a0e2e 0%, #111540 50%, #1a2060 100%));
+  color: #fff;
+}
+.ex-sec--dark::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  top: -220px;
+  right: -140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 117, 10, 0.22), transparent 70%);
+  pointer-events: none;
+}
+.ex-inner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Section heading (same look as .section-tag / .desc-title) ---------- */
+.ex-head { text-align: center; max-width: 760px; margin: 0 auto 48px; }
+.ex-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ex-navy-light);
+  border: 1px solid rgba(232, 117, 10, 0.3);
+  color: #fff;
+  font-family: var(--ex-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+.ex-tag::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ex-orange);
+}
+.ex-title {
+  font-family: var(--ex-display);
+  font-size: clamp(2rem, 3.3vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 12px;
+  color: var(--ex-navy);
+}
+.ex-grad {
+  background: var(--ex-grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ex-sub { font-size: 1.05rem; font-weight: 500; line-height: 1.7; color: var(--ex-ink); margin: 0; }
+.ex-text { font-size: 1rem; line-height: 1.8; color: var(--ex-ink); margin-top: 10px; }
+.ex-sec--dark .ex-title { color: #fff; }
+.ex-sec--dark .ex-sub { color: var(--ex-muted); }
+
+/* ---------- Problem split ---------- */
+.ex-split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.ex-regions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.ex-region {
+  background: #fff;
+  border: 1px solid var(--ex-line);
+  border-radius: 20px;
+  padding: 22px 12px;
+  text-align: center;
+  box-shadow: 0 8px 28px rgba(10, 14, 46, 0.06);
+  transition: opacity 0.7s ease, transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+.ex-page .ex-region:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 122, 51, 0.4);
+  box-shadow: 0 20px 45px rgba(10, 14, 46, 0.12);
+}
+.ex-region span { font-family: var(--ex-display); font-weight: 700; font-size: 0.92rem; color: var(--ex-navy-mid); }
+
+/* Image placeholder. Swap the text for <img src="..." alt="..."> */
+.ex-flag {
+  width: 56px;
+  height: 38px;
+  margin: 0 auto 10px;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #dfe4f5, #eef1fb);
+  color: #6b7a99;
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+.ex-flag img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ex-flag--lg { width: 64px; height: 44px; margin-bottom: 16px; }
+
+/* ---------- Cards (same feel as .gm-card) ---------- */
+.ex-grid { display: grid; gap: 24px; }
+.ex-g3 { grid-template-columns: repeat(3, 1fr); }
+.ex-g4 { grid-template-columns: repeat(4, 1fr); }
+
+.ex-card {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--ex-line);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 8px 28px rgba(10, 14, 46, 0.06);
+  transition: opacity 0.7s ease, transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+.ex-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--ex-grad);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.ex-page .ex-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 122, 51, 0.4);
+  box-shadow: 0 20px 45px rgba(10, 14, 46, 0.12);
+}
+.ex-card:hover::before { transform: scaleX(1); }
+.ex-card--center { text-align: center; }
+.ex-card--center .ex-ico { margin-left: auto; margin-right: auto; }
+
+.ex-ico {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+  background: rgba(232, 117, 10, 0.1);
+  border: 1px solid rgba(232, 117, 10, 0.25);
+}
+.ex-card h3 {
+  font-family: var(--ex-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ex-navy-mid);
+  margin: 0 0 8px;
+}
+.ex-card p { font-size: 15px; line-height: 1.6; color: var(--ex-ink); margin: 0; }
+
+.ex-page .ex-list { margin-top: 18px; display: grid; gap: 8px; }
+.ex-list li { position: relative; padding-left: 28px; font-size: 0.95rem; line-height: 1.7; color: var(--ex-ink); }
+.ex-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ex-grad);
+  color: #fff;
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ---------- Industry tiles ---------- */
+.ex-tile {
+  background: #fff;
+  border: 1px solid var(--ex-line);
+  border-radius: 20px;
+  padding: 26px 16px;
+  text-align: center;
+  transition: opacity 0.7s ease, transform 0.35s ease, background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+.ex-tile-ico { font-size: 2rem; margin-bottom: 8px; line-height: 1.2; }
+.ex-tile h3 { font-family: var(--ex-display); font-size: 1rem; font-weight: 700; color: var(--ex-navy-mid); margin: 0 0 2px; }
+.ex-tile p { font-size: 0.85rem; color: var(--ex-ink); margin: 0; }
+.ex-page .ex-tile:hover {
+  transform: translateY(-4px);
+  background: var(--ex-navy-mid);
+  border-color: var(--ex-navy-mid);
+  box-shadow: 0 20px 45px rgba(10, 14, 46, 0.25);
+}
+.ex-tile:hover h3,
+.ex-tile:hover p { color: #fff; }
+
+/* ---------- Buyer journey (dark band) ---------- */
+.ex-funnel { position: relative; display: grid; grid-template-columns: repeat(7, 1fr); gap: 14px; }
+.ex-funnel::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 7%;
+  right: 7%;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, rgba(232, 117, 10, 0.6) 0 8px, transparent 8px 16px);
+}
+.ex-step { position: relative; text-align: center; }
+.ex-step-circle {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  background: var(--ex-navy-mid);
+  border: 2px solid var(--ex-orange);
+  box-shadow: 0 0 0 6px rgba(232, 117, 10, 0.12);
+  transition: transform 0.35s ease, background 0.35s ease;
+}
+.ex-step:hover .ex-step-circle { transform: scale(1.1); background: var(--ex-grad); }
+.ex-step h3 { font-family: var(--ex-display); font-size: 0.95rem; font-weight: 700; color: #fff; margin: 0 0 2px; }
+.ex-step p { font-size: 0.85rem; color: var(--ex-muted); margin: 0; }
+
+/* ---------- Chips ---------- */
+.ex-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.ex-chip {
+  background: #fff;
+  border: 1px solid var(--ex-line);
+  border-radius: 100px;
+  padding: 12px 26px;
+  font-family: var(--ex-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ex-navy-mid);
+  box-shadow: 0 8px 28px rgba(10, 14, 46, 0.06);
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.ex-chip:hover { transform: translateY(-3px); background: var(--ex-grad); color: #fff; border-color: transparent; }
+
+/* ---------- Comparison table ---------- */
+.ex-table-wrap {
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid var(--ex-line);
+  border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(10, 14, 46, 0.06);
+}
+.ex-table { width: 100%; min-width: 560px; border-collapse: collapse; }
+.ex-table th,
+.ex-table td { padding: 18px 24px; text-align: left; font-size: 0.95rem; }
+.ex-table thead th {
+  font-family: var(--ex-display);
+  font-weight: 700;
+  color: #fff;
+  background: var(--ex-navy-mid);
+}
+.ex-table thead th:nth-child(2) { background: var(--ex-grad); }
+.ex-table tbody tr:nth-child(even) { background: var(--ex-soft); }
+.ex-table tbody th { font-weight: 600; color: var(--ex-navy-mid); }
+.ex-table td:nth-child(2) { font-weight: 700; color: #15803d; }
+.ex-table td:nth-child(3) { font-weight: 500; color: #b91c1c; }
+
+/* ---------- FAQ ---------- */
+.ex-faq { max-width: 860px; margin: 0 auto; display: grid; gap: 14px; }
+.ex-faq-item {
+  background: #fff;
+  border: 1px solid var(--ex-line);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: opacity 0.7s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.ex-faq-item.is-open { border-color: rgba(255, 122, 51, 0.45); box-shadow: 0 12px 32px rgba(10, 14, 46, 0.08); }
+.ex-faq-item h3 { margin: 0; font-size: inherit; }
+.ex-faq-q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--ex-display);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--ex-navy-mid);
+}
+.ex-faq-q:focus-visible { outline: 2px solid var(--ex-orange); outline-offset: -2px; }
+.ex-faq-ico {
+  position: relative;
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(232, 117, 10, 0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.ex-faq-ico::before,
+.ex-faq-ico::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 2px;
+  margin: -1px 0 0 -6px;
+  border-radius: 2px;
+  background: var(--ex-orange);
+  transition: background 0.3s ease;
+}
+.ex-faq-ico::after { transform: rotate(90deg); }
+.ex-faq-item.is-open .ex-faq-ico { transform: rotate(45deg); background: var(--ex-grad); }
+.ex-faq-item.is-open .ex-faq-ico::before,
+.ex-faq-item.is-open .ex-faq-ico::after { background: #fff; }
+.ex-faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.ex-faq-a p { padding: 0 24px 22px; font-size: 0.95rem; line-height: 1.8; color: var(--ex-ink); margin: 0; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .ex-g4 { grid-template-columns: repeat(2, 1fr); }
+  .ex-funnel { grid-template-columns: repeat(4, 1fr); row-gap: 32px; }
+  .ex-funnel::before { display: none; }
+}
+@media (max-width: 860px) {
+  .ex-sec { padding: 60px 0; }
+  .ex-split { grid-template-columns: 1fr; gap: 36px; }
+  .ex-g3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .ex-g3,
+  .ex-g4 { grid-template-columns: 1fr; }
+  .ex-funnel { grid-template-columns: repeat(2, 1fr); }
+  .ex-regions { grid-template-columns: repeat(2, 1fr); }
+  .ex-head { margin-bottom: 36px; }
+  .ex-card { padding: 24px; }
+  .ex-tiles { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .ex-table { min-width: 0; }
+  .ex-table th,
+  .ex-table td { padding: 12px 10px; font-size: 0.82rem; }
+  .ex-faq-q { padding: 18px 20px; }
+  .ex-faq-a p { padding: 0 20px 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ex-page * { transition: none !important; }
+}
